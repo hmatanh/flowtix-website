@@ -390,9 +390,11 @@ body::before {
     0 0 80px rgba(59, 130, 246, 0.12);
 }
 
-/* Animated link underline */
+/* Animated link underline + subtle text-slide-up on hover */
 .animated-link {
   position: relative;
+  display: inline-block;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s;
 }
 .animated-link::after {
   content: '';
@@ -402,7 +404,11 @@ body::before {
   background: var(--accent-blue);
   transition: width 0.3s ease;
 }
+.animated-link:hover { transform: translateY(-2px); }
 .animated-link:hover::after { width: 100%; }
+@media (prefers-reduced-motion: reduce) {
+  .animated-link:hover { transform: none; }
+}
 
 /* Shimmer */
 @keyframes shimmer {
