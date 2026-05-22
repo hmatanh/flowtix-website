@@ -25,6 +25,7 @@ import { getNextProject } from "@/lib/projects";
 import { ClientLogo } from "@/components/clients/logos/ClientLogo";
 import { AnimatedCounter } from "@/components/AnimatedCounter";
 import { FadeIn } from "@/components/animations/FadeIn";
+import { ProjectSignature } from "@/components/projects/ProjectSignatures";
 
 const EASE = [0.21, 0.47, 0.32, 0.98] as const;
 
@@ -410,6 +411,12 @@ function Hero({
         style={{ background: "linear-gradient(to top, #000, transparent)" }}
       />
 
+      {/* PROJECT SIGNATURE — per-project decorative SVG */}
+      <ProjectSignature
+        slug={project.slug}
+        className="inset-0 w-full h-full opacity-60"
+      />
+
       {/* MASSIVE BRAND WORDMARK WATERMARK */}
       <div
         aria-hidden="true"
@@ -433,7 +440,7 @@ function Hero({
         style={{ opacity: headlineOpacity }}
       >
         {/* TOP ROW */}
-        <div className="pt-28 sm:pt-32 lg:pt-40 flex items-center justify-between">
+        <div className="pt-24 sm:pt-32 lg:pt-40 flex items-center justify-between gap-3">
           <Link
             href="/work"
             className="inline-flex items-center gap-1.5 text-[#444] hover:text-[#888] text-xs transition-colors"
@@ -441,9 +448,9 @@ function Hero({
             <IconArrowLeft size={12} stroke={2} aria-hidden="true" />
             <span className="hidden sm:inline">All Work</span>
           </Link>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 min-w-0">
             <span
-              className="inline-flex items-center gap-1.5 text-[10px] sm:text-xs px-3 py-1 rounded-full border"
+              className="inline-flex items-center gap-1.5 text-[10px] sm:text-xs px-2.5 sm:px-3 py-1 rounded-full border truncate max-w-[180px] sm:max-w-none"
               style={{
                 borderColor: `rgba(${b.accentRGB}, 0.30)`,
                 background: `rgba(${b.accentRGB}, 0.08)`,
@@ -451,14 +458,14 @@ function Hero({
               }}
             >
               <span
-                className="w-1.5 h-1.5 rounded-full"
+                className="w-1.5 h-1.5 rounded-full shrink-0"
                 style={{ background: b.primary }}
               />
-              {project.industry}
+              <span className="truncate">{project.industry}</span>
             </span>
             <span
-              className="text-[10px] sm:text-xs px-3 py-1 rounded-full border"
-              style={{ borderColor: "#1a1a1a", color: "#444" }}
+              className="text-[10px] sm:text-xs px-2.5 sm:px-3 py-1 rounded-full border shrink-0"
+              style={{ borderColor: "#1a1a1a", color: "#666" }}
             >
               {project.year}
             </span>
