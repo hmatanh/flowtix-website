@@ -135,7 +135,16 @@ export function Loader({ onComplete }: { onComplete: () => void }) {
                   : { duration: 0.4, ease: [0.16, 1, 0.3, 1] }
               }
             >
-              <svg width="88" height="88" viewBox="0 0 88 88" fill="none">
+              <svg
+                width="88"
+                height="88"
+                viewBox="0 0 88 88"
+                fill="none"
+                style={{
+                  filter:
+                    "drop-shadow(0 0 4px rgba(255,255,255,0.55)) drop-shadow(0 0 12px rgba(59,130,246,0.35))",
+                }}
+              >
                 <m.path
                   d="M44 4L84 44L44 84L4 44L44 4Z"
                   stroke="white"
@@ -152,7 +161,7 @@ export function Loader({ onComplete }: { onComplete: () => void }) {
                 />
                 <m.path
                   d="M44 24L64 44L44 64L24 44L44 24Z"
-                  stroke="rgba(255,255,255,0.25)"
+                  stroke="rgba(255,255,255,0.35)"
                   strokeWidth="1"
                   fill="none"
                   initial={{ pathLength: 0, opacity: 0 }}
