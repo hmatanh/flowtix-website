@@ -6,6 +6,7 @@ import { batch4 } from "./blog/batch-04-webdev-design";
 import { batch5 } from "./blog/batch-05-industry-a";
 import { batch6 } from "./blog/batch-06-industry-strategy";
 import { batch7 } from "./blog/batch-07-strategy-cases";
+import { batch8 } from "./blog/batch-08-tools-content";
 
 export type PostCategory =
   | "AI Systems"
@@ -865,6 +866,7 @@ export const posts: Post[] = [
   ...batch5,
   ...batch6,
   ...batch7,
+  ...batch8,
 ];
 
 export function getPostBySlug(slug: string) {
