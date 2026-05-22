@@ -8,6 +8,11 @@ import {
   IconArrowRight,
   IconLockSquare,
   IconClock,
+  IconMail,
+  IconArrowBackUp,
+  IconVideo,
+  IconFileText,
+  IconCode,
 } from "@tabler/icons-react";
 import { LiveActivityFeed } from "@/components/LiveActivityFeed";
 import { PerspectiveGrid } from "@/components/PerspectiveGrid";
@@ -183,6 +188,39 @@ const INDUSTRIES_12 = [
   "Logistics & Operations",
   "Legal Services",
   "Media & Publishing",
+];
+
+const FIRST_WEEK = [
+  {
+    day: "Day 1",
+    icon: IconMail,
+    title: "You send us a message.",
+    sub: "Tell us what you’re trying to build — even one paragraph is enough.",
+  },
+  {
+    day: "Day 2",
+    icon: IconArrowBackUp,
+    title: "We respond within 24 hours.",
+    sub: "A real human reads it. We reply with thoughts, not a templated form.",
+  },
+  {
+    day: "Day 3",
+    icon: IconVideo,
+    title: "Discovery call — 30 minutes.",
+    sub: "Free, low-pressure. We dig into the problem and your constraints.",
+  },
+  {
+    day: "Day 5",
+    icon: IconFileText,
+    title: "You receive a detailed proposal.",
+    sub: "Scope, timeline, and a fixed price. No hourly billing surprises.",
+  },
+  {
+    day: "Day 7",
+    icon: IconCode,
+    title: "We start building.",
+    sub: "First demo within 48 hours. Daily check-ins until launch.",
+  },
 ];
 
 // ===== Component =====
@@ -847,6 +885,80 @@ export default function Home() {
 
       {/* ===== FAQ ===== */}
       <FAQ />
+
+      {/* ===== FIRST 7 DAYS — onboarding preview ===== */}
+      <section className="section-contain relative py-24 lg:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <span className="section-number" aria-hidden="true">
+          09
+        </span>
+        <div className="relative max-w-6xl mx-auto">
+          <FadeIn>
+            <div className="text-[#222] text-[10px] tracking-widest uppercase section-label text-center">
+              How it starts
+            </div>
+            <h2
+              className="font-black tracking-tight text-white text-center mt-5 leading-tight"
+              style={{ fontSize: "clamp(28px, 4.5vw, 48px)" }}
+            >
+              From first message to first build:{" "}
+              <span className="gradient-text-blue">7 days.</span>
+            </h2>
+            <p className="text-[#555] text-center mt-4 text-sm max-w-xl mx-auto leading-relaxed">
+              No back-and-forth, no chasing. Here&apos;s what the first week
+              looks like.
+            </p>
+          </FadeIn>
+
+          <div className="relative mt-16">
+            {/* Connecting line — desktop only, animated draw */}
+            <m.div
+              aria-hidden="true"
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 1.6, ease: "easeOut" }}
+              className="hidden md:block absolute left-[8%] right-[8%] top-[28px] h-px origin-left bg-gradient-to-r from-transparent via-[#1a1a1a] to-transparent"
+            />
+
+            <ol className="relative grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-4">
+              {FIRST_WEEK.map((d, i) => {
+                const Icon = d.icon;
+                return (
+                  <m.li
+                    key={d.day}
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{
+                      delay: 0.15 + i * 0.08,
+                      duration: 0.5,
+                      ease: EASE,
+                    }}
+                    className="relative flex md:flex-col items-start md:items-center gap-4 md:gap-0 md:text-center"
+                  >
+                    <div className="relative shrink-0 z-10">
+                      <div className="w-14 h-14 rounded-full bg-[#0D0D0D] border border-[#1a1a1a] flex items-center justify-center text-[#666]">
+                        <Icon size={20} stroke={1.5} aria-hidden="true" />
+                      </div>
+                    </div>
+                    <div className="md:mt-5 flex-1">
+                      <div className="text-[#1a1a1a] text-[10px] uppercase tracking-[0.2em]">
+                        {d.day}
+                      </div>
+                      <div className="text-white text-sm font-semibold mt-1.5 tracking-tight">
+                        {d.title}
+                      </div>
+                      <div className="text-[#555] text-xs mt-1.5 leading-relaxed max-w-[180px] md:mx-auto">
+                        {d.sub}
+                      </div>
+                    </div>
+                  </m.li>
+                );
+              })}
+            </ol>
+          </div>
+        </div>
+      </section>
 
       {/* ===== AVAILABILITY ===== */}
       <Availability />
