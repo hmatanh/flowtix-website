@@ -9,21 +9,37 @@ export const metadata: Metadata = {
 
 export default function AccessibilityPage() {
   return (
-    <article id="top" className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
-      <nav aria-label="Breadcrumb" className="mb-8 text-xs text-[#444]">
+    <article id="top" className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24 lg:py-32">
+      <div
+        aria-hidden="true"
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] pointer-events-none -z-10"
+        style={{
+          background: "radial-gradient(ellipse, rgba(59,130,246,0.05) 0%, transparent 70%)",
+          filter: "blur(80px)",
+        }}
+      />
+
+      <nav aria-label="Breadcrumb" className="mb-6 sm:mb-8 text-xs text-[#444]">
         <Link href="/" className="hover:text-white animated-link">
           Home
         </Link>
         <span className="mx-2 text-[#222]" aria-hidden="true">/</span>
         <span className="text-[#888]">Accessibility</span>
       </nav>
-      <div className="text-[#333] text-xs tracking-widest uppercase mb-3">
-        Last reviewed · May 2026
+
+      <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-500/25 bg-blue-500/5 mb-4 sm:mb-5">
+        <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
+        <span className="text-blue-400 text-[10px] tracking-[0.18em] uppercase font-medium">
+          Last reviewed · May 2026 · WCAG 2.1 AA
+        </span>
       </div>
-      <h1 className="text-3xl lg:text-4xl font-bold text-white tracking-tight mb-4">
+      <h1
+        className="font-black text-white tracking-tighter leading-[1.05] mb-5 sm:mb-6"
+        style={{ fontSize: "clamp(32px, 5vw, 52px)" }}
+      >
         Accessibility Statement
       </h1>
-      <p className="text-[#888] text-base leading-relaxed">
+      <p className="text-[#aaa] text-base sm:text-lg leading-[1.65] sm:leading-relaxed">
         <strong className="text-white">
           Flowtix is committed to making our website accessible to everyone,
           regardless of ability or technology.

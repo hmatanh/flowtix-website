@@ -23,25 +23,42 @@ const SECTIONS = [
 
 export default function PrivacyPage() {
   return (
-    <article id="top" className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
-      <nav aria-label="Breadcrumb" className="mb-8 text-xs text-[#444]">
+    <article id="top" className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24 lg:py-32">
+      {/* Subtle ambient backdrop */}
+      <div
+        aria-hidden="true"
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] pointer-events-none -z-10"
+        style={{
+          background: "radial-gradient(ellipse, rgba(59,130,246,0.05) 0%, transparent 70%)",
+          filter: "blur(80px)",
+        }}
+      />
+
+      <nav aria-label="Breadcrumb" className="mb-6 sm:mb-8 text-xs text-[#444]">
         <Link href="/" className="hover:text-white animated-link">
           Home
         </Link>
         <span className="mx-2 text-[#222]" aria-hidden="true">/</span>
         <span className="text-[#888]">Privacy Policy</span>
       </nav>
-      <div className="text-[#333] text-xs tracking-widest uppercase mb-3">
-        Last updated · May 2026
+
+      <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-500/25 bg-blue-500/5 mb-4 sm:mb-5">
+        <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
+        <span className="text-blue-400 text-[10px] tracking-[0.18em] uppercase font-medium">
+          Last updated · May 2026
+        </span>
       </div>
-      <h1 className="text-3xl lg:text-4xl font-bold text-white tracking-tight mb-4">
+      <h1
+        className="font-black text-white tracking-tighter leading-[1.05] mb-5 sm:mb-6"
+        style={{ fontSize: "clamp(32px, 5vw, 52px)" }}
+      >
         Privacy Policy
       </h1>
-      <p className="text-[#888] text-base leading-relaxed mb-6">
-        Flowtix (“we,” “us,” or “our”) operates the website flowtix.ai (the
-        “Service”). This Privacy Policy explains how we collect, use, and
-        protect your personal information when you use our website and
-        services.
+      <p className="text-[#aaa] text-base sm:text-lg leading-[1.65] sm:leading-relaxed mb-4">
+        Flowtix (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;)
+        operates the website flowtix.ai (the &ldquo;Service&rdquo;). This
+        Privacy Policy explains how we collect, use, and protect your personal
+        information when you use our website and services.
       </p>
       <p className="text-[#888] text-base leading-relaxed">
         By using our website, you agree to the practices described in this
@@ -50,23 +67,36 @@ export default function PrivacyPage() {
 
       <nav
         aria-label="Table of contents"
-        className="my-12 bg-[#0D0D0D] border border-[#1a1a1a] rounded-2xl p-6"
+        className="my-10 sm:my-12 bg-[#0a0a0a] border border-[#1a1a1a] rounded-2xl p-5 sm:p-6 relative overflow-hidden"
       >
-        <div className="text-[#333] text-[10px] tracking-widest uppercase mb-3">
-          Contents
+        <div
+          aria-hidden="true"
+          className="absolute top-0 right-0 w-32 h-32 pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(59,130,246,0.08), transparent 70%)",
+            filter: "blur(20px)",
+          }}
+        />
+        <div className="relative">
+          <div className="text-blue-400 text-[10px] tracking-[0.2em] uppercase mb-3 font-medium inline-flex items-center gap-2">
+            <span className="w-1 h-1 rounded-full bg-blue-500" />
+            Contents
+          </div>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 sm:gap-2 text-sm">
+            {SECTIONS.map((s) => (
+              <li key={s.id}>
+                <a
+                  href={`#${s.id}`}
+                  className="text-[#888] hover:text-blue-400 transition-colors animated-link inline-flex items-center gap-1.5"
+                >
+                  <span className="text-[#444] text-[10px] font-mono">→</span>
+                  {s.label}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
-        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
-          {SECTIONS.map((s) => (
-            <li key={s.id}>
-              <a
-                href={`#${s.id}`}
-                className="text-[#666] hover:text-white transition-colors animated-link"
-              >
-                {s.label}
-              </a>
-            </li>
-          ))}
-        </ul>
       </nav>
 
       <Section id="who-we-are" title="1. Who We Are">
