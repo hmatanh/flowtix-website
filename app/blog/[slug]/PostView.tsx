@@ -9,8 +9,7 @@ import {
   IconBrandLinkedin,
   IconChevronRight,
 } from "@tabler/icons-react";
-import { getPostBySlug, getRelatedPosts } from "@/lib/posts";
-import { Logo } from "@/components/Logo";
+import type { Post } from "@/lib/posts";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { PostHero } from "@/components/PostHero";
 
@@ -76,11 +75,13 @@ function TableOfContents({
   );
 }
 
-export function PostView({ slug }: { slug: string }) {
-  const post = getPostBySlug(slug);
-  if (!post) return null;
-  const related = getRelatedPosts(slug, 3);
-
+export function PostView({
+  post,
+  related,
+}: {
+  post: Post;
+  related: Post[];
+}) {
   return (
     <>
       <ReadingProgress />
@@ -154,18 +155,22 @@ export function PostView({ slug }: { slug: string }) {
                   Share
                 </span>
                 <a
-                  href="#"
+                  href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(`https://flowtix.ai/blog/${post.slug}/`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label="Share on Twitter"
                   className="w-9 h-9 inline-flex items-center justify-center border border-[#1a1a1a] rounded-lg text-[#666] hover:text-white hover:border-[#2a2a2a] transition-colors"
                 >
-                  <IconBrandX size={14} stroke={1.5} />
+                  <IconBrandX size={14} stroke={1.5} aria-hidden="true" />
                 </a>
                 <a
-                  href="#"
+                  href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`https://flowtix.ai/blog/${post.slug}/`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label="Share on LinkedIn"
                   className="w-9 h-9 inline-flex items-center justify-center border border-[#1a1a1a] rounded-lg text-[#666] hover:text-white hover:border-[#2a2a2a] transition-colors"
                 >
-                  <IconBrandLinkedin size={14} stroke={1.5} />
+                  <IconBrandLinkedin size={14} stroke={1.5} aria-hidden="true" />
                 </a>
               </div>
             </div>
@@ -231,14 +236,18 @@ export function PostView({ slug }: { slug: string }) {
                 Share:
               </span>
               <a
-                href="#"
+                href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(`https://flowtix.ai/blog/${post.slug}/`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Share on Twitter"
                 className="w-9 h-9 inline-flex items-center justify-center border border-[#1a1a1a] rounded-lg text-[#666] hover:text-white hover:border-[#2a2a2a] transition-colors"
               >
                 <IconBrandX size={14} stroke={1.5} aria-hidden="true" />
               </a>
               <a
-                href="#"
+                href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`https://flowtix.ai/blog/${post.slug}/`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Share on LinkedIn"
                 className="w-9 h-9 inline-flex items-center justify-center border border-[#1a1a1a] rounded-lg text-[#666] hover:text-white hover:border-[#2a2a2a] transition-colors"
               >

@@ -115,13 +115,23 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#" className="inline-flex items-center gap-2 hover:text-white transition-colors">
+                <a
+                  href="https://twitter.com/flowtix_ai"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 hover:text-white transition-colors"
+                >
                   <IconBrandX size={14} stroke={1.5} aria-hidden="true" />
                   Twitter
                 </a>
               </li>
               <li>
-                <a href="#" className="inline-flex items-center gap-2 hover:text-white transition-colors">
+                <a
+                  href="https://www.linkedin.com/company/flowtix-ai"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 hover:text-white transition-colors"
+                >
                   <IconBrandLinkedin size={14} stroke={1.5} aria-hidden="true" />
                   LinkedIn
                 </a>

@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { posts, getPostBySlug } from "@/lib/posts";
+import { posts, getPostBySlug, getRelatedPosts } from "@/lib/posts";
 import { PostView } from "./PostView";
 import type { Metadata } from "next";
 
@@ -55,6 +55,7 @@ export default async function Page({
   const { slug } = await params;
   const post = getPostBySlug(slug);
   if (!post) notFound();
+  const related = getRelatedPosts(slug, 3);
 
   // JSON-LD structured data for SEO
   const articleSchema = {
@@ -122,7 +123,7 @@ export default async function Page({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-      <PostView slug={slug} />
+      <PostView post={post} related={related} />
     </>
   );
 }

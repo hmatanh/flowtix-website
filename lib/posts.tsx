@@ -10,19 +10,22 @@ import { batch8 } from "./blog/batch-08-tools-content";
 import { batch9 } from "./blog/batch-09-content-brand";
 import { batch10 } from "./blog/batch-10-productivity-future";
 
-export type PostCategory =
-  | "AI Systems"
-  | "Design"
-  | "Automation"
-  | "AI Content"
-  | "Business";
+// Re-export from the lightweight categories module for back-compat.
+// Listing pages should import directly from "@/lib/post-categories" to
+// avoid pulling in the heavy batches that this file transitively loads.
+export {
+  CATEGORIES,
+  CATEGORY_COLORS,
+  type PostCategory,
+  type PostMeta,
+} from "./post-categories";
 
 export type TocEntry = { id: string; label: string };
 
 export type Post = {
   slug: string;
   title: string;
-  category: PostCategory;
+  category: import("./post-categories").PostCategory;
   categoryColor: string; // hex
   readTime: string;
   date: string;
@@ -33,22 +36,8 @@ export type Post = {
   body: ReactNode;
 };
 
-export const CATEGORY_COLORS: Record<PostCategory, string> = {
-  "AI Systems": "#3B82F6",
-  Design: "#EC4899",
-  Automation: "#10B981",
-  "AI Content": "#A855F7",
-  Business: "#F59E0B",
-};
-
-export const CATEGORIES: ("All" | PostCategory)[] = [
-  "All",
-  "AI Systems",
-  "Design",
-  "Automation",
-  "AI Content",
-  "Business",
-];
+// (CATEGORIES + CATEGORY_COLORS are now defined in ./post-categories and
+//  re-exported above to keep listing-page bundles small.)
 
 export const posts: Post[] = [
   {
