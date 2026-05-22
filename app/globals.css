@@ -701,3 +701,36 @@ body::before {
   padding: 0;
   color: inherit;
 }
+
+/* Mobile prose tuning: slightly tighter spacing, larger body for readability. */
+@media (max-width: 640px) {
+  .prose-flowtix {
+    font-size: 16px;
+    line-height: 1.75;
+  }
+  .prose-flowtix > * + * { margin-top: 1.25rem; }
+  .prose-flowtix h2 {
+    font-size: 1.375rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  .prose-flowtix h3 {
+    font-size: 1.125rem;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+  .prose-flowtix pre {
+    font-size: 0.8125rem;
+    padding: 1rem;
+    margin: 1.5rem -0.5rem;
+    border-radius: 8px;
+  }
+  .prose-flowtix blockquote {
+    margin: 1.5rem 0;
+    padding-left: 1rem;
+  }
+  .prose-flowtix ul li,
+  .prose-flowtix ol li {
+    padding-left: 1.25rem;
+  }
+}

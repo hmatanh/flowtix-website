@@ -37,6 +37,8 @@ export function Logo({
       width={width}
       height={size}
       draggable={false}
+      decoding="async"
+      fetchPriority="high"
       style={{ height: size, width: "auto", display: "block" }}
     />
   );
