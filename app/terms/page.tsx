@@ -21,7 +21,14 @@ const SECTIONS = [
 
 export default function TermsPage() {
   return (
-    <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
+    <article id="top" className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
+      <nav aria-label="Breadcrumb" className="mb-8 text-xs text-[#444]">
+        <Link href="/" className="hover:text-white animated-link">
+          Home
+        </Link>
+        <span className="mx-2 text-[#222]" aria-hidden="true">/</span>
+        <span className="text-[#888]">Terms of Service</span>
+      </nav>
       <div className="text-[#333] text-xs tracking-widest uppercase mb-3">
         Last updated · May 2026 · Effective January 2025
       </div>
@@ -215,16 +222,21 @@ export default function TermsPage() {
         </ul>
       </Section>
 
-      <div className="mt-16 pt-8 border-t border-[#1a1a1a] flex flex-wrap gap-4 text-xs text-[#444]">
-        <Link href="/privacy" className="hover:text-white animated-link">
-          Privacy Policy →
-        </Link>
-        <Link href="/accessibility" className="hover:text-white animated-link">
-          Accessibility →
-        </Link>
-        <Link href="/" className="hover:text-white animated-link">
-          Back to home →
-        </Link>
+      <div className="mt-16 pt-8 border-t border-[#1a1a1a] flex flex-wrap items-center justify-between gap-4 text-xs text-[#444]">
+        <div className="flex flex-wrap gap-4">
+          <Link href="/privacy" className="hover:text-white animated-link">
+            Privacy Policy →
+          </Link>
+          <Link href="/contact" className="hover:text-white animated-link">
+            Contact →
+          </Link>
+          <Link href="/" className="hover:text-white animated-link">
+            Back to home →
+          </Link>
+        </div>
+        <a href="#top" className="text-[#555] hover:text-white animated-link inline-flex items-center gap-1">
+          ↑ Back to top
+        </a>
       </div>
     </article>
   );
