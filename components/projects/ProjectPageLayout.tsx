@@ -692,7 +692,7 @@ function BrandAtmosphere({ project }: { project: Project }) {
               <div
                 className="font-black leading-none tracking-tighter"
                 style={{
-                  fontSize: "clamp(48px, 8vw, 96px)",
+                  fontSize: "clamp(56px, 10vw, 96px)",
                   color: b.textOnBrand,
                 }}
               >
