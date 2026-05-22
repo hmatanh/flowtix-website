@@ -1,14 +1,24 @@
 "use client";
 
 import Link from "next/link";
-import { ReactNode, useEffect, useRef } from "react";
-import { m, useMotionValue, useSpring, useTransform, useScroll } from "framer-motion";
+import { ReactNode, useEffect, useRef, useState } from "react";
+import { m, useMotionValue, useSpring, useTransform, useScroll, AnimatePresence } from "framer-motion";
 import {
   IconArrowLeft,
   IconArrowRight,
   IconArrowsHorizontal,
   IconQuote,
   IconSparkles,
+  IconCheck,
+  IconClock,
+  IconUsersGroup,
+  IconCurrencyDollar,
+  IconRulerMeasure,
+  IconRefresh,
+  IconCalendar,
+  IconLockSquare,
+  IconBolt,
+  IconHeartHandshake,
 } from "@tabler/icons-react";
 import type { Project } from "@/lib/projects";
 import { getNextProject } from "@/lib/projects";
@@ -546,6 +556,47 @@ function Hero({
             >
               {keyMetric}
             </span>
+          </m.div>
+
+          {/* Quick facts strip — at-a-glance project shape */}
+          <m.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7, duration: 0.6, ease: EASE }}
+            className="mt-8 sm:mt-10 flex flex-wrap gap-x-6 sm:gap-x-10 gap-y-3 justify-center md:justify-start"
+          >
+            {[
+              { label: "Duration", value: project.duration },
+              { label: "Team", value: project.teamLine },
+              { label: "Year", value: project.year },
+              { label: "Category", value: project.category },
+            ].map((f, i, arr) => (
+              <div
+                key={f.label}
+                className="flex items-center gap-3"
+              >
+                <div className="text-left">
+                  <div
+                    className="text-[10px] uppercase tracking-[0.18em]"
+                    style={{ color: b.textOnBrand, opacity: 0.45 }}
+                  >
+                    {f.label}
+                  </div>
+                  <div className="text-white text-sm sm:text-base font-semibold mt-0.5">
+                    {f.value}
+                  </div>
+                </div>
+                {i < arr.length - 1 && (
+                  <span
+                    className="hidden sm:block h-8 w-px"
+                    style={{
+                      background: `linear-gradient(180deg, transparent, rgba(${b.accentRGB},0.20), transparent)`,
+                    }}
+                    aria-hidden="true"
+                  />
+                )}
+              </div>
+            ))}
           </m.div>
         </div>
 
@@ -1627,6 +1678,692 @@ function NextProjectStrip({ project }: { project: Project }) {
 }
 
 /* =========================================================================
+   READING PROGRESS — thin brand-colored bar at top, fills as user scrolls
+   ========================================================================= */
+function ReadingProgress({ project }: { project: Project }) {
+  const b = project.brand;
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
+  return (
+    <m.div
+      aria-hidden="true"
+      className="fixed top-0 left-0 right-0 z-40 origin-left pointer-events-none"
+      style={{
+        height: 2,
+        background: `linear-gradient(90deg, ${b.primary}, rgba(${b.accentRGB},0.6))`,
+        boxShadow: `0 0 12px rgba(${b.accentRGB},0.5)`,
+        scaleX,
+      }}
+    />
+  );
+}
+
+/* =========================================================================
+   FLOATING CTA — sticky button appears after scrolling past hero
+   ========================================================================= */
+function FloatingCTA({ project }: { project: Project }) {
+  const b = project.brand;
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    function onScroll() {
+      // Show after scrolling past ~60% of viewport height (past hero)
+      setVisible(window.scrollY > window.innerHeight * 0.6);
+    }
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  return (
+    <AnimatePresence>
+      {visible && (
+        <m.div
+          initial={{ opacity: 0, y: 24, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          exit={{ opacity: 0, y: 24, scale: 0.95 }}
+          transition={{ duration: 0.35, ease: EASE }}
+          className="fixed z-40 pointer-events-none"
+          style={{
+            bottom: "max(20px, env(safe-area-inset-bottom))",
+            right: "max(20px, env(safe-area-inset-right))",
+          }}
+        >
+          <Link
+            href="/contact"
+            className="pointer-events-auto group relative inline-flex items-center gap-2.5 rounded-full px-5 py-3 sm:px-6 sm:py-3.5 font-semibold text-sm shadow-2xl"
+            style={{
+              background: b.primary,
+              color: "#000",
+              boxShadow: `0 20px 60px rgba(${b.accentRGB},0.4), 0 0 0 1px rgba(255,255,255,0.1) inset`,
+            }}
+          >
+            <span
+              aria-hidden="true"
+              className="absolute inset-0 rounded-full"
+              style={{
+                background: `radial-gradient(circle, rgba(255,255,255,0.2), transparent 70%)`,
+                opacity: 0.5,
+              }}
+            />
+            <span
+              aria-hidden="true"
+              className="absolute inset-0 rounded-full animate-ping"
+              style={{
+                background: `rgba(${b.accentRGB},0.5)`,
+                opacity: 0.4,
+                animationDuration: "3s",
+              }}
+            />
+            <span className="relative inline-flex items-center gap-2">
+              <span className="hidden sm:inline">
+                Build something like {project.name}
+              </span>
+              <span className="sm:hidden">Talk to us</span>
+              <IconArrowRight
+                size={14}
+                stroke={2.5}
+                className="group-hover:translate-x-0.5 transition-transform"
+                aria-hidden="true"
+              />
+            </span>
+          </Link>
+        </m.div>
+      )}
+    </AnimatePresence>
+  );
+}
+
+/* =========================================================================
+   SOUND FAMILIAR — bridge section connecting the story to the visitor
+   ========================================================================= */
+function SoundFamiliar({ project }: { project: Project }) {
+  const b = project.brand;
+
+  // Per-project resonance points (general enough to map across industries
+  // but specific enough to land for the right reader).
+  const PAINS_BY_SLUG: Record<string, string[]> = {
+    kova: [
+      "Your team's losing leads because nobody can respond in time",
+      "You're paying for three CRMs and none of them talk to each other",
+      "Your best people spend half their week on follow-up emails",
+      "You can't see who's actually buying until the pipeline goes cold",
+    ],
+    sero: [
+      "Your clinicians are burning out on paperwork, not patient care",
+      "Intake takes 25 minutes when it should take 3",
+      "Your charts are inconsistent and audits are scary",
+      "Insurance pre-auth is eating entire afternoons",
+    ],
+    aurum: [
+      "Your relationship managers are buried in admin",
+      "Client reporting is a manual scramble every month-end",
+      "You can't surface portfolio insights without a data team",
+      "Your high-net-worth experience feels like 2015 software",
+    ],
+    drft: [
+      "Estimates take 8 hours when they should take 2",
+      "Field crews can't update without coming into the office",
+      "Daily logs are spreadsheets nobody updates",
+      "You're paying twice — once for tools, once for the people working around them",
+    ],
+    linx: [
+      "Your dispatch is a whiteboard and a prayer",
+      "Customer comms slip through the cracks during peak hours",
+      "You're hiring more ops staff to do less work",
+      "Your routing isn't optimized — you can feel the waste",
+    ],
+  };
+
+  const pains = PAINS_BY_SLUG[project.slug] ?? [
+    "Your team is buried in repetitive work",
+    "Your tools don't talk to each other",
+    "Your best people spend too much time on admin",
+    "You can't see what's actually happening in your business",
+  ];
+
+  return (
+    <section className="section-contain relative py-20 sm:py-28 lg:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      {/* Soft brand backdrop */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: `radial-gradient(ellipse 50% 60% at 50% 50%, rgba(${b.accentRGB},0.06), transparent 70%)`,
+        }}
+      />
+
+      <div className="relative max-w-5xl mx-auto">
+        <FadeIn>
+          <div className="text-center mb-12 sm:mb-16">
+            <div
+              className="text-xs uppercase mb-4 tracking-[0.2em] inline-flex items-center gap-2"
+              style={{ color: b.primary }}
+            >
+              <span
+                className="w-1.5 h-1.5 rounded-full"
+                style={{ background: b.primary }}
+              />
+              For operators reading this
+            </div>
+            <h2
+              className="font-black text-white tracking-tight leading-[1.05]"
+              style={{ fontSize: "clamp(28px, 5vw, 56px)" }}
+            >
+              Any of this sound{" "}
+              <span style={{ color: b.primary }}>familiar?</span>
+            </h2>
+            <p
+              className="text-base sm:text-lg leading-relaxed mt-5 sm:mt-6 max-w-xl mx-auto"
+              style={{ color: b.textOnBrand, opacity: 0.65 }}
+            >
+              {project.name} came to us with these. We&apos;ve seen them at
+              dozens of businesses in the same shape. Yours might be one of
+              them.
+            </p>
+          </div>
+        </FadeIn>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+          {pains.map((p, i) => (
+            <m.div
+              key={i}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ delay: i * 0.08, duration: 0.5, ease: EASE }}
+              className="relative flex items-start gap-4 rounded-2xl p-5 sm:p-6 border"
+              style={{
+                background: "#0a0a0a",
+                borderColor: `rgba(${b.accentRGB},0.10)`,
+              }}
+            >
+              <div
+                className="shrink-0 w-8 h-8 rounded-lg inline-flex items-center justify-center mt-0.5"
+                style={{
+                  background: `rgba(${b.accentRGB},0.10)`,
+                  border: `1px solid rgba(${b.accentRGB},0.25)`,
+                }}
+                aria-hidden="true"
+              >
+                <IconCheck
+                  size={14}
+                  stroke={2.5}
+                  style={{ color: b.primary }}
+                />
+              </div>
+              <p className="text-[#bbb] text-sm sm:text-base leading-relaxed">
+                {p}
+              </p>
+            </m.div>
+          ))}
+        </div>
+
+        <FadeIn delay={0.2}>
+          <div className="text-center mt-12 sm:mt-14">
+            <p
+              className="text-sm sm:text-base"
+              style={{ color: b.textOnBrand, opacity: 0.65 }}
+            >
+              If two or more land — that&apos;s exactly the kind of work we do.
+            </p>
+            <m.div
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="inline-block mt-6"
+            >
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 rounded-2xl px-6 py-3.5 sm:px-7 sm:py-4 font-semibold text-sm border transition-colors"
+                style={{
+                  background: `rgba(${b.accentRGB},0.10)`,
+                  color: b.primary,
+                  borderColor: `rgba(${b.accentRGB},0.30)`,
+                }}
+              >
+                Tell us about your situation
+                <IconArrowRight size={14} stroke={2} aria-hidden="true" />
+              </Link>
+            </m.div>
+          </div>
+        </FadeIn>
+      </div>
+    </section>
+  );
+}
+
+/* =========================================================================
+   ENGAGEMENT SPECS — what an engagement like this actually looks like
+   (Replaces the simple Tech Stack Grid with a much richer panel)
+   ========================================================================= */
+function EngagementSpecs({ project }: { project: Project }) {
+  const b = project.brand;
+
+  // Engagement specs vary per project but the shape is consistent. These are
+  // calibrated estimates for a similar engagement going forward.
+  const SPECS_BY_SLUG: Record<
+    string,
+    { investment: string; rounds: string; deliverables: string }
+  > = {
+    kova: {
+      investment: "$30k — $60k",
+      rounds: "Weekly reviews + 3 milestone gates",
+      deliverables: "Brand identity + 4 production screens + AI matching engine + CRM automation",
+    },
+    sero: {
+      investment: "$25k — $50k",
+      rounds: "Weekly reviews + 3 milestone gates",
+      deliverables: "Brand identity + mobile patient app + AI intake automation + practitioner portal",
+    },
+    aurum: {
+      investment: "$40k — $80k",
+      rounds: "Weekly reviews + 3 milestone gates",
+      deliverables: "Brand identity + RM dashboard + reporting automation + portfolio insights AI",
+    },
+    drft: {
+      investment: "$25k — $50k",
+      rounds: "Weekly reviews + 3 milestone gates",
+      deliverables: "Brand identity + estimator + field log app + daily summary automation",
+    },
+    linx: {
+      investment: "$30k — $60k",
+      rounds: "Weekly reviews + 3 milestone gates",
+      deliverables: "Brand identity + dispatch dashboard + routing optimizer + comms automation",
+    },
+  };
+
+  const specs = SPECS_BY_SLUG[project.slug] ?? {
+    investment: "$25k — $80k",
+    rounds: "Weekly reviews + milestone gates",
+    deliverables: "Custom to your scope — brand, AI systems, automation, web",
+  };
+
+  const ROWS = [
+    {
+      icon: IconClock,
+      label: "Duration",
+      value: project.duration,
+      sub: "Discovery → Build → Optimization",
+    },
+    {
+      icon: IconUsersGroup,
+      label: "Team setup",
+      value: project.teamLine,
+      sub: "Direct contact with founder + builders",
+    },
+    {
+      icon: IconCurrencyDollar,
+      label: "Investment range",
+      value: specs.investment,
+      sub: "Fixed scope, no surprise hourly billing",
+    },
+    {
+      icon: IconRefresh,
+      label: "Cadence",
+      value: specs.rounds,
+      sub: "You see progress every 48 hours",
+    },
+    {
+      icon: IconRulerMeasure,
+      label: "What's included",
+      value: specs.deliverables,
+      sub: "30-day post-launch optimization window",
+    },
+    {
+      icon: IconLockSquare,
+      label: "Ownership",
+      value: "Yours, fully",
+      sub: "Source code, designs, prompts — handed off at end",
+    },
+  ];
+
+  return (
+    <section className="section-contain relative py-20 sm:py-28 lg:py-32 px-4 sm:px-6 lg:px-8 border-y border-[#0a0a0a] overflow-hidden">
+      <FloatingOrbs accentRGB={b.accentRGB} count={2} seed={13} />
+
+      <div className="relative max-w-7xl mx-auto">
+        <FadeIn>
+          <div className="text-center md:text-left mb-12 sm:mb-16">
+            <div
+              className="text-xs uppercase mb-3 tracking-[0.2em]"
+              style={{ color: b.primary }}
+            >
+              Engagement reality
+            </div>
+            <h2
+              className="text-white font-black tracking-tight"
+              style={{ fontSize: "clamp(28px, 5vw, 52px)" }}
+            >
+              What a project like this{" "}
+              <span style={{ color: b.primary }}>actually looks like.</span>
+            </h2>
+            <p
+              className="mt-5 sm:mt-6 text-base sm:text-lg leading-relaxed max-w-2xl"
+              style={{ color: b.textOnBrand, opacity: 0.6 }}
+            >
+              No agency surprises. Fixed scope, transparent pricing,
+              direct access. Here&apos;s the shape of a {project.name}-style
+              engagement.
+            </p>
+          </div>
+        </FadeIn>
+
+        {/* Specs grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 mb-12 sm:mb-16">
+          {ROWS.map((r, i) => {
+            const Icon = r.icon;
+            return (
+              <m.article
+                key={r.label}
+                initial={{ opacity: 0, y: 14 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ delay: i * 0.05, duration: 0.5, ease: EASE }}
+                className="relative rounded-2xl p-6 sm:p-7 border overflow-hidden flex items-start gap-4"
+                style={{
+                  background: b.card,
+                  borderColor: b.border,
+                }}
+              >
+                <div
+                  aria-hidden="true"
+                  className="absolute top-0 right-0 w-20 h-20 pointer-events-none"
+                  style={{
+                    background: `radial-gradient(circle, rgba(${b.accentRGB},0.15), transparent 70%)`,
+                    filter: "blur(10px)",
+                  }}
+                />
+                <div
+                  className="shrink-0 inline-flex items-center justify-center w-11 h-11 rounded-xl border"
+                  style={{
+                    background: `rgba(${b.accentRGB},0.10)`,
+                    borderColor: `rgba(${b.accentRGB},0.25)`,
+                  }}
+                  aria-hidden="true"
+                >
+                  <Icon size={20} stroke={1.5} style={{ color: b.primary }} />
+                </div>
+                <div className="relative min-w-0 flex-1">
+                  <div
+                    className="text-[10px] uppercase tracking-[0.2em] mb-1.5"
+                    style={{ color: b.primary, opacity: 0.7 }}
+                  >
+                    {r.label}
+                  </div>
+                  <div
+                    className="text-white font-semibold tracking-tight"
+                    style={{ fontSize: "clamp(16px, 1.6vw, 18px)" }}
+                  >
+                    {r.value}
+                  </div>
+                  <div
+                    className="text-xs sm:text-sm mt-2 leading-relaxed"
+                    style={{ color: b.textOnBrand, opacity: 0.55 }}
+                  >
+                    {r.sub}
+                  </div>
+                </div>
+              </m.article>
+            );
+          })}
+        </div>
+
+        {/* Tech stack — kept but as a subsection */}
+        <FadeIn>
+          <div className="mb-5 sm:mb-6">
+            <div
+              className="text-[10px] uppercase tracking-[0.2em] mb-1"
+              style={{ color: b.primary, opacity: 0.7 }}
+            >
+              Built with
+            </div>
+            <div className="text-white text-base sm:text-lg font-semibold">
+              The stack behind the work
+            </div>
+          </div>
+          <div className="flex flex-wrap gap-2 sm:gap-2.5">
+            {project.stack.map((t) => (
+              <span
+                key={t}
+                className="text-xs sm:text-sm px-4 py-2 rounded-full border transition-colors"
+                style={{
+                  background: b.card,
+                  color: b.textOnBrand,
+                  borderColor: b.border,
+                }}
+              >
+                {t}
+              </span>
+            ))}
+          </div>
+        </FadeIn>
+      </div>
+    </section>
+  );
+}
+
+/* =========================================================================
+   RESONATE CTA — strong terminal CTA before Next Project
+   The conversion moment. Full-bleed, brand-color wash, dual CTA.
+   ========================================================================= */
+function ResonateCTA({ project }: { project: Project }) {
+  const b = project.brand;
+
+  const TRUST_POINTS = [
+    {
+      icon: IconBolt,
+      title: "First conversation in 24 hours",
+      sub: "Real human, not a form auto-reply",
+    },
+    {
+      icon: IconHeartHandshake,
+      title: "Free 30-minute discovery call",
+      sub: "No commitment, no sales pressure",
+    },
+    {
+      icon: IconCalendar,
+      title: "Clear proposal in days, not weeks",
+      sub: "Scope, timeline, pricing — all upfront",
+    },
+  ];
+
+  return (
+    <section
+      className="section-contain relative w-full overflow-hidden py-24 sm:py-32 lg:py-40 px-4 sm:px-6 lg:px-8"
+      style={{
+        background: `linear-gradient(180deg, #000, ${b.dark} 50%, #000 100%)`,
+      }}
+    >
+      <FloatingOrbs accentRGB={b.accentRGB} count={4} seed={17} />
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: `radial-gradient(ellipse 50% 50% at 50% 30%, rgba(${b.accentRGB},0.15), transparent 70%)`,
+        }}
+      />
+      {/* Massive ghosted "BUILD" wordmark */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-x-0 top-[55%] -translate-y-1/2 flex items-center justify-center pointer-events-none opacity-[0.025]"
+      >
+        <div
+          className="font-black tracking-tighter whitespace-nowrap"
+          style={{
+            fontSize: "clamp(180px, 26vw, 480px)",
+            color: b.primary,
+            letterSpacing: "-0.08em",
+            mixBlendMode: "screen",
+          }}
+        >
+          BUILD
+        </div>
+      </div>
+
+      <div className="relative max-w-4xl mx-auto text-center">
+        <FadeIn>
+          <div
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-8"
+            style={{
+              background: `rgba(${b.accentRGB},0.10)`,
+              borderColor: `rgba(${b.accentRGB},0.30)`,
+              color: b.primary,
+            }}
+          >
+            <span
+              className="w-1.5 h-1.5 rounded-full animate-pulse"
+              style={{ background: b.primary }}
+              aria-hidden="true"
+            />
+            <span className="text-[11px] uppercase tracking-[0.2em] font-medium">
+              Available for new projects
+            </span>
+          </div>
+        </FadeIn>
+
+        <FadeIn delay={0.1}>
+          <h2
+            className="font-black text-white tracking-tighter leading-[1.02]"
+            style={{ fontSize: "clamp(36px, 7vw, 80px)" }}
+          >
+            Like {project.name}&apos;s,{" "}
+            <span style={{ color: b.primary }}>built for you.</span>
+          </h2>
+        </FadeIn>
+
+        <FadeIn delay={0.2}>
+          <p
+            className="mt-6 sm:mt-8 text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto"
+            style={{ color: b.textOnBrand, opacity: 0.75 }}
+          >
+            Tell us about your business in 30 minutes. We&apos;ll tell you in
+            plain language whether AI can move the needle &mdash; and if not,
+            we&apos;ll say so.
+          </p>
+        </FadeIn>
+
+        {/* Dual CTA */}
+        <FadeIn delay={0.3}>
+          <div className="mt-10 sm:mt-12 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
+            <m.div
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              className="relative"
+            >
+              <span
+                aria-hidden="true"
+                className="absolute inset-0 rounded-2xl"
+                style={{
+                  background: `rgba(${b.accentRGB},0.4)`,
+                  filter: "blur(20px)",
+                  opacity: 0.5,
+                }}
+              />
+              <Link
+                href="/contact"
+                className="relative inline-flex items-center gap-2 rounded-2xl px-7 sm:px-9 py-4 sm:py-5 font-bold text-base sm:text-lg shadow-2xl"
+                style={{
+                  background: b.primary,
+                  color: "#000",
+                  boxShadow: `0 30px 80px rgba(${b.accentRGB},0.35), 0 0 0 1px rgba(255,255,255,0.1) inset`,
+                }}
+              >
+                Book a Discovery Call
+                <IconArrowRight size={18} stroke={2.5} aria-hidden="true" />
+              </Link>
+            </m.div>
+            <Link
+              href="/work"
+              className="inline-flex items-center gap-2 rounded-2xl px-7 sm:px-9 py-4 sm:py-5 font-semibold text-base sm:text-lg border transition-colors"
+              style={{
+                color: b.textOnBrand,
+                borderColor: `rgba(${b.accentRGB},0.30)`,
+                background: "transparent",
+              }}
+            >
+              View more work
+            </Link>
+          </div>
+        </FadeIn>
+
+        {/* Reassurance row */}
+        <FadeIn delay={0.4}>
+          <div className="mt-12 sm:mt-16 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 max-w-3xl mx-auto">
+            {TRUST_POINTS.map((t, i) => {
+              const Icon = t.icon;
+              return (
+                <m.div
+                  key={i}
+                  initial={{ opacity: 0, y: 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ delay: 0.5 + i * 0.08, duration: 0.5, ease: EASE }}
+                  className="text-center sm:text-left"
+                >
+                  <div
+                    className="inline-flex items-center justify-center w-9 h-9 rounded-xl border mb-3 mx-auto sm:mx-0"
+                    style={{
+                      background: `rgba(${b.accentRGB},0.10)`,
+                      borderColor: `rgba(${b.accentRGB},0.25)`,
+                    }}
+                    aria-hidden="true"
+                  >
+                    <Icon
+                      size={16}
+                      stroke={1.5}
+                      style={{ color: b.primary }}
+                    />
+                  </div>
+                  <div
+                    className="text-white text-sm font-semibold tracking-tight"
+                  >
+                    {t.title}
+                  </div>
+                  <div
+                    className="text-xs mt-1 leading-relaxed"
+                    style={{ color: b.textOnBrand, opacity: 0.55 }}
+                  >
+                    {t.sub}
+                  </div>
+                </m.div>
+              );
+            })}
+          </div>
+        </FadeIn>
+
+        {/* Direct contact line */}
+        <FadeIn delay={0.6}>
+          <div
+            className="mt-12 sm:mt-16 text-xs sm:text-sm flex items-center justify-center gap-3 sm:gap-4 flex-wrap"
+            style={{ color: b.textOnBrand, opacity: 0.45 }}
+          >
+            <span className="inline-flex items-center gap-1.5">
+              <span
+                className="w-1 h-1 rounded-full"
+                style={{ background: b.primary }}
+                aria-hidden="true"
+              />
+              Prefer email?
+            </span>
+            <a
+              href="mailto:office@flowtix.ai"
+              className="font-mono hover:underline"
+              style={{ color: b.primary }}
+            >
+              office@flowtix.ai
+            </a>
+          </div>
+        </FadeIn>
+      </div>
+    </section>
+  );
+}
+
+/* =========================================================================
    COMPOSED LAYOUT
    ========================================================================= */
 export function ProjectPageLayout({
@@ -1641,6 +2378,8 @@ export function ProjectPageLayout({
 
   return (
     <main>
+      <ReadingProgress project={project} />
+      <FloatingCTA project={project} />
       <Hero
         project={project}
         heroHeadline={content.heroHeadline}
@@ -1663,7 +2402,9 @@ export function ProjectPageLayout({
         testimonialFull={content.testimonialFull}
         testimonialRole={content.testimonialRole}
       />
-      <TechStackGrid project={project} />
+      <SoundFamiliar project={project} />
+      <EngagementSpecs project={project} />
+      <ResonateCTA project={project} />
       <NextProjectStrip project={project} />
     </main>
   );
