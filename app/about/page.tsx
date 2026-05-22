@@ -14,6 +14,7 @@ import {
 } from "@tabler/icons-react";
 import { FounderPhoto } from "@/components/FounderPhoto";
 import { FadeIn } from "@/components/animations/FadeIn";
+import { GlowCard } from "@/components/GlowCard";
 
 const EASE = [0.21, 0.47, 0.32, 0.98] as const;
 
@@ -337,18 +338,19 @@ export default function AboutPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.2 }}
                   transition={{ delay: i * 0.1, duration: 0.5, ease: EASE }}
-                  className="relative bg-[#0D0D0D] border border-[#1a1a1a] rounded-2xl p-8 hover:border-[#222] transition-colors"
                 >
-                  <div className="absolute top-6 right-6 text-[#1a1a1a] text-5xl font-black tracking-tighter pointer-events-none">
-                    {v.n}
-                  </div>
-                  <Icon size={28} stroke={1.5} className="text-[#333]" />
-                  <h3 className="text-white text-xl font-bold mt-8 tracking-tight">
-                    {v.title}
-                  </h3>
-                  <p className="text-[#666] text-sm leading-relaxed mt-3">
-                    {v.body}
-                  </p>
+                  <GlowCard className="bg-[#0D0D0D] border border-[#1a1a1a] rounded-2xl p-8 hover:border-[#222] transition-colors h-full">
+                    <div className="absolute top-6 right-6 text-[#1a1a1a] text-5xl font-black tracking-tighter pointer-events-none">
+                      {v.n}
+                    </div>
+                    <Icon size={28} stroke={1.5} className="text-[#333]" />
+                    <h3 className="text-white text-xl font-bold mt-8 tracking-tight">
+                      {v.title}
+                    </h3>
+                    <p className="text-[#666] text-sm leading-relaxed mt-3">
+                      {v.body}
+                    </p>
+                  </GlowCard>
                 </m.div>
               );
             })}
@@ -415,9 +417,19 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ===== 6. THE BIGGER PICTURE ===== */}
-      <section className="section-contain py-24 lg:py-32 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto text-center">
+      {/* ===== 6. THE BIGGER PICTURE / VISION ===== */}
+      <section className="section-contain relative py-24 lg:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        {/* Vision orb — sits behind the text */}
+        <div
+          aria-hidden="true"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] rounded-full pointer-events-none animate-pulse-slow"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(59,130,246,0.10) 0%, rgba(59,130,246,0.04) 35%, transparent 70%)",
+            filter: "blur(80px)",
+          }}
+        />
+        <div className="relative max-w-5xl mx-auto text-center">
           <FadeIn>
             <h2
               className="section-heading text-white font-bold tracking-tight"
