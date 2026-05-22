@@ -53,7 +53,7 @@ export function CookieBanner() {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 80, opacity: 0 }}
           transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          className="fixed bottom-4 left-4 right-4 md:left-auto md:right-6 md:max-w-sm z-[9997] safe-area-bottom"
+          className="fixed bottom-24 left-4 right-4 md:bottom-6 md:left-auto md:right-6 md:max-w-sm z-[9997] safe-area-bottom"
           role="dialog"
           aria-label="Cookie consent"
           aria-live="polite"

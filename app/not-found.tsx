@@ -6,10 +6,11 @@ import { IconArrowRight } from "@tabler/icons-react";
 import { DotGrid } from "@/components/DotGrid";
 
 const HELPFUL = [
-  { href: "/services", label: "Services" },
-  { href: "/work", label: "Work" },
-  { href: "/blog", label: "Blog" },
-  { href: "/contact", label: "Contact" },
+  { href: "/services", label: "Services", drift: 7, delay: 0 },
+  { href: "/work", label: "Work", drift: 5, delay: 0.5 },
+  { href: "/products", label: "Products", drift: 6, delay: 1 },
+  { href: "/blog", label: "Blog", drift: 4.5, delay: 1.5 },
+  { href: "/contact", label: "Contact", drift: 5.5, delay: 2 },
 ];
 
 export default function NotFound() {
@@ -80,21 +81,33 @@ export default function NotFound() {
         <m.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          className="mt-12 text-[#333] text-xs flex flex-wrap items-center justify-center gap-x-3 gap-y-2"
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="mt-14"
         >
-          <span>Looking for →</span>
-          {HELPFUL.map((h, i) => (
-            <span key={h.href} className="inline-flex items-center gap-3">
-              <Link
-                href={h.href}
-                className="animated-link text-[#555] hover:text-white transition-colors"
+          <div className="text-[#333] text-[10px] uppercase tracking-[0.2em] mb-5">
+            Looking for
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            {HELPFUL.map((h) => (
+              <m.div
+                key={h.href}
+                animate={{ y: [0, -h.drift, 0] }}
+                transition={{
+                  duration: 5 + h.drift * 0.4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: h.delay,
+                }}
               >
-                {h.label}
-              </Link>
-              {i < HELPFUL.length - 1 && <span className="text-[#222]">·</span>}
-            </span>
-          ))}
+                <Link
+                  href={h.href}
+                  className="inline-flex items-center bg-[#0D0D0D] border border-[#1a1a1a] text-[#888] hover:border-[#2a2a2a] hover:text-white text-xs px-4 py-2 rounded-full transition-colors"
+                >
+                  {h.label}
+                </Link>
+              </m.div>
+            ))}
+          </div>
         </m.div>
       </div>
     </section>
