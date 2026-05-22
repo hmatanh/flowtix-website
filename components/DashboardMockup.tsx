@@ -63,7 +63,7 @@ export function DashboardMockup() {
           <span className="w-2.5 h-2.5 rounded-full bg-green-500/70" />
         </div>
         <div className="text-[10px] text-[#555] tracking-wider">
-          flowtix ai · Dashboard
+          flowtix · Dashboard
         </div>
         <div className="w-5 h-5 rounded-full bg-[#1a1a1a] border border-[#222]" />
       </div>

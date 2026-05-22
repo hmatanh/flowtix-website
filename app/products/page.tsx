@@ -210,7 +210,7 @@ export default function ProductsPage() {
               All products ship with white-label included.
             </h2>
             <p className="text-[#888] mt-6 leading-relaxed text-[15px] max-w-lg">
-              Every Flowtix AI product can be fully rebranded with your
+              Every Flowtix product can be fully rebranded with your
               company&apos;s identity, colors, and domain. Built for agencies
               and businesses that want to offer AI capabilities to their
               clients without building from scratch.

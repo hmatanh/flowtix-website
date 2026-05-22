@@ -18,7 +18,7 @@ export async function generateMetadata({
   const post = getPostBySlug(slug);
   if (!post) return { title: "Article not found" };
   return {
-    title: `${post.title} — Flowtix AI`,
+    title: `${post.title} — Flowtix`,
     description: post.excerpt,
   };
 }

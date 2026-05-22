@@ -18,7 +18,7 @@ export async function generateMetadata({
   const service = getServiceBySlug(slug);
   if (!service) return { title: "Service not found" };
   return {
-    title: `${service.title} — Flowtix AI`,
+    title: `${service.title} — Flowtix`,
     description: service.short,
   };
 }

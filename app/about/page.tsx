@@ -93,7 +93,7 @@ export default function AboutPage() {
           </FadeIn>
           <FadeIn direction="left" delay={0.15}>
             <div className="text-label text-[#333] mb-4">Our Story</div>
-            <h2 className="text-h2 text-white mb-6">Why Flowtix AI exists</h2>
+            <h2 className="text-h2 text-white mb-6">Why Flowtix exists</h2>
             <div className="text-[#888] text-[16px] leading-[1.75] space-y-5">
               <p>
                 Most AI tools are built by engineers for engineers. The result?
@@ -101,7 +101,7 @@ export default function AboutPage() {
                 understand, and never adopt.
               </p>
               <p>
-                Flowtix AI was founded on a different belief: the best AI
+                Flowtix was founded on a different belief: the best AI
                 systems are the ones that are beautifully designed, easy to use,
                 and built around real business problems — not just technical
                 possibilities.

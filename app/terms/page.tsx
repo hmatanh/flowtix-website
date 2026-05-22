@@ -3,11 +3,11 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
-  description: "Terms governing your use of Flowtix AI services and website.",
+  description: "Terms governing your use of Flowtix services and website.",
 };
 
 const SECTIONS = [
-  { id: "about", label: "1. About Flowtix AI" },
+  { id: "about", label: "1. About Flowtix" },
   { id: "website-use", label: "2. Website Use" },
   { id: "services", label: "3. Services & Engagements" },
   { id: "ip", label: "4. Intellectual Property" },
@@ -30,7 +30,7 @@ export default function TermsPage() {
       </h1>
       <p className="text-[#888] text-base leading-relaxed mb-6">
         Please read these Terms of Service (“Terms”) carefully before using
-        flowtix.ai (the “Website”) or engaging Flowtix AI for any services.
+        flowtix.ai (the “Website”) or engaging Flowtix for any services.
       </p>
       <p className="text-[#888] text-base leading-relaxed">
         By accessing this website or engaging our services, you agree to be
@@ -58,9 +58,9 @@ export default function TermsPage() {
         </ul>
       </nav>
 
-      <Section id="about" title="1. About Flowtix AI">
+      <Section id="about" title="1. About Flowtix">
         <p>
-          Flowtix AI provides AI system development, automation, design, web
+          Flowtix provides AI system development, automation, design, web
           development, and consulting services to businesses. These Terms
           govern your use of our website and any services you engage us to
           provide.
@@ -92,7 +92,7 @@ export default function TermsPage() {
       </Section>
 
       <Section id="services" title="3. Services & Engagements">
-        <p>When you engage Flowtix AI for paid services:</p>
+        <p>When you engage Flowtix for paid services:</p>
         <ul>
           <li>
             Specific terms, deliverables, timelines, and pricing are documented
@@ -113,7 +113,7 @@ export default function TermsPage() {
       <Section id="ip" title="4. Intellectual Property">
         <p>
           <strong>Our content:</strong> All content on this website — including
-          text, design, code, graphics, and branding — is owned by Flowtix AI
+          text, design, code, graphics, and branding — is owned by Flowtix
           and protected by copyright law. You may not reproduce it without
           written permission.
         </p>
@@ -125,7 +125,7 @@ export default function TermsPage() {
         </p>
         <p>
           <strong>Portfolio rights:</strong> Unless explicitly agreed otherwise,
-          Flowtix AI retains the right to showcase completed client work in our
+          Flowtix retains the right to showcase completed client work in our
           portfolio for promotional purposes, with client confidentiality
           maintained where requested.
         </p>
@@ -134,7 +134,7 @@ export default function TermsPage() {
       <Section id="warranties" title="5. Disclaimer of Warranties">
         <p>
           The website and its content are provided “as is” without warranties
-          of any kind. Flowtix AI does not warrant that:
+          of any kind. Flowtix does not warrant that:
         </p>
         <ul>
           <li>The website will be error-free or uninterrupted</li>
@@ -150,7 +150,7 @@ export default function TermsPage() {
 
       <Section id="liability" title="6. Limitation of Liability">
         <p>
-          To the maximum extent permitted by law, Flowtix AI shall not be
+          To the maximum extent permitted by law, Flowtix shall not be
           liable for:
         </p>
         <ul>

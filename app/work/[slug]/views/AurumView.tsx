@@ -201,7 +201,7 @@ export function AurumView({ project }: { project: Project }) {
                   className="inline-block text-[9px] tracking-widest uppercase self-start"
                   style={{ color: "#3a2a1a" }}
                 >
-                  Before Flowtix AI
+                  Before Flowtix
                 </span>
                 <div>
                   <div
@@ -761,7 +761,7 @@ export function AurumView({ project }: { project: Project }) {
             >
               &ldquo;Our clients now think we have a team of analysts.
               <br className="hidden md:block" />
-              We don&apos;t. We have Flowtix AI.&rdquo;
+              We don&apos;t. We have Flowtix.&rdquo;
             </blockquote>
             <div
               className="text-center text-sm mt-6"

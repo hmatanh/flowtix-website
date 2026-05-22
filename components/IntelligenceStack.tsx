@@ -69,7 +69,7 @@ export function IntelligenceStack() {
             ))}
           </div>
 
-          {/* CENTER: Flowtix AI core */}
+          {/* CENTER: Flowtix core */}
           <div className="flex flex-col items-center relative py-4 order-2 lg:order-none">
             {/* Connection paths (desktop only) */}
             <svg

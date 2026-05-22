@@ -76,7 +76,7 @@ export function FormConsent({ checked, onChange, error }: Props) {
           >
             Terms of Service
           </Link>
-          . I consent to Flowtix AI contacting me regarding my inquiry.
+          . I consent to Flowtix contacting me regarding my inquiry.
         </span>
       </label>
 

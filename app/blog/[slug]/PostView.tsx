@@ -230,7 +230,7 @@ export function PostView({ slug }: { slug: string }) {
         <div className="max-w-3xl mx-auto bg-[#0D0D0D] border border-[#1a1a1a] rounded-2xl p-8">
           <Logo size={22} />
           <p className="text-[#888] text-sm mt-5 leading-relaxed max-w-xl">
-            Flowtix AI is a design-first studio building AI systems, automations,
+            Flowtix is a design-first studio building AI systems, automations,
             and digital products for businesses that refuse to look average.
             We combine 10+ years of design expertise with cutting-edge AI
             infrastructure.
@@ -251,7 +251,7 @@ export function PostView({ slug }: { slug: string }) {
           <div className="max-w-6xl mx-auto">
             <FadeIn>
               <div className="text-label text-[#333] mb-3">
-                More from Flowtix AI
+                More from Flowtix
               </div>
               <h2 className="text-h2 gradient-text">Keep reading.</h2>
             </FadeIn>

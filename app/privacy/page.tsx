@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "How Flowtix AI collects, uses, and protects your information. GDPR-compliant.",
+    "How Flowtix collects, uses, and protects your information. GDPR-compliant.",
 };
 
 const SECTIONS = [
@@ -31,7 +31,7 @@ export default function PrivacyPage() {
         Privacy Policy
       </h1>
       <p className="text-[#888] text-base leading-relaxed mb-6">
-        Flowtix AI (“we,” “us,” or “our”) operates the website flowtix.ai (the
+        Flowtix (“we,” “us,” or “our”) operates the website flowtix.ai (the
         “Service”). This Privacy Policy explains how we collect, use, and
         protect your personal information when you use our website and
         services.
@@ -64,7 +64,7 @@ export default function PrivacyPage() {
 
       <Section id="who-we-are" title="1. Who We Are">
         <p>
-          Flowtix AI is a design-first AI company that builds intelligent
+          Flowtix is a design-first AI company that builds intelligent
           systems, automations, and digital products for businesses. We are the
           data controller for information collected through this website.
         </p>

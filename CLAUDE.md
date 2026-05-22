@@ -1,4 +1,4 @@
-# Flowtix AI Website
+# Flowtix Website
 ## Rules
 - Isolated project. No external connections.
 - No MCP, no GitHub, no Vercel, no Supabase.

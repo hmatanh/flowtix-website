@@ -20,7 +20,7 @@ const DEMO_SCRIPT: { role: Role; text: string; delay: number }[] = [
   {
     role: "ai",
     delay: 1200,
-    text: "Hello! I’m the Flowtix AI assistant. What kind of AI system can we build for your business?",
+    text: "Hello! I’m the Flowtix assistant. What kind of AI system can we build for your business?",
   },
   {
     role: "user",
@@ -276,7 +276,7 @@ export function HeroAIDemo() {
               }
             >
               <div className="text-[9px] text-[#333] mb-1 tracking-wide uppercase">
-                {msg.role === "user" ? "You" : "flowtix ai"}
+                {msg.role === "user" ? "You" : "flowtix"}
               </div>
               <div
                 className={
@@ -308,7 +308,7 @@ export function HeroAIDemo() {
               className="flex flex-col"
             >
               <div className="text-[9px] text-[#333] mb-1 tracking-wide uppercase">
-                flowtix ai
+                flowtix
               </div>
               <div className="bg-[#111] border border-[#1a1a1a] rounded-2xl rounded-tl-sm px-4 py-3 inline-flex items-center gap-1 w-fit">
                 {[0, 1, 2].map((i) => (

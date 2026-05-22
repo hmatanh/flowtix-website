@@ -389,7 +389,7 @@ export default function Home() {
             <p className="text-[#666] text-lg leading-relaxed mt-8 max-w-lg">
               72% of AI implementations fail to deliver expected ROI. Not
               because the AI isn&apos;t capable — because nobody designed the
-              experience. Flowtix AI was built to fix that.
+              experience. Flowtix was built to fix that.
             </p>
             <div className="mt-8 space-y-2 max-w-lg">
               {[
@@ -430,7 +430,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="hr-gradient mt-16 mb-6" />
           <p className="text-[#444] text-sm text-center">
-            We built Flowtix AI because we experienced every one of these
+            We built Flowtix because we experienced every one of these
             problems firsthand.
           </p>
         </div>
@@ -737,7 +737,7 @@ export default function Home() {
               The Difference
             </div>
             <h2 className="text-h2 gradient-text">
-              Why businesses choose Flowtix AI.
+              Why businesses choose Flowtix.
             </h2>
             <p className="text-[#666] text-[17px] mt-4 max-w-xl mx-auto leading-relaxed">
               Over generic agencies, freelancers, and off-the-shelf tools.
@@ -751,7 +751,7 @@ export default function Home() {
           <div className="relative grid grid-cols-4 border-b border-[#0a0a0a]">
             <div />
             <div className="py-4 text-center text-white text-sm font-semibold tracking-tight">
-              Flowtix AI
+              Flowtix
             </div>
             <div className="py-4 text-center text-[#666] text-sm">
               Generic Agency

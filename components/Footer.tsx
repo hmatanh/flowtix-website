@@ -130,7 +130,7 @@ export function Footer() {
         </div>
 
         <div className="py-6 border-t border-[#0a0a0a] flex flex-col sm:flex-row justify-between gap-2 text-[#222] text-xs safe-area-bottom">
-          <div>© 2025 Flowtix AI. All rights reserved.</div>
+          <div>© 2025 Flowtix. All rights reserved.</div>
           <div className="flex flex-wrap gap-4">
             <Link href="/privacy" className="hover:text-[#555] transition-colors">
               Privacy Policy

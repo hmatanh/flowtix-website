@@ -110,6 +110,45 @@ body {
   padding-bottom: max(12px, env(safe-area-inset-bottom));
 }
 
+/* ===== Mobile guards (no horizontal scroll, readable text, tap targets) ===== */
+*, *::before, *::after {
+  max-width: 100%;
+}
+@media (max-width: 768px) {
+  /* Cap heading sizes on mobile */
+  h1, .text-h1 {
+    font-size: clamp(28px, 8vw, 40px) !important;
+    line-height: 1.05;
+  }
+  h2, .text-h2 {
+    font-size: clamp(26px, 7vw, 36px) !important;
+    line-height: 1.1;
+  }
+  /* Readable body */
+  body, p {
+    font-size: 16px;
+  }
+  /* No iOS zoom on focus */
+  input, select, textarea {
+    font-size: 16px !important;
+    min-height: 48px;
+    width: 100%;
+  }
+  /* Tap targets */
+  button, a.btn, [role="button"] {
+    min-height: 44px;
+  }
+  /* Block any rogue horizontal scroll on top-level elements */
+  section, main, header, footer {
+    overflow-x: clip;
+    max-width: 100vw;
+  }
+  /* Smoother native momentum scroll on horizontal carousels */
+  .no-scrollbar {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
 /* ===== Performance: section containment ===== */
 .section-contain {
   contain: layout style paint;

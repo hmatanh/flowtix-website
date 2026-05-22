@@ -5,36 +5,42 @@ import { useEffect, useState } from "react";
 import { m, AnimatePresence } from "framer-motion";
 
 export function MobileCTA() {
-  const [show, setShow] = useState(false);
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setShow(window.scrollY > 600);
+    const onScroll = () => setVisible(window.scrollY > 500);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
-    <AnimatePresence>
-      {show && (
-        <m.div
-          initial={{ y: 100, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          exit={{ y: 100, opacity: 0 }}
-          transition={{ type: "spring", stiffness: 320, damping: 28 }}
-          className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-xl border-t border-[#1a1a1a] safe-area-bottom"
-        >
-          <div className="px-4 py-3 flex items-center justify-between gap-3">
-            <span className="text-[#666] text-sm">Ready to start?</span>
+    <div className="md:hidden">
+      <AnimatePresence>
+        {visible && (
+          <m.div
+            initial={{ y: 80, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: 80, opacity: 0 }}
+            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            className="fixed bottom-0 left-0 right-0 z-50"
+            style={{
+              backgroundColor: "rgba(0,0,0,0.95)",
+              borderTop: "1px solid #111",
+              padding: "12px 16px",
+              paddingBottom: "max(12px, env(safe-area-inset-bottom))",
+            }}
+          >
             <Link
               href="/contact"
-              className="bg-white text-black px-5 py-2.5 rounded-xl text-sm font-semibold hover:bg-[#eee] transition-colors inline-flex items-center gap-2"
+              className="block w-full text-center font-semibold text-black bg-white rounded-xl"
+              style={{ padding: "14px", fontSize: "15px" }}
             >
-              Book a Call →
+              Book a Discovery Call →
             </Link>
-          </div>
-        </m.div>
-      )}
-    </AnimatePresence>
+          </m.div>
+        )}
+      </AnimatePresence>
+    </div>
   );
 }

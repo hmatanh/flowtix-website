@@ -877,7 +877,7 @@ export function LinxView({ project }: { project: Project }) {
               87 hours per month. Returned.
             </h2>
             <p className="text-[#6b5a8a] mt-4 max-w-2xl">
-              Where the hours went · before and after Flowtix AI
+              Where the hours went · before and after Flowtix
             </p>
           </FadeIn>
 

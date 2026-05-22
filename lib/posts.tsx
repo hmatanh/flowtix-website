@@ -51,7 +51,7 @@ export const posts: Post[] = [
     date: "May 14, 2025",
     excerpt:
       "Most businesses invest in AI and see minimal returns. The problem isn’t the technology — it’s the approach.",
-    author: "Flowtix AI Team",
+    author: "Flowtix Team",
     tags: ["AI Strategy", "Implementation", "ROI"],
     toc: [
       { id: "crisis", label: "The Implementation Crisis" },
@@ -164,7 +164,7 @@ export const posts: Post[] = [
           three things and the technology will do its job.
         </p>
         <p>
-          At Flowtix AI, every system we build starts with problem
+          At Flowtix, every system we build starts with problem
           quantification, goes through rigorous UX design before any development
           begins, and includes an adoption plan as part of the delivery. It’s
           why our systems actually get used.
@@ -182,7 +182,7 @@ export const posts: Post[] = [
     date: "May 7, 2025",
     excerpt:
       "When everyone has the same AI models, design becomes the only real differentiator. Here’s what that means in practice.",
-    author: "Flowtix AI Team",
+    author: "Flowtix Team",
     tags: ["Design", "UX", "AI Strategy"],
     toc: [
       { id: "why-design-wins", label: "Why Design Wins" },
@@ -287,7 +287,7 @@ export const posts: Post[] = [
     date: "April 29, 2025",
     excerpt:
       "Not all automation is equal. These five workflows deliver the highest ROI for most businesses — with real numbers.",
-    author: "Flowtix AI Team",
+    author: "Flowtix Team",
     tags: ["Automation", "ROI", "Operations"],
     toc: [
       { id: "wrong-things", label: "Stop Automating the Wrong Things" },
@@ -445,7 +445,7 @@ export const posts: Post[] = [
     date: "April 22, 2025",
     excerpt:
       "Everyone is talking about AI agents. Most explanations are confusing. Here’s what they actually are and why they matter.",
-    author: "Flowtix AI Team",
+    author: "Flowtix Team",
     tags: ["AI Agents", "AI Strategy", "Education"],
     toc: [
       { id: "beyond-chatbots", label: "Beyond Chatbots" },
@@ -557,7 +557,7 @@ export const posts: Post[] = [
     date: "April 15, 2025",
     excerpt:
       "Generic AI content is killing brands. Here’s the exact process we use to train AI systems that write in your voice, not ChatGPT’s.",
-    author: "Flowtix AI Team",
+    author: "Flowtix Team",
     tags: ["Brand Voice", "AI Content", "Marketing"],
     toc: [
       { id: "generic-problem", label: "The Generic AI Content Problem" },
@@ -710,7 +710,7 @@ export const posts: Post[] = [
     date: "April 8, 2025",
     excerpt:
       "Most AI ROI calculations are either too vague or too optimistic. Here’s a rigorous framework that gives you real numbers.",
-    author: "Flowtix AI Team",
+    author: "Flowtix Team",
     tags: ["ROI", "Business Strategy", "Finance"],
     toc: [
       { id: "roi-problem", label: "The ROI Conversation Problem" },

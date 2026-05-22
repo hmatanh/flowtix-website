@@ -32,8 +32,8 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://flowtix.ai"),
   title: {
     default:
-      "Flowtix AI — Design-First AI Systems for Forward-Thinking Businesses",
-    template: "%s | Flowtix AI",
+      "Flowtix — Design-First AI Systems for Forward-Thinking Businesses",
+    template: "%s | Flowtix",
   },
   description:
     "We build AI-powered systems, intelligent automations, and premium digital products that transform how businesses operate. Design-first. Results-focused.",
@@ -46,20 +46,20 @@ export const metadata: Metadata = {
     "intelligent workflows",
     "AI products",
   ],
-  authors: [{ name: "Flowtix AI" }],
-  creator: "Flowtix AI",
+  authors: [{ name: "Flowtix" }],
+  creator: "Flowtix",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://flowtix.ai",
-    siteName: "Flowtix AI",
-    title: "Flowtix AI — Design-First AI Systems",
+    siteName: "Flowtix",
+    title: "Flowtix — Design-First AI Systems",
     description:
       "AI-powered systems, intelligent automations, and premium digital products.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Flowtix AI",
+    title: "Flowtix",
     description: "Design-First AI Systems for Forward-Thinking Businesses",
   },
   robots: { index: true, follow: true },

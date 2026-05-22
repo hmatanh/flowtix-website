@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Accessibility",
   description:
-    "Flowtix AI’s commitment to making our website accessible to everyone.",
+    "Flowtix’s commitment to making our website accessible to everyone.",
 };
 
 export default function AccessibilityPage() {
@@ -18,7 +18,7 @@ export default function AccessibilityPage() {
       </h1>
       <p className="text-[#888] text-base leading-relaxed">
         <strong className="text-white">
-          Flowtix AI is committed to making our website accessible to everyone,
+          Flowtix is committed to making our website accessible to everyone,
           regardless of ability or technology.
         </strong>
       </p>

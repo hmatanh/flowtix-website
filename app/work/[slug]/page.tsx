@@ -18,7 +18,7 @@ export async function generateMetadata({
   const project = getProjectBySlug(slug);
   if (!project) return { title: "Project not found" };
   return {
-    title: `${project.name} — Flowtix AI`,
+    title: `${project.name} — Flowtix`,
     description: project.tagline,
   };
 }

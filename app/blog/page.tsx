@@ -77,7 +77,7 @@ export default function BlogPage() {
           </m.h1>
           <FadeIn delay={0.2}>
             <p className="text-[#888] mt-5 text-lg max-w-2xl mx-auto leading-relaxed">
-              Practical thinking from the team at Flowtix AI.
+              Practical thinking from the team at Flowtix.
             </p>
             <p className="text-[#444] text-sm mt-3">
               No fluff. No hype. Just real insights.

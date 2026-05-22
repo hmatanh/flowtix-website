@@ -85,7 +85,7 @@ export const projects: Project[] = [
     ],
     testimonial: {
       quote:
-        "Flowtix AI didn’t just build us a tool — they understood the chaos of a real estate office and designed something that actually fits how agents think and work.",
+        "Flowtix didn’t just build us a tool — they understood the chaos of a real estate office and designed something that actually fits how agents think and work.",
       attribution: "Sarah Moran, Founder",
     },
   },
@@ -192,7 +192,7 @@ export const projects: Project[] = [
     ],
     testimonial: {
       quote:
-        "Our clients now think we have a team of analysts behind us. We don’t. We have Flowtix AI.",
+        "Our clients now think we have a team of analysts behind us. We don’t. We have Flowtix.",
       attribution: "Marcus Osei, Managing Partner",
     },
   },
@@ -295,7 +295,7 @@ export const projects: Project[] = [
     ],
     testimonial: {
       quote:
-        "I was skeptical about AI in a creative agency — worried it would make everything feel generic. Flowtix AI proved the opposite. The systems they built made us faster without making us less creative.",
+        "I was skeptical about AI in a creative agency — worried it would make everything feel generic. Flowtix proved the opposite. The systems they built made us faster without making us less creative.",
       attribution: "Priya Nair, CEO",
     },
   },

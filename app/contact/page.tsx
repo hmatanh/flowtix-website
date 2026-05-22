@@ -437,7 +437,7 @@ export default function ContactPage() {
     const cleanMessage = sanitizeInput(message);
 
     const subject = encodeURIComponent(
-      `[Flowtix AI] New inquiry from ${cleanName}`
+      `[Flowtix] New inquiry from ${cleanName}`
     );
     const body = encodeURIComponent(
       `Name: ${cleanName}\n` +
