@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 const url = "https://flowtix.ai/blog/";
 
 export const metadata: Metadata = {
-  title: "Blog — Insights on AI, Design & the Future of Business | Flowtix",
+  title: { absolute: "Blog — Insights on AI, Design & the Future of Business | Flowtix" },
   description:
     "Practical thinking on AI systems, automation, design-first product, brand strategy and the future of business. Written by Flowtix builders for operators who ship.",
   keywords:

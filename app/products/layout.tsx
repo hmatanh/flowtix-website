@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 const url = "https://flowtix.ai/products/";
 
 export const metadata: Metadata = {
-  title: "Products — White-Label AI Systems Ready to Deploy | Flowtix",
+  title: { absolute: "Products — White-Label AI Systems Ready to Deploy | Flowtix" },
   description:
     "Pre-built, white-label AI products customized to your brand. Deployed fast. Flowtix Brain — AI brand and marketing intelligence — and more launching through 2025–2026.",
   keywords:
