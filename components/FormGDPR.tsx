@@ -22,10 +22,10 @@ export function FormGDPR() {
         data or send unsolicited emails. You can request deletion at any time
         by emailing{" "}
         <a
-          href="mailto:hello@flowtix.ai"
+          href="mailto:office@flowtix.ai"
           className="text-[#666] hover:text-white underline underline-offset-2"
         >
-          hello@flowtix.ai
+          office@flowtix.ai
         </a>
         .
       </p>

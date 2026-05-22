@@ -375,7 +375,7 @@ export default function Home() {
         </span>
         <div className="relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-12 lg:gap-16 items-start">
           <FadeIn direction="right">
-            <div className="text-[#222] text-[10px] tracking-widest uppercase">
+            <div className="text-[#222] text-[10px] tracking-widest uppercase section-label">
               The Problem
             </div>
             <h2
@@ -444,10 +444,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8 mb-12">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
             <div>
-              <div className="text-[#333] text-[10px] tracking-widest uppercase">
+              <div className="text-[#333] text-[10px] tracking-widest uppercase section-label">
                 What We Build
               </div>
-              <h2 className="text-h2 gradient-text mt-3 max-w-xl">
+              <h2 className="text-h2 gradient-text mt-3 max-w-xl section-heading">
                 Every service. One team.
               </h2>
               <p className="text-[#666] text-[17px] mt-4 max-w-lg leading-relaxed">
@@ -515,10 +515,10 @@ export default function Home() {
       <section className="section-contain py-32 bg-[#030303] border-y border-[#080808] px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
           <FadeIn>
-            <div className="text-[#333] text-[10px] tracking-widest uppercase mb-4">
+            <div className="text-[#333] text-[10px] tracking-widest uppercase mb-4 section-label">
               The Process
             </div>
-            <h2 className="text-h2 gradient-text">
+            <h2 className="text-h2 gradient-text section-heading">
               From conversation to deployment.
             </h2>
             <p className="text-[#666] text-[17px] mt-4 max-w-xl mx-auto leading-relaxed">
@@ -551,7 +551,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="pt-2">
-                <div className="text-[#222] text-[10px] tracking-widest uppercase">
+                <div className="text-[#222] text-[10px] tracking-widest uppercase section-label">
                   {t.week}
                 </div>
                 <h3 className="text-white text-xl font-semibold mt-1 tracking-tight">
@@ -572,10 +572,10 @@ export default function Home() {
           <FadeIn>
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
               <div>
-                <div className="text-[#333] text-[10px] tracking-widest uppercase mb-4">
+                <div className="text-[#333] text-[10px] tracking-widest uppercase mb-4 section-label">
                   Selected Work
                 </div>
-                <h2 className="text-h2 gradient-text">Systems we&apos;ve built.</h2>
+                <h2 className="text-h2 gradient-text section-heading">Systems we&apos;ve built.</h2>
               </div>
               <Link
                 href="/work"
@@ -733,10 +733,10 @@ export default function Home() {
       <section className="section-contain py-32 bg-[#030303] border-y border-[#080808] px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <FadeIn>
-            <div className="text-[#333] text-[10px] tracking-widest uppercase mb-4">
+            <div className="text-[#333] text-[10px] tracking-widest uppercase mb-4 section-label">
               The Difference
             </div>
-            <h2 className="text-h2 gradient-text">
+            <h2 className="text-h2 gradient-text section-heading">
               Why businesses choose Flowtix.
             </h2>
             <p className="text-[#666] text-[17px] mt-4 max-w-xl mx-auto leading-relaxed">
@@ -783,10 +783,10 @@ export default function Home() {
       <section className="section-contain py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
           <FadeIn>
-            <div className="text-[#333] text-[10px] tracking-widest uppercase mb-4">
+            <div className="text-[#333] text-[10px] tracking-widest uppercase mb-4 section-label">
               Industries
             </div>
-            <h2 className="text-h2 gradient-text">
+            <h2 className="text-h2 gradient-text section-heading">
               We work across every industry.
             </h2>
           </FadeIn>

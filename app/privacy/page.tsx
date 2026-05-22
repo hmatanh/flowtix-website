@@ -71,10 +71,10 @@ export default function PrivacyPage() {
         <p>
           <strong>Contact:</strong>{" "}
           <a
-            href="mailto:hello@flowtix.ai"
+            href="mailto:office@flowtix.ai"
             className="text-[#3B82F6] hover:text-blue-400 underline"
           >
-            hello@flowtix.ai
+            office@flowtix.ai
           </a>
         </p>
       </Section>
@@ -232,10 +232,10 @@ export default function PrivacyPage() {
         <p>
           To exercise any of these rights, email us at:{" "}
           <a
-            href="mailto:hello@flowtix.ai"
+            href="mailto:office@flowtix.ai"
             className="text-[#3B82F6] hover:text-blue-400 underline"
           >
-            hello@flowtix.ai
+            office@flowtix.ai
           </a>
         </p>
         <p>
@@ -263,10 +263,10 @@ export default function PrivacyPage() {
           believe we have collected data from a child, please contact us
           immediately at{" "}
           <a
-            href="mailto:hello@flowtix.ai"
+            href="mailto:office@flowtix.ai"
             className="text-[#3B82F6] hover:text-blue-400 underline"
           >
-            hello@flowtix.ai
+            office@flowtix.ai
           </a>{" "}
           and we will delete it.
         </p>
@@ -291,10 +291,10 @@ export default function PrivacyPage() {
           <li>
             <strong>Email:</strong>{" "}
             <a
-              href="mailto:hello@flowtix.ai"
+              href="mailto:office@flowtix.ai"
               className="text-[#3B82F6] hover:text-blue-400 underline"
             >
-              hello@flowtix.ai
+              office@flowtix.ai
             </a>
           </li>
           <li>

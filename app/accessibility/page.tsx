@@ -108,10 +108,10 @@ export default function AccessibilityPage() {
           <li>
             <strong>Email:</strong>{" "}
             <a
-              href="mailto:hello@flowtix.ai?subject=Accessibility%20Request"
+              href="mailto:office@flowtix.ai?subject=Accessibility%20Request"
               className="text-[#3B82F6] hover:text-blue-400 underline"
             >
-              hello@flowtix.ai
+              office@flowtix.ai
             </a>
           </li>
           <li>

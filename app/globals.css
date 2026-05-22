@@ -115,6 +115,21 @@ body {
   max-width: 100%;
 }
 @media (max-width: 768px) {
+  /* Center section headings, subtexts and labels on mobile */
+  .section-heading {
+    text-align: center !important;
+  }
+  .section-subtext {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .section-label {
+    text-align: center !important;
+    display: block;
+    width: 100%;
+  }
+
   /* Cap heading sizes on mobile */
   h1, .text-h1 {
     font-size: clamp(28px, 8vw, 40px) !important;

@@ -203,10 +203,10 @@ export default function TermsPage() {
           <li>
             <strong>Email:</strong>{" "}
             <a
-              href="mailto:hello@flowtix.ai"
+              href="mailto:office@flowtix.ai"
               className="text-[#3B82F6] hover:text-blue-400 underline"
             >
-              hello@flowtix.ai
+              office@flowtix.ai
             </a>
           </li>
           <li>

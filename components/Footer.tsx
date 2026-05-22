@@ -108,9 +108,9 @@ export function Footer() {
             <h4 className="text-white text-sm font-semibold mb-4">Connect</h4>
             <ul className="space-y-3 text-sm text-[#666]">
               <li>
-                <a href="mailto:hello@flowtix.ai" className="inline-flex items-center gap-2 hover:text-white transition-colors">
+                <a href="mailto:office@flowtix.ai" className="inline-flex items-center gap-2 hover:text-white transition-colors">
                   <IconMail size={14} stroke={1.5} />
-                  hello@flowtix.ai
+                  office@flowtix.ai
                 </a>
               </li>
               <li>

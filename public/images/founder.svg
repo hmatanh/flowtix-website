@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 360" width="280" height="360">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0D0D0D"/>
+      <stop offset="100%" stop-color="#111118"/>
+    </linearGradient>
+    <radialGradient id="vig" cx="50%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.04)"/>
+      <stop offset="100%" stop-color="rgba(0,0,0,0.8)"/>
+    </radialGradient>
+  </defs>
+  <rect width="280" height="360" fill="url(#bg)"/>
+  <!-- Stylized silhouette -->
+  <g transform="translate(140, 200)" fill="rgba(255,255,255,0.06)">
+    <circle cx="0" cy="-50" r="42"/>
+    <path d="M -78 110 Q -78 30 0 30 Q 78 30 78 110 Z"/>
+  </g>
+  <rect width="280" height="360" fill="url(#vig)"/>
+  <text x="140" y="340" font-family="monospace" font-size="9" fill="rgba(255,255,255,0.18)" text-anchor="middle" letter-spacing="2">DROP founder.jpg IN /public/images/</text>
+</svg>

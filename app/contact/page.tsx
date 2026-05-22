@@ -161,10 +161,10 @@ function CalendarBooking() {
             <div className="text-[#666] text-sm mt-3 max-w-md mx-auto">
               Email{" "}
               <a
-                href="mailto:hello@flowtix.ai"
+                href="mailto:office@flowtix.ai"
                 className="text-blue-400 hover:text-blue-300"
               >
-                hello@flowtix.ai
+                office@flowtix.ai
               </a>{" "}
               to confirm. We’ll send a calendar invite within the hour.
             </div>
@@ -302,10 +302,10 @@ function CalendarBooking() {
               <p className="text-[#333] text-xs">
                 Actual booking via{" "}
                 <a
-                  href="mailto:hello@flowtix.ai"
+                  href="mailto:office@flowtix.ai"
                   className="text-[#666] hover:text-white"
                 >
-                  hello@flowtix.ai
+                  office@flowtix.ai
                 </a>
               </p>
               <m.button
@@ -450,7 +450,7 @@ export default function ContactPage() {
 
     setSubmitted(true);
     try {
-      window.location.href = `mailto:hello@flowtix.ai?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:office@flowtix.ai?subject=${subject}&body=${body}`;
     } catch {}
   }
 
@@ -690,10 +690,10 @@ export default function ContactPage() {
             <div>
               <div className="text-label text-[#333] mb-2">Direct</div>
               <a
-                href="mailto:hello@flowtix.ai"
+                href="mailto:office@flowtix.ai"
                 className="animated-link text-xl gradient-text-blue inline-block font-semibold"
               >
-                hello@flowtix.ai
+                office@flowtix.ai
               </a>
               <div className="text-[#666] text-sm mt-2">
                 Response time: Within 24 hours

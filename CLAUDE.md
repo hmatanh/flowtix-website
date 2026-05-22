@@ -6,4 +6,4 @@
 ## Stack
 Next.js 14, Tailwind CSS, TypeScript, Static Export
 ## Contact
-hello@flowtix.ai | flowtix.ai
+office@flowtix.ai | flowtix.ai
