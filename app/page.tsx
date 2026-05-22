@@ -75,34 +75,6 @@ const SOCIAL_STATS = [
   { value: 48, suffix: "h", label: "To First Deployment" },
 ];
 
-const MARQUEE_1 = [
-  "AI Systems",
-  "Intelligent Agents",
-  "Brand Strategy",
-  "Automation",
-  "Web Development",
-  "UI/UX Design",
-  "AI Integration",
-  "Workflow Design",
-  "Digital Products",
-  "AI Consulting",
-];
-
-const MARQUEE_2 = [
-  "Design-First",
-  "Claude",
-  "GPT-4",
-  "Next.js",
-  "Framer",
-  "Figma",
-  "n8n",
-  "Make",
-  "Supabase",
-  "TypeScript",
-  "React",
-  "Tailwind",
-];
-
 const PAINS = [
   "Teams don’t use the tools built for them because the UX is confusing.",
   "AI projects cost $50K+ and deliver less value than a $100/mo SaaS tool.",
@@ -402,47 +374,61 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== 3. DUAL MARQUEE ===== */}
-      <section className="py-4 border-y border-[#080808] overflow-hidden bg-black">
-        <div className="overflow-hidden relative">
-          <div className="marquee-track inline-flex whitespace-nowrap">
-            {[0, 1].map((dup) => (
-              <span key={dup} className="inline-flex shrink-0">
-                {MARQUEE_1.map((t, i) => (
-                  <span
-                    key={`${dup}-${i}`}
-                    className="inline-flex items-center text-[#111] text-xs tracking-[0.2em] uppercase"
-                  >
-                    <span className="mx-8">{t}</span>
-                    <span>·</span>
-                  </span>
-                ))}
-              </span>
-            ))}
-          </div>
-        </div>
-      </section>
-      <section className="py-4 overflow-hidden bg-black">
-        <div className="overflow-hidden relative">
-          <div
-            className="inline-flex whitespace-nowrap"
-            style={{ animation: "marqueeReverse 24s linear infinite" }}
+      {/* ===== 3. INDUSTRIES — trust marquee ===== */}
+      <section className="section-contain py-20 lg:py-24 border-y border-[#080808] bg-black overflow-hidden">
+        <FadeIn>
+          <h2
+            className="text-white font-bold text-center tracking-tight px-4"
+            style={{ fontSize: "clamp(22px, 3vw, 32px)" }}
           >
-            {[0, 1].map((dup) => (
-              <span key={dup} className="inline-flex shrink-0">
-                {MARQUEE_2.map((t, i) => (
-                  <span
-                    key={`${dup}-${i}`}
-                    className="inline-flex items-center text-[#0d0d0d] text-xs tracking-[0.2em] uppercase"
-                  >
-                    <span className="mx-8">{t}</span>
-                    <span>·</span>
-                  </span>
-                ))}
-              </span>
-            ))}
+            Trusted by businesses across{" "}
+            <span className="gradient-text-blue">12 industries</span>.
+          </h2>
+        </FadeIn>
+
+        <div className="mt-10 space-y-3">
+          {/* Row 1 — rightward */}
+          <div className="overflow-hidden relative">
+            <div className="marquee-track inline-flex whitespace-nowrap">
+              {[0, 1].map((dup) => (
+                <span key={dup} className="inline-flex shrink-0">
+                  {INDUSTRIES_12.slice(0, 6).map((t, i) => (
+                    <span
+                      key={`a-${dup}-${i}`}
+                      className="inline-flex items-center text-[#444] text-sm tracking-[0.18em] uppercase"
+                    >
+                      <span className="mx-8">{t}</span>
+                      <span className="text-[#1a1a1a]">·</span>
+                    </span>
+                  ))}
+                </span>
+              ))}
+            </div>
+          </div>
+          {/* Row 2 — leftward, slightly faster */}
+          <div className="overflow-hidden relative">
+            <div className="marquee-track-reverse inline-flex whitespace-nowrap">
+              {[0, 1].map((dup) => (
+                <span key={dup} className="inline-flex shrink-0">
+                  {INDUSTRIES_12.slice(6, 12).map((t, i) => (
+                    <span
+                      key={`b-${dup}-${i}`}
+                      className="inline-flex items-center text-[#444] text-sm tracking-[0.18em] uppercase"
+                    >
+                      <span className="mx-8">{t}</span>
+                      <span className="text-[#1a1a1a]">·</span>
+                    </span>
+                  ))}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
+
+        <p className="text-[#555] text-sm text-center mt-10 max-w-2xl mx-auto px-4 leading-relaxed">
+          From solo founders to scaling teams — we build AI systems for
+          businesses that refuse to settle.
+        </p>
       </section>
 
       {/* ===== 4. THE PROBLEM WE SOLVE ===== */}

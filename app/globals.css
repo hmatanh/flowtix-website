@@ -450,10 +450,19 @@ body::before {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
 }
+@keyframes marqueeReverse {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
 .marquee-track {
   display: inline-flex;
   white-space: nowrap;
   animation: marquee 35s linear infinite;
+}
+.marquee-track-reverse {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: marqueeReverse 28s linear infinite;
 }
 .marquee-slow {
   display: inline-flex;
