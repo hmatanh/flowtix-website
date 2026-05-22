@@ -26,6 +26,7 @@ import { ClientLogo } from "@/components/clients/logos/ClientLogo";
 import { AnimatedCounter } from "@/components/AnimatedCounter";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { ProjectSignature } from "@/components/projects/ProjectSignatures";
+import { ProjectMoodboard } from "@/components/projects/ProjectMoodboard";
 
 const EASE = [0.21, 0.47, 0.32, 0.98] as const;
 
@@ -2472,6 +2473,7 @@ export function ProjectPageLayout({
         keyMetric={content.keyMetric}
       />
       <BrandAtmosphere project={project} />
+      <ProjectMoodboard project={project} />
       <StatementStats project={project} stats={content.statementStats} />
       <StorySection
         project={project}
