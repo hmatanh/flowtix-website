@@ -149,6 +149,7 @@ export default function ProductsPage() {
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
                           placeholder="your@email.com"
+                          aria-label="Email address for product waitlist"
                           className="flex-1 bg-[#111] border border-[#1a1a1a] rounded-lg px-4 py-3 text-white text-sm outline-none focus:border-blue-500/50 focus:shadow-[0_0_20px_rgba(59,130,246,0.1)] transition-all placeholder-[#444]"
                         />
                         <m.button

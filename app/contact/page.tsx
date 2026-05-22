@@ -131,11 +131,11 @@ function CalendarBooking() {
           </h3>
           <div className="text-[#666] text-sm mt-1.5 flex items-center gap-4 flex-wrap">
             <span className="inline-flex items-center gap-1.5">
-              <IconCalendar size={13} stroke={1.5} className="text-[#444]" />
+              <IconCalendar size={13} stroke={1.5} aria-hidden="true" className="text-[#444]" />
               30 minutes
             </span>
             <span className="inline-flex items-center gap-1.5">
-              <IconVideo size={13} stroke={1.5} className="text-[#444]" />
+              <IconVideo size={13} stroke={1.5} aria-hidden="true" className="text-[#444]" />
               Video call
             </span>
             <span className="text-emerald-400">Free</span>
@@ -325,7 +325,7 @@ function CalendarBooking() {
                 }`}
               >
                 Continue
-                <IconArrowRight size={14} stroke={2} />
+                <IconArrowRight size={14} stroke={2} aria-hidden="true" />
               </m.button>
             </div>
           </m.div>
@@ -678,7 +678,7 @@ export default function ContactPage() {
                       className="relative bg-white text-black px-6 py-3.5 rounded-xl font-semibold w-full hover:bg-[#eee] transition-colors inline-flex items-center justify-center gap-2 min-h-[52px] disabled:opacity-60 disabled:cursor-not-allowed"
                     >
                       Send Message
-                      <IconArrowRight size={16} stroke={2} />
+                      <IconArrowRight size={16} stroke={2} aria-hidden="true" />
                     </m.button>
                   </div>
                 </m.form>

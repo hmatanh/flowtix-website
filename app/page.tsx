@@ -273,7 +273,7 @@ export default function Home() {
                   className="btn-shimmer relative z-[1] inline-flex items-center gap-2 bg-white text-black px-7 py-3.5 rounded-xl text-sm font-semibold hover:bg-[#eee] transition-colors min-h-[48px]"
                 >
                   <span className="relative z-10">See What We Build</span>
-                  <IconArrowRight size={16} stroke={2} className="relative z-10" />
+                  <IconArrowRight size={16} stroke={2} aria-hidden="true" className="relative z-10" />
                 </Link>
               </m.div>
               <Link
@@ -498,7 +498,7 @@ export default function Home() {
                   </div>
                   <div className="mt-4 text-[#222] text-xs group-hover:text-[#666] transition-colors animated-link inline-flex items-center gap-1">
                     Explore
-                    <IconArrowRight size={12} stroke={2} />
+                    <IconArrowRight size={12} stroke={2} aria-hidden="true" />
                   </div>
                 </Link>
               );
@@ -717,6 +717,7 @@ export default function Home() {
                         <IconArrowRight
                           size={13}
                           stroke={2}
+                          aria-hidden="true"
                           className="group-hover:translate-x-0.5 transition-transform"
                         />
                       </span>
@@ -882,7 +883,7 @@ export default function Home() {
                     className="btn-shimmer relative inline-flex items-center gap-2 bg-white text-black px-8 py-4 rounded-xl font-semibold hover:bg-[#eee] transition-colors"
                   >
                     <span className="relative z-10">Book a Discovery Call</span>
-                    <IconArrowRight size={16} stroke={2} className="relative z-10" />
+                    <IconArrowRight size={16} stroke={2} aria-hidden="true" className="relative z-10" />
                   </Link>
                 </m.div>
               </div>
@@ -897,12 +898,12 @@ export default function Home() {
           <FadeIn delay={0.4}>
             <div className="mt-12 flex items-center justify-center gap-3 text-[#222] text-xs flex-wrap">
               <span className="inline-flex items-center gap-1.5">
-                <IconLockSquare size={14} stroke={1.5} />
+                <IconLockSquare size={14} stroke={1.5} aria-hidden="true" />
                 All conversations are confidential
               </span>
               <span>·</span>
               <span className="inline-flex items-center gap-1.5">
-                <IconClock size={14} stroke={1.5} />
+                <IconClock size={14} stroke={1.5} aria-hidden="true" />
                 Response within 24 hours
               </span>
             </div>

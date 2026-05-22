@@ -339,6 +339,7 @@ export function HeroAIDemo() {
                 : "Watching the demo…"
             }
             disabled={!demoComplete}
+            aria-label="Ask the Flowtix assistant"
             className="flex-1 bg-transparent outline-none text-white text-sm placeholder-[#333] disabled:cursor-not-allowed"
           />
         </div>

@@ -67,7 +67,7 @@ export default function NotFound() {
             className="inline-flex items-center gap-2 bg-white text-black px-6 py-3.5 rounded-xl font-semibold text-sm hover:bg-[#eee] transition-colors"
           >
             Back to Home
-            <IconArrowRight size={14} stroke={2} />
+            <IconArrowRight size={14} stroke={2} aria-hidden="true" />
           </Link>
           <Link
             href="/work"

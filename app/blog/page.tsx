@@ -159,6 +159,7 @@ export default function BlogPage() {
                         <IconArrowRight
                           size={14}
                           stroke={2}
+                          aria-hidden="true"
                           className="group-hover:translate-x-0.5 transition-transform"
                         />
                       </span>
@@ -225,6 +226,7 @@ export default function BlogPage() {
                               <IconArrowRight
                                 size={12}
                                 stroke={2}
+                                aria-hidden="true"
                                 className="group-hover:translate-x-0.5 transition-transform"
                               />
                             </span>
@@ -273,6 +275,7 @@ export default function BlogPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="your@email.com"
+                aria-label="Email address for blog newsletter"
                 className="flex-1 bg-[#0D0D0D] border border-[#1a1a1a] text-white px-4 py-3 rounded-lg text-sm outline-none focus:border-blue-500/50 focus:shadow-[0_0_18px_rgba(59,130,246,0.1)] transition-all placeholder-[#444]"
               />
               <m.button

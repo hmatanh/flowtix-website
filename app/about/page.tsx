@@ -174,7 +174,7 @@ export default function AboutPage() {
               animate={{ y: [0, 8, 0] }}
               transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
             >
-              <IconArrowDown size={20} stroke={1.5} className="text-[#222]" />
+              <IconArrowDown size={20} stroke={1.5} aria-hidden="true" className="text-[#222]" />
             </m.div>
           </FadeIn>
         </div>
@@ -463,7 +463,7 @@ export default function AboutPage() {
                 className="inline-flex items-center justify-center gap-2 bg-white text-black px-8 py-4 rounded-xl font-semibold text-sm hover:bg-[#eee] transition-colors min-h-[48px] w-full sm:w-auto"
               >
                 Start a project
-                <IconArrowRight size={16} stroke={2} />
+                <IconArrowRight size={16} stroke={2} aria-hidden="true" />
               </Link>
               <Link
                 href="/work"
