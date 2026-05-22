@@ -14,18 +14,27 @@ import {
   IconFileText,
   IconCode,
 } from "@tabler/icons-react";
-import { LiveActivityFeed } from "@/components/LiveActivityFeed";
 import { PerspectiveGrid } from "@/components/PerspectiveGrid";
 import { AnimatedCounter } from "@/components/AnimatedCounter";
 import { MagneticButton } from "@/components/MagneticButton";
 
-// Dynamic imports — reduce initial JS bundle, load heavy interactive components after first paint
+// Dynamic imports — heavy interactive components load after first paint.
+// Keeps initial JS small; users see hero structure immediately.
 const HeroAIDemo = dynamic(
   () => import("@/components/HeroAIDemo").then((m) => ({ default: m.HeroAIDemo })),
   {
     ssr: false,
     loading: () => (
       <div className="w-full rounded-2xl bg-[#080808] border border-[#0f0f0f] h-[420px] animate-pulse" />
+    ),
+  }
+);
+const LiveActivityFeed = dynamic(
+  () => import("@/components/LiveActivityFeed").then((m) => ({ default: m.LiveActivityFeed })),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="w-full rounded-2xl bg-[#080808] border border-[#0f0f0f] h-[120px] animate-pulse" />
     ),
   }
 );
@@ -45,8 +54,20 @@ const IntelligenceStack = dynamic(
     loading: () => <div className="h-[600px] w-full" />,
   }
 );
-import { FAQ } from "@/components/FAQ";
-import { Availability } from "@/components/Availability";
+const FAQ = dynamic(
+  () => import("@/components/FAQ").then((m) => ({ default: m.FAQ })),
+  {
+    ssr: false,
+    loading: () => <div className="h-[400px] w-full" />,
+  }
+);
+const Availability = dynamic(
+  () => import("@/components/Availability").then((m) => ({ default: m.Availability })),
+  {
+    ssr: false,
+    loading: () => <div className="h-[300px] w-full" />,
+  }
+);
 import { FadeIn } from "@/components/animations/FadeIn";
 import {
   StaggerContainer,

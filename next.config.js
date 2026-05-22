@@ -38,18 +38,17 @@ const nextConfig = {
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
-  // Reduce bundle size
+  // Reduce bundle size — tree-shake icon + motion imports more aggressively
   experimental: {
-    optimizePackageImports: ['framer-motion', '@tabler/icons-react'],
+    optimizePackageImports: [
+      'framer-motion',
+      '@tabler/icons-react',
+    ],
   },
-  async headers() {
-    return [
-      {
-        source: '/(.*)',
-        headers: securityHeaders,
-      },
-    ];
-  },
+  // Note: headers() is ignored with output: 'export'. Security headers
+  // are configured in vercel.json + public/_headers instead.
 };
+// `securityHeaders` retained above for reference / future non-static deploys.
+void securityHeaders;
 
 module.exports = nextConfig;
