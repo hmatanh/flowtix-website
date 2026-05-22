@@ -1,184 +1,287 @@
-import { IconRobot } from "@tabler/icons-react";
+import { IconRobot, IconChartLine, IconCheck } from "@tabler/icons-react";
 import { AurumMark } from "@/components/projects/BrandMarks";
 
-const REPORTS = [
-  { client: "J. ●●●●●●●", quarter: "Q1 2025", status: "done", active: true },
-  { client: "S. ●●●●●●●●", quarter: "Q1 2025", status: "pending" },
-  { client: "M. ●●●●", quarter: "Q1 2025", status: "done" },
-  { client: "T. ●●●●●", quarter: "Q1 2025", status: "done" },
-  { client: "K. ●●●●●●●", quarter: "Annual", status: "pending" },
-];
+/* ============================================================
+   AURUM — AI Quarterly Report Composition
+   Shows the AI generating a personalized client report
+   ============================================================ */
 
-function statusPill(status: string, active: boolean) {
-  if (active) return { bg: "rgba(217,119,6,0.25)", text: "#FBBF24", label: "Active" };
-  if (status === "done") return { bg: "rgba(16,185,129,0.18)", text: "#34D399", label: "Delivered ✓" };
-  return { bg: "rgba(245,158,11,0.15)", text: "#FCD34D", label: "Pending review" };
-}
+const PARAGRAPHS = [
+  {
+    type: "para",
+    text: 'Your portfolio outperformed the benchmark by 3.5 percentage points this quarter, driven primarily by overweight positions in <em>technology</em> and <em>healthcare</em>.',
+  },
+  {
+    type: "stat",
+    label: "Total return Q1",
+    value: "+11.7%",
+    sub: "Benchmark: +8.2%",
+  },
+  {
+    type: "para",
+    text: "Volatility remained moderate. Your downside exposure was protected by the alternatives allocation that we expanded in December.",
+  },
+  {
+    type: "list",
+    items: [
+      "Equities (+13.2%) — outperformed S&P 500 by 280 bps",
+      "Fixed Income (+5.8%) — duration positioning worked well",
+      "Alternatives (+9.4%) — private credit exceeded expectations",
+    ],
+  },
+  {
+    type: "para",
+    text: "Looking ahead to Q2, we recommend three tactical adjustments. We will discuss these at our scheduled review on May 23rd.",
+  },
+];
 
 export function ScreenReport() {
   return (
-    <div className="w-full h-full flex" style={{ background: "#120D04" }}>
-      {/* Sidebar — report list */}
-      <aside
-        className="w-48 sm:w-56 border-r p-3 overflow-hidden"
+    <div
+      className="w-full h-full flex flex-col relative"
+      style={{
+        background:
+          "radial-gradient(ellipse 70% 50% at 30% -10%, rgba(245,158,11,0.10), transparent 60%), linear-gradient(180deg, #0E0A04 0%, #06030B 100%)",
+      }}
+    >
+      <div
+        aria-hidden="true"
+        className="absolute pointer-events-none"
         style={{
-          background: "#0F0903",
-          borderColor: "rgba(217,119,6,0.15)",
+          top: -40,
+          right: -40,
+          width: 240,
+          height: 240,
+          background: "radial-gradient(circle, rgba(245,158,11,0.16), transparent 70%)",
+          filter: "blur(40px)",
         }}
-      >
-        <div className="flex items-center gap-1.5 mb-3">
-          <AurumMark size={14} />
-          <span
-            className="text-[10px] font-semibold tracking-[0.2em]"
-            style={{ color: "#D97706" }}
-          >
-            AURUM
-          </span>
-        </div>
-        <div className="text-[9px] uppercase tracking-widest" style={{ color: "#6b4f1a" }}>
-          Q1 2025 Reports
-        </div>
-        <div className="mt-2 space-y-1.5">
-          {REPORTS.map((r) => {
-            const p = statusPill(r.status, r.active ?? false);
-            return (
-              <div
-                key={r.client}
-                className="rounded-md p-2 border"
-                style={{
-                  background: "#1A1206",
-                  borderColor: r.active
-                    ? "rgba(217,119,6,0.4)"
-                    : "rgba(217,119,6,0.1)",
-                }}
-              >
-                <div className="flex items-center justify-between">
-                  <span
-                    className="text-[9px] font-medium tracking-wide"
-                    style={{ color: "#FDE68A" }}
-                  >
-                    {r.client}
-                  </span>
-                  <IconRobot size={9} stroke={1.5} color="#D97706" />
-                </div>
-                <div className="flex items-center justify-between mt-1">
-                  <span className="text-[8px]" style={{ color: "#6b4f1a" }}>
-                    {r.quarter}
-                  </span>
-                  <span
-                    className="text-[7px] px-1.5 py-0.5 rounded font-semibold"
-                    style={{ background: p.bg, color: p.text }}
-                  >
-                    {p.label}
-                  </span>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-        <div className="text-[8px] mt-3 leading-tight" style={{ color: "#6b4f1a" }}>
-          Generated automatically every quarter. Delivered before your client asks.
-        </div>
-      </aside>
+      />
 
-      {/* Preview area */}
-      <main
-        className="flex-1 flex items-center justify-center p-6"
+      <div
+        className="relative flex items-center justify-between px-4 py-2.5 border-b backdrop-blur-sm"
         style={{
-          background:
-            "radial-gradient(ellipse at center, #1A1206, #120D04 70%)",
+          background: "rgba(20,14,5,0.85)",
+          borderColor: "rgba(245,158,11,0.18)",
         }}
       >
-        <div className="flex flex-col items-center">
-          {/* PDF report card */}
-          <div
-            className="rounded-md w-44 sm:w-48 aspect-[210/297] relative overflow-hidden border"
+        <div className="flex items-center gap-2">
+          <span className="text-white text-[12px] font-semibold tracking-tight">
+            Q1 2025 — Chen Family
+          </span>
+          <span
+            className="text-[9px] uppercase tracking-wider px-1.5 py-0.5 rounded font-medium inline-flex items-center gap-1"
             style={{
-              background: "#1A1206",
-              borderColor: "rgba(217,119,6,0.3)",
-              backgroundImage:
-                "repeating-linear-gradient(135deg, transparent 0px, transparent 6px, rgba(217,119,6,0.025) 6px, rgba(217,119,6,0.025) 8px)",
-              boxShadow: "0 30px 60px rgba(0,0,0,0.5)",
+              background: "rgba(245,158,11,0.12)",
+              color: "#FBBF24",
+              border: "1px solid rgba(245,158,11,0.25)",
             }}
           >
-            {/* Top gold band */}
-            <div
-              className="absolute top-0 left-0 right-0 h-1"
-              style={{
-                background:
-                  "linear-gradient(90deg, transparent, #D97706, transparent)",
-              }}
-            />
+            <IconRobot size={9} stroke={2} />
+            AI drafting
+          </span>
+        </div>
+        <span
+          className="text-[9px] font-mono"
+          style={{ color: "#A89968" }}
+        >
+          Generated by Claude · reviewed by Eduard
+        </span>
+      </div>
 
-            <div className="p-5 h-full flex flex-col items-center text-center">
-              <div className="mt-4">
-                <AurumMark size={36} />
-              </div>
+      <main className="relative flex-1 grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-2.5 p-3 overflow-hidden min-h-0">
+        {/* Generated report */}
+        <article
+          className="rounded-xl p-4 border relative overflow-hidden"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(245,242,235,0.97) 0%, rgba(235,228,210,0.92) 100%)",
+            borderColor: "rgba(245,158,11,0.22)",
+            color: "#1f1408",
+          }}
+        >
+          {/* Letterhead */}
+          <div
+            className="flex items-center justify-between pb-3 mb-3 border-b"
+            style={{ borderColor: "rgba(31,20,8,0.15)" }}
+          >
+            <div className="flex items-center gap-2">
               <div
-                className="font-semibold tracking-[0.25em] text-sm mt-3"
-                style={{ color: "#D97706" }}
+                className="w-5 h-5 rounded-full"
+                style={{
+                  background:
+                    "linear-gradient(135deg, #F59E0B 0%, #B45309 100%)",
+                }}
+              />
+              <span
+                className="font-bold tracking-[0.2em] text-[12px]"
+                style={{ color: "#B45309" }}
               >
                 AURUM
-              </div>
-              <div
-                className="h-px w-12 mt-3"
-                style={{ background: "rgba(217,119,6,0.5)" }}
-              />
+              </span>
+            </div>
+            <span className="text-[8px] font-mono" style={{ color: "#5a4a28" }}>
+              CONFIDENTIAL · Q1 2025
+            </span>
+          </div>
 
+          <h2
+            className="font-bold text-[15px] tracking-tight leading-tight"
+            style={{ color: "#1f1408" }}
+          >
+            Quarterly Portfolio Review — Chen Family
+          </h2>
+          <p className="text-[9px] mt-1" style={{ color: "#5a4a28" }}>
+            Prepared by Eduard Mercier · Senior Wealth Advisor
+          </p>
+
+          <div className="mt-3 space-y-2">
+            {PARAGRAPHS.map((p, i) => {
+              if (p.type === "para") {
+                return (
+                  <p
+                    key={i}
+                    className="text-[10px] leading-[1.55]"
+                    style={{ color: "#2a1f0e" }}
+                    dangerouslySetInnerHTML={{ __html: p.text! }}
+                  />
+                );
+              }
+              if (p.type === "stat") {
+                return (
+                  <div
+                    key={i}
+                    className="rounded-md border p-2 inline-flex flex-col"
+                    style={{
+                      background: "rgba(245,158,11,0.08)",
+                      borderColor: "rgba(245,158,11,0.25)",
+                    }}
+                  >
+                    <span className="text-[8px] uppercase tracking-wider" style={{ color: "#5a4a28" }}>
+                      {p.label}
+                    </span>
+                    <span
+                      className="text-lg font-bold tabular-nums leading-none mt-0.5"
+                      style={{ color: "#B45309" }}
+                    >
+                      {p.value}
+                    </span>
+                    <span className="text-[8px] mt-0.5" style={{ color: "#5a4a28" }}>
+                      {p.sub}
+                    </span>
+                  </div>
+                );
+              }
+              return (
+                <ul key={i} className="space-y-1 pl-3">
+                  {p.items!.map((it, j) => (
+                    <li
+                      key={j}
+                      className="text-[10px] leading-snug flex items-start gap-2"
+                      style={{ color: "#2a1f0e" }}
+                    >
+                      <span
+                        className="w-1 h-1 rounded-full shrink-0 mt-1.5"
+                        style={{ background: "#B45309" }}
+                      />
+                      {it}
+                    </li>
+                  ))}
+                </ul>
+              );
+            })}
+          </div>
+
+          <div
+            className="mt-3 pt-2.5 border-t"
+            style={{ borderColor: "rgba(31,20,8,0.15)" }}
+          >
+            <p className="text-[8px]" style={{ color: "#5a4a28" }}>
+              This report is generated by AURUM&apos;s AI reporting system and reviewed by your wealth advisor before delivery.
+            </p>
+          </div>
+        </article>
+
+        {/* AI workflow log */}
+        <aside
+          className="rounded-xl p-3 border relative overflow-hidden flex flex-col min-h-0"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(20,14,5,0.92) 0%, rgba(15,10,3,0.6) 100%)",
+            borderColor: "rgba(245,158,11,0.15)",
+            backdropFilter: "blur(8px)",
+          }}
+        >
+          <div className="flex items-center justify-between mb-2.5">
+            <div className="flex items-center gap-1.5">
               <div
-                className="font-serif italic mt-6 text-[11px] leading-tight"
-                style={{ color: "#FDE68A" }}
+                className="inline-flex items-center justify-center w-5 h-5 rounded-md"
+                style={{
+                  background: "rgba(245,158,11,0.15)",
+                  border: "1px solid rgba(245,158,11,0.25)",
+                }}
               >
-                Portfolio
-                <br />
-                Intelligence Report
+                <IconChartLine size={10} stroke={1.5} color="#F59E0B" />
               </div>
-              <div className="text-[8px] mt-2" style={{ color: "#8B6A2A" }}>
-                First Quarter 2025
-              </div>
+              <span className="text-white text-[11px] font-semibold tracking-tight">
+                Generation log
+              </span>
+            </div>
+            <span className="text-[8px] font-mono" style={{ color: "#A89968" }}>
+              23s total
+            </span>
+          </div>
 
-              <div
-                className="h-px w-12 mt-3"
-                style={{ background: "rgba(217,119,6,0.5)" }}
-              />
-
-              <div
-                className="text-[8px] italic mt-3 leading-tight"
-                style={{ color: "#FDE68A", opacity: 0.85 }}
-              >
-                Prepared for
-                <br />
-                ██████ ██████████
-              </div>
-              <div className="text-[7px] mt-2 font-mono" style={{ color: "#6b4f1a" }}>
-                Account ●●●●●●●7842
-              </div>
-              <div className="text-[7px] mt-1" style={{ color: "#6b4f1a" }}>
-                Advisor · Marcus Osei
-              </div>
-
-              <div className="mt-auto pt-3 w-full">
+          <ul className="space-y-2 text-[10px]">
+            {[
+              { ok: true, text: "Pulled holdings from custodian (4 accounts)" },
+              { ok: true, text: "Computed performance vs S&P 500" },
+              { ok: true, text: "Generated narrative · client voice match 94%" },
+              { ok: true, text: "Compliance disclosures · auto-attached" },
+              { ok: true, text: "Eduard reviewed · 2 edits applied" },
+              { ok: true, text: "PDF generated · ready to send" },
+            ].map((s, i) => (
+              <li key={i} className="flex items-start gap-2">
                 <div
-                  className="h-px w-full"
-                  style={{ background: "rgba(217,119,6,0.25)" }}
-                />
-                <div
-                  className="text-[6px] mt-1.5 tracking-widest uppercase"
-                  style={{ color: "#6b4f1a" }}
+                  className="shrink-0 w-4 h-4 rounded-full inline-flex items-center justify-center mt-0.5"
+                  style={{
+                    background: "rgba(16,185,129,0.18)",
+                    border: "1px solid rgba(16,185,129,0.30)",
+                  }}
                 >
-                  Confidential · Private Wealth
+                  <IconCheck size={8} stroke={2.5} color="#34D399" />
                 </div>
-              </div>
-            </div>
-          </div>
+                <span style={{ color: "#cda66e" }}>{s.text}</span>
+              </li>
+            ))}
+          </ul>
 
-          {/* Meta */}
-          <div className="text-center mt-4">
-            <div className="text-[10px]" style={{ color: "#8B6A2A" }}>
-              12 pages · Generated in 8 seconds · Auto-delivered
+          <div
+            className="mt-auto pt-3 rounded-md p-2 border"
+            style={{
+              background: "rgba(245,158,11,0.06)",
+              borderColor: "rgba(245,158,11,0.18)",
+            }}
+          >
+            <div className="flex items-center gap-1.5">
+              <span
+                className="w-1.5 h-1.5 rounded-full"
+                style={{
+                  background: "#10B981",
+                  boxShadow: "0 0 4px #10B981",
+                }}
+              />
+              <span className="text-[9px] font-medium" style={{ color: "#FBBF24" }}>
+                Ready for client delivery
+              </span>
             </div>
+            <p
+              className="text-[8px] mt-1 leading-snug"
+              style={{ color: "#A89968" }}
+            >
+              Scheduled to send Mon, May 19 at 09:00 EST
+            </p>
           </div>
-        </div>
+        </aside>
       </main>
     </div>
   );

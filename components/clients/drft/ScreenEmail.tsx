@@ -1,157 +1,327 @@
-import { IconStar, IconArrowBack } from "@tabler/icons-react";
+import {
+  IconStar,
+  IconArrowBack,
+  IconArchive,
+  IconFlag,
+  IconArrowRight,
+} from "@tabler/icons-react";
+
+/* ============================================================
+   DRFT — Email Campaign (welcome series, AI-personalized)
+   ============================================================ */
+
+const TIMELINE = [
+  { day: "Day 0", subject: "Welcome to the drift.", state: "delivered" },
+  { day: "Day 2", subject: "Built for distance. (here's how)", state: "delivered" },
+  { day: "Day 5", subject: "Your first 10% — on us", state: "scheduled" },
+  { day: "Day 10", subject: "What everyone's wearing this week", state: "scheduled" },
+];
 
 export function ScreenEmail() {
   return (
-    <div className="w-full h-full flex flex-col" style={{ background: "#0a0a0a" }}>
-      {/* Mail app header */}
-      <div className="px-3 pt-6 pb-2 flex items-center justify-between bg-[#0a0a0a]">
-        <IconArrowBack size={14} stroke={1.5} color="#666" />
-        <div className="flex items-center gap-2 text-[#666]">
-          <IconStar size={12} stroke={1.5} />
-        </div>
-      </div>
+    <div
+      className="w-full h-full flex flex-col relative"
+      style={{
+        background:
+          "radial-gradient(ellipse 70% 50% at 30% -10%, rgba(249,115,22,0.10), transparent 60%), linear-gradient(180deg, #120A02 0%, #06030B 100%)",
+      }}
+    >
+      <div
+        aria-hidden="true"
+        className="absolute pointer-events-none"
+        style={{
+          top: -40,
+          right: -40,
+          width: 240,
+          height: 240,
+          background: "radial-gradient(circle, rgba(249,115,22,0.16), transparent 70%)",
+          filter: "blur(40px)",
+        }}
+      />
 
-      {/* Email meta */}
-      <div className="px-3 pb-2 border-b border-[#1a1a1a]">
+      {/* Inbox-like top bar */}
+      <div
+        className="relative flex items-center justify-between px-4 py-2 border-b backdrop-blur-sm"
+        style={{
+          background: "rgba(18,10,2,0.85)",
+          borderColor: "rgba(249,115,22,0.18)",
+        }}
+      >
         <div className="flex items-center gap-2">
-          <div
-            className="w-7 h-7 rounded-full inline-flex items-center justify-center font-black italic text-[10px]"
-            style={{
-              background: "#F97316",
-              color: "#000",
-              transform: "skewX(-6deg)",
-            }}
-          >
-            D
-          </div>
-          <div className="flex-1 min-w-0">
-            <div className="text-white text-[10px] font-semibold">DRFT</div>
-            <div className="text-[8px] text-[#666] truncate">
-              hello@drft.com · to you
-            </div>
-          </div>
-          <span className="text-[8px] text-[#444]">Today, 14:32</span>
-        </div>
-        <div className="text-white text-[11px] font-bold mt-2 leading-tight">
-          You left something behind. 🧥
-        </div>
-        <div className="text-[8px] text-[#555] mt-0.5 truncate">
-          The Trail Series jacket you viewed is still available...
-        </div>
-      </div>
-
-      {/* Email body */}
-      <div className="flex-1 overflow-hidden" style={{ background: "#120A02" }}>
-        <div className="px-4 py-4 text-center">
-          <span
-            className="font-black italic tracking-tighter text-white inline-block"
-            style={{ fontSize: 20, transform: "skewX(-6deg)" }}
-          >
-            DRFT
+          <IconArrowBack size={11} stroke={1.5} style={{ color: "#8B5E2A" }} />
+          <span className="text-[10px]" style={{ color: "#8B5E2A" }}>
+            Inbox · DRFT
           </span>
         </div>
+        <div className="flex items-center gap-2 text-[9px]" style={{ color: "#8B5E2A" }}>
+          <IconStar size={11} stroke={1.5} />
+          <IconArchive size={11} stroke={1.5} />
+          <IconFlag size={11} stroke={1.5} />
+        </div>
+      </div>
 
-        {/* Hero */}
-        <div
-          className="mx-3 rounded-lg h-28 flex items-center justify-center relative overflow-hidden"
+      <main className="relative flex-1 grid grid-cols-1 lg:grid-cols-[1fr_200px] gap-2.5 p-3 overflow-hidden min-h-0">
+        {/* Email body */}
+        <article
+          className="rounded-xl overflow-hidden border flex flex-col min-h-0"
           style={{
-            background:
-              "radial-gradient(ellipse at center, rgba(249,115,22,0.25), rgba(249,115,22,0.04))",
+            background: "#1f1408",
+            borderColor: "rgba(249,115,22,0.20)",
           }}
         >
+          {/* Header strip */}
           <div
-            className="rounded w-12 h-16 opacity-70"
+            className="px-4 py-2.5 border-b flex items-center justify-between"
             style={{
               background:
-                "linear-gradient(135deg, rgba(249,115,22,0.7), rgba(120,53,15,0.4))",
+                "linear-gradient(90deg, rgba(249,115,22,0.10), rgba(20,12,4,0.4))",
+              borderColor: "rgba(249,115,22,0.10)",
             }}
-          />
-          <span
-            className="absolute bottom-2 text-[8px] tracking-[0.3em] uppercase font-bold"
-            style={{ color: "#F97316" }}
           >
-            Still waiting for you
-          </span>
-        </div>
-
-        {/* Body */}
-        <div className="px-4 py-4 text-center">
-          <div className="text-white text-base font-bold leading-tight">
-            You almost had it.
+            <div className="flex items-center gap-2">
+              <div
+                className="w-6 h-6 rounded-full inline-flex items-center justify-center text-[10px] font-bold"
+                style={{
+                  background:
+                    "linear-gradient(135deg, #F97316 0%, #C2410C 100%)",
+                  color: "#1a0a02",
+                }}
+              >
+                D
+              </div>
+              <div>
+                <div className="text-[10px] text-white font-semibold">
+                  DRFT
+                </div>
+                <div className="text-[8px]" style={{ color: "#8B5E2A" }}>
+                  hello@drft.studio · 2 min ago
+                </div>
+              </div>
+            </div>
+            <span
+              className="text-[8px] font-mono px-1.5 py-0.5 rounded"
+              style={{
+                background: "rgba(249,115,22,0.10)",
+                color: "#FED7AA",
+              }}
+            >
+              Day 0 · Welcome
+            </span>
           </div>
-          <div className="text-[9px] mt-2 leading-relaxed" style={{ color: "#8B5E2A" }}>
-            The Trail Series jacket in your size is still available.
+
+          {/* Subject */}
+          <div className="px-5 pt-4">
+            <h2
+              className="font-black text-white tracking-tight"
+              style={{ fontSize: "clamp(16px, 2vw, 22px)" }}
+            >
+              Welcome to the drift.
+            </h2>
           </div>
 
-          {/* Product card */}
+          {/* Hero image */}
           <div
-            className="mt-3 rounded-md p-2.5 border flex items-center gap-2 text-left"
+            className="mx-5 mt-3 rounded-lg overflow-hidden relative"
             style={{
-              background: "#1A0F04",
-              borderColor: "rgba(249,115,22,0.2)",
+              height: 110,
+              background:
+                "linear-gradient(135deg, #c25420 0%, #5e2a10 60%, #2a140a 100%)",
             }}
           >
             <div
-              className="w-8 h-10 rounded shrink-0"
+              aria-hidden="true"
+              className="absolute inset-0 opacity-40"
               style={{
-                background:
-                  "linear-gradient(135deg, rgba(249,115,22,0.5), rgba(120,53,15,0.3))",
+                backgroundImage:
+                  "radial-gradient(circle at 30% 30%, rgba(255,200,150,0.35), transparent 50%), radial-gradient(circle at 70% 80%, rgba(50,20,5,0.6), transparent 50%)",
               }}
             />
-            <div className="flex-1 min-w-0">
-              <div className="text-white text-[9px] font-bold">
-                Trail Series · Olive · XL
-              </div>
-              <div className="text-[9px] font-black" style={{ color: "#F97316" }}>
-                $189
-              </div>
-              <div className="text-[8px]" style={{ color: "#F59E0B" }}>
-                Only 3 left
+            <div className="absolute bottom-2 left-3">
+              <span
+                className="text-[9px] uppercase tracking-[0.3em] font-medium"
+                style={{ color: "#FED7AA" }}
+              >
+                Vol. 03 · Spring
+              </span>
+              <div
+                className="text-white font-black italic tracking-tighter"
+                style={{
+                  fontSize: 20,
+                  transform: "skewX(-6deg)",
+                  display: "inline-block",
+                }}
+              >
+                DRFT
               </div>
             </div>
           </div>
 
-          <button
-            className="w-full text-[10px] font-bold py-3 mt-3 inline-flex items-center justify-center gap-1"
-            style={{ background: "#F97316", color: "#000" }}
-          >
-            COMPLETE YOUR ORDER →
-          </button>
+          {/* Body text */}
+          <div className="px-5 py-4 flex-1 min-h-0 overflow-hidden">
+            <p
+              className="text-[11px] leading-relaxed"
+              style={{ color: "#FED7AA" }}
+            >
+              Hey friend,
+            </p>
+            <p
+              className="text-[11px] leading-relaxed mt-2"
+              style={{ color: "#FED7AA" }}
+            >
+              You found us. Welcome.
+            </p>
+            <p
+              className="text-[11px] leading-relaxed mt-2"
+              style={{ color: "#FED7AA" }}
+            >
+              DRFT makes outdoor gear that doesn&apos;t look like outdoor gear. Built
+              to move with you — trail, train, anywhere in between.
+            </p>
+            <p
+              className="text-[11px] leading-relaxed mt-2"
+              style={{ color: "#FED7AA" }}
+            >
+              Here&apos;s a code to start with:{" "}
+              <span
+                className="font-mono font-bold px-1.5 py-0.5 rounded"
+                style={{
+                  background: "rgba(249,115,22,0.18)",
+                  color: "#F97316",
+                }}
+              >
+                WELCOME10
+              </span>{" "}
+              · 10% off your first piece.
+            </p>
 
+            {/* CTA */}
+            <button
+              className="mt-3 inline-flex items-center gap-1.5 text-[10px] font-bold px-4 py-2 rounded-full"
+              style={{
+                background: "#F97316",
+                color: "#1a0a02",
+                boxShadow: "0 0 20px rgba(249,115,22,0.4)",
+              }}
+            >
+              Shop the drop
+              <IconArrowRight size={11} stroke={2.5} />
+            </button>
+
+            <p
+              className="text-[10px] mt-3 italic"
+              style={{ color: "#8B5E2A" }}
+            >
+              See you on the trail.
+              <br />— Jake &amp; the DRFT crew
+            </p>
+          </div>
+        </article>
+
+        {/* Timeline sidebar */}
+        <aside
+          className="rounded-xl p-3 border flex flex-col min-h-0"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(18,10,2,0.92) 0%, rgba(12,8,2,0.6) 100%)",
+            borderColor: "rgba(249,115,22,0.15)",
+            backdropFilter: "blur(8px)",
+          }}
+        >
           <div
-            className="text-[8px] mt-3 leading-relaxed"
+            className="text-[8px] uppercase tracking-wider mb-2"
             style={{ color: "#8B5E2A" }}
           >
-            Orders ship within 24 hours.
+            Sequence · 4 emails
           </div>
-        </div>
 
-        {/* Footer */}
-        <div
-          className="px-4 pb-3 pt-2 border-t"
-          style={{ borderColor: "rgba(249,115,22,0.08)" }}
-        >
-          <div className="text-[7px] text-center" style={{ color: "#4a3018" }}>
-            Unsubscribe · drft.com · 123 Trail Rd
+          <ul className="relative space-y-2.5">
+            <div
+              aria-hidden="true"
+              className="absolute top-2 bottom-2 left-[7px] w-px"
+              style={{
+                background:
+                  "linear-gradient(180deg, rgba(249,115,22,0.30), rgba(249,115,22,0.05))",
+              }}
+            />
+            {TIMELINE.map((t, i) => (
+              <li key={i} className="relative flex items-start gap-2">
+                <div
+                  className="relative z-10 shrink-0 w-3.5 h-3.5 rounded-full"
+                  style={{
+                    background:
+                      t.state === "delivered" ? "#10B981" : "#1f1408",
+                    border:
+                      t.state === "delivered"
+                        ? "none"
+                        : "1.5px solid rgba(249,115,22,0.5)",
+                    boxShadow:
+                      t.state === "delivered"
+                        ? "0 0 6px rgba(16,185,129,0.5)"
+                        : undefined,
+                  }}
+                />
+                <div className="flex-1 min-w-0">
+                  <div
+                    className="text-[9px] font-mono"
+                    style={{ color: "#8B5E2A" }}
+                  >
+                    {t.day}
+                  </div>
+                  <div
+                    className="text-[10px] font-medium mt-0.5 truncate"
+                    style={{ color: i === 0 ? "#F97316" : "#FED7AA" }}
+                  >
+                    {t.subject}
+                  </div>
+                  <div
+                    className="text-[8px] mt-0.5"
+                    style={{
+                      color:
+                        t.state === "delivered" ? "#10B981" : "#8B5E2A",
+                    }}
+                  >
+                    {t.state === "delivered" ? "✓ Delivered" : "Scheduled"}
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ul>
+
+          {/* Stats */}
+          <div
+            className="mt-auto pt-3 rounded-md p-2"
+            style={{ background: "rgba(12,8,2,0.5)" }}
+          >
+            <div
+              className="text-[8px] uppercase tracking-wider mb-1.5"
+              style={{ color: "#8B5E2A" }}
+            >
+              Performance
+            </div>
+            <div className="grid grid-cols-2 gap-2">
+              <div>
+                <div className="text-white text-sm font-bold tabular-nums">
+                  34%
+                </div>
+                <div className="text-[8px]" style={{ color: "#8B5E2A" }}>
+                  Open rate
+                </div>
+              </div>
+              <div>
+                <div className="text-white text-sm font-bold tabular-nums">
+                  8.2%
+                </div>
+                <div className="text-[8px]" style={{ color: "#8B5E2A" }}>
+                  CTR
+                </div>
+              </div>
+            </div>
+            <div className="text-[8px] mt-1.5" style={{ color: "#F97316" }}>
+              Both vs industry avg 19% · 2.3%
+            </div>
           </div>
-        </div>
-      </div>
-
-      {/* Campaign metrics */}
-      <div
-        className="px-3 py-2 flex items-center justify-around text-[8px] border-t"
-        style={{ background: "#0a0a0a", borderColor: "#1a1a1a", color: "#8B5E2A" }}
-      >
-        <span>1,847 sent</span>
-        <span>·</span>
-        <span style={{ color: "#F97316" }} className="font-semibold">
-          34.2% open
-        </span>
-        <span>·</span>
-        <span>8.1% click</span>
-        <span>·</span>
-        <span>12 orders</span>
-      </div>
+        </aside>
+      </main>
     </div>
   );
 }

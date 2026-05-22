@@ -1,213 +1,309 @@
-import { IconRobot, IconCheck, IconLoader2, IconAlertTriangle } from "@tabler/icons-react";
+import {
+  IconRobot,
+  IconCheck,
+  IconLoader2,
+  IconAlertTriangle,
+  IconClipboardCheck,
+  IconBolt,
+  IconArrowRight,
+} from "@tabler/icons-react";
 
-const FORM = [
-  {
-    q: "What brings you in today?",
-    a: "i have been having really bad back pain for about 3 days now, it started in my lower back and now goes down my left leg sometimes, it hurts more when i sit for long periods",
-  },
-  { q: "Pain level (1–10):", a: "7" },
-  { q: "Previous conditions:", a: "None that I know of" },
-  { q: "Current medications:", a: "Ibuprofen 400mg as needed" },
-  { q: "Allergies:", a: "Penicillin" },
+/* ============================================================
+   SERŌ — AI Intake Workflow
+   Split-view: raw patient submission ↔ AI-generated structured chart.
+   ============================================================ */
+
+const RAW = [
+  { label: "Chief complaint", value: "Lower back pain, 3 days, sharp, radiating down left leg" },
+  { label: "Onset", value: "Tuesday morning after gardening" },
+  { label: "Severity", value: "6/10, worse when sitting" },
+  { label: "Medications", value: "Ibuprofen 400mg, twice daily, since Wednesday" },
+  { label: "Prior episodes", value: "Yes, 2 years ago — resolved in 2 weeks" },
 ];
 
-const STEPS = [
-  { label: "Extracted key complaints", done: true },
-  { label: "Identified urgency level", done: true },
-  { label: "Generating recommendations", done: false },
+const AI_OUTPUT = [
+  { check: true, text: "Mechanical lumbar strain — consistent with acute presentation" },
+  { check: true, text: "No red flags identified · no neurological deficit reported" },
+  { check: true, text: "Radiculopathy possible · L5 distribution (left)" },
+  { check: false, text: "Imaging not urgent at this stage (NICE guidance)" },
+  { check: true, text: "Physio referral indicated · conservative management first" },
 ];
-
-const FLAGS = [
-  "Possible L4/L5 radiculopathy — consider imaging if no improvement",
-  "Penicillin allergy — note before any prescriptions",
-  "NSAIDs already self-medicating",
-];
-
-const ACTIONS = ["Physio referral", "Pain assessment scale", "Schedule 2-week follow-up"];
 
 export function ScreenIntake() {
   return (
-    <div className="w-full h-full flex" style={{ background: "#051A12" }}>
-      {/* Left — raw intake */}
-      <div className="w-[38%] p-3 overflow-hidden">
-        <div
-          className="rounded-md p-3 border h-full overflow-hidden flex flex-col"
+    <div
+      className="w-full h-full flex flex-col relative"
+      style={{
+        background:
+          "radial-gradient(ellipse 70% 50% at 30% -10%, rgba(16,185,129,0.10), transparent 60%), linear-gradient(180deg, #051A12 0%, #03100B 100%)",
+      }}
+    >
+      <div
+        aria-hidden="true"
+        className="absolute pointer-events-none"
+        style={{
+          top: -40,
+          right: -40,
+          width: 240,
+          height: 240,
+          background: "radial-gradient(circle, rgba(16,185,129,0.16), transparent 70%)",
+          filter: "blur(40px)",
+        }}
+      />
+
+      <div
+        className="relative flex items-center justify-between px-4 py-2.5 border-b backdrop-blur-sm"
+        style={{
+          background: "rgba(7,31,21,0.85)",
+          borderColor: "rgba(16,185,129,0.15)",
+        }}
+      >
+        <div className="flex items-center gap-2">
+          <span
+            className="text-[9px] font-mono"
+            style={{ color: "#7ab8a0" }}
+          >
+            #2847
+          </span>
+          <span className="text-white text-[13px] font-bold tracking-tight">
+            Patient Intake
+          </span>
+          <span
+            className="text-[9px] uppercase tracking-wider px-1.5 py-0.5 rounded font-medium inline-flex items-center gap-1"
+            style={{
+              background: "rgba(16,185,129,0.10)",
+              color: "#6ee7b7",
+              border: "1px solid rgba(16,185,129,0.20)",
+            }}
+          >
+            <IconLoader2 size={9} stroke={2} className="animate-spin" />
+            AI processing
+          </span>
+        </div>
+        <span
+          className="text-[9px] inline-flex items-center gap-1.5 font-mono"
+          style={{ color: "#6ee7b7" }}
+        >
+          <span
+            className="w-1 h-1 rounded-full"
+            style={{ background: "#10B981", boxShadow: "0 0 4px #10B981" }}
+          />
+          HIPAA · encrypted
+        </span>
+      </div>
+
+      <main className="relative flex-1 grid grid-cols-1 lg:grid-cols-2 gap-2.5 p-3 overflow-hidden min-h-0">
+        {/* Raw patient input */}
+        <section
+          className="rounded-xl p-3 border relative overflow-hidden flex flex-col min-h-0"
           style={{
-            background: "#071F15",
-            borderColor: "rgba(16,185,129,0.15)",
+            background:
+              "linear-gradient(180deg, rgba(7,31,21,0.92) 0%, rgba(5,26,18,0.6) 100%)",
+            borderColor: "rgba(16,185,129,0.12)",
+            backdropFilter: "blur(8px)",
           }}
         >
-          <div className="flex items-center justify-between">
-            <span className="text-white text-[10px] font-semibold">
-              Patient Intake — Raw
-            </span>
-            <span className="text-[8px]" style={{ color: "#2d6b52" }}>
-              09:38 AM
-            </span>
+          <div className="flex items-center justify-between mb-2.5">
+            <div className="flex items-center gap-1.5">
+              <div
+                className="inline-flex items-center justify-center w-5 h-5 rounded-md"
+                style={{
+                  background: "rgba(122,184,160,0.15)",
+                  border: "1px solid rgba(122,184,160,0.25)",
+                }}
+              >
+                <IconClipboardCheck size={10} stroke={1.5} color="#7ab8a0" />
+              </div>
+              <span className="text-white text-[11px] font-semibold tracking-tight">
+                Patient input
+              </span>
+              <span
+                className="text-[8px] uppercase tracking-wider"
+                style={{ color: "#5a8a7a" }}
+              >
+                Submitted 09:38
+              </span>
+            </div>
           </div>
-          <div className="text-[8px] mt-0.5" style={{ color: "#2d6b52" }}>
-            Submitted by Patient #2847
-          </div>
-          <div className="mt-3 space-y-2.5 overflow-hidden">
-            {FORM.map((f, i) => (
-              <div key={i}>
-                <div className="text-[8px] uppercase tracking-wider" style={{ color: "#2d6b52" }}>
-                  Q · {f.q}
+
+          <div className="space-y-1.5 overflow-hidden">
+            {RAW.map((f) => (
+              <div
+                key={f.label}
+                className="rounded-md p-2 border"
+                style={{
+                  background: "rgba(3,16,11,0.5)",
+                  borderColor: "rgba(16,185,129,0.06)",
+                }}
+              >
+                <div
+                  className="text-[8px] uppercase tracking-wider"
+                  style={{ color: "#5a8a7a" }}
+                >
+                  {f.label}
                 </div>
-                <div className="text-[9px] mt-0.5 leading-snug" style={{ color: "#4a6b5a" }}>
-                  {f.a}
+                <div className="text-[10px] mt-0.5 leading-snug" style={{ color: "#e0f5e9" }}>
+                  {f.value}
                 </div>
               </div>
             ))}
           </div>
-        </div>
-      </div>
 
-      {/* Center — processing */}
-      <div
-        className="w-[24%] p-3 flex flex-col items-center justify-center text-center"
-        style={{ background: "#040E0A" }}
-      >
-        <IconRobot size={20} stroke={1.5} color="#10B981" />
-        <div
-          className="text-[9px] uppercase tracking-widest mt-2"
-          style={{ color: "#34D399" }}
-        >
-          AI Processing
-        </div>
-        <div className="text-[8px] mt-0.5" style={{ color: "#2d6b52" }}>
-          4.2s elapsed
-        </div>
+          {/* Connection arrow indicator */}
+          <div
+            className="hidden lg:flex absolute -right-4 top-1/2 -translate-y-1/2 z-10 w-7 h-7 rounded-full items-center justify-center"
+            style={{
+              background:
+                "linear-gradient(135deg, #10B981 0%, #047857 100%)",
+              boxShadow: "0 0 20px rgba(16,185,129,0.5)",
+            }}
+            aria-hidden="true"
+          >
+            <IconArrowRight size={12} stroke={2.5} color="#021a0f" />
+          </div>
+        </section>
 
-        <div className="mt-4 space-y-2 w-full max-w-[180px]">
-          {STEPS.map((s, i) => (
-            <div
-              key={i}
-              className="rounded-md px-2 py-1.5 flex items-center gap-1.5 text-[9px]"
-              style={{
-                background: s.done ? "rgba(16,185,129,0.12)" : "rgba(245,158,11,0.1)",
-                color: s.done ? "#A7F3D0" : "#FCD34D",
-              }}
-            >
-              {s.done ? (
-                <IconCheck size={10} stroke={2.5} />
-              ) : (
-                <IconLoader2 size={10} stroke={2} />
-              )}
-              <span className="leading-tight">{s.label}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Right — AI summary */}
-      <div className="flex-1 p-3 overflow-hidden">
-        <div
-          className="rounded-md p-3 border h-full overflow-hidden flex flex-col"
+        {/* AI output */}
+        <section
+          className="rounded-xl p-3 border relative overflow-hidden flex flex-col min-h-0"
           style={{
-            background: "#0A2018",
-            borderColor: "rgba(16,185,129,0.3)",
+            background:
+              "linear-gradient(180deg, rgba(7,31,21,0.92) 0%, rgba(5,26,18,0.6) 100%)",
+            borderColor: "rgba(16,185,129,0.22)",
+            backdropFilter: "blur(8px)",
+            boxShadow: "0 0 24px rgba(16,185,129,0.10)",
           }}
         >
-          <div className="flex items-center justify-between">
-            <span className="text-white text-[10px] font-semibold">
-              AI Summary — Ready for Review
-            </span>
-            <span className="text-[8px]" style={{ color: "#34D399" }}>
-              Processed in 4.2s
-            </span>
-          </div>
-
-          <div className="mt-2.5 space-y-2 overflow-hidden">
-            <div>
-              <div className="text-[8px] uppercase tracking-wider" style={{ color: "#34D399" }}>
-                Chief Complaint
-              </div>
-              <div className="text-[10px] text-white mt-0.5 leading-snug">
-                Lower back pain with left leg radiation, 3-day onset
-              </div>
-            </div>
-
-            <div className="grid grid-cols-2 gap-2">
-              <div>
-                <div className="text-[8px] uppercase tracking-wider" style={{ color: "#2d6b52" }}>
-                  Urgency
-                </div>
-                <span
-                  className="inline-block mt-0.5 px-1.5 py-0.5 rounded text-[9px] font-semibold"
-                  style={{ background: "rgba(16,185,129,0.18)", color: "#34D399" }}
+          <div
+            aria-hidden="true"
+            className="absolute top-0 right-0 w-24 h-24 pointer-events-none"
+            style={{
+              background:
+                "radial-gradient(circle, rgba(16,185,129,0.25), transparent 70%)",
+              filter: "blur(10px)",
+            }}
+          />
+          <div className="relative">
+            <div className="flex items-center justify-between mb-2.5">
+              <div className="flex items-center gap-1.5">
+                <div
+                  className="inline-flex items-center justify-center w-5 h-5 rounded-md"
+                  style={{
+                    background: "rgba(16,185,129,0.18)",
+                    border: "1px solid rgba(16,185,129,0.30)",
+                  }}
                 >
-                  Routine
+                  <IconRobot size={10} stroke={1.5} color="#10B981" />
+                </div>
+                <span className="text-white text-[11px] font-semibold tracking-tight">
+                  AI assessment
                 </span>
               </div>
-              <div>
-                <div className="text-[8px] uppercase tracking-wider" style={{ color: "#2d6b52" }}>
-                  Appt length
-                </div>
-                <div className="text-[10px] text-white mt-0.5">20 minutes</div>
+              <div className="flex items-center gap-1">
+                <span
+                  className="text-[8px]"
+                  style={{ color: "#5a8a7a" }}
+                >
+                  Conf.
+                </span>
+                <span
+                  className="text-[10px] font-bold tabular-nums"
+                  style={{ color: "#34D399" }}
+                >
+                  91%
+                </span>
               </div>
             </div>
 
-            <div>
-              <div
-                className="text-[8px] uppercase tracking-wider inline-flex items-center gap-1"
-                style={{ color: "#FCD34D" }}
-              >
-                <IconAlertTriangle size={9} stroke={2} />
-                AI Flags
-              </div>
-              <ul className="mt-1 space-y-1">
-                {FLAGS.map((f, i) => (
-                  <li
-                    key={i}
-                    className="text-[9px] leading-snug flex items-start gap-1"
-                    style={{ color: "#A7F3D0" }}
+            <div className="space-y-1.5">
+              {AI_OUTPUT.map((o, i) => (
+                <div
+                  key={i}
+                  className="rounded-md p-2 border flex items-start gap-2"
+                  style={{
+                    background: "rgba(3,16,11,0.5)",
+                    borderColor: o.check
+                      ? "rgba(16,185,129,0.18)"
+                      : "rgba(245,158,11,0.18)",
+                  }}
+                >
+                  <div
+                    className="shrink-0 w-4 h-4 rounded-full inline-flex items-center justify-center mt-0.5"
+                    style={{
+                      background: o.check
+                        ? "rgba(16,185,129,0.18)"
+                        : "rgba(245,158,11,0.18)",
+                      border: `1px solid ${
+                        o.check
+                          ? "rgba(16,185,129,0.30)"
+                          : "rgba(245,158,11,0.30)"
+                      }`,
+                    }}
                   >
-                    <span style={{ color: "#FCD34D" }}>•</span>
-                    {f}
-                  </li>
-                ))}
-              </ul>
+                    {o.check ? (
+                      <IconCheck size={8} stroke={2.5} color="#10B981" />
+                    ) : (
+                      <IconAlertTriangle size={8} stroke={2} color="#F59E0B" />
+                    )}
+                  </div>
+                  <p className="text-[10px] leading-snug" style={{ color: "#e0f5e9" }}>
+                    {o.text}
+                  </p>
+                </div>
+              ))}
             </div>
 
-            <div>
-              <div className="text-[8px] uppercase tracking-wider" style={{ color: "#2d6b52" }}>
+            <div className="mt-3 pt-2.5 border-t" style={{ borderColor: "rgba(16,185,129,0.10)" }}>
+              <div
+                className="text-[8px] uppercase tracking-wider mb-2"
+                style={{ color: "#7ab8a0" }}
+              >
                 Suggested actions
               </div>
-              <ul className="mt-1 space-y-0.5">
-                {ACTIONS.map((a) => (
-                  <li
+              <div className="flex flex-wrap gap-1.5">
+                {[
+                  "Physio referral",
+                  "Pain mgmt protocol",
+                  "Re-eval in 2 weeks",
+                ].map((a) => (
+                  <span
                     key={a}
-                    className="text-[9px] leading-snug flex items-center gap-1.5"
-                    style={{ color: "#A7F3D0" }}
+                    className="text-[9px] font-medium px-2 py-1 rounded-md inline-flex items-center gap-1"
+                    style={{
+                      background: "rgba(16,185,129,0.10)",
+                      color: "#6ee7b7",
+                      border: "1px solid rgba(16,185,129,0.22)",
+                    }}
                   >
-                    <IconCheck size={9} stroke={2.5} color="#10B981" />
+                    <IconBolt size={8} stroke={2} />
                     {a}
-                  </li>
+                  </span>
                 ))}
-              </ul>
+              </div>
             </div>
-          </div>
 
-          <div className="mt-auto pt-2 flex gap-1.5">
+            {/* Clinician CTA */}
             <button
-              className="flex-1 rounded text-[9px] py-1.5 font-semibold"
-              style={{ background: "#10B981", color: "#000" }}
-            >
-              Approve & Save
-            </button>
-            <button
-              className="flex-1 rounded text-[9px] py-1.5 font-semibold border"
+              className="w-full mt-3 inline-flex items-center justify-center gap-1.5 text-[10px] font-semibold py-2 rounded-md"
               style={{
-                borderColor: "rgba(16,185,129,0.3)",
-                color: "#A7F3D0",
+                background:
+                  "linear-gradient(135deg, #10B981 0%, #047857 100%)",
+                color: "#021a0f",
+                boxShadow: "0 0 16px rgba(16,185,129,0.30)",
               }}
             >
-              Edit
+              Clinician sign-off
+              <IconArrowRight size={11} stroke={2.5} />
             </button>
+            <div
+              className="text-[8px] mt-1.5 text-center"
+              style={{ color: "#5a8a7a" }}
+            >
+              Always reviewed by a clinician before any action
+            </div>
           </div>
-        </div>
-      </div>
+        </section>
+      </main>
     </div>
   );
 }
