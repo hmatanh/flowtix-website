@@ -2,10 +2,19 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { m, AnimatePresence } from "framer-motion";
 
 export function MobileCTA() {
   const [visible, setVisible] = useState(false);
+  const pathname = usePathname();
+
+  // Project pages render their own brand-aware FloatingCTA. Hide global
+  // generic one to avoid a stacked-button mobile UI.
+  const isProjectPage =
+    pathname?.startsWith("/work/") && pathname !== "/work/" && pathname !== "/work";
+  // Contact page already IS the conversion — don't compete with itself.
+  const isContactPage = pathname === "/contact" || pathname === "/contact/";
 
   useEffect(() => {
     const onScroll = () => setVisible(window.scrollY > 500);
@@ -13,6 +22,8 @@ export function MobileCTA() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  if (isProjectPage || isContactPage) return null;
 
   return (
     <div className="md:hidden">

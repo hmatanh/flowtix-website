@@ -492,7 +492,7 @@ function Hero({
             ))}
           </m.div>
 
-          {/* CLIENT LOGO — massively scaled with glow */}
+          {/* CLIENT LOGO — responsive sizing, brand-glow halo */}
           <m.div
             initial={{ opacity: 0, scale: 0.92, filter: "blur(8px)" }}
             animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
@@ -501,30 +501,36 @@ function Hero({
           >
             <div
               aria-hidden="true"
-              className="absolute -inset-12 pointer-events-none"
+              className="absolute -inset-8 sm:-inset-12 pointer-events-none"
               style={{
                 background: `radial-gradient(ellipse 60% 80% at 50% 50%, rgba(${b.accentRGB},0.20), transparent 70%)`,
-                filter: "blur(40px)",
+                filter: "blur(36px)",
               }}
             />
             <div className="relative flex justify-center md:justify-start">
-              <ClientLogo slug={project.slug} height={96} />
+              {/* Mobile-friendly logo size */}
+              <span className="block sm:hidden">
+                <ClientLogo slug={project.slug} height={64} />
+              </span>
+              <span className="hidden sm:block">
+                <ClientLogo slug={project.slug} height={96} />
+              </span>
             </div>
             <div
-              className="relative text-base sm:text-lg mt-4 sm:mt-5"
+              className="relative text-[15px] sm:text-lg mt-4 sm:mt-5 px-4 md:px-0"
               style={{ color: b.textOnBrand, opacity: 0.7 }}
             >
               {project.tagline}
             </div>
           </m.div>
 
-          {/* Story headline */}
+          {/* Story headline — bigger min on mobile, tighter leading */}
           <m.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8, ease: EASE }}
-            className="mt-8 sm:mt-10 font-black text-white leading-[0.95] tracking-tight max-w-4xl mx-auto md:mx-0"
-            style={{ fontSize: "clamp(32px, 7vw, 80px)" }}
+            className="mt-8 sm:mt-10 font-black text-white leading-[1.02] sm:leading-[0.95] tracking-tight max-w-4xl mx-auto md:mx-0 px-2 md:px-0"
+            style={{ fontSize: "clamp(34px, 8vw, 80px)" }}
           >
             {heroHeadline}
           </m.h1>
@@ -558,12 +564,12 @@ function Hero({
             </span>
           </m.div>
 
-          {/* Quick facts strip — at-a-glance project shape */}
+          {/* Quick facts strip — clean 2-col grid on mobile, inline on desktop */}
           <m.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.6, ease: EASE }}
-            className="mt-8 sm:mt-10 flex flex-wrap gap-x-6 sm:gap-x-10 gap-y-3 justify-center md:justify-start"
+            className="mt-8 sm:mt-10 grid grid-cols-2 sm:flex sm:flex-wrap sm:gap-x-10 gap-y-5 sm:gap-y-3 max-w-md sm:max-w-none mx-auto sm:mx-0"
           >
             {[
               { label: "Duration", value: project.duration },
@@ -573,16 +579,16 @@ function Hero({
             ].map((f, i, arr) => (
               <div
                 key={f.label}
-                className="flex items-center gap-3"
+                className="flex items-center gap-3 sm:gap-4"
               >
                 <div className="text-left">
                   <div
                     className="text-[10px] uppercase tracking-[0.18em]"
-                    style={{ color: b.textOnBrand, opacity: 0.45 }}
+                    style={{ color: b.textOnBrand, opacity: 0.5 }}
                   >
                     {f.label}
                   </div>
-                  <div className="text-white text-sm sm:text-base font-semibold mt-0.5">
+                  <div className="text-white text-[15px] sm:text-base font-semibold mt-1 tracking-tight">
                     {f.value}
                   </div>
                 </div>
@@ -590,7 +596,7 @@ function Hero({
                   <span
                     className="hidden sm:block h-8 w-px"
                     style={{
-                      background: `linear-gradient(180deg, transparent, rgba(${b.accentRGB},0.20), transparent)`,
+                      background: `linear-gradient(180deg, transparent, rgba(${b.accentRGB},0.25), transparent)`,
                     }}
                     aria-hidden="true"
                   />
@@ -655,14 +661,14 @@ function BrandAtmosphere({ project }: { project: Project }) {
               Brand atmosphere
             </div>
             <h2
-              className="font-black text-white leading-tight tracking-tight"
-              style={{ fontSize: "clamp(28px, 4.5vw, 48px)" }}
+              className="font-black text-white leading-[1.1] sm:leading-tight tracking-tight"
+              style={{ fontSize: "clamp(30px, 5.5vw, 48px)" }}
             >
               A visual identity, built from scratch.
             </h2>
             <p
-              className="mt-5 text-base sm:text-lg leading-relaxed max-w-xl"
-              style={{ color: b.textOnBrand, opacity: 0.65 }}
+              className="mt-5 text-[15px] sm:text-lg leading-[1.6] sm:leading-relaxed max-w-xl"
+              style={{ color: b.textOnBrand, opacity: 0.7 }}
             >
               {project.description}
             </p>
@@ -781,13 +787,13 @@ function StatementStats({
             </div>
             <h2
               className="font-black text-white tracking-tight"
-              style={{ fontSize: "clamp(24px, 4vw, 42px)" }}
+              style={{ fontSize: "clamp(26px, 4.5vw, 42px)" }}
             >
               The change, measured.
             </h2>
           </div>
         </FadeIn>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-12 sm:gap-y-16">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-14 sm:gap-y-16">
           {stats.map((s, i) => (
             <m.div
               key={s.label}
@@ -803,17 +809,18 @@ function StatementStats({
               }}
             >
               <div
-                className="font-black"
+                className="font-black tabular-nums"
                 style={{
-                  fontSize: "clamp(48px, 8vw, 96px)",
+                  fontSize: "clamp(56px, 9vw, 96px)",
                   color: b.primary,
-                  lineHeight: 1,
+                  lineHeight: 0.95,
                   textShadow: `0 0 40px rgba(${b.accentRGB},0.4)`,
+                  letterSpacing: "-0.03em",
                 }}
               >
                 <AnimatedCounter value={s.value} suffix={s.suffix} />
               </div>
-              <div className="text-[#888] text-[10px] sm:text-xs uppercase tracking-wider mt-3 sm:mt-4 max-w-[160px] mx-auto leading-tight">
+              <div className="text-[#999] text-[11px] sm:text-xs uppercase tracking-wider mt-3 sm:mt-4 max-w-[160px] mx-auto leading-snug">
                 {s.label}
               </div>
             </m.div>
@@ -847,7 +854,7 @@ function StorySection({
           {/* CHALLENGE */}
           <FadeIn>
             <article
-              className="relative rounded-3xl p-8 sm:p-10 lg:p-12 overflow-hidden h-full"
+              className="relative rounded-3xl p-6 sm:p-10 lg:p-12 overflow-hidden h-full"
               style={{
                 background: "#0a0a0a",
                 border: "1px solid #1a1a1a",
@@ -869,8 +876,8 @@ function StorySection({
                   The Challenge
                 </div>
                 <h2
-                  className="font-bold text-white leading-tight tracking-tight"
-                  style={{ fontSize: "clamp(20px, 3vw, 30px)" }}
+                  className="font-bold text-white leading-[1.2] sm:leading-tight tracking-tight"
+                  style={{ fontSize: "clamp(22px, 3.5vw, 30px)" }}
                 >
                   {challenge.quote}
                 </h2>
@@ -891,7 +898,7 @@ function StorySection({
           {/* SOLUTION */}
           <FadeIn delay={0.1}>
             <article
-              className="relative rounded-3xl p-8 sm:p-10 lg:p-12 overflow-hidden h-full"
+              className="relative rounded-3xl p-6 sm:p-10 lg:p-12 overflow-hidden h-full"
               style={{
                 background: b.card,
                 border: `1px solid ${b.border}`,
@@ -917,8 +924,8 @@ function StorySection({
                   The Solution
                 </div>
                 <h2
-                  className="font-bold text-white leading-tight tracking-tight"
-                  style={{ fontSize: "clamp(20px, 3vw, 30px)" }}
+                  className="font-bold text-white leading-[1.2] sm:leading-tight tracking-tight"
+                  style={{ fontSize: "clamp(22px, 3.5vw, 30px)" }}
                 >
                   {solution.quote}
                 </h2>
@@ -949,14 +956,14 @@ function StorySection({
                 What we built
               </div>
               <h2
-                className="font-black text-white tracking-tight"
-                style={{ fontSize: "clamp(28px, 5vw, 56px)" }}
+                className="font-black text-white tracking-tight leading-[1.05]"
+                style={{ fontSize: "clamp(30px, 5.5vw, 56px)" }}
               >
                 {whatWeBuilt.length} pieces. One coherent system.
               </h2>
             </div>
           </FadeIn>
-          <div className="space-y-24 sm:space-y-36">
+          <div className="space-y-20 sm:space-y-28 lg:space-y-36">
             {whatWeBuilt.map((item, i) => {
               const isOdd = i % 2 === 1;
               return (
@@ -966,7 +973,7 @@ function StorySection({
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.1 }}
                   transition={{ duration: 0.7, ease: EASE }}
-                  className="grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-16 items-center"
+                  className="grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center"
                 >
                   {/* Text */}
                   <div className={`relative ${isOdd ? "md:order-2" : ""}`}>
@@ -983,19 +990,30 @@ function StorySection({
                       {item.number}
                     </span>
                     <div
-                      className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-full mb-3 text-xs font-bold"
-                      style={{
-                        background: `rgba(${b.accentRGB},0.10)`,
-                        color: b.primary,
-                        border: `1px solid rgba(${b.accentRGB},0.25)`,
-                      }}
+                      className="md:hidden inline-flex items-center gap-3 mb-4"
                     >
-                      {item.number}
+                      <span
+                        className="inline-flex items-center justify-center w-11 h-11 rounded-xl font-bold text-sm"
+                        style={{
+                          background: `rgba(${b.accentRGB},0.12)`,
+                          color: b.primary,
+                          border: `1px solid rgba(${b.accentRGB},0.30)`,
+                        }}
+                      >
+                        {item.number}
+                      </span>
+                      <span
+                        className="h-px flex-1"
+                        style={{
+                          background: `linear-gradient(90deg, rgba(${b.accentRGB},0.30), transparent)`,
+                        }}
+                        aria-hidden="true"
+                      />
                     </div>
-                    <h3 className="relative text-white text-2xl sm:text-3xl font-bold tracking-tight">
+                    <h3 className="relative text-white text-[22px] sm:text-2xl lg:text-3xl font-bold tracking-tight leading-[1.15]">
                       {item.title}
                     </h3>
-                    <p className="relative text-[#888] text-base sm:text-lg leading-relaxed mt-4 max-w-md">
+                    <p className="relative text-[#aaa] text-[15px] sm:text-base lg:text-lg leading-[1.65] sm:leading-relaxed mt-4 max-w-md">
                       {item.body}
                     </p>
                     {item.url && (
@@ -1056,7 +1074,7 @@ function NumbersWall({
   if (!stat) return null;
   return (
     <section
-      className="section-contain relative w-full overflow-hidden py-24 sm:py-32 lg:py-40 text-center"
+      className="section-contain relative w-full overflow-hidden py-20 sm:py-28 lg:py-40 text-center"
       style={{ background: "#000" }}
     >
       <FloatingOrbs accentRGB={b.accentRGB} count={3} seed={7} />
@@ -1070,16 +1088,26 @@ function NumbersWall({
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
       />
       <div className="relative max-w-6xl mx-auto px-4">
+        {/* Kicker label */}
+        <FadeIn>
+          <div
+            className="text-[10px] sm:text-xs uppercase tracking-[0.25em] mb-6 sm:mb-8"
+            style={{ color: b.primary, opacity: 0.7 }}
+          >
+            The change at a glance
+          </div>
+        </FadeIn>
+
         <m.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.9, ease: EASE }}
-          className="font-black tracking-tighter"
+          className="font-black tracking-tighter tabular-nums"
           style={{
-            fontSize: "clamp(120px, 22vw, 320px)",
+            fontSize: "clamp(96px, 24vw, 320px)",
             color: b.primary,
-            lineHeight: 0.85,
+            lineHeight: 0.9,
             textShadow: `0 0 80px rgba(${b.accentRGB},0.5)`,
             letterSpacing: "-0.06em",
           }}
@@ -1088,8 +1116,8 @@ function NumbersWall({
         </m.div>
         <FadeIn delay={0.3}>
           <p
-            className="mt-6 sm:mt-8 text-base sm:text-xl max-w-md mx-auto"
-            style={{ color: b.textOnBrand, opacity: 0.75 }}
+            className="mt-8 sm:mt-10 text-base sm:text-xl leading-relaxed max-w-md mx-auto px-2"
+            style={{ color: b.textOnBrand, opacity: 0.8 }}
           >
             {stat.label}
           </p>
@@ -1146,7 +1174,7 @@ function FullBleedMoment({
             </div>
             <h2
               className="font-black text-white tracking-tight"
-              style={{ fontSize: "clamp(24px, 4vw, 42px)" }}
+              style={{ fontSize: "clamp(26px, 4.5vw, 42px)" }}
             >
               Built for daily use.
             </h2>
@@ -1211,7 +1239,7 @@ function GalleryScroll({
           </div>
           <h2
             className="text-white font-black tracking-tight"
-            style={{ fontSize: "clamp(28px, 5vw, 52px)" }}
+            style={{ fontSize: "clamp(30px, 5.5vw, 52px)" }}
           >
             Every pixel, considered.
           </h2>
@@ -1313,7 +1341,7 @@ function ProcessMoment({
             </div>
             <h2
               className="text-white font-black tracking-tight"
-              style={{ fontSize: "clamp(28px, 5vw, 52px)" }}
+              style={{ fontSize: "clamp(30px, 5.5vw, 52px)" }}
             >
               {chapters.length} chapters, {project.duration}.
             </h2>
@@ -1425,29 +1453,27 @@ function TestimonialMoment({
       />
 
       <div className="relative max-w-4xl mx-auto">
-        {/* Giant quote glyph */}
+        {/* Giant quote glyph — slightly smaller on mobile */}
         <m.div
           aria-hidden="true"
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: EASE }}
-          className="inline-flex items-center justify-center rounded-2xl border mb-8 sm:mb-12"
+          className="inline-flex items-center justify-center rounded-2xl border mb-8 sm:mb-12 w-14 h-14 sm:w-16 sm:h-16"
           style={{
-            width: 64,
-            height: 64,
             background: `rgba(${b.accentRGB},0.10)`,
             borderColor: `rgba(${b.accentRGB},0.30)`,
             color: b.primary,
             boxShadow: `0 0 60px rgba(${b.accentRGB},0.25)`,
           }}
         >
-          <IconQuote size={28} stroke={1.5} aria-hidden="true" />
+          <IconQuote size={24} stroke={1.5} aria-hidden="true" />
         </m.div>
         <FadeIn>
           <p
-            className="text-white font-light leading-[1.2] tracking-tight"
-            style={{ fontSize: "clamp(24px, 4.5vw, 52px)" }}
+            className="text-white font-light leading-[1.25] sm:leading-[1.2] tracking-tight"
+            style={{ fontSize: "clamp(26px, 5vw, 52px)" }}
           >
             {testimonialFull}
           </p>
@@ -1496,7 +1522,7 @@ function TechStackGrid({ project }: { project: Project }) {
             </div>
             <h2
               className="text-white font-black tracking-tight"
-              style={{ fontSize: "clamp(24px, 4vw, 40px)" }}
+              style={{ fontSize: "clamp(26px, 4.5vw, 40px)" }}
             >
               The stack behind the work.
             </h2>
@@ -1631,11 +1657,17 @@ function NextProjectStrip({ project }: { project: Project }) {
           {next.name.toUpperCase()}
         </div>
       </div>
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 flex flex-col sm:flex-row items-center sm:items-end justify-between gap-8">
+      <div
+        className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 flex flex-col sm:flex-row items-center sm:items-end justify-between gap-8"
+        style={{
+          // Reserve room on mobile so floating sticky CTA never overlaps
+          paddingBottom: "max(96px, env(safe-area-inset-bottom))",
+        }}
+      >
         <div className="text-center sm:text-left">
           <div
-            className="text-xs uppercase tracking-[0.25em] mb-4 inline-flex items-center gap-2"
-            style={{ color: nb.primary, opacity: 0.7 }}
+            className="text-[11px] sm:text-xs uppercase tracking-[0.25em] mb-4 inline-flex items-center gap-2"
+            style={{ color: nb.primary, opacity: 0.75 }}
           >
             <span
               className="w-1.5 h-1.5 rounded-full"
@@ -1645,21 +1677,26 @@ function NextProjectStrip({ project }: { project: Project }) {
           </div>
           <div
             className="text-white font-black tracking-tight"
-            style={{ fontSize: "clamp(28px, 4.5vw, 48px)" }}
+            style={{ fontSize: "clamp(32px, 5vw, 48px)" }}
           >
             {next.name}
           </div>
           <div
-            className="text-base sm:text-lg mt-2"
+            className="text-base sm:text-lg mt-2 px-2 sm:px-0"
             style={{ color: nb.textOnBrand, opacity: 0.65 }}
           >
             {next.tagline}
           </div>
         </div>
-        <div className="flex items-center gap-5 sm:gap-6">
-          <ClientLogo slug={next.slug} height={48} />
+        <div className="flex items-center gap-4 sm:gap-6">
+          <span className="hidden sm:block">
+            <ClientLogo slug={next.slug} height={48} />
+          </span>
+          <span className="sm:hidden">
+            <ClientLogo slug={next.slug} height={36} />
+          </span>
           <m.span
-            className="inline-flex items-center gap-2 px-6 py-4 rounded-2xl text-sm font-semibold border"
+            className="inline-flex items-center gap-2 px-5 sm:px-6 py-3.5 sm:py-4 rounded-2xl text-sm font-semibold border"
             style={{
               background: `rgba(${nb.accentRGB}, 0.12)`,
               color: nb.primary,
@@ -1722,57 +1759,98 @@ function FloatingCTA({ project }: { project: Project }) {
   return (
     <AnimatePresence>
       {visible && (
-        <m.div
-          initial={{ opacity: 0, y: 24, scale: 0.95 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          exit={{ opacity: 0, y: 24, scale: 0.95 }}
-          transition={{ duration: 0.35, ease: EASE }}
-          className="fixed z-40 pointer-events-none"
-          style={{
-            bottom: "max(20px, env(safe-area-inset-bottom))",
-            right: "max(20px, env(safe-area-inset-right))",
-          }}
-        >
-          <Link
-            href="/contact"
-            className="pointer-events-auto group relative inline-flex items-center gap-2.5 rounded-full px-5 py-3 sm:px-6 sm:py-3.5 font-semibold text-sm shadow-2xl"
+        <>
+          {/* MOBILE: full-width sticky bottom bar with brand color.
+              Thumb-friendly tap target; project-branded; safe-area aware. */}
+          <m.div
+            initial={{ opacity: 0, y: 60 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 60 }}
+            transition={{ duration: 0.35, ease: EASE }}
+            className="md:hidden fixed bottom-0 left-0 right-0 z-50 pointer-events-none"
             style={{
-              background: b.primary,
-              color: "#000",
-              boxShadow: `0 20px 60px rgba(${b.accentRGB},0.4), 0 0 0 1px rgba(255,255,255,0.1) inset`,
+              paddingLeft: "max(12px, env(safe-area-inset-left))",
+              paddingRight: "max(12px, env(safe-area-inset-right))",
+              paddingBottom: "max(12px, env(safe-area-inset-bottom))",
+              paddingTop: 12,
+              background:
+                "linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.85) 40%, rgba(0,0,0,0.95) 100%)",
             }}
           >
-            <span
-              aria-hidden="true"
-              className="absolute inset-0 rounded-full"
+            <Link
+              href="/contact"
+              className="pointer-events-auto relative block w-full text-center font-semibold text-sm rounded-2xl overflow-hidden"
               style={{
-                background: `radial-gradient(circle, rgba(255,255,255,0.2), transparent 70%)`,
-                opacity: 0.5,
+                background: b.primary,
+                color: "#000",
+                padding: "16px 18px",
+                boxShadow: `0 20px 60px rgba(${b.accentRGB},0.4), 0 0 0 1px rgba(255,255,255,0.1) inset`,
               }}
-            />
-            <span
-              aria-hidden="true"
-              className="absolute inset-0 rounded-full animate-ping"
-              style={{
-                background: `rgba(${b.accentRGB},0.5)`,
-                opacity: 0.4,
-                animationDuration: "3s",
-              }}
-            />
-            <span className="relative inline-flex items-center gap-2">
-              <span className="hidden sm:inline">
-                Build something like {project.name}
-              </span>
-              <span className="sm:hidden">Talk to us</span>
-              <IconArrowRight
-                size={14}
-                stroke={2.5}
-                className="group-hover:translate-x-0.5 transition-transform"
+            >
+              <span
                 aria-hidden="true"
+                className="absolute inset-0"
+                style={{
+                  background: `radial-gradient(ellipse 60% 100% at 50% 50%, rgba(255,255,255,0.18), transparent 70%)`,
+                }}
               />
-            </span>
-          </Link>
-        </m.div>
+              <span className="relative inline-flex items-center justify-center gap-2">
+                Build something like {project.name}
+                <IconArrowRight size={15} stroke={2.5} aria-hidden="true" />
+              </span>
+            </Link>
+          </m.div>
+
+          {/* DESKTOP: floating pill bottom-right with pulse */}
+          <m.div
+            initial={{ opacity: 0, y: 24, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 24, scale: 0.95 }}
+            transition={{ duration: 0.35, ease: EASE }}
+            className="hidden md:block fixed z-40 pointer-events-none"
+            style={{
+              bottom: "max(24px, env(safe-area-inset-bottom))",
+              right: "max(24px, env(safe-area-inset-right))",
+            }}
+          >
+            <Link
+              href="/contact"
+              className="pointer-events-auto group relative inline-flex items-center gap-2.5 rounded-full px-6 py-3.5 font-semibold text-sm shadow-2xl"
+              style={{
+                background: b.primary,
+                color: "#000",
+                boxShadow: `0 20px 60px rgba(${b.accentRGB},0.4), 0 0 0 1px rgba(255,255,255,0.1) inset`,
+              }}
+            >
+              <span
+                aria-hidden="true"
+                className="absolute inset-0 rounded-full"
+                style={{
+                  background: `radial-gradient(circle, rgba(255,255,255,0.2), transparent 70%)`,
+                  opacity: 0.5,
+                }}
+              />
+              <span
+                aria-hidden="true"
+                className="absolute inset-0 rounded-full animate-ping"
+                style={{
+                  background: `rgba(${b.accentRGB},0.5)`,
+                  opacity: 0.4,
+                  animationDuration: "3s",
+                }}
+              />
+              <span className="relative inline-flex items-center gap-2">
+                Build something like {project.name}
+                <IconArrowRight
+                  size={14}
+                  stroke={2.5}
+                  className="group-hover:translate-x-0.5 transition-transform"
+                  aria-hidden="true"
+                />
+              </span>
+            </Link>
+          </m.div>
+        </>
       )}
     </AnimatePresence>
   );
@@ -1852,7 +1930,7 @@ function SoundFamiliar({ project }: { project: Project }) {
             </div>
             <h2
               className="font-black text-white tracking-tight leading-[1.05]"
-              style={{ fontSize: "clamp(28px, 5vw, 56px)" }}
+              style={{ fontSize: "clamp(32px, 6vw, 56px)" }}
             >
               Any of this sound{" "}
               <span style={{ color: b.primary }}>familiar?</span>
@@ -1879,24 +1957,25 @@ function SoundFamiliar({ project }: { project: Project }) {
               className="relative flex items-start gap-4 rounded-2xl p-5 sm:p-6 border"
               style={{
                 background: "#0a0a0a",
-                borderColor: `rgba(${b.accentRGB},0.10)`,
+                borderColor: `rgba(${b.accentRGB},0.12)`,
+                minHeight: 88,
               }}
             >
               <div
-                className="shrink-0 w-8 h-8 rounded-lg inline-flex items-center justify-center mt-0.5"
+                className="shrink-0 w-9 h-9 rounded-xl inline-flex items-center justify-center mt-0.5"
                 style={{
-                  background: `rgba(${b.accentRGB},0.10)`,
-                  border: `1px solid rgba(${b.accentRGB},0.25)`,
+                  background: `rgba(${b.accentRGB},0.12)`,
+                  border: `1px solid rgba(${b.accentRGB},0.28)`,
                 }}
                 aria-hidden="true"
               >
                 <IconCheck
-                  size={14}
+                  size={16}
                   stroke={2.5}
                   style={{ color: b.primary }}
                 />
               </div>
-              <p className="text-[#bbb] text-sm sm:text-base leading-relaxed">
+              <p className="text-[#ccc] text-[15px] sm:text-base leading-[1.55] sm:leading-relaxed">
                 {p}
               </p>
             </m.div>
@@ -2035,15 +2114,15 @@ function EngagementSpecs({ project }: { project: Project }) {
               Engagement reality
             </div>
             <h2
-              className="text-white font-black tracking-tight"
-              style={{ fontSize: "clamp(28px, 5vw, 52px)" }}
+              className="text-white font-black tracking-tight leading-[1.05]"
+              style={{ fontSize: "clamp(30px, 5.5vw, 52px)" }}
             >
               What a project like this{" "}
               <span style={{ color: b.primary }}>actually looks like.</span>
             </h2>
             <p
-              className="mt-5 sm:mt-6 text-base sm:text-lg leading-relaxed max-w-2xl"
-              style={{ color: b.textOnBrand, opacity: 0.6 }}
+              className="mt-5 sm:mt-6 text-[15px] sm:text-lg leading-[1.6] sm:leading-relaxed max-w-2xl"
+              style={{ color: b.textOnBrand, opacity: 0.65 }}
             >
               No agency surprises. Fixed scope, transparent pricing,
               direct access. Here&apos;s the shape of a {project.name}-style
@@ -2053,7 +2132,7 @@ function EngagementSpecs({ project }: { project: Project }) {
         </FadeIn>
 
         {/* Specs grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 mb-12 sm:mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-5 mb-12 sm:mb-16">
           {ROWS.map((r, i) => {
             const Icon = r.icon;
             return (
@@ -2063,7 +2142,7 @@ function EngagementSpecs({ project }: { project: Project }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.1 }}
                 transition={{ delay: i * 0.05, duration: 0.5, ease: EASE }}
-                className="relative rounded-2xl p-6 sm:p-7 border overflow-hidden flex items-start gap-4"
+                className="relative rounded-2xl p-5 sm:p-7 border overflow-hidden flex items-start gap-4"
                 style={{
                   background: b.card,
                   borderColor: b.border,
@@ -2071,17 +2150,17 @@ function EngagementSpecs({ project }: { project: Project }) {
               >
                 <div
                   aria-hidden="true"
-                  className="absolute top-0 right-0 w-20 h-20 pointer-events-none"
+                  className="absolute top-0 right-0 w-24 h-24 pointer-events-none"
                   style={{
-                    background: `radial-gradient(circle, rgba(${b.accentRGB},0.15), transparent 70%)`,
-                    filter: "blur(10px)",
+                    background: `radial-gradient(circle, rgba(${b.accentRGB},0.18), transparent 70%)`,
+                    filter: "blur(12px)",
                   }}
                 />
                 <div
-                  className="shrink-0 inline-flex items-center justify-center w-11 h-11 rounded-xl border"
+                  className="shrink-0 inline-flex items-center justify-center w-11 h-11 sm:w-12 sm:h-12 rounded-xl border"
                   style={{
-                    background: `rgba(${b.accentRGB},0.10)`,
-                    borderColor: `rgba(${b.accentRGB},0.25)`,
+                    background: `rgba(${b.accentRGB},0.12)`,
+                    borderColor: `rgba(${b.accentRGB},0.28)`,
                   }}
                   aria-hidden="true"
                 >
@@ -2090,19 +2169,19 @@ function EngagementSpecs({ project }: { project: Project }) {
                 <div className="relative min-w-0 flex-1">
                   <div
                     className="text-[10px] uppercase tracking-[0.2em] mb-1.5"
-                    style={{ color: b.primary, opacity: 0.7 }}
+                    style={{ color: b.primary, opacity: 0.75 }}
                   >
                     {r.label}
                   </div>
                   <div
-                    className="text-white font-semibold tracking-tight"
-                    style={{ fontSize: "clamp(16px, 1.6vw, 18px)" }}
+                    className="text-white font-semibold tracking-tight leading-[1.3]"
+                    style={{ fontSize: "clamp(16px, 1.7vw, 18px)" }}
                   >
                     {r.value}
                   </div>
                   <div
-                    className="text-xs sm:text-sm mt-2 leading-relaxed"
-                    style={{ color: b.textOnBrand, opacity: 0.55 }}
+                    className="text-[13px] sm:text-sm mt-2 leading-[1.5]"
+                    style={{ color: b.textOnBrand, opacity: 0.6 }}
                   >
                     {r.sub}
                   </div>
@@ -2227,8 +2306,8 @@ function ResonateCTA({ project }: { project: Project }) {
 
         <FadeIn delay={0.1}>
           <h2
-            className="font-black text-white tracking-tighter leading-[1.02]"
-            style={{ fontSize: "clamp(36px, 7vw, 80px)" }}
+            className="font-black text-white tracking-tighter leading-[1.05] sm:leading-[1.02]"
+            style={{ fontSize: "clamp(40px, 8vw, 80px)" }}
           >
             Like {project.name}&apos;s,{" "}
             <span style={{ color: b.primary }}>built for you.</span>
@@ -2237,8 +2316,8 @@ function ResonateCTA({ project }: { project: Project }) {
 
         <FadeIn delay={0.2}>
           <p
-            className="mt-6 sm:mt-8 text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto"
-            style={{ color: b.textOnBrand, opacity: 0.75 }}
+            className="mt-6 sm:mt-8 text-base sm:text-xl leading-[1.6] sm:leading-relaxed max-w-2xl mx-auto px-2"
+            style={{ color: b.textOnBrand, opacity: 0.78 }}
           >
             Tell us about your business in 30 minutes. We&apos;ll tell you in
             plain language whether AI can move the needle &mdash; and if not,
@@ -2246,13 +2325,13 @@ function ResonateCTA({ project }: { project: Project }) {
           </p>
         </FadeIn>
 
-        {/* Dual CTA */}
+        {/* Dual CTA — full-width stack on mobile, side-by-side on desktop */}
         <FadeIn delay={0.3}>
-          <div className="mt-10 sm:mt-12 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
+          <div className="mt-10 sm:mt-12 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center max-w-md sm:max-w-none mx-auto">
             <m.div
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
-              className="relative"
+              className="relative flex-1 sm:flex-initial"
             >
               <span
                 aria-hidden="true"
@@ -2265,7 +2344,7 @@ function ResonateCTA({ project }: { project: Project }) {
               />
               <Link
                 href="/contact"
-                className="relative inline-flex items-center gap-2 rounded-2xl px-7 sm:px-9 py-4 sm:py-5 font-bold text-base sm:text-lg shadow-2xl"
+                className="relative w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-2xl px-7 sm:px-9 py-4 sm:py-5 font-bold text-base sm:text-lg shadow-2xl"
                 style={{
                   background: b.primary,
                   color: "#000",
@@ -2278,7 +2357,7 @@ function ResonateCTA({ project }: { project: Project }) {
             </m.div>
             <Link
               href="/work"
-              className="inline-flex items-center gap-2 rounded-2xl px-7 sm:px-9 py-4 sm:py-5 font-semibold text-base sm:text-lg border transition-colors"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-2xl px-7 sm:px-9 py-4 sm:py-5 font-semibold text-base sm:text-lg border transition-colors"
               style={{
                 color: b.textOnBrand,
                 borderColor: `rgba(${b.accentRGB},0.30)`,
@@ -2292,7 +2371,7 @@ function ResonateCTA({ project }: { project: Project }) {
 
         {/* Reassurance row */}
         <FadeIn delay={0.4}>
-          <div className="mt-12 sm:mt-16 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 max-w-3xl mx-auto">
+          <div className="mt-14 sm:mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-6 max-w-3xl mx-auto">
             {TRUST_POINTS.map((t, i) => {
               const Icon = t.icon;
               return (
@@ -2305,7 +2384,7 @@ function ResonateCTA({ project }: { project: Project }) {
                   className="text-center sm:text-left"
                 >
                   <div
-                    className="inline-flex items-center justify-center w-9 h-9 rounded-xl border mb-3 mx-auto sm:mx-0"
+                    className="inline-flex items-center justify-center w-10 h-10 sm:w-9 sm:h-9 rounded-xl border mb-3 mx-auto sm:mx-0"
                     style={{
                       background: `rgba(${b.accentRGB},0.10)`,
                       borderColor: `rgba(${b.accentRGB},0.25)`,
