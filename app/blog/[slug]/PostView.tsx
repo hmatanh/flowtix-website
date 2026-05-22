@@ -203,58 +203,158 @@ export function PostView({ slug }: { slug: string }) {
         </div>
       </section>
 
-      {/* Tags + share */}
-      <section className="px-6 lg:px-8 mt-16">
-        <div className="max-w-3xl mx-auto pt-8 border-t border-[#0f0f0f]">
+      {/* Tags + share — refined */}
+      <section className="px-4 sm:px-6 lg:px-8 mt-12 sm:mt-16">
+        <div className="max-w-3xl mx-auto pt-7 sm:pt-8 border-t border-[#0f0f0f]">
           <div className="flex flex-wrap items-center gap-2">
+            <span className="text-[10px] uppercase tracking-widest text-[#444] mr-1">
+              Tags:
+            </span>
             {post.tags.map((t) => (
               <span
                 key={t}
-                className="border border-blue-500/20 bg-blue-500/5 text-blue-400 text-xs px-3 py-1 rounded-full"
+                className="text-xs px-3 py-1 rounded-full border transition-colors"
+                style={{
+                  borderColor: `${post.categoryColor}30`,
+                  background: `${post.categoryColor}10`,
+                  color: post.categoryColor,
+                }}
               >
                 {t}
               </span>
             ))}
           </div>
-          <div className="mt-8 flex items-center justify-between">
-            <div className="text-[#666] text-sm">Share this article</div>
+          <div className="mt-7 sm:mt-8 flex items-center justify-between flex-wrap gap-3">
+            <div className="text-[#888] text-sm">Found this useful?</div>
             <div className="flex items-center gap-2">
+              <span className="text-[#444] text-xs mr-1 hidden sm:inline">
+                Share:
+              </span>
               <a
                 href="#"
                 aria-label="Share on Twitter"
                 className="w-9 h-9 inline-flex items-center justify-center border border-[#1a1a1a] rounded-lg text-[#666] hover:text-white hover:border-[#2a2a2a] transition-colors"
               >
-                <IconBrandX size={14} stroke={1.5} />
+                <IconBrandX size={14} stroke={1.5} aria-hidden="true" />
               </a>
               <a
                 href="#"
                 aria-label="Share on LinkedIn"
                 className="w-9 h-9 inline-flex items-center justify-center border border-[#1a1a1a] rounded-lg text-[#666] hover:text-white hover:border-[#2a2a2a] transition-colors"
               >
-                <IconBrandLinkedin size={14} stroke={1.5} />
+                <IconBrandLinkedin size={14} stroke={1.5} aria-hidden="true" />
               </a>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Strong "Make this real" closing CTA — category-color themed */}
+      <section className="px-4 sm:px-6 lg:px-8 mt-12 sm:mt-16">
+        <div
+          className="relative max-w-3xl mx-auto rounded-2xl sm:rounded-3xl p-6 sm:p-10 overflow-hidden border"
+          style={{
+            background: `linear-gradient(135deg, ${post.categoryColor}10 0%, #0a0a0a 60%)`,
+            borderColor: `${post.categoryColor}30`,
+          }}
+        >
+          <div
+            aria-hidden="true"
+            className="absolute -top-16 -right-16 w-48 h-48 pointer-events-none"
+            style={{
+              background: `radial-gradient(circle, ${post.categoryColor}30, transparent 70%)`,
+              filter: "blur(30px)",
+            }}
+          />
+
+          <div className="relative">
+            <div
+              className="text-[10px] sm:text-[11px] uppercase tracking-[0.2em] mb-3 sm:mb-4 inline-flex items-center gap-2 font-medium"
+              style={{ color: post.categoryColor }}
+            >
+              <span
+                className="w-1.5 h-1.5 rounded-full"
+                style={{ background: post.categoryColor }}
+              />
+              Talk to a builder
+            </div>
+            <h3
+              className="font-bold text-white tracking-tight leading-[1.15]"
+              style={{ fontSize: "clamp(22px, 3.5vw, 32px)" }}
+            >
+              Want to make something like this real for your business?
+            </h3>
+            <p className="text-[#999] text-sm sm:text-base mt-4 leading-[1.65] max-w-xl">
+              We help operators ship what they read about. Book a free
+              30-minute call — we&apos;ll listen to your situation and tell
+              you, in plain language, whether AI moves the needle for you.
+            </p>
+            <div className="mt-6 sm:mt-7 flex flex-col sm:flex-row gap-3 max-w-sm sm:max-w-none">
+              <m.div
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <Link
+                  href="/contact"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl font-bold text-sm transition-colors"
+                  style={{
+                    background: post.categoryColor,
+                    color: "#000",
+                    boxShadow: `0 20px 40px ${post.categoryColor}30`,
+                  }}
+                >
+                  Book a Discovery Call
+                  <IconArrowRight size={14} stroke={2.5} aria-hidden="true" />
+                </Link>
+              </m.div>
+              <Link
+                href="/services"
+                className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 rounded-2xl text-sm font-semibold border text-[#888] hover:text-white transition-colors"
+                style={{ borderColor: "#1f1f1f" }}
+              >
+                See how we work
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* About box */}
-      <section className="px-6 lg:px-8 mt-16">
-        <div className="max-w-3xl mx-auto bg-[#0D0D0D] border border-[#1a1a1a] rounded-2xl p-8">
-          <Logo size={22} />
-          <p className="text-[#888] text-sm mt-5 leading-relaxed max-w-xl">
-            Flowtix is a design-first studio building AI systems, automations,
-            and digital products for businesses that refuse to look average.
-            We combine 10+ years of design expertise with cutting-edge AI
-            infrastructure.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 mt-6 bg-white text-black px-5 py-2.5 rounded-lg font-semibold text-sm hover:bg-[#eee] transition-colors"
-          >
-            Work with us
-            <IconArrowRight size={14} stroke={2} aria-hidden="true" />
-          </Link>
+      <section className="px-4 sm:px-6 lg:px-8 mt-10 sm:mt-12">
+        <div className="max-w-3xl mx-auto bg-[#0D0D0D] border border-[#1a1a1a] rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-start gap-5 sm:gap-6">
+          <div className="shrink-0">
+            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a] border border-[#222] inline-flex items-center justify-center text-white font-bold text-sm">
+              FA
+            </div>
+          </div>
+          <div className="flex-1">
+            <div className="text-[10px] uppercase tracking-widest text-[#444] mb-1">
+              About the team
+            </div>
+            <h4 className="text-white text-base font-semibold tracking-tight">
+              Flowtix Team
+            </h4>
+            <p className="text-[#888] text-sm mt-3 leading-relaxed">
+              Flowtix is a design-first studio building AI systems, automations,
+              and digital products for businesses that refuse to look average.
+            </p>
+            <div className="mt-4 flex gap-3">
+              <Link
+                href="/about"
+                className="text-xs text-[#aaa] hover:text-white transition-colors inline-flex items-center gap-1"
+              >
+                About Flowtix
+                <IconArrowRight size={11} stroke={2} aria-hidden="true" />
+              </Link>
+              <span className="text-[#222]">·</span>
+              <Link
+                href="/work"
+                className="text-xs text-[#aaa] hover:text-white transition-colors inline-flex items-center gap-1"
+              >
+                See our work
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 
