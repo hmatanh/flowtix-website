@@ -31,6 +31,24 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-inter);
+
+  /* === Desktop "frame" — narrow Tailwind v4 container widths so content
+     sits inside a tighter visual frame instead of sprawling edge-to-edge
+     on wide monitors. */
+  --container-5xl: 60rem;   /* was 64rem  (1024 → 960) */
+  --container-6xl: 68rem;   /* was 72rem  (1152 → 1088) */
+  --container-7xl: 76rem;   /* was 80rem  (1280 → 1216) */
+}
+
+/* === Desktop frame padding — extra side gutter on lg+ so the contained
+   sections visually breathe, reinforcing the "in a frame" feel. */
+@media (min-width: 1024px) {
+  .max-w-7xl,
+  .max-w-6xl,
+  .max-w-5xl {
+    padding-left: max(1.5rem, env(safe-area-inset-left));
+    padding-right: max(1.5rem, env(safe-area-inset-right));
+  }
 }
 
 html, body {
