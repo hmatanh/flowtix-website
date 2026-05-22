@@ -27,6 +27,12 @@ import { AnimatedCounter } from "@/components/AnimatedCounter";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { ProjectSignature } from "@/components/projects/ProjectSignatures";
 import { ProjectMoodboard } from "@/components/projects/ProjectMoodboard";
+import {
+  ProjectArchitecture,
+  ProjectAIAgents,
+  ProjectTechStack,
+} from "@/components/projects/ProjectTechnicalSections";
+import { getProjectTechnical } from "@/lib/project-technical";
 
 const EASE = [0.21, 0.47, 0.32, 0.98] as const;
 
@@ -2462,6 +2468,7 @@ export function ProjectPageLayout({
 }) {
   // Pick the most impactful stat for the NumbersWall — first one with highest visual weight
   const featuredStat = content.statementStats[0];
+  const technical = getProjectTechnical(project.slug);
 
   return (
     <main>
@@ -2481,6 +2488,16 @@ export function ProjectPageLayout({
         solution={content.solution}
         whatWeBuilt={content.whatWeBuilt}
       />
+      {technical && (
+        <>
+          <ProjectArchitecture
+            project={project}
+            summary={technical.architecture.summary}
+            nodes={technical.architecture.nodes}
+          />
+          <ProjectAIAgents project={project} agents={technical.agents} />
+        </>
+      )}
       <NumbersWall project={project} stat={featuredStat} />
       <FullBleedMoment project={project} fullBleed={content.fullBleed} />
       <GalleryScroll project={project} gallery={content.gallery} />
@@ -2490,6 +2507,9 @@ export function ProjectPageLayout({
         testimonialFull={content.testimonialFull}
         testimonialRole={content.testimonialRole}
       />
+      {technical && (
+        <ProjectTechStack project={project} stack={technical.stack} />
+      )}
       <SoundFamiliar project={project} />
       <EngagementSpecs project={project} />
       <ResonateCTA project={project} />

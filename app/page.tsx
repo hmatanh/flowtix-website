@@ -242,7 +242,7 @@ export default function Home() {
   return (
     <>
       {/* ===== 1. HERO ===== */}
-      <section className="relative min-h-screen flex items-center px-4 sm:px-6 lg:px-8 pt-28 lg:pt-32 pb-24 overflow-hidden">
+      <section className="relative min-h-screen flex items-center px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 lg:pt-24 pb-20 sm:pb-24 overflow-hidden">
         <PerspectiveGrid />
         <m.div
           className="absolute top-[-200px] right-[-300px] w-[900px] h-[600px] rounded-full pointer-events-none animate-pulse-slow"
