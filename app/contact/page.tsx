@@ -456,10 +456,47 @@ export default function ContactPage() {
 
   return (
     <>
-      <section className="relative py-24 lg:py-32 px-6 lg:px-8 text-center overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-blue-600 opacity-[0.05] blur-[120px] rounded-full pointer-events-none" />
+      <section className="relative py-20 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 text-center overflow-hidden">
+        <div
+          aria-hidden="true"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(ellipse, rgba(59,130,246,0.08) 0%, transparent 70%)",
+            filter: "blur(80px)",
+          }}
+        />
+        {/* Subtle dot grid */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage:
+              "radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px)",
+            backgroundSize: "32px 32px",
+            maskImage:
+              "radial-gradient(ellipse 80% 60% at 50% 30%, black, transparent 70%)",
+            WebkitMaskImage:
+              "radial-gradient(ellipse 80% 60% at 50% 30%, black, transparent 70%)",
+          }}
+        />
+
         <div className="relative max-w-4xl mx-auto">
-          <h1 className="text-h1 text-white">
+          <FadeIn>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/5 mb-6 sm:mb-8">
+              <span className="relative flex h-1.5 w-1.5">
+                <span className="animate-ping absolute h-full w-full rounded-full bg-blue-400 opacity-75" />
+                <span className="relative h-1.5 w-1.5 rounded-full bg-blue-500" />
+              </span>
+              <span className="text-blue-400 text-[10px] sm:text-[11px] tracking-[0.18em] uppercase font-medium">
+                Available · Response in 24h
+              </span>
+            </div>
+          </FadeIn>
+          <h1
+            className="font-black tracking-tighter text-white leading-[1.02] sm:leading-[0.95]"
+            style={{ fontSize: "clamp(38px, 7vw, 80px)" }}
+          >
             <m.span
               initial="hidden"
               animate="visible"
@@ -478,11 +515,34 @@ export default function ContactPage() {
             </m.span>
           </h1>
           <FadeIn delay={0.5}>
-            <p className="text-[#888] mt-6 max-w-2xl mx-auto text-lg leading-relaxed">
+            <p className="text-[#888] mt-6 sm:mt-7 max-w-2xl mx-auto text-base sm:text-lg leading-[1.65] sm:leading-relaxed px-2">
               Not every project is right for us — and we&apos;d rather tell you
               that upfront than take your money and underdeliver. Book 30
               minutes and let&apos;s be honest.
             </p>
+          </FadeIn>
+
+          {/* Trust trio */}
+          <FadeIn delay={0.7}>
+            <div className="mt-10 sm:mt-12 grid grid-cols-3 gap-3 max-w-md sm:max-w-lg mx-auto">
+              {[
+                { value: "30 min", label: "Discovery call" },
+                { value: "24h", label: "Response time" },
+                { value: "Free", label: "No commitment" },
+              ].map((t) => (
+                <div
+                  key={t.label}
+                  className="rounded-xl border border-[#1a1a1a] bg-[#080808] p-3 sm:p-4 text-center"
+                >
+                  <div className="text-white font-bold tabular-nums tracking-tight text-base sm:text-lg">
+                    {t.value}
+                  </div>
+                  <div className="text-[10px] sm:text-[11px] uppercase tracking-wider text-[#666] mt-1">
+                    {t.label}
+                  </div>
+                </div>
+              ))}
+            </div>
           </FadeIn>
         </div>
       </section>

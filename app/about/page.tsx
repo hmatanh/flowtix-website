@@ -118,15 +118,15 @@ const STEPS = [
 export default function AboutPage() {
   return (
     <>
-      {/* ===== 1. HERO ===== */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* ===== 1. HERO — refined, not min-h-screen ===== */}
+      <section className="relative flex items-center justify-center overflow-hidden py-20 sm:py-28 lg:py-36">
         <div
           aria-hidden="true"
           className="absolute top-[-200px] right-[-300px] w-[600px] h-[600px] rounded-full pointer-events-none"
           style={{
             background:
-              "radial-gradient(circle, rgba(59,130,246,0.04) 0%, transparent 70%)",
-            filter: "blur(150px)",
+              "radial-gradient(circle, rgba(59,130,246,0.07) 0%, transparent 70%)",
+            filter: "blur(100px)",
           }}
         />
         <div
@@ -136,45 +136,101 @@ export default function AboutPage() {
             backgroundImage:
               "radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px)",
             backgroundSize: "32px 32px",
-            mask:
+            maskImage:
               "radial-gradient(ellipse 80% 60% at 50% 50%, black 0%, transparent 70%)",
-            WebkitMask:
+            WebkitMaskImage:
               "radial-gradient(ellipse 80% 60% at 50% 50%, black 0%, transparent 70%)",
           }}
         />
+        {/* Decorative gradient lines */}
+        <m.div
+          aria-hidden="true"
+          className="absolute top-1/3 left-0 right-0 h-px pointer-events-none"
+          style={{
+            background:
+              "linear-gradient(90deg, transparent, rgba(59,130,246,0.25), transparent)",
+          }}
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ duration: 1.5, delay: 0.3, ease: "easeOut" }}
+        />
+        <m.div
+          aria-hidden="true"
+          className="absolute bottom-1/3 left-0 right-0 h-px pointer-events-none"
+          style={{
+            background:
+              "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)",
+          }}
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ duration: 1.5, delay: 0.5, ease: "easeOut" }}
+        />
 
-        <div className="relative max-w-5xl mx-auto px-6 pt-40 pb-20 text-center">
+        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn>
-            <div className="section-label text-[#1a1a1a] text-[11px] tracking-[0.2em] uppercase mb-8">
-              Our Story
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#1a1a1a] bg-[#080808] mb-6 sm:mb-8">
+              <span className="relative flex h-1.5 w-1.5">
+                <span className="animate-ping absolute h-full w-full rounded-full bg-blue-400 opacity-75" />
+                <span className="relative h-1.5 w-1.5 rounded-full bg-blue-500" />
+              </span>
+              <span className="text-[#cccccc] text-[10px] sm:text-[11px] tracking-[0.18em] uppercase font-medium">
+                Our Story
+              </span>
             </div>
           </FadeIn>
 
           <FadeIn delay={0.1}>
             <h1
-              className="section-heading font-black text-white tracking-tight leading-[0.95]"
-              style={{ fontSize: "clamp(40px, 7vw, 80px)" }}
+              className="font-black text-white tracking-tighter leading-[1.02] sm:leading-[0.95]"
+              style={{ fontSize: "clamp(38px, 7vw, 88px)" }}
             >
-              We believe <span className="gradient-text-blue">design</span> is the most
-              <br className="hidden sm:inline" />{" "}
-              underrated advantage in AI.
+              We believe{" "}
+              <span className="gradient-text-blue">design</span>
+              <br className="hidden sm:inline" /> is the most underrated
+              <br className="hidden sm:inline" /> advantage in AI.
             </h1>
           </FadeIn>
 
           <FadeIn delay={0.25}>
-            <p className="section-subtext text-[#444] text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto mt-8">
+            <p className="text-[#888] text-base sm:text-lg lg:text-xl leading-[1.65] sm:leading-relaxed max-w-2xl mx-auto mt-7 sm:mt-8 px-2">
               Most AI tools are built by engineers for engineers. We built
               Flowtix for the humans who use them.
             </p>
           </FadeIn>
 
-          <FadeIn delay={0.4}>
+          {/* Quick credentials strip */}
+          <FadeIn delay={0.35}>
+            <div className="mt-10 sm:mt-12 grid grid-cols-3 gap-3 max-w-md sm:max-w-lg mx-auto">
+              {[
+                { value: "10+", label: "Years design" },
+                { value: "50+", label: "AI deploys" },
+                { value: "5", label: "Industries" },
+              ].map((s) => (
+                <div
+                  key={s.label}
+                  className="rounded-xl border border-[#1a1a1a] bg-[#080808] p-3 sm:p-4 text-center"
+                >
+                  <div className="text-white font-black tabular-nums tracking-tight text-lg sm:text-xl">
+                    {s.value}
+                  </div>
+                  <div className="text-[10px] sm:text-[11px] uppercase tracking-wider text-[#666] mt-1">
+                    {s.label}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={0.5}>
             <m.div
-              className="mt-16 inline-flex"
+              className="mt-12 sm:mt-14 inline-flex flex-col items-center gap-2"
               animate={{ y: [0, 8, 0] }}
               transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
             >
-              <IconArrowDown size={20} stroke={1.5} aria-hidden="true" className="text-[#222]" />
+              <span className="text-[#333] text-[10px] uppercase tracking-[0.2em]">
+                Scroll
+              </span>
+              <IconArrowDown size={16} stroke={1.5} aria-hidden="true" className="text-[#333]" />
             </m.div>
           </FadeIn>
         </div>
@@ -241,14 +297,22 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <div className="mt-8 flex flex-wrap gap-2">
-                {SKILLS.map((s) => (
-                  <span
+              <div className="mt-7 sm:mt-8 flex flex-wrap gap-2">
+                {SKILLS.map((s, i) => (
+                  <m.span
                     key={s}
-                    className="bg-[#0D0D0D] border border-[#1a1a1a] rounded-full px-4 py-2 text-[#444] text-sm"
+                    initial={{ opacity: 0, y: 6 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.5 }}
+                    transition={{ delay: i * 0.04, duration: 0.4, ease: EASE }}
+                    className="rounded-full px-4 py-2 text-[#888] text-xs sm:text-sm border transition-colors hover:text-white hover:border-blue-500/30"
+                    style={{
+                      background: "#0D0D0D",
+                      borderColor: "#1a1a1a",
+                    }}
                   >
                     {s}
-                  </span>
+                  </m.span>
                 ))}
               </div>
             </FadeIn>
@@ -328,7 +392,7 @@ export default function AboutPage() {
             </h2>
           </FadeIn>
 
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6">
+          <div className="mt-12 sm:mt-16 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 lg:gap-6">
             {VALUES.map((v, i) => {
               const Icon = v.icon;
               return (
@@ -339,15 +403,46 @@ export default function AboutPage() {
                   viewport={{ once: true, amount: 0.2 }}
                   transition={{ delay: i * 0.1, duration: 0.5, ease: EASE }}
                 >
-                  <GlowCard className="bg-[#0D0D0D] border border-[#1a1a1a] rounded-2xl p-8 hover:border-[#222] transition-colors h-full">
-                    <div className="absolute top-6 right-6 text-[#1a1a1a] text-5xl font-black tracking-tighter pointer-events-none">
+                  <GlowCard className="bg-[#0D0D0D] border border-[#1a1a1a] rounded-2xl p-6 sm:p-8 hover:border-blue-500/25 transition-all duration-500 h-full">
+                    {/* Brand-color subtle corner glow */}
+                    <div
+                      aria-hidden="true"
+                      className="absolute top-0 right-0 w-24 h-24 pointer-events-none opacity-50"
+                      style={{
+                        background:
+                          "radial-gradient(circle, rgba(59,130,246,0.10), transparent 70%)",
+                        filter: "blur(15px)",
+                      }}
+                    />
+                    {/* Number with stroke effect */}
+                    <div
+                      className="absolute top-5 right-5 text-4xl sm:text-5xl font-black tracking-tighter pointer-events-none select-none"
+                      style={{
+                        color: "transparent",
+                        WebkitTextStroke: "1px rgba(59,130,246,0.15)",
+                      }}
+                    >
                       {v.n}
                     </div>
-                    <Icon size={28} stroke={1.5} className="text-[#333]" />
-                    <h3 className="text-white text-xl font-bold mt-8 tracking-tight">
+                    {/* Icon in branded frame */}
+                    <div
+                      className="relative inline-flex items-center justify-center w-12 h-12 rounded-xl"
+                      style={{
+                        background: "rgba(59,130,246,0.08)",
+                        border: "1px solid rgba(59,130,246,0.20)",
+                      }}
+                    >
+                      <Icon
+                        size={22}
+                        stroke={1.5}
+                        aria-hidden="true"
+                        className="text-blue-400"
+                      />
+                    </div>
+                    <h3 className="relative text-white text-lg sm:text-xl font-bold mt-6 sm:mt-8 tracking-tight leading-[1.2]">
                       {v.title}
                     </h3>
-                    <p className="text-[#666] text-sm leading-relaxed mt-3">
+                    <p className="relative text-[#888] text-[14px] sm:text-sm leading-[1.65] sm:leading-relaxed mt-2.5 sm:mt-3">
                       {v.body}
                     </p>
                   </GlowCard>
