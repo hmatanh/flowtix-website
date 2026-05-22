@@ -20,7 +20,7 @@ export function ClientShell({ children }: { children: ReactNode }) {
         className="min-h-screen flex flex-col"
         style={{
           opacity: loaded || !mounted ? 1 : 0,
-          transition: "opacity 0.01s",
+          transition: "opacity 0.05s",
         }}
       >
         {children}
