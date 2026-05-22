@@ -12,6 +12,7 @@ import {
 import { getPostBySlug, getRelatedPosts } from "@/lib/posts";
 import { Logo } from "@/components/Logo";
 import { FadeIn } from "@/components/animations/FadeIn";
+import { PostHero } from "@/components/PostHero";
 
 function ReadingProgress() {
   const { scrollYProgress } = useScroll();
@@ -176,6 +177,18 @@ export function PostView({ slug }: { slug: string }) {
             viewport={{ once: true }}
             transition={{ duration: 0.9, ease: [0.21, 0.47, 0.32, 0.98] }}
             className="h-px mt-10 origin-left bg-gradient-to-r from-transparent via-[#1a1a1a] to-transparent"
+          />
+        </div>
+      </section>
+
+      {/* Hero illustration — auto-generated SVG, no copyright concerns */}
+      <section className="px-6 lg:px-8 mt-4 mb-6">
+        <div className="max-w-3xl mx-auto">
+          <PostHero
+            slug={post.slug}
+            category={post.category}
+            categoryColor={post.categoryColor}
+            title={post.title}
           />
         </div>
       </section>

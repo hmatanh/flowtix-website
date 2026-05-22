@@ -57,13 +57,36 @@ export const metadata: Metadata = {
     title: "Flowtix — Design-First AI Systems",
     description:
       "AI-powered systems, intelligent automations, and premium digital products.",
+    images: [
+      {
+        url: "/flowtix-wordmark-white.svg",
+        width: 1200,
+        height: 630,
+        alt: "Flowtix — Design-First AI Systems",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Flowtix",
     description: "Design-First AI Systems for Forward-Thinking Businesses",
+    images: ["/flowtix-wordmark-white.svg"],
   },
-  robots: { index: true, follow: true },
+  alternates: {
+    canonical: "https://flowtix.ai/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  category: "technology",
 };
 
 export default function RootLayout({
@@ -79,6 +102,51 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         <meta name="theme-color" content="#000000" />
+        {/* Organization JSON-LD — global, applies to every page */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Flowtix",
+              url: "https://flowtix.ai",
+              logo: "https://flowtix.ai/flowtix-wordmark-white.svg",
+              description:
+                "Design-first AI systems, intelligent automations, and premium digital products for forward-thinking businesses.",
+              email: "office@flowtix.ai",
+              sameAs: [],
+              foundingDate: "2025",
+              areaServed: "Worldwide",
+              knowsAbout: [
+                "AI Systems",
+                "AI Automation",
+                "UI/UX Design",
+                "Brand Strategy",
+                "Web Development",
+                "AI Consulting",
+              ],
+            }),
+          }}
+        />
+        {/* WebSite JSON-LD with SearchAction */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "Flowtix",
+              url: "https://flowtix.ai",
+              description:
+                "Design-First AI Systems for Forward-Thinking Businesses.",
+              publisher: {
+                "@type": "Organization",
+                name: "Flowtix",
+              },
+            }),
+          }}
+        />
       </head>
       <body className="min-h-full bg-black text-white antialiased">
         <a href="#main-content" className="skip-link">

@@ -17,9 +17,33 @@ export async function generateMetadata({
   const { slug } = await params;
   const post = getPostBySlug(slug);
   if (!post) return { title: "Article not found" };
+
+  const url = `https://flowtix.ai/blog/${post.slug}/`;
+  const title = `${post.title} — Flowtix`;
+  const description = post.excerpt;
+
   return {
-    title: `${post.title} — Flowtix`,
-    description: post.excerpt,
+    title,
+    description,
+    keywords: post.tags.concat(["AI", "Flowtix", post.category]).join(", "),
+    authors: [{ name: post.author }],
+    alternates: { canonical: url },
+    openGraph: {
+      type: "article",
+      url,
+      siteName: "Flowtix",
+      title: post.title,
+      description,
+      publishedTime: post.date,
+      authors: [post.author],
+      tags: post.tags,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description,
+    },
+    robots: { index: true, follow: true },
   };
 }
 
@@ -31,5 +55,74 @@ export default async function Page({
   const { slug } = await params;
   const post = getPostBySlug(slug);
   if (!post) notFound();
-  return <PostView slug={slug} />;
+
+  // JSON-LD structured data for SEO
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.excerpt,
+    image: "https://flowtix.ai/icon.svg",
+    datePublished: post.date,
+    dateModified: post.date,
+    author: {
+      "@type": "Organization",
+      name: post.author,
+      url: "https://flowtix.ai/about/",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Flowtix",
+      url: "https://flowtix.ai",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://flowtix.ai/flowtix-wordmark-white.svg",
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://flowtix.ai/blog/${post.slug}/`,
+    },
+    keywords: post.tags.join(", "),
+    articleSection: post.category,
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://flowtix.ai/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Blog",
+        item: "https://flowtix.ai/blog/",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: post.title,
+        item: `https://flowtix.ai/blog/${post.slug}/`,
+      },
+    ],
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <PostView slug={slug} />
+    </>
+  );
 }
