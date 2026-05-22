@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import { m } from "framer-motion";
+import { useEffect } from "react";
+import { m, useMotionValue, useSpring } from "framer-motion";
 import {
   IconArrowRight,
   IconLockSquare,
@@ -11,6 +12,7 @@ import {
 import { LiveActivityFeed } from "@/components/LiveActivityFeed";
 import { PerspectiveGrid } from "@/components/PerspectiveGrid";
 import { AnimatedCounter } from "@/components/AnimatedCounter";
+import { MagneticButton } from "@/components/MagneticButton";
 
 // Dynamic imports — reduce initial JS bundle, load heavy interactive components after first paint
 const HeroAIDemo = dynamic(
@@ -186,16 +188,38 @@ const INDUSTRIES_12 = [
 // ===== Component =====
 
 export default function Home() {
+  // Mouse-parallax for the hero blue orb (very subtle; desktop only).
+  const orbX = useMotionValue(0);
+  const orbY = useMotionValue(0);
+  const orbSpringX = useSpring(orbX, { stiffness: 60, damping: 25 });
+  const orbSpringY = useSpring(orbY, { stiffness: 60, damping: 25 });
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+    function onMove(e: MouseEvent) {
+      // Range ±18px — "very slight" per the brief
+      const nx = (e.clientX / window.innerWidth - 0.5) * 36;
+      const ny = (e.clientY / window.innerHeight - 0.5) * 36;
+      orbX.set(nx);
+      orbY.set(ny);
+    }
+    window.addEventListener("mousemove", onMove, { passive: true });
+    return () => window.removeEventListener("mousemove", onMove);
+  }, [orbX, orbY]);
+
   return (
     <>
       {/* ===== 1. HERO ===== */}
       <section className="relative min-h-screen flex items-center px-4 sm:px-6 lg:px-8 pt-28 lg:pt-32 pb-24 overflow-hidden">
         <PerspectiveGrid />
-        <div
+        <m.div
           className="absolute top-[-200px] right-[-300px] w-[900px] h-[600px] rounded-full pointer-events-none animate-pulse-slow"
           style={{
             background:
               "radial-gradient(circle, rgba(59,130,246,0.07) 0%, transparent 70%)",
+            x: orbSpringX,
+            y: orbSpringY,
           }}
         />
         <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-black to-transparent pointer-events-none" />
@@ -263,11 +287,7 @@ export default function Home() {
               transition={{ delay: 0.9, duration: 0.5 }}
               className="mt-10 flex flex-wrap gap-3 justify-center lg:justify-start"
             >
-              <m.div
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.97 }}
-                className="btn-pulse-ring rounded-xl"
-              >
+              <MagneticButton strength={0.25} className="btn-pulse-ring rounded-xl">
                 <Link
                   href="/services"
                   className="btn-shimmer relative z-[1] inline-flex items-center gap-2 bg-white text-black px-7 py-3.5 rounded-xl text-sm font-semibold hover:bg-[#eee] transition-colors min-h-[48px]"
@@ -275,7 +295,7 @@ export default function Home() {
                   <span className="relative z-10">See What We Build</span>
                   <IconArrowRight size={16} stroke={2} aria-hidden="true" className="relative z-10" />
                 </Link>
-              </m.div>
+              </MagneticButton>
               <Link
                 href="/work"
                 className="inline-flex items-center border border-[#1a1a1a] text-[#555] px-7 py-3.5 rounded-xl text-sm hover:border-[#2a2a2a] hover:text-[#888] transition-all"
@@ -296,6 +316,25 @@ export default function Home() {
             <LiveActivityFeed />
           </m.div>
         </div>
+
+        {/* Scroll indicator — bottom of hero, pulses gently */}
+        <m.div
+          aria-hidden="true"
+          className="hidden lg:flex absolute bottom-6 left-1/2 -translate-x-1/2 flex-col items-center gap-2 pointer-events-none"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.4, duration: 0.8 }}
+        >
+          <span className="text-[#333] text-[10px] tracking-[0.2em] uppercase">
+            Scroll
+          </span>
+          <m.span
+            className="block w-px bg-[#333]"
+            style={{ height: 28, transformOrigin: "top" }}
+            animate={{ scaleY: [0.3, 1, 0.3], opacity: [0.4, 1, 0.4] }}
+            transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
+          />
+        </m.div>
       </section>
 
       {/* ===== 2. SOCIAL PROOF COUNTER STRIP ===== */}
