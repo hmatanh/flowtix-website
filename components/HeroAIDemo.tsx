@@ -349,7 +349,7 @@ export function HeroAIDemo() {
           aria-label="Send message"
           className="bg-[#3B82F6] hover:bg-[#2563EB] disabled:bg-[#1a1a1a] disabled:cursor-not-allowed text-white rounded-lg p-2.5 transition-colors"
         >
-          <IconSend size={14} stroke={2} />
+          <IconSend size={14} stroke={2} aria-hidden="true" />
         </button>
       </form>
 
@@ -363,7 +363,7 @@ export function HeroAIDemo() {
           transition={{ delay: 0.4 }}
           className="absolute bottom-16 right-3 text-[#222] hover:text-[#666] text-[10px] inline-flex items-center gap-1 transition-colors"
         >
-          <IconRefresh size={11} stroke={1.5} />
+          <IconRefresh size={11} stroke={1.5} aria-hidden="true" />
           Replay demo
         </m.button>
       )}

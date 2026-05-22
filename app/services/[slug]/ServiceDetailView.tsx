@@ -196,7 +196,7 @@ export function ServiceDetailView({ slug }: { slug: string }) {
               <StaggerItem key={f}>
                 <div className="bg-[#0D0D0D] border border-[#1a1a1a] rounded-xl p-5 h-full flex items-start gap-4">
                   <span className="w-7 h-7 rounded-full border border-blue-500/40 bg-blue-500/10 inline-flex items-center justify-center shrink-0 mt-0.5">
-                    <IconCheck size={14} stroke={2.5} className="text-blue-400" />
+                    <IconCheck size={14} stroke={2.5} aria-hidden="true" className="text-blue-400" />
                   </span>
                   <span className="text-[#cccccc] text-sm leading-relaxed">{f}</span>
                 </div>

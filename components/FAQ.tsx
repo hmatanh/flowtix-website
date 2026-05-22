@@ -81,7 +81,7 @@ export function FAQ() {
                     transition={{ duration: 0.25, ease: [0.21, 0.47, 0.32, 0.98] }}
                     className="shrink-0 text-[#666] group-hover:text-white transition-colors"
                   >
-                    <IconPlus size={20} stroke={1.5} />
+                    <IconPlus size={20} stroke={1.5} aria-hidden="true" />
                   </m.span>
                 </button>
                 <AnimatePresence initial={false}>
