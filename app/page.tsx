@@ -55,9 +55,9 @@ const EASE = [0.21, 0.47, 0.32, 0.98] as const;
 // ===== Section data =====
 
 const HERO_STATS = [
-  { value: "10+ yrs", label: "Design Experience" },
-  { value: "50+", label: "Systems Deployed" },
-  { value: "48h", label: "Avg. Deploy Time" },
+  { value: "10+ Years", label: "Design Experience" },
+  { value: "50+", label: "Systems Shipped" },
+  { value: "48 Hours", label: "Avg. First Deploy" },
 ];
 
 const SOCIAL_STATS = [
@@ -201,7 +201,7 @@ export default function Home() {
         <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-black to-transparent pointer-events-none" />
 
         <div className="relative max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-12 items-center">
-          <div>
+          <div className="text-center lg:text-left">
             <m.div
               initial={{ opacity: 0, y: -8 }}
               animate={{ opacity: 1, y: 0 }}
@@ -227,7 +227,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.6, ease: EASE }}
-              className="text-[#666] text-lg md:text-xl mt-7 max-w-xl leading-relaxed"
+              className="text-[#666] text-lg md:text-xl mt-7 max-w-xl leading-relaxed mx-auto lg:mx-0"
             >
               We combine 10+ years of design mastery with frontier AI to build
               systems that don&apos;t just work — they get used, loved, and
@@ -238,7 +238,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7, duration: 0.5 }}
-              className="mt-8 flex items-center gap-6 flex-wrap"
+              className="mt-8 flex items-center gap-6 flex-wrap justify-center lg:justify-start"
             >
               {HERO_STATS.map((s, i) => (
                 <span key={s.value} className="inline-flex items-center gap-6">
@@ -261,16 +261,16 @@ export default function Home() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.9, duration: 0.5 }}
-              className="mt-10 flex flex-wrap gap-3"
+              className="mt-10 flex flex-wrap gap-3 justify-center lg:justify-start"
             >
               <m.div
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.97 }}
-                className="inline-block rounded-xl"
+                className="btn-pulse-ring rounded-xl"
               >
                 <Link
                   href="/services"
-                  className="btn-shimmer inline-flex items-center gap-2 bg-white text-black px-7 py-3.5 rounded-xl text-sm font-semibold hover:bg-[#eee] transition-colors"
+                  className="btn-shimmer relative z-[1] inline-flex items-center gap-2 bg-white text-black px-7 py-3.5 rounded-xl text-sm font-semibold hover:bg-[#eee] transition-colors min-h-[48px]"
                 >
                   <span className="relative z-10">See What We Build</span>
                   <IconArrowRight size={16} stroke={2} className="relative z-10" />

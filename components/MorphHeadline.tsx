@@ -36,10 +36,10 @@ export function MorphHeadline() {
   const v = VARIANTS[idx];
 
   return (
-    <div>
+    <div className="text-center lg:text-left">
       <h1
         className="font-black tracking-tighter leading-[0.92]"
-        style={{ fontSize: "clamp(48px, 7.5vw, 96px)" }}
+        style={{ fontSize: "clamp(40px, 7.5vw, 96px)" }}
         aria-label={VARIANTS[0].lines.join(" ")}
       >
         <AnimatePresence mode="wait">
@@ -71,7 +71,7 @@ export function MorphHeadline() {
         </AnimatePresence>
       </h1>
 
-      <div className="mt-8 flex items-center gap-2" aria-hidden="true">
+      <div className="mt-8 flex items-center gap-2 justify-center lg:justify-start" aria-hidden="true">
         {VARIANTS.map((_, i) => (
           <m.span
             key={i}

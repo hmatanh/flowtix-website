@@ -546,6 +546,26 @@ body::before {
 }
 .btn-shimmer:hover::before { transform: translateX(100%); }
 
+/* Pulse ring around a CTA — wrap the button in a span/div with this class.
+   Two staggered rings expand outward and fade, drawing attention to the CTA. */
+.btn-pulse-ring { position: relative; display: inline-block; border-radius: 0.75rem; }
+.btn-pulse-ring::before,
+.btn-pulse-ring::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
+  pointer-events: none;
+  animation: pulseRing 2.6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  will-change: transform, opacity;
+}
+.btn-pulse-ring::after { animation-delay: 1.3s; }
+@media (prefers-reduced-motion: reduce) {
+  .btn-pulse-ring::before,
+  .btn-pulse-ring::after { animation: none; opacity: 0; }
+}
+
 /* Typing dots animation for product mockup */
 @keyframes typingDot {
   0%, 60%, 100% { transform: translateY(0); opacity: 0.3; }
