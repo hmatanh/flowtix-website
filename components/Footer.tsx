@@ -110,19 +110,19 @@ export function Footer() {
             <ul className="space-y-3 text-sm text-[#666]">
               <li>
                 <a href="mailto:office@flowtix.ai" className="inline-flex items-center gap-2 hover:text-white transition-colors">
-                  <IconMail size={14} stroke={1.5} />
+                  <IconMail size={14} stroke={1.5} aria-hidden="true" />
                   office@flowtix.ai
                 </a>
               </li>
               <li>
                 <a href="#" className="inline-flex items-center gap-2 hover:text-white transition-colors">
-                  <IconBrandX size={14} stroke={1.5} />
+                  <IconBrandX size={14} stroke={1.5} aria-hidden="true" />
                   Twitter
                 </a>
               </li>
               <li>
                 <a href="#" className="inline-flex items-center gap-2 hover:text-white transition-colors">
-                  <IconBrandLinkedin size={14} stroke={1.5} />
+                  <IconBrandLinkedin size={14} stroke={1.5} aria-hidden="true" />
                   LinkedIn
                 </a>
               </li>

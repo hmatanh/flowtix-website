@@ -240,7 +240,7 @@ export function PostView({ slug }: { slug: string }) {
             className="inline-flex items-center gap-2 mt-6 bg-white text-black px-5 py-2.5 rounded-lg font-semibold text-sm hover:bg-[#eee] transition-colors"
           >
             Work with us
-            <IconArrowRight size={14} stroke={2} />
+            <IconArrowRight size={14} stroke={2} aria-hidden="true" />
           </Link>
         </div>
       </section>
@@ -291,6 +291,7 @@ export function PostView({ slug }: { slug: string }) {
                         <IconArrowRight
                           size={12}
                           stroke={2}
+                          aria-hidden="true"
                           className="group-hover:translate-x-0.5 transition-transform"
                         />
                       </span>

@@ -227,7 +227,7 @@ export default function ProductsPage() {
               className="inline-flex items-center gap-2 border border-[#333] text-white px-6 py-3 rounded-lg mt-8 transition-colors"
             >
               Talk to us about white-label
-              <IconArrowRight size={16} stroke={2} />
+              <IconArrowRight size={16} stroke={2} aria-hidden="true" />
             </m.a>
           </FadeIn>
           <FadeIn direction="left" delay={0.1}>
