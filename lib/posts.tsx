@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { batch1 } from "./blog/batch-01-ai-systems";
 
 export type PostCategory =
   | "AI Systems"
@@ -851,6 +852,7 @@ export const posts: Post[] = [
       </>
     ),
   },
+  ...batch1,
 ];
 
 export function getPostBySlug(slug: string) {
