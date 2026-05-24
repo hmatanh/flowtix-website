@@ -72,7 +72,7 @@ export function Nav() {
         }`}
         style={{ top: "var(--announcement-h, 0px)" }}
       >
-        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <nav className="site-container h-16 flex items-center justify-between">
           <m.div whileHover={{ scale: 1.03 }} transition={{ duration: 0.2 }}>
             <Logo size={24} />
           </m.div>

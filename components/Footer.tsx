@@ -23,7 +23,7 @@ export function Footer() {
     <footer className="bg-[#040404] border-t border-[#0a0a0a]">
       <div className="h-px bg-gradient-to-r from-transparent via-[#1a1a1a] to-transparent" />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="site-container">
         <div className="py-16 grid grid-cols-1 lg:grid-cols-2 gap-10">
           <div>
             <Logo size={24} />

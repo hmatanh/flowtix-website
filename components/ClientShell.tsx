@@ -2,7 +2,6 @@
 
 import { ReactNode, useEffect, useState } from "react";
 import dynamic from "next/dynamic";
-import { Cursor } from "./Cursor";
 
 // Loader is dynamically imported so its JS doesn't sit in the main bundle.
 // It's only needed for the first visit of a session (we skip on subsequent
@@ -47,7 +46,6 @@ export function ClientShell({ children }: { children: ReactNode }) {
 
   return (
     <>
-      <Cursor />
       {mounted && shouldLoad && !loaded && (
         <Loader onComplete={handleComplete} />
       )}
