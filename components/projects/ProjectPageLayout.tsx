@@ -2462,9 +2462,12 @@ function ResonateCTA({ project }: { project: Project }) {
 export function ProjectPageLayout({
   project,
   content,
+  afterGallery,
 }: {
   project: Project;
   content: ProjectPageContent;
+  /** Optional section rendered between the gallery and the process moment. */
+  afterGallery?: ReactNode;
 }) {
   // Pick the most impactful stat for the NumbersWall — first one with highest visual weight
   const featuredStat = content.statementStats[0];
@@ -2501,6 +2504,7 @@ export function ProjectPageLayout({
       <NumbersWall project={project} stat={featuredStat} />
       <FullBleedMoment project={project} fullBleed={content.fullBleed} />
       <GalleryScroll project={project} gallery={content.gallery} />
+      {afterGallery}
       <ProcessMoment project={project} chapters={content.process} />
       <TestimonialMoment
         project={project}

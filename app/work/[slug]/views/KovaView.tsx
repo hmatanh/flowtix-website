@@ -8,6 +8,7 @@ import {
 import { ScreenDashboard } from "@/components/clients/kova/ScreenDashboard";
 import { ScreenMatching } from "@/components/clients/kova/ScreenMatching";
 import { ScreenCRM } from "@/components/clients/kova/ScreenCRM";
+import { InteractiveTour } from "@/components/clients/kova/InteractiveTour";
 
 const CONTENT: ProjectPageContent = {
   heroHeadline:
@@ -134,5 +135,11 @@ const CONTENT: ProjectPageContent = {
 };
 
 export function KovaView({ project }: { project: Project }) {
-  return <ProjectPageLayout project={project} content={CONTENT} />;
+  return (
+    <ProjectPageLayout
+      project={project}
+      content={CONTENT}
+      afterGallery={<InteractiveTour />}
+    />
+  );
 }
