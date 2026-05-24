@@ -8,6 +8,7 @@ import {
 import { ScreenStore } from "@/components/clients/drft/ScreenStore";
 import { ScreenContent } from "@/components/clients/drft/ScreenContent";
 import { ScreenEmail } from "@/components/clients/drft/ScreenEmail";
+import { InteractiveTour } from "@/components/clients/drft/InteractiveTour";
 
 const CONTENT: ProjectPageContent = {
   heroHeadline:
@@ -132,5 +133,11 @@ const CONTENT: ProjectPageContent = {
 };
 
 export function DrftView({ project }: { project: Project }) {
-  return <ProjectPageLayout project={project} content={CONTENT} />;
+  return (
+    <ProjectPageLayout
+      project={project}
+      content={CONTENT}
+      afterGallery={<InteractiveTour />}
+    />
+  );
 }
