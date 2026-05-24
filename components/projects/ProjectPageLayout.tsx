@@ -444,7 +444,7 @@ function Hero({
       </div>
 
       <m.div
-        className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 flex-1 flex flex-col"
+        className="relative z-10 max-w-7xl mx-auto w-full px-6 md:px-10 xl:px-12 flex-1 flex flex-col"
         style={{ opacity: headlineOpacity }}
       >
         {/* TOP ROW */}
@@ -665,7 +665,7 @@ function BrandAtmosphere({ project }: { project: Project }) {
     >
       <FloatingOrbs accentRGB={b.accentRGB} count={2} seed={3} />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative site-container">
         <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-16 items-start">
           {/* LEFT — Atmosphere */}
           <FadeIn>
@@ -791,7 +791,7 @@ function StatementStats({
     >
       <FloatingOrbs accentRGB={b.accentRGB} count={2} seed={5} />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative site-container">
         <FadeIn>
           <div className="text-center mb-12 sm:mb-16">
             <div
@@ -862,7 +862,7 @@ function StorySection({
 }) {
   const b = project.brand;
   return (
-    <section className="section-contain py-20 sm:py-28 lg:py-36 px-4 sm:px-6 lg:px-8">
+    <section className="section-contain py-20 sm:py-28 lg:py-36 px-6 md:px-10 xl:px-12">
       <div className="max-w-6xl mx-auto space-y-16 sm:space-y-24">
         {/* CHALLENGE + SOLUTION side-by-side on desktop */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
@@ -1178,7 +1178,7 @@ function FullBleedMoment({
         }}
       />
 
-      <div className="relative w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
+      <div className="relative w-full max-w-6xl mx-auto px-6 md:px-10 xl:px-12 py-24 sm:py-32">
         <FadeIn>
           <div className="text-center mb-10 sm:mb-12">
             <div
@@ -1244,7 +1244,7 @@ function GalleryScroll({
   const b = project.brand;
   return (
     <section className="section-contain py-20 sm:py-28">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 sm:mb-14 text-center md:text-left">
+      <div className="site-container mb-10 sm:mb-14 text-center md:text-left">
         <FadeIn>
           <div
             className="text-xs uppercase mb-3 tracking-[0.2em]"
@@ -1269,7 +1269,7 @@ function GalleryScroll({
         }}
       >
         <div
-          className="inline-flex gap-6 sm:gap-8 px-4 sm:px-6 lg:px-8 pb-6"
+          className="inline-flex gap-6 sm:gap-8 px-6 md:px-10 xl:px-12 pb-6"
           style={{ width: "max-content" }}
         >
           {gallery.map((g, i) => {
@@ -1342,7 +1342,7 @@ function ProcessMoment({
 }) {
   const b = project.brand;
   return (
-    <section className="section-contain py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section className="section-contain py-16 sm:py-20 lg:py-24 px-6 md:px-10 xl:px-12 relative overflow-hidden">
       <FloatingOrbs accentRGB={b.accentRGB} count={2} seed={9} />
 
       <div className="relative max-w-7xl mx-auto">
@@ -1453,7 +1453,7 @@ function TestimonialMoment({
   const b = project.brand;
   return (
     <section
-      className="section-contain w-full relative overflow-hidden py-20 sm:py-24 lg:py-28 px-4 sm:px-6 lg:px-8 text-center"
+      className="section-contain w-full relative overflow-hidden py-20 sm:py-24 lg:py-28 px-6 md:px-10 xl:px-12 text-center"
       style={{
         background: `linear-gradient(180deg, ${b.dark}, #000 100%)`,
       }}
@@ -1525,7 +1525,7 @@ function TestimonialMoment({
 function TechStackGrid({ project }: { project: Project }) {
   const b = project.brand;
   return (
-    <section className="section-contain py-20 sm:py-28 px-4 sm:px-6 lg:px-8 border-y border-[#0a0a0a]">
+    <section className="section-contain py-20 sm:py-28 px-6 md:px-10 xl:px-12 border-y border-[#0a0a0a]">
       <div className="max-w-7xl mx-auto">
         <FadeIn>
           <div className="text-center md:text-left mb-10 sm:mb-12">
@@ -1673,7 +1673,7 @@ function NextProjectStrip({ project }: { project: Project }) {
         </div>
       </div>
       <div
-        className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 flex flex-col sm:flex-row items-center sm:items-end justify-between gap-8"
+        className="relative site-container py-16 sm:py-24 flex flex-col sm:flex-row items-center sm:items-end justify-between gap-8"
         style={{
           // Reserve room on mobile so floating sticky CTA never overlaps
           paddingBottom: "max(96px, env(safe-area-inset-bottom))",
@@ -1920,7 +1920,7 @@ function SoundFamiliar({ project }: { project: Project }) {
   ];
 
   return (
-    <section className="section-contain relative py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section className="section-contain relative py-16 sm:py-20 lg:py-24 px-6 md:px-10 xl:px-12 overflow-hidden">
       {/* Soft brand backdrop */}
       <div
         aria-hidden="true"
@@ -2116,7 +2116,7 @@ function EngagementSpecs({ project }: { project: Project }) {
   ];
 
   return (
-    <section className="section-contain relative py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 border-y border-[#0a0a0a] overflow-hidden">
+    <section className="section-contain relative py-16 sm:py-20 lg:py-24 px-6 md:px-10 xl:px-12 border-y border-[#0a0a0a] overflow-hidden">
       <FloatingOrbs accentRGB={b.accentRGB} count={2} seed={13} />
 
       <div className="relative max-w-7xl mx-auto">
@@ -2267,7 +2267,7 @@ function ResonateCTA({ project }: { project: Project }) {
 
   return (
     <section
-      className="section-contain relative w-full overflow-hidden py-20 sm:py-24 lg:py-28 px-4 sm:px-6 lg:px-8"
+      className="section-contain relative w-full overflow-hidden py-20 sm:py-24 lg:py-28 px-6 md:px-10 xl:px-12"
       style={{
         background: `linear-gradient(180deg, #000, ${b.dark} 50%, #000 100%)`,
       }}

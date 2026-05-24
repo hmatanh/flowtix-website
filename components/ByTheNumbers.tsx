@@ -53,7 +53,7 @@ const NUMBERS = [
 
 export function ByTheNumbers() {
   return (
-    <section className="section-contain relative py-24 lg:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section className="section-contain relative py-24 lg:py-32 px-6 md:px-10 xl:px-12 overflow-hidden">
       <div
         aria-hidden="true"
         className="absolute inset-0 pointer-events-none opacity-30"

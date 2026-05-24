@@ -215,7 +215,7 @@ export default function WorkPage() {
   return (
     <>
       {/* ============== HERO ============== */}
-      <section className="relative py-20 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 text-center overflow-hidden">
+      <section className="relative py-20 sm:py-24 lg:py-32 px-6 md:px-10 xl:px-12 text-center overflow-hidden">
         <div
           aria-hidden="true"
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] pointer-events-none"
@@ -324,7 +324,7 @@ export default function WorkPage() {
 
       {/* ============== STATS STRIP ============== */}
       <section className="relative py-10 sm:py-14 border-y border-[#0a0a0a] overflow-hidden">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto px-6 md:px-10 xl:px-12">
           <div className="grid grid-cols-3 gap-3 sm:gap-6">
             {STATS.map((s, i) => {
               const Icon = s.icon;
@@ -360,7 +360,7 @@ export default function WorkPage() {
       </section>
 
       {/* ============== PROJECT GRID ============== */}
-      <section className="section-contain px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24 overflow-hidden">
+      <section className="section-contain px-6 md:px-10 xl:px-12 py-16 sm:py-20 lg:py-24 overflow-hidden">
         <div className="max-w-7xl mx-auto space-y-5 sm:space-y-6">
           {/* Row 1 — KOVA full width */}
           <FadeIn>
@@ -390,7 +390,7 @@ export default function WorkPage() {
       </section>
 
       {/* ============== BOTTOM CTA ============== */}
-      <section className="relative py-20 sm:py-28 lg:py-32 px-4 sm:px-6 lg:px-8 text-center overflow-hidden border-t border-[#0a0a0a]">
+      <section className="relative py-20 sm:py-28 lg:py-32 px-6 md:px-10 xl:px-12 text-center overflow-hidden border-t border-[#0a0a0a]">
         <div
           aria-hidden="true"
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] pointer-events-none"

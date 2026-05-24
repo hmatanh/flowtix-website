@@ -112,7 +112,7 @@ export function BlogClient({ posts }: { posts: PostMeta[] }) {
   return (
     <>
       {/* ============== HERO ============== */}
-      <section className="relative py-20 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 text-center overflow-hidden">
+      <section className="relative py-20 sm:py-24 lg:py-32 px-6 md:px-10 xl:px-12 text-center overflow-hidden">
         <div
           aria-hidden="true"
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] pointer-events-none"
@@ -199,7 +199,7 @@ export function BlogClient({ posts }: { posts: PostMeta[] }) {
       </section>
 
       {/* ============== FILTER TABS ============== */}
-      <section className="px-4 sm:px-6 lg:px-8">
+      <section className="px-6 md:px-10 xl:px-12">
         <div className="max-w-5xl mx-auto">
           <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-2 -mx-4 px-4 sm:mx-0 sm:px-0 sm:justify-center sm:flex-wrap">
             {CATEGORIES.map((c) => {
@@ -245,7 +245,7 @@ export function BlogClient({ posts }: { posts: PostMeta[] }) {
 
       {/* ============== FEATURED POST ============== */}
       {featured && (
-        <section className="px-4 sm:px-6 lg:px-8 mt-10 sm:mt-12">
+        <section className="px-6 md:px-10 xl:px-12 mt-10 sm:mt-12">
           <div className="max-w-6xl mx-auto">
             <FadeIn>
               <Link
@@ -356,7 +356,7 @@ export function BlogClient({ posts }: { posts: PostMeta[] }) {
       )}
 
       {/* ============== POSTS GRID ============== */}
-      <section className="px-4 sm:px-6 lg:px-8 mt-10 sm:mt-12">
+      <section className="px-6 md:px-10 xl:px-12 mt-10 sm:mt-12">
         <div className="max-w-6xl mx-auto">
           <AnimatePresence mode="wait">
             <m.div
@@ -462,7 +462,7 @@ export function BlogClient({ posts }: { posts: PostMeta[] }) {
       </section>
 
       {/* ============== NEWSLETTER ============== */}
-      <section className="px-4 sm:px-6 lg:px-8 mt-16 sm:mt-20 mb-20 sm:mb-24">
+      <section className="px-6 md:px-10 xl:px-12 mt-16 sm:mt-20 mb-20 sm:mb-24">
         <div
           className="relative max-w-3xl mx-auto rounded-2xl sm:rounded-3xl p-6 sm:p-10 lg:p-12 text-center overflow-hidden border"
           style={{

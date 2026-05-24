@@ -26,7 +26,7 @@ const OUTPUTS = [
 
 export function IntelligenceStack() {
   return (
-    <section className="relative section-contain py-24 md:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section className="relative section-contain py-24 md:py-32 px-6 md:px-10 xl:px-12 overflow-hidden">
       <span className="section-number" aria-hidden="true">
         02
       </span>

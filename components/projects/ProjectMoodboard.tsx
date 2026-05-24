@@ -333,7 +333,7 @@ export function ProjectMoodboard({ project }: { project: Project }) {
   const b = project.brand;
 
   return (
-    <section className="section-contain relative py-20 sm:py-28 lg:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section className="section-contain relative py-20 sm:py-28 lg:py-32 px-6 md:px-10 xl:px-12 overflow-hidden">
       {/* Brand wash */}
       <div
         aria-hidden="true"

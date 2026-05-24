@@ -33,7 +33,7 @@ export function InteractiveTour() {
 
   return (
     <section
-      className="section-contain py-24 sm:py-32 border-y px-4 sm:px-6 lg:px-8 relative overflow-hidden"
+      className="section-contain py-24 sm:py-32 border-y px-6 md:px-10 xl:px-12 relative overflow-hidden"
       style={{ background: SHELL, borderColor: BORDER }}
     >
       {/* atmospheric violet */}

@@ -43,7 +43,7 @@ export function BrandStrip({ project }: { project: Project }) {
 
   return (
     <section
-      className="section-contain w-full py-12 sm:py-16 px-4 sm:px-6 lg:px-8"
+      className="section-contain w-full py-12 sm:py-16 px-6 md:px-10 xl:px-12"
       style={{ background: b.dark }}
     >
       <div className="max-w-7xl mx-auto">

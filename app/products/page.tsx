@@ -61,7 +61,7 @@ export default function ProductsPage() {
   return (
     <>
       {/* ============== HERO ============== */}
-      <section className="relative py-20 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 text-center overflow-hidden">
+      <section className="relative py-20 sm:py-24 lg:py-32 px-6 md:px-10 xl:px-12 text-center overflow-hidden">
         <div
           aria-hidden="true"
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] pointer-events-none"
@@ -122,7 +122,7 @@ export default function ProductsPage() {
       </section>
 
       {/* ============== FLOWTIX BRAIN (HERO PRODUCT) ============== */}
-      <section className="px-4 sm:px-6 lg:px-8">
+      <section className="px-6 md:px-10 xl:px-12">
         <FadeIn>
           <m.div
             animate={{
@@ -299,7 +299,7 @@ export default function ProductsPage() {
       </section>
 
       {/* ============== UPCOMING PRODUCTS ============== */}
-      <section className="px-4 sm:px-6 lg:px-8 mt-12 sm:mt-16">
+      <section className="px-6 md:px-10 xl:px-12 mt-12 sm:mt-16">
         <div className="max-w-5xl mx-auto">
           <FadeIn>
             <div className="text-center mb-8 sm:mb-12">
@@ -404,7 +404,7 @@ export default function ProductsPage() {
 
       {/* ============== WHITE-LABEL ============== */}
       <section className="mt-20 sm:mt-24 bg-[#040404] border-t border-[#0a0a0a]">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24 grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
+        <div className="max-w-6xl mx-auto px-6 md:px-10 xl:px-12 py-16 sm:py-20 lg:py-24 grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
           <FadeIn direction="right">
             <div className="text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-blue-400 mb-3">
               For Agencies &amp; Resellers

@@ -76,7 +76,7 @@ export function ROICalculator({ slug }: { slug: string }) {
   if (!preset) return null;
 
   return (
-    <section className="section-contain py-20 sm:py-28 px-4 sm:px-6 lg:px-8 border-y border-[#0a0a0a]">
+    <section className="section-contain py-20 sm:py-28 px-6 md:px-10 xl:px-12 border-y border-[#0a0a0a]">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-10">
           <div className="text-blue-400 text-[11px] tracking-[0.22em] uppercase mb-3 font-medium">

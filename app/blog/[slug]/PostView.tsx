@@ -209,7 +209,7 @@ export function PostView({
       </section>
 
       {/* Tags + share — refined */}
-      <section className="px-4 sm:px-6 lg:px-8 mt-12 sm:mt-16">
+      <section className="px-6 md:px-10 xl:px-12 mt-12 sm:mt-16">
         <div className="max-w-3xl mx-auto pt-7 sm:pt-8 border-t border-[#0f0f0f]">
           <div className="flex flex-wrap items-center gap-2">
             <span className="text-[10px] uppercase tracking-widest text-[#444] mr-1">
@@ -259,7 +259,7 @@ export function PostView({
       </section>
 
       {/* Strong "Make this real" closing CTA — category-color themed */}
-      <section className="px-4 sm:px-6 lg:px-8 mt-12 sm:mt-16">
+      <section className="px-6 md:px-10 xl:px-12 mt-12 sm:mt-16">
         <div
           className="relative max-w-3xl mx-auto rounded-2xl sm:rounded-3xl p-6 sm:p-10 overflow-hidden border"
           style={{
@@ -329,7 +329,7 @@ export function PostView({
       </section>
 
       {/* About box */}
-      <section className="px-4 sm:px-6 lg:px-8 mt-10 sm:mt-12">
+      <section className="px-6 md:px-10 xl:px-12 mt-10 sm:mt-12">
         <div className="max-w-3xl mx-auto bg-[#0D0D0D] border border-[#1a1a1a] rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-start gap-5 sm:gap-6">
           <div className="shrink-0">
             <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a] border border-[#222] inline-flex items-center justify-center text-white font-bold text-sm">

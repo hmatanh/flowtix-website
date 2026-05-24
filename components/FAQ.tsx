@@ -52,7 +52,7 @@ export function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section className="py-24 md:py-32 px-4 sm:px-6 lg:px-8">
+    <section className="py-24 md:py-32 px-6 md:px-10 xl:px-12">
       <div className="max-w-3xl mx-auto">
         <FadeIn>
           <div className="text-[#333] text-[10px] tracking-widest uppercase mb-4 text-center">

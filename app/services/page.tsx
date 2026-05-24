@@ -39,7 +39,7 @@ export default function ServicesPage() {
   return (
     <>
       {/* ============== HERO ============== */}
-      <section className="relative py-20 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 text-center overflow-hidden">
+      <section className="relative py-20 sm:py-24 lg:py-32 px-6 md:px-10 xl:px-12 text-center overflow-hidden">
         {/* Multi-layered ambient background */}
         <div
           aria-hidden="true"
@@ -139,7 +139,7 @@ export default function ServicesPage() {
 
       {/* ============== PROOF STRIP ============== */}
       <section className="relative py-10 sm:py-14 border-y border-[#0a0a0a] overflow-hidden">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto px-6 md:px-10 xl:px-12">
           <div className="grid grid-cols-3 gap-3 sm:gap-6">
             {PROOF_POINTS.map((p, i) => {
               const Icon = p.icon;
@@ -175,7 +175,7 @@ export default function ServicesPage() {
       </section>
 
       {/* ============== SERVICES LIST ============== */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-6 md:px-10 xl:px-12">
         {services.map((s, idx) => {
           const reverse = idx % 2 === 1;
           const c = getServiceColor(s.number);
@@ -288,7 +288,7 @@ export default function ServicesPage() {
       </div>
 
       {/* ============== FINAL CTA ============== */}
-      <section className="relative py-20 sm:py-28 lg:py-32 px-4 sm:px-6 lg:px-8 text-center overflow-hidden">
+      <section className="relative py-20 sm:py-28 lg:py-32 px-6 md:px-10 xl:px-12 text-center overflow-hidden">
         <div
           aria-hidden="true"
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] pointer-events-none"

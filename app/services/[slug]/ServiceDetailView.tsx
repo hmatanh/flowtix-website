@@ -44,7 +44,7 @@ export function ServiceDetailView({ slug }: { slug: string }) {
   return (
     <>
       {/* ============== HERO — per-service color theming ============== */}
-      <section className="relative px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 lg:pt-32 pb-20 sm:pb-24 lg:pb-32 overflow-hidden">
+      <section className="relative px-6 md:px-10 xl:px-12 pt-20 sm:pt-24 lg:pt-32 pb-20 sm:pb-24 lg:pb-32 overflow-hidden">
         {/* Service-color radial backdrop */}
         <div
           aria-hidden="true"
@@ -280,7 +280,7 @@ export function ServiceDetailView({ slug }: { slug: string }) {
 
       {/* ============== THE CHALLENGE — brand-tinted ============== */}
       <section
-        className="relative border-y border-[#0a0a0a] py-20 sm:py-24 lg:py-28 px-4 sm:px-6 lg:px-8 overflow-hidden"
+        className="relative border-y border-[#0a0a0a] py-20 sm:py-24 lg:py-28 px-6 md:px-10 xl:px-12 overflow-hidden"
         style={{ background: "#040404" }}
       >
         <div
@@ -357,7 +357,7 @@ export function ServiceDetailView({ slug }: { slug: string }) {
       </section>
 
       {/* ============== OUR APPROACH ============== */}
-      <section className="relative py-20 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20 sm:py-24 lg:py-32 px-6 md:px-10 xl:px-12">
         <div className="max-w-6xl mx-auto">
           <FadeIn>
             <div
@@ -430,7 +430,7 @@ export function ServiceDetailView({ slug }: { slug: string }) {
       </section>
 
       {/* ============== WHAT'S INCLUDED ============== */}
-      <section className="bg-[#040404] border-y border-[#0a0a0a] py-20 sm:py-24 lg:py-28 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      <section className="bg-[#040404] border-y border-[#0a0a0a] py-20 sm:py-24 lg:py-28 px-6 md:px-10 xl:px-12 relative overflow-hidden">
         <div
           aria-hidden="true"
           className="absolute inset-0 pointer-events-none"
@@ -482,7 +482,7 @@ export function ServiceDetailView({ slug }: { slug: string }) {
       </section>
 
       {/* ============== RESULTS ============== */}
-      <section className="py-20 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8">
+      <section className="py-20 sm:py-24 lg:py-32 px-6 md:px-10 xl:px-12">
         <div className="max-w-5xl mx-auto">
           <FadeIn>
             <div
@@ -545,7 +545,7 @@ export function ServiceDetailView({ slug }: { slug: string }) {
 
       {/* ============== RELATED ============== */}
       {related.length > 0 && (
-        <section className="bg-[#040404] border-y border-[#0a0a0a] py-20 sm:py-24 px-4 sm:px-6 lg:px-8">
+        <section className="bg-[#040404] border-y border-[#0a0a0a] py-20 sm:py-24 px-6 md:px-10 xl:px-12">
           <div className="max-w-6xl mx-auto">
             <FadeIn>
               <div
@@ -635,7 +635,7 @@ export function ServiceDetailView({ slug }: { slug: string }) {
       )}
 
       {/* ============== BOTTOM CTA — service-color wash ============== */}
-      <section className="relative py-20 sm:py-28 lg:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <section className="relative py-20 sm:py-28 lg:py-32 px-6 md:px-10 xl:px-12 overflow-hidden">
         <div
           aria-hidden="true"
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] pointer-events-none"

@@ -21,7 +21,7 @@ const SECTIONS = [
 
 export default function TermsPage() {
   return (
-    <article id="top" className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24 lg:py-32">
+    <article id="top" className="relative max-w-3xl mx-auto px-6 md:px-10 xl:px-12 py-20 sm:py-24 lg:py-32">
       <div
         aria-hidden="true"
         className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] pointer-events-none -z-10"

@@ -26,7 +26,7 @@ export function ProjectBreadcrumb({ project }: { project: Project }) {
 
 export function ProjectMetricsBar({ project }: { project: Project }) {
   return (
-    <section className="section-contain bg-[#030303] border-y border-[#0a0a0a] py-6 px-4 sm:px-6 lg:px-8">
+    <section className="section-contain bg-[#030303] border-y border-[#0a0a0a] py-6 px-6 md:px-10 xl:px-12">
       <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
         {[
           { label: "Client", value: project.name },
@@ -54,7 +54,7 @@ export function ProjectMetricsBar({ project }: { project: Project }) {
 export function ProjectResults({ project }: { project: Project }) {
   const b = project.brand;
   return (
-    <section className="section-contain py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
+    <section className="section-contain py-20 lg:py-24 px-6 md:px-10 xl:px-12">
       <div className="max-w-5xl mx-auto">
         <div
           className="text-[10px] tracking-widest uppercase mb-3"
@@ -106,7 +106,7 @@ export function ProjectTestimonial({ project }: { project: Project }) {
   const b = project.brand;
   return (
     <section
-      className="section-contain py-16 lg:py-20 px-4 sm:px-6 lg:px-8"
+      className="section-contain py-16 lg:py-20 px-6 md:px-10 xl:px-12"
       style={{ background: b.dark }}
     >
       <div className="max-w-3xl mx-auto">
@@ -148,7 +148,7 @@ export function ProjectTestimonial({ project }: { project: Project }) {
 export function ProjectStack({ project }: { project: Project }) {
   const b = project.brand;
   return (
-    <section className="section-contain py-12 px-4 sm:px-6 lg:px-8 border-y border-[#0a0a0a]">
+    <section className="section-contain py-12 px-6 md:px-10 xl:px-12 border-y border-[#0a0a0a]">
       <div className="max-w-5xl mx-auto text-center">
         <div
           className="text-[10px] tracking-widest uppercase mb-6"
@@ -181,7 +181,7 @@ export function ProjectNextLink({ project }: { project: Project }) {
   return (
     <Link
       href={`/work/${next.slug}/`}
-      className="block section-contain border-t border-[#0a0a0a] py-12 px-4 sm:px-6 lg:px-8 group"
+      className="block section-contain border-t border-[#0a0a0a] py-12 px-6 md:px-10 xl:px-12 group"
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between gap-6 flex-wrap">
         <div className="text-[#444] text-sm">
@@ -206,7 +206,7 @@ export function ProjectNextLink({ project }: { project: Project }) {
 export function ProjectBottomCTA({ project }: { project: Project }) {
   const b = project.brand;
   return (
-    <section className="section-contain relative py-20 lg:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden text-center">
+    <section className="section-contain relative py-20 lg:py-24 px-6 md:px-10 xl:px-12 overflow-hidden text-center">
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[260px] rounded-full pointer-events-none"
         style={{

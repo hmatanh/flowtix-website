@@ -103,7 +103,7 @@ export function PricingCalculator() {
   const result = showResult ? range(need!, size!, timeline!) : null;
 
   return (
-    <section className="section-contain relative py-24 lg:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section className="section-contain relative py-24 lg:py-32 px-6 md:px-10 xl:px-12 overflow-hidden">
       <div
         aria-hidden="true"
         className="absolute -top-32 left-1/2 -translate-x-1/2 w-[800px] h-[800px] pointer-events-none"

@@ -256,7 +256,7 @@ export default function Home() {
   return (
     <>
       {/* ===== 1. HERO ===== */}
-      <section className="relative min-h-screen flex items-center px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 lg:pt-24 pb-20 sm:pb-24 overflow-hidden">
+      <section className="relative min-h-screen flex items-center px-6 md:px-10 xl:px-12 pt-16 sm:pt-20 lg:pt-24 pb-20 sm:pb-24 overflow-hidden">
         <PerspectiveGrid />
         <m.div
           className="absolute top-[-200px] right-[-300px] w-[900px] h-[600px] rounded-full pointer-events-none animate-pulse-slow"
@@ -467,7 +467,7 @@ export default function Home() {
       </section>
 
       {/* ===== 4. THE PROBLEM WE SOLVE ===== */}
-      <section className="relative section-contain py-24 md:py-32 lg:py-40 px-4 sm:px-6 lg:px-8">
+      <section className="relative section-contain py-24 md:py-32 lg:py-40 px-6 md:px-10 xl:px-12">
         <span className="section-number" aria-hidden="true">
           01
         </span>
@@ -525,7 +525,7 @@ export default function Home() {
             </div>
           </FadeIn>
         </div>
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="site-container">
           <div className="hr-gradient mt-16 mb-6" />
           <p className="text-[#444] text-sm text-center">
             We built Flowtix because we experienced every one of these
@@ -539,7 +539,7 @@ export default function Home() {
 
       {/* ===== 5. SERVICES HORIZONTAL SCROLL ===== */}
       <section className="section-contain py-32">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 mb-12">
+        <div className="site-container mb-12">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
             <div>
               <div className="text-[#333] text-[10px] tracking-widest uppercase section-label">
@@ -613,7 +613,7 @@ export default function Home() {
       <ByTheNumbers />
 
       {/* ===== 6. HOW WE WORK TIMELINE ===== */}
-      <section className="section-contain py-32 bg-[#030303] border-y border-[#080808] px-4 sm:px-6 lg:px-8">
+      <section className="section-contain py-32 bg-[#030303] border-y border-[#080808] px-6 md:px-10 xl:px-12">
         <div className="text-center mb-20">
           <FadeIn>
             <div className="text-[#333] text-[10px] tracking-widest uppercase mb-4 section-label">
@@ -668,7 +668,7 @@ export default function Home() {
       </section>
 
       {/* ===== 7. FEATURED WORK ===== */}
-      <section className="section-contain py-32 px-4 sm:px-6 lg:px-8">
+      <section className="section-contain py-32 px-6 md:px-10 xl:px-12">
         <div className="max-w-7xl mx-auto">
           <FadeIn>
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
@@ -832,7 +832,7 @@ export default function Home() {
       </section>
 
       {/* ===== 8. COMPARISON TABLE ===== */}
-      <section className="section-contain py-32 bg-[#030303] border-y border-[#080808] px-4 sm:px-6 lg:px-8">
+      <section className="section-contain py-32 bg-[#030303] border-y border-[#080808] px-6 md:px-10 xl:px-12">
         <div className="text-center mb-12">
           <FadeIn>
             <div className="text-[#333] text-[10px] tracking-widest uppercase mb-4 section-label">
@@ -882,7 +882,7 @@ export default function Home() {
       </section>
 
       {/* ===== 9. INDUSTRIES ===== */}
-      <section className="section-contain py-24 px-4 sm:px-6 lg:px-8">
+      <section className="section-contain py-24 px-6 md:px-10 xl:px-12">
         <div className="max-w-7xl mx-auto text-center">
           <FadeIn>
             <div className="text-[#333] text-[10px] tracking-widest uppercase mb-4 section-label">
@@ -914,7 +914,7 @@ export default function Home() {
       <PricingCalculator />
 
       {/* ===== FIRST 7 DAYS — onboarding preview ===== */}
-      <section className="section-contain relative py-24 lg:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <section className="section-contain relative py-24 lg:py-32 px-6 md:px-10 xl:px-12 overflow-hidden">
         <span className="section-number" aria-hidden="true">
           09
         </span>
@@ -991,7 +991,7 @@ export default function Home() {
       <Availability />
 
       {/* ===== 10. FINAL CTA ===== */}
-      <section className="section-contain relative py-40 text-center overflow-hidden px-4 sm:px-6 lg:px-8">
+      <section className="section-contain relative py-40 text-center overflow-hidden px-6 md:px-10 xl:px-12">
         <div
           className="absolute inset-0 flex items-center justify-center pointer-events-none -z-0"
           aria-hidden="true"

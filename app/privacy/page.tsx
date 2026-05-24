@@ -23,7 +23,7 @@ const SECTIONS = [
 
 export default function PrivacyPage() {
   return (
-    <article id="top" className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24 lg:py-32">
+    <article id="top" className="relative max-w-3xl mx-auto px-6 md:px-10 xl:px-12 py-20 sm:py-24 lg:py-32">
       {/* Subtle ambient backdrop */}
       <div
         aria-hidden="true"
