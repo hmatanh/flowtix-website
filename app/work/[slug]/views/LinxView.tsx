@@ -5,10 +5,16 @@ import {
   ProjectPageLayout,
   type ProjectPageContent,
 } from "@/components/projects/ProjectPageLayout";
+import dynamic from "next/dynamic";
 import { ScreenProposal } from "@/components/clients/linx/ScreenProposal";
 import { ScreenDashboard } from "@/components/clients/linx/ScreenDashboard";
 import { ScreenReport } from "@/components/clients/linx/ScreenReport";
-import { InteractiveTour } from "@/components/clients/linx/InteractiveTour";
+import { TourLoader } from "@/components/clients/TourLoader";
+
+const InteractiveTour = dynamic(
+  () => import("@/components/clients/linx/InteractiveTour").then((m) => ({ default: m.InteractiveTour })),
+  { ssr: false, loading: () => <TourLoader /> },
+);
 
 const CONTENT: ProjectPageContent = {
   heroHeadline:

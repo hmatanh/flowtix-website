@@ -5,10 +5,16 @@ import {
   ProjectPageLayout,
   type ProjectPageContent,
 } from "@/components/projects/ProjectPageLayout";
+import dynamic from "next/dynamic";
 import { ScreenPortfolio } from "@/components/clients/aurum/ScreenPortfolio";
 import { ScreenReport } from "@/components/clients/aurum/ScreenReport";
 import { ScreenPortal } from "@/components/clients/aurum/ScreenPortal";
-import { InteractiveTour } from "@/components/clients/aurum/InteractiveTour";
+import { TourLoader } from "@/components/clients/TourLoader";
+
+const InteractiveTour = dynamic(
+  () => import("@/components/clients/aurum/InteractiveTour").then((m) => ({ default: m.InteractiveTour })),
+  { ssr: false, loading: () => <TourLoader /> },
+);
 
 const CONTENT: ProjectPageContent = {
   heroHeadline:

@@ -1,12 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { m, AnimatePresence } from "framer-motion";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { AurumDashboard } from "@/components/clients/aurum/tour/AurumDashboard";
 import { AurumReportGenerator } from "@/components/clients/aurum/tour/AurumReportGenerator";
 import { AurumClientPortal } from "@/components/clients/aurum/tour/AurumClientPortal";
 import { AurumMarketIntel } from "@/components/clients/aurum/tour/AurumMarketIntel";
+import { MobileTourNav, MobileTourArrows } from "@/components/clients/MobileTourNav";
 
 const GOLD = "#D97706";
 const BORDER = "#2A1D06";
@@ -25,6 +26,10 @@ const TABS: { id: TabId; label: string }[] = [
 
 export function InteractiveTour() {
   const [active, setActive] = useState<TabId>("dashboard");
+  const swipeRef = useRef<HTMLDivElement>(null);
+  const labels = TABS.map((t) => t.label);
+  const index = TABS.findIndex((t) => t.id === active);
+  const setIndex = (i: number) => setActive(TABS[i].id);
 
   return (
     <section
@@ -96,35 +101,34 @@ export function InteractiveTour() {
           </div>
         </FadeIn>
 
-        {/* Tabs */}
-        <div className="max-w-5xl mx-auto mb-5">
-          <div className="overflow-x-auto -mx-4 px-4 sm:overflow-visible sm:px-0 sm:mx-0">
-            <div
-              className="flex gap-2 flex-nowrap sm:flex-wrap sm:justify-center"
-              style={{ scrollSnapType: "x mandatory" }}
-            >
-              {TABS.map((t) => {
-                const isActive = active === t.id;
-                return (
-                  <button
-                    key={t.id}
-                    type="button"
-                    onClick={() => setActive(t.id)}
-                    className="rounded-xl px-3 py-2 sm:px-4 sm:py-2.5 text-[11px] sm:text-xs font-medium border whitespace-nowrap transition-colors shrink-0"
-                    style={{
-                      background: isActive ? "rgba(217,119,6,0.10)" : "transparent",
-                      borderColor: isActive ? "rgba(217,119,6,0.4)" : BORDER,
-                      color: isActive ? GOLD : "#8B6A2A",
-                      scrollSnapAlign: "start",
-                    }}
-                    aria-pressed={isActive}
-                  >
-                    {t.label}
-                  </button>
-                );
-              })}
-            </div>
+        {/* Tabs — desktop only */}
+        <div className="desktop-only max-w-5xl mx-auto mb-5">
+          <div className="flex flex-wrap justify-center gap-2">
+            {TABS.map((t) => {
+              const isActive = active === t.id;
+              return (
+                <button
+                  key={t.id}
+                  type="button"
+                  onClick={() => setActive(t.id)}
+                  className="rounded-xl px-4 py-2.5 text-xs font-medium border transition-colors"
+                  style={{
+                    background: isActive ? "rgba(217,119,6,0.10)" : "transparent",
+                    borderColor: isActive ? "rgba(217,119,6,0.4)" : BORDER,
+                    color: isActive ? GOLD : "#8B6A2A",
+                  }}
+                  aria-pressed={isActive}
+                >
+                  {t.label}
+                </button>
+              );
+            })}
           </div>
+        </div>
+
+        {/* Mobile nav header */}
+        <div className="max-w-5xl mx-auto mb-3">
+          <MobileTourNav labels={labels} index={index} setIndex={setIndex} accentColor={GOLD} swipeContainerRef={swipeRef} />
         </div>
 
         {/* Browser Frame */}
@@ -184,6 +188,7 @@ export function InteractiveTour() {
 
           {/* Screen area */}
           <div
+            ref={swipeRef}
             className="rounded-b-2xl border border-t-0 overflow-hidden relative"
             style={{ background: SHELL, borderColor: BORDER }}
           >
@@ -204,11 +209,9 @@ export function InteractiveTour() {
           </div>
         </div>
 
-        {/* Mobile hint */}
-        <div className="text-center mt-4 sm:hidden">
-          <span className="text-[10px]" style={{ color: "#4a3010" }}>
-            ← Tap tabs to explore →
-          </span>
+        {/* Mobile prev/next arrows */}
+        <div className="max-w-5xl mx-auto">
+          <MobileTourArrows labels={labels} index={index} setIndex={setIndex} accentColor={GOLD} />
         </div>
       </div>
     </section>

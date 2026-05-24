@@ -1,12 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { m, AnimatePresence } from "framer-motion";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { LinxProposalAI } from "@/components/clients/linx/tour/LinxProposalAI";
 import { LinxDashboard } from "@/components/clients/linx/tour/LinxDashboard";
 import { LinxClientReports } from "@/components/clients/linx/tour/LinxClientReports";
 import { LinxBriefIntake } from "@/components/clients/linx/tour/LinxBriefIntake";
+import { MobileTourNav, MobileTourArrows } from "@/components/clients/MobileTourNav";
 
 const VIOLET = "#8B5CF6";
 const BORDER = "#1A1535";
@@ -25,6 +26,10 @@ const TABS: { id: TabId; label: string; url: string }[] = [
 export function InteractiveTour() {
   const [active, setActive] = useState<TabId>("proposal");
   const url = TABS.find((t) => t.id === active)?.url ?? "studio.linx.agency";
+  const swipeRef = useRef<HTMLDivElement>(null);
+  const labels = TABS.map((t) => t.label);
+  const index = TABS.findIndex((t) => t.id === active);
+  const setIndex = (i: number) => setActive(TABS[i].id);
 
   return (
     <section
@@ -64,32 +69,34 @@ export function InteractiveTour() {
           </div>
         </FadeIn>
 
-        {/* Tabs */}
-        <div className="max-w-5xl mx-auto mb-5">
-          <div className="overflow-x-auto -mx-4 px-4 sm:overflow-visible sm:px-0 sm:mx-0">
-            <div className="flex gap-2 flex-nowrap sm:flex-wrap sm:justify-center" style={{ scrollSnapType: "x mandatory" }}>
-              {TABS.map((t) => {
-                const isActive = active === t.id;
-                return (
-                  <button
-                    key={t.id}
-                    type="button"
-                    onClick={() => setActive(t.id)}
-                    className="rounded-xl px-3 py-2 sm:px-4 sm:py-2.5 text-[11px] sm:text-xs font-medium border whitespace-nowrap transition-colors shrink-0"
-                    style={{
-                      background: isActive ? "rgba(139,92,246,0.12)" : "transparent",
-                      borderColor: isActive ? "rgba(139,92,246,0.4)" : BORDER,
-                      color: isActive ? VIOLET : "#6b5a8a",
-                      scrollSnapAlign: "start",
-                    }}
-                    aria-pressed={isActive}
-                  >
-                    {t.label}
-                  </button>
-                );
-              })}
-            </div>
+        {/* Tabs — desktop only */}
+        <div className="desktop-only max-w-5xl mx-auto mb-5">
+          <div className="flex flex-wrap justify-center gap-2">
+            {TABS.map((t) => {
+              const isActive = active === t.id;
+              return (
+                <button
+                  key={t.id}
+                  type="button"
+                  onClick={() => setActive(t.id)}
+                  className="rounded-xl px-4 py-2.5 text-xs font-medium border transition-colors"
+                  style={{
+                    background: isActive ? "rgba(139,92,246,0.12)" : "transparent",
+                    borderColor: isActive ? "rgba(139,92,246,0.4)" : BORDER,
+                    color: isActive ? VIOLET : "#6b5a8a",
+                  }}
+                  aria-pressed={isActive}
+                >
+                  {t.label}
+                </button>
+              );
+            })}
           </div>
+        </div>
+
+        {/* Mobile nav header */}
+        <div className="max-w-5xl mx-auto mb-3">
+          <MobileTourNav labels={labels} index={index} setIndex={setIndex} accentColor={VIOLET} swipeContainerRef={swipeRef} />
         </div>
 
         {/* Browser frame */}
@@ -136,6 +143,7 @@ export function InteractiveTour() {
           </div>
 
           <div
+            ref={swipeRef}
             className="rounded-b-2xl border border-t-0 overflow-hidden relative"
             style={{ background: SHELL, borderColor: BORDER }}
           >
@@ -156,10 +164,8 @@ export function InteractiveTour() {
           </div>
         </div>
 
-        <div className="text-center mt-4 sm:hidden">
-          <span className="text-[10px]" style={{ color: "#3a2a6a" }}>
-            ← Tap tabs to explore →
-          </span>
+        <div className="max-w-5xl mx-auto">
+          <MobileTourArrows labels={labels} index={index} setIndex={setIndex} accentColor={VIOLET} />
         </div>
       </div>
     </section>

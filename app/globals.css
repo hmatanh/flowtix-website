@@ -279,45 +279,7 @@ body {
   }
 }
 
-/* ===== Custom cursor ===== */
-@media (hover: hover) and (pointer: fine) {
-  body:not(.no-custom-cursor) * { cursor: none !important; }
-}
-#cursor-dot {
-  width: 8px; height: 8px;
-  background: white;
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
-  z-index: 99999;
-  transform: translate(-50%, -50%);
-  transition: width 0.2s, height 0.2s, background 0.2s;
-  mix-blend-mode: difference;
-  top: 0;
-  left: 0;
-}
-#cursor-ring {
-  width: 36px; height: 36px;
-  border: 1px solid rgba(255,255,255,0.2);
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
-  z-index: 99998;
-  transform: translate(-50%, -50%);
-  transition: width 0.3s, height 0.3s, border-color 0.3s;
-  top: 0;
-  left: 0;
-}
-#cursor-dot.hovering { width: 12px; height: 12px; background: #3B82F6; }
-#cursor-ring.hovering {
-  width: 56px; height: 56px;
-  border-color: rgba(59, 130, 246, 0.4);
-}
-body.no-custom-cursor #cursor-dot,
-body.no-custom-cursor #cursor-ring { display: none; }
-@media (hover: none), (pointer: coarse) {
-  #cursor-dot, #cursor-ring { display: none; }
-}
+/* ===== Custom cursor — styles live in components/Cursor.tsx (scoped <style>) ===== */
 
 /* Typography helpers */
 .text-display {
@@ -732,5 +694,37 @@ body::before {
   .prose-flowtix ul li,
   .prose-flowtix ol li {
     padding-left: 1.25rem;
+  }
+}
+
+/* ===== Mobile / desktop visibility utilities ===== */
+@media (max-width: 768px) {
+  .desktop-only { display: none !important; }
+}
+@media (min-width: 769px) {
+  .mobile-only { display: none !important; }
+}
+
+/* ===== Global mobile polish (≤768px) ===== */
+@media (max-width: 768px) {
+  /* Guard against horizontal overflow */
+  html, body { overflow-x: hidden; }
+
+  /* iOS zoom-on-focus guard: any text input must be ≥16px */
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="search"],
+  input[type="password"],
+  input[type="url"],
+  input[type="number"],
+  textarea,
+  select { font-size: 16px; }
+
+  /* Off-fold heavy sections get content-visibility for paint savings.
+     The opt-in class is applied where it's safe. */
+  .cv-auto {
+    content-visibility: auto;
+    contain-intrinsic-size: 0 600px;
   }
 }

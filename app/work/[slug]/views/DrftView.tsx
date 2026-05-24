@@ -5,10 +5,16 @@ import {
   ProjectPageLayout,
   type ProjectPageContent,
 } from "@/components/projects/ProjectPageLayout";
+import dynamic from "next/dynamic";
 import { ScreenStore } from "@/components/clients/drft/ScreenStore";
 import { ScreenContent } from "@/components/clients/drft/ScreenContent";
 import { ScreenEmail } from "@/components/clients/drft/ScreenEmail";
-import { InteractiveTour } from "@/components/clients/drft/InteractiveTour";
+import { TourLoader } from "@/components/clients/TourLoader";
+
+const InteractiveTour = dynamic(
+  () => import("@/components/clients/drft/InteractiveTour").then((m) => ({ default: m.InteractiveTour })),
+  { ssr: false, loading: () => <TourLoader /> },
+);
 
 const CONTENT: ProjectPageContent = {
   heroHeadline:

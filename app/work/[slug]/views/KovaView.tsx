@@ -1,5 +1,6 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { type Project } from "@/lib/projects";
 import {
   ProjectPageLayout,
@@ -8,7 +9,12 @@ import {
 import { ScreenDashboard } from "@/components/clients/kova/ScreenDashboard";
 import { ScreenMatching } from "@/components/clients/kova/ScreenMatching";
 import { ScreenCRM } from "@/components/clients/kova/ScreenCRM";
-import { InteractiveTour } from "@/components/clients/kova/InteractiveTour";
+import { TourLoader } from "@/components/clients/TourLoader";
+
+const InteractiveTour = dynamic(
+  () => import("@/components/clients/kova/InteractiveTour").then((m) => ({ default: m.InteractiveTour })),
+  { ssr: false, loading: () => <TourLoader /> },
+);
 
 const CONTENT: ProjectPageContent = {
   heroHeadline:
