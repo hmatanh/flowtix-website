@@ -8,6 +8,7 @@ import {
 import { ScreenPortfolio } from "@/components/clients/aurum/ScreenPortfolio";
 import { ScreenReport } from "@/components/clients/aurum/ScreenReport";
 import { ScreenPortal } from "@/components/clients/aurum/ScreenPortal";
+import { InteractiveTour } from "@/components/clients/aurum/InteractiveTour";
 
 const CONTENT: ProjectPageContent = {
   heroHeadline:
@@ -133,5 +134,11 @@ const CONTENT: ProjectPageContent = {
 };
 
 export function AurumView({ project }: { project: Project }) {
-  return <ProjectPageLayout project={project} content={CONTENT} />;
+  return (
+    <ProjectPageLayout
+      project={project}
+      content={CONTENT}
+      afterGallery={<InteractiveTour />}
+    />
+  );
 }
