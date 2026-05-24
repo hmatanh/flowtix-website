@@ -4,7 +4,6 @@ import "./globals.css";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { ClientShell } from "@/components/ClientShell";
-import { SmoothScroll } from "@/components/SmoothScroll";
 import { AnnouncementBar } from "@/components/AnnouncementBar";
 import { MobileCTA } from "@/components/MobileCTA";
 import { BackToTop } from "@/components/BackToTop";
@@ -152,7 +151,6 @@ export default function RootLayout({
           Skip to main content
         </a>
         <MotionProvider>
-          <SmoothScroll />
           <ClientShell>
             <AnnouncementBar />
             <Nav />

@@ -146,9 +146,9 @@ export function BlogClient({ posts }: { posts: PostMeta[] }) {
             </div>
           </FadeIn>
           <m.h1
-            initial={{ opacity: 0, filter: "blur(10px)" }}
-            animate={{ opacity: 1, filter: "blur(0px)" }}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
             className="font-black tracking-tighter text-white leading-[1.02]"
             style={{ fontSize: "clamp(36px, 6.5vw, 72px)" }}
           >

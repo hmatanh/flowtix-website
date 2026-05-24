@@ -509,9 +509,9 @@ function Hero({
 
           {/* CLIENT LOGO — responsive sizing, brand-glow halo */}
           <m.div
-            initial={{ opacity: 0, scale: 0.92, filter: "blur(8px)" }}
-            animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-            transition={{ duration: 0.9, ease: EASE, delay: 0.1 }}
+            initial={{ opacity: 0, scale: 0.94 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.55, ease: EASE, delay: 0.1 }}
             className="relative inline-block w-full"
           >
             <div

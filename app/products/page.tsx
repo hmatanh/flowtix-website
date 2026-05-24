@@ -98,10 +98,10 @@ export default function ProductsPage() {
             </span>
           </FadeIn>
           <m.h1
-            initial={{ opacity: 0, filter: "blur(10px)" }}
-            whileInView={{ opacity: 1, filter: "blur(0px)" }}
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.9 }}
+            transition={{ duration: 0.5 }}
             className="font-black tracking-tighter text-white leading-[1.02]"
             style={{ fontSize: "clamp(36px, 6.5vw, 72px)" }}
           >

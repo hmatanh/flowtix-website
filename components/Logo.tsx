@@ -45,9 +45,9 @@ export function Logo({
 
   const mark = animated ? (
     <m.span
-      initial={{ opacity: 0, y: 6, filter: "blur(6px)" }}
-      animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-      transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+      initial={{ opacity: 0, y: 4 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
       className="inline-block"
     >
       {imgEl}
