@@ -242,14 +242,37 @@ export default function AboutPage() {
           {/* LEFT — Photo */}
           <div className="order-1">
             <FounderPhoto />
-            <div className="text-center mt-6">
-              <div className="text-[#444] text-sm">
-                Founder &amp; Creative Director
+            <m.div
+              initial={{ opacity: 0, y: 8 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.6, ease: EASE, delay: 0.2 }}
+              className="text-center mt-8"
+            >
+              <div
+                className="font-black tracking-tight text-white"
+                style={{
+                  fontSize: "clamp(22px, 3vw, 28px)",
+                  background:
+                    "linear-gradient(180deg, #ffffff 0%, #BFDBFE 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
+                Matan Hanasav
               </div>
-              <div className="text-[#1a1a1a] text-xs mt-1 tracking-wide">
+              <div className="flex items-center justify-center gap-2 mt-2">
+                <span className="block h-px w-6 bg-gradient-to-r from-transparent to-blue-500/60" />
+                <div className="text-blue-300/80 text-[11px] uppercase tracking-[0.22em] font-mono">
+                  Founder &amp; Creative Director
+                </div>
+                <span className="block h-px w-6 bg-gradient-to-l from-transparent to-blue-500/60" />
+              </div>
+              <div className="text-[#444] text-xs mt-2 tracking-wide">
                 10+ years · UI/UX &amp; AI Systems
               </div>
-            </div>
+            </m.div>
           </div>
 
           {/* RIGHT — Story */}
