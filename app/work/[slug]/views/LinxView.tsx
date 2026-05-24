@@ -8,6 +8,7 @@ import {
 import { ScreenProposal } from "@/components/clients/linx/ScreenProposal";
 import { ScreenDashboard } from "@/components/clients/linx/ScreenDashboard";
 import { ScreenReport } from "@/components/clients/linx/ScreenReport";
+import { InteractiveTour } from "@/components/clients/linx/InteractiveTour";
 
 const CONTENT: ProjectPageContent = {
   heroHeadline:
@@ -132,5 +133,11 @@ const CONTENT: ProjectPageContent = {
 };
 
 export function LinxView({ project }: { project: Project }) {
-  return <ProjectPageLayout project={project} content={CONTENT} />;
+  return (
+    <ProjectPageLayout
+      project={project}
+      content={CONTENT}
+      afterGallery={<InteractiveTour />}
+    />
+  );
 }
