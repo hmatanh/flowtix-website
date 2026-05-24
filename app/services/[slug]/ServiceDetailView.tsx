@@ -23,6 +23,9 @@ import {
 import { GlowCard } from "@/components/GlowCard";
 import { AnimatedCounter } from "@/components/AnimatedCounter";
 import { getServiceColor } from "@/components/services/ServiceVisual";
+import { ROICalculator } from "@/components/services/ROICalculator";
+
+const ROI_SLUGS = new Set(["ai-systems", "automation", "ai-sales"]);
 
 const EASE = [0.21, 0.47, 0.32, 0.98] as const;
 
@@ -536,6 +539,9 @@ export function ServiceDetailView({ slug }: { slug: string }) {
           </StaggerContainer>
         </div>
       </section>
+
+      {/* ============== ROI CALCULATOR — only on the 3 most popular ============== */}
+      {ROI_SLUGS.has(slug) && <ROICalculator slug={slug} />}
 
       {/* ============== RELATED ============== */}
       {related.length > 0 && (

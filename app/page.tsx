@@ -68,6 +68,20 @@ const Availability = dynamic(
     loading: () => <div className="h-[300px] w-full" />,
   }
 );
+const ByTheNumbers = dynamic(
+  () => import("@/components/ByTheNumbers").then((m) => ({ default: m.ByTheNumbers })),
+  {
+    ssr: false,
+    loading: () => <div className="h-[400px] w-full" />,
+  }
+);
+const PricingCalculator = dynamic(
+  () => import("@/components/PricingCalculator").then((m) => ({ default: m.PricingCalculator })),
+  {
+    ssr: false,
+    loading: () => <div className="h-[500px] w-full" />,
+  }
+);
 import { FadeIn } from "@/components/animations/FadeIn";
 import {
   StaggerContainer,
@@ -595,6 +609,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ===== BY THE NUMBERS ===== */}
+      <ByTheNumbers />
+
       {/* ===== 6. HOW WE WORK TIMELINE ===== */}
       <section className="section-contain py-32 bg-[#030303] border-y border-[#080808] px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
@@ -892,6 +909,9 @@ export default function Home() {
 
       {/* ===== FAQ ===== */}
       <FAQ />
+
+      {/* ===== PRICING CALCULATOR ===== */}
+      <PricingCalculator />
 
       {/* ===== FIRST 7 DAYS — onboarding preview ===== */}
       <section className="section-contain relative py-24 lg:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
