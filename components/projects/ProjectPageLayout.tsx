@@ -27,6 +27,7 @@ import { AnimatedCounter } from "@/components/AnimatedCounter";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { ProjectSignature } from "@/components/projects/ProjectSignatures";
 import { ProjectMoodboard } from "@/components/projects/ProjectMoodboard";
+import { BrandStrip } from "@/components/projects/BrandStrip";
 import {
   ProjectArchitecture,
   ProjectAIAgents,
@@ -337,7 +338,7 @@ function Hero({
   return (
     <section
       ref={heroRef}
-      className="relative min-h-screen overflow-hidden flex flex-col"
+      className="relative min-h-[88vh] overflow-hidden flex flex-col"
     >
       {/* Layer 0 — solid dark brand wash */}
       <div
@@ -432,7 +433,7 @@ function Hero({
         <div
           className="font-black tracking-tighter whitespace-nowrap"
           style={{
-            fontSize: "clamp(200px, 28vw, 480px)",
+            fontSize: "clamp(140px, 20vw, 320px)",
             color: b.primary,
             letterSpacing: "-0.08em",
             mixBlendMode: "screen",
@@ -544,7 +545,7 @@ function Hero({
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8, ease: EASE }}
             className="mt-8 sm:mt-10 font-black text-white leading-[1.02] sm:leading-[0.95] tracking-tight max-w-4xl mx-auto md:mx-0 px-2 md:px-0"
-            style={{ fontSize: "clamp(34px, 8vw, 80px)" }}
+            style={{ fontSize: "clamp(30px, 6vw, 60px)" }}
           >
             {heroHeadline}
           </m.h1>
@@ -570,7 +571,7 @@ function Hero({
             <span
               className="font-bold"
               style={{
-                fontSize: "clamp(15px, 2vw, 22px)",
+                fontSize: "clamp(15px, 1.6vw, 18px)",
                 color: b.primary,
               }}
             >
@@ -676,7 +677,7 @@ function BrandAtmosphere({ project }: { project: Project }) {
             </div>
             <h2
               className="font-black text-white leading-[1.1] sm:leading-tight tracking-tight"
-              style={{ fontSize: "clamp(30px, 5.5vw, 48px)" }}
+              style={{ fontSize: "clamp(26px, 4.5vw, 40px)" }}
             >
               A visual identity, built from scratch.
             </h2>
@@ -698,7 +699,7 @@ function BrandAtmosphere({ project }: { project: Project }) {
               <div
                 className="font-black leading-none tracking-tighter"
                 style={{
-                  fontSize: "clamp(56px, 10vw, 96px)",
+                  fontSize: "clamp(44px, 7vw, 72px)",
                   color: b.textOnBrand,
                 }}
               >
@@ -801,7 +802,7 @@ function StatementStats({
             </div>
             <h2
               className="font-black text-white tracking-tight"
-              style={{ fontSize: "clamp(26px, 4.5vw, 42px)" }}
+              style={{ fontSize: "clamp(24px, 3.5vw, 36px)" }}
             >
               The change, measured.
             </h2>
@@ -971,7 +972,7 @@ function StorySection({
               </div>
               <h2
                 className="font-black text-white tracking-tight leading-[1.05]"
-                style={{ fontSize: "clamp(30px, 5.5vw, 56px)" }}
+                style={{ fontSize: "clamp(26px, 4.5vw, 42px)" }}
               >
                 {whatWeBuilt.length} pieces. One coherent system.
               </h2>
@@ -1088,7 +1089,7 @@ function NumbersWall({
   if (!stat) return null;
   return (
     <section
-      className="section-contain relative w-full overflow-hidden py-20 sm:py-28 lg:py-40 text-center"
+      className="section-contain relative w-full overflow-hidden py-16 sm:py-20 lg:py-24 text-center"
       style={{ background: "#000" }}
     >
       <FloatingOrbs accentRGB={b.accentRGB} count={3} seed={7} />
@@ -1119,7 +1120,7 @@ function NumbersWall({
           transition={{ duration: 0.9, ease: EASE }}
           className="font-black tracking-tighter tabular-nums"
           style={{
-            fontSize: "clamp(96px, 24vw, 320px)",
+            fontSize: "clamp(72px, 16vw, 220px)",
             color: b.primary,
             lineHeight: 0.9,
             textShadow: `0 0 80px rgba(${b.accentRGB},0.5)`,
@@ -1188,7 +1189,7 @@ function FullBleedMoment({
             </div>
             <h2
               className="font-black text-white tracking-tight"
-              style={{ fontSize: "clamp(26px, 4.5vw, 42px)" }}
+              style={{ fontSize: "clamp(24px, 3.5vw, 36px)" }}
             >
               Built for daily use.
             </h2>
@@ -1253,7 +1254,7 @@ function GalleryScroll({
           </div>
           <h2
             className="text-white font-black tracking-tight"
-            style={{ fontSize: "clamp(30px, 5.5vw, 52px)" }}
+            style={{ fontSize: "clamp(26px, 4.5vw, 40px)" }}
           >
             Every pixel, considered.
           </h2>
@@ -1341,7 +1342,7 @@ function ProcessMoment({
 }) {
   const b = project.brand;
   return (
-    <section className="section-contain py-20 sm:py-28 lg:py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section className="section-contain py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <FloatingOrbs accentRGB={b.accentRGB} count={2} seed={9} />
 
       <div className="relative max-w-7xl mx-auto">
@@ -1355,7 +1356,7 @@ function ProcessMoment({
             </div>
             <h2
               className="text-white font-black tracking-tight"
-              style={{ fontSize: "clamp(30px, 5.5vw, 52px)" }}
+              style={{ fontSize: "clamp(26px, 4.5vw, 40px)" }}
             >
               {chapters.length} chapters, {project.duration}.
             </h2>
@@ -1452,7 +1453,7 @@ function TestimonialMoment({
   const b = project.brand;
   return (
     <section
-      className="section-contain w-full relative overflow-hidden py-24 sm:py-32 lg:py-40 px-4 sm:px-6 lg:px-8 text-center"
+      className="section-contain w-full relative overflow-hidden py-20 sm:py-24 lg:py-28 px-4 sm:px-6 lg:px-8 text-center"
       style={{
         background: `linear-gradient(180deg, ${b.dark}, #000 100%)`,
       }}
@@ -1487,7 +1488,7 @@ function TestimonialMoment({
         <FadeIn>
           <p
             className="text-white font-light leading-[1.25] sm:leading-[1.2] tracking-tight"
-            style={{ fontSize: "clamp(26px, 5vw, 52px)" }}
+            style={{ fontSize: "clamp(24px, 4vw, 40px)" }}
           >
             {testimonialFull}
           </p>
@@ -1663,7 +1664,7 @@ function NextProjectStrip({ project }: { project: Project }) {
         <div
           className="font-black tracking-tighter whitespace-nowrap"
           style={{
-            fontSize: "clamp(120px, 22vw, 360px)",
+            fontSize: "clamp(80px, 14vw, 220px)",
             color: nb.primary,
             letterSpacing: "-0.06em",
           }}
@@ -1919,7 +1920,7 @@ function SoundFamiliar({ project }: { project: Project }) {
   ];
 
   return (
-    <section className="section-contain relative py-20 sm:py-28 lg:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section className="section-contain relative py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* Soft brand backdrop */}
       <div
         aria-hidden="true"
@@ -2115,7 +2116,7 @@ function EngagementSpecs({ project }: { project: Project }) {
   ];
 
   return (
-    <section className="section-contain relative py-20 sm:py-28 lg:py-32 px-4 sm:px-6 lg:px-8 border-y border-[#0a0a0a] overflow-hidden">
+    <section className="section-contain relative py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 border-y border-[#0a0a0a] overflow-hidden">
       <FloatingOrbs accentRGB={b.accentRGB} count={2} seed={13} />
 
       <div className="relative max-w-7xl mx-auto">
@@ -2129,7 +2130,7 @@ function EngagementSpecs({ project }: { project: Project }) {
             </div>
             <h2
               className="text-white font-black tracking-tight leading-[1.05]"
-              style={{ fontSize: "clamp(30px, 5.5vw, 52px)" }}
+              style={{ fontSize: "clamp(26px, 4.5vw, 40px)" }}
             >
               What a project like this{" "}
               <span style={{ color: b.primary }}>actually looks like.</span>
@@ -2266,7 +2267,7 @@ function ResonateCTA({ project }: { project: Project }) {
 
   return (
     <section
-      className="section-contain relative w-full overflow-hidden py-24 sm:py-32 lg:py-40 px-4 sm:px-6 lg:px-8"
+      className="section-contain relative w-full overflow-hidden py-20 sm:py-24 lg:py-28 px-4 sm:px-6 lg:px-8"
       style={{
         background: `linear-gradient(180deg, #000, ${b.dark} 50%, #000 100%)`,
       }}
@@ -2482,9 +2483,9 @@ export function ProjectPageLayout({
         heroHeadline={content.heroHeadline}
         keyMetric={content.keyMetric}
       />
-      <BrandAtmosphere project={project} />
       <ProjectMoodboard project={project} />
       <StatementStats project={project} stats={content.statementStats} />
+      <BrandStrip project={project} />
       <StorySection
         project={project}
         challenge={content.challenge}
