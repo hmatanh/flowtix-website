@@ -12,7 +12,7 @@ const FAQS: { q: string; a: string }[] = [
   },
   {
     q: "Do I need to be technical to work with you?",
-    a: "Zero technical knowledge required. We’ve built AI systems for founders who’d never opened a terminal. If you can describe the problem clearly, we can build the solution.",
+    a: "Zero technical knowledge required. We’ve built systems for founders who’d never opened a terminal. If you can describe the problem clearly, we can build the solution.",
   },
   {
     q: "How much does a typical project cost?",
@@ -35,8 +35,8 @@ const FAQS: { q: string; a: string }[] = [
     a: "Primarily Claude (Anthropic) and GPT-4 (OpenAI), depending on the use case. We’re model-agnostic — we choose the best tool for each specific problem, not the one we’re familiar with.",
   },
   {
-    q: "What makes you different from other AI agencies?",
-    a: "Most AI agencies are engineering teams that learned to sell. We’re a design studio that learned to build AI. That difference shows in every product we ship.",
+    q: "What makes you different from other studios?",
+    a: "Most studios focus on one piece — design, development, automation, or AI. We connect all of them into one practical solution. Same partner for the system, the interface, the automation behind it, and the brand around it.",
   },
   {
     q: "Can I see examples of your work?",
@@ -55,53 +55,100 @@ export function FAQ() {
     <section className="py-24 md:py-32">
       <div className="page-container">
         <FadeIn>
-          <div className="text-[#333] text-[10px] tracking-widest uppercase mb-4 text-center">
-            FAQ
+          <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+            <div className="text-[#666] text-[10px] tracking-[0.22em] uppercase mb-4">
+              FAQ
+            </div>
+            <h2
+              className="font-black text-white tracking-tight"
+              style={{ fontSize: "clamp(28px, 4.5vw, 44px)" }}
+            >
+              Questions we get asked a lot.
+            </h2>
+            <p className="text-[#888] text-base sm:text-lg mt-4 leading-relaxed">
+              Everything we wish more clients had asked before starting a
+              project.
+            </p>
           </div>
-          <h2 className="text-h2 gradient-text text-center">
-            Questions we get asked a lot.
-          </h2>
         </FadeIn>
-        <div className="mt-12">
-          {FAQS.map((f, i) => {
-            const isOpen = open === i;
-            return (
-              <div key={f.q} className="border-b border-[#0a0a0a]">
-                <button
-                  type="button"
-                  onClick={() => setOpen(isOpen ? null : i)}
-                  aria-expanded={isOpen}
-                  className="w-full text-left py-5 flex justify-between items-center gap-4 group"
+
+        <div className="max-w-3xl mx-auto">
+          <div className="rounded-2xl border border-[#0f0f0f] bg-[#080808] overflow-hidden">
+            {FAQS.map((f, i) => {
+              const isOpen = open === i;
+              return (
+                <div
+                  key={f.q}
+                  className={`border-b border-[#0f0f0f] last:border-b-0 transition-colors ${
+                    isOpen ? "bg-[#0D0D0D]" : "hover:bg-[#0a0a0a]"
+                  }`}
                 >
-                  <span className="text-white font-medium text-base group-hover:text-white transition-colors">
-                    {f.q}
-                  </span>
-                  <m.span
-                    animate={{ rotate: isOpen ? 45 : 0 }}
-                    transition={{ duration: 0.25, ease: [0.21, 0.47, 0.32, 0.98] }}
-                    className="shrink-0 text-[#666] group-hover:text-white transition-colors"
+                  <button
+                    type="button"
+                    onClick={() => setOpen(isOpen ? null : i)}
+                    aria-expanded={isOpen}
+                    className="w-full text-left px-5 sm:px-7 py-5 sm:py-6 flex justify-between items-center gap-5 group"
                   >
-                    <IconPlus size={20} stroke={1.5} aria-hidden="true" />
-                  </m.span>
-                </button>
-                <AnimatePresence initial={false}>
-                  {isOpen && (
-                    <m.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: [0.21, 0.47, 0.32, 0.98] }}
-                      className="overflow-hidden"
+                    <span
+                      className={`font-medium text-base sm:text-lg tracking-tight transition-colors ${
+                        isOpen
+                          ? "text-white"
+                          : "text-[#cccccc] group-hover:text-white"
+                      }`}
                     >
-                      <p className="text-[#666] text-sm leading-relaxed pb-5 pr-8">
-                        {f.a}
-                      </p>
-                    </m.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            );
-          })}
+                      {f.q}
+                    </span>
+                    <span
+                      className={`shrink-0 w-9 h-9 rounded-full border inline-flex items-center justify-center transition-all duration-300 ${
+                        isOpen
+                          ? "border-blue-500/40 bg-blue-500/10 text-blue-400"
+                          : "border-[#1a1a1a] text-[#888] group-hover:border-[#2a2a2a] group-hover:text-white"
+                      }`}
+                    >
+                      <m.span
+                        animate={{ rotate: isOpen ? 45 : 0 }}
+                        transition={{
+                          duration: 0.3,
+                          ease: [0.21, 0.47, 0.32, 0.98],
+                        }}
+                      >
+                        <IconPlus size={16} stroke={1.8} aria-hidden="true" />
+                      </m.span>
+                    </span>
+                  </button>
+                  <AnimatePresence initial={false}>
+                    {isOpen && (
+                      <m.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{
+                          duration: 0.35,
+                          ease: [0.21, 0.47, 0.32, 0.98],
+                        }}
+                        className="overflow-hidden"
+                      >
+                        <p className="text-[#aaa] text-sm sm:text-base leading-relaxed px-5 sm:px-7 pb-6 sm:pb-7 pr-12 sm:pr-14">
+                          {f.a}
+                        </p>
+                      </m.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              );
+            })}
+          </div>
+
+          <p className="text-center text-[#666] text-sm mt-8">
+            Still have questions?{" "}
+            <a
+              href="/contact"
+              className="text-white underline underline-offset-4 decoration-[#333] hover:decoration-white transition-colors"
+            >
+              Book a strategy call
+            </a>{" "}
+            — first conversation is free.
+          </p>
         </div>
       </div>
     </section>

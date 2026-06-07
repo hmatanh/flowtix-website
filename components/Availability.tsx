@@ -20,7 +20,7 @@ export function Availability() {
                   Currently available for new projects
                 </span>
               </div>
-              <p className="text-[#666] text-sm mt-4 max-w-lg mx-auto leading-relaxed">
+              <p className="text-[#888] text-sm mt-4 max-w-lg mx-auto leading-relaxed">
                 We take on a limited number of projects each quarter to ensure
                 quality. Typical wait time for new clients: 1–2 weeks.
               </p>
@@ -40,7 +40,7 @@ export function Availability() {
                     className="h-full rounded-full bg-emerald-500"
                   />
                 </div>
-                <div className="flex justify-between mt-2 text-[#555] text-[10px]">
+                <div className="flex justify-between mt-2 text-[#6a6a6a] text-[10px]">
                   <span>3 spots left</span>
                   <span>65% full</span>
                 </div>

@@ -113,7 +113,7 @@ function ProjectCard({
             </span>
           </div>
 
-          <div className="text-[#666] text-[10px] sm:text-xs tracking-[0.18em] uppercase mt-5 sm:mt-6">
+          <div className="text-[#888] text-[10px] sm:text-xs tracking-[0.18em] uppercase mt-5 sm:mt-6">
             {project.industry}
           </div>
           <h3
@@ -171,7 +171,7 @@ function ProjectCard({
           </div>
 
           <div className="mt-auto pt-6 sm:pt-8 flex items-center justify-between">
-            <span className="text-[#666] text-xs font-mono">
+            <span className="text-[#888] text-xs font-mono">
               {project.year} · {project.duration}
             </span>
             <span
@@ -274,7 +274,7 @@ export default function WorkPage() {
             </m.span>
           </h1>
           <FadeIn delay={0.5}>
-            <p className="text-[#888] mt-6 text-base sm:text-lg max-w-2xl mx-auto leading-[1.65] sm:leading-relaxed px-2">
+            <p className="text-[#aaa] mt-6 text-base sm:text-lg max-w-2xl mx-auto leading-[1.65] sm:leading-relaxed px-2">
               Five projects across five industries. Different problems,
               different solutions, one standard: exceptional.
             </p>
@@ -349,7 +349,7 @@ export default function WorkPage() {
                   >
                     {s.value}
                   </div>
-                  <div className="text-[10px] sm:text-xs text-[#666] uppercase tracking-wider mt-1">
+                  <div className="text-[10px] sm:text-xs text-[#888] uppercase tracking-wider mt-1">
                     {s.label}
                   </div>
                 </m.div>
@@ -414,7 +414,7 @@ export default function WorkPage() {
               The sixth project{" "}
               <span className="gradient-text-blue">starts with you.</span>
             </h2>
-            <p className="text-[#888] mt-5 sm:mt-6 text-base sm:text-lg max-w-xl mx-auto leading-[1.65] sm:leading-relaxed px-2">
+            <p className="text-[#aaa] mt-5 sm:mt-6 text-base sm:text-lg max-w-xl mx-auto leading-[1.65] sm:leading-relaxed px-2">
               We&apos;re selective — but always taking new conversations. Tell
               us what you&apos;re building. We&apos;ll tell you if and how
               we can help.
@@ -441,7 +441,7 @@ export default function WorkPage() {
               </m.div>
               <Link
                 href="/services"
-                className="w-full sm:w-auto inline-flex items-center justify-center border border-[#1a1a1a] text-[#888] px-7 py-4 rounded-2xl text-sm font-semibold hover:border-[#2a2a2a] hover:text-white transition-all"
+                className="w-full sm:w-auto inline-flex items-center justify-center border border-[#1a1a1a] text-[#aaa] px-7 py-4 rounded-2xl text-sm font-semibold hover:border-[#2a2a2a] hover:text-white transition-all"
               >
                 Explore Services
               </Link>

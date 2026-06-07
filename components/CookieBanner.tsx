@@ -67,7 +67,7 @@ export function CookieBanner() {
                 Cookie Notice
               </span>
             </div>
-            <p className="text-[#666] text-xs leading-relaxed mb-4">
+            <p className="text-[#888] text-xs leading-relaxed mb-4">
               We use essential cookies only — no tracking, no advertising. See
               our{" "}
               <Link
@@ -89,7 +89,7 @@ export function CookieBanner() {
               <button
                 type="button"
                 onClick={decline}
-                className="flex-1 border border-[#222] text-[#888] text-xs px-4 py-2.5 rounded-xl hover:border-[#333] hover:text-white transition-colors min-h-[44px]"
+                className="flex-1 border border-[#222] text-[#aaa] text-xs px-4 py-2.5 rounded-xl hover:border-[#333] hover:text-white transition-colors min-h-[44px]"
               >
                 Decline
               </button>

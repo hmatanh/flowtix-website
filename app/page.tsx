@@ -237,11 +237,11 @@ export default function Home() {
               <span className="relative h-2 w-2 rounded-full bg-blue-500" />
             </span>
             <span className="text-[#cccccc] text-[11px] tracking-[0.12em] uppercase font-medium">
-              Digital Solutions Studio
+              Digital Systems Studio
             </span>
-            <span className="text-[#333] text-[11px]">·</span>
+            <span className="text-[#555] text-[11px]">·</span>
             <span className="text-[#cccccc] text-[11px] tracking-[0.12em] uppercase font-medium">
-              Product · Automation · AI
+              Built for Operators
             </span>
           </m.div>
 
@@ -252,21 +252,21 @@ export default function Home() {
             className="section-heading font-black text-white tracking-tight leading-[0.95]"
             style={{ fontSize: "clamp(38px, 6vw, 76px)" }}
           >
-            Build smarter <span className="gradient-text-blue">systems</span>,{" "}
-            <span className="gradient-text-blue">automations</span>, and digital
-            products for your business.
+            Custom systems, automations, and AI workflows{" "}
+            <span className="gradient-text-blue">
+              built around your business.
+            </span>
           </m.h1>
 
           <m.p
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.6, ease: EASE }}
-            className="section-subtext text-[#666] text-lg md:text-xl mt-8 max-w-3xl mx-auto leading-relaxed"
+            className="section-subtext text-[#999] text-lg md:text-xl mt-8 max-w-3xl mx-auto leading-relaxed"
           >
-            Flowtix helps startups, digital companies, and growing businesses
-            turn manual processes into scalable systems — from internal tools
-            and client portals to AI agents, websites, MVPs, and automated
-            workflows.
+            We build the internal tools, client portals, AI agents, and
+            automated workflows that save your team hours every week — and
+            scale with the way your business actually works.
           </m.p>
 
           <m.div
@@ -307,7 +307,7 @@ export default function Home() {
             </Link>
             <Link
               href="/services"
-              className="inline-flex items-center justify-center border border-[#1a1a1a] text-[#888] px-7 py-3.5 rounded-xl text-sm hover:border-[#2a2a2a] hover:text-white transition-all min-h-[48px] w-full sm:w-auto"
+              className="inline-flex items-center justify-center border border-[#1a1a1a] text-[#aaa] px-7 py-3.5 rounded-xl text-sm hover:border-[#2a2a2a] hover:text-white transition-all min-h-[48px] w-full sm:w-auto"
             >
               See What We Build →
             </Link>
@@ -396,7 +396,7 @@ export default function Home() {
               >
                 Custom systems for the way your business actually works.
               </h2>
-              <p className="section-subtext text-[#666] text-base sm:text-lg mt-4 max-w-2xl mx-auto leading-relaxed">
+              <p className="section-subtext text-[#888] text-base sm:text-lg mt-4 max-w-2xl mx-auto leading-relaxed">
                 Not templates. Not off-the-shelf SaaS. Real solutions designed
                 around the workflows, customers, and operations you already
                 have.
@@ -416,12 +416,12 @@ export default function Home() {
                     <Icon
                       size={26}
                       stroke={1.5}
-                      className="text-[#444] group-hover:text-blue-500 transition-colors"
+                      className="text-[#555] group-hover:text-blue-500 transition-colors"
                     />
                     <h3 className="text-white text-lg font-semibold tracking-tight mt-6">
                       {c.title}
                     </h3>
-                    <p className="text-[#555] text-sm leading-relaxed mt-3">
+                    <p className="text-[#6a6a6a] text-sm leading-relaxed mt-3">
                       {c.body}
                     </p>
                   </div>
@@ -449,13 +449,13 @@ export default function Home() {
               Most businesses are still running on{" "}
               <span className="gradient-text-blue">manual work.</span>
             </h2>
-            <p className="section-subtext text-[#666] text-base sm:text-lg leading-relaxed mt-8 max-w-2xl">
+            <p className="section-subtext text-[#888] text-base sm:text-lg leading-relaxed mt-8 max-w-2xl">
               Your team wastes hours every week on repetitive tasks,
               disconnected tools, manual follow-ups, copy-paste work,
               spreadsheets, and processes that should have been automated long
               ago.
             </p>
-            <p className="text-[#888] text-base sm:text-lg leading-relaxed mt-4 max-w-2xl">
+            <p className="text-[#aaa] text-base sm:text-lg leading-relaxed mt-4 max-w-2xl">
               Flowtix turns those messy workflows into clean, automated,
               measurable systems.
             </p>
@@ -477,7 +477,7 @@ export default function Home() {
                       Common Reality
                     </span>
                   </div>
-                  <p className="text-[#888] text-sm leading-relaxed">{p}</p>
+                  <p className="text-[#aaa] text-sm leading-relaxed">{p}</p>
                 </m.div>
               ))}
             </div>
@@ -499,7 +499,7 @@ export default function Home() {
               From messy workflows to{" "}
               <span className="gradient-text-blue">scalable systems.</span>
             </h2>
-            <p className="section-subtext text-[#666] text-base sm:text-lg mt-6 max-w-2xl mx-auto leading-relaxed">
+            <p className="section-subtext text-[#888] text-base sm:text-lg mt-6 max-w-2xl mx-auto leading-relaxed">
               We map your current workflow, identify where time and money are
               being wasted, design the right solution, and build a system that
               fits the way your business actually works.
@@ -522,7 +522,7 @@ export default function Home() {
                 <span className="text-white text-sm font-semibold">
                   {s.label}
                 </span>
-                <span className="text-[#444] text-[11px] mt-1">{s.text}</span>
+                <span className="text-[#555] text-[11px] mt-1">{s.text}</span>
               </span>
               {i < FLOW_STEPS.length - 1 && (
                 <span className="text-[#222] hidden sm:inline" aria-hidden="true">
@@ -551,7 +551,7 @@ export default function Home() {
             </div>
             <Link
               href="/services"
-              className="animated-link text-[#555] hover:text-white text-sm whitespace-nowrap"
+              className="animated-link text-[#6a6a6a] hover:text-white text-sm whitespace-nowrap"
             >
               See all services →
             </Link>
@@ -578,33 +578,51 @@ export default function Home() {
                 <Link
                   key={s.slug}
                   href={`/services/${s.slug}/`}
-                  className="group relative w-72 h-72 shrink-0 bg-[#0D0D0D] border border-[#1a1a1a] rounded-2xl p-6 flex flex-col transition-all duration-300 hover:border-[#2a2a2a] hover:-translate-y-1.5"
+                  className="group relative w-80 sm:w-[22rem] h-[22rem] shrink-0 rounded-2xl p-7 flex flex-col transition-all duration-300 hover:-translate-y-1.5 overflow-hidden"
                   style={{
                     scrollSnapAlign: "start",
                     animationDelay: `${i * 0.4}s`,
+                    background:
+                      "linear-gradient(180deg, #0F0F0F 0%, #0A0A0A 100%)",
+                    border: "1px solid #1c1c1c",
+                    boxShadow: "0 12px 32px rgba(0,0,0,0.35)",
                   }}
                 >
-                  <div className="flex items-start justify-between">
-                    <Icon
-                      size={24}
-                      stroke={1.5}
-                      className="text-[#222] group-hover:text-blue-500 transition-colors"
-                    />
-                    <div className="text-[#111] text-[11px] font-mono">
+                  {/* Subtle blue glow on hover */}
+                  <div
+                    aria-hidden="true"
+                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                    style={{
+                      background:
+                        "radial-gradient(ellipse 70% 50% at 50% 0%, rgba(59,130,246,0.08), transparent 70%)",
+                    }}
+                  />
+
+                  <div className="relative flex items-start justify-between">
+                    <span className="inline-flex items-center justify-center w-11 h-11 rounded-xl border border-[#1f1f1f] bg-[#0a0a0a] text-[#aaa] group-hover:border-blue-500/30 group-hover:bg-blue-500/[0.06] group-hover:text-blue-400 transition-all duration-300">
+                      <Icon size={20} stroke={1.6} />
+                    </span>
+                    <span className="text-[#333] text-[11px] font-mono group-hover:text-[#555] transition-colors">
                       {s.number}
-                    </div>
+                    </span>
                   </div>
-                  <div className="mt-auto">
-                    <h3 className="text-white text-lg font-semibold tracking-tight">
+                  <div className="relative mt-auto">
+                    <h3 className="text-white text-lg sm:text-xl font-semibold tracking-tight">
                       {s.title}
                     </h3>
-                    <p className="text-[#555] text-sm mt-2 leading-relaxed line-clamp-3">
+                    <p className="text-[#999] text-sm mt-2.5 leading-relaxed line-clamp-3">
                       {s.short}
                     </p>
                   </div>
-                  <div className="mt-4 text-[#222] text-xs group-hover:text-[#666] transition-colors animated-link inline-flex items-center gap-1">
-                    Explore
-                    <IconArrowRight size={12} stroke={2} />
+                  <div className="relative mt-5 pt-5 border-t border-[#161616] flex items-center justify-between text-xs">
+                    <span className="text-[#666] group-hover:text-white transition-colors font-medium tracking-tight">
+                      Explore service
+                    </span>
+                    <IconArrowRight
+                      size={14}
+                      stroke={2}
+                      className="text-[#444] group-hover:text-blue-400 group-hover:translate-x-0.5 transition-all"
+                    />
                   </div>
                 </Link>
               );
@@ -631,7 +649,7 @@ export default function Home() {
               >
                 Who Flowtix is for.
               </h2>
-              <p className="section-subtext text-[#666] text-base sm:text-lg mt-4 max-w-2xl mx-auto leading-relaxed">
+              <p className="section-subtext text-[#888] text-base sm:text-lg mt-4 max-w-2xl mx-auto leading-relaxed">
                 We work best with teams that know what they want to improve —
                 and want one partner who can carry it across product, design,
                 automation, and AI.
@@ -651,7 +669,7 @@ export default function Home() {
                     stroke={2.5}
                     className="text-blue-500 mt-1 shrink-0"
                   />
-                  <span className="text-[#888] text-sm leading-relaxed">
+                  <span className="text-[#aaa] text-sm leading-relaxed">
                     {w}
                   </span>
                 </div>
@@ -675,7 +693,7 @@ export default function Home() {
               >
                 What we can build for you.
               </h2>
-              <p className="section-subtext text-[#666] text-base sm:text-lg mt-4 max-w-2xl mx-auto leading-relaxed">
+              <p className="section-subtext text-[#888] text-base sm:text-lg mt-4 max-w-2xl mx-auto leading-relaxed">
                 Real examples from real projects. Whatever you don&apos;t see
                 here, ask — most of what we build is bespoke.
               </p>
@@ -688,7 +706,7 @@ export default function Home() {
           >
             {USE_CASES.map((u) => (
               <StaggerItem key={u}>
-                <span className="inline-block bg-[#0D0D0D] border border-[#1a1a1a] rounded-full px-5 py-2.5 text-sm text-[#888] hover:border-blue-500/30 hover:text-white transition-colors cursor-default">
+                <span className="inline-block bg-[#0D0D0D] border border-[#1a1a1a] rounded-full px-5 py-2.5 text-sm text-[#aaa] hover:border-blue-500/30 hover:text-white transition-colors cursor-default">
                   {u}
                 </span>
               </StaggerItem>
@@ -715,7 +733,7 @@ export default function Home() {
               </div>
               <Link
                 href="/work"
-                className="animated-link text-[#555] hover:text-white text-sm whitespace-nowrap"
+                className="animated-link text-[#6a6a6a] hover:text-white text-sm whitespace-nowrap"
               >
                 View All Work →
               </Link>
@@ -797,7 +815,7 @@ export default function Home() {
                     <p className="text-white text-base font-semibold tracking-tight leading-snug">
                       {p.tagline}
                     </p>
-                    <p className="text-[#666] text-sm mt-3 leading-relaxed line-clamp-2">
+                    <p className="text-[#888] text-sm mt-3 leading-relaxed line-clamp-2">
                       {p.description}
                     </p>
 
@@ -845,7 +863,7 @@ export default function Home() {
               Not just design. Not just automation.{" "}
               <span className="gradient-text-blue">A complete digital partner.</span>
             </h2>
-            <p className="section-subtext text-[#444] text-base sm:text-lg leading-relaxed mt-8 max-w-2xl mx-auto">
+            <p className="section-subtext text-[#555] text-base sm:text-lg leading-relaxed mt-8 max-w-2xl mx-auto">
               Most providers focus on one piece — design, development,
               automation, or AI. Flowtix connects all of them into one practical
               solution. We understand the business problem, design the
@@ -870,49 +888,47 @@ export default function Home() {
               >
                 From conversation to working system.
               </h2>
-              <p className="section-subtext text-[#666] text-base sm:text-lg mt-4 max-w-xl mx-auto leading-relaxed">
+              <p className="section-subtext text-[#888] text-base sm:text-lg mt-4 max-w-xl mx-auto leading-relaxed">
                 A clear, repeatable process. No surprises. No scope creep.
               </p>
             </FadeIn>
           </div>
 
-          <div className="relative max-w-2xl mx-auto">
-          <div
-            aria-hidden="true"
-            className="absolute left-8 top-8 bottom-8 w-px bg-[#0f0f0f]"
-          />
-          <m.div
-            initial={{ scaleY: 0 }}
-            whileInView={{ scaleY: 1 }}
-            viewport={{ once: true, amount: 0.05 }}
-            transition={{ duration: 1.6, ease: "easeOut" }}
-            aria-hidden="true"
-            className="absolute left-8 top-8 bottom-8 w-px origin-top bg-gradient-to-b from-blue-500/40 via-blue-500/20 to-transparent"
-          />
-          {PROCESS_STEPS.map((t, i) => (
-            <m.div
-              key={t.n}
-              initial={{ opacity: 0, x: -16 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ delay: i * 0.1, duration: 0.6, ease: EASE }}
-              className="relative flex gap-6 pb-14 last:pb-0 text-left"
-            >
-              <div className="relative shrink-0 z-10">
-                <div className="w-16 h-16 rounded-full border border-blue-500/30 bg-[#0D0D0D] flex items-center justify-center text-blue-400 text-sm font-mono">
-                  {t.n}
+          {/* Cards grid — uses the full container width on desktop, stays
+              a single column on small viewports. Each card carries its own
+              step number and accent so the section reads as a process even
+              without a connecting timeline rail. */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-5">
+            {PROCESS_STEPS.map((t, i) => (
+              <m.div
+                key={t.n}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{
+                  delay: i * 0.08,
+                  duration: 0.55,
+                  ease: EASE,
+                }}
+                className="group relative bg-[#0a0a0a] border border-[#111] rounded-2xl p-6 lg:p-7 hover:border-[#1f1f1f] hover:bg-[#0D0D0D] transition-colors duration-300 text-left"
+              >
+                <div className="flex items-center gap-3 mb-6">
+                  <span className="inline-flex items-center justify-center w-9 h-9 rounded-full border border-blue-500/30 bg-blue-500/[0.06] text-blue-400 text-xs font-mono">
+                    {t.n}
+                  </span>
+                  <span
+                    aria-hidden="true"
+                    className="flex-1 h-px bg-gradient-to-r from-blue-500/20 via-[#1a1a1a] to-transparent"
+                  />
                 </div>
-              </div>
-              <div className="pt-2">
-                <h3 className="text-white text-lg sm:text-xl font-semibold tracking-tight">
+                <h3 className="text-white text-base lg:text-lg font-semibold tracking-tight">
                   {t.title}
                 </h3>
-                <p className="text-[#666] text-sm sm:text-base leading-relaxed mt-3 max-w-lg">
+                <p className="text-[#888] text-sm leading-relaxed mt-3">
                   {t.text}
                 </p>
-              </div>
-            </m.div>
-          ))}
+              </m.div>
+            ))}
           </div>
         </div>
       </section>
@@ -937,7 +953,7 @@ export default function Home() {
           >
             {INDUSTRIES_12.map((i) => (
               <StaggerItem key={i}>
-                <span className="inline-block bg-[#0D0D0D] border border-[#1a1a1a] rounded-full px-5 py-2.5 text-sm text-[#666] hover:border-blue-500/30 hover:text-white transition-colors cursor-default">
+                <span className="inline-block bg-[#0D0D0D] border border-[#1a1a1a] rounded-full px-5 py-2.5 text-sm text-[#888] hover:border-blue-500/30 hover:text-white transition-colors cursor-default">
                   {i}
                 </span>
               </StaggerItem>
@@ -984,7 +1000,7 @@ export default function Home() {
                 <span className="animate-ping absolute h-full w-full rounded-full bg-blue-400 opacity-75" />
                 <span className="relative h-2 w-2 rounded-full bg-blue-500" />
               </span>
-              <span className="text-[#666] text-[11px] tracking-[0.12em] uppercase font-medium">
+              <span className="text-[#888] text-[11px] tracking-[0.12em] uppercase font-medium">
                 Currently taking on new projects
               </span>
             </div>
@@ -998,7 +1014,7 @@ export default function Home() {
             </h2>
           </FadeIn>
           <FadeIn delay={0.2}>
-            <p className="section-subtext text-[#666] text-lg sm:text-xl mt-8 max-w-2xl mx-auto leading-relaxed">
+            <p className="section-subtext text-[#888] text-lg sm:text-xl mt-8 max-w-2xl mx-auto leading-relaxed">
               Tell us what you&apos;re trying to improve. We&apos;ll help you
               understand what can be automated, what should be built, and what
               will create the most business value. First conversation is free
@@ -1027,7 +1043,7 @@ export default function Home() {
               </div>
               <Link
                 href="/work"
-                className="inline-flex items-center justify-center border border-[#1a1a1a] text-[#666] px-8 py-4 rounded-xl hover:border-[#2a2a2a] hover:text-white transition-colors w-full sm:w-auto min-h-[52px]"
+                className="inline-flex items-center justify-center border border-[#1a1a1a] text-[#888] px-8 py-4 rounded-xl hover:border-[#2a2a2a] hover:text-white transition-colors w-full sm:w-auto min-h-[52px]"
               >
                 See Our Work →
               </Link>

@@ -88,7 +88,7 @@ export function ROICalculator({ slug }: { slug: string }) {
           >
             {preset.headline}
           </h2>
-          <p className="text-[#666] text-sm mt-3 max-w-lg mx-auto leading-relaxed">
+          <p className="text-[#888] text-sm mt-3 max-w-lg mx-auto leading-relaxed">
             {preset.hint}
           </p>
         </div>
@@ -154,7 +154,7 @@ export function ROICalculator({ slug }: { slug: string }) {
               <ResultRow label="Per month" value={result.monthly} />
               <ResultRow label="Per year" value={result.annual} large />
 
-              <p className="text-[#555] text-xs mt-5 leading-relaxed">
+              <p className="text-[#6a6a6a] text-xs mt-5 leading-relaxed">
                 Rough estimate based on the values above. Your real return
                 depends on the system's adoption rate and the complexity of the
                 work it replaces.
@@ -198,7 +198,7 @@ function Field({
           >
             <Icon size={13} stroke={1.8} />
           </span>
-          <span className="text-[#888] text-xs">{label}</span>
+          <span className="text-[#aaa] text-xs">{label}</span>
         </div>
         <span className="text-white font-mono font-semibold text-sm tabular-nums">
           {value}
@@ -271,7 +271,7 @@ function ResultRow({
     <div
       className="flex items-baseline justify-between py-3 border-b border-[#1a1a1a] last:border-0"
     >
-      <span className="text-[#666] text-sm">{label}</span>
+      <span className="text-[#888] text-sm">{label}</span>
       <m.span
         key={value}
         initial={{ opacity: 0, y: 4 }}

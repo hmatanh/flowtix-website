@@ -125,7 +125,7 @@ export default function NotFound() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="text-[#888] mt-4 max-w-md mx-auto leading-[1.65] sm:leading-relaxed text-[15px] sm:text-base px-2"
+          className="text-[#aaa] mt-4 max-w-md mx-auto leading-[1.65] sm:leading-relaxed text-[15px] sm:text-base px-2"
         >
           The page you&apos;re looking for doesn&apos;t exist — but we can
           help you find what you need.
@@ -148,7 +148,7 @@ export default function NotFound() {
           </m.div>
           <Link
             href="/work"
-            className="w-full sm:w-auto inline-flex items-center justify-center border border-[#1a1a1a] text-[#888] px-7 py-3.5 rounded-2xl text-sm hover:border-[#2a2a2a] hover:text-white transition-colors"
+            className="w-full sm:w-auto inline-flex items-center justify-center border border-[#1a1a1a] text-[#aaa] px-7 py-3.5 rounded-2xl text-sm hover:border-[#2a2a2a] hover:text-white transition-colors"
           >
             View Our Work
             <IconArrowRight size={14} stroke={2} aria-hidden="true" className="ml-2" />
@@ -197,7 +197,7 @@ export default function NotFound() {
           Or report the broken link to{" "}
           <a
             href="mailto:office@flowtix.ai"
-            className="text-[#666] hover:text-white transition-colors font-mono"
+            className="text-[#888] hover:text-white transition-colors font-mono"
           >
             office@flowtix.ai
           </a>

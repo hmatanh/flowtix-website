@@ -95,7 +95,7 @@ export function LiveActivityFeed() {
                 className="w-1.5 h-1.5 rounded-full shrink-0"
                 style={{ background: item.dot }}
               />
-              <span className="text-[#666] text-xs flex-1">{item.text}</span>
+              <span className="text-[#888] text-xs flex-1">{item.text}</span>
               <span className="text-[#333] text-[10px] shrink-0">
                 {formatAge(item.ageMs)}
               </span>

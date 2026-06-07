@@ -125,7 +125,7 @@ export function PricingCalculator() {
             Estimate your project in{" "}
             <span className="gradient-text-blue">30 seconds.</span>
           </h2>
-          <p className="text-[#555] text-center mt-4 text-sm max-w-xl mx-auto leading-relaxed">
+          <p className="text-[#6a6a6a] text-center mt-4 text-sm max-w-xl mx-auto leading-relaxed">
             Three quick questions — and a budget range you can actually plan
             against.
           </p>
@@ -214,15 +214,15 @@ export function PricingCalculator() {
                 transition={{ duration: 0.5, ease: EASE }}
               >
                 <div className="text-center">
-                  <div className="text-[#666] text-[10px] uppercase tracking-[0.2em] mb-2">
+                  <div className="text-[#888] text-[10px] uppercase tracking-[0.2em] mb-2">
                     Estimated range
                   </div>
                   <div className="text-white font-black tracking-tight leading-[1.05]" style={{ fontSize: "clamp(40px, 7vw, 72px)" }}>
                     <span className="gradient-text-blue">${result[0]}K</span>
-                    <span className="text-[#444] mx-3 sm:mx-4">–</span>
+                    <span className="text-[#555] mx-3 sm:mx-4">–</span>
                     <span className="gradient-text-blue">${result[1]}K</span>
                   </div>
-                  <p className="text-[#555] text-sm mt-5 max-w-md mx-auto leading-relaxed">
+                  <p className="text-[#6a6a6a] text-sm mt-5 max-w-md mx-auto leading-relaxed">
                     This is an estimate based on similar projects. Every project
                     gets a precise, fixed-price proposal after our 30-minute
                     discovery call.
@@ -243,7 +243,7 @@ export function PricingCalculator() {
                     <button
                       type="button"
                       onClick={reset}
-                      className="inline-flex items-center justify-center gap-2 border border-[#1a1a1a] text-[#888] text-sm px-6 py-3.5 rounded-xl hover:border-[#2a2a2a] hover:text-white transition-colors min-h-[48px]"
+                      className="inline-flex items-center justify-center gap-2 border border-[#1a1a1a] text-[#aaa] text-sm px-6 py-3.5 rounded-xl hover:border-[#2a2a2a] hover:text-white transition-colors min-h-[48px]"
                     >
                       <IconRefresh size={14} stroke={1.7} />
                       Start over
@@ -339,7 +339,7 @@ function BackButton({ onClick }: { onClick: () => void }) {
     <button
       type="button"
       onClick={onClick}
-      className="text-[#555] text-xs mt-5 hover:text-[#888] transition-colors inline-flex items-center gap-1"
+      className="text-[#6a6a6a] text-xs mt-5 hover:text-[#aaa] transition-colors inline-flex items-center gap-1"
     >
       ← Back
     </button>

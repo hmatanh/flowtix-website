@@ -62,7 +62,7 @@ export function DashboardMockup() {
           <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/70" />
           <span className="w-2.5 h-2.5 rounded-full bg-green-500/70" />
         </div>
-        <div className="text-[10px] text-[#555] tracking-wider">
+        <div className="text-[10px] text-[#6a6a6a] tracking-wider">
           flowtix · Dashboard
         </div>
         <div className="w-5 h-5 rounded-full bg-[#1a1a1a] border border-[#222]" />
@@ -83,7 +83,7 @@ export function DashboardMockup() {
                 className={`flex items-center gap-2 px-2 py-1.5 rounded text-[11px] transition-colors ${
                   item.active
                     ? "bg-[#1a1a1a] text-white"
-                    : "text-[#555] hover:text-white"
+                    : "text-[#6a6a6a] hover:text-white"
                 }`}
               >
                 <item.icon size={13} stroke={1.6} />
@@ -96,7 +96,7 @@ export function DashboardMockup() {
         <div className="p-4">
           <div>
             <h2 className="text-white text-sm font-semibold">Good morning 👋</h2>
-            <div className="text-[#555] text-[11px] mt-0.5">
+            <div className="text-[#6a6a6a] text-[11px] mt-0.5">
               Here&apos;s what&apos;s happening.
             </div>
           </div>
@@ -107,7 +107,7 @@ export function DashboardMockup() {
                 key={s.label}
                 className="bg-[#111] border border-[#1a1a1a] rounded-xl p-3"
               >
-                <div className="text-[#444] text-[9px] uppercase tracking-wider">
+                <div className="text-[#555] text-[9px] uppercase tracking-wider">
                   {s.label}
                 </div>
                 <div className="text-white text-xl font-bold mt-1 tracking-tight">
@@ -134,7 +134,7 @@ export function DashboardMockup() {
               {suggestions.map((s) => (
                 <div
                   key={s}
-                  className="bg-[#111] rounded-lg px-3 py-1.5 text-[10px] text-[#666]"
+                  className="bg-[#111] rounded-lg px-3 py-1.5 text-[10px] text-[#888]"
                 >
                   {s}
                 </div>
@@ -143,7 +143,7 @@ export function DashboardMockup() {
           </div>
 
           <div className="mt-3">
-            <div className="text-[#444] text-[9px] uppercase tracking-wider mb-1.5">
+            <div className="text-[#555] text-[9px] uppercase tracking-wider mb-1.5">
               Recent Activity
             </div>
             <ul>
@@ -157,7 +157,7 @@ export function DashboardMockup() {
                       className="w-1.5 h-1.5 rounded-full shrink-0"
                       style={{ background: a.dot }}
                     />
-                    <span className="text-[#666] text-[10px]">{a.text}</span>
+                    <span className="text-[#888] text-[10px]">{a.text}</span>
                   </div>
                   <span className="text-[#333] text-[9px]">{a.time}</span>
                 </li>

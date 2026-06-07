@@ -451,7 +451,7 @@ function Hero({
         <div className="pt-24 sm:pt-32 lg:pt-40 flex items-center justify-between gap-3">
           <Link
             href="/work"
-            className="inline-flex items-center gap-1.5 text-[#444] hover:text-[#888] text-xs transition-colors"
+            className="inline-flex items-center gap-1.5 text-[#555] hover:text-[#aaa] text-xs transition-colors"
           >
             <IconArrowLeft size={12} stroke={2} aria-hidden="true" />
             <span className="hidden sm:inline">All Work</span>
@@ -900,7 +900,7 @@ function StorySection({
                   {challenge.paragraphs.map((p, i) => (
                     <p
                       key={i}
-                      className="text-[#888] text-[15px] sm:text-base leading-relaxed"
+                      className="text-[#aaa] text-[15px] sm:text-base leading-relaxed"
                     >
                       {p}
                     </p>
@@ -1311,7 +1311,7 @@ function GalleryScroll({
                   <div className="text-white text-sm sm:text-base font-semibold tracking-tight">
                     {g.name}
                   </div>
-                  <div className="text-[#666] text-xs sm:text-sm mt-1.5 leading-relaxed max-w-xs">
+                  <div className="text-[#888] text-xs sm:text-sm mt-1.5 leading-relaxed max-w-xs">
                     {g.description}
                   </div>
                 </div>

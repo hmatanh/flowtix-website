@@ -86,7 +86,7 @@ export function ServiceDetailView({ slug }: { slug: string }) {
 
         <div className="relative page-container">
           <FadeIn>
-            <nav className="text-[#444] text-xs sm:text-sm flex items-center gap-2 mb-8 sm:mb-10">
+            <nav className="text-[#555] text-xs sm:text-sm flex items-center gap-2 mb-8 sm:mb-10">
               <Link
                 href="/services"
                 className="hover:text-white transition-colors"
@@ -99,7 +99,7 @@ export function ServiceDetailView({ slug }: { slug: string }) {
                 aria-hidden="true"
                 className="text-[#222]"
               />
-              <span className="text-[#888] truncate max-w-[200px] sm:max-w-none">
+              <span className="text-[#aaa] truncate max-w-[200px] sm:max-w-none">
                 {service.title}
               </span>
             </nav>
@@ -223,7 +223,7 @@ export function ServiceDetailView({ slug }: { slug: string }) {
               </m.div>
               <Link
                 href="/services"
-                className="w-full sm:w-auto inline-flex items-center justify-center border text-[#888] px-7 py-3.5 rounded-2xl text-sm font-semibold hover:text-white transition-colors"
+                className="w-full sm:w-auto inline-flex items-center justify-center border text-[#aaa] px-7 py-3.5 rounded-2xl text-sm font-semibold hover:text-white transition-colors"
                 style={{ borderColor: `rgba(${c.rgb},0.18)` }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.borderColor = `rgba(${c.rgb},0.40)`;
@@ -345,7 +345,7 @@ export function ServiceDetailView({ slug }: { slug: string }) {
                     <h3 className="text-white text-[15px] sm:text-base font-semibold mt-3 leading-snug">
                       {p.title}
                     </h3>
-                    <p className="text-[#666] text-[13px] sm:text-sm leading-relaxed mt-2">
+                    <p className="text-[#888] text-[13px] sm:text-sm leading-relaxed mt-2">
                       {p.text}
                     </p>
                   </div>
@@ -418,7 +418,7 @@ export function ServiceDetailView({ slug }: { slug: string }) {
                     <h3 className="text-white text-lg sm:text-xl font-semibold tracking-tight">
                       {s.title}
                     </h3>
-                    <p className="text-[#888] text-[15px] sm:text-base leading-[1.65] sm:leading-relaxed mt-2.5 sm:mt-3 max-w-2xl">
+                    <p className="text-[#aaa] text-[15px] sm:text-base leading-[1.65] sm:leading-relaxed mt-2.5 sm:mt-3 max-w-2xl">
                       {s.text}
                     </p>
                   </m.div>
@@ -529,7 +529,7 @@ export function ServiceDetailView({ slug }: { slug: string }) {
                         suffix={r.suffix}
                       />
                     </div>
-                    <div className="text-[#888] text-sm sm:text-base mt-4 leading-relaxed">
+                    <div className="text-[#aaa] text-sm sm:text-base mt-4 leading-relaxed">
                       {r.label}
                     </div>
                   </div>
@@ -609,7 +609,7 @@ export function ServiceDetailView({ slug }: { slug: string }) {
                         <h3 className="text-white text-base font-semibold mt-5 tracking-tight">
                           {r.title}
                         </h3>
-                        <p className="text-[#666] text-sm mt-2 leading-relaxed line-clamp-2">
+                        <p className="text-[#888] text-sm mt-2 leading-relaxed line-clamp-2">
                           {r.short}
                         </p>
                         <div
@@ -692,7 +692,7 @@ export function ServiceDetailView({ slug }: { slug: string }) {
             </h2>
           </FadeIn>
           <FadeIn delay={0.1}>
-            <p className="text-[#888] mt-5 sm:mt-6 max-w-xl mx-auto leading-[1.65] sm:leading-relaxed text-base sm:text-lg px-2">
+            <p className="text-[#aaa] mt-5 sm:mt-6 max-w-xl mx-auto leading-[1.65] sm:leading-relaxed text-base sm:text-lg px-2">
               Book a free 30-minute discovery call. We&apos;ll talk specifics —
               your problem, your stack, your timeline.
             </p>
@@ -728,7 +728,7 @@ export function ServiceDetailView({ slug }: { slug: string }) {
               </m.div>
               <Link
                 href="/services"
-                className="w-full sm:w-auto inline-flex items-center justify-center border text-[#888] px-7 sm:px-9 py-4 sm:py-5 rounded-2xl text-base sm:text-lg font-semibold hover:text-white transition-colors"
+                className="w-full sm:w-auto inline-flex items-center justify-center border text-[#aaa] px-7 sm:px-9 py-4 sm:py-5 rounded-2xl text-base sm:text-lg font-semibold hover:text-white transition-colors"
                 style={{ borderColor: `rgba(${c.rgb},0.18)` }}
               >
                 See All Services
@@ -736,7 +736,7 @@ export function ServiceDetailView({ slug }: { slug: string }) {
             </div>
           </FadeIn>
           <FadeIn delay={0.3}>
-            <div className="mt-10 sm:mt-12 text-[#444] text-xs sm:text-sm">
+            <div className="mt-10 sm:mt-12 text-[#555] text-xs sm:text-sm">
               Response within 24h · Free · No commitment
             </div>
           </FadeIn>

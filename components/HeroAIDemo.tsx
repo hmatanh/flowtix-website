@@ -238,7 +238,7 @@ export function HeroAIDemo() {
           <span className="w-2.5 h-2.5 rounded-full bg-[#FEBC2E]" />
           <span className="w-2.5 h-2.5 rounded-full bg-[#28C840]" />
         </div>
-        <div className="flex-1 bg-[#0a0a0a] rounded px-3 py-1 text-[#444] text-[10px] font-mono truncate text-center">
+        <div className="flex-1 bg-[#0a0a0a] rounded px-3 py-1 text-[#555] text-[10px] font-mono truncate text-center">
           chat.flowtix.ai
         </div>
         <div className="w-5 h-5 rounded-full bg-[#1a1a1a] border border-[#222] shrink-0" />
@@ -248,7 +248,7 @@ export function HeroAIDemo() {
       <div className="flex items-center justify-between px-4 py-3 border-b border-[#1a1a1a]">
         <div className="flex items-center gap-2">
           <Logo size={18} href={null} />
-          <span className="text-[#444] text-[10px]">· Assistant</span>
+          <span className="text-[#555] text-[10px]">· Assistant</span>
         </div>
         <div className="flex items-center gap-1.5 text-emerald-400 text-[10px]">
           <span className="relative flex h-1.5 w-1.5">
@@ -361,7 +361,7 @@ export function HeroAIDemo() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4 }}
-          className="absolute bottom-16 right-3 text-[#222] hover:text-[#666] text-[10px] inline-flex items-center gap-1 transition-colors"
+          className="absolute bottom-16 right-3 text-[#222] hover:text-[#888] text-[10px] inline-flex items-center gap-1 transition-colors"
         >
           <IconRefresh size={11} stroke={1.5} aria-hidden="true" />
           Replay demo

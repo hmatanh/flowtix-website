@@ -71,7 +71,7 @@ export function KovaListingMockup() {
       </div>
 
       {/* Emails sent */}
-      <div className="mt-3 flex items-center gap-2 text-[10px] text-[#888]">
+      <div className="mt-3 flex items-center gap-2 text-[10px] text-[#aaa]">
         <span className="text-emerald-400">✓</span>
         <span>47 automated follow-ups sent this week</span>
       </div>
@@ -228,7 +228,7 @@ export function AurumListingMockup() {
                 className="w-1.5 h-1.5 rounded-full"
                 style={{ background: "#D97706", opacity: 0.6 }}
               />
-              <span className="text-[#888]">Client {String(i + 1).padStart(2, "0")}</span>
+              <span className="text-[#aaa]">Client {String(i + 1).padStart(2, "0")}</span>
             </div>
             <span className="text-[#FDE68A] opacity-70">
               ${(2.4 - i * 0.4).toFixed(1)}M
@@ -274,7 +274,7 @@ export function DrftListingMockup() {
 
       {/* Email metric */}
       <div className="mt-3 flex items-center justify-between text-[10px]">
-        <span className="text-[#888]">Email open rate</span>
+        <span className="text-[#aaa]">Email open rate</span>
         <span className="text-[#F97316] font-semibold">34.2%</span>
       </div>
 
@@ -320,7 +320,7 @@ export function LinxListingMockup() {
             transition={{ duration: 1.4, ease: "easeOut" }}
           />
         </div>
-        <div className="text-[#888] text-[10px] mt-2">
+        <div className="text-[#aaa] text-[10px] mt-2">
           Brief entered → Generating proposal…
         </div>
       </div>

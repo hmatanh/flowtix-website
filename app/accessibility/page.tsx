@@ -19,12 +19,12 @@ export default function AccessibilityPage() {
         }}
       />
 
-      <nav aria-label="Breadcrumb" className="mb-6 sm:mb-8 text-xs text-[#444]">
+      <nav aria-label="Breadcrumb" className="mb-6 sm:mb-8 text-xs text-[#555]">
         <Link href="/" className="hover:text-white animated-link">
           Home
         </Link>
         <span className="mx-2 text-[#222]" aria-hidden="true">/</span>
-        <span className="text-[#888]">Accessibility</span>
+        <span className="text-[#aaa]">Accessibility</span>
       </nav>
 
       <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-500/25 bg-blue-500/5 mb-4 sm:mb-5">
@@ -157,7 +157,7 @@ export default function AccessibilityPage() {
         </p>
       </Section>
 
-      <div className="mt-16 pt-8 border-t border-[#1a1a1a] flex flex-wrap items-center justify-between gap-4 text-xs text-[#444]">
+      <div className="mt-16 pt-8 border-t border-[#1a1a1a] flex flex-wrap items-center justify-between gap-4 text-xs text-[#555]">
         <div className="flex flex-wrap gap-4">
           <Link href="/contact" className="hover:text-white animated-link">
             Contact →
@@ -169,7 +169,7 @@ export default function AccessibilityPage() {
             Back to home →
           </Link>
         </div>
-        <a href="#top" className="text-[#555] hover:text-white animated-link inline-flex items-center gap-1">
+        <a href="#top" className="text-[#6a6a6a] hover:text-white animated-link inline-flex items-center gap-1">
           ↑ Back to top
         </a>
       </div>
@@ -186,7 +186,7 @@ function Section({
 }) {
   return (
     <section
-      className="mt-12 scroll-mt-24 [&_p]:text-[#888] [&_p]:text-base [&_p]:leading-relaxed [&_p]:mb-4 [&_strong]:text-white [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-4 [&_ul]:space-y-2 [&_ul_li]:text-[#888] [&_ul_li]:leading-relaxed [&_a]:break-words"
+      className="mt-12 scroll-mt-24 [&_p]:text-[#aaa] [&_p]:text-base [&_p]:leading-relaxed [&_p]:mb-4 [&_strong]:text-white [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-4 [&_ul]:space-y-2 [&_ul_li]:text-[#aaa] [&_ul_li]:leading-relaxed [&_a]:break-words"
     >
       <h2 className="text-xl lg:text-2xl font-semibold text-white border-b border-[#1a1a1a] pb-3 mb-5">
         {title}

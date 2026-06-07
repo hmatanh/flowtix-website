@@ -129,13 +129,13 @@ function CalendarBooking() {
           <h3 className="text-white text-xl font-semibold tracking-tight">
             Book a Free Discovery Call
           </h3>
-          <div className="text-[#666] text-sm mt-1.5 flex items-center gap-4 flex-wrap">
+          <div className="text-[#888] text-sm mt-1.5 flex items-center gap-4 flex-wrap">
             <span className="inline-flex items-center gap-1.5">
-              <IconCalendar size={13} stroke={1.5} aria-hidden="true" className="text-[#444]" />
+              <IconCalendar size={13} stroke={1.5} aria-hidden="true" className="text-[#555]" />
               30 minutes
             </span>
             <span className="inline-flex items-center gap-1.5">
-              <IconVideo size={13} stroke={1.5} aria-hidden="true" className="text-[#444]" />
+              <IconVideo size={13} stroke={1.5} aria-hidden="true" className="text-[#555]" />
               Video call
             </span>
             <span className="text-emerald-400">Free</span>
@@ -158,7 +158,7 @@ function CalendarBooking() {
             <div className="text-white text-lg mt-3">
               {MONTH_NAMES[month]} {selectedDay}, {year} at {selectedTime}
             </div>
-            <div className="text-[#666] text-sm mt-3 max-w-md mx-auto">
+            <div className="text-[#888] text-sm mt-3 max-w-md mx-auto">
               Email{" "}
               <a
                 href="mailto:office@flowtix.ai"
@@ -175,7 +175,7 @@ function CalendarBooking() {
                 setSelectedDay(null);
                 setSelectedTime(null);
               }}
-              className="text-[#444] text-xs mt-6 hover:text-white transition-colors"
+              className="text-[#555] text-xs mt-6 hover:text-white transition-colors"
             >
               Pick a different time
             </button>
@@ -208,7 +208,7 @@ function CalendarBooking() {
               </button>
             </div>
 
-            <div className="mt-5 grid grid-cols-7 gap-1.5 text-[10px] text-[#444] uppercase tracking-wider text-center">
+            <div className="mt-5 grid grid-cols-7 gap-1.5 text-[10px] text-[#555] uppercase tracking-wider text-center">
               {DAYS_OF_WEEK.map((d) => (
                 <div key={d} className="py-1">
                   {d}
@@ -272,7 +272,7 @@ function CalendarBooking() {
                   transition={{ duration: 0.3 }}
                   className="overflow-hidden"
                 >
-                  <div className="mt-8 text-label text-[#444]">
+                  <div className="mt-8 text-label text-[#555]">
                     Available times · {MONTH_NAMES[month]} {selectedDay}
                   </div>
                   <div className="mt-3 flex flex-wrap gap-2">
@@ -286,7 +286,7 @@ function CalendarBooking() {
                           className={`border rounded-lg px-4 py-2 text-sm cursor-pointer transition-all ${
                             selected
                               ? "border-blue-500/60 text-white bg-blue-500/5"
-                              : "border-[#1a1a1a] text-[#555] hover:border-blue-500/50 hover:text-white"
+                              : "border-[#1a1a1a] text-[#6a6a6a] hover:border-blue-500/50 hover:text-white"
                           }`}
                         >
                           {t}
@@ -303,7 +303,7 @@ function CalendarBooking() {
                 Actual booking via{" "}
                 <a
                   href="mailto:office@flowtix.ai"
-                  className="text-[#666] hover:text-white"
+                  className="text-[#888] hover:text-white"
                 >
                   office@flowtix.ai
                 </a>
@@ -515,7 +515,7 @@ export default function ContactPage() {
             </m.span>
           </h1>
           <FadeIn delay={0.5}>
-            <p className="text-[#888] mt-6 sm:mt-7 max-w-2xl mx-auto text-base sm:text-lg leading-[1.65] sm:leading-relaxed px-2">
+            <p className="text-[#aaa] mt-6 sm:mt-7 max-w-2xl mx-auto text-base sm:text-lg leading-[1.65] sm:leading-relaxed px-2">
               Not every project is right for us — and we&apos;d rather tell you
               that upfront than take your money and underdeliver. Book 30
               minutes and let&apos;s be honest.
@@ -537,7 +537,7 @@ export default function ContactPage() {
                   <div className="text-white font-bold tabular-nums tracking-tight text-base sm:text-lg">
                     {t.value}
                   </div>
-                  <div className="text-[10px] sm:text-[11px] uppercase tracking-wider text-[#666] mt-1">
+                  <div className="text-[10px] sm:text-[11px] uppercase tracking-wider text-[#888] mt-1">
                     {t.label}
                   </div>
                 </div>
@@ -755,7 +755,7 @@ export default function ContactPage() {
               >
                 office@flowtix.ai
               </a>
-              <div className="text-[#666] text-sm mt-2">
+              <div className="text-[#888] text-sm mt-2">
                 Response time: Within 24 hours
               </div>
 
@@ -782,7 +782,7 @@ export default function ContactPage() {
                           </span>
                           {s.title}
                         </div>
-                        <div className="text-[#666] text-sm mt-1">{s.text}</div>
+                        <div className="text-[#888] text-sm mt-1">{s.text}</div>
                       </div>
                     </div>
                   </StaggerItem>

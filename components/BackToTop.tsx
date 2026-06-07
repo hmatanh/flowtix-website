@@ -49,7 +49,7 @@ export function BackToTop() {
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0, opacity: 0 }}
           transition={{ type: "spring", stiffness: 300, damping: 22 }}
-          className="fixed bottom-24 md:bottom-8 right-4 md:right-6 z-40 w-11 h-11 rounded-full bg-[#111] border border-[#1a1a1a] hover:border-[#2a2a2a] hover:bg-[#1a1a1a] inline-flex items-center justify-center text-[#888] hover:text-white transition-colors"
+          className="fixed bottom-24 md:bottom-8 right-4 md:right-6 z-40 w-11 h-11 rounded-full bg-[#111] border border-[#1a1a1a] hover:border-[#2a2a2a] hover:bg-[#1a1a1a] inline-flex items-center justify-center text-[#aaa] hover:text-white transition-colors"
         >
           <svg
             className="absolute inset-0 w-full h-full -rotate-90"

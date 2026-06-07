@@ -46,11 +46,11 @@ export function AnnouncementBar() {
               <span className="animate-ping absolute h-full w-full rounded-full bg-emerald-400 opacity-75" />
               <span className="relative h-2 w-2 rounded-full bg-emerald-500" />
             </span>
-            <span className="text-[#888] tracking-wide truncate">
+            <span className="text-[#aaa] tracking-wide truncate">
               Now accepting new projects for Q3 2025
             </span>
             <span className="text-[#333] hidden sm:inline">·</span>
-            <span className="text-[#666] hidden sm:inline">3 spots remaining</span>
+            <span className="text-[#888] hidden sm:inline">3 spots remaining</span>
             <Link
               href="/contact"
               className="animated-link text-[#3B82F6] hover:text-blue-400 transition-colors shrink-0"
@@ -61,7 +61,7 @@ export function AnnouncementBar() {
               type="button"
               onClick={dismiss}
               aria-label="Dismiss announcement"
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-[#444] hover:text-white transition-colors w-7 h-7 inline-flex items-center justify-center"
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-[#555] hover:text-white transition-colors w-7 h-7 inline-flex items-center justify-center"
             >
               <IconX size={14} stroke={1.5} />
             </button>

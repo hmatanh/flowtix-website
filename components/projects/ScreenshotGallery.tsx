@@ -100,7 +100,7 @@ function ScreenshotCard({
         <div className="text-white text-sm font-semibold tracking-tight">
           {screenshot.title}
         </div>
-        <div className="text-[#444] text-xs mt-1 leading-relaxed">
+        <div className="text-[#555] text-xs mt-1 leading-relaxed">
           {screenshot.description}
         </div>
       </div>
@@ -233,7 +233,7 @@ export function ScreenshotGallery({
                 <div className="text-white text-lg font-semibold tracking-tight">
                   {active.title}
                 </div>
-                <div className="text-[#666] text-sm mt-2 leading-relaxed">
+                <div className="text-[#888] text-sm mt-2 leading-relaxed">
                   {active.description}
                 </div>
               </div>

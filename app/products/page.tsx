@@ -110,11 +110,11 @@ export default function ProductsPage() {
             <span className="gradient-text-blue">Ready to Deploy.</span>
           </m.h1>
           <FadeIn delay={0.2}>
-            <p className="text-[#888] mt-5 sm:mt-6 text-base sm:text-lg max-w-2xl mx-auto leading-[1.65] sm:leading-relaxed px-2">
+            <p className="text-[#aaa] mt-5 sm:mt-6 text-base sm:text-lg max-w-2xl mx-auto leading-[1.65] sm:leading-relaxed px-2">
               Pre-built, white-label AI products. Customized to your brand.
               Deployed fast.
             </p>
-            <p className="text-[#555] text-xs sm:text-sm mt-3">
+            <p className="text-[#6a6a6a] text-xs sm:text-sm mt-3">
               More systems launching throughout 2025–2026
             </p>
           </FadeIn>
@@ -265,7 +265,7 @@ export default function ProductsPage() {
                       </m.form>
                     )}
                   </AnimatePresence>
-                  <div className="text-[#444] text-xs mt-3.5 flex items-center gap-2 flex-wrap">
+                  <div className="text-[#555] text-xs mt-3.5 flex items-center gap-2 flex-wrap">
                     <span className="inline-flex items-center gap-1">
                       <span className="w-1 h-1 rounded-full bg-blue-500" />
                       No credit card
@@ -303,7 +303,7 @@ export default function ProductsPage() {
         <div className="page-container">
           <FadeIn>
             <div className="text-center mb-8 sm:mb-12">
-              <div className="text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-[#444] mb-2.5">
+              <div className="text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-[#555] mb-2.5">
                 The roadmap
               </div>
               <h3
@@ -381,7 +381,7 @@ export default function ProductsPage() {
                     >
                       {u.name}
                     </h4>
-                    <p className="text-[#888] text-sm mt-2.5 sm:mt-3 leading-relaxed">
+                    <p className="text-[#aaa] text-sm mt-2.5 sm:mt-3 leading-relaxed">
                       {u.desc}
                     </p>
                     <div
@@ -416,7 +416,7 @@ export default function ProductsPage() {
               All products ship with{" "}
               <span className="gradient-text-blue">white-label included.</span>
             </h2>
-            <p className="text-[#888] mt-5 sm:mt-6 leading-[1.65] sm:leading-relaxed text-[15px] sm:text-base max-w-lg">
+            <p className="text-[#aaa] mt-5 sm:mt-6 leading-[1.65] sm:leading-relaxed text-[15px] sm:text-base max-w-lg">
               Every Flowtix product can be fully rebranded with your
               company&apos;s identity, colors, and domain. Built for agencies
               and businesses that want to offer AI capabilities to their
@@ -481,7 +481,7 @@ export default function ProductsPage() {
               />
 
               <div className="relative text-center">
-                <div className="text-[#444] text-[10px] sm:text-[11px] tracking-widest uppercase mb-3 sm:mb-4">
+                <div className="text-[#555] text-[10px] sm:text-[11px] tracking-widest uppercase mb-3 sm:mb-4">
                   Your Brand
                 </div>
                 <div className="flex items-center justify-center gap-3">
@@ -494,7 +494,7 @@ export default function ProductsPage() {
                   <span className="w-1 h-1 rounded-full bg-blue-500" />
                   AI Powered
                 </div>
-                <div className="mt-3 text-[#444] text-[10px]">
+                <div className="mt-3 text-[#555] text-[10px]">
                   Powered by Flowtix · invisible to your clients
                 </div>
               </div>

@@ -192,7 +192,7 @@ export default function AboutPage() {
           </FadeIn>
 
           <FadeIn delay={0.25}>
-            <p className="text-[#888] text-base sm:text-lg lg:text-xl leading-[1.65] sm:leading-relaxed max-w-2xl mx-auto mt-7 sm:mt-8 px-2">
+            <p className="text-[#aaa] text-base sm:text-lg lg:text-xl leading-[1.65] sm:leading-relaxed max-w-2xl mx-auto mt-7 sm:mt-8 px-2">
               Flowtix is a digital solutions studio. We design and build the
               custom systems, automations, AI agents, internal tools, and
               digital products that move businesses forward.
@@ -214,7 +214,7 @@ export default function AboutPage() {
                   <div className="text-white font-black tabular-nums tracking-tight text-lg sm:text-xl">
                     {s.value}
                   </div>
-                  <div className="text-[10px] sm:text-[11px] uppercase tracking-wider text-[#666] mt-1">
+                  <div className="text-[10px] sm:text-[11px] uppercase tracking-wider text-[#888] mt-1">
                     {s.label}
                   </div>
                 </div>
@@ -270,7 +270,7 @@ export default function AboutPage() {
                 </div>
                 <span className="block h-px w-6 bg-gradient-to-l from-transparent to-blue-500/60" />
               </div>
-              <div className="text-[#444] text-xs mt-2 tracking-wide">
+              <div className="text-[#555] text-xs mt-2 tracking-wide">
                 10+ years · UI/UX &amp; AI Systems
               </div>
             </m.div>
@@ -290,14 +290,14 @@ export default function AboutPage() {
               </h2>
 
               <div className="space-y-4 mt-8">
-                <p className="text-[#666] text-base leading-relaxed">
+                <p className="text-[#888] text-base leading-relaxed">
                   After a decade designing digital products and brand identities
                   for companies across multiple industries, I kept seeing the
                   same problem: businesses were investing in AI that nobody
                   actually used. Not because the technology wasn&apos;t capable
                   — because nobody had designed the experience.
                 </p>
-                <p className="text-[#666] text-base leading-relaxed">
+                <p className="text-[#888] text-base leading-relaxed">
                   I started learning how to build with AI tools — not as a
                   replacement for design, but as an extension of it. I
                   discovered that the combination of deep product thinking,
@@ -306,7 +306,7 @@ export default function AboutPage() {
                   in the market: AI systems that were genuinely beautiful to
                   use.
                 </p>
-                <p className="text-[#666] text-base leading-relaxed">
+                <p className="text-[#888] text-base leading-relaxed">
                   Flowtix was founded on a single conviction: the best AI
                   systems aren&apos;t the most technically complex ones.
                   They&apos;re the ones that feel like they were built for the
@@ -315,7 +315,7 @@ export default function AboutPage() {
               </div>
 
               <div className="bg-[#0D0D0D] border-l-2 border-blue-500 pl-6 py-4 mt-8 rounded-r-lg">
-                <p className="text-[#888] text-lg italic leading-relaxed">
+                <p className="text-[#aaa] text-lg italic leading-relaxed">
                   &ldquo;Every system we build starts with one question: would I
                   be proud to use this myself?&rdquo;
                 </p>
@@ -329,7 +329,7 @@ export default function AboutPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.5 }}
                     transition={{ delay: i * 0.04, duration: 0.4, ease: EASE }}
-                    className="rounded-full px-4 py-2 text-[#888] text-xs sm:text-sm border transition-colors hover:text-white hover:border-blue-500/30"
+                    className="rounded-full px-4 py-2 text-[#aaa] text-xs sm:text-sm border transition-colors hover:text-white hover:border-blue-500/30"
                     style={{
                       background: "#0D0D0D",
                       borderColor: "#1a1a1a",
@@ -370,7 +370,7 @@ export default function AboutPage() {
                         stroke={2.5}
                         className="text-blue-500 mt-1 shrink-0"
                       />
-                      <span className="text-[#888] text-sm leading-relaxed">
+                      <span className="text-[#aaa] text-sm leading-relaxed">
                         {item}
                       </span>
                     </li>
@@ -381,7 +381,7 @@ export default function AboutPage() {
 
             <FadeIn direction="left" delay={0.1}>
               <div className="bg-[#0D0D0D] border border-[#1a1a1a] rounded-2xl p-8 h-full">
-                <div className="text-[#444] text-sm uppercase tracking-wider mb-6">
+                <div className="text-[#555] text-sm uppercase tracking-wider mb-6">
                   Flowtix is NOT…
                 </div>
                 <ul className="space-y-4">
@@ -392,7 +392,7 @@ export default function AboutPage() {
                         stroke={2.5}
                         className="text-[#333] mt-1 shrink-0"
                       />
-                      <span className="text-[#555] text-sm leading-relaxed">
+                      <span className="text-[#6a6a6a] text-sm leading-relaxed">
                         {item}
                       </span>
                     </li>
@@ -466,7 +466,7 @@ export default function AboutPage() {
                     <h3 className="relative text-white text-lg sm:text-xl font-bold mt-6 sm:mt-8 tracking-tight leading-[1.2]">
                       {v.title}
                     </h3>
-                    <p className="relative text-[#888] text-[14px] sm:text-sm leading-[1.65] sm:leading-relaxed mt-2.5 sm:mt-3">
+                    <p className="relative text-[#aaa] text-[14px] sm:text-sm leading-[1.65] sm:leading-relaxed mt-2.5 sm:mt-3">
                       {v.body}
                     </p>
                   </GlowCard>
@@ -487,7 +487,7 @@ export default function AboutPage() {
             >
               How every project works.
             </h2>
-            <p className="section-subtext text-[#555] text-center mt-4 max-w-xl mx-auto">
+            <p className="section-subtext text-[#6a6a6a] text-center mt-4 max-w-xl mx-auto">
               The same process, every time. Because it works every time.
             </p>
           </FadeIn>
@@ -515,7 +515,7 @@ export default function AboutPage() {
                 className="relative flex items-start gap-6 sm:gap-8 pb-12 last:pb-0 text-left"
               >
                 <div className="relative shrink-0 z-10">
-                  <div className="w-12 h-12 rounded-full border border-[#1a1a1a] bg-[#0D0D0D] flex items-center justify-center text-[#444] text-sm font-mono">
+                  <div className="w-12 h-12 rounded-full border border-[#1a1a1a] bg-[#0D0D0D] flex items-center justify-center text-[#555] text-sm font-mono">
                     {s.n}
                   </div>
                 </div>
@@ -526,7 +526,7 @@ export default function AboutPage() {
                   <h3 className="text-white text-lg font-semibold mt-1">
                     {s.title}
                   </h3>
-                  <p className="text-[#555] text-sm leading-relaxed mt-2 max-w-lg">
+                  <p className="text-[#6a6a6a] text-sm leading-relaxed mt-2 max-w-lg">
                     {s.body}
                   </p>
                 </div>
@@ -558,7 +558,7 @@ export default function AboutPage() {
             </h2>
           </FadeIn>
           <FadeIn delay={0.1}>
-            <p className="section-subtext text-[#444] text-xl sm:text-2xl leading-relaxed mt-8 font-light max-w-3xl mx-auto">
+            <p className="section-subtext text-[#555] text-xl sm:text-2xl leading-relaxed mt-8 font-light max-w-3xl mx-auto">
               A world where every business — regardless of size or technical
               resources — has access to the intelligent systems that were
               previously only available to companies with large engineering
@@ -570,7 +570,7 @@ export default function AboutPage() {
               <p className="text-white text-lg font-semibold">
                 We&apos;re at the beginning of that.
               </p>
-              <p className="text-[#444] text-base mt-2">
+              <p className="text-[#555] text-base mt-2">
                 Every system we build is a step toward it.
               </p>
             </div>
@@ -586,7 +586,7 @@ export default function AboutPage() {
               </Link>
               <Link
                 href="/work"
-                className="inline-flex items-center justify-center border border-[#1a1a1a] text-[#888] px-8 py-4 rounded-xl text-sm hover:border-[#2a2a2a] hover:text-white transition-colors min-h-[48px] w-full sm:w-auto"
+                className="inline-flex items-center justify-center border border-[#1a1a1a] text-[#aaa] px-8 py-4 rounded-xl text-sm hover:border-[#2a2a2a] hover:text-white transition-colors min-h-[48px] w-full sm:w-auto"
               >
                 View our work →
               </Link>

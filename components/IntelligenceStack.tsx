@@ -39,7 +39,7 @@ export function IntelligenceStack() {
           <h2 className="text-h2 gradient-text text-center max-w-2xl mx-auto">
             We connect everything. We make it intelligent.
           </h2>
-          <p className="text-[#666] text-base md:text-[17px] text-center mt-4 max-w-xl mx-auto leading-relaxed">
+          <p className="text-[#888] text-base md:text-[17px] text-center mt-4 max-w-xl mx-auto leading-relaxed">
             The intelligence layer that sits between your existing tools and
             turns them into a system that thinks.
           </p>
@@ -58,10 +58,10 @@ export function IntelligenceStack() {
                 transition={{ delay: i * 0.06, duration: 0.5, ease: EASE }}
                 className="bg-[#0a0a0a] border border-[#0f0f0f] rounded-xl px-4 py-3 flex items-center gap-3"
               >
-                <span className="w-7 h-7 rounded-md bg-[#111] border border-[#1a1a1a] inline-flex items-center justify-center text-[#666] text-xs">
+                <span className="w-7 h-7 rounded-md bg-[#111] border border-[#1a1a1a] inline-flex items-center justify-center text-[#888] text-xs">
                   {t.initial}
                 </span>
-                <span className="text-[#888] text-sm">{t.name}</span>
+                <span className="text-[#aaa] text-sm">{t.name}</span>
                 <span className="ml-auto text-[#222] text-[10px] uppercase tracking-widest">
                   isolated
                 </span>
@@ -204,7 +204,7 @@ export function IntelligenceStack() {
                     className="text-blue-400"
                   />
                 </span>
-                <span className="text-[#888] text-sm">{o}</span>
+                <span className="text-[#aaa] text-sm">{o}</span>
                 <span className="ml-auto text-blue-400 text-[10px] uppercase tracking-widest">
                   live
                 </span>

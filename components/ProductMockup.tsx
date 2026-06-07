@@ -35,7 +35,7 @@ export function ProductMockup() {
         style={{ zIndex: 1 }}
       >
         <div className="flex items-center justify-between">
-          <div className="text-[#666] text-[10px] tracking-wider uppercase">
+          <div className="text-[#888] text-[10px] tracking-wider uppercase">
             Social Post · Instagram
           </div>
           <div className="w-1.5 h-1.5 rounded-full bg-[#3B82F6]" />
@@ -57,7 +57,7 @@ export function ProductMockup() {
         style={{ zIndex: 2 }}
       >
         <div className="flex items-center justify-between">
-          <div className="text-[#666] text-[10px] tracking-wider uppercase">
+          <div className="text-[#888] text-[10px] tracking-wider uppercase">
             Email Campaign
           </div>
           <div className="w-1.5 h-1.5 rounded-full bg-[#3B82F6]" />

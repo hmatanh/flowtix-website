@@ -144,7 +144,7 @@ export function ByTheNumbers() {
                     <AnimatedCounter value={n.value} />
                     <span>{n.suffix}</span>
                   </div>
-                  <div className="text-[#666] text-sm mt-3 leading-relaxed max-w-sm">
+                  <div className="text-[#888] text-sm mt-3 leading-relaxed max-w-sm">
                     {n.label}
                   </div>
                 </div>

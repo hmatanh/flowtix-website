@@ -17,13 +17,13 @@ export function FormGDPR() {
           strokeLinecap="round"
         />
       </svg>
-      <p className="text-[#444] text-[11px] leading-relaxed">
+      <p className="text-[#555] text-[11px] leading-relaxed">
         Your information is used only to respond to your inquiry. We never sell
         data or send unsolicited emails. You can request deletion at any time
         by emailing{" "}
         <a
           href="mailto:office@flowtix.ai"
-          className="text-[#666] hover:text-white underline underline-offset-2"
+          className="text-[#888] hover:text-white underline underline-offset-2"
         >
           office@flowtix.ai
         </a>

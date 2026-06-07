@@ -99,7 +99,7 @@ export default function ServicesPage() {
             </m.span>
           </h1>
           <FadeIn delay={0.5}>
-            <p className="text-[#888] mt-5 sm:mt-6 text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed px-2">
+            <p className="text-[#aaa] mt-5 sm:mt-6 text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed px-2">
               From first strategy to live deployment — design, intelligence,
               and execution in one place.
             </p>
@@ -130,7 +130,7 @@ export default function ServicesPage() {
           </FadeIn>
 
           <FadeIn delay={0.8}>
-            <div className="text-[#444] text-xs sm:text-sm mt-5 sm:mt-6 inline-flex items-center gap-2">
+            <div className="text-[#555] text-xs sm:text-sm mt-5 sm:mt-6 inline-flex items-center gap-2">
               <span>10 services · 5 industries · 1 team</span>
             </div>
           </FadeIn>
@@ -164,7 +164,7 @@ export default function ServicesPage() {
                   >
                     {p.value}
                   </div>
-                  <div className="text-[10px] sm:text-xs text-[#666] uppercase tracking-wider mt-1">
+                  <div className="text-[10px] sm:text-xs text-[#888] uppercase tracking-wider mt-1">
                     {p.label}
                   </div>
                 </m.div>
@@ -225,7 +225,7 @@ export default function ServicesPage() {
                     <h2 className="text-[26px] sm:text-3xl lg:text-4xl font-bold text-white mt-3 sm:mt-4 tracking-tight leading-[1.15]">
                       {s.title}
                     </h2>
-                    <p className="text-[#888] text-[15px] sm:text-base leading-[1.65] sm:leading-relaxed mt-4 sm:mt-5 max-w-lg">
+                    <p className="text-[#aaa] text-[15px] sm:text-base leading-[1.65] sm:leading-relaxed mt-4 sm:mt-5 max-w-lg">
                       {s.description}
                     </p>
                     <ul className="mt-6 sm:mt-7 space-y-2.5 sm:space-y-3">
@@ -313,7 +313,7 @@ export default function ServicesPage() {
               We&apos;ll help you{" "}
               <span className="gradient-text-blue">pick the right one.</span>
             </h2>
-            <p className="text-[#888] mt-5 sm:mt-6 text-base sm:text-lg max-w-xl mx-auto leading-relaxed px-2">
+            <p className="text-[#aaa] mt-5 sm:mt-6 text-base sm:text-lg max-w-xl mx-auto leading-relaxed px-2">
               Book a free 30-minute discovery call. We&apos;ll listen, ask
               questions, and point you toward what will actually move your
               business — even if it isn&apos;t us.
@@ -342,7 +342,7 @@ export default function ServicesPage() {
               </m.div>
               <Link
                 href="/work"
-                className="inline-flex w-full sm:w-auto items-center justify-center gap-2 border border-[#1a1a1a] text-[#888] px-7 py-4 rounded-2xl text-sm font-semibold hover:border-[#2a2a2a] hover:text-white transition-all"
+                className="inline-flex w-full sm:w-auto items-center justify-center gap-2 border border-[#1a1a1a] text-[#aaa] px-7 py-4 rounded-2xl text-sm font-semibold hover:border-[#2a2a2a] hover:text-white transition-all"
               >
                 See our work first
               </Link>

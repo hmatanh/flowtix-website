@@ -157,10 +157,10 @@ export function BlogClient({ posts }: { posts: PostMeta[] }) {
             <br className="hidden sm:inline" /> &amp; the Future of Business
           </m.h1>
           <FadeIn delay={0.2}>
-            <p className="text-[#888] mt-5 sm:mt-6 text-base sm:text-lg max-w-2xl mx-auto leading-[1.65] sm:leading-relaxed px-2">
+            <p className="text-[#aaa] mt-5 sm:mt-6 text-base sm:text-lg max-w-2xl mx-auto leading-[1.65] sm:leading-relaxed px-2">
               Practical thinking from the team at Flowtix.
             </p>
-            <p className="text-[#555] text-xs sm:text-sm mt-3">
+            <p className="text-[#6a6a6a] text-xs sm:text-sm mt-3">
               No fluff. No hype. Just real insights.
             </p>
           </FadeIn>
@@ -188,7 +188,7 @@ export function BlogClient({ posts }: { posts: PostMeta[] }) {
                       boxShadow: `0 0 8px ${color}66`,
                     }}
                   />
-                  <span className="text-[10px] sm:text-[11px] text-[#666]">
+                  <span className="text-[10px] sm:text-[11px] text-[#888]">
                     {cat}
                   </span>
                 </m.span>
@@ -295,7 +295,7 @@ export function BlogClient({ posts }: { posts: PostMeta[] }) {
                         {featured.category}
                       </span>
                       <span className="text-[#333] text-xs">·</span>
-                      <span className="text-[#666] text-[11px] sm:text-xs inline-flex items-center gap-1">
+                      <span className="text-[#888] text-[11px] sm:text-xs inline-flex items-center gap-1">
                         <IconClock size={10} stroke={1.5} aria-hidden="true" />
                         {featured.readTime}
                       </span>
@@ -325,7 +325,7 @@ export function BlogClient({ posts }: { posts: PostMeta[] }) {
                         </span>
                       </div>
                       <span className="text-[#222]">·</span>
-                      <span className="text-[#666] text-xs sm:text-sm">
+                      <span className="text-[#888] text-xs sm:text-sm">
                         {featured.date}
                       </span>
                       <span
@@ -409,7 +409,7 @@ export function BlogClient({ posts }: { posts: PostMeta[] }) {
                             >
                               {p.category}
                             </span>
-                            <span className="text-[#555] text-[10px] inline-flex items-center gap-1">
+                            <span className="text-[#6a6a6a] text-[10px] inline-flex items-center gap-1">
                               <IconClock size={9} stroke={1.5} aria-hidden="true" />
                               {p.readTime}
                             </span>
@@ -417,11 +417,11 @@ export function BlogClient({ posts }: { posts: PostMeta[] }) {
                           <h3 className="text-white text-base sm:text-lg font-semibold mt-3 sm:mt-4 leading-[1.3] tracking-tight">
                             {p.title}
                           </h3>
-                          <p className="text-[#888] text-[13px] sm:text-sm mt-2.5 sm:mt-3 leading-[1.6] line-clamp-3">
+                          <p className="text-[#aaa] text-[13px] sm:text-sm mt-2.5 sm:mt-3 leading-[1.6] line-clamp-3">
                             {p.excerpt}
                           </p>
                           <div className="mt-5 sm:mt-6 pt-4 border-t flex items-center justify-between text-xs" style={{ borderColor: "#151515" }}>
-                            <span className="text-[#555]">{p.date}</span>
+                            <span className="text-[#6a6a6a]">{p.date}</span>
                             <span
                               className="inline-flex items-center gap-1 font-medium transition-colors"
                               style={{ color: p.categoryColor }}
@@ -441,7 +441,7 @@ export function BlogClient({ posts }: { posts: PostMeta[] }) {
                   ))}
                 </StaggerContainer>
               ) : (
-                <div className="text-center py-20 text-[#555]">
+                <div className="text-center py-20 text-[#6a6a6a]">
                   <div className="text-2xl mb-2">📭</div>
                   No posts in this category yet.
                 </div>
@@ -451,7 +451,7 @@ export function BlogClient({ posts }: { posts: PostMeta[] }) {
 
           {/* Show count */}
           {rest.length > 0 && (
-            <div className="mt-10 sm:mt-12 text-center text-[#444] text-xs sm:text-sm">
+            <div className="mt-10 sm:mt-12 text-center text-[#555] text-xs sm:text-sm">
               Showing {rest.length} {rest.length === 1 ? "article" : "articles"}
               {filter !== "All" && (
                 <> in <span style={{ color: CATEGORY_COLORS[filter as PostCategory] }}>{filter}</span></>
@@ -494,7 +494,7 @@ export function BlogClient({ posts }: { posts: PostMeta[] }) {
             >
               Get new articles in your inbox
             </h3>
-            <p className="text-[#888] text-sm sm:text-base mt-3 sm:mt-4">
+            <p className="text-[#aaa] text-sm sm:text-base mt-3 sm:mt-4">
               One thoughtful piece every two weeks. No spam, ever.
             </p>
 
@@ -530,7 +530,7 @@ export function BlogClient({ posts }: { posts: PostMeta[] }) {
                 </m.button>
               </form>
             )}
-            <p className="text-[#444] text-xs mt-4 sm:mt-5">
+            <p className="text-[#555] text-xs mt-4 sm:mt-5">
               Unsubscribe anytime. Read by 4,800+ operators.
             </p>
           </div>

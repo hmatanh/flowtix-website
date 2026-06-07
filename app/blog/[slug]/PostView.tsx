@@ -63,7 +63,7 @@ function TableOfContents({
               className={`block transition-colors ${
                 active === e.id
                   ? "text-white"
-                  : "text-[#444] hover:text-[#888]"
+                  : "text-[#555] hover:text-[#aaa]"
               }`}
             >
               {e.label}
@@ -96,12 +96,12 @@ export function PostView({
         />
         <div className="relative page-container">
           <FadeIn>
-            <nav className="text-[#444] text-sm flex items-center gap-2 mb-8">
+            <nav className="text-[#555] text-sm flex items-center gap-2 mb-8">
               <Link href="/blog" className="hover:text-white transition-colors">
                 Blog
               </Link>
               <IconChevronRight size={12} stroke={2} className="text-[#222]" />
-              <span className="text-[#666] truncate">{post.title}</span>
+              <span className="text-[#888] truncate">{post.title}</span>
             </nav>
           </FadeIn>
 
@@ -117,8 +117,8 @@ export function PostView({
               >
                 {post.category}
               </span>
-              <span className="text-[#444] text-xs">·</span>
-              <span className="text-[#666] text-xs">{post.readTime}</span>
+              <span className="text-[#555] text-xs">·</span>
+              <span className="text-[#888] text-xs">{post.readTime}</span>
             </div>
           </FadeIn>
 
@@ -132,7 +132,7 @@ export function PostView({
           </FadeIn>
 
           <FadeIn delay={0.2}>
-            <p className="text-[#888] text-xl leading-relaxed mt-6 max-w-2xl">
+            <p className="text-[#aaa] text-xl leading-relaxed mt-6 max-w-2xl">
               {post.excerpt}
             </p>
           </FadeIn>
@@ -147,11 +147,11 @@ export function PostView({
                   <div className="text-white text-sm font-medium">
                     {post.author}
                   </div>
-                  <div className="text-[#555] text-xs">{post.date}</div>
+                  <div className="text-[#6a6a6a] text-xs">{post.date}</div>
                 </div>
               </div>
               <div className="ml-auto flex items-center gap-2">
-                <span className="text-[#444] text-xs hidden sm:inline">
+                <span className="text-[#555] text-xs hidden sm:inline">
                   Share
                 </span>
                 <a
@@ -159,7 +159,7 @@ export function PostView({
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Share on Twitter"
-                  className="w-9 h-9 inline-flex items-center justify-center border border-[#1a1a1a] rounded-lg text-[#666] hover:text-white hover:border-[#2a2a2a] transition-colors"
+                  className="w-9 h-9 inline-flex items-center justify-center border border-[#1a1a1a] rounded-lg text-[#888] hover:text-white hover:border-[#2a2a2a] transition-colors"
                 >
                   <IconBrandX size={14} stroke={1.5} aria-hidden="true" />
                 </a>
@@ -168,7 +168,7 @@ export function PostView({
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Share on LinkedIn"
-                  className="w-9 h-9 inline-flex items-center justify-center border border-[#1a1a1a] rounded-lg text-[#666] hover:text-white hover:border-[#2a2a2a] transition-colors"
+                  className="w-9 h-9 inline-flex items-center justify-center border border-[#1a1a1a] rounded-lg text-[#888] hover:text-white hover:border-[#2a2a2a] transition-colors"
                 >
                   <IconBrandLinkedin size={14} stroke={1.5} aria-hidden="true" />
                 </a>
@@ -212,7 +212,7 @@ export function PostView({
       <section className="mt-12 sm:mt-16">
         <div className="max-w-3xl mx-auto pt-7 sm:pt-8 border-t border-[#0f0f0f]">
           <div className="flex flex-wrap items-center gap-2">
-            <span className="text-[10px] uppercase tracking-widest text-[#444] mr-1">
+            <span className="text-[10px] uppercase tracking-widest text-[#555] mr-1">
               Tags:
             </span>
             {post.tags.map((t) => (
@@ -230,9 +230,9 @@ export function PostView({
             ))}
           </div>
           <div className="mt-7 sm:mt-8 flex items-center justify-between flex-wrap gap-3">
-            <div className="text-[#888] text-sm">Found this useful?</div>
+            <div className="text-[#aaa] text-sm">Found this useful?</div>
             <div className="flex items-center gap-2">
-              <span className="text-[#444] text-xs mr-1 hidden sm:inline">
+              <span className="text-[#555] text-xs mr-1 hidden sm:inline">
                 Share:
               </span>
               <a
@@ -240,7 +240,7 @@ export function PostView({
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Share on Twitter"
-                className="w-9 h-9 inline-flex items-center justify-center border border-[#1a1a1a] rounded-lg text-[#666] hover:text-white hover:border-[#2a2a2a] transition-colors"
+                className="w-9 h-9 inline-flex items-center justify-center border border-[#1a1a1a] rounded-lg text-[#888] hover:text-white hover:border-[#2a2a2a] transition-colors"
               >
                 <IconBrandX size={14} stroke={1.5} aria-hidden="true" />
               </a>
@@ -249,7 +249,7 @@ export function PostView({
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Share on LinkedIn"
-                className="w-9 h-9 inline-flex items-center justify-center border border-[#1a1a1a] rounded-lg text-[#666] hover:text-white hover:border-[#2a2a2a] transition-colors"
+                className="w-9 h-9 inline-flex items-center justify-center border border-[#1a1a1a] rounded-lg text-[#888] hover:text-white hover:border-[#2a2a2a] transition-colors"
               >
                 <IconBrandLinkedin size={14} stroke={1.5} aria-hidden="true" />
               </a>
@@ -318,7 +318,7 @@ export function PostView({
               </m.div>
               <Link
                 href="/services"
-                className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 rounded-2xl text-sm font-semibold border text-[#888] hover:text-white transition-colors"
+                className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 rounded-2xl text-sm font-semibold border text-[#aaa] hover:text-white transition-colors"
                 style={{ borderColor: "#1f1f1f" }}
               >
                 See how we work
@@ -337,13 +337,13 @@ export function PostView({
             </div>
           </div>
           <div className="flex-1">
-            <div className="text-[10px] uppercase tracking-widest text-[#444] mb-1">
+            <div className="text-[10px] uppercase tracking-widest text-[#555] mb-1">
               About the team
             </div>
             <h4 className="text-white text-base font-semibold tracking-tight">
               Flowtix Team
             </h4>
-            <p className="text-[#888] text-sm mt-3 leading-relaxed">
+            <p className="text-[#aaa] text-sm mt-3 leading-relaxed">
               Flowtix is a design-first studio building AI systems, automations,
               and digital products for businesses that refuse to look average.
             </p>
@@ -396,19 +396,19 @@ export function PostView({
                       >
                         {p.category}
                       </span>
-                      <span className="text-[#444] text-[10px]">
+                      <span className="text-[#555] text-[10px]">
                         {p.readTime}
                       </span>
                     </div>
                     <h3 className="text-white text-base font-semibold mt-4 leading-snug">
                       {p.title}
                     </h3>
-                    <p className="text-[#666] text-sm mt-3 leading-relaxed line-clamp-2">
+                    <p className="text-[#888] text-sm mt-3 leading-relaxed line-clamp-2">
                       {p.excerpt}
                     </p>
                     <div className="mt-5 flex items-center justify-between text-xs">
-                      <span className="text-[#444]">{p.date}</span>
-                      <span className="inline-flex items-center gap-1 text-[#666] group-hover:text-white transition-colors">
+                      <span className="text-[#555]">{p.date}</span>
+                      <span className="inline-flex items-center gap-1 text-[#888] group-hover:text-white transition-colors">
                         Read
                         <IconArrowRight
                           size={12}

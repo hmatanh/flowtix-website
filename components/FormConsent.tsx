@@ -57,7 +57,7 @@ export function FormConsent({ checked, onChange, error }: Props) {
           </div>
         </button>
 
-        <span className="text-[#888] text-sm leading-relaxed">
+        <span className="text-[#aaa] text-sm leading-relaxed">
           I have read and agree to the{" "}
           <Link
             href="/privacy"

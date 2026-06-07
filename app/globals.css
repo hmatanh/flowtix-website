@@ -746,6 +746,51 @@ body::before {
 
 /* ===== Site-wide content container ===== */
 /* =====================================================================
+   STANDARDIZED TYPE SCALE  —  one rhythm for every section title.
+   - .text-display    hero / above-fold headlines
+   - .text-h2         section headings (the bulk of the site)
+   - .text-h3         sub-section headings / card titles
+   - .text-eyebrow    small uppercase labels above headings
+   - .text-section-subtext   the line under most h2 headings
+
+   These are *applied where the design needs them*. We don't blanket-apply
+   to raw <h1>/<h2> so we don't break existing typography hierarchies
+   already in place per page.
+   ===================================================================== */
+.text-display {
+  font-weight: 900;
+  letter-spacing: -0.025em;
+  line-height: 0.95;
+  color: var(--text-primary);
+  font-size: clamp(38px, 6vw, 76px);
+}
+.text-h2 {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  color: var(--text-primary);
+  font-size: clamp(28px, 4.5vw, 44px);
+}
+.text-h3 {
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+  color: var(--text-primary);
+  font-size: clamp(20px, 2.4vw, 24px);
+}
+.text-eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #666;
+}
+.text-section-subtext {
+  font-size: clamp(16px, 1.5vw, 18px);
+  line-height: 1.6;
+  color: #999;
+}
+
+/* =====================================================================
    GLOBAL PAGE CONTAINER  —  the ONE outer width every section uses.
    Navbar, hero, cards, text blocks and CTAs all sit inside this container
    so their edges align on the same vertical grid at every viewport.
