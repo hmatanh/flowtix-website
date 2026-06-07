@@ -208,6 +208,7 @@ export function LinxView({ project }: { project: Project }) {
         accentRGB={LINX_RGB}
         eyebrow="The monthly report"
         caption="The deliverable that decides whether a client renews. Drafted by the system, edited by a partner, on cream paper with a Linx partner's name. Goes out on the first of every month."
+        designAspect="1600/1100"
         annotations={[
           {
             number: "01",
