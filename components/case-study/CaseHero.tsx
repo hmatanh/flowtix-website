@@ -64,13 +64,12 @@ export function CaseHero({
           background: `radial-gradient(ellipse 60% 50% at 20% 80%, rgba(${accentRGB},0.06) 0%, transparent 70%)`,
         }}
       />
-      {/* Layer 3 — subtle grain */}
+      {/* Layer 3 — third soft wash for depth (replaces noise) */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 pointer-events-none opacity-[0.025]"
+        className="absolute inset-0 pointer-events-none"
         style={{
-          backgroundImage:
-            "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>\")",
+          background: `radial-gradient(ellipse 40% 30% at 90% 20%, rgba(${accentRGB},0.04) 0%, transparent 60%)`,
         }}
       />
       {/* Layer 4 — bottom fade to body */}

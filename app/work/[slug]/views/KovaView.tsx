@@ -4,9 +4,10 @@
  * Kova case study — Archetype A · Narrative Product Dossier
  *
  * Inspired by Linear's customer pages and Vercel's editorial case studies.
- * No more shared ProjectPageLayout: this is its own composition. Brand
- * sky-blue washes the entire viewport; product UI shots run full-bleed,
- * not in laptop frames; sections lead with arguments, not labels.
+ * No more shared ProjectPageLayout. Brand sky-blue washes the entire
+ * viewport. Product UI shots run full-bleed at native density (mobile
+ * pans horizontally). Annotations sit BELOW each screen as a numbered
+ * card grid — never floating over the artwork.
  */
 
 import { type Project } from "@/lib/projects";
@@ -57,11 +58,12 @@ export function KovaView({ project }: { project: Project }) {
         ]}
       />
 
-      {/* 3 — HERO ARTIFACT (the signature image) */}
+      {/* 3 — HERO ARTIFACT (already mobile-responsive — no scroll needed) */}
       <AnnotatedScreen
         accentRGB={KOVA_RGB}
         eyebrow="The matching moment"
         caption="A new listing hits the MLS. In 2.1 seconds, every active buyer is scored against it, the highest match is surfaced, and a personalised reply is drafted in the agent's voice."
+        enableMobileScroll={false}
       >
         <HeroArtifact />
       </AnnotatedScreen>
@@ -86,12 +88,12 @@ export function KovaView({ project }: { project: Project }) {
         </p>
         <p>
           The work was good. The system holding it together was a fire that
-          needed feeding every Sunday night. Buyers who didn't get a reply in
-          four hours quietly went somewhere else.
+          needed feeding every Sunday night. Buyers who didn&apos;t get a
+          reply in four hours quietly went somewhere else.
         </p>
       </StorySection>
 
-      {/* 5 — BEFORE / AFTER architecture diagram */}
+      {/* 5 — BEFORE / AFTER (already responsive — disable scroll) */}
       <AnnotatedScreen
         accentRGB={KOVA_RGB}
         eyebrow="System architecture"
@@ -103,6 +105,7 @@ export function KovaView({ project }: { project: Project }) {
             matcher, one source of truth.
           </>
         }
+        enableMobileScroll={false}
       >
         <BeforeAfter />
       </AnnotatedScreen>
@@ -113,7 +116,7 @@ export function KovaView({ project }: { project: Project }) {
         eyebrow="The solution"
         heading={
           <>
-            We didn't replace the agents.
+            We didn&apos;t replace the agents.
             <br className="hidden lg:inline" /> We replaced their{" "}
             <span style={{ color: KOVA_PRIMARY }}>worst spreadsheet.</span>
           </>
@@ -122,42 +125,36 @@ export function KovaView({ project }: { project: Project }) {
         <p>
           Every new lead now lands in one calm inbox. Claude scores it against
           the entire active book of buyers, ranks the top matches by likelihood
-          to close, and drafts a follow-up in the responsible agent's tone of
-          voice — pulled from their last eighty conversations.
+          to close, and drafts a follow-up in the responsible agent&apos;s
+          tone of voice — pulled from their last eighty conversations.
         </p>
         <p>
           The agent reviews the draft, edits one line if it needs editing,
-          and sends. By the time most competing offices have triaged the
-          lead, Kova has already booked the showing.
+          and sends. By the time most competing offices have triaged the lead,
+          Kova has already booked the showing.
         </p>
       </StorySection>
 
-      {/* 7 — DASHBOARD SHOT — full-bleed, no frame */}
+      {/* 7 — DASHBOARD SHOT */}
       <AnnotatedScreen
         accentRGB={KOVA_RGB}
         eyebrow="What every agent opens at 9am"
         caption="One screen consolidates the four moments that matter: hot matches waiting on a reply, pipeline progression, AI suggestions queued for review, live team activity."
         annotations={[
           {
-            from: { x: 24, y: 52 },
-            text: { x: 4, y: 40 },
-            side: "left",
+            number: "01",
             eyebrow: "Hot column",
-            body: "Buyers above 80% match score pulse softly until the agent has acted.",
+            body: "Buyers above 80% match score pulse softly in the pipeline until the responsible agent has acted.",
           },
           {
-            from: { x: 78, y: 28 },
-            text: { x: 96, y: 24 },
-            side: "right",
+            number: "02",
             eyebrow: "AI panel",
-            body: "Three actions, ranked by impact, drafted in the agent's tone.",
+            body: "Three actions, ranked by impact, drafted in the agent's tone. Each shows the AI's reasoning before it sends.",
           },
           {
-            from: { x: 78, y: 78 },
-            text: { x: 96, y: 80 },
-            side: "right",
+            number: "03",
             eyebrow: "Live activity",
-            body: "AI events tagged in blue so agents can audit what was sent on their behalf.",
+            body: "AI events are tagged in blue so the team can audit exactly what was sent on their behalf and when.",
           },
         ]}
       >
@@ -177,32 +174,26 @@ export function KovaView({ project }: { project: Project }) {
         faster, and we feel calmer, at the same time.
       </PullQuote>
 
-      {/* 9 — MATCHING SHOT — full-bleed with annotation */}
+      {/* 9 — MATCHING SHOT */}
       <AnnotatedScreen
         accentRGB={KOVA_RGB}
         eyebrow="The engine, opened up"
         caption="Each match is scored against the listing on four criteria — budget alignment, neighbourhood preference, property attributes, and buyer activity recency."
         annotations={[
           {
-            from: { x: 22, y: 50 },
-            text: { x: 4, y: 70 },
-            side: "left",
+            number: "01",
             eyebrow: "Listing snapshot",
-            body: "Schema-extracted from the MLS feed the instant the listing goes live.",
+            body: "Schema-extracted from the MLS feed the instant the listing goes live. No manual entry, no copy-paste.",
           },
           {
-            from: { x: 78, y: 35 },
-            text: { x: 96, y: 22 },
-            side: "right",
+            number: "02",
             eyebrow: "Top match",
-            body: "Always surfaces the buyer most likely to close — never just the most recent.",
+            body: "Always surfaces the buyer most likely to close — never just the most recently active in the database.",
           },
           {
-            from: { x: 72, y: 65 },
-            text: { x: 96, y: 60 },
-            side: "right",
+            number: "03",
             eyebrow: "Stated reasons",
-            body: "Every score is auditable. Agents and brokers can challenge the AI's logic.",
+            body: "Every score is auditable. Agents and brokers can challenge the AI's logic on any individual match.",
           },
         ]}
       >
@@ -216,32 +207,26 @@ export function KovaView({ project }: { project: Project }) {
         caption="Inbox, thread, lead history and AI-drafted replies on one canvas. Agents never lose context, and every AI action is logged."
         annotations={[
           {
-            from: { x: 12, y: 28 },
-            text: { x: 4, y: 16 },
-            side: "left",
+            number: "01",
             eyebrow: "One inbox",
-            body: "Email, WhatsApp, Instagram and form replies all consolidate here.",
+            body: "Email, WhatsApp, Instagram and form replies all consolidate here — no more switching tabs.",
           },
           {
-            from: { x: 50, y: 50 },
-            text: { x: 50, y: 8 },
-            side: "right",
+            number: "02",
             eyebrow: "AI draft, sent by Sarah",
-            body: "Composed in the agent's tone. Every send is reviewed before it leaves.",
+            body: "Composed in the agent's tone of voice. Every send is reviewed by the agent before it leaves the office.",
           },
           {
-            from: { x: 88, y: 60 },
-            text: { x: 96, y: 60 },
-            side: "right",
+            number: "03",
             eyebrow: "Auditable timeline",
-            body: "AI-initiated events are tagged so brokers can see exactly what the system did and when.",
+            body: "AI-initiated events are tagged so brokers can see exactly what the system did, when, and for whom.",
           },
         ]}
       >
         <ScreenCRM />
       </AnnotatedScreen>
 
-      {/* 11 — A SECOND QUOTE (multi-stakeholder per Linear) */}
+      {/* 11 — A SECOND QUOTE */}
       <PullQuote
         accentColor={KOVA_PRIMARY}
         accentRGB={KOVA_RGB}
@@ -250,8 +235,8 @@ export function KovaView({ project }: { project: Project }) {
         variant="subtle"
       >
         The first month, I kept editing every AI draft. By the second month I
-        was sending them without changes. By the third I forgot it was an
-        AI. That&apos;s when I knew it had become part of how I work.
+        was sending them without changes. By the third I forgot it was an AI.
+        That&apos;s when I knew it had become part of how I work.
       </PullQuote>
 
       {/* 12 — Closing argument */}
@@ -269,13 +254,12 @@ export function KovaView({ project }: { project: Project }) {
         <p>
           Six months after launch, response times are down 92%, every lead
           gets a reply within minutes regardless of which channel it came
-          through, and the partners no longer spend Sunday nights staging
-          the week ahead.
+          through, and the partners no longer spend Sunday nights staging the
+          week ahead.
         </p>
         <p>
           The system stays out of the way. Agents say they noticed they
-          stopped being tired before they noticed they were responding
-          faster.
+          stopped being tired before they noticed they were responding faster.
         </p>
       </StorySection>
 

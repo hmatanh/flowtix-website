@@ -4,31 +4,32 @@ import { ReactNode } from "react";
 import { m } from "framer-motion";
 
 export type Annotation = {
-  /** Where the connector line starts on the screen, as % of screen box. */
-  from: { x: number; y: number };
-  /** Where the annotation text sits, as % of the section. */
-  text: { x: number; y: number };
-  /** Optional anchor side — controls the line termination. */
-  side?: "left" | "right";
-  /** The annotation body. Short. One sentence. */
+  /** Short label / number, e.g. "01" or "AI" */
+  number?: string;
+  /** Eyebrow header — short uppercase title. */
+  eyebrow: string;
+  /** One-sentence body. */
   body: string;
-  /** Tiny label above the body — e.g. "01" or "FORM". */
-  eyebrow?: string;
 };
 
 type Props = {
   /** The screen artwork to wrap. */
   children: ReactNode;
-  /** Soft brand wash behind the screen. RGB tuple without parens. */
+  /** Soft brand wash backdrop. RGB tuple without parens. */
   accentRGB: string;
   /** Top eyebrow over the section. */
   eyebrow?: string;
   /** Caption rendered tightly below the screen. */
   caption?: ReactNode;
-  /** Optional annotations to render alongside the screen. Desktop only. */
+  /** Optional annotations rendered as a numbered card grid below the screen. */
   annotations?: Annotation[];
-  /** When true, no padding container — let the screen run full-bleed. */
-  fullBleed?: boolean;
+  /**
+   * On mobile, the screen needs minimum room to be readable.
+   * Setting this enables horizontal pan with a hint chip.
+   */
+  enableMobileScroll?: boolean;
+  /** Minimum width of the screen in pixels on mobile (when scroll enabled). */
+  mobileMinWidth?: number;
 };
 
 const EASE = [0.21, 0.47, 0.32, 0.98] as const;
@@ -36,12 +37,12 @@ const EASE = [0.21, 0.47, 0.32, 0.98] as const;
 /**
  * AnnotatedScreen — the "design specimen" wrapper around a product UI shot.
  *
- *   - Subtle brand-wash backdrop (no frame, no border around the screen)
+ *   - Subtle brand-wash backdrop (no frame around the screen)
  *   - Soft shadow under the artwork
- *   - Optional thin connector lines to annotation text in the margin
- *
- * Mobile: annotations collapse to a stacked list below the screen — never
- * floating over the artwork.
+ *   - On mobile: horizontal scroll so the dense UI is readable at native
+ *     density rather than compressed to 320px
+ *   - Annotations live BELOW the screen as a clean numbered card grid,
+ *     never floating over the artwork
  */
 export function AnnotatedScreen({
   children,
@@ -49,18 +50,17 @@ export function AnnotatedScreen({
   eyebrow,
   caption,
   annotations,
-  fullBleed = false,
+  enableMobileScroll = true,
+  mobileMinWidth = 920,
 }: Props) {
   return (
     <section
       className="relative w-full overflow-hidden"
       style={{
-        background: `radial-gradient(ellipse 60% 70% at 50% 50%, rgba(${accentRGB},0.05) 0%, transparent 70%), #050505`,
+        background: `radial-gradient(ellipse 70% 70% at 50% 50%, rgba(${accentRGB},0.05) 0%, transparent 60%), #050505`,
       }}
     >
-      <div
-        className={`relative ${fullBleed ? "" : "page-container"} py-20 sm:py-28 lg:py-36`}
-      >
+      <div className="relative page-container py-16 sm:py-24 lg:py-32">
         {eyebrow && (
           <div
             className="text-[10px] sm:text-[11px] uppercase tracking-[0.22em] mb-6 sm:mb-8 text-center"
@@ -70,136 +70,107 @@ export function AnnotatedScreen({
           </div>
         )}
 
+        {/* Mobile scroll container with hint */}
         <div className="relative">
-          <m.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.15 }}
-            transition={{ duration: 0.7, ease: EASE }}
-            className="relative mx-auto rounded-2xl overflow-hidden"
-            style={{
-              maxWidth: fullBleed ? "100%" : 1200,
-              boxShadow:
-                "0 40px 80px rgba(0,0,0,0.55), 0 12px 28px rgba(0,0,0,0.35)",
-              border: "1px solid rgba(255,255,255,0.06)",
-            }}
-          >
-            {children}
-          </m.div>
-
-          {/* Desktop annotations */}
-          {annotations && annotations.length > 0 && (
-            <div className="hidden lg:block absolute inset-0 pointer-events-none">
-              {annotations.map((a, i) => {
-                const side = a.side ?? (a.text.x < 50 ? "left" : "right");
-                return (
-                  <div key={i}>
-                    {/* Connector line */}
-                    <svg
-                      className="absolute inset-0 w-full h-full pointer-events-none"
-                      preserveAspectRatio="none"
-                      viewBox="0 0 100 100"
-                    >
-                      <m.line
-                        x1={a.from.x}
-                        y1={a.from.y}
-                        x2={a.text.x}
-                        y2={a.text.y}
-                        stroke={`rgba(${accentRGB},0.45)`}
-                        strokeWidth="0.12"
-                        strokeDasharray="0.6 0.6"
-                        initial={{ pathLength: 0 }}
-                        whileInView={{ pathLength: 1 }}
-                        viewport={{ once: true, amount: 0.2 }}
-                        transition={{
-                          duration: 0.8,
-                          delay: 0.4 + i * 0.1,
-                          ease: EASE,
-                        }}
-                      />
-                    </svg>
-                    {/* Endpoint dot at the screen */}
-                    <span
-                      className="absolute block w-2 h-2 rounded-full pointer-events-none"
-                      style={{
-                        background: `rgb(${accentRGB})`,
-                        left: `${a.from.x}%`,
-                        top: `${a.from.y}%`,
-                        transform: "translate(-50%, -50%)",
-                        boxShadow: `0 0 12px rgba(${accentRGB},0.6)`,
-                      }}
-                      aria-hidden="true"
-                    />
-                    {/* Annotation body in margin */}
-                    <m.div
-                      initial={{ opacity: 0, y: 8 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true, amount: 0.2 }}
-                      transition={{ delay: 0.7 + i * 0.12, duration: 0.5 }}
-                      className={`absolute pointer-events-none ${
-                        side === "left" ? "text-right" : "text-left"
-                      }`}
-                      style={{
-                        left: `${a.text.x}%`,
-                        top: `${a.text.y}%`,
-                        transform:
-                          side === "left"
-                            ? "translate(-100%, -50%)"
-                            : "translate(0, -50%)",
-                        maxWidth: 220,
-                        paddingLeft: side === "right" ? 12 : 0,
-                        paddingRight: side === "left" ? 12 : 0,
-                      }}
-                    >
-                      {a.eyebrow && (
-                        <div
-                          className="text-[10px] uppercase tracking-[0.22em] mb-1.5"
-                          style={{ color: `rgba(${accentRGB},0.85)` }}
-                        >
-                          {a.eyebrow}
-                        </div>
-                      )}
-                      <div className="text-[#cfcfcf] text-[13px] leading-[1.5]">
-                        {a.body}
-                      </div>
-                    </m.div>
-                  </div>
-                );
-              })}
+          {enableMobileScroll && (
+            <div
+              className="lg:hidden absolute -top-3 right-0 z-10 text-[9px] uppercase tracking-[0.22em] pointer-events-none flex items-center gap-1.5"
+              style={{ color: `rgba(${accentRGB},0.65)` }}
+              aria-hidden="true"
+            >
+              <span>swipe</span>
+              <m.span
+                animate={{ x: [0, 4, 0] }}
+                transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
+              >
+                →
+              </m.span>
             </div>
           )}
+
+          <div
+            className={
+              enableMobileScroll
+                ? "overflow-x-auto lg:overflow-visible no-scrollbar -mx-5 sm:-mx-8 lg:mx-0 px-5 sm:px-8 lg:px-0"
+                : ""
+            }
+            style={{
+              WebkitOverflowScrolling: "touch",
+            }}
+          >
+            <m.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.7, ease: EASE }}
+              className="relative mx-auto rounded-2xl overflow-hidden"
+              style={{
+                maxWidth: 1200,
+                minWidth: enableMobileScroll ? mobileMinWidth : undefined,
+                boxShadow:
+                  "0 30px 80px rgba(0,0,0,0.55), 0 10px 24px rgba(0,0,0,0.35)",
+                border: "1px solid rgba(255,255,255,0.06)",
+              }}
+            >
+              {children}
+            </m.div>
+          </div>
         </div>
 
         {/* Caption */}
         {caption && (
-          <div className="text-center text-[#999] text-xs sm:text-sm mt-8 max-w-2xl mx-auto leading-relaxed">
+          <div className="text-center text-[#999] text-xs sm:text-sm mt-8 sm:mt-10 max-w-2xl mx-auto leading-relaxed">
             {caption}
           </div>
         )}
 
-        {/* Mobile annotation list */}
+        {/* Annotations — clean numbered grid below the screen */}
         {annotations && annotations.length > 0 && (
-          <ul className="lg:hidden mt-10 max-w-xl mx-auto space-y-5">
+          <div
+            className={`mt-12 sm:mt-16 grid gap-5 sm:gap-6 lg:gap-8 ${
+              annotations.length === 1
+                ? "grid-cols-1 max-w-xl mx-auto"
+                : annotations.length === 2
+                ? "grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto"
+                : "grid-cols-1 md:grid-cols-3"
+            }`}
+          >
             {annotations.map((a, i) => (
-              <li
+              <m.div
                 key={i}
-                className="border-l-2 pl-4"
-                style={{ borderColor: `rgba(${accentRGB},0.45)` }}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ delay: i * 0.1, duration: 0.55, ease: EASE }}
+                className="relative pl-5"
+                style={{
+                  borderLeft: `2px solid rgba(${accentRGB},0.35)`,
+                }}
               >
-                {a.eyebrow && (
-                  <div
-                    className="text-[10px] uppercase tracking-[0.22em] mb-1"
+                <div className="flex items-center gap-3 mb-2.5">
+                  <span
+                    className="inline-flex items-center justify-center text-[10px] font-mono tabular-nums w-7 h-7 rounded-md"
+                    style={{
+                      background: `rgba(${accentRGB},0.10)`,
+                      border: `1px solid rgba(${accentRGB},0.25)`,
+                      color: `rgb(${accentRGB})`,
+                    }}
+                  >
+                    {a.number ?? String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span
+                    className="text-[10px] sm:text-[11px] uppercase tracking-[0.22em] font-semibold"
                     style={{ color: `rgba(${accentRGB},0.85)` }}
                   >
                     {a.eyebrow}
-                  </div>
-                )}
-                <div className="text-[#cfcfcf] text-sm leading-relaxed">
-                  {a.body}
+                  </span>
                 </div>
-              </li>
+                <p className="text-[#cfcfcf] text-sm sm:text-[15px] leading-[1.65]">
+                  {a.body}
+                </p>
+              </m.div>
             ))}
-          </ul>
+          </div>
         )}
       </div>
     </section>
