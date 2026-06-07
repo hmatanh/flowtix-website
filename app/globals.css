@@ -746,6 +746,24 @@ body::before {
 
 /* ===== Site-wide content container ===== */
 /* =====================================================================
+   SERIF UTILITY  —  used only in the Aurum case study for editorial
+   typography. System fallback chain (Georgia / Tinos / Times) so we
+   don't pull a webfont over the wire for one case.
+   ===================================================================== */
+.font-serif-editorial {
+  font-family:
+    "Tinos",
+    "EB Garamond",
+    ui-serif,
+    Georgia,
+    Cambria,
+    "Times New Roman",
+    Times,
+    serif;
+  font-feature-settings: "kern", "liga", "calt", "ss01";
+}
+
+/* =====================================================================
    STANDARDIZED TYPE SCALE  —  one rhythm for every section title.
    - .text-display    hero / above-fold headlines
    - .text-h2         section headings (the bulk of the site)
