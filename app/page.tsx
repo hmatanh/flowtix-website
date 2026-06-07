@@ -229,7 +229,7 @@ export default function Home() {
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1, duration: 0.5 }}
-            className="mx-auto flex w-fit max-w-full items-center justify-center gap-2 sm:gap-2.5 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-[#1a1a1a] bg-[#080808] mb-5 sm:mb-7 section-label"
+            className="mx-auto inline-flex items-center gap-2 sm:gap-2.5 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-[#1a1a1a] bg-[#080808] mb-5 sm:mb-7"
           >
             {/* Pulsing dot — vertically centered with text via items-center */}
             <span className="relative flex h-2 w-2 shrink-0">
@@ -964,7 +964,7 @@ export default function Home() {
         />
         <div className="relative z-10 max-w-3xl mx-auto">
           <FadeIn>
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#1a1a1a] bg-[#080808] mb-8 section-label">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#1a1a1a] bg-[#080808] mb-8">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute h-full w-full rounded-full bg-blue-400 opacity-75" />
                 <span className="relative h-2 w-2 rounded-full bg-blue-500" />
