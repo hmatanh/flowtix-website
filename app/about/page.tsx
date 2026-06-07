@@ -1,132 +1,127 @@
 "use client";
 
+/**
+ * /about — Founder-led systems studio
+ *
+ * Structure:
+ *   1. Hero          — the client problem (not Matan)
+ *   2. Founder       — Matan as builder / operator / systems thinker
+ *   3. Beliefs       — six short principles, equal-weight cards
+ *   4. How Flowtix Works — 5-step process (Understand → Improve)
+ *   5. Why clients work with Flowtix — concise capability rail
+ *   6. Final CTA     — founder photo + closing message
+ *
+ * Visual identity is the existing site grammar: dark #050505/#080808
+ * backgrounds, blue-400 accent, system-serif italic for soft emphasis,
+ * clamp() type scales, FadeIn entrance. Mobile-first: every clamp
+ * value, every padding, every grid breakpoint chosen for 320–393 px
+ * phones before scaling up.
+ */
+
 import Link from "next/link";
 import { m } from "framer-motion";
 import {
   IconArrowRight,
-  IconArrowDown,
+  IconChartLine,
+  IconLayoutDashboard,
+  IconRobot,
+  IconCode,
+  IconPalette,
+  IconRouteAltLeft,
   IconCheck,
-  IconX,
-  IconEye,
-  IconTarget,
-  IconUsers,
-  IconInfinity,
 } from "@tabler/icons-react";
 import { FounderPhoto } from "@/components/FounderPhoto";
 import { FadeIn } from "@/components/animations/FadeIn";
-import { GlowCard } from "@/components/GlowCard";
 
 const EASE = [0.21, 0.47, 0.32, 0.98] as const;
 
-const SKILLS = [
-  "UI/UX Design",
-  "Brand Strategy",
-  "AI Systems",
-  "Claude API",
-  "Product Thinking",
-  "Workflow Design",
-  "Web Development",
+/* ──────────────────────────────────────────────────────────────────
+   Section copy (single source of truth)
+   ─────────────────────────────────────────────────────────────── */
+
+const BELIEFS = [
+  {
+    title: "Build around the business, not the software.",
+    body: "Software should bend to how the team works — not the other way around.",
+  },
+  {
+    title: "Simple systems beat complex systems.",
+    body: "If a teammate needs a manual to use it, the manual is the bug.",
+  },
+  {
+    title: "Automation should remove work, not create it.",
+    body: "Every automation must clearly retire a task. Otherwise it's just decoration.",
+  },
+  {
+    title: "Adoption matters more than features.",
+    body: "A tool nobody opens is worth less than the spreadsheet it replaced.",
+  },
+  {
+    title: "Design carries the trust.",
+    body: "Internal tools deserve the same craft as customer-facing product. People notice.",
+  },
+  {
+    title: "Outcomes over output.",
+    body: "We measure success in hours returned to the team, not pixels pushed.",
+  },
 ];
 
-const IS_LIST = [
-  "A digital systems, automation, and product studio",
-  "A team that designs AND builds — no handoffs, no gaps",
-  "Specialists in making systems people actually want to use",
-  "A company that explains everything in plain language",
-  "A long-term partner, not a one-time vendor",
-  "Builders who obsess over the details others skip",
-];
-
-const ISNT_LIST = [
-  "A generic agency selling commodity services",
-  "A company that outsources to cheaper developers",
-  "An enterprise-only firm with minimum $100K projects",
-  "A team that disappears after delivery",
-  "A business that overcomplicates simple problems",
-  "A studio that treats every client the same",
-];
-
-const VALUES = [
+const PROCESS = [
   {
     n: "01",
-    icon: IconEye,
-    title: "Design is never decoration.",
-    body:
-      "We don't add design at the end to make things look nice. We use design from the start to make things work better. Form and function are the same thing.",
+    title: "Understand",
+    body: "Two-week deep read of how the team actually works — tools, workflows, exceptions, frustrations.",
   },
   {
     n: "02",
-    icon: IconTarget,
-    title: "Solve the right problem first.",
-    body:
-      "Before we write a line of code or design a single screen, we spend time understanding the actual problem. The obvious solution is rarely the best one.",
+    title: "Design",
+    body: "Map the new flow end-to-end. Decision points, human checkpoints, failure modes — on paper before any code.",
   },
   {
     n: "03",
-    icon: IconUsers,
-    title: "Systems are for humans.",
-    body:
-      "A system is only valuable when people actually use it. We design every product around the person who will work in it daily — not the engineer who built it.",
-  },
-  {
-    n: "04",
-    icon: IconInfinity,
-    title: "Quality compounds over time.",
-    body:
-      "We build things to last. A system built correctly in week 1 gets more valuable every month. A system built quickly becomes a liability in month 3.",
-  },
-];
-
-const STEPS = [
-  {
-    n: "01",
-    duration: "Week 1",
-    title: "Discovery",
-    body:
-      "We learn your business. Not just the brief — the real workflows, the real pain, the real people who will use what we build. We ask questions others skip.",
-  },
-  {
-    n: "02",
-    duration: "Week 1–2",
-    title: "Design Architecture",
-    body:
-      "Before any code is written, we design the complete system experience. Every screen, every flow, every edge case. You approve it before we build it.",
-  },
-  {
-    n: "03",
-    duration: "Week 2–4",
     title: "Build",
-    body:
-      "Daily progress updates. You see the system being built in real-time, not in a big reveal at the end. Faster iteration, fewer surprises.",
+    body: "Ship in the right tools for your scale. No over-engineering, no vendor lock-in, full code ownership on day one.",
   },
   {
     n: "04",
-    duration: "Week 4",
-    title: "Testing & Refinement",
-    body:
-      "Real users, real data. We test thoroughly before calling anything finished. Every piece of feedback is addressed before delivery.",
+    title: "Launch",
+    body: "Roll out with the team, not at them. Live walkthroughs, side-by-side use, real edge cases handled before sign-off.",
   },
   {
     n: "05",
-    duration: "Week 4+",
-    title: "Delivery & Optimization",
-    body:
-      "Full handover with documentation and training. Then 30 days of monitoring and optimization to ensure the system performs as designed in the real world.",
+    title: "Improve",
+    body: "Stay close for the first month. Watch the system in production, polish what's friction, document what's working.",
   },
 ];
+
+const CAPABILITIES = [
+  { Icon: IconLayoutDashboard, title: "Custom internal tools", body: "Dashboards, admin panels, client portals — built around the workflow." },
+  { Icon: IconRouteAltLeft,    title: "Business automation",   body: "n8n, Make, custom code. Repetitive work retired, end-to-end." },
+  { Icon: IconRobot,           title: "AI workflows",          body: "Practical agents and assistants — trained on the business, not the brand." },
+  { Icon: IconCode,            title: "Product engineering",   body: "Next.js, TypeScript, modern stack. Built to grow, easy to hand off." },
+  { Icon: IconPalette,         title: "Design & brand",        body: "Identity, UX, UI — the layer that makes the system feel trustworthy." },
+  { Icon: IconChartLine,       title: "Operating rhythm",      body: "Weekly reviews, real metrics, calm cadence. No surprise invoices." },
+];
+
+/* ──────────────────────────────────────────────────────────────────
+   Page
+   ─────────────────────────────────────────────────────────────── */
 
 export default function AboutPage() {
   return (
     <>
-      {/* ===== 1. HERO — refined, not min-h-screen ===== */}
-      <section className="relative flex items-center justify-center overflow-hidden py-20 sm:py-28 lg:py-36">
+      {/* ============================================================
+           1. HERO — problem-led, not founder-led
+         ============================================================ */}
+      <section className="relative overflow-hidden pt-20 sm:pt-28 lg:pt-36 pb-16 sm:pb-24 lg:pb-32">
+        {/* Calm radial backdrop — same grammar as homepage hero */}
         <div
           aria-hidden="true"
-          className="absolute top-[-200px] right-[-300px] w-[600px] h-[600px] rounded-full pointer-events-none"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[760px] h-[360px] pointer-events-none"
           style={{
             background:
-              "radial-gradient(circle, rgba(59,130,246,0.07) 0%, transparent 70%)",
-            filter: "blur(100px)",
+              "radial-gradient(ellipse, rgba(59,130,246,0.06) 0%, transparent 70%)",
+            filter: "blur(80px)",
           }}
         />
         <div
@@ -134,463 +129,428 @@ export default function AboutPage() {
           className="absolute inset-0 pointer-events-none"
           style={{
             backgroundImage:
-              "radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px)",
+              "radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px)",
             backgroundSize: "32px 32px",
             maskImage:
-              "radial-gradient(ellipse 80% 60% at 50% 50%, black 0%, transparent 70%)",
+              "radial-gradient(ellipse 80% 60% at 50% 30%, black, transparent 70%)",
             WebkitMaskImage:
-              "radial-gradient(ellipse 80% 60% at 50% 50%, black 0%, transparent 70%)",
+              "radial-gradient(ellipse 80% 60% at 50% 30%, black, transparent 70%)",
           }}
-        />
-        {/* Decorative gradient lines */}
-        <m.div
-          aria-hidden="true"
-          className="absolute top-1/3 left-0 right-0 h-px pointer-events-none"
-          style={{
-            background:
-              "linear-gradient(90deg, transparent, rgba(59,130,246,0.25), transparent)",
-          }}
-          initial={{ scaleX: 0 }}
-          animate={{ scaleX: 1 }}
-          transition={{ duration: 1.5, delay: 0.3, ease: "easeOut" }}
-        />
-        <m.div
-          aria-hidden="true"
-          className="absolute bottom-1/3 left-0 right-0 h-px pointer-events-none"
-          style={{
-            background:
-              "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)",
-          }}
-          initial={{ scaleX: 0 }}
-          animate={{ scaleX: 1 }}
-          transition={{ duration: 1.5, delay: 0.5, ease: "easeOut" }}
         />
 
         <div className="relative page-container text-center">
           <FadeIn>
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#1a1a1a] bg-[#080808] mb-6 sm:mb-8">
-              <span className="relative flex h-1.5 w-1.5">
+            <div className="mx-auto flex w-fit max-w-full items-center justify-center gap-2 px-3 py-1.5 rounded-full border border-[#1a1a1a] bg-[#080808] mb-6 sm:mb-8">
+              <span className="relative flex h-1.5 w-1.5 shrink-0">
                 <span className="animate-ping absolute h-full w-full rounded-full bg-blue-400 opacity-75" />
                 <span className="relative h-1.5 w-1.5 rounded-full bg-blue-500" />
               </span>
-              <span className="text-[#cccccc] text-[10px] sm:text-[11px] tracking-[0.18em] uppercase font-medium">
-                Our Story
+              <span className="text-[#cccccc] text-[10px] sm:text-[11px] tracking-[0.18em] uppercase font-medium whitespace-nowrap">
+                About Flowtix
               </span>
             </div>
           </FadeIn>
 
-          <FadeIn delay={0.1}>
-            <h1
-              className="font-black text-white tracking-tighter leading-[1.02] sm:leading-[0.95]"
-              style={{ fontSize: "clamp(38px, 7vw, 88px)" }}
-            >
-              We replace{" "}
-              <span className="gradient-text-blue">manual work</span>
-              <br className="hidden sm:inline" /> with real digital
-              <br className="hidden sm:inline" /> systems.
-            </h1>
-          </FadeIn>
+          <m.h1
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: EASE, delay: 0.1 }}
+            className="font-semibold tracking-tight text-white mx-auto"
+            style={{
+              fontSize: "clamp(32px, 6vw, 72px)",
+              lineHeight: 1.04,
+              letterSpacing: "-0.025em",
+              maxWidth: "18ch",
+            }}
+          >
+            Most businesses don&apos;t need more software.{" "}
+            <span className="text-[#888] font-serif-editorial italic">
+              They need systems that actually fit.
+            </span>
+          </m.h1>
 
-          <FadeIn delay={0.25}>
-            <p className="text-[#aaa] text-base sm:text-lg lg:text-xl leading-[1.65] sm:leading-relaxed max-w-2xl mx-auto mt-7 sm:mt-8 px-2">
-              Flowtix is a digital solutions studio. We design and build the
-              custom systems, automations, AI agents, internal tools, and
-              digital products that move businesses forward.
+          <FadeIn delay={0.4}>
+            <p
+              className="text-[#a8a8a8] mt-6 sm:mt-8 mx-auto leading-[1.65]"
+              style={{
+                fontSize: "clamp(15px, 1.55vw, 19px)",
+                maxWidth: "60ch",
+              }}
+            >
+              Teams are drowning in tools. Manual work piles up. Workflows
+              break at every handoff. Off-the-shelf software fixes one
+              corner and leaves the rest worse than before.
+            </p>
+            <p
+              className="text-[#cfcfcf] mt-5 sm:mt-6 mx-auto leading-[1.65]"
+              style={{
+                fontSize: "clamp(15px, 1.55vw, 19px)",
+                maxWidth: "60ch",
+              }}
+            >
+              Flowtix designs and builds the system underneath —
+              <span className="text-white"> custom internal tools, automation, AI workflows, and the operational infrastructure</span>{" "}
+              the business actually runs on.
             </p>
           </FadeIn>
 
-          {/* Quick credentials strip */}
-          <FadeIn delay={0.35}>
-            <div className="mt-10 sm:mt-12 grid grid-cols-3 gap-3 max-w-md sm:max-w-lg mx-auto">
-              {[
-                { value: "10+", label: "Years design" },
-                { value: "5+", label: "AI shipped" },
-                { value: "5", label: "Industries" },
-              ].map((s) => (
-                <div
-                  key={s.label}
-                  className="rounded-xl border border-[#1a1a1a] bg-[#080808] p-3 sm:p-4 text-center"
+          <FadeIn delay={0.6}>
+            <div className="mt-9 sm:mt-12 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center max-w-md sm:max-w-none mx-auto">
+              <m.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                <Link
+                  href="/contact/"
+                  className="btn-shimmer inline-flex w-full sm:w-auto items-center justify-center gap-2 bg-white text-black px-7 py-3.5 rounded-2xl font-semibold text-sm hover:bg-[#eee] transition-colors"
                 >
-                  <div className="text-white font-black tabular-nums tracking-tight text-lg sm:text-xl">
-                    {s.value}
-                  </div>
-                  <div className="text-[10px] sm:text-[11px] uppercase tracking-wider text-[#888] mt-1">
-                    {s.label}
-                  </div>
-                </div>
-              ))}
+                  <span className="relative z-10">Book a Strategy Call</span>
+                  <IconArrowRight size={16} stroke={2.5} aria-hidden="true" className="relative z-10" />
+                </Link>
+              </m.div>
+              <Link
+                href="/work/"
+                className="w-full sm:w-auto inline-flex items-center justify-center border border-[#1a1a1a] text-[#aaa] px-7 py-3.5 rounded-2xl text-sm font-semibold hover:border-[#2a2a2a] hover:text-white transition-all"
+              >
+                See the work
+              </Link>
             </div>
-          </FadeIn>
-
-          <FadeIn delay={0.5}>
-            <m.div
-              className="mt-12 sm:mt-14 inline-flex flex-col items-center gap-2"
-              animate={{ y: [0, 8, 0] }}
-              transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
-            >
-              <span className="text-[#333] text-[10px] uppercase tracking-[0.2em]">
-                Scroll
-              </span>
-              <IconArrowDown size={16} stroke={1.5} aria-hidden="true" className="text-[#333]" />
-            </m.div>
           </FadeIn>
         </div>
       </section>
 
-      {/* ===== 2. FOUNDER SPOTLIGHT ===== */}
-      <section className="section-contain py-24 lg:py-32">
-        <div className="page-container grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
-          {/* LEFT — Photo */}
-          <div className="order-1">
-            <FounderPhoto />
-            <m.div
-              initial={{ opacity: 0, y: 8 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ duration: 0.6, ease: EASE, delay: 0.2 }}
-              className="text-center mt-8"
-            >
-              <div
-                className="font-black tracking-tight text-white"
-                style={{
-                  fontSize: "clamp(22px, 3vw, 28px)",
-                  background:
-                    "linear-gradient(180deg, #ffffff 0%, #BFDBFE 100%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                }}
-              >
-                Matan Hanasav
+      {/* ============================================================
+           2. FOUNDER — concise, builder-positioned
+         ============================================================ */}
+      <section className="section-contain py-20 sm:py-24 lg:py-32 bg-[#040404] border-y border-[#0a0a0a]">
+        <div className="page-container">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
+            {/* Photo column — order-2 on mobile so the eyebrow leads */}
+            <FadeIn className="order-2 lg:order-1">
+              <div className="relative max-w-[320px] sm:max-w-[380px] lg:max-w-none mx-auto">
+                <FounderPhoto />
               </div>
-              <div className="flex items-center justify-center gap-2 mt-2">
-                <span className="block h-px w-6 bg-gradient-to-r from-transparent to-blue-500/60" />
-                <div className="text-blue-300/80 text-[11px] uppercase tracking-[0.22em] font-mono">
-                  Founder &amp; Creative Director
-                </div>
-                <span className="block h-px w-6 bg-gradient-to-l from-transparent to-blue-500/60" />
-              </div>
-              <div className="text-[#555] text-xs mt-2 tracking-wide">
-                10+ years · UI/UX &amp; AI Systems
-              </div>
-            </m.div>
-          </div>
+            </FadeIn>
 
-          {/* RIGHT — Story */}
-          <div className="order-2 text-left">
-            <FadeIn direction="left">
-              <div className="section-label text-blue-400/80 text-[11px] tracking-widest uppercase mb-6">
+            {/* Copy column */}
+            <FadeIn delay={0.15} className="order-1 lg:order-2">
+              <div className="text-blue-400/80 text-[10px] sm:text-[11px] tracking-[0.22em] uppercase font-medium mb-4 sm:mb-5">
                 The Founder
               </div>
               <h2
-                className="section-heading text-white font-bold tracking-tight leading-tight"
-                style={{ fontSize: "clamp(28px, 4vw, 40px)" }}
+                className="text-white font-semibold tracking-tight leading-[1.08]"
+                style={{
+                  fontSize: "clamp(28px, 4vw, 48px)",
+                  letterSpacing: "-0.02em",
+                }}
               >
-                A designer who learned to build AI.
+                Matan Hanasav.{" "}
+                <span className="text-[#888] font-serif-editorial italic">
+                  Builder before anything else.
+                </span>
               </h2>
 
-              <div className="space-y-4 mt-8">
-                <p className="text-[#aaa] text-base leading-relaxed">
-                  After a decade designing digital products and brand identities
-                  for companies across multiple industries, I kept seeing the
-                  same problem: businesses were running on manual work, in
-                  systems nobody had actually designed for them. The cost
-                  wasn&apos;t the software — it was the hours their teams
-                  spent compensating for it.
-                </p>
-                <p className="text-[#aaa] text-base leading-relaxed">
-                  I started building the systems those teams should have had
-                  in the first place — internal tools, dashboards, automations,
-                  and AI workflows wired directly into the way the business
-                  actually worked. Deep product thinking, ten years of UX
-                  expertise, and modern build tools turned out to be the
-                  combination most agencies were missing.
-                </p>
-                <p className="text-[#aaa] text-base leading-relaxed">
-                  Flowtix was founded on a single conviction: the best systems
-                  aren&apos;t the most technically complex ones. They&apos;re
-                  the ones that fit the specific business using them. That&apos;s
-                  what we build.
-                </p>
-              </div>
-
-              <div className="bg-[#0D0D0D] border-l-2 border-blue-500 pl-6 py-4 mt-8 rounded-r-lg">
-                <p className="text-[#cccccc] text-lg italic leading-relaxed">
-                  &ldquo;Every system we build starts with one question: would I
-                  be proud to use this myself?&rdquo;
-                </p>
-              </div>
-
-              <div className="mt-7 sm:mt-8 flex flex-wrap gap-2">
-                {SKILLS.map((s, i) => (
-                  <m.span
-                    key={s}
-                    initial={{ opacity: 0, y: 6 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.5 }}
-                    transition={{ delay: i * 0.04, duration: 0.4, ease: EASE }}
-                    className="rounded-full px-4 py-2 text-[#aaa] text-xs sm:text-sm border transition-colors hover:text-white hover:border-blue-500/30"
-                    style={{
-                      background: "#0D0D0D",
-                      borderColor: "#1a1a1a",
-                    }}
-                  >
-                    {s}
-                  </m.span>
-                ))}
-              </div>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== 3. THE COMPANY (IS / IS NOT) ===== */}
-      <section className="section-contain py-24 lg:py-32 bg-[#040404] border-y border-[#0a0a0a]">
-        <div className="page-container">
-          <FadeIn>
-            <h2
-              className="section-heading text-white font-bold text-center tracking-tight"
-              style={{ fontSize: "clamp(28px, 4.5vw, 44px)" }}
-            >
-              What Flowtix is — and what it isn&apos;t.
-            </h2>
-          </FadeIn>
-
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 text-left">
-            <FadeIn direction="right">
-              <div className="bg-[#0D0D0D] border border-[#1a1a1a] rounded-2xl p-8 h-full">
-                <div className="text-blue-500 text-sm uppercase tracking-wider mb-6">
-                  Flowtix IS…
-                </div>
-                <ul className="space-y-4">
-                  {IS_LIST.map((item) => (
-                    <li key={item} className="flex items-start gap-3">
-                      <IconCheck
-                        size={16}
-                        stroke={2.5}
-                        className="text-blue-500 mt-1 shrink-0"
-                      />
-                      <span className="text-[#aaa] text-sm leading-relaxed">
-                        {item}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </FadeIn>
-
-            <FadeIn direction="left" delay={0.1}>
-              <div className="bg-[#0D0D0D] border border-[#1a1a1a] rounded-2xl p-8 h-full">
-                <div className="text-[#555] text-sm uppercase tracking-wider mb-6">
-                  Flowtix is NOT…
-                </div>
-                <ul className="space-y-4">
-                  {ISNT_LIST.map((item) => (
-                    <li key={item} className="flex items-start gap-3">
-                      <IconX
-                        size={16}
-                        stroke={2.5}
-                        className="text-[#333] mt-1 shrink-0"
-                      />
-                      <span className="text-[#6a6a6a] text-sm leading-relaxed">
-                        {item}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== 4. OUR VALUES ===== */}
-      <section className="section-contain py-24 lg:py-32">
-        <div className="page-container">
-          <FadeIn>
-            <h2
-              className="section-heading text-white font-bold text-center tracking-tight"
-              style={{ fontSize: "clamp(28px, 4.5vw, 44px)" }}
-            >
-              What we believe.
-            </h2>
-          </FadeIn>
-
-          <div className="mt-12 sm:mt-16 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 lg:gap-6">
-            {VALUES.map((v, i) => {
-              const Icon = v.icon;
-              return (
-                <m.div
-                  key={v.n}
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.2 }}
-                  transition={{ delay: i * 0.1, duration: 0.5, ease: EASE }}
-                >
-                  <GlowCard className="bg-[#0D0D0D] border border-[#1a1a1a] rounded-2xl p-6 sm:p-8 hover:border-blue-500/25 transition-all duration-500 h-full">
-                    {/* Brand-color subtle corner glow */}
-                    <div
-                      aria-hidden="true"
-                      className="absolute top-0 right-0 w-24 h-24 pointer-events-none opacity-50"
-                      style={{
-                        background:
-                          "radial-gradient(circle, rgba(59,130,246,0.10), transparent 70%)",
-                        filter: "blur(15px)",
-                      }}
-                    />
-                    {/* Number with stroke effect */}
-                    <div
-                      className="absolute top-5 right-5 text-4xl sm:text-5xl font-black tracking-tighter pointer-events-none select-none"
-                      style={{
-                        color: "transparent",
-                        WebkitTextStroke: "1px rgba(59,130,246,0.15)",
-                      }}
-                    >
-                      {v.n}
-                    </div>
-                    {/* Icon in branded frame */}
-                    <div
-                      className="relative inline-flex items-center justify-center w-12 h-12 rounded-xl"
-                      style={{
-                        background: "rgba(59,130,246,0.08)",
-                        border: "1px solid rgba(59,130,246,0.20)",
-                      }}
-                    >
-                      <Icon
-                        size={22}
-                        stroke={1.5}
-                        aria-hidden="true"
-                        className="text-blue-400"
-                      />
-                    </div>
-                    <h3 className="relative text-white text-lg sm:text-xl font-bold mt-6 sm:mt-8 tracking-tight leading-[1.2]">
-                      {v.title}
-                    </h3>
-                    <p className="relative text-[#aaa] text-[14px] sm:text-sm leading-[1.65] sm:leading-relaxed mt-2.5 sm:mt-3">
-                      {v.body}
-                    </p>
-                  </GlowCard>
-                </m.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* ===== 5. HOW WE WORK ===== */}
-      <section className="section-contain py-24 lg:py-32 bg-[#040404] border-y border-[#0a0a0a]">
-        <div className="page-container">
-          <FadeIn>
-            <h2
-              className="section-heading text-white font-bold text-center tracking-tight"
-              style={{ fontSize: "clamp(28px, 4.5vw, 44px)" }}
-            >
-              How every project works.
-            </h2>
-            <p className="section-subtext text-[#6a6a6a] text-center mt-4 max-w-xl mx-auto">
-              The same process, every time. Because it works every time.
-            </p>
-          </FadeIn>
-
-          <div className="relative mt-16">
-            <div
-              aria-hidden="true"
-              className="absolute left-6 top-0 bottom-0 w-px bg-[#111]"
-            />
-            <m.div
-              initial={{ scaleY: 0 }}
-              whileInView={{ scaleY: 1 }}
-              viewport={{ once: true, amount: 0.05 }}
-              transition={{ duration: 1.6, ease: "easeOut" }}
-              aria-hidden="true"
-              className="absolute left-6 top-0 bottom-0 w-px origin-top bg-gradient-to-b from-blue-500/30 via-blue-500/15 to-transparent"
-            />
-            {STEPS.map((s, i) => (
-              <m.div
-                key={s.n}
-                initial={{ opacity: 0, x: -16 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ delay: i * 0.08, duration: 0.5, ease: EASE }}
-                className="relative flex items-start gap-6 sm:gap-8 pb-12 last:pb-0 text-left"
+              <div
+                className="space-y-4 sm:space-y-5 mt-6 sm:mt-7 text-[#cfcfcf] leading-[1.7]"
+                style={{ fontSize: "clamp(15px, 1.35vw, 17px)" }}
               >
-                <div className="relative shrink-0 z-10">
-                  <div className="w-12 h-12 rounded-full border border-[#1a1a1a] bg-[#0D0D0D] flex items-center justify-center text-[#555] text-sm font-mono">
-                    {s.n}
-                  </div>
-                </div>
-                <div className="pt-1">
-                  <div className="text-blue-400/70 text-[10px] uppercase tracking-widest">
-                    {s.duration}
-                  </div>
-                  <h3 className="text-white text-lg font-semibold mt-1">
-                    {s.title}
-                  </h3>
-                  <p className="text-[#6a6a6a] text-sm leading-relaxed mt-2 max-w-lg">
-                    {s.body}
-                  </p>
-                </div>
+                <p>
+                  Started in design and product. Then learned to write the
+                  code. Then learned to automate the work behind the code.
+                  Then learned to wire AI into the workflow without breaking
+                  the rest.
+                </p>
+                <p>
+                  The result is a way of working that doesn&apos;t hand off
+                  between design, engineering and operations — they&apos;re
+                  one continuous thought. Flowtix exists to bring that to
+                  businesses one founder couldn&apos;t serve alone.
+                </p>
+                <p className="text-[#9a9a9a]">
+                  Operator first. Systems thinker by training. Designer when
+                  it matters. Engineer when it needs to ship.
+                </p>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================================
+           3. WHAT I BELIEVE — six equal-weight principle cards
+         ============================================================ */}
+      <section className="section-contain py-20 sm:py-24 lg:py-32">
+        <div className="page-container">
+          <FadeIn>
+            <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+              <div className="text-blue-400/80 text-[10px] sm:text-[11px] tracking-[0.22em] uppercase font-medium mb-4">
+                What I believe
+              </div>
+              <h2
+                className="text-white font-semibold tracking-tight leading-[1.1]"
+                style={{
+                  fontSize: "clamp(26px, 4vw, 42px)",
+                  letterSpacing: "-0.02em",
+                }}
+              >
+                Six principles every Flowtix project runs on.
+              </h2>
+            </div>
+          </FadeIn>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6 max-w-6xl mx-auto">
+            {BELIEFS.map((b, i) => (
+              <m.div
+                key={b.title}
+                initial={{ opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ delay: (i % 3) * 0.06, duration: 0.55, ease: EASE }}
+                className="relative rounded-2xl p-6 sm:p-7 border bg-[#080808] h-full"
+                style={{ borderColor: "rgba(255,255,255,0.06)" }}
+              >
+                <span
+                  aria-hidden="true"
+                  className="text-blue-400/70 font-mono text-[10px] tracking-[0.22em]"
+                >
+                  0{i + 1}
+                </span>
+                <h3
+                  className="text-white font-semibold tracking-tight mt-3 leading-[1.25]"
+                  style={{ fontSize: "clamp(16px, 1.6vw, 19px)" }}
+                >
+                  {b.title}
+                </h3>
+                <p
+                  className="text-[#999] mt-2.5 leading-[1.6]"
+                  style={{ fontSize: "clamp(13.5px, 1.15vw, 15px)" }}
+                >
+                  {b.body}
+                </p>
               </m.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ===== 6. THE BIGGER PICTURE / VISION ===== */}
-      <section className="section-contain relative py-24 lg:py-32 overflow-hidden">
-        {/* Vision orb — sits behind the text */}
+      {/* ============================================================
+           4. HOW FLOWTIX WORKS — 5-step process
+         ============================================================ */}
+      <section className="section-contain py-20 sm:py-24 lg:py-32 bg-[#040404] border-y border-[#0a0a0a]">
+        <div className="page-container">
+          <FadeIn>
+            <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+              <div className="text-blue-400/80 text-[10px] sm:text-[11px] tracking-[0.22em] uppercase font-medium mb-4">
+                How Flowtix works
+              </div>
+              <h2
+                className="text-white font-semibold tracking-tight leading-[1.1]"
+                style={{
+                  fontSize: "clamp(26px, 4vw, 42px)",
+                  letterSpacing: "-0.02em",
+                }}
+              >
+                One process. Five steps.{" "}
+                <span className="text-[#888] font-serif-editorial italic">No surprises.</span>
+              </h2>
+            </div>
+          </FadeIn>
+
+          <div className="max-w-4xl mx-auto">
+            <ol className="space-y-4 sm:space-y-5">
+              {PROCESS.map((step, i) => (
+                <m.li
+                  key={step.n}
+                  initial={{ opacity: 0, x: -10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ delay: i * 0.06, duration: 0.5, ease: EASE }}
+                  className="relative grid grid-cols-[auto_1fr] gap-4 sm:gap-6 rounded-2xl p-5 sm:p-7 border bg-[#080808]"
+                  style={{ borderColor: "rgba(255,255,255,0.06)" }}
+                >
+                  <div className="font-mono text-blue-400/80 tabular-nums text-[13px] sm:text-[14px] tracking-[0.18em] pt-1">
+                    {step.n}
+                  </div>
+                  <div>
+                    <h3
+                      className="text-white font-semibold tracking-tight leading-[1.2]"
+                      style={{ fontSize: "clamp(18px, 1.9vw, 22px)" }}
+                    >
+                      {step.title}
+                    </h3>
+                    <p
+                      className="text-[#a8a8a8] mt-2 leading-[1.6]"
+                      style={{ fontSize: "clamp(14px, 1.2vw, 16px)" }}
+                    >
+                      {step.body}
+                    </p>
+                  </div>
+                </m.li>
+              ))}
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================================
+           5. WHY CLIENTS WORK WITH FLOWTIX — capability rail
+         ============================================================ */}
+      <section className="section-contain py-20 sm:py-24 lg:py-32">
+        <div className="page-container">
+          <FadeIn>
+            <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+              <div className="text-blue-400/80 text-[10px] sm:text-[11px] tracking-[0.22em] uppercase font-medium mb-4">
+                Why clients work with Flowtix
+              </div>
+              <h2
+                className="text-white font-semibold tracking-tight leading-[1.1]"
+                style={{
+                  fontSize: "clamp(26px, 4vw, 42px)",
+                  letterSpacing: "-0.02em",
+                }}
+              >
+                One partner.{" "}
+                <span className="text-[#888] font-serif-editorial italic">
+                  Every layer of the system.
+                </span>
+              </h2>
+              <p
+                className="text-[#9a9a9a] mt-5 sm:mt-6 leading-[1.65] mx-auto"
+                style={{
+                  fontSize: "clamp(15px, 1.3vw, 17px)",
+                  maxWidth: "55ch",
+                }}
+              >
+                Most agencies do design. Most studios do code. Most consultants
+                do strategy. Flowtix does the whole stack — so nothing gets
+                dropped between the handoffs that don&apos;t happen.
+              </p>
+            </div>
+          </FadeIn>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6 max-w-6xl mx-auto">
+            {CAPABILITIES.map((c, i) => {
+              const Icon = c.Icon;
+              return (
+                <m.div
+                  key={c.title}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ delay: (i % 3) * 0.06, duration: 0.5, ease: EASE }}
+                  className="relative rounded-2xl p-6 sm:p-7 border bg-[#080808] h-full"
+                  style={{ borderColor: "rgba(255,255,255,0.06)" }}
+                >
+                  <span
+                    className="inline-flex items-center justify-center w-10 h-10 rounded-xl border border-[#1f1f1f] bg-[#0a0a0a] text-[#aaa]"
+                    aria-hidden="true"
+                  >
+                    <Icon size={18} stroke={1.6} />
+                  </span>
+                  <h3
+                    className="text-white font-semibold tracking-tight mt-4 sm:mt-5 leading-[1.25]"
+                    style={{ fontSize: "clamp(15px, 1.5vw, 18px)" }}
+                  >
+                    {c.title}
+                  </h3>
+                  <p
+                    className="text-[#999] mt-2 leading-[1.6]"
+                    style={{ fontSize: "clamp(13.5px, 1.15vw, 15px)" }}
+                  >
+                    {c.body}
+                  </p>
+                </m.div>
+              );
+            })}
+          </div>
+
+          {/* Subtle trust strip */}
+          <FadeIn delay={0.2}>
+            <div className="mt-12 sm:mt-16 inline-flex items-center gap-4 sm:gap-6 text-[10px] sm:text-[11px] tracking-[0.22em] uppercase text-[#888] mx-auto justify-center w-full flex-wrap">
+              <span className="inline-flex items-center gap-2">
+                <IconCheck size={12} stroke={2.4} className="text-blue-400" />
+                Code you own day one
+              </span>
+              <span aria-hidden="true" className="hidden sm:inline h-3 w-px bg-[#1f1f1f]" />
+              <span className="inline-flex items-center gap-2">
+                <IconCheck size={12} stroke={2.4} className="text-blue-400" />
+                Fixed scope, fixed price
+              </span>
+              <span aria-hidden="true" className="hidden sm:inline h-3 w-px bg-[#1f1f1f]" />
+              <span className="inline-flex items-center gap-2">
+                <IconCheck size={12} stroke={2.4} className="text-blue-400" />
+                Ship in weeks, not quarters
+              </span>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* ============================================================
+           6. FINAL CTA — closing line + founder presence
+         ============================================================ */}
+      <section className="section-contain relative py-20 sm:py-28 lg:py-36 overflow-hidden border-t border-[#0a0a0a]">
         <div
           aria-hidden="true"
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] rounded-full pointer-events-none animate-pulse-slow"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[320px] pointer-events-none"
           style={{
             background:
-              "radial-gradient(circle, rgba(59,130,246,0.10) 0%, rgba(59,130,246,0.04) 35%, transparent 70%)",
+              "radial-gradient(ellipse, rgba(59,130,246,0.07) 0%, transparent 70%)",
             filter: "blur(80px)",
           }}
         />
-        <div className="relative page-container text-center">
+
+        <div className="relative page-container text-center max-w-3xl mx-auto">
           <FadeIn>
             <h2
-              className="section-heading text-white font-bold tracking-tight"
-              style={{ fontSize: "clamp(28px, 4.5vw, 44px)" }}
+              className="text-white font-semibold tracking-tight leading-[1.1]"
+              style={{
+                fontSize: "clamp(28px, 5vw, 56px)",
+                letterSpacing: "-0.025em",
+              }}
             >
-              The bigger picture.
+              If your team is spending more time fighting tools than doing work,{" "}
+              <span className="text-[#888] font-serif-editorial italic">
+                let&apos;s build something that fits.
+              </span>
             </h2>
           </FadeIn>
-          <FadeIn delay={0.1}>
-            <p className="section-subtext text-[#555] text-xl sm:text-2xl leading-relaxed mt-8 font-light max-w-3xl mx-auto">
-              A world where every business — regardless of size or technical
-              resources — has access to the intelligent systems that were
-              previously only available to companies with large engineering
-              teams.
+
+          <FadeIn delay={0.2}>
+            <p
+              className="text-[#a8a8a8] mt-6 sm:mt-7 leading-[1.65] mx-auto"
+              style={{
+                fontSize: "clamp(15px, 1.4vw, 18px)",
+                maxWidth: "52ch",
+              }}
+            >
+              30-minute call. We walk through what&apos;s slowing the team
+              down today and whether a Flowtix system would actually help.
+              No pitch, no obligation.
             </p>
           </FadeIn>
-          <FadeIn delay={0.2}>
-            <div className="mt-12">
-              <p className="text-white text-lg font-semibold">
-                We&apos;re at the beginning of that.
-              </p>
-              <p className="text-[#555] text-base mt-2">
-                Every system we build is a step toward it.
-              </p>
+
+          <FadeIn delay={0.35}>
+            <div className="mt-9 sm:mt-12 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center max-w-md sm:max-w-none mx-auto">
+              <m.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                <Link
+                  href="/contact/"
+                  className="btn-shimmer inline-flex w-full sm:w-auto items-center justify-center gap-2 bg-white text-black px-7 py-3.5 rounded-2xl font-semibold text-sm hover:bg-[#eee] transition-colors"
+                >
+                  <span className="relative z-10">Book a Strategy Call</span>
+                  <IconArrowRight size={16} stroke={2.5} aria-hidden="true" className="relative z-10" />
+                </Link>
+              </m.div>
+              <Link
+                href="/services/"
+                className="w-full sm:w-auto inline-flex items-center justify-center border border-[#1a1a1a] text-[#aaa] px-7 py-3.5 rounded-2xl text-sm font-semibold hover:border-[#2a2a2a] hover:text-white transition-all"
+              >
+                Explore services
+              </Link>
             </div>
           </FadeIn>
-          <FadeIn delay={0.3}>
-            <div className="mt-12 flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3">
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center gap-2 bg-white text-black px-8 py-4 rounded-xl font-semibold text-sm hover:bg-[#eee] transition-colors min-h-[48px] w-full sm:w-auto"
-              >
-                Book a Strategy Call
-                <IconArrowRight size={16} stroke={2} aria-hidden="true" />
-              </Link>
-              <Link
-                href="/work"
-                className="inline-flex items-center justify-center border border-[#1a1a1a] text-[#aaa] px-8 py-4 rounded-xl text-sm hover:border-[#2a2a2a] hover:text-white transition-colors min-h-[48px] w-full sm:w-auto"
-              >
-                View our work →
-              </Link>
-            </div>
+
+          <FadeIn delay={0.5}>
+            <p className="text-[#555] text-[11px] tracking-[0.18em] uppercase mt-10 sm:mt-12">
+              Matan Hanasav · Founder · Flowtix
+            </p>
           </FadeIn>
         </div>
       </section>
