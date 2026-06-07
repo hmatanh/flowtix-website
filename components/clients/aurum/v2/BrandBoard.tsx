@@ -50,7 +50,7 @@ export function BrandBoard() {
 
             {/* Big wordmark on cream */}
             <div
-              className="rounded-sm p-7 sm:p-10 flex flex-col items-center justify-center"
+              className="rounded-sm p-6 sm:p-10 flex flex-col items-center justify-center"
               style={{
                 background:
                   "linear-gradient(135deg, #F4ECD8 0%, #EFE3C2 50%, #E8DAB0 100%)",
@@ -66,7 +66,7 @@ export function BrandBoard() {
                 transition={{ duration: 0.7 }}
                 className="font-serif-editorial text-[#3A2B0E] tracking-tight text-center"
                 style={{
-                  fontSize: "clamp(40px, 7vw, 80px)",
+                  fontSize: "clamp(34px, 7vw, 80px)",
                   fontWeight: 400,
                   letterSpacing: "0.06em",
                   lineHeight: 1,
@@ -134,7 +134,7 @@ export function BrandBoard() {
                 Typography
               </div>
               <div
-                className="rounded-sm px-6 py-7 sm:px-8 sm:py-9"
+                className="rounded-sm px-5 py-6 sm:px-8 sm:py-9"
                 style={{
                   background: "#160F04",
                   border: "1px solid rgba(217,119,6,0.10)",
@@ -143,7 +143,7 @@ export function BrandBoard() {
                 <div
                   className="font-serif-editorial text-white tracking-tight"
                   style={{
-                    fontSize: "clamp(28px, 4vw, 44px)",
+                    fontSize: "clamp(26px, 4vw, 44px)",
                     fontWeight: 400,
                     letterSpacing: "-0.015em",
                     lineHeight: 1.05,
@@ -185,7 +185,7 @@ export function BrandBoard() {
               </div>
             </div>
 
-            {/* Palette */}
+            {/* Palette — full row on lg+, 2-row 5-col-with-wrap on mobile */}
             <div>
               <div className="text-[#8C6B3A] text-[9.5px] tracking-[0.22em] uppercase mb-5">
                 Palette
@@ -210,10 +210,10 @@ export function BrandBoard() {
                             : "1px solid rgba(217,119,6,0.10)",
                       }}
                     />
-                    <div className="font-serif-editorial text-[#F5EBD2] text-[11px] mt-2 tracking-tight">
+                    <div className="font-serif-editorial text-[#F5EBD2] text-[10px] sm:text-[11px] mt-1.5 sm:mt-2 tracking-tight">
                       {p.name}
                     </div>
-                    <div className="text-[#8C6B3A] text-[9px] tabular-nums mt-0.5 uppercase tracking-[0.10em]">
+                    <div className="text-[#8C6B3A] text-[8px] sm:text-[9px] tabular-nums mt-0.5 uppercase tracking-[0.08em] sm:tracking-[0.10em] truncate">
                       {p.hex}
                     </div>
                   </m.div>

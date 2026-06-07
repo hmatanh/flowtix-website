@@ -19,6 +19,13 @@ type Props = {
   variant?: "subtle" | "deep";
   /** Avatar gradient stops. Falls back to client brand color tones. */
   avatarGradient?: [string, string];
+  /**
+   * Hide the avatar entirely. Use for cases where the firm doesn't show
+   * its principals on record (e.g. Aurum's editorial archetype).
+   */
+  hideAvatar?: boolean;
+  /** Use the serif editorial typeface (Aurum). */
+  serif?: boolean;
 };
 
 const EASE = [0.21, 0.47, 0.32, 0.98] as const;
@@ -37,6 +44,8 @@ export function PullQuote({
   accentRGB,
   variant = "subtle",
   avatarGradient,
+  hideAvatar = false,
+  serif = false,
 }: Props) {
   const background =
     variant === "deep"
@@ -78,7 +87,9 @@ export function PullQuote({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6, ease: EASE }}
-            className="text-white font-light tracking-tight"
+            className={`text-white tracking-tight ${
+              serif ? "font-serif-editorial italic" : "font-light"
+            }`}
             style={{
               fontSize: "clamp(20px, 3.4vw, 38px)",
               lineHeight: 1.35,
@@ -93,24 +104,36 @@ export function PullQuote({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ delay: 0.15, duration: 0.5, ease: EASE }}
-            className="mt-10 flex items-center gap-4"
+            className={`mt-8 sm:mt-10 flex items-center ${
+              hideAvatar ? "" : "gap-4"
+            }`}
           >
-            <GeometricAvatar
-              name={name}
-              size={52}
-              gradient={
-                avatarGradient ?? [
-                  `rgba(${accentRGB},0.35)`,
-                  "rgba(255,255,255,0.04)",
-                ]
-              }
-            />
-            <div>
-              <div className="text-white font-semibold tracking-tight text-base sm:text-lg">
+            {!hideAvatar && (
+              <GeometricAvatar
+                name={name}
+                size={52}
+                gradient={
+                  avatarGradient ?? [
+                    `rgba(${accentRGB},0.35)`,
+                    "rgba(255,255,255,0.04)",
+                  ]
+                }
+              />
+            )}
+            <div className={hideAvatar ? "border-l-2 pl-4" : ""}
+              style={hideAvatar ? { borderColor: `rgba(${accentRGB},0.45)` } : undefined}
+            >
+              <div
+                className={`text-white tracking-tight text-base sm:text-lg ${
+                  serif ? "font-serif-editorial" : "font-semibold"
+                }`}
+              >
                 {name}
               </div>
               <div
-                className="text-xs sm:text-sm mt-0.5 tracking-wide"
+                className={`text-xs sm:text-sm mt-0.5 ${
+                  serif ? "italic tracking-tight" : "tracking-wide"
+                }`}
                 style={{ color: `rgba(${accentRGB},0.85)` }}
               >
                 {role}

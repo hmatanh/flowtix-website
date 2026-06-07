@@ -63,9 +63,9 @@ export function HeroArtifact() {
             duration: 1,
             ease: [0.21, 0.47, 0.32, 0.98],
           }}
-          className="relative"
+          className="relative w-full"
           style={{
-            width: "min(620px, 90%)",
+            maxWidth: "min(620px, 100%)",
             transformOrigin: "center bottom",
           }}
         >
@@ -131,7 +131,7 @@ export function HeroArtifact() {
                 <h2
                   className="font-serif-editorial text-[#3A2B0E] tracking-tight"
                   style={{
-                    fontSize: "clamp(28px, 5vw, 52px)",
+                    fontSize: "clamp(32px, 6vw, 56px)",
                     fontWeight: 400,
                     letterSpacing: "-0.02em",
                     lineHeight: 1,
@@ -142,15 +142,15 @@ export function HeroArtifact() {
                   Review.
                 </h2>
                 <div
-                  className="font-serif-editorial italic text-[#8C6B3A] mt-3"
-                  style={{ fontSize: "clamp(13px, 1.4vw, 17px)" }}
+                  className="font-serif-editorial italic text-[#8C6B3A] mt-2 sm:mt-3"
+                  style={{ fontSize: "clamp(12px, 1.4vw, 17px)" }}
                 >
                   Q4 2024 · Henderson Family Trust
                 </div>
 
                 <div
                   aria-hidden="true"
-                  className="my-7 sm:my-9 h-px"
+                  className="my-5 sm:my-9 h-px"
                   style={{
                     background:
                       "linear-gradient(90deg, transparent, rgba(168,123,58,0.45), transparent)",
@@ -158,21 +158,22 @@ export function HeroArtifact() {
                 />
 
                 {/* Editorial micro-chart */}
-                <div className="grid grid-cols-3 gap-6 sm:gap-8 max-w-md">
+                <div className="grid grid-cols-3 gap-3 sm:gap-8 max-w-md">
                   {[
                     { k: "YTD return", v: "+11.4%" },
-                    { k: "vs benchmark", v: "+1.8" },
-                    { k: "Annualised 5y", v: "8.1%" },
+                    { k: "vs bench", v: "+1.8" },
+                    { k: "5y annual", v: "8.1%" },
                   ].map((s) => (
                     <div key={s.k}>
-                      <div className="text-[#A87B3A] text-[8.5px] sm:text-[9px] tracking-[0.22em] uppercase mb-1.5">
+                      <div className="text-[#A87B3A] text-[8px] sm:text-[9px] tracking-[0.20em] sm:tracking-[0.22em] uppercase mb-1 sm:mb-1.5">
                         {s.k}
                       </div>
                       <div
                         className="font-serif-editorial text-[#3A2B0E] tabular-nums"
                         style={{
-                          fontSize: "clamp(18px, 2.4vw, 26px)",
+                          fontSize: "clamp(16px, 2.4vw, 26px)",
                           fontWeight: 400,
+                          lineHeight: 1.1,
                         }}
                       >
                         {s.v}
@@ -182,16 +183,16 @@ export function HeroArtifact() {
                 </div>
               </div>
 
-              <div className="flex items-center justify-between mt-9 sm:mt-12">
+              <div className="flex items-center justify-between mt-6 sm:mt-12 gap-3">
                 <div
                   className="font-serif-editorial italic text-[#A87B3A]"
-                  style={{ fontSize: 11 }}
+                  style={{ fontSize: "clamp(9px, 1vw, 11px)" }}
                 >
                   — page 1 of 14 —
                 </div>
                 <div
-                  className="font-serif-editorial italic text-[#A87B3A]"
-                  style={{ fontSize: 11 }}
+                  className="font-serif-editorial italic text-[#A87B3A] text-right"
+                  style={{ fontSize: "clamp(9px, 1vw, 11px)" }}
                 >
                   Eitan Shaked · Managing Partner
                 </div>

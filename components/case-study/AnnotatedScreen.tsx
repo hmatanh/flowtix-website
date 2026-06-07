@@ -143,13 +143,14 @@ export function AnnotatedScreen({
         {/* Annotations — clean numbered grid below the screen */}
         {annotations && annotations.length > 0 && (
           <div
-            className={`mt-12 sm:mt-16 grid gap-5 sm:gap-6 lg:gap-8 ${
+            className={`mt-12 sm:mt-16 grid gap-5 sm:gap-6 lg:gap-8 mx-auto ${
               annotations.length === 1
-                ? "grid-cols-1 max-w-xl mx-auto"
+                ? "grid-cols-1 max-w-xl"
                 : annotations.length === 2
-                ? "grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto"
+                ? "grid-cols-1 md:grid-cols-2 max-w-4xl"
                 : "grid-cols-1 md:grid-cols-3"
             }`}
+            style={{ maxWidth: annotations.length === 3 ? 1200 : undefined }}
           >
             {annotations.map((a, i) => (
               <m.div

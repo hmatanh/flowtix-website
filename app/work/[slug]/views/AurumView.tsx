@@ -42,7 +42,7 @@ export function AurumView({ project }: { project: Project }) {
             <span style={{ color: AURUM_PRIMARY }}>$397M</span> under management.
           </>
         }
-        primaryMetric="Quarterly reports: 3 hours each → 0 minutes. Indistinguishable from the ones the partners used to write by hand."
+        primaryMetric="Quarterly reports: 3 hours each → 0 minutes."
         accentColor={AURUM_PRIMARY}
         accentRGB={AURUM_RGB}
       />
@@ -142,6 +142,8 @@ export function AurumView({ project }: { project: Project }) {
         name="Eitan Shaked"
         role="Managing Partner · Aurum Private"
         variant="deep"
+        hideAvatar
+        serif
       >
         Our clients now think we have a team of analysts behind us. We
         don&apos;t. We have one good system, and three partners who get to
