@@ -1,0 +1,12 @@
+# RFC 9116 — Security disclosure for flowtix.ai
+# https://flowtix.ai/.well-known/security.txt
+
+Contact: mailto:office@flowtix.ai
+Expires: 2027-12-31T23:59:59.000Z
+Preferred-Languages: en, he
+Canonical: https://flowtix.ai/.well-known/security.txt
+
+# We welcome good-faith security research on flowtix.ai (the marketing
+# site only — production client environments are out of scope and
+# operated separately). Please report findings to office@flowtix.ai
+# and allow 30 days for response before any public disclosure.
