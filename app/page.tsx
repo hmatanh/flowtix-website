@@ -229,15 +229,16 @@ export default function Home() {
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1, duration: 0.5 }}
-            className="inline-flex items-center gap-2 sm:gap-2.5 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-[#1a1a1a] bg-[#080808] mb-5 sm:mb-7 section-label max-w-full"
+            className="mx-auto flex w-fit max-w-full items-center justify-center gap-2 sm:gap-2.5 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-[#1a1a1a] bg-[#080808] mb-5 sm:mb-7 section-label"
           >
-            {/* Pulsing dot — vertically centered with text via inline-flex items-center */}
+            {/* Pulsing dot — vertically centered with text via items-center */}
             <span className="relative flex h-2 w-2 shrink-0">
               <span className="animate-ping absolute h-full w-full rounded-full bg-blue-400 opacity-75" />
               <span className="relative h-2 w-2 rounded-full bg-blue-500" />
             </span>
-            {/* Both labels in ONE inline text run so the dot always stays inline next to the text */}
-            <span className="text-[#cccccc] text-[10px] sm:text-[11px] tracking-[0.08em] sm:tracking-[0.12em] uppercase font-medium whitespace-nowrap">
+            {/* Both labels in ONE inline text run so the dot always stays inline next to the text.
+                 Tighter mobile sizing so the full label fits one line down to 320-px phones. */}
+            <span className="text-[#cccccc] text-[8.5px] sm:text-[11px] tracking-[0.06em] sm:tracking-[0.12em] uppercase font-medium whitespace-nowrap">
               Digital Systems Studio
               <span className="text-[#555] mx-1.5 sm:mx-2">·</span>
               Built for Operators
