@@ -217,7 +217,7 @@ export function ServiceDetailView({ slug }: { slug: string }) {
                     boxShadow: `0 20px 40px rgba(${c.rgb},0.25)`,
                   }}
                 >
-                  Start a Project
+                  Book a Strategy Call
                   <IconArrowRight size={16} stroke={2.5} aria-hidden="true" />
                 </Link>
               </m.div>

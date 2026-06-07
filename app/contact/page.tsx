@@ -550,7 +550,7 @@ function CalendarBooking() {
       <div className="flex items-start justify-between gap-4 flex-wrap">
         <div>
           <h3 className="text-white text-xl font-semibold tracking-tight">
-            Book a Free Strategy Call
+            Book a Strategy Call
           </h3>
           <div className="text-[#888] text-sm mt-1.5 flex items-center gap-4 flex-wrap">
             <span className="inline-flex items-center gap-1.5">

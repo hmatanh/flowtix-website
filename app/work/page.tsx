@@ -190,7 +190,7 @@ function NewWorkCard() {
             </p>
 
             <div className="mt-7 sm:mt-9 inline-flex items-center gap-3 px-5 py-3.5 rounded-full bg-white text-black font-semibold text-[13px] sm:text-[14px] tracking-tight transition-transform duration-300 group-hover:scale-[1.02]">
-              Start a conversation
+              Book a Strategy Call
               <IconArrowUpRight size={14} stroke={2.4} aria-hidden="true" />
             </div>
           </div>

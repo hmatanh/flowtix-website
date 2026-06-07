@@ -26,7 +26,6 @@ import {
 import { services } from "@/lib/services";
 import { projects } from "@/lib/projects";
 import { ListingMockup } from "@/components/projects/ListingMockups";
-import { ClientLogo } from "@/components/clients/logos/ClientLogo";
 
 const EASE = [0.21, 0.47, 0.32, 0.98] as const;
 
@@ -213,7 +212,7 @@ export default function Home() {
   return (
     <>
       {/* ===== 1. HERO ===== */}
-      <section className="relative lg:min-h-screen lg:flex lg:items-center pt-20 sm:pt-24 lg:pt-32 pb-14 sm:pb-20 lg:pb-24 overflow-hidden">
+      <section className="relative lg:min-h-screen lg:flex lg:items-center pt-6 sm:pt-12 lg:pt-32 pb-14 sm:pb-20 lg:pb-24 overflow-hidden">
         <PerspectiveGrid />
         <div
           aria-hidden="true"
@@ -230,17 +229,17 @@ export default function Home() {
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1, duration: 0.5 }}
-            className="inline-flex items-center gap-2 sm:gap-2.5 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-[#1a1a1a] bg-[#080808] mb-5 sm:mb-7 section-label flex-wrap justify-center max-w-full"
+            className="inline-flex items-center gap-2 sm:gap-2.5 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-[#1a1a1a] bg-[#080808] mb-5 sm:mb-7 section-label"
           >
-            <span className="relative flex h-2 w-2">
+            <span className="relative flex h-2 w-2 shrink-0">
               <span className="animate-ping absolute h-full w-full rounded-full bg-blue-400 opacity-75" />
               <span className="relative h-2 w-2 rounded-full bg-blue-500" />
             </span>
-            <span className="text-[#cccccc] text-[11px] tracking-[0.12em] uppercase font-medium">
+            <span className="text-[#cccccc] text-[10px] sm:text-[11px] tracking-[0.12em] uppercase font-medium whitespace-nowrap">
               Digital Systems Studio
             </span>
-            <span className="text-[#555] text-[11px]">·</span>
-            <span className="text-[#cccccc] text-[11px] tracking-[0.12em] uppercase font-medium">
+            <span className="text-[#555] text-[11px] hidden sm:inline">·</span>
+            <span className="hidden sm:inline text-[#cccccc] text-[11px] tracking-[0.12em] uppercase font-medium whitespace-nowrap">
               Built for Operators
             </span>
           </m.div>
@@ -711,129 +710,114 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== 10. FEATURED WORK ===== */}
+      {/* ===== 10. FEATURED WORK — matches /work page template ===== */}
       <section className="section-contain py-24 md:py-32">
         <div className="page-container">
           <FadeIn>
-            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12 text-center sm:text-left">
-              <div>
-                <div className="section-label text-[#333] text-[10px] tracking-widest uppercase mb-4">
-                  Selected Work
-                </div>
-                <h2
-                  className="section-heading font-black tracking-tight text-white"
-                  style={{ fontSize: "clamp(28px, 4.5vw, 44px)" }}
-                >
-                  Systems we&apos;ve built.
-                </h2>
+            <div className="text-center mb-12">
+              <div className="section-label text-[#333] text-[10px] tracking-widest uppercase mb-4">
+                Selected Work
               </div>
+              <h2
+                className="section-heading font-black tracking-tight text-white mx-auto max-w-2xl"
+                style={{ fontSize: "clamp(28px, 4.5vw, 44px)" }}
+              >
+                Systems we&apos;ve built.
+              </h2>
               <Link
                 href="/work"
-                className="animated-link text-[#6a6a6a] hover:text-white text-sm whitespace-nowrap"
+                className="animated-link inline-block mt-5 sm:mt-6 text-[#6a6a6a] hover:text-white text-sm whitespace-nowrap"
               >
-                View All Work →
+                View all work →
               </Link>
             </div>
           </FadeIn>
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
+          <StaggerContainer className="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-6 lg:gap-7">
             {projects.slice(0, 3).map((p) => (
               <StaggerItem key={p.slug}>
                 <Link
                   href={`/work/${p.slug}/`}
-                  className="group relative block rounded-2xl overflow-hidden border transition-all duration-300 hover:-translate-y-1.5 h-full"
+                  aria-label={`Open ${p.name} case study`}
+                  className="group relative block rounded-2xl sm:rounded-[20px] overflow-hidden border bg-[#080808] transition-all duration-500 hover:-translate-y-1 hover:bg-[#0B0B0B] h-full"
                   style={{
-                    background: p.brand.dark,
-                    borderColor: "rgba(255,255,255,0.05)",
-                    boxShadow: "0 12px 40px rgba(0,0,0,0.35)",
+                    borderColor: "rgba(255,255,255,0.06)",
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = `rgba(${p.brand.accentRGB}, 0.35)`;
-                    e.currentTarget.style.boxShadow = `0 30px 80px rgba(0,0,0,0.45), 0 0 60px rgba(${p.brand.accentRGB}, 0.10)`;
+                    e.currentTarget.style.borderColor = "rgba(255,255,255,0.16)";
+                    e.currentTarget.style.boxShadow =
+                      "0 40px 90px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.04)";
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor =
-                      "rgba(255,255,255,0.05)";
-                    e.currentTarget.style.boxShadow =
-                      "0 12px 40px rgba(0,0,0,0.35)";
+                    e.currentTarget.style.borderColor = "rgba(255,255,255,0.06)";
+                    e.currentTarget.style.boxShadow = "none";
                   }}
                 >
-                  <div
-                    aria-hidden="true"
-                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                    style={{
-                      background: `radial-gradient(ellipse 70% 40% at 50% 0%, rgba(${p.brand.accentRGB},0.12), transparent 70%)`,
-                    }}
-                  />
-
-                  <div
-                    className="relative h-56 lg:h-60 overflow-hidden flex items-center justify-center p-5"
-                    style={{
-                      background: `linear-gradient(180deg, ${p.brand.dark} 0%, #000 100%)`,
-                    }}
-                  >
-                    <div
-                      aria-hidden="true"
-                      className="absolute top-0 right-0 w-72 h-72 pointer-events-none"
-                      style={{
-                        background: `radial-gradient(circle, rgba(${p.brand.accentRGB},0.18), transparent 65%)`,
-                        filter: "blur(40px)",
-                      }}
-                    />
-                    <div className="relative w-full max-w-[90%] transition-transform duration-500 group-hover:scale-[1.04]">
+                  {/* Visual artifact — 16:10 ratio */}
+                  <div className="relative w-full aspect-[16/10] overflow-hidden border-b border-white/[0.04]">
+                    <div className="absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-[1.025]">
                       <ListingMockup slug={p.slug} />
                     </div>
                   </div>
 
-                  <div
-                    aria-hidden="true"
-                    className="h-px"
-                    style={{
-                      background: `linear-gradient(90deg, transparent, rgba(${p.brand.accentRGB},0.25), transparent)`,
-                    }}
-                  />
-
-                  <div className="relative p-6">
-                    <div className="flex items-center justify-between mb-3">
-                      <div className="h-8 flex items-center">
-                        <ClientLogo slug={p.slug} height={26} />
-                      </div>
-                      <span className="text-[#333] text-[11px] font-mono">
+                  {/* Content area */}
+                  <div className="p-6 sm:p-7 lg:p-8">
+                    {/* Eyebrow row: industry · year */}
+                    <div className="flex items-center justify-between text-[10px] sm:text-[11px] tracking-[0.22em] uppercase font-medium">
+                      <span className="text-[#9a9a9a]">{p.industry}</span>
+                      <span className="text-[#555] font-mono tabular-nums">
                         {p.year}
                       </span>
                     </div>
 
-                    <div
-                      className="text-[10px] tracking-widest uppercase mb-3"
-                      style={{ color: p.brand.textOnBrand, opacity: 0.55 }}
+                    {/* Project name + tagline */}
+                    <h3
+                      className="text-white font-semibold tracking-tight mt-4 sm:mt-5 leading-[1.05]"
+                      style={{ fontSize: "clamp(22px, 2.6vw, 30px)" }}
                     >
-                      {p.category}
-                    </div>
-                    <p className="text-white text-base font-semibold tracking-tight leading-snug">
+                      {p.name}
+                    </h3>
+                    <p
+                      className="text-[#cfcfcf] mt-2.5 sm:mt-3 leading-[1.45] tracking-tight"
+                      style={{ fontSize: "clamp(14px, 1.3vw, 17px)" }}
+                    >
                       {p.tagline}
                     </p>
-                    <p className="text-[#888] text-sm mt-3 leading-relaxed line-clamp-2">
-                      {p.description}
-                    </p>
 
+                    {/* Hairline */}
                     <div
-                      className="mt-6 pt-4 border-t flex items-center justify-between text-xs"
-                      style={{ borderColor: "rgba(255,255,255,0.06)" }}
-                    >
-                      <span
-                        className="font-medium tracking-tight"
-                        style={{ color: p.brand.textOnBrand, opacity: 0.7 }}
-                      >
-                        Read case study
+                      aria-hidden="true"
+                      className="my-5 sm:my-6 h-px w-full bg-white/[0.06]"
+                    />
+
+                    {/* Three metric pills */}
+                    <div className="grid grid-cols-3 gap-2.5 sm:gap-3">
+                      {p.results.slice(0, 3).map((r) => (
+                        <div
+                          key={r.label}
+                          className="rounded-md sm:rounded-lg px-2.5 sm:px-3 py-2.5 sm:py-3 border bg-white/[0.02]"
+                          style={{ borderColor: "rgba(255,255,255,0.05)" }}
+                        >
+                          <div className="text-white font-semibold tabular-nums tracking-tight text-[13px] sm:text-[15px] leading-none">
+                            {r.value}
+                          </div>
+                          <div className="text-[#888] text-[9.5px] sm:text-[10px] uppercase tracking-[0.12em] mt-1.5 leading-tight">
+                            {r.label}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Footer row */}
+                    <div className="mt-5 sm:mt-6 flex items-center justify-between gap-3">
+                      <span className="text-[10px] sm:text-[11px] text-[#777] tracking-[0.18em] uppercase truncate">
+                        {p.duration}
                       </span>
-                      <span
-                        className="inline-flex items-center gap-1 transition-all"
-                        style={{ color: p.brand.primary }}
-                      >
-                        View
+                      <span className="inline-flex items-center gap-1.5 text-[12px] sm:text-[13px] text-white font-medium tracking-tight shrink-0">
+                        View case
                         <IconArrowRight
                           size={13}
-                          stroke={2}
-                          className="group-hover:translate-x-0.5 transition-transform"
+                          stroke={2.2}
+                          className="transition-transform duration-300 group-hover:translate-x-0.5"
                         />
                       </span>
                     </div>

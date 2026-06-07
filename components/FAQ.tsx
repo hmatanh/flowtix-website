@@ -145,7 +145,7 @@ export function FAQ() {
               href="/contact"
               className="text-white underline underline-offset-4 decoration-[#333] hover:decoration-white transition-colors"
             >
-              Book a strategy call
+              Book a Strategy Call
             </a>{" "}
             — first conversation is free.
           </p>

@@ -47,7 +47,7 @@ export function AnnouncementBar() {
               <span className="relative h-2 w-2 rounded-full bg-emerald-500" />
             </span>
             <span className="text-[#aaa] tracking-wide truncate">
-              Now accepting new projects for Q3 2025
+              Now accepting new projects for Q3 2026
             </span>
             <span className="text-[#333] hidden sm:inline">·</span>
             <span className="text-[#888] hidden sm:inline">3 spots remaining</span>
@@ -55,7 +55,7 @@ export function AnnouncementBar() {
               href="/contact"
               className="animated-link text-[#3B82F6] hover:text-blue-400 transition-colors shrink-0"
             >
-              Book a call →
+              Book a Strategy Call →
             </Link>
             <button
               type="button"
