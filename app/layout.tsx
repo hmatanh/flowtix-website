@@ -60,10 +60,11 @@ export const metadata: Metadata = {
       "We help businesses replace manual work with custom systems, automated workflows, AI agents, internal tools, and digital products.",
     images: [
       {
-        url: "/flowtix-wordmark-white.svg",
+        url: "/og-image.svg",
         width: 1200,
         height: 630,
-        alt: "Flowtix — Custom Business Systems & Automations",
+        alt: "Flowtix — Custom systems, automations & AI workflows",
+        type: "image/svg+xml",
       },
     ],
   },
@@ -72,7 +73,7 @@ export const metadata: Metadata = {
     title: "Flowtix",
     description:
       "Custom systems, automations, and digital products for businesses that want to work smarter.",
-    images: ["/flowtix-wordmark-white.svg"],
+    images: ["/og-image.svg"],
   },
   alternates: {
     canonical: "https://flowtix.ai/",

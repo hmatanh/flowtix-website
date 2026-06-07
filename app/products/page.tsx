@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState, FormEvent } from "react";
 import { m, AnimatePresence } from "framer-motion";
 import {
@@ -275,6 +276,13 @@ export default function ProductsPage() {
                     <span>·</span>
                     <span>Unsubscribe anytime</span>
                   </div>
+                  <p className="text-[#555] text-[11px] mt-3 leading-relaxed">
+                    By joining the waitlist you agree to our{" "}
+                    <Link href="/privacy" className="text-[#888] hover:text-white underline decoration-[#333] underline-offset-2">
+                      Privacy Policy
+                    </Link>
+                    .
+                  </p>
                 </div>
               </div>
 

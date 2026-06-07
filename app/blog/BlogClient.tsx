@@ -532,7 +532,11 @@ export function BlogClient({ posts }: { posts: PostMeta[] }) {
               </form>
             )}
             <p className="text-[#555] text-xs mt-4 sm:mt-5">
-              Unsubscribe anytime. Read by 4,800+ operators.
+              By subscribing you agree to our{" "}
+              <Link href="/privacy" className="text-[#888] hover:text-white underline decoration-[#333] underline-offset-2">
+                Privacy Policy
+              </Link>
+              . Unsubscribe anytime. Read by 4,800+ operators.
             </p>
           </div>
         </div>

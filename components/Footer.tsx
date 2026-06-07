@@ -71,6 +71,15 @@ export function Footer() {
                 </m.button>
               </form>
             )}
+            {!subscribed && (
+              <p className="text-[#555] text-[11px] mt-3 leading-relaxed">
+                By subscribing you agree to our{" "}
+                <Link href="/privacy" className="text-[#888] hover:text-white underline decoration-[#333] underline-offset-2">
+                  Privacy Policy
+                </Link>
+                . Unsubscribe anytime.
+              </p>
+            )}
           </div>
         </div>
 

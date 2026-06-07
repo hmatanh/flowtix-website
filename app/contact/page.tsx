@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState, useEffect, useRef, FormEvent } from "react";
 import { m, AnimatePresence } from "framer-motion";
 import {
@@ -568,7 +569,11 @@ function BookingDetailsModal({
 
                   <p className="text-[#444] text-[11px] mt-4 text-center leading-relaxed">
                     By confirming you agree to receive a calendar invite
-                    and a follow-up email from Flowtix.
+                    and a follow-up email from Flowtix per our{" "}
+                    <Link href="/privacy" className="text-[#888] hover:text-white underline decoration-[#333] underline-offset-2">
+                      Privacy Policy
+                    </Link>
+                    .
                   </p>
                 </m.form>
               )}
