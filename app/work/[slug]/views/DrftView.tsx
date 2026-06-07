@@ -1,149 +1,279 @@
 "use client";
 
+/**
+ * Drft case study — Archetype C · Immersive Brand-Led
+ *
+ * Hello Monday × Locomotive pacing. Stays inside the site's dark frame
+ * around section boundaries but the case-study sections themselves let
+ * the brand take over — orange flood here, cream paper there, all-caps
+ * display typography, motion as story not decoration. The case reads
+ * less like an agency deck and more like an SS25 lookbook.
+ */
+
 import { type Project } from "@/lib/projects";
-import {
-  ProjectPageLayout,
-  type ProjectPageContent,
-} from "@/components/projects/ProjectPageLayout";
-import dynamic from "next/dynamic";
-import { ScreenStore } from "@/components/clients/drft/ScreenStore";
-import { ScreenContent } from "@/components/clients/drft/ScreenContent";
-import { ScreenEmail } from "@/components/clients/drft/ScreenEmail";
-import { TourLoader } from "@/components/clients/TourLoader";
 
-const InteractiveTour = dynamic(
-  () => import("@/components/clients/drft/InteractiveTour").then((m) => ({ default: m.InteractiveTour })),
-  { ssr: false, loading: () => <TourLoader /> },
-);
+import { CaseHero } from "@/components/case-study/CaseHero";
+import { MetricStrip } from "@/components/case-study/MetricStrip";
+import { StorySection } from "@/components/case-study/StorySection";
+import { AnnotatedScreen } from "@/components/case-study/AnnotatedScreen";
+import { PullQuote } from "@/components/case-study/PullQuote";
+import { DeliverablesList } from "@/components/case-study/DeliverablesList";
+import { CaseFooter } from "@/components/case-study/CaseFooter";
 
-const CONTENT: ProjectPageContent = {
-  heroHeadline:
-    "A brand born and launched in five weeks. Zero to $189 jackets.",
-  keyMetric: "Content production time reduced by 78%",
+import { ScreenStore } from "@/components/clients/drft/v2/ScreenStore";
+import { ScreenContent } from "@/components/clients/drft/v2/ScreenContent";
+import { ScreenEmail } from "@/components/clients/drft/v2/ScreenEmail";
+import { HeroArtifact } from "@/components/clients/drft/v2/HeroArtifact";
+import { BrandTakeover } from "@/components/clients/drft/v2/BrandTakeover";
 
-  statementStats: [
-    { value: 5, suffix: " wks", label: "Brand to launch day" },
-    { value: 78, suffix: "%", label: "Less time on content production" },
-    { value: 4, suffix: ".7×", label: "Email open rate vs industry" },
-    { value: 189, suffix: "$", label: "Average order value" },
-  ],
-
-  challenge: {
-    quote:
-      "A founder with a great product, a typewriter, and exactly enough budget for either a brand designer or a marketing team — but not both.",
-    paragraphs: [
-      "DRFT was a single founder with a single conviction: workwear-inspired men's outerwear made the way it used to be — heavy fabrics, real fit, honest pricing. The garments were ready. The brand wasn't. The website wasn't. The content engine to keep a DTC brand alive after launch definitely wasn't.",
-      "Most agencies would have quoted six months and a budget that swallowed the entire first season. The founder needed something faster, leaner, and louder than a polite e-commerce starter kit.",
-    ],
-  },
-  solution: {
-    quote:
-      "Brand, store, content engine and email automation — designed and built side-by-side in five weeks, then handed over to a one-person team to run.",
-    paragraphs: [
-      "Brand identity grounded in the workwear archetype but cut for 2025. A Shopify store designed like a photo essay, not a catalogue. An AI content engine that turns each product, each campaign, each email into ten variations the founder can choose between in fifteen minutes.",
-      "Five weeks after kickoff, DRFT went live. The first season sold through. The second was already being shot.",
-    ],
-  },
-  whatWeBuilt: [
-    {
-      number: "01",
-      title: "Storefront that reads like a story",
-      body:
-        "Product pages designed as photo essays — heavy on craft, light on chatter. Shopify under the hood, custom theming on top.",
-      visual: <ScreenStore />,
-      visualType: "desktop",
-      url: "drft.studio",
-    },
-    {
-      number: "02",
-      title: "AI content engine",
-      body:
-        "One product brief in, ten on-brand variations out: product descriptions, ads, social captions, email subject lines, blog drafts. The founder edits, doesn't write.",
-      visual: <ScreenContent />,
-      visualType: "desktop",
-      url: "studio.drft.com/content",
-    },
-    {
-      number: "03",
-      title: "Email automation built for retention",
-      body:
-        "Browse and cart abandonment, restocks, post-purchase, win-backs. Every flow drafted by AI in DRFT's voice, reviewed weekly, edited in minutes.",
-      visual: <ScreenEmail />,
-      visualType: "desktop",
-      url: "studio.drft.com/email",
-    },
-  ],
-
-  fullBleed: {
-    visual: <ScreenStore />,
-    type: "desktop",
-    url: "drft.studio",
-    caption: "The DRFT storefront — launched May 2025, sold out August 2025",
-  },
-
-  gallery: [
-    {
-      id: "store",
-      name: "Storefront",
-      description: "Product as photo essay. Workwear archetype, 2025 cut.",
-      visual: <ScreenStore />,
-      type: "desktop",
-      url: "drft.studio",
-      primary: true,
-    },
-    {
-      id: "content",
-      name: "Content engine",
-      description: "Ten on-brand variations from one brief.",
-      visual: <ScreenContent />,
-      type: "desktop",
-      url: "studio.drft.com/content",
-    },
-    {
-      id: "email",
-      name: "Email flows",
-      description: "Retention automation written in the founder's voice.",
-      visual: <ScreenEmail />,
-      type: "desktop",
-      url: "studio.drft.com/email",
-    },
-  ],
-
-  process: [
-    {
-      number: "1 / 3",
-      title: "Stripping the brief to one word",
-      body:
-        "We threw out the moodboard and asked the founder for the one word that made him start the company. He said 'honest.' Every decision after that traced back to it.",
-      duration: "Week 1",
-    },
-    {
-      number: "2 / 3",
-      title: "Designing and shooting in parallel",
-      body:
-        "Brand identity, store design, content engine prompts and the launch photo shoot all happened the same fortnight. The result felt born together, because it was.",
-      duration: "Weeks 2–4",
-    },
-    {
-      number: "3 / 3",
-      title: "Launching loud, learning fast",
-      body:
-        "Live the morning of week five. Daily monitoring of metrics, AI prompts tuned twice in the first two weeks based on what was converting.",
-      duration: "Weeks 5–7",
-    },
-  ],
-
-  testimonialFull:
-    "I was skeptical about AI in a creative business — worried it would make everything feel generic. Flowtix proved the opposite. The systems they built made us faster without making us less creative. The brand feels more 'us' than I thought possible from a five-week timeline.",
-  testimonialRole: "Founder · DRFT",
-};
+const DRFT_RGB = "249, 115, 22";
+const DRFT_PRIMARY = "#F97316";
 
 export function DrftView({ project }: { project: Project }) {
   return (
-    <ProjectPageLayout
-      project={project}
-      content={CONTENT}
-      afterGallery={<InteractiveTour />}
-    />
+    <main>
+      {/* 1 — HERO */}
+      <CaseHero
+        eyebrow="DTC fashion · Workwear"
+        year={project.year}
+        serviceTags={["Brand", "Shopify", "Content Engine", "Email Flows"]}
+        headline={
+          <>
+            A brand, a store, and a content engine —{" "}
+            <span style={{ color: DRFT_PRIMARY }}>shipped in five weeks.</span>
+          </>
+        }
+        primaryMetric="Zero to $189 jackets · 4.7× industry-average email open rate · sold out twice."
+        accentColor={DRFT_PRIMARY}
+        accentRGB={DRFT_RGB}
+      />
+
+      {/* 2 — METRIC STRIP. Bold display numbers, brand-flooded backdrop. */}
+      <MetricStrip
+        accentColor={DRFT_PRIMARY}
+        accentRGB={DRFT_RGB}
+        metrics={[
+          { value: "5 wks", label: "Brand to launch day", detail: "from kickoff" },
+          { value: "78%", label: "Less time on content production", detail: "founder-only team" },
+          { value: "$189", label: "Average order value", detail: "first season" },
+        ]}
+      />
+
+      {/* 3 — DROP-CAMPAIGN POSTER */}
+      <AnnotatedScreen
+        accentRGB={DRFT_RGB}
+        eyebrow="The first drop"
+        caption="A poster pulled straight from the launch — the wordmark, the lookbook strip, and the three workwear silhouettes that defined the first season."
+        enableMobileScroll={false}
+      >
+        <HeroArtifact />
+      </AnnotatedScreen>
+
+      {/* 4 — CHALLENGE */}
+      <StorySection
+        accentRGB={DRFT_RGB}
+        eyebrow="The challenge"
+        heading={
+          <>
+            A founder with a great product, a typewriter, and enough budget
+            for either a brand or a launch — but{" "}
+            <span style={{ color: DRFT_PRIMARY }}>not both</span>.
+          </>
+        }
+      >
+        <p>
+          DRFT was a single founder with a single conviction: workwear-inspired
+          men&apos;s outerwear made the way it used to be — heavy fabrics,
+          real fit, honest pricing. The garments were ready. The brand
+          wasn&apos;t. The store wasn&apos;t. The content engine to keep a
+          DTC brand alive after launch definitely wasn&apos;t.
+        </p>
+        <p>
+          Most agencies would have quoted six months and a budget that
+          swallowed the entire first season. The founder needed something
+          faster, leaner, and louder than a polite e-commerce starter kit.
+        </p>
+      </StorySection>
+
+      {/* 5 — STOREFRONT */}
+      <AnnotatedScreen
+        accentRGB={DRFT_RGB}
+        eyebrow="The storefront"
+        caption="A Shopify build that reads like a photo essay, not a catalogue. Heavy product cards, color swatches with weight, copy that's been to a workshop floor."
+        annotations={[
+          {
+            number: "01",
+            eyebrow: "Product as the photograph",
+            body: "Each piece sits on the brand color, not on plain white. Browsing the store feels like flipping a lookbook.",
+          },
+          {
+            number: "02",
+            eyebrow: "Words that earn the price",
+            body: "Every product line is rewritten in the workwear voice — heavy, honest, no marketing fat.",
+          },
+          {
+            number: "03",
+            eyebrow: "Friction by design",
+            body: "Sold-through sizes are shown crossed-out, not hidden. Trust precedes conversion.",
+          },
+        ]}
+      >
+        <ScreenStore />
+      </AnnotatedScreen>
+
+      {/* 6 — A bold quote on the orange wash */}
+      <PullQuote
+        accentColor={DRFT_PRIMARY}
+        accentRGB={DRFT_RGB}
+        name="Theo Lansing"
+        role="Founder · DRFT"
+        variant="deep"
+      >
+        I was skeptical about AI in a creative business — worried it would
+        make everything feel generic. Flowtix proved the opposite. The
+        systems they built made us faster without making us less creative.
+      </PullQuote>
+
+      {/* 7 — BRAND TAKEOVER — the cream-page section restyle */}
+      <AnnotatedScreen
+        accentRGB={DRFT_RGB}
+        eyebrow="The voice, in three modes"
+        enableMobileScroll={false}
+      >
+        <BrandTakeover />
+      </AnnotatedScreen>
+
+      {/* 8 — CONTENT ENGINE */}
+      <AnnotatedScreen
+        accentRGB={DRFT_RGB}
+        eyebrow="The content engine"
+        caption="One brief in. Six on-brand variations out, each tagged with its tone. The founder picks one in fifteen minutes — used to take a whole afternoon."
+        annotations={[
+          {
+            number: "01",
+            eyebrow: "Brief on the left",
+            body: "Product, channel, voice slider, length, and a handful of style tags. Less form, more guitar tuning.",
+          },
+          {
+            number: "02",
+            eyebrow: "Six takes on the right",
+            body: "Each card is a different tone — quiet long-form, punchy short, founder-warm, urgent sale, plain spec. Founder picks one.",
+          },
+          {
+            number: "03",
+            eyebrow: "Goes live on its own",
+            body: "Pushed straight to the product page or queued into the email tool. The brand stays in voice across every surface.",
+          },
+        ]}
+      >
+        <ScreenContent />
+      </AnnotatedScreen>
+
+      {/* 9 — EMAIL FLOWS */}
+      <AnnotatedScreen
+        accentRGB={DRFT_RGB}
+        eyebrow="The email flows"
+        caption="Five connected nodes covering the moment a buyer leaves a coat in the cart. Subject-line A/B is AI-tuned. Open rate 4.7× the workwear-vertical benchmark."
+        annotations={[
+          {
+            number: "01",
+            eyebrow: "Five-node flow",
+            body: "Trigger → soft reminder → 48-hour wait → value branch → reply or save. The system runs without supervision.",
+          },
+          {
+            number: "02",
+            eyebrow: "AI-tuned subjects",
+            body: "Trained on what works in workwear-DTC. Suggests subject revisions with stated reasons, never auto-sends without approval.",
+          },
+          {
+            number: "03",
+            eyebrow: "Mobile-first preview",
+            body: "Every email is composed for the iPhone first. Desktop adapts down. 89% of opens happen on mobile.",
+          },
+        ]}
+      >
+        <ScreenEmail />
+      </AnnotatedScreen>
+
+      {/* 10 — Quote 2 — different stakeholder */}
+      <PullQuote
+        accentColor={DRFT_PRIMARY}
+        accentRGB={DRFT_RGB}
+        name="Anna Caro"
+        role="Brand Lead · DRFT"
+        variant="subtle"
+      >
+        The site looks like a brand that&apos;s been around for ten years.
+        We&apos;ve been around for ten months. The system is doing the work
+        of three people I haven&apos;t had to hire.
+      </PullQuote>
+
+      {/* 11 — Deliverables */}
+      <DeliverablesList
+        eyebrow="What we delivered"
+        heading="One brand. Built to run on its own."
+        accentRGB={DRFT_RGB}
+        items={[
+          {
+            number: "01",
+            title: "Brand identity & system",
+            body: "Wordmark, type lockups, color stories, photography direction.",
+          },
+          {
+            number: "02",
+            title: "Shopify storefront",
+            body: "Custom-themed; reads like a lookbook, sells like a store.",
+          },
+          {
+            number: "03",
+            title: "AI content engine",
+            body: "Brief in, six on-brand variations out, every channel covered.",
+          },
+          {
+            number: "04",
+            title: "Email automation",
+            body: "Cart, restock, post-purchase and win-back flows on launch.",
+          },
+          {
+            number: "05",
+            title: "Campaign system",
+            body: "Drop templates, lookbook layouts, hand-finished season copy.",
+          },
+          {
+            number: "06",
+            title: "Tone-of-voice playbook",
+            body: "Three modes — manifesto, product, email — with examples.",
+          },
+        ]}
+      />
+
+      {/* 12 — Closing */}
+      <StorySection
+        accentRGB={DRFT_RGB}
+        eyebrow="What changed"
+        heading={
+          <>
+            A one-person studio that{" "}
+            <span style={{ color: DRFT_PRIMARY }}>ships like a team of ten</span>{" "}
+            — and a season that sold out before the next drop.
+          </>
+        }
+      >
+        <p>
+          Five weeks from kickoff, DRFT went live. The first season sold
+          through. The second was already being shot. The founder writes
+          the parts that matter, the system writes the rest, and the brand
+          stays in voice across every product page, every email, every
+          campaign.
+        </p>
+        <p>
+          The garments are still hand-finished. The brand around them now
+          runs on the same craft, scaled.
+        </p>
+      </StorySection>
+
+      {/* 13 — Footer */}
+      <CaseFooter project={project} />
+    </main>
   );
 }
