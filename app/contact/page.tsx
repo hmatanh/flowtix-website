@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, FormEvent } from "react";
+import { useState, useEffect, useRef, FormEvent } from "react";
 import { m, AnimatePresence } from "framer-motion";
 import {
   IconArrowRight,
@@ -20,6 +20,7 @@ import { FormConsent } from "@/components/FormConsent";
 import { FormGDPR } from "@/components/FormGDPR";
 import {
   sanitizeInput,
+  sanitizeForEmail,
   sanitizeEmail,
   sanitizePhone,
   validateForm,
@@ -93,13 +94,33 @@ const TIME_SLOTS = ["9:00 AM CET", "10:00 AM CET", "2:00 PM CET", "3:00 PM CET",
    ─────────────────────────────────────────────────────────────
    Opens after the user has chosen a date + time. Collects name,
    email, phone, and the topic they want to discuss. Submits to
-   Web3Forms — which routes the inquiry to office@flowtix.ai and
-   auto-responds to the customer under the Flowtix brand.
+   Web3Forms — which routes the inquiry to office@flowtix.ai.
 
-   ⚙ Setup (one-time, by the site owner):
+   ⚠ SECURITY — NEXT_PUBLIC_WEB3FORMS_KEY is PUBLIC. It is baked into
+   the JS bundle (any visitor or scraper can read it). The key alone
+   provides ZERO spam protection. The following are MANDATORY in the
+   Web3Forms dashboard for this access key — do not consider this
+   form secure until they are confirmed:
+
+     1. Allowed origins restricted to:
+          https://flowtix.ai
+          https://www.flowtix.ai
+     2. hCaptcha (or Cloudflare Turnstile) ENFORCED on the key.
+     3. Daily-submission cap (e.g. 200/day) so any breakthrough is
+        quota-capped instead of unbounded.
+     4. Whenever the key is rotated in the dashboard, update
+        NEXT_PUBLIC_WEB3FORMS_KEY in Vercel env vars and redeploy.
+
+   ⚠ The `_autoresponse` field is intentionally OMITTED below. With
+   an attacker-controlled `email` + a Flowtix-branded body, that
+   field turns Web3Forms into a reflected-email-spam relay (a
+   "joe-job") that damages flowtix.ai sender reputation. Do NOT
+   re-introduce it until captcha (#2 above) is verified live.
+
+   ⚙ Initial setup (one-time, by the site owner):
      1. Free account at https://web3forms.com
      2. Confirm receiving email = office@flowtix.ai
-     3. Copy the access key
+     3. Apply the 4 hardenings above
      4. Add to Vercel project env vars:
           NEXT_PUBLIC_WEB3FORMS_KEY=<your_access_key>
      5. Redeploy.
@@ -142,6 +163,10 @@ function BookingDetailsModal({
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [done, setDone] = useState(false);
+  // Bot-trap state: hidden field bots love to autofill; humans never see it.
+  const [honeypot, setHoneypot] = useState("");
+  // Time-trap: real users take >3s to fill the form; bots submit instantly.
+  const mountedAtRef = useRef<number>(0);
 
   // Body scroll lock + ESC to close
   useEffect(() => {
@@ -158,11 +183,13 @@ function BookingDetailsModal({
     };
   }, [open, onClose, submitting]);
 
-  // Reset on open
+  // Reset on open + start the time-trap clock
   useEffect(() => {
     if (open) {
       setError(null);
       setDone(false);
+      setHoneypot("");
+      mountedAtRef.current = Date.now();
     }
   }, [open]);
 
@@ -175,10 +202,32 @@ function BookingDetailsModal({
     e.preventDefault();
     setError(null);
 
-    const name = sanitizeInput(details.name).trim();
+    // ── Bot trap #1: honeypot. Real users never see/touch the `website`
+    //     field. If it was filled, silently pretend success without firing
+    //     the network call — bots don't get to learn they were caught.
+    if (honeypot) {
+      setDone(true);
+      setTimeout(() => {
+        onConfirmed();
+        onClose();
+      }, 1200);
+      return;
+    }
+
+    // ── Bot trap #2: time gate. The modal must have been open for at
+    //     least 3 seconds before a real human could complete this form.
+    const elapsed = Date.now() - mountedAtRef.current;
+    if (elapsed > 0 && elapsed < 3000) {
+      return setError("Please take a moment to fill the form, then try again.");
+    }
+
+    // For booking → Web3Forms → plain-text email: strip control chars
+    // and cap length, but DON'T HTML-escape (keeps apostrophes readable
+    // in the email body and customer-facing auto-reply).
+    const name = sanitizeForEmail(details.name);
     const email = sanitizeEmail(details.email).trim();
     const phone = details.phone.trim() ? sanitizePhone(details.phone) : "";
-    const topic = sanitizeInput(details.topic).trim();
+    const topic = sanitizeForEmail(details.topic);
 
     if (!name || name.length < 2)
       return setError("Please tell us your name.");
@@ -186,6 +235,15 @@ function BookingDetailsModal({
       return setError("Please use a valid email so we can send the invite.");
     if (!topic || topic.length < 4)
       return setError("A sentence about what you'd like to discuss helps us prepare.");
+
+    // ── Bot trap #3: rate limit. Shared sessionStorage key with the
+    //     main contact form so an attacker cannot rotate forms to bypass.
+    //     Recorded AFTER validation passes so failed attempts don't burn budget.
+    if (!recordAttempt()) {
+      return setError(
+        "Too many booking attempts. Please wait a few minutes and try again, or email office@flowtix.ai directly."
+      );
+    }
 
     setSubmitting(true);
 
@@ -196,19 +254,6 @@ function BookingDetailsModal({
       `Email:    ${email}\n` +
       `Phone:    ${phone || "—"}\n\n` +
       `What they want to discuss:\n${topic}\n`;
-
-    const autoResponse =
-      `Hi ${name.split(" ")[0]},\n\n` +
-      `Thanks for booking a call with Flowtix — we've received your request.\n\n` +
-      `📅  ${whenLabel}\n` +
-      `🎥  30-minute video call\n\n` +
-      `We'll review the details you sent and confirm with a calendar invite ` +
-      `within a few hours (usually faster on weekdays). If you need to ` +
-      `reach us in the meantime, reply to this email or write to ` +
-      `office@flowtix.ai — we read every message.\n\n` +
-      `Looking forward to talking,\n` +
-      `The Flowtix team\n` +
-      `flowtix.ai · office@flowtix.ai`;
 
     // No access key configured → graceful mailto fallback
     if (!WEB3FORMS_KEY) {
@@ -227,6 +272,11 @@ function BookingDetailsModal({
     }
 
     try {
+      // SECURITY: do NOT add `_autoresponse` to this payload. Combined
+      // with an attacker-controlled `email`, Web3Forms becomes a
+      // Flowtix-branded reflected-email-spam relay (joe-job) that
+      // damages our sender reputation. Re-enable only after hCaptcha
+      // enforcement is confirmed in the Web3Forms dashboard.
       const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: {
@@ -246,11 +296,6 @@ function BookingDetailsModal({
           when: whenLabel,
           topic,
           message,
-          // Customer auto-reply (Flowtix branded)
-          _autoresponse: autoResponse,
-          _autoresponse_subject: `Your Flowtix call · ${whenLabel}`,
-          // UX
-          botcheck: "",
         }),
       });
       const data = await res.json().catch(() => ({}));
@@ -379,6 +424,31 @@ function BookingDetailsModal({
                   onSubmit={handleSubmit}
                   className="px-5 sm:px-7 pt-5 pb-6 sm:pb-7"
                 >
+                  {/* Honeypot — hidden from humans, irresistible to bots */}
+                  <label
+                    htmlFor="booking-website"
+                    aria-hidden="true"
+                    style={{
+                      position: "absolute",
+                      left: "-9999px",
+                      top: "auto",
+                      width: 1,
+                      height: 1,
+                      overflow: "hidden",
+                      opacity: 0,
+                    }}
+                  >
+                    Website
+                    <input
+                      id="booking-website"
+                      type="text"
+                      name="website"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      value={honeypot}
+                      onChange={(e) => setHoneypot(e.target.value)}
+                    />
+                  </label>
                   <div className="space-y-3.5">
                     <div>
                       <label className="block text-[#888] text-[11px] uppercase tracking-[0.18em] mb-1.5">
@@ -780,6 +850,25 @@ const RATE_LIMIT_KEY = "flowtix-contact-attempts";
 const RATE_LIMIT_WINDOW_MS = 5 * 60 * 1000;
 const RATE_LIMIT_MAX = 3;
 
+/**
+ * Shared sessionStorage rate-limiter for BOTH the main contact form and
+ * the BookingDetailsModal. Same storage key so rotating between forms
+ * cannot bypass the cap. Returns true if the attempt is within budget.
+ */
+function recordAttempt(): boolean {
+  try {
+    const raw = sessionStorage.getItem(RATE_LIMIT_KEY);
+    const now = Date.now();
+    const arr: number[] = raw ? JSON.parse(raw) : [];
+    const recent = arr.filter((t) => now - t < RATE_LIMIT_WINDOW_MS);
+    recent.push(now);
+    sessionStorage.setItem(RATE_LIMIT_KEY, JSON.stringify(recent));
+    return recent.length <= RATE_LIMIT_MAX;
+  } catch {
+    return true;
+  }
+}
+
 function FieldWrap({
   error,
   children,
@@ -816,20 +905,6 @@ export default function ContactPage() {
   const [honeypot, setHoneypot] = useState("");
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [rateLimited, setRateLimited] = useState(false);
-
-  function recordAttempt(): boolean {
-    try {
-      const raw = sessionStorage.getItem(RATE_LIMIT_KEY);
-      const now = Date.now();
-      const arr: number[] = raw ? JSON.parse(raw) : [];
-      const recent = arr.filter((t) => now - t < RATE_LIMIT_WINDOW_MS);
-      recent.push(now);
-      sessionStorage.setItem(RATE_LIMIT_KEY, JSON.stringify(recent));
-      return recent.length <= RATE_LIMIT_MAX;
-    } catch {
-      return true;
-    }
-  }
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();

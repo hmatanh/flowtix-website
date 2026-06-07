@@ -178,13 +178,23 @@ export default function PrivacyPage() {
 
       <Section id="storage-security" title="4. Data Storage & Security">
         <p>
-          Contact form submissions on this website are processed via mailto:
-          links and are received directly to our email inbox. We do not operate
-          a database that stores your form submissions.
+          Contact form and strategy-call booking submissions on this website
+          are transmitted over HTTPS to Web3Forms (operated by Statichunt
+          Ltd), which forwards the message to office@flowtix.ai. When
+          JavaScript is disabled, the form falls back to a mailto: handoff
+          that opens your email client locally — in that case no data is
+          transmitted to any third party. We do not operate a database
+          that stores your form submissions; once received, messages live
+          in our inbox.
         </p>
-        <p>Waitlist signups are stored securely and protected by:</p>
+        <p>Submissions are protected by:</p>
         <ul>
           <li>Encryption in transit (HTTPS/TLS)</li>
+          <li>Honeypot + time-trap + rate-limit on the client</li>
+          <li>
+            Web3Forms-side spam controls (origin allowlist, hCaptcha,
+            daily-submission cap)
+          </li>
           <li>Access restricted to authorized personnel only</li>
           <li>Regular security reviews</li>
         </ul>
@@ -197,10 +207,31 @@ export default function PrivacyPage() {
       <Section id="third-party" title="5. Third-Party Services">
         <p>Our website may use the following third-party services:</p>
         <p>
-          <strong>Vercel / Netlify (hosting):</strong> Our website is hosted on
-          industry-standard infrastructure. These services may log IP addresses
-          for security purposes. See their respective privacy policies for
-          details.
+          <strong>Vercel Inc. (United States, hosting):</strong> Our website
+          is hosted by Vercel. Vercel may log IP addresses, request paths
+          and user-agent strings for abuse-prevention and reliability
+          purposes. Transfers of EU personal data to the United States rely
+          on the EU Standard Contractual Clauses. See Vercel&apos;s privacy
+          policy for details.
+        </p>
+        <p>
+          <strong>Web3Forms (Statichunt Ltd, form processor):</strong>{" "}
+          Contact and booking forms POST to api.web3forms.com. Categories
+          of personal data transmitted: name, email, phone number (optional),
+          company name (optional), message body, and chosen call topic /
+          date / time. Web3Forms forwards these to office@flowtix.ai and
+          does not, to our knowledge, retain submissions beyond the
+          short-term operational window required for delivery and abuse
+          monitoring. See{" "}
+          <a
+            href="https://web3forms.com/privacy"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white underline underline-offset-2"
+          >
+            web3forms.com/privacy
+          </a>{" "}
+          for full details.
         </p>
         <p>
           <strong>Email providers:</strong> Inbound emails are processed through

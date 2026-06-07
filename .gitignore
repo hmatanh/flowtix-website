@@ -25,6 +25,13 @@
 *.pem
 .claude/
 
+# internal working documents — never commit
+*.docx
+*.xlsx
+*.pdf
+*.key
+*.p12
+
 # debug
 npm-debug.log*
 yarn-debug.log*

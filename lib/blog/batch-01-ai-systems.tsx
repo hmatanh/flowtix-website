@@ -87,11 +87,11 @@ export const batch1: Post[] = [
         <h2 id="phase-build">Phase 3: Build (Weeks 4–7)</h2>
         <p>
           With a tight scope, build is the easy part. Modern AI infrastructure —{" "}
-          <a href="https://www.anthropic.com" target="_blank" rel="noopener">
+          <a href="https://www.anthropic.com" target="_blank" rel="noopener noreferrer">
             Claude
           </a>
-          , <a href="https://platform.openai.com" target="_blank" rel="noopener">OpenAI</a>,
-          <a href="https://vercel.com" target="_blank" rel="noopener"> Vercel</a> — has
+          , <a href="https://platform.openai.com" target="_blank" rel="noopener noreferrer">OpenAI</a>,
+          <a href="https://vercel.com" target="_blank" rel="noopener noreferrer"> Vercel</a> — has
           collapsed what used to be a six-month ML project into a four-week build.
         </p>
         <p>
@@ -475,7 +475,7 @@ export const batch1: Post[] = [
           <strong>What about open-source models?</strong> Self-hosting open-source models
           shifts the cost from per-call licensing to GPU operations. For most SMBs the
           economics still favor hosted APIs. Verify with{" "}
-          <a href="https://www.anthropic.com/pricing" target="_blank" rel="noopener">
+          <a href="https://www.anthropic.com/pricing" target="_blank" rel="noopener noreferrer">
             current pricing
           </a>
           .

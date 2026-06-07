@@ -97,12 +97,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} h-full`}>
       <head>
-        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
         <meta name="theme-color" content="#000000" />
         {/* Organization JSON-LD — global, applies to every page */}
         <script
@@ -117,7 +111,10 @@ export default function RootLayout({
               description:
                 "Custom business systems, automated workflows, AI agents, internal tools, and digital products for startups, agencies, and growing businesses.",
               email: "office@flowtix.ai",
-              sameAs: [],
+              sameAs: [
+                "https://www.linkedin.com/company/flowtixai/",
+                "https://www.facebook.com/profile.php?id=61590763886838",
+              ],
               foundingDate: "2025",
               areaServed: "Worldwide",
               knowsAbout: [
@@ -128,7 +125,7 @@ export default function RootLayout({
                 "Web Development",
                 "AI Consulting",
               ],
-            }),
+            }).replace(/</g, "\\u003c"),
           }}
         />
         {/* WebSite JSON-LD with SearchAction */}
@@ -146,7 +143,7 @@ export default function RootLayout({
                 "@type": "Organization",
                 name: "Flowtix",
               },
-            }),
+            }).replace(/</g, "\\u003c"),
           }}
         />
       </head>

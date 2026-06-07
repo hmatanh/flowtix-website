@@ -5,43 +5,77 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 
 const STORAGE_KEY = "flowtix-cookie-consent";
+/** Bump this when consent terms change — old consents become "not decided". */
+const CONSENT_VERSION = 1;
+/** Re-ask after this many days even if user already chose. */
+const CONSENT_TTL_DAYS = 365;
+/** Custom event other components can dispatch to re-open the banner. */
+const REOPEN_EVENT = "flowtix:reopen-cookie-banner";
+
+type StoredConsent = {
+  value: "accepted" | "declined";
+  version: number;
+  ts: number;
+};
+
+function readConsent(): StoredConsent | null {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw) as Partial<StoredConsent>;
+    if (
+      parsed &&
+      (parsed.value === "accepted" || parsed.value === "declined") &&
+      typeof parsed.version === "number" &&
+      typeof parsed.ts === "number" &&
+      parsed.version === CONSENT_VERSION &&
+      Date.now() - parsed.ts < CONSENT_TTL_DAYS * 24 * 60 * 60 * 1000
+    ) {
+      return parsed as StoredConsent;
+    }
+    return null;
+  } catch {
+    return null;
+  }
+}
+
+function writeConsent(value: "accepted" | "declined") {
+  try {
+    localStorage.setItem(
+      STORAGE_KEY,
+      JSON.stringify({ value, version: CONSENT_VERSION, ts: Date.now() })
+    );
+  } catch {}
+}
 
 export function CookieBanner() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-    try {
-      const consent = localStorage.getItem(STORAGE_KEY);
-      if (!consent) {
-        const t = setTimeout(() => setVisible(true), 3000);
-        return () => clearTimeout(t);
-      }
-    } catch {
-      const t = setTimeout(() => setVisible(true), 3000);
-      return () => clearTimeout(t);
-    }
+    // Effectively first-paint reveal — matters the moment any tracker is added.
+    const t = setTimeout(() => {
+      if (!readConsent()) setVisible(true);
+    }, 500);
+    // Allow Footer's "Cookie preferences" link to re-open this banner.
+    const reopen = () => setVisible(true);
+    window.addEventListener(REOPEN_EVENT, reopen);
+    return () => {
+      clearTimeout(t);
+      window.removeEventListener(REOPEN_EVENT, reopen);
+    };
   }, []);
 
-  useEffect(() => {
-    function onKey(e: KeyboardEvent) {
-      if (e.key === "Escape" && visible) setVisible(false);
-    }
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [visible]);
+  // No Escape-to-dismiss — EDPB guidance: a dismiss-without-choice is not
+  // a valid consent decision. The user must Accept or Decline explicitly.
 
   function accept() {
-    try {
-      localStorage.setItem(STORAGE_KEY, "accepted");
-    } catch {}
+    writeConsent("accepted");
     setVisible(false);
   }
 
   function decline() {
-    try {
-      localStorage.setItem(STORAGE_KEY, "declined");
-    } catch {}
+    writeConsent("declined");
     setVisible(false);
   }
 
@@ -78,18 +112,19 @@ export function CookieBanner() {
               </Link>{" "}
               for details.
             </p>
+            {/* Equal-weight buttons — no dark-pattern primary, per EDPB Guidelines 03/2022. */}
             <div className="flex gap-2">
               <button
                 type="button"
                 onClick={accept}
-                className="flex-1 bg-white text-black text-xs font-semibold px-4 py-2.5 rounded-xl hover:bg-[#eee] transition-colors min-h-[44px]"
+                className="flex-1 border border-[#1f1f1f] bg-[#111] text-white text-xs font-semibold px-4 py-2.5 rounded-xl hover:border-[#3a3a3a] hover:bg-[#161616] transition-colors min-h-[44px]"
               >
                 Accept
               </button>
               <button
                 type="button"
                 onClick={decline}
-                className="flex-1 border border-[#222] text-[#aaa] text-xs px-4 py-2.5 rounded-xl hover:border-[#333] hover:text-white transition-colors min-h-[44px]"
+                className="flex-1 border border-[#1f1f1f] bg-[#111] text-white text-xs font-semibold px-4 py-2.5 rounded-xl hover:border-[#3a3a3a] hover:bg-[#161616] transition-colors min-h-[44px]"
               >
                 Decline
               </button>
@@ -99,4 +134,18 @@ export function CookieBanner() {
       )}
     </AnimatePresence>
   );
+}
+
+/**
+ * Programmatically re-open the cookie banner. Use to wire a
+ * "Cookie preferences" link in the footer so users can withdraw
+ * consent per GDPR Art. 7(3).
+ */
+export function reopenCookieBanner() {
+  try {
+    localStorage.removeItem(STORAGE_KEY);
+  } catch {}
+  if (typeof window !== "undefined") {
+    window.dispatchEvent(new CustomEvent(REOPEN_EVENT));
+  }
 }

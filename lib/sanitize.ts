@@ -1,5 +1,17 @@
+/**
+ * HTML-escape user-supplied text so it can be safely interpolated into
+ * HTML text content. Also strips control characters (CR/LF/TAB/FF/VT/NUL)
+ * as a first step so the same helper defuses email-header injection if
+ * the form ever swaps Web3Forms for a self-hosted SMTP layer.
+ *
+ * ⚠ Safe for HTML text-content interpolation ONLY.
+ *    NOT safe for href / src / url() — use a URL validator for those.
+ *    NOT ideal for plain-text email bodies (apostrophes become
+ *    `&#x27;`); use `sanitizeForEmail` for plain-text contexts.
+ */
 export function sanitizeInput(value: string): string {
   return value
+    .replace(/[\r\n\t\f\v\0]+/g, " ")
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
@@ -8,6 +20,16 @@ export function sanitizeInput(value: string): string {
     .replace(/\//g, "&#x2F;")
     .trim()
     .slice(0, 2000);
+}
+
+/**
+ * Strip control chars + trim + length-cap for plain-text email bodies.
+ * Does NOT HTML-escape — so `O'Reilly` stays `O'Reilly`, not `O&#x27;Reilly`.
+ * Use this for any user-supplied value that flows into Web3Forms email
+ * subjects/bodies or other plain-text channels.
+ */
+export function sanitizeForEmail(value: string): string {
+  return value.replace(/[\r\n\t\f\v\0]+/g, " ").trim().slice(0, 2000);
 }
 
 export function sanitizeEmail(email: string): string {

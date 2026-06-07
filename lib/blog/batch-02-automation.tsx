@@ -75,7 +75,7 @@ export const batch2: Post[] = [
           Zapier is the right answer when the team running the automations is
           non-technical and the automations themselves are simple — single-trigger,
           single-action, no complex branching. The {" "}
-          <a href="https://zapier.com" target="_blank" rel="noopener">platform</a> is
+          <a href="https://zapier.com" target="_blank" rel="noopener noreferrer">platform</a> is
           purpose-built for that user.
         </p>
         <p>
@@ -1134,7 +1134,7 @@ export const batch2: Post[] = [
           </li>
           <li>
             <strong>Mission-Critical:</strong> A real Next.js app on{" "}
-            <a href="https://vercel.com" target="_blank" rel="noopener">Vercel</a>{" "}
+            <a href="https://vercel.com" target="_blank" rel="noopener noreferrer">Vercel</a>{" "}
             or similar, with proper engineering practices
           </li>
         </ul>

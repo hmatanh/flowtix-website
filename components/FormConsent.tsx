@@ -62,6 +62,7 @@ export function FormConsent({ checked, onChange, error }: Props) {
           <Link
             href="/privacy"
             target="_blank"
+            rel="noopener noreferrer"
             className="text-[#3B82F6] hover:text-blue-400 underline underline-offset-2"
             onClick={(e) => e.stopPropagation()}
           >
@@ -71,6 +72,7 @@ export function FormConsent({ checked, onChange, error }: Props) {
           <Link
             href="/terms"
             target="_blank"
+            rel="noopener noreferrer"
             className="text-[#3B82F6] hover:text-blue-400 underline underline-offset-2"
             onClick={(e) => e.stopPropagation()}
           >

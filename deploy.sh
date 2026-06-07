@@ -17,8 +17,22 @@ export PATH="$HOME/.local/bin:$PATH"
 
 echo "🔄 Updating Flowtix AI..."
 
-# Stage everything
-git add .
+# Stage only known project paths — never sweep in a stray local
+# .env, working document (.docx/.xlsx/.pdf), or .DS_Store via `git add .`.
+git add \
+  app \
+  components \
+  lib \
+  public \
+  next.config.js \
+  vercel.json \
+  package.json \
+  package-lock.json \
+  tsconfig.json \
+  postcss.config.mjs \
+  README.md \
+  .gitignore \
+  deploy.sh 2>/dev/null || true
 
 # Commit only if there's something staged
 if ! git diff --cached --quiet; then

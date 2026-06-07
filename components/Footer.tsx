@@ -9,6 +9,7 @@ import {
   IconMail,
 } from "@tabler/icons-react";
 import { Logo } from "./Logo";
+import { reopenCookieBanner } from "./CookieBanner";
 
 export function Footer() {
   const [email, setEmail] = useState("");
@@ -159,6 +160,14 @@ export function Footer() {
             >
               Accessibility
             </Link>
+            <span>·</span>
+            <button
+              type="button"
+              onClick={reopenCookieBanner}
+              className="hover:text-[#555] transition-colors text-left"
+            >
+              Cookie preferences
+            </button>
           </div>
         </div>
       </div>
