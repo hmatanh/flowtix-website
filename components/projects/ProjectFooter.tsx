@@ -183,7 +183,7 @@ export function ProjectNextLink({ project }: { project: Project }) {
       href={`/work/${next.slug}/`}
       className="block section-contain border-t border-[#0a0a0a] py-12 px-6 md:px-10 xl:px-12 group"
     >
-      <div className="max-w-7xl mx-auto flex items-center justify-between gap-6 flex-wrap">
+      <div className="page-container flex items-center justify-between gap-6 flex-wrap">
         <div className="text-[#444] text-sm">
           <span className="text-[#222] text-[10px] uppercase tracking-widest block mb-1">
             Next case study

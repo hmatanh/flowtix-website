@@ -361,7 +361,7 @@ export default function WorkPage() {
 
       {/* ============== PROJECT GRID ============== */}
       <section className="section-contain px-6 md:px-10 xl:px-12 py-16 sm:py-20 lg:py-24 overflow-hidden">
-        <div className="max-w-7xl mx-auto space-y-5 sm:space-y-6">
+        <div className="page-container space-y-5 sm:space-y-6">
           {/* Row 1 — KOVA full width */}
           <FadeIn>
             <ProjectCard project={kova} size="large" />

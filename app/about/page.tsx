@@ -239,7 +239,7 @@ export default function AboutPage() {
 
       {/* ===== 2. FOUNDER SPOTLIGHT ===== */}
       <section className="section-contain py-24 lg:py-32 px-6 md:px-10 xl:px-12">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+        <div className="page-container grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
           {/* LEFT — Photo */}
           <div className="order-1">
             <FounderPhoto />
@@ -346,7 +346,7 @@ export default function AboutPage() {
 
       {/* ===== 3. THE COMPANY (IS / IS NOT) ===== */}
       <section className="section-contain py-24 lg:py-32 bg-[#040404] border-y border-[#0a0a0a] px-6 md:px-10 xl:px-12">
-        <div className="max-w-7xl mx-auto">
+        <div className="page-container">
           <FadeIn>
             <h2
               className="section-heading text-white font-bold text-center tracking-tight"
@@ -406,7 +406,7 @@ export default function AboutPage() {
 
       {/* ===== 4. OUR VALUES ===== */}
       <section className="section-contain py-24 lg:py-32 px-6 md:px-10 xl:px-12">
-        <div className="max-w-7xl mx-auto">
+        <div className="page-container">
           <FadeIn>
             <h2
               className="section-heading text-white font-bold text-center tracking-tight"

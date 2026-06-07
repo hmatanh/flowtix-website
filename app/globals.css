@@ -118,6 +118,7 @@ body {
   padding-bottom: max(12px, env(safe-area-inset-bottom));
 }
 
+
 /* ===== Mobile guards (no horizontal scroll, readable text, tap targets) ===== */
 *, *::before, *::after {
   max-width: 100%;
@@ -744,28 +745,34 @@ body::before {
 }
 
 /* ===== Site-wide content container ===== */
-/* page-container = site-container = the ONE width every page section uses.
-   Matches the Nav inner div exactly so content edges align at every viewport. */
+/* =====================================================================
+   GLOBAL PAGE CONTAINER  —  the ONE outer width every section uses.
+   Navbar, hero, cards, text blocks and CTAs all sit inside this container
+   so their edges align on the same vertical grid at every viewport.
+   Backgrounds (color bands, gradients, glows) stay full-bleed at the
+   <section> level — only the inner content is constrained.
+   Padding: 20px mobile / 32px tablet / 48px desktop.
+   ===================================================================== */
 .page-container,
 .site-container {
   width: 100%;
   max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 @media (min-width: 768px) {
   .page-container,
   .site-container {
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
+    padding-left: 32px;
+    padding-right: 32px;
   }
 }
-@media (min-width: 1280px) {
+@media (min-width: 1024px) {
   .page-container,
   .site-container {
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding-left: 48px;
+    padding-right: 48px;
   }
 }

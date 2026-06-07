@@ -104,7 +104,7 @@ export function ProjectArchitecture({
         }}
       />
 
-      <div className="max-w-7xl mx-auto relative">
+      <div className="page-container relative">
         {/* Header */}
         <FadeIn>
           <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
@@ -328,7 +328,7 @@ export function ProjectAIAgents({
         }}
       />
 
-      <div className="max-w-7xl mx-auto relative">
+      <div className="page-container relative">
         <FadeIn>
           <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
             <div
@@ -529,7 +529,7 @@ export function ProjectTechStack({
         }}
       />
 
-      <div className="max-w-7xl mx-auto relative">
+      <div className="page-container relative">
         <FadeIn>
           <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
             <div

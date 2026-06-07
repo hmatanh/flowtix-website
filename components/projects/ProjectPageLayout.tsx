@@ -444,7 +444,7 @@ function Hero({
       </div>
 
       <m.div
-        className="relative z-10 max-w-7xl mx-auto w-full px-6 md:px-10 xl:px-12 flex-1 flex flex-col"
+        className="relative z-10 page-container w-full flex-1 flex flex-col"
         style={{ opacity: headlineOpacity }}
       >
         {/* TOP ROW */}
@@ -1345,7 +1345,7 @@ function ProcessMoment({
     <section className="section-contain py-16 sm:py-20 lg:py-24 px-6 md:px-10 xl:px-12 relative overflow-hidden">
       <FloatingOrbs accentRGB={b.accentRGB} count={2} seed={9} />
 
-      <div className="relative max-w-7xl mx-auto">
+      <div className="relative page-container">
         <FadeIn>
           <div className="text-center mb-16 sm:mb-20">
             <div
@@ -1526,7 +1526,7 @@ function TechStackGrid({ project }: { project: Project }) {
   const b = project.brand;
   return (
     <section className="section-contain py-20 sm:py-28 px-6 md:px-10 xl:px-12 border-y border-[#0a0a0a]">
-      <div className="max-w-7xl mx-auto">
+      <div className="page-container">
         <FadeIn>
           <div className="text-center md:text-left mb-10 sm:mb-12">
             <div
@@ -2119,7 +2119,7 @@ function EngagementSpecs({ project }: { project: Project }) {
     <section className="section-contain relative py-16 sm:py-20 lg:py-24 px-6 md:px-10 xl:px-12 border-y border-[#0a0a0a] overflow-hidden">
       <FloatingOrbs accentRGB={b.accentRGB} count={2} seed={13} />
 
-      <div className="relative max-w-7xl mx-auto">
+      <div className="relative page-container">
         <FadeIn>
           <div className="text-center md:text-left mb-12 sm:mb-16">
             <div

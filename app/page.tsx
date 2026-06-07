@@ -213,7 +213,7 @@ export default function Home() {
   return (
     <>
       {/* ===== 1. HERO ===== */}
-      <section className="relative min-h-screen flex items-center px-4 sm:px-6 lg:px-8 pt-28 lg:pt-32 pb-24 overflow-hidden">
+      <section className="relative min-h-screen flex items-center pt-28 lg:pt-32 pb-24 overflow-hidden">
         <PerspectiveGrid />
         <div
           aria-hidden="true"
@@ -225,7 +225,7 @@ export default function Home() {
         />
         <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-black to-transparent pointer-events-none" />
 
-        <div className="relative max-w-5xl mx-auto w-full text-center">
+        <div className="relative page-container w-full text-center">
           <m.div
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
@@ -317,7 +317,7 @@ export default function Home() {
 
       {/* ===== 2. SOCIAL PROOF STRIP ===== */}
       <section className="section-contain py-16 sm:py-20 border-y border-[#080808] bg-[#030303]">
-        <div className="max-w-5xl mx-auto px-6 flex flex-wrap justify-center items-stretch gap-y-10">
+        <div className="page-container flex flex-wrap justify-center items-stretch gap-y-10">
           {SOCIAL_STATS.map((s, i) => (
             <div
               key={s.label}
@@ -383,8 +383,8 @@ export default function Home() {
       </section>
 
       {/* ===== 4. WHAT WE BUILD ===== */}
-      <section className="relative section-contain py-24 md:py-32 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative section-contain py-24 md:py-32">
+        <div className="page-container">
           <FadeIn>
             <div className="text-center mb-14 sm:mb-16">
               <div className="section-label text-[#333] text-[10px] tracking-widest uppercase mb-4">
@@ -433,11 +433,11 @@ export default function Home() {
       </section>
 
       {/* ===== 5. THE PROBLEM ===== */}
-      <section className="relative section-contain py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-[#030303] border-y border-[#080808]">
+      <section className="relative section-contain py-24 md:py-32 bg-[#030303] border-y border-[#080808]">
         <span className="section-number" aria-hidden="true">
           01
         </span>
-        <div className="relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-12 lg:gap-16 items-start">
+        <div className="relative page-container grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-12 lg:gap-16 items-start">
           <FadeIn direction="right">
             <div className="section-label text-[#222] text-[10px] tracking-widest uppercase">
               The Problem
@@ -486,8 +486,8 @@ export default function Home() {
       </section>
 
       {/* ===== 6. THE SOLUTION (process flow) ===== */}
-      <section className="section-contain py-24 md:py-32 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto text-center mb-14 sm:mb-16">
+      <section className="section-contain py-24 md:py-32">
+        <div className="page-container text-center mb-14 sm:mb-16">
           <FadeIn>
             <div className="section-label text-[#333] text-[10px] tracking-widest uppercase mb-4">
               The Solution
@@ -508,7 +508,7 @@ export default function Home() {
         </div>
 
         {/* Flow chips */}
-        <div className="max-w-5xl mx-auto flex flex-wrap items-center justify-center gap-2 sm:gap-3 px-2">
+        <div className="page-container flex flex-wrap items-center justify-center gap-2 sm:gap-3">
           {FLOW_STEPS.map((s, i) => (
             <m.div
               key={s.label}
@@ -536,7 +536,7 @@ export default function Home() {
 
       {/* ===== 7. SERVICES (links into /services) ===== */}
       <section className="section-contain py-24 md:py-32 bg-[#030303] border-y border-[#080808]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 mb-12">
+        <div className="page-container mb-12">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 text-center sm:text-left">
             <div>
               <div className="section-label text-[#333] text-[10px] tracking-widest uppercase">
@@ -612,8 +612,8 @@ export default function Home() {
       </section>
 
       {/* ===== 8. WHO IT'S FOR ===== */}
-      <section className="section-contain py-24 md:py-32 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto">
+      <section className="section-contain py-24 md:py-32">
+        <div className="page-container">
           <div className="text-center mb-12">
             <FadeIn>
               <div className="section-label text-[#333] text-[10px] tracking-widest uppercase mb-4">
@@ -656,8 +656,8 @@ export default function Home() {
       </section>
 
       {/* ===== 9. USE CASES ===== */}
-      <section className="section-contain py-24 md:py-32 bg-[#030303] border-y border-[#080808] px-4 sm:px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto">
+      <section className="section-contain py-24 md:py-32 bg-[#030303] border-y border-[#080808]">
+        <div className="page-container">
           <div className="text-center mb-12">
             <FadeIn>
               <div className="section-label text-[#333] text-[10px] tracking-widest uppercase mb-4">
@@ -692,8 +692,8 @@ export default function Home() {
       </section>
 
       {/* ===== 10. FEATURED WORK ===== */}
-      <section className="section-contain py-24 md:py-32 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+      <section className="section-contain py-24 md:py-32">
+        <div className="page-container">
           <FadeIn>
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12 text-center sm:text-left">
               <div>
@@ -826,8 +826,8 @@ export default function Home() {
       </section>
 
       {/* ===== 11. DIFFERENTIATION ===== */}
-      <section className="section-contain py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-[#030303] border-y border-[#080808]">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="section-contain py-24 md:py-32 bg-[#030303] border-y border-[#080808]">
+        <div className="page-container text-center">
           <FadeIn>
             <div className="section-label text-[#333] text-[10px] tracking-widest uppercase mb-4">
               Why Flowtix
@@ -851,7 +851,7 @@ export default function Home() {
       </section>
 
       {/* ===== 12. HOW WE WORK (timeline) ===== */}
-      <section className="section-contain py-24 md:py-32 px-4 sm:px-6 lg:px-8">
+      <section className="section-contain py-24 md:py-32">
         <div className="text-center mb-16 sm:mb-20">
           <FadeIn>
             <div className="section-label text-[#333] text-[10px] tracking-widest uppercase mb-4">
@@ -910,8 +910,8 @@ export default function Home() {
       </section>
 
       {/* ===== 13. INDUSTRIES ===== */}
-      <section className="section-contain py-20 md:py-24 px-4 sm:px-6 lg:px-8 bg-[#030303] border-y border-[#080808]">
-        <div className="max-w-7xl mx-auto text-center">
+      <section className="section-contain py-20 md:py-24 bg-[#030303] border-y border-[#080808]">
+        <div className="page-container text-center">
           <FadeIn>
             <div className="section-label text-[#333] text-[10px] tracking-widest uppercase mb-4">
               Industries
@@ -945,7 +945,7 @@ export default function Home() {
       <Availability />
 
       {/* ===== 16. FINAL CTA ===== */}
-      <section className="section-contain relative py-32 md:py-40 text-center overflow-hidden px-4 sm:px-6 lg:px-8">
+      <section className="section-contain relative py-32 md:py-40 text-center overflow-hidden">
         <div
           aria-hidden="true"
           className="absolute inset-0 flex items-center justify-center pointer-events-none -z-0"
