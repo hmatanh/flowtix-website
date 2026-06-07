@@ -6,8 +6,9 @@ import { FadeIn } from "./animations/FadeIn";
 export function Availability() {
   return (
     <section className="section-contain py-16">
-      <FadeIn>
-        <div className="max-w-2xl mx-auto">
+      <div className="page-container">
+        <FadeIn>
+          <div className="max-w-2xl mx-auto">
           <div className="animated-border-card">
             <div className="px-8 py-10 text-center">
               <div className="inline-flex items-center gap-2.5">
@@ -47,7 +48,8 @@ export function Availability() {
             </div>
           </div>
         </div>
-      </FadeIn>
+        </FadeIn>
+      </div>
     </section>
   );
 }

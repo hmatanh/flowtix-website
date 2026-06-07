@@ -563,8 +563,14 @@ export default function Home() {
           style={{ scrollSnapType: "x mandatory" }}
         >
           <div
-            className="inline-flex gap-4 px-6 lg:px-8"
-            style={{ width: "max-content" }}
+            className="inline-flex gap-4"
+            style={{
+              width: "max-content",
+              // Align first card with .page-container left edge,
+              // matching navbar's content grid even on ultrawide.
+              paddingLeft: "max(20px, calc((100vw - 1280px) / 2 + 48px))",
+              paddingRight: "max(20px, calc((100vw - 1280px) / 2 + 48px))",
+            }}
           >
             {services.map((s, i) => {
               const Icon = s.icon;
@@ -852,24 +858,25 @@ export default function Home() {
 
       {/* ===== 12. HOW WE WORK (timeline) ===== */}
       <section className="section-contain py-24 md:py-32">
-        <div className="text-center mb-16 sm:mb-20">
-          <FadeIn>
-            <div className="section-label text-[#333] text-[10px] tracking-widest uppercase mb-4">
-              How We Work
-            </div>
-            <h2
-              className="section-heading font-black tracking-tight text-white"
-              style={{ fontSize: "clamp(28px, 4.5vw, 44px)" }}
-            >
-              From conversation to working system.
-            </h2>
-            <p className="section-subtext text-[#666] text-base sm:text-lg mt-4 max-w-xl mx-auto leading-relaxed">
-              A clear, repeatable process. No surprises. No scope creep.
-            </p>
-          </FadeIn>
-        </div>
+        <div className="page-container">
+          <div className="text-center mb-16 sm:mb-20">
+            <FadeIn>
+              <div className="section-label text-[#333] text-[10px] tracking-widest uppercase mb-4">
+                How We Work
+              </div>
+              <h2
+                className="section-heading font-black tracking-tight text-white"
+                style={{ fontSize: "clamp(28px, 4.5vw, 44px)" }}
+              >
+                From conversation to working system.
+              </h2>
+              <p className="section-subtext text-[#666] text-base sm:text-lg mt-4 max-w-xl mx-auto leading-relaxed">
+                A clear, repeatable process. No surprises. No scope creep.
+              </p>
+            </FadeIn>
+          </div>
 
-        <div className="relative max-w-2xl mx-auto">
+          <div className="relative max-w-2xl mx-auto">
           <div
             aria-hidden="true"
             className="absolute left-8 top-8 bottom-8 w-px bg-[#0f0f0f]"
@@ -906,6 +913,7 @@ export default function Home() {
               </div>
             </m.div>
           ))}
+          </div>
         </div>
       </section>
 
