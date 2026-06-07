@@ -292,18 +292,31 @@ export function AnnotatedScreen({
               </button>
             </div>
 
-            {/* Scrollable mockup container */}
+            {/* Scrollable mockup container — block layout (not flex) so the
+                 1600-px mockup is NOT shrunk to viewport width. Wrapper grows
+                 to fit content; outer overflow-auto allows horizontal panning. */}
             <div
               className="absolute inset-0 overflow-auto"
               style={{ WebkitOverflowScrolling: "touch" }}
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="min-h-full flex items-center justify-center px-3 py-16">
+              <div
+                style={{
+                  minHeight: "100%",
+                  minWidth: "100%",
+                  width: "max-content",
+                  padding: "64px 12px",
+                  boxSizing: "border-box",
+                  display: "block",
+                }}
+                onClick={(e) => e.stopPropagation()}
+              >
                 <div
-                  className="rounded-xl overflow-hidden shadow-2xl mx-auto"
+                  className="rounded-xl overflow-hidden shadow-2xl"
                   style={{
                     width: designWidth,
                     maxWidth: "none",
+                    margin: "0 auto",
                     border: "1px solid rgba(255,255,255,0.08)",
                   }}
                   onClick={(e) => e.stopPropagation()}

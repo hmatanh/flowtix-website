@@ -213,7 +213,7 @@ export default function Home() {
   return (
     <>
       {/* ===== 1. HERO ===== */}
-      <section className="relative min-h-screen flex items-center pt-28 lg:pt-32 pb-24 overflow-hidden">
+      <section className="relative lg:min-h-screen lg:flex lg:items-center pt-20 sm:pt-24 lg:pt-32 pb-14 sm:pb-20 lg:pb-24 overflow-hidden">
         <PerspectiveGrid />
         <div
           aria-hidden="true"
@@ -230,7 +230,7 @@ export default function Home() {
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1, duration: 0.5 }}
-            className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-[#1a1a1a] bg-[#080808] mb-8 section-label"
+            className="inline-flex items-center gap-2 sm:gap-2.5 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-[#1a1a1a] bg-[#080808] mb-5 sm:mb-7 section-label flex-wrap justify-center max-w-full"
           >
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute h-full w-full rounded-full bg-blue-400 opacity-75" />
@@ -262,7 +262,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.6, ease: EASE }}
-            className="section-subtext text-[#999] text-lg md:text-xl mt-8 max-w-3xl mx-auto leading-relaxed"
+            className="section-subtext text-[#999] text-base sm:text-lg md:text-xl mt-5 sm:mt-7 max-w-3xl mx-auto leading-relaxed px-2 sm:px-0"
           >
             We build the internal tools, client portals, AI agents, and
             automated workflows that save your team hours every week — and
@@ -273,7 +273,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.5 }}
-            className="mt-10 flex items-center justify-center gap-8 flex-wrap"
+            className="mt-7 sm:mt-10 flex items-center justify-center gap-4 sm:gap-8 flex-wrap"
           >
             {HERO_STATS.map((s, i) => (
               <span key={s.value} className="inline-flex items-center gap-8">
@@ -536,26 +536,22 @@ export default function Home() {
 
       {/* ===== 7. SERVICES (links into /services) ===== */}
       <section className="section-contain py-24 md:py-32 bg-[#030303] border-y border-[#080808]">
-        <div className="page-container mb-12">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 text-center sm:text-left">
-            <div>
-              <div className="section-label text-[#333] text-[10px] tracking-widest uppercase">
-                Services
-              </div>
-              <h2
-                className="section-heading font-black tracking-tight text-white mt-3 max-w-xl"
-                style={{ fontSize: "clamp(28px, 4.5vw, 44px)" }}
-              >
-                Six ways we help businesses ship.
-              </h2>
-            </div>
-            <Link
-              href="/services"
-              className="animated-link text-[#6a6a6a] hover:text-white text-sm whitespace-nowrap"
-            >
-              See all services →
-            </Link>
+        <div className="page-container mb-12 text-center">
+          <div className="section-label text-[#333] text-[10px] tracking-widest uppercase">
+            Services
           </div>
+          <h2
+            className="section-heading font-black tracking-tight text-white mt-3 mx-auto max-w-2xl"
+            style={{ fontSize: "clamp(28px, 4.5vw, 44px)" }}
+          >
+            Six ways we help businesses ship.
+          </h2>
+          <Link
+            href="/services"
+            className="animated-link inline-block mt-5 sm:mt-6 text-[#6a6a6a] hover:text-white text-sm whitespace-nowrap"
+          >
+            See all services →
+          </Link>
         </div>
 
         <div
