@@ -43,7 +43,7 @@ export function DrftView({ project }: { project: Project }) {
             <span style={{ color: DRFT_PRIMARY }}>shipped in five weeks.</span>
           </>
         }
-        primaryMetric="Zero to $189 jackets · 4.7× industry-average email open rate · sold out twice."
+        primaryMetric="Zero to $189 jackets · 1.8× industry-average email open rate · sold out twice."
         accentColor={DRFT_PRIMARY}
         accentRGB={DRFT_RGB}
       />
@@ -129,9 +129,9 @@ export function DrftView({ project }: { project: Project }) {
         role="Founder · DRFT"
         variant="deep"
       >
-        I was skeptical about AI in a creative business — worried it would
-        make everything feel generic. Flowtix proved the opposite. The
-        systems they built made us faster without making us less creative.
+        I had the garments and a typewriter — no brand, no store, no time.
+        Flowtix shipped all three in five weeks without sanding the workwear
+        edge off. The clothes feel handmade; the system around them runs itself.
       </PullQuote>
 
       {/* 7 — BRAND TAKEOVER — the cream-page section restyle */}

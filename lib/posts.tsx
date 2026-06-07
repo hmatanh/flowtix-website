@@ -869,5 +869,7 @@ export function getPostBySlug(slug: string) {
 export function getRelatedPosts(slug: string, limit = 3) {
   const post = getPostBySlug(slug);
   if (!post) return posts.slice(0, limit);
-  return posts.filter((p) => p.slug !== slug).slice(0, limit);
+  const sameCat = posts.filter(p => p.slug !== slug && p.category === post.category);
+  const others = posts.filter(p => p.slug !== slug && p.category !== post.category);
+  return [...sameCat, ...others].slice(0, limit);
 }

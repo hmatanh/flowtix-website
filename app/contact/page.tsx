@@ -27,20 +27,12 @@ import {
 
 const EASE = [0.21, 0.47, 0.32, 0.98] as const;
 
-const interests = [
-  "AI System",
-  "Automation",
-  "Design & Brand",
-  "Web Development",
-  "AI Consulting",
-  "White-label Product",
-  "Other",
-];
+const interests = ["Automation", "AI Agents", "Internal Tools", "MVP / Product", "Web Development", "Design & Brand", "Other"];
 
 const countryCodes = ["+1", "+44", "+972", "+49", "+33", "+61", "+91"];
 
 const fieldClass =
-  "bg-[#0D0D0D] border border-[#1a1a1a] text-white px-4 py-3.5 rounded-xl w-full mb-4 outline-none focus:border-blue-500/50 focus:shadow-[0_0_20px_rgba(59,130,246,0.1)] transition-all duration-300 placeholder-[#444]";
+  "bg-[#0D0D0D] border border-[#1a1a1a] text-white px-4 py-3.5 rounded-xl w-full mb-4 outline-none focus:border-blue-500/50 focus:shadow-[0_0_20px_rgba(59,130,246,0.1)] transition-all duration-300 placeholder-[#888]";
 
 const headlineWords = [
   "Let’s",
@@ -94,7 +86,7 @@ const MONTH_NAMES = [
   "November",
   "December",
 ];
-const TIME_SLOTS = ["9:00 AM", "10:00 AM", "2:00 PM", "3:00 PM", "4:00 PM"];
+const TIME_SLOTS = ["9:00 AM CET", "10:00 AM CET", "2:00 PM CET", "3:00 PM CET", "4:00 PM CET"];
 
 /* ───────────────────────────────────────────────────────────────
    Booking-details modal
@@ -537,7 +529,9 @@ function CalendarBooking() {
   function isAvailable(d: number) {
     const weekday = new Date(year, month, d).getDay();
     const isWeekend = weekday === 0 || weekday === 6;
-    const isPast = d < today;
+    const cellDate = new Date(year, month, d);
+    const todayDate = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    const isPast = cellDate < todayDate;
     return !isWeekend && !isPast;
   }
 
@@ -631,7 +625,7 @@ function CalendarBooking() {
               <button
                 type="button"
                 disabled
-                className="w-8 h-8 inline-flex items-center justify-center text-[#222] cursor-not-allowed"
+                className="w-11 h-11 inline-flex items-center justify-center text-[#222] cursor-not-allowed"
                 aria-label="Previous month"
               >
                 <IconChevronLeft size={16} stroke={1.5} />
@@ -642,7 +636,7 @@ function CalendarBooking() {
               <button
                 type="button"
                 disabled
-                className="w-8 h-8 inline-flex items-center justify-center text-[#222] cursor-not-allowed"
+                className="w-11 h-11 inline-flex items-center justify-center text-[#222] cursor-not-allowed"
                 aria-label="Next month"
               >
                 <IconChevronRight size={16} stroke={1.5} />
@@ -675,7 +669,7 @@ function CalendarBooking() {
                       setSelectedTime(null);
                     }}
                     className={[
-                      "aspect-square inline-flex items-center justify-center text-sm rounded-lg transition-all relative",
+                      "aspect-square inline-flex items-center justify-center text-sm rounded-lg transition-all relative min-h-[40px] min-w-[40px] sm:min-h-[44px] sm:min-w-[44px]",
                       available
                         ? selected
                           ? "bg-[#111] border border-blue-500/50 text-white shadow-[0_0_18px_rgba(59,130,246,0.15)]"
@@ -684,7 +678,7 @@ function CalendarBooking() {
                     ].join(" ")}
                   >
                     {d}
-                    {isToday && (
+                    {isToday && available && (
                       <span
                         className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-blue-400"
                         aria-hidden="true"
@@ -724,7 +718,7 @@ function CalendarBooking() {
                           key={t}
                           type="button"
                           onClick={() => setSelectedTime(t)}
-                          className={`border rounded-lg px-4 py-2 text-sm cursor-pointer transition-all ${
+                          className={`border rounded-lg px-4 py-2 text-sm cursor-pointer transition-all min-h-[44px] ${
                             selected
                               ? "border-blue-500/60 text-white bg-blue-500/5"
                               : "border-[#1a1a1a] text-[#6a6a6a] hover:border-blue-500/50 hover:text-white"
@@ -845,14 +839,6 @@ export default function ContactPage() {
       return;
     }
 
-    if (!recordAttempt()) {
-      setRateLimited(true);
-      setErrors({
-        form: "Too many attempts. Please wait a few minutes and try again.",
-      });
-      return;
-    }
-
     const { valid, errors: validationErrors } = validateForm({
       name,
       company,
@@ -874,14 +860,22 @@ export default function ContactPage() {
       return;
     }
 
+    if (!recordAttempt()) {
+      setRateLimited(true);
+      setErrors({
+        form: "Too many attempts. Please wait a few minutes and try again.",
+      });
+      return;
+    }
+
     setErrors({});
 
-    const cleanName = sanitizeInput(name);
-    const cleanCompany = sanitizeInput(company);
+    const cleanName = name.trim().slice(0, 2000);
+    const cleanCompany = company.trim().slice(0, 2000);
     const cleanEmail = sanitizeEmail(email);
     const cleanPhone = sanitizePhone(`${countryCode} ${phone}`);
-    const cleanService = sanitizeInput(service);
-    const cleanMessage = sanitizeInput(message);
+    const cleanService = service.trim().slice(0, 2000);
+    const cleanMessage = message.trim().slice(0, 2000);
 
     const subject = encodeURIComponent(
       `[Flowtix] New inquiry from ${cleanName}`
@@ -1103,7 +1097,7 @@ export default function ContactPage() {
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
                       style={{ fontSize: "16px" }}
-                      className="flex-1 bg-[#0D0D0D] border border-[#1a1a1a] rounded-xl px-4 py-3.5 text-white placeholder-[#444] focus:outline-none focus:border-blue-500/50 focus:shadow-[0_0_20px_rgba(59,130,246,0.08)] transition-all duration-300 min-h-[44px]"
+                      className="flex-1 bg-[#0D0D0D] border border-[#1a1a1a] rounded-xl px-4 py-3.5 text-white placeholder-[#888] focus:outline-none focus:border-blue-500/50 focus:shadow-[0_0_20px_rgba(59,130,246,0.08)] transition-all duration-300 min-h-[44px]"
                     />
                   </div>
 

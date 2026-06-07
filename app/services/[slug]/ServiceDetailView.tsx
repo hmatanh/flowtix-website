@@ -25,7 +25,7 @@ import { AnimatedCounter } from "@/components/AnimatedCounter";
 import { getServiceColor } from "@/components/services/ServiceVisual";
 import { ROICalculator } from "@/components/services/ROICalculator";
 
-const ROI_SLUGS = new Set(["ai-systems", "automation", "ai-sales"]);
+const ROI_SLUGS = new Set(["automation", "ai-agents", "internal-tools"]);
 
 const EASE = [0.21, 0.47, 0.32, 0.98] as const;
 
@@ -86,7 +86,7 @@ export function ServiceDetailView({ slug }: { slug: string }) {
 
         <div className="relative page-container">
           <FadeIn>
-            <nav className="text-[#555] text-xs sm:text-sm flex items-center gap-2 mb-8 sm:mb-10">
+            <nav className="text-[#888] text-xs sm:text-sm flex items-center gap-2 mb-8 sm:mb-10">
               <Link
                 href="/services"
                 className="hover:text-white transition-colors"
@@ -372,7 +372,7 @@ export function ServiceDetailView({ slug }: { slug: string }) {
             >
               How we approach{" "}
               <span style={{ color: c.primary }}>
-                {service.title.toLowerCase().split(" & ")[0]}
+                {service.title.split(" & ")[0].split(" ").map(w => /^(AI|UX|UI|MVP|CRM|API)$/.test(w) ? w : w.toLowerCase()).join(" ")}
               </span>
               .
             </h2>
@@ -684,11 +684,7 @@ export function ServiceDetailView({ slug }: { slug: string }) {
               className="font-black tracking-tighter text-white leading-[1.05]"
               style={{ fontSize: "clamp(34px, 7vw, 72px)" }}
             >
-              Ready to start{" "}
-              <span style={{ color: c.primary }}>
-                {service.title.split(" & ")[0]}
-              </span>
-              ?
+              Ready to get started?
             </h2>
           </FadeIn>
           <FadeIn delay={0.1}>
@@ -736,7 +732,7 @@ export function ServiceDetailView({ slug }: { slug: string }) {
             </div>
           </FadeIn>
           <FadeIn delay={0.3}>
-            <div className="mt-10 sm:mt-12 text-[#555] text-xs sm:text-sm">
+            <div className="mt-10 sm:mt-12 text-[#888] text-xs sm:text-sm">
               Response within 24h · Free · No commitment
             </div>
           </FadeIn>

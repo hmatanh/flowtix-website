@@ -9,12 +9,12 @@ export const metadata: Metadata = {
 
 const SECTIONS = [
   { id: "who-we-are", label: "1. Who We Are" },
-  { id: "what-we-collect", label: "2. What We Collect" },
-  { id: "how-we-use", label: "3. How We Use Information" },
-  { id: "storage-security", label: "4. Storage & Security" },
+  { id: "what-we-collect", label: "2. What Information We Collect" },
+  { id: "how-we-use", label: "3. How We Use Your Information" },
+  { id: "storage-security", label: "4. Data Storage & Security" },
   { id: "third-party", label: "5. Third-Party Services" },
   { id: "cookies", label: "6. Cookies" },
-  { id: "your-rights", label: "7. Your Rights (GDPR)" },
+  { id: "your-rights", label: "7. Your Rights (GDPR & Global)" },
   { id: "retention", label: "8. Data Retention" },
   { id: "childrens", label: "9. Children’s Privacy" },
   { id: "changes", label: "10. Changes to This Policy" },
@@ -23,7 +23,7 @@ const SECTIONS = [
 
 export default function PrivacyPage() {
   return (
-    <article id="top" className="relative page-container py-20 sm:py-24 lg:py-32"><div className="page-container">
+    <article id="top" className="relative page-container py-20 sm:py-24 lg:py-32">
       {/* Subtle ambient backdrop */}
       <div
         aria-hidden="true"
@@ -277,8 +277,9 @@ export default function PrivacyPage() {
           </a>
         </p>
         <p>
-          We will respond within 30 days. We may ask you to verify your
-          identity before fulfilling requests. If you believe we have not
+          We aim to respond within 5 business days and will reply within 30
+          days at the latest, as required by GDPR. We may ask you to verify
+          your identity before fulfilling requests. If you believe we have not
           handled your data correctly, you have the right to complain to your
           national data protection authority.
         </p>
@@ -352,6 +353,9 @@ export default function PrivacyPage() {
           <Link href="/accessibility" className="hover:text-white animated-link">
             Accessibility →
           </Link>
+          <Link href="/contact" className="hover:text-white animated-link">
+            Contact →
+          </Link>
           <Link href="/" className="hover:text-white animated-link">
             Back to home →
           </Link>
@@ -360,7 +364,7 @@ export default function PrivacyPage() {
           ↑ Back to top
         </a>
       </div>
-    </div></article>
+    </article>
   );
 }
 

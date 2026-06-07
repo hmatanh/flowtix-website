@@ -70,7 +70,6 @@ export function FounderPhoto({
         height: 580,
         perspective: 1400,
       }}
-      aria-hidden="true"
     >
       {/* =================================================================
           Brand-glow aura — soft blue radial pulse behind everything
@@ -107,6 +106,7 @@ export function FounderPhoto({
           Rotating concentric rings with brand-color tint
           ================================================================= */}
       <span
+        aria-hidden="true"
         className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full pointer-events-none founder-ring founder-ring-1"
         style={{
           width: 460,
@@ -115,6 +115,7 @@ export function FounderPhoto({
         }}
       />
       <span
+        aria-hidden="true"
         className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full pointer-events-none founder-ring founder-ring-2"
         style={{
           width: 360,
@@ -124,6 +125,7 @@ export function FounderPhoto({
         }}
       />
       <span
+        aria-hidden="true"
         className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full pointer-events-none founder-ring founder-ring-3"
         style={{
           width: 260,
@@ -173,7 +175,8 @@ export function FounderPhoto({
         <img
           src={src}
           alt="Matan Hanasav, Founder of Flowtix"
-          loading="lazy"
+          loading="eager"
+          fetchPriority="high"
           onError={(e) => {
             (e.currentTarget as HTMLImageElement).src = "/images/founder.svg";
           }}
@@ -386,6 +389,7 @@ export function FounderPhoto({
           Binary streams
           ================================================================= */}
       <m.span
+        aria-hidden="true"
         className="absolute font-mono pointer-events-none"
         style={{
           top: 80,
@@ -400,6 +404,7 @@ export function FounderPhoto({
         10110
       </m.span>
       <m.span
+        aria-hidden="true"
         className="absolute font-mono pointer-events-none"
         style={{
           bottom: 140,
@@ -414,6 +419,7 @@ export function FounderPhoto({
         01001
       </m.span>
       <m.span
+        aria-hidden="true"
         className="absolute font-mono pointer-events-none"
         style={{
           top: 320,
@@ -507,6 +513,7 @@ export function FounderPhoto({
           Code brackets — slowly rotating decorative glyphs
           ================================================================= */}
       <m.span
+        aria-hidden="true"
         className="absolute font-mono pointer-events-none"
         style={{
           top: 6,
@@ -520,6 +527,7 @@ export function FounderPhoto({
         {"{ }"}
       </m.span>
       <m.span
+        aria-hidden="true"
         className="absolute font-mono pointer-events-none"
         style={{
           bottom: 40,
@@ -533,6 +541,7 @@ export function FounderPhoto({
         {"[ ]"}
       </m.span>
       <m.span
+        aria-hidden="true"
         className="absolute font-mono pointer-events-none"
         style={{
           top: 420,
@@ -614,6 +623,7 @@ function OrbitParticle({
   // so rotation traces the ring at radius = size / 2.
   return (
     <span
+      aria-hidden="true"
       className="absolute left-1/2 top-1/2 pointer-events-none"
       style={{
         width: size,

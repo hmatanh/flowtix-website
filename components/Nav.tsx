@@ -87,7 +87,7 @@ export function Nav() {
                   key={l.href}
                   href={l.href}
                   className={`animated-link text-sm transition-colors ${
-                    active ? "text-white" : "text-[#444] hover:text-[#888]"
+                    active ? "text-white" : "text-[#9aa0a6] hover:text-white"
                   }`}
                 >
                   {l.label}
@@ -241,7 +241,7 @@ export function Nav() {
                       key={page.href}
                       href={page.href}
                       onClick={() => setOpen(false)}
-                      className="text-[#222] text-xs"
+                      className="text-[#888] text-xs"
                     >
                       {page.label}
                     </Link>

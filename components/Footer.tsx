@@ -101,9 +101,9 @@ export function Footer() {
           <div>
             <h4 className="text-white text-sm font-semibold mb-4">Products</h4>
             <ul className="space-y-3 text-sm text-[#666]">
-              <li><Link href="/products" className="animated-link hover:text-white transition-colors">Flowtix Brain</Link></li>
-              <li><Link href="/products" className="animated-link hover:text-white transition-colors">White-label</Link></li>
-              <li><Link href="/products" className="animated-link hover:text-white transition-colors">Join Waitlist</Link></li>
+              <li><Link href="/products#brain" className="animated-link hover:text-white transition-colors">Flowtix Brain</Link></li>
+              <li><Link href="/products#white-label" className="animated-link hover:text-white transition-colors">White-label</Link></li>
+              <li><Link href="/products#waitlist" className="animated-link hover:text-white transition-colors">Join Waitlist</Link></li>
             </ul>
           </div>
 
@@ -142,7 +142,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="py-6 border-t border-[#0a0a0a] flex flex-col sm:flex-row justify-between gap-2 text-[#222] text-xs safe-area-bottom">
+        <div className="py-6 border-t border-[#0a0a0a] flex flex-col sm:flex-row justify-between gap-2 text-[#777] text-xs safe-area-bottom">
           <div>© 2026 Flowtix. All rights reserved.</div>
           <div className="flex flex-wrap gap-4">
             <Link href="/privacy" className="hover:text-[#555] transition-colors">

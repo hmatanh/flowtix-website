@@ -257,7 +257,7 @@ export default function ServicesPage() {
                       className="animated-link inline-flex items-center gap-1.5 text-sm mt-7 sm:mt-8 transition-colors group"
                       style={{ color: c.primary }}
                     >
-                      <span>Explore {s.title.split(" & ")[0]}</span>
+                      <span>Explore {s.title.includes(' & ') ? s.title.split(' & ')[0] : s.title.split(' ')[0]}</span>
                       <IconArrowRight
                         size={14}
                         stroke={2}

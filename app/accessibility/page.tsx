@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function AccessibilityPage() {
   return (
-    <article id="top" className="relative page-container py-20 sm:py-24 lg:py-32"><div className="page-container">
+    <article id="top" className="relative page-container py-20 sm:py-24 lg:py-32">
       <div
         aria-hidden="true"
         className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] pointer-events-none -z-10"
@@ -73,7 +73,7 @@ export default function AccessibilityPage() {
           <li>Full keyboard navigation supported</li>
           <li>Skip to main content link provided</li>
           <li>Consistent navigation across all pages</li>
-          <li>Clear page titles and headings hierarchy</li>
+          <li>Clear page titles and heading hierarchy</li>
         </ul>
         <p>
           <strong>Content:</strong>
@@ -141,7 +141,7 @@ export default function AccessibilityPage() {
             <strong>Subject line:</strong> Accessibility Request
           </li>
           <li>
-            <strong>Response time:</strong> Within 3 business days
+            <strong>Response time:</strong> Within 5 business days
           </li>
         </ul>
         <p>
@@ -165,6 +165,7 @@ export default function AccessibilityPage() {
           <Link href="/privacy" className="hover:text-white animated-link">
             Privacy Policy →
           </Link>
+          <Link href="/terms" className="hover:text-white animated-link">Terms of Service →</Link>
           <Link href="/" className="hover:text-white animated-link">
             Back to home →
           </Link>
@@ -173,7 +174,7 @@ export default function AccessibilityPage() {
           ↑ Back to top
         </a>
       </div>
-    </div></article>
+    </article>
   );
 }
 

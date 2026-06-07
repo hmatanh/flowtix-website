@@ -75,7 +75,7 @@ function ProjectCard({
           {/* Eyebrow row: industry · year */}
           <div className="flex items-center justify-between text-[10px] sm:text-[11px] tracking-[0.22em] uppercase font-medium">
             <span className="text-[#9a9a9a]">{project.industry}</span>
-            <span className="text-[#555] font-mono tabular-nums">
+            <span className="text-[#888] font-mono tabular-nums">
               {project.year}
             </span>
           </div>
@@ -169,7 +169,7 @@ function NewWorkCard() {
         <div className="relative h-full flex flex-col p-8 sm:p-10 lg:p-12">
           <div className="flex items-center justify-between text-[10px] sm:text-[11px] tracking-[0.22em] uppercase font-medium">
             <span className="text-[#9a9a9a]">Your project · 2026</span>
-            <span className="text-[#555] font-mono">06</span>
+            <span className="text-[#888] font-mono">06</span>
           </div>
 
           <div className="mt-auto">
@@ -283,7 +283,7 @@ export default function WorkPage() {
           </FadeIn>
 
           <FadeIn delay={0.7}>
-            <div className="mt-8 sm:mt-10 inline-flex items-center gap-5 sm:gap-7 text-[10px] sm:text-[11px] tracking-[0.22em] uppercase text-[#888]">
+            <div className="mt-8 sm:mt-10 flex flex-wrap justify-center items-center gap-x-5 gap-y-2 sm:gap-7 text-[10px] sm:text-[11px] tracking-[0.22em] uppercase text-[#888]">
               <span>5 case studies</span>
               <span aria-hidden="true" className="h-3 w-px bg-[#1f1f1f]" />
               <span>2024 – 2025</span>
@@ -293,7 +293,7 @@ export default function WorkPage() {
           </FadeIn>
 
           <FadeIn delay={0.85}>
-            <p className="text-[#222] text-[11px] mt-9 sm:mt-12">
+            <p className="text-[#777] text-[11px] mt-9 sm:mt-12">
               Client names are fictional. Work and results are representative.
             </p>
           </FadeIn>

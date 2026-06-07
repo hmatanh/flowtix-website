@@ -186,23 +186,23 @@ export const projects: Project[] = [
       "Advisor dashboard — clients, reviews, AI alerts, and performance in one view",
     ],
     results: [
-      { value: "0 min", label: "Report creation (from 3h per client)" },
+      { value: "<5 min", label: "Report creation (from 3h per client)" },
       { value: "91%", label: "Client portal adoption in 30 days" },
       { value: "8 min", label: "Advisor morning prep (from 45 min)" },
     ],
     testimonial: {
       quote:
         "Our clients now think we have a team of analysts behind us. We don’t. We have Flowtix.",
-      attribution: "Marcus Osei, Managing Partner",
+      attribution: "Eitan Shaked, Managing Partner",
     },
   },
   {
     slug: "drft",
     name: "Drft",
     displayName: "DRFT",
-    tagline: "Gear that moves with you",
+    tagline: "Heavy fabrics. Honest fit.",
     year: "2024",
-    industry: "DTC · Outdoor & Lifestyle",
+    industry: "DTC · Fashion / Workwear",
     category: "Brand + Shopify + AI Content",
     tags: ["Brand & Design", "Web Development", "AI Systems", "Automation"],
     description:
@@ -283,7 +283,7 @@ export const projects: Project[] = [
     what: [
       "Brand refresh — modernized identity without a full rebrand",
       "Brief intake AI — client fills simple form, AI generates full creative brief in Linx’s format",
-      "Proposal AI trained on 40+ past proposals — tailored proposals in 8 minutes instead of 8 hours",
+      "Proposal AI trained on 40+ past proposals — tailored proposals in 45 minutes instead of 8 hours",
       "Reporting AI — pulls from Meta/Google/GA, generates branded monthly PDF automatically",
       "Client portal with campaign performance, report downloads, creative approvals",
       "Team dashboard with project status, deliverables, AI-flagged anomalies",

@@ -44,7 +44,7 @@ const upcoming = [
     name: "Flowtix Reach",
     tag: "Customer Voice",
     desc: "AI-summarized customer interviews + product feedback synthesis.",
-    eta: "Q1 2026",
+    eta: "Q1 2027",
     color: "#F59E0B",
   },
 ];
@@ -122,7 +122,7 @@ export default function ProductsPage() {
       </section>
 
       {/* ============== FLOWTIX BRAIN (HERO PRODUCT) ============== */}
-      <section>
+      <section id="brain">
         <FadeIn>
           <m.div
             animate={{
@@ -220,7 +220,7 @@ export default function ProductsPage() {
                   ))}
                 </StaggerContainer>
 
-                <div className="mt-8 sm:mt-10">
+                <div id="waitlist" className="mt-8 sm:mt-10 scroll-mt-24">
                   <AnimatePresence mode="wait">
                     {submitted ? (
                       <m.div
@@ -257,7 +257,7 @@ export default function ProductsPage() {
                             boxShadow: "0 0 30px rgba(59,130,246,0.4)",
                           }}
                           whileTap={{ scale: 0.98 }}
-                          className="bg-[#3B82F6] hover:bg-[#2563EB] text-black px-6 py-3.5 rounded-xl font-bold text-sm transition-colors inline-flex items-center justify-center gap-2"
+                          className="bg-[#3B82F6] hover:bg-[#2563EB] text-white px-6 py-3.5 rounded-xl font-bold text-sm transition-colors inline-flex items-center justify-center gap-2"
                         >
                           Join Waitlist
                           <IconArrowRight size={14} stroke={2.5} aria-hidden="true" />
@@ -273,7 +273,7 @@ export default function ProductsPage() {
                     <span>·</span>
                     <span>Notify on launch</span>
                     <span>·</span>
-                    <span>Cancel anytime</span>
+                    <span>Unsubscribe anytime</span>
                   </div>
                 </div>
               </div>
@@ -403,7 +403,7 @@ export default function ProductsPage() {
       </section>
 
       {/* ============== WHITE-LABEL ============== */}
-      <section className="mt-20 sm:mt-24 bg-[#040404] border-t border-[#0a0a0a]">
+      <section id="white-label" className="mt-20 sm:mt-24 bg-[#040404] border-t border-[#0a0a0a]">
         <div className="page-container py-16 sm:py-20 lg:py-24 grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
           <FadeIn direction="right">
             <div className="text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-blue-400 mb-3">
@@ -499,6 +499,36 @@ export default function ProductsPage() {
                 </div>
               </div>
             </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* ============== CLOSING CTA ============== */}
+      <section className="mt-20 sm:mt-24">
+        <div className="page-container py-16 sm:py-20 text-center">
+          <FadeIn>
+            <h2
+              className="font-black tracking-tight text-white leading-[1.05]"
+              style={{ fontSize: "clamp(28px, 5vw, 48px)" }}
+            >
+              Not sure where to start?
+            </h2>
+            <p className="text-[#aaa] mt-5 sm:mt-6 leading-[1.65] sm:leading-relaxed text-[15px] sm:text-base max-w-xl mx-auto">
+              Skip the waitlist and talk to us directly. We&apos;ll map the
+              right system to your business in a 30-minute call.
+            </p>
+            <m.a
+              href="/contact/"
+              whileHover={{
+                scale: 1.02,
+                boxShadow: "0 0 30px rgba(59,130,246,0.4)",
+              }}
+              whileTap={{ scale: 0.98 }}
+              className="inline-flex items-center gap-2 bg-[#3B82F6] hover:bg-[#2563EB] text-white px-6 py-3.5 rounded-2xl mt-7 sm:mt-8 transition-colors text-sm font-bold"
+            >
+              Book a Strategy Call
+              <IconArrowRight size={14} stroke={2.5} aria-hidden="true" />
+            </m.a>
           </FadeIn>
         </div>
       </section>

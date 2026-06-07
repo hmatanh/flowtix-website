@@ -204,7 +204,7 @@ export default function AboutPage() {
             <div className="mt-10 sm:mt-12 grid grid-cols-3 gap-3 max-w-md sm:max-w-lg mx-auto">
               {[
                 { value: "10+", label: "Years design" },
-                { value: "50+", label: "AI deploys" },
+                { value: "5+", label: "AI shipped" },
                 { value: "5", label: "Industries" },
               ].map((s) => (
                 <div
@@ -279,7 +279,7 @@ export default function AboutPage() {
           {/* RIGHT — Story */}
           <div className="order-2 text-left">
             <FadeIn direction="left">
-              <div className="section-label text-[#1a1a1a] text-[11px] tracking-widest uppercase mb-6">
+              <div className="section-label text-blue-400/80 text-[11px] tracking-widest uppercase mb-6">
                 The Founder
               </div>
               <h2
@@ -520,7 +520,7 @@ export default function AboutPage() {
                   </div>
                 </div>
                 <div className="pt-1">
-                  <div className="text-[#1a1a1a] text-[10px] uppercase tracking-widest">
+                  <div className="text-blue-400/70 text-[10px] uppercase tracking-widest">
                     {s.duration}
                   </div>
                   <h3 className="text-white text-lg font-semibold mt-1">

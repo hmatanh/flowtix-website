@@ -21,7 +21,7 @@ const SECTIONS = [
 
 export default function TermsPage() {
   return (
-    <article id="top" className="relative page-container py-20 sm:py-24 lg:py-32"><div className="page-container">
+    <article id="top" className="relative page-container py-20 sm:py-24 lg:py-32">
       <div
         aria-hidden="true"
         className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] pointer-events-none -z-10"
@@ -257,6 +257,7 @@ export default function TermsPage() {
           <Link href="/privacy" className="hover:text-white animated-link">
             Privacy Policy →
           </Link>
+          <Link href="/accessibility" className="hover:text-white animated-link">Accessibility →</Link>
           <Link href="/contact" className="hover:text-white animated-link">
             Contact →
           </Link>
@@ -268,7 +269,7 @@ export default function TermsPage() {
           ↑ Back to top
         </a>
       </div>
-    </div></article>
+    </article>
   );
 }
 

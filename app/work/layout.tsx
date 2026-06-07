@@ -5,9 +5,9 @@ const url = "https://flowtix.ai/work/";
 export const metadata: Metadata = {
   title: { absolute: "Work — Case Studies Across 5 Industries | Flowtix" },
   description:
-    "Selected work from Flowtix. AI systems, automation, brand identity and digital products across real estate, wellness, fintech, hospitality, and logistics.",
+    "Selected work from Flowtix. AI systems, automation, brand identity and digital products across real estate, digital health, wealth management, DTC outdoor, and creative agency.",
   keywords:
-    "AI case studies, real estate AI, wellness AI, fintech AI, hospitality AI, logistics AI, AI portfolio",
+    "AI case studies, real estate AI, digital health AI, wealth management AI, DTC AI, creative agency AI, AI portfolio",
   alternates: { canonical: url },
   openGraph: {
     url,

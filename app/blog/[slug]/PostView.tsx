@@ -158,7 +158,7 @@ export function PostView({
                   href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(`https://flowtix.ai/blog/${post.slug}/`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Share on Twitter"
+                  aria-label="Share on X"
                   className="w-9 h-9 inline-flex items-center justify-center border border-[#1a1a1a] rounded-lg text-[#888] hover:text-white hover:border-[#2a2a2a] transition-colors"
                 >
                   <IconBrandX size={14} stroke={1.5} aria-hidden="true" />
@@ -202,7 +202,7 @@ export function PostView({
       <section>
         <div className="page-container grid grid-cols-1 lg:grid-cols-[1fr_220px] gap-12">
           <article className="prose-flowtix max-w-2xl">{post.body}</article>
-          <aside>
+          <aside className="hidden lg:block">
             <TableOfContents entries={post.toc} />
           </aside>
         </div>
@@ -240,7 +240,7 @@ export function PostView({
                 href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(`https://flowtix.ai/blog/${post.slug}/`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Share on Twitter"
+                aria-label="Share on X"
                 className="w-9 h-9 inline-flex items-center justify-center border border-[#1a1a1a] rounded-lg text-[#888] hover:text-white hover:border-[#2a2a2a] transition-colors"
               >
                 <IconBrandX size={14} stroke={1.5} aria-hidden="true" />

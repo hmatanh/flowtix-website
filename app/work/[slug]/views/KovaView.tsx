@@ -17,6 +17,7 @@ import { MetricStrip } from "@/components/case-study/MetricStrip";
 import { StorySection } from "@/components/case-study/StorySection";
 import { AnnotatedScreen } from "@/components/case-study/AnnotatedScreen";
 import { PullQuote } from "@/components/case-study/PullQuote";
+import { DeliverablesList } from "@/components/case-study/DeliverablesList";
 import { CaseFooter } from "@/components/case-study/CaseFooter";
 
 import { ScreenDashboard } from "@/components/clients/kova/v2/ScreenDashboard";
@@ -238,6 +239,40 @@ export function KovaView({ project }: { project: Project }) {
         was sending them without changes. By the third I forgot it was an AI.
         That&apos;s when I knew it had become part of how I work.
       </PullQuote>
+
+      {/* 11.5 — DELIVERABLES */}
+      <DeliverablesList
+        accentRGB={KOVA_RGB}
+        eyebrow="What we built"
+        heading="One inbox, one engine, one source of truth."
+        items={[
+          {
+            number: "01",
+            title: "Unified lead inbox",
+            body: "Email, WhatsApp, Instagram and form replies in one calm thread.",
+          },
+          {
+            number: "02",
+            title: "AI buyer-listing matcher",
+            body: "Scores every active buyer against every new MLS listing in seconds.",
+          },
+          {
+            number: "03",
+            title: "Tone-of-voice reply drafting",
+            body: "Follow-ups composed in each agent's voice, reviewed before send.",
+          },
+          {
+            number: "04",
+            title: "Agent dashboard",
+            body: "Hot matches, pipeline progression and AI suggestions on one screen.",
+          },
+          {
+            number: "05",
+            title: "Auditable activity log",
+            body: "Every AI-initiated action tagged so brokers can see exactly what shipped.",
+          },
+        ]}
+      />
 
       {/* 12 — Closing argument */}
       <StorySection

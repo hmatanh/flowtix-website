@@ -58,9 +58,9 @@ function FeaturedVisual({ color, title }: { color: string; title: string }) {
           {/* Mock article lines */}
           <div className="mt-6 space-y-2">
             <div className="h-2.5 bg-white/10 rounded w-3/4" />
-            <div className="h-2 bg-white/6 rounded w-full" />
-            <div className="h-2 bg-white/6 rounded w-5/6" />
-            <div className="h-2 bg-white/6 rounded w-2/3" />
+            <div className="h-2 bg-white/5 rounded w-full" />
+            <div className="h-2 bg-white/5 rounded w-5/6" />
+            <div className="h-2 bg-white/5 rounded w-2/3" />
           </div>
         </div>
         <div>
@@ -505,7 +505,7 @@ export function BlogClient({ posts }: { posts: PostMeta[] }) {
                 animate={{ opacity: 1, scale: 1 }}
                 className="mt-6 text-blue-400 text-sm font-medium"
               >
-                ✓ Subscribed. Talk soon.
+                ✓ Newsletter launching soon — we'll email you at launch.
               </m.div>
             ) : (
               <form

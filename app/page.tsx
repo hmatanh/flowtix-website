@@ -237,7 +237,7 @@ export default function Home() {
               <span className="relative h-2 w-2 rounded-full bg-blue-500" />
             </span>
             {/* Both labels in ONE inline text run so the dot always stays inline next to the text */}
-            <span className="text-[#cccccc] text-[8.5px] sm:text-[11px] tracking-[0.08em] sm:tracking-[0.12em] uppercase font-medium whitespace-nowrap">
+            <span className="text-[#cccccc] text-[10px] sm:text-[11px] tracking-[0.08em] sm:tracking-[0.12em] uppercase font-medium whitespace-nowrap">
               Digital Systems Studio
               <span className="text-[#555] mx-1.5 sm:mx-2">·</span>
               Built for Operators
@@ -280,7 +280,7 @@ export default function Home() {
                   <span className="block text-white text-sm font-semibold">
                     {s.value}
                   </span>
-                  <span className="block text-[#333] text-xs mt-0.5">
+                  <span className="block text-[#888] text-xs mt-0.5">
                     {s.label}
                   </span>
                 </span>
@@ -320,13 +320,13 @@ export default function Home() {
           {SOCIAL_STATS.map((s, i) => (
             <div
               key={s.label}
-              className="flex items-stretch flex-1 min-w-[40%] sm:min-w-[20%]"
+              className="flex items-stretch flex-1 basis-[45%] sm:basis-auto sm:min-w-[20%]"
             >
               <div className="flex-1 text-center px-3">
                 <div className="text-3xl sm:text-4xl font-black text-white tracking-tight">
                   <AnimatedCounter value={s.value} suffix={s.suffix} />
                 </div>
-                <div className="text-[#333] text-[10px] sm:text-xs tracking-wider mt-2 uppercase">
+                <div className="text-[#777] text-[10px] sm:text-xs tracking-wider mt-2 uppercase">
                   {s.label}
                 </div>
               </div>
@@ -438,7 +438,7 @@ export default function Home() {
         </span>
         <div className="relative page-container grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-12 lg:gap-16 items-start">
           <FadeIn direction="right">
-            <div className="section-label text-[#222] text-[10px] tracking-widest uppercase">
+            <div className="section-label text-[#555] text-[10px] tracking-widest uppercase">
               The Problem
             </div>
             <h2
@@ -472,7 +472,7 @@ export default function Home() {
                 >
                   <div className="flex items-center gap-2 mb-3">
                     <span className="w-1.5 h-1.5 rounded-full bg-rose-500" />
-                    <span className="text-[#222] text-[10px] uppercase tracking-widest">
+                    <span className="text-[#777] text-[10px] uppercase tracking-widest">
                       Common Reality
                     </span>
                   </div>
@@ -625,7 +625,7 @@ export default function Home() {
             <div className="w-1 shrink-0" />
           </div>
         </div>
-        <div className="text-[#1a1a1a] text-xs text-center mt-6">
+        <div className="text-[#666] text-xs text-center mt-6">
           ← Scroll to explore →
         </div>
       </section>
@@ -738,19 +738,7 @@ export default function Home() {
                 <Link
                   href={`/work/${p.slug}/`}
                   aria-label={`Open ${p.name} case study`}
-                  className="group relative block rounded-2xl sm:rounded-[20px] overflow-hidden border bg-[#080808] transition-all duration-500 hover:-translate-y-1 hover:bg-[#0B0B0B] h-full"
-                  style={{
-                    borderColor: "rgba(255,255,255,0.06)",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = "rgba(255,255,255,0.16)";
-                    e.currentTarget.style.boxShadow =
-                      "0 40px 90px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.04)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = "rgba(255,255,255,0.06)";
-                    e.currentTarget.style.boxShadow = "none";
-                  }}
+                  className="group relative block rounded-2xl sm:rounded-[20px] overflow-hidden border border-white/[0.06] bg-[#080808] transition-all duration-500 hover:-translate-y-1 hover:bg-[#0B0B0B] hover:border-white/[0.16] hover:shadow-[0_40px_90px_rgba(0,0,0,0.45),0_0_0_1px_rgba(255,255,255,0.04)] h-full"
                 >
                   {/* Visual artifact — 16:10 ratio */}
                   <div className="relative w-full aspect-[16/10] overflow-hidden border-b border-white/[0.04]">
@@ -1025,12 +1013,12 @@ export default function Home() {
                 href="/work"
                 className="inline-flex items-center justify-center border border-[#1a1a1a] text-[#888] px-8 py-4 rounded-xl hover:border-[#2a2a2a] hover:text-white transition-colors w-full sm:w-auto min-h-[52px]"
               >
-                See Our Work →
+                View Our Work →
               </Link>
             </div>
           </FadeIn>
           <FadeIn delay={0.4}>
-            <div className="mt-12 flex items-center justify-center gap-3 text-[#222] text-xs flex-wrap">
+            <div className="mt-12 flex items-center justify-center gap-3 text-[#888] text-xs flex-wrap">
               <span className="inline-flex items-center gap-1.5">
                 <IconLockSquare size={14} stroke={1.5} />
                 All conversations are confidential

@@ -10,7 +10,7 @@ export const batch10: Post[] = [
     category: "Business",
     categoryColor: "#F59E0B",
     readTime: "9 min read",
-    date: "July 31, 2026",
+    date: "May 29, 2026",
     excerpt:
       "Operators who use AI well develop a small set of daily habits that compound over months. Here is the practical day-shape of an AI-augmented operator in 2026.",
     author: "Flowtix Team",
@@ -108,7 +108,7 @@ export const batch10: Post[] = [
     category: "Automation",
     categoryColor: "#10B981",
     readTime: "8 min read",
-    date: "August 1, 2026",
+    date: "May 30, 2026",
     excerpt:
       "AI gives operators a real chance to fix meetings — not by replacing them but by removing the reasons most meetings exist. Here is the practical playbook.",
     author: "Flowtix Team",
@@ -209,7 +209,7 @@ export const batch10: Post[] = [
     category: "Business",
     categoryColor: "#F59E0B",
     readTime: "8 min read",
-    date: "August 2, 2026",
+    date: "May 31, 2026",
     excerpt:
       "A founder's personal AI stack is different from a company's. Here is the practical 2026 setup — tools, habits, and workflows for the founder herself.",
     author: "Flowtix Team",
@@ -311,7 +311,7 @@ export const batch10: Post[] = [
     category: "Business",
     categoryColor: "#F59E0B",
     readTime: "9 min read",
-    date: "August 3, 2026",
+    date: "June 1, 2026",
     excerpt:
       "AI created new roles that don't have established job titles yet. Here are the six emerging roles every growing company will hire for in the next 18 months.",
     author: "Flowtix Team",
@@ -414,7 +414,7 @@ export const batch10: Post[] = [
     category: "Business",
     categoryColor: "#F59E0B",
     readTime: "9 min read",
-    date: "August 4, 2026",
+    date: "June 2, 2026",
     excerpt:
       "&ldquo;AI-first&rdquo; is a buzzword without a clear shape. Here is the practical org chart for an AI-first 50&ndash;200 person company in 2026.",
     author: "Flowtix Team",
@@ -516,7 +516,7 @@ export const batch10: Post[] = [
     category: "Business",
     categoryColor: "#F59E0B",
     readTime: "8 min read",
-    date: "August 5, 2026",
+    date: "June 3, 2026",
     excerpt:
       "Privacy in AI is no longer theoretical — laws are in place and enforcement is happening. Here is the practical founder's checklist for staying clean.",
     author: "Flowtix Team",
@@ -622,7 +622,7 @@ export const batch10: Post[] = [
     category: "Business",
     categoryColor: "#F59E0B",
     readTime: "8 min read",
-    date: "August 6, 2026",
+    date: "June 4, 2026",
     excerpt:
       "AI security isn't only an engineering concern. Here is the practical guide for non-engineers — what to worry about, what to skip, and what to enforce.",
     author: "Flowtix Team",
@@ -734,7 +734,7 @@ export const batch10: Post[] = [
     category: "Business",
     categoryColor: "#F59E0B",
     readTime: "8 min read",
-    date: "August 7, 2026",
+    date: "June 5, 2026",
     excerpt:
       "Not every workflow benefits from AI. Here is the practical map of where to keep humans front and center — and why these boundary cases matter.",
     author: "Flowtix Team",
@@ -830,7 +830,7 @@ export const batch10: Post[] = [
     category: "Business",
     categoryColor: "#F59E0B",
     readTime: "8 min read",
-    date: "August 8, 2026",
+    date: "June 6, 2026",
     excerpt:
       "Tracking AI adoption is necessary; surveillance is destructive. Here is how to measure adoption in a way that builds trust instead of breaking it.",
     author: "Flowtix Team",
@@ -936,7 +936,7 @@ export const batch10: Post[] = [
     category: "Business",
     categoryColor: "#F59E0B",
     readTime: "10 min read",
-    date: "August 9, 2026",
+    date: "June 7, 2026",
     excerpt:
       "Most AI roadmaps are 18-month tactics dressed as strategy. Here is what a real five-year AI roadmap looks like — phased, opinionated, and built to last.",
     author: "Flowtix Team",

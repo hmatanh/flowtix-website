@@ -25,8 +25,8 @@ type Preset = {
 };
 
 const PRESETS: Record<string, Preset> = {
-  "ai-systems": {
-    slug: "ai-systems",
+  "ai-agents": {
+    slug: "ai-agents",
     hours: 12,
     rate: 65,
     people: 8,
@@ -46,17 +46,6 @@ const PRESETS: Record<string, Preset> = {
     peopleRange: [1, 200],
     headline: "What automation costs vs. what it returns.",
     hint: "Hours of manual work the automation removes from each team member per week.",
-  },
-  "ai-sales": {
-    slug: "ai-sales",
-    hours: 10,
-    rate: 80,
-    people: 5,
-    hoursRange: [2, 30],
-    rateRange: [40, 250],
-    peopleRange: [1, 50],
-    headline: "What sales AI returns to your reps.",
-    hint: "Hours each rep gets back per week — admin, CRM updates, proposals.",
   },
 };
 

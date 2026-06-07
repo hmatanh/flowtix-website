@@ -41,7 +41,7 @@ export function AnnouncementBar() {
           transition={{ duration: 0.3, ease: [0.21, 0.47, 0.32, 0.98] }}
           className="overflow-hidden sticky top-0 z-[60] bg-[#0a0a0a] border-b border-[#1a1a1a]"
         >
-          <div className="h-9 flex items-center justify-center gap-3 px-4 text-xs">
+          <div className="h-9 flex items-center justify-center gap-3 px-4 pr-10 text-xs">
             <span className="relative flex h-2 w-2 shrink-0">
               <span className="animate-ping absolute h-full w-full rounded-full bg-emerald-400 opacity-75" />
               <span className="relative h-2 w-2 rounded-full bg-emerald-500" />

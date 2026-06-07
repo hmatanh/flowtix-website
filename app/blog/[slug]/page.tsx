@@ -34,7 +34,7 @@ export async function generateMetadata({
       siteName: "Flowtix",
       title: post.title,
       description,
-      publishedTime: post.date,
+      publishedTime: new Date(post.date).toISOString(),
       authors: [post.author],
       tags: post.tags,
     },
@@ -58,14 +58,15 @@ export default async function Page({
   const related = getRelatedPosts(slug, 3);
 
   // JSON-LD structured data for SEO
+  const iso = new Date(post.date).toISOString();
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: post.title,
     description: post.excerpt,
     image: "https://flowtix.ai/icon.svg",
-    datePublished: post.date,
-    dateModified: post.date,
+    datePublished: iso,
+    dateModified: iso,
     author: {
       "@type": "Organization",
       name: post.author,
