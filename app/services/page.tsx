@@ -39,7 +39,7 @@ export default function ServicesPage() {
   return (
     <>
       {/* ============== HERO ============== */}
-      <section className="relative py-20 sm:py-24 lg:py-32 px-6 md:px-10 xl:px-12 text-center overflow-hidden">
+      <section className="relative py-20 sm:py-24 lg:py-32 text-center overflow-hidden">
         {/* Multi-layered ambient background */}
         <div
           aria-hidden="true"
@@ -65,7 +65,7 @@ export default function ServicesPage() {
           }}
         />
 
-        <div className="relative max-w-5xl mx-auto">
+        <div className="relative page-container">
           <FadeIn>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#1a1a1a] bg-[#080808] mb-6 sm:mb-8">
               <span className="relative flex h-1.5 w-1.5">
@@ -139,7 +139,7 @@ export default function ServicesPage() {
 
       {/* ============== PROOF STRIP ============== */}
       <section className="relative py-10 sm:py-14 border-y border-[#0a0a0a] overflow-hidden">
-        <div className="max-w-5xl mx-auto px-6 md:px-10 xl:px-12">
+        <div className="page-container">
           <div className="grid grid-cols-3 gap-3 sm:gap-6">
             {PROOF_POINTS.map((p, i) => {
               const Icon = p.icon;
@@ -175,7 +175,7 @@ export default function ServicesPage() {
       </section>
 
       {/* ============== SERVICES LIST ============== */}
-      <div className="max-w-6xl mx-auto px-6 md:px-10 xl:px-12">
+      <div className="page-container">
         {services.map((s, idx) => {
           const reverse = idx % 2 === 1;
           const c = getServiceColor(s.number);
@@ -288,7 +288,7 @@ export default function ServicesPage() {
       </div>
 
       {/* ============== FINAL CTA ============== */}
-      <section className="relative py-20 sm:py-28 lg:py-32 px-6 md:px-10 xl:px-12 text-center overflow-hidden">
+      <section className="relative py-20 sm:py-28 lg:py-32 text-center overflow-hidden">
         <div
           aria-hidden="true"
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] pointer-events-none"
@@ -299,7 +299,7 @@ export default function ServicesPage() {
           }}
         />
 
-        <div className="relative max-w-3xl mx-auto">
+        <div className="relative page-container">
           <FadeIn>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#1a1a1a] bg-[#080808] mb-6 sm:mb-8">
               <span className="text-[#cccccc] text-[10px] sm:text-[11px] tracking-[0.18em] uppercase font-medium">

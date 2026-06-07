@@ -112,7 +112,7 @@ export function BlogClient({ posts }: { posts: PostMeta[] }) {
   return (
     <>
       {/* ============== HERO ============== */}
-      <section className="relative py-20 sm:py-24 lg:py-32 px-6 md:px-10 xl:px-12 text-center overflow-hidden">
+      <section className="relative py-20 sm:py-24 lg:py-32 text-center overflow-hidden">
         <div
           aria-hidden="true"
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] pointer-events-none"
@@ -136,7 +136,7 @@ export function BlogClient({ posts }: { posts: PostMeta[] }) {
           }}
         />
 
-        <div className="relative max-w-4xl mx-auto">
+        <div className="relative page-container">
           <FadeIn>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#1a1a1a] bg-[#080808] mb-6 sm:mb-8">
               <IconBookmark size={11} stroke={1.5} className="text-blue-400" aria-hidden="true" />
@@ -199,8 +199,8 @@ export function BlogClient({ posts }: { posts: PostMeta[] }) {
       </section>
 
       {/* ============== FILTER TABS ============== */}
-      <section className="px-6 md:px-10 xl:px-12">
-        <div className="max-w-5xl mx-auto">
+      <section>
+        <div className="page-container">
           <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-2 -mx-4 px-4 sm:mx-0 sm:px-0 sm:justify-center sm:flex-wrap">
             {CATEGORIES.map((c) => {
               const active = filter === c;
@@ -245,8 +245,8 @@ export function BlogClient({ posts }: { posts: PostMeta[] }) {
 
       {/* ============== FEATURED POST ============== */}
       {featured && (
-        <section className="px-6 md:px-10 xl:px-12 mt-10 sm:mt-12">
-          <div className="max-w-6xl mx-auto">
+        <section className="mt-10 sm:mt-12">
+          <div className="page-container">
             <FadeIn>
               <Link
                 href={`/blog/${featured.slug}/`}
@@ -356,8 +356,8 @@ export function BlogClient({ posts }: { posts: PostMeta[] }) {
       )}
 
       {/* ============== POSTS GRID ============== */}
-      <section className="px-6 md:px-10 xl:px-12 mt-10 sm:mt-12">
-        <div className="max-w-6xl mx-auto">
+      <section className="mt-10 sm:mt-12">
+        <div className="page-container">
           <AnimatePresence mode="wait">
             <m.div
               key={filter}
@@ -462,7 +462,7 @@ export function BlogClient({ posts }: { posts: PostMeta[] }) {
       </section>
 
       {/* ============== NEWSLETTER ============== */}
-      <section className="px-6 md:px-10 xl:px-12 mt-16 sm:mt-20 mb-20 sm:mb-24">
+      <section className="mt-16 sm:mt-20 mb-20 sm:mb-24">
         <div
           className="relative max-w-3xl mx-auto rounded-2xl sm:rounded-3xl p-6 sm:p-10 lg:p-12 text-center overflow-hidden border"
           style={{

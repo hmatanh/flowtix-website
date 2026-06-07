@@ -61,7 +61,7 @@ export default function ProductsPage() {
   return (
     <>
       {/* ============== HERO ============== */}
-      <section className="relative py-20 sm:py-24 lg:py-32 px-6 md:px-10 xl:px-12 text-center overflow-hidden">
+      <section className="relative py-20 sm:py-24 lg:py-32 text-center overflow-hidden">
         <div
           aria-hidden="true"
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] pointer-events-none"
@@ -85,7 +85,7 @@ export default function ProductsPage() {
           }}
         />
 
-        <div className="relative max-w-4xl mx-auto">
+        <div className="relative page-container">
           <FadeIn>
             <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/5 mb-6 sm:mb-8">
               <span className="relative flex h-1.5 w-1.5">
@@ -122,14 +122,14 @@ export default function ProductsPage() {
       </section>
 
       {/* ============== FLOWTIX BRAIN (HERO PRODUCT) ============== */}
-      <section className="px-6 md:px-10 xl:px-12">
+      <section>
         <FadeIn>
           <m.div
             animate={{
               borderColor: ["#1a1a1a", "rgba(59,130,246,0.35)", "#1a1a1a"],
             }}
             transition={{ duration: 4, repeat: Infinity }}
-            className="relative max-w-5xl mx-auto bg-[#0D0D0D] border rounded-2xl sm:rounded-3xl p-6 sm:p-10 lg:p-16 overflow-hidden"
+            className="relative page-container bg-[#0D0D0D] border rounded-2xl sm:rounded-3xl p-6 sm:p-10 lg:p-16 overflow-hidden"
           >
             {/* Animated top hairline */}
             <div className="absolute top-0 left-0 right-0 h-px overflow-hidden pointer-events-none">
@@ -299,8 +299,8 @@ export default function ProductsPage() {
       </section>
 
       {/* ============== UPCOMING PRODUCTS ============== */}
-      <section className="px-6 md:px-10 xl:px-12 mt-12 sm:mt-16">
-        <div className="max-w-5xl mx-auto">
+      <section className="mt-12 sm:mt-16">
+        <div className="page-container">
           <FadeIn>
             <div className="text-center mb-8 sm:mb-12">
               <div className="text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-[#444] mb-2.5">
@@ -404,7 +404,7 @@ export default function ProductsPage() {
 
       {/* ============== WHITE-LABEL ============== */}
       <section className="mt-20 sm:mt-24 bg-[#040404] border-t border-[#0a0a0a]">
-        <div className="max-w-6xl mx-auto px-6 md:px-10 xl:px-12 py-16 sm:py-20 lg:py-24 grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
+        <div className="page-container py-16 sm:py-20 lg:py-24 grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
           <FadeIn direction="right">
             <div className="text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-blue-400 mb-3">
               For Agencies &amp; Resellers

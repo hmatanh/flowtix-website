@@ -99,7 +99,7 @@ export function InteractiveTour() {
         </FadeIn>
 
         {/* Tabs — desktop only */}
-        <div className="desktop-only max-w-5xl mx-auto mb-5">
+        <div className="desktop-only page-container mb-5">
           <div className="flex flex-wrap justify-center gap-2">
             {TABS.map((t) => {
               const isActive = active === t.id;
@@ -124,12 +124,12 @@ export function InteractiveTour() {
         </div>
 
         {/* Mobile nav header */}
-        <div className="max-w-5xl mx-auto mb-3">
+        <div className="page-container mb-3">
           <MobileTourNav labels={labels} index={index} setIndex={setIndex} accentColor={ORANGE} swipeContainerRef={swipeRef} />
         </div>
 
         {/* Browser frame */}
-        <div className="max-w-5xl mx-auto">
+        <div className="page-container">
           <div
             className="hidden sm:flex items-center gap-3 px-4 py-3 rounded-t-2xl border border-b-0"
             style={{ background: SURFACE, borderColor: BORDER_HARD }}
@@ -200,7 +200,7 @@ export function InteractiveTour() {
           </div>
         </div>
 
-        <div className="max-w-5xl mx-auto">
+        <div className="page-container">
           <MobileTourArrows labels={labels} index={index} setIndex={setIndex} accentColor={ORANGE} />
         </div>
       </div>

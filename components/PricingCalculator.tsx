@@ -103,7 +103,7 @@ export function PricingCalculator() {
   const result = showResult ? range(need!, size!, timeline!) : null;
 
   return (
-    <section className="section-contain relative py-24 lg:py-32 px-6 md:px-10 xl:px-12 overflow-hidden">
+    <section className="section-contain relative py-24 lg:py-32 overflow-hidden">
       <div
         aria-hidden="true"
         className="absolute -top-32 left-1/2 -translate-x-1/2 w-[800px] h-[800px] pointer-events-none"
@@ -113,7 +113,7 @@ export function PricingCalculator() {
           filter: "blur(60px)",
         }}
       />
-      <div className="relative max-w-3xl mx-auto">
+      <div className="relative page-container">
         <div className="text-center mb-10">
           <div className="text-[#222] text-[10px] tracking-widest uppercase section-label">
             Pricing

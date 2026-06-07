@@ -93,7 +93,7 @@ export function ProjectArchitecture({
   const b = project.brand;
 
   return (
-    <section className="section-contain py-20 sm:py-28 lg:py-32 px-6 md:px-10 xl:px-12 border-t border-[#0a0a0a] relative overflow-hidden">
+    <section className="section-contain py-20 sm:py-28 lg:py-32 border-t border-[#0a0a0a] relative overflow-hidden">
       {/* Soft atmosphere */}
       <div
         aria-hidden="true"
@@ -309,7 +309,7 @@ export function ProjectAIAgents({
   const b = project.brand;
 
   return (
-    <section className="section-contain py-20 sm:py-28 lg:py-32 px-6 md:px-10 xl:px-12 border-t border-[#0a0a0a] relative overflow-hidden">
+    <section className="section-contain py-20 sm:py-28 lg:py-32 border-t border-[#0a0a0a] relative overflow-hidden">
       {/* Atmosphere */}
       <div
         aria-hidden="true"
@@ -515,7 +515,7 @@ export function ProjectTechStack({
   const b = project.brand;
 
   return (
-    <section className="section-contain py-20 sm:py-28 lg:py-32 px-6 md:px-10 xl:px-12 border-t border-[#0a0a0a] relative overflow-hidden">
+    <section className="section-contain py-20 sm:py-28 lg:py-32 border-t border-[#0a0a0a] relative overflow-hidden">
       <div
         aria-hidden="true"
         className="absolute inset-0 pointer-events-none opacity-40"

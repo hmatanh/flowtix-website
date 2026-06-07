@@ -215,7 +215,7 @@ export default function WorkPage() {
   return (
     <>
       {/* ============== HERO ============== */}
-      <section className="relative py-20 sm:py-24 lg:py-32 px-6 md:px-10 xl:px-12 text-center overflow-hidden">
+      <section className="relative py-20 sm:py-24 lg:py-32 text-center overflow-hidden">
         <div
           aria-hidden="true"
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] pointer-events-none"
@@ -240,7 +240,7 @@ export default function WorkPage() {
           }}
         />
 
-        <div className="relative max-w-4xl mx-auto">
+        <div className="relative page-container">
           <FadeIn>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#1a1a1a] bg-[#080808] mb-6 sm:mb-8">
               <span className="relative flex h-1.5 w-1.5">
@@ -324,7 +324,7 @@ export default function WorkPage() {
 
       {/* ============== STATS STRIP ============== */}
       <section className="relative py-10 sm:py-14 border-y border-[#0a0a0a] overflow-hidden">
-        <div className="max-w-5xl mx-auto px-6 md:px-10 xl:px-12">
+        <div className="page-container">
           <div className="grid grid-cols-3 gap-3 sm:gap-6">
             {STATS.map((s, i) => {
               const Icon = s.icon;
@@ -360,7 +360,7 @@ export default function WorkPage() {
       </section>
 
       {/* ============== PROJECT GRID ============== */}
-      <section className="section-contain px-6 md:px-10 xl:px-12 py-16 sm:py-20 lg:py-24 overflow-hidden">
+      <section className="section-contain py-16 sm:py-20 lg:py-24 overflow-hidden">
         <div className="page-container space-y-5 sm:space-y-6">
           {/* Row 1 — KOVA full width */}
           <FadeIn>
@@ -390,7 +390,7 @@ export default function WorkPage() {
       </section>
 
       {/* ============== BOTTOM CTA ============== */}
-      <section className="relative py-20 sm:py-28 lg:py-32 px-6 md:px-10 xl:px-12 text-center overflow-hidden border-t border-[#0a0a0a]">
+      <section className="relative py-20 sm:py-28 lg:py-32 text-center overflow-hidden border-t border-[#0a0a0a]">
         <div
           aria-hidden="true"
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] pointer-events-none"
@@ -400,7 +400,7 @@ export default function WorkPage() {
             filter: "blur(80px)",
           }}
         />
-        <div className="relative max-w-3xl mx-auto">
+        <div className="relative page-container">
           <FadeIn>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#1a1a1a] bg-[#080808] mb-6 sm:mb-8">
               <span className="text-[#cccccc] text-[10px] sm:text-[11px] tracking-[0.18em] uppercase font-medium">

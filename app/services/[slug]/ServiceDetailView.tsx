@@ -44,7 +44,7 @@ export function ServiceDetailView({ slug }: { slug: string }) {
   return (
     <>
       {/* ============== HERO — per-service color theming ============== */}
-      <section className="relative px-6 md:px-10 xl:px-12 pt-20 sm:pt-24 lg:pt-32 pb-20 sm:pb-24 lg:pb-32 overflow-hidden">
+      <section className="relative pt-20 sm:pt-24 lg:pt-32 pb-20 sm:pb-24 lg:pb-32 overflow-hidden">
         {/* Service-color radial backdrop */}
         <div
           aria-hidden="true"
@@ -84,7 +84,7 @@ export function ServiceDetailView({ slug }: { slug: string }) {
           {service.number}
         </div>
 
-        <div className="relative max-w-5xl mx-auto">
+        <div className="relative page-container">
           <FadeIn>
             <nav className="text-[#444] text-xs sm:text-sm flex items-center gap-2 mb-8 sm:mb-10">
               <Link
@@ -291,7 +291,7 @@ export function ServiceDetailView({ slug }: { slug: string }) {
           }}
         />
 
-        <div className="relative max-w-5xl mx-auto">
+        <div className="relative page-container">
           <FadeIn>
             <div
               className="text-xs uppercase tracking-[0.2em] inline-flex items-center gap-2"
@@ -357,8 +357,8 @@ export function ServiceDetailView({ slug }: { slug: string }) {
       </section>
 
       {/* ============== OUR APPROACH ============== */}
-      <section className="relative py-20 sm:py-24 lg:py-32 px-6 md:px-10 xl:px-12">
-        <div className="max-w-6xl mx-auto">
+      <section className="relative py-20 sm:py-24 lg:py-32">
+        <div className="page-container">
           <FadeIn>
             <div
               className="text-xs uppercase tracking-[0.2em] mb-3"
@@ -430,7 +430,7 @@ export function ServiceDetailView({ slug }: { slug: string }) {
       </section>
 
       {/* ============== WHAT'S INCLUDED ============== */}
-      <section className="bg-[#040404] border-y border-[#0a0a0a] py-20 sm:py-24 lg:py-28 px-6 md:px-10 xl:px-12 relative overflow-hidden">
+      <section className="bg-[#040404] border-y border-[#0a0a0a] py-20 sm:py-24 lg:py-28 relative overflow-hidden">
         <div
           aria-hidden="true"
           className="absolute inset-0 pointer-events-none"
@@ -438,7 +438,7 @@ export function ServiceDetailView({ slug }: { slug: string }) {
             background: `radial-gradient(ellipse 40% 60% at 80% 50%, rgba(${c.rgb},0.05), transparent 70%)`,
           }}
         />
-        <div className="relative max-w-5xl mx-auto">
+        <div className="relative page-container">
           <FadeIn>
             <div
               className="text-xs uppercase tracking-[0.2em] mb-3"
@@ -482,8 +482,8 @@ export function ServiceDetailView({ slug }: { slug: string }) {
       </section>
 
       {/* ============== RESULTS ============== */}
-      <section className="py-20 sm:py-24 lg:py-32 px-6 md:px-10 xl:px-12">
-        <div className="max-w-5xl mx-auto">
+      <section className="py-20 sm:py-24 lg:py-32">
+        <div className="page-container">
           <FadeIn>
             <div
               className="text-xs uppercase tracking-[0.2em] mb-3"
@@ -545,8 +545,8 @@ export function ServiceDetailView({ slug }: { slug: string }) {
 
       {/* ============== RELATED ============== */}
       {related.length > 0 && (
-        <section className="bg-[#040404] border-y border-[#0a0a0a] py-20 sm:py-24 px-6 md:px-10 xl:px-12">
-          <div className="max-w-6xl mx-auto">
+        <section className="bg-[#040404] border-y border-[#0a0a0a] py-20 sm:py-24">
+          <div className="page-container">
             <FadeIn>
               <div
                 className="text-xs uppercase tracking-[0.2em] mb-3"
@@ -635,7 +635,7 @@ export function ServiceDetailView({ slug }: { slug: string }) {
       )}
 
       {/* ============== BOTTOM CTA — service-color wash ============== */}
-      <section className="relative py-20 sm:py-28 lg:py-32 px-6 md:px-10 xl:px-12 overflow-hidden">
+      <section className="relative py-20 sm:py-28 lg:py-32 overflow-hidden">
         <div
           aria-hidden="true"
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] pointer-events-none"

@@ -5,7 +5,7 @@ import { FadeIn } from "./animations/FadeIn";
 
 export function Availability() {
   return (
-    <section className="section-contain py-16 px-6 md:px-10 xl:px-12">
+    <section className="section-contain py-16">
       <FadeIn>
         <div className="max-w-2xl mx-auto">
           <div className="animated-border-card">

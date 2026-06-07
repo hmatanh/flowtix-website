@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function AccessibilityPage() {
   return (
-    <article id="top" className="relative max-w-3xl mx-auto px-6 md:px-10 xl:px-12 py-20 sm:py-24 lg:py-32">
+    <article id="top" className="relative page-container py-20 sm:py-24 lg:py-32"><div className="page-container">
       <div
         aria-hidden="true"
         className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] pointer-events-none -z-10"
@@ -173,7 +173,7 @@ export default function AccessibilityPage() {
           ↑ Back to top
         </a>
       </div>
-    </article>
+    </div></article>
   );
 }
 

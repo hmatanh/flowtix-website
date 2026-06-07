@@ -166,7 +166,7 @@ export default function AboutPage() {
           transition={{ duration: 1.5, delay: 0.5, ease: "easeOut" }}
         />
 
-        <div className="relative max-w-5xl mx-auto px-6 md:px-10 xl:px-12 text-center">
+        <div className="relative page-container text-center">
           <FadeIn>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#1a1a1a] bg-[#080808] mb-6 sm:mb-8">
               <span className="relative flex h-1.5 w-1.5">
@@ -238,7 +238,7 @@ export default function AboutPage() {
       </section>
 
       {/* ===== 2. FOUNDER SPOTLIGHT ===== */}
-      <section className="section-contain py-24 lg:py-32 px-6 md:px-10 xl:px-12">
+      <section className="section-contain py-24 lg:py-32">
         <div className="page-container grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
           {/* LEFT — Photo */}
           <div className="order-1">
@@ -345,7 +345,7 @@ export default function AboutPage() {
       </section>
 
       {/* ===== 3. THE COMPANY (IS / IS NOT) ===== */}
-      <section className="section-contain py-24 lg:py-32 bg-[#040404] border-y border-[#0a0a0a] px-6 md:px-10 xl:px-12">
+      <section className="section-contain py-24 lg:py-32 bg-[#040404] border-y border-[#0a0a0a]">
         <div className="page-container">
           <FadeIn>
             <h2
@@ -405,7 +405,7 @@ export default function AboutPage() {
       </section>
 
       {/* ===== 4. OUR VALUES ===== */}
-      <section className="section-contain py-24 lg:py-32 px-6 md:px-10 xl:px-12">
+      <section className="section-contain py-24 lg:py-32">
         <div className="page-container">
           <FadeIn>
             <h2
@@ -478,8 +478,8 @@ export default function AboutPage() {
       </section>
 
       {/* ===== 5. HOW WE WORK ===== */}
-      <section className="section-contain py-24 lg:py-32 bg-[#040404] border-y border-[#0a0a0a] px-6 md:px-10 xl:px-12">
-        <div className="max-w-3xl mx-auto">
+      <section className="section-contain py-24 lg:py-32 bg-[#040404] border-y border-[#0a0a0a]">
+        <div className="page-container">
           <FadeIn>
             <h2
               className="section-heading text-white font-bold text-center tracking-tight"
@@ -537,7 +537,7 @@ export default function AboutPage() {
       </section>
 
       {/* ===== 6. THE BIGGER PICTURE / VISION ===== */}
-      <section className="section-contain relative py-24 lg:py-32 px-6 md:px-10 xl:px-12 overflow-hidden">
+      <section className="section-contain relative py-24 lg:py-32 overflow-hidden">
         {/* Vision orb — sits behind the text */}
         <div
           aria-hidden="true"
@@ -548,7 +548,7 @@ export default function AboutPage() {
             filter: "blur(80px)",
           }}
         />
-        <div className="relative max-w-5xl mx-auto text-center">
+        <div className="relative page-container text-center">
           <FadeIn>
             <h2
               className="section-heading text-white font-bold tracking-tight"

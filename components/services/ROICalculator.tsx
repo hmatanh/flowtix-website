@@ -76,8 +76,8 @@ export function ROICalculator({ slug }: { slug: string }) {
   if (!preset) return null;
 
   return (
-    <section className="section-contain py-20 sm:py-28 px-6 md:px-10 xl:px-12 border-y border-[#0a0a0a]">
-      <div className="max-w-5xl mx-auto">
+    <section className="section-contain py-20 sm:py-28 border-y border-[#0a0a0a]">
+      <div className="page-container">
         <div className="text-center mb-10">
           <div className="text-blue-400 text-[11px] tracking-[0.22em] uppercase mb-3 font-medium">
             ROI Calculator

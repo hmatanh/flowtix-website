@@ -26,8 +26,8 @@ export function ProjectBreadcrumb({ project }: { project: Project }) {
 
 export function ProjectMetricsBar({ project }: { project: Project }) {
   return (
-    <section className="section-contain bg-[#030303] border-y border-[#0a0a0a] py-6 px-6 md:px-10 xl:px-12">
-      <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
+    <section className="section-contain bg-[#030303] border-y border-[#0a0a0a] py-6">
+      <div className="page-container grid grid-cols-2 md:grid-cols-4 gap-6">
         {[
           { label: "Client", value: project.name },
           { label: "Year", value: project.year },
@@ -54,8 +54,8 @@ export function ProjectMetricsBar({ project }: { project: Project }) {
 export function ProjectResults({ project }: { project: Project }) {
   const b = project.brand;
   return (
-    <section className="section-contain py-20 lg:py-24 px-6 md:px-10 xl:px-12">
-      <div className="max-w-5xl mx-auto">
+    <section className="section-contain py-20 lg:py-24">
+      <div className="page-container">
         <div
           className="text-[10px] tracking-widest uppercase mb-3"
           style={{ color: b.primary, opacity: 0.7 }}
@@ -109,7 +109,7 @@ export function ProjectTestimonial({ project }: { project: Project }) {
       className="section-contain py-16 lg:py-20 px-6 md:px-10 xl:px-12"
       style={{ background: b.dark }}
     >
-      <div className="max-w-3xl mx-auto">
+      <div className="page-container">
         <div
           className="rounded-2xl border p-8 lg:p-10"
           style={{
@@ -148,8 +148,8 @@ export function ProjectTestimonial({ project }: { project: Project }) {
 export function ProjectStack({ project }: { project: Project }) {
   const b = project.brand;
   return (
-    <section className="section-contain py-12 px-6 md:px-10 xl:px-12 border-y border-[#0a0a0a]">
-      <div className="max-w-5xl mx-auto text-center">
+    <section className="section-contain py-12 border-y border-[#0a0a0a]">
+      <div className="page-container text-center">
         <div
           className="text-[10px] tracking-widest uppercase mb-6"
           style={{ color: b.primary, opacity: 0.6 }}
@@ -206,7 +206,7 @@ export function ProjectNextLink({ project }: { project: Project }) {
 export function ProjectBottomCTA({ project }: { project: Project }) {
   const b = project.brand;
   return (
-    <section className="section-contain relative py-20 lg:py-24 px-6 md:px-10 xl:px-12 overflow-hidden text-center">
+    <section className="section-contain relative py-20 lg:py-24 overflow-hidden text-center">
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[260px] rounded-full pointer-events-none"
         style={{

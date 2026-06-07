@@ -456,7 +456,7 @@ export default function ContactPage() {
 
   return (
     <>
-      <section className="relative py-20 sm:py-24 lg:py-32 px-6 md:px-10 xl:px-12 text-center overflow-hidden">
+      <section className="relative py-20 sm:py-24 lg:py-32 text-center overflow-hidden">
         <div
           aria-hidden="true"
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] pointer-events-none"
@@ -481,7 +481,7 @@ export default function ContactPage() {
           }}
         />
 
-        <div className="relative max-w-4xl mx-auto">
+        <div className="relative page-container">
           <FadeIn>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/5 mb-6 sm:mb-8">
               <span className="relative flex h-1.5 w-1.5">
@@ -548,7 +548,7 @@ export default function ContactPage() {
       </section>
 
       <section className="px-6 lg:px-8 pb-16">
-        <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-16">
+        <div className="page-container grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-16">
           <FadeIn direction="right">
             <AnimatePresence mode="wait">
               {submitted ? (
@@ -795,7 +795,7 @@ export default function ContactPage() {
 
       {/* Calendar booking */}
       <section className="px-6 lg:px-8 pb-24 lg:pb-32">
-        <div className="max-w-3xl mx-auto">
+        <div className="page-container">
           <FadeIn>
             <div className="text-label text-[#333] mb-3">Prefer to schedule</div>
             <h2 className="text-h2 gradient-text mb-8">

@@ -53,7 +53,7 @@ const NUMBERS = [
 
 export function ByTheNumbers() {
   return (
-    <section className="section-contain relative py-24 lg:py-32 px-6 md:px-10 xl:px-12 overflow-hidden">
+    <section className="section-contain relative py-24 lg:py-32 overflow-hidden">
       <div
         aria-hidden="true"
         className="absolute inset-0 pointer-events-none opacity-30"
@@ -68,7 +68,7 @@ export function ByTheNumbers() {
         }}
       />
 
-      <div className="relative max-w-6xl mx-auto">
+      <div className="relative page-container">
         <FadeIn>
           <div className="text-center mb-14">
             <div className="text-[#222] text-[10px] tracking-widest uppercase section-label">

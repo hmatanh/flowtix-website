@@ -544,7 +544,7 @@ function Hero({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8, ease: EASE }}
-            className="mt-8 sm:mt-10 font-black text-white leading-[1.02] sm:leading-[0.95] tracking-tight max-w-4xl mx-auto md:mx-0 px-2 md:px-0"
+            className="mt-8 sm:mt-10 font-black text-white leading-[1.02] sm:leading-[0.95] tracking-tight page-container md:mx-0 px-2 md:px-0"
             style={{ fontSize: "clamp(30px, 6vw, 60px)" }}
           >
             {heroHeadline}
@@ -862,8 +862,8 @@ function StorySection({
 }) {
   const b = project.brand;
   return (
-    <section className="section-contain py-20 sm:py-28 lg:py-36 px-6 md:px-10 xl:px-12">
-      <div className="max-w-6xl mx-auto space-y-16 sm:space-y-24">
+    <section className="section-contain py-20 sm:py-28 lg:py-36">
+      <div className="page-container space-y-16 sm:space-y-24">
         {/* CHALLENGE + SOLUTION side-by-side on desktop */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
           {/* CHALLENGE */}
@@ -1102,7 +1102,7 @@ function NumbersWall({
         animate={{ opacity: [0.5, 0.9, 0.5] }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
       />
-      <div className="relative max-w-6xl mx-auto px-4">
+      <div className="relative page-container">
         {/* Kicker label */}
         <FadeIn>
           <div
@@ -1178,7 +1178,7 @@ function FullBleedMoment({
         }}
       />
 
-      <div className="relative w-full max-w-6xl mx-auto px-6 md:px-10 xl:px-12 py-24 sm:py-32">
+      <div className="relative w-full page-container py-24 sm:py-32">
         <FadeIn>
           <div className="text-center mb-10 sm:mb-12">
             <div
@@ -1342,7 +1342,7 @@ function ProcessMoment({
 }) {
   const b = project.brand;
   return (
-    <section className="section-contain py-16 sm:py-20 lg:py-24 px-6 md:px-10 xl:px-12 relative overflow-hidden">
+    <section className="section-contain py-16 sm:py-20 lg:py-24 relative overflow-hidden">
       <FloatingOrbs accentRGB={b.accentRGB} count={2} seed={9} />
 
       <div className="relative page-container">
@@ -1467,7 +1467,7 @@ function TestimonialMoment({
         }}
       />
 
-      <div className="relative max-w-4xl mx-auto">
+      <div className="relative page-container">
         {/* Giant quote glyph — slightly smaller on mobile */}
         <m.div
           aria-hidden="true"
@@ -1525,7 +1525,7 @@ function TestimonialMoment({
 function TechStackGrid({ project }: { project: Project }) {
   const b = project.brand;
   return (
-    <section className="section-contain py-20 sm:py-28 px-6 md:px-10 xl:px-12 border-y border-[#0a0a0a]">
+    <section className="section-contain py-20 sm:py-28 border-y border-[#0a0a0a]">
       <div className="page-container">
         <FadeIn>
           <div className="text-center md:text-left mb-10 sm:mb-12">
@@ -1920,7 +1920,7 @@ function SoundFamiliar({ project }: { project: Project }) {
   ];
 
   return (
-    <section className="section-contain relative py-16 sm:py-20 lg:py-24 px-6 md:px-10 xl:px-12 overflow-hidden">
+    <section className="section-contain relative py-16 sm:py-20 lg:py-24 overflow-hidden">
       {/* Soft brand backdrop */}
       <div
         aria-hidden="true"
@@ -1930,7 +1930,7 @@ function SoundFamiliar({ project }: { project: Project }) {
         }}
       />
 
-      <div className="relative max-w-5xl mx-auto">
+      <div className="relative page-container">
         <FadeIn>
           <div className="text-center mb-12 sm:mb-16">
             <div
@@ -2116,7 +2116,7 @@ function EngagementSpecs({ project }: { project: Project }) {
   ];
 
   return (
-    <section className="section-contain relative py-16 sm:py-20 lg:py-24 px-6 md:px-10 xl:px-12 border-y border-[#0a0a0a] overflow-hidden">
+    <section className="section-contain relative py-16 sm:py-20 lg:py-24 border-y border-[#0a0a0a] overflow-hidden">
       <FloatingOrbs accentRGB={b.accentRGB} count={2} seed={13} />
 
       <div className="relative page-container">
@@ -2298,7 +2298,7 @@ function ResonateCTA({ project }: { project: Project }) {
         </div>
       </div>
 
-      <div className="relative max-w-4xl mx-auto text-center">
+      <div className="relative page-container text-center">
         <FadeIn>
           <div
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-8"

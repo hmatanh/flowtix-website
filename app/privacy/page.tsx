@@ -23,7 +23,7 @@ const SECTIONS = [
 
 export default function PrivacyPage() {
   return (
-    <article id="top" className="relative max-w-3xl mx-auto px-6 md:px-10 xl:px-12 py-20 sm:py-24 lg:py-32">
+    <article id="top" className="relative page-container py-20 sm:py-24 lg:py-32"><div className="page-container">
       {/* Subtle ambient backdrop */}
       <div
         aria-hidden="true"
@@ -359,7 +359,7 @@ export default function PrivacyPage() {
           ↑ Back to top
         </a>
       </div>
-    </article>
+    </div></article>
   );
 }
 

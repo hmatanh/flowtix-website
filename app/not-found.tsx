@@ -15,7 +15,7 @@ const HELPFUL = [
 
 export default function NotFound() {
   return (
-    <section className="relative min-h-[80vh] flex items-center justify-center px-6 md:px-10 xl:px-12 py-20 sm:py-24 overflow-hidden">
+    <section className="relative min-h-[80vh] flex items-center justify-center py-20 sm:py-24 overflow-hidden">
       <DotGrid opacity={0.18} />
       {/* Layered backgrounds */}
       <div

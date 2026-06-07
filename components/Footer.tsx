@@ -28,10 +28,11 @@ export function Footer() {
           <div>
             <Logo size={24} />
             <p className="text-[#888] text-sm mt-5 max-w-md leading-relaxed">
-              Building the intelligent future of business.
+              Custom systems, automations, and digital products for businesses
+              that want to work smarter.
             </p>
             <p className="text-[#444] text-xs mt-2 max-w-md leading-relaxed">
-              Design-first. Intelligence-first. Built for humans.
+              Practical. Outcome-focused. Built for humans.
             </p>
           </div>
 
