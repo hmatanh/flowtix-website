@@ -839,3 +839,49 @@ body::before {
     padding-right: 48px;
   }
 }
+
+/* ─────────────────────────────────────────────────────────────────
+   Accessibility user-preferences
+   Applied by <AccessibilityWidget /> via <html> class toggles.
+   These are OPTIONAL preferences — the site is built to meet
+   WCAG 2.1 AA by default; these rules sit on top.
+   ───────────────────────────────────────────────────────────── */
+
+/* Text size — zoom on body preserves layout proportions across
+   the site (which uses px-based Tailwind arbitrary values).
+   Skipped on the floating widget itself so toggles stay readable. */
+html.a11y-text-large body { zoom: 1.10; }
+html.a11y-text-xl    body { zoom: 1.25; }
+html.a11y-text-large #flowtix-a11y-panel,
+html.a11y-text-xl    #flowtix-a11y-panel { zoom: 1; }
+
+/* High contrast — bump dim greys toward bright. Targets the
+   muted scale used across the site (#444 / #555 / #666 / #777 /
+   #888 / #999 / #aaa / #bbb) and softens dim borders. */
+html.a11y-high-contrast :is(
+  .text-\[\#444\], .text-\[\#555\], .text-\[\#666\], .text-\[\#777\]
+) { color: #cccccc !important; }
+html.a11y-high-contrast :is(
+  .text-\[\#888\], .text-\[\#999\], .text-\[\#9a9a9a\],
+  .text-\[\#aaa\], .text-\[\#a8a8a8\], .text-\[\#bbb\]
+) { color: #e8e8e8 !important; }
+html.a11y-high-contrast :is(
+  .text-\[\#cfcfcf\], .text-\[\#cccccc\], .text-\[\#cccc\]
+) { color: #ffffff !important; }
+html.a11y-high-contrast :is(
+  .text-\[\#1a1a1a\], .text-\[\#222\], .text-\[\#333\]
+) { color: #999 !important; }
+html.a11y-high-contrast :is(
+  .border-\[\#0a0a0a\], .border-\[\#1a1a1a\]
+) { border-color: #383838 !important; }
+
+/* Reduce motion — neutralise framer-motion + CSS animations site-wide.
+   The widget's own micro-transitions still run since they convey state. */
+html.a11y-reduced-motion *,
+html.a11y-reduced-motion *::before,
+html.a11y-reduced-motion *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+  scroll-behavior: auto !important;
+}

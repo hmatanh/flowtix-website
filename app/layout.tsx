@@ -10,6 +10,7 @@ import { BackToTop } from "@/components/BackToTop";
 import { EasterEgg } from "@/components/EasterEgg";
 import { CookieBanner } from "@/components/CookieBanner";
 import { TabAttention } from "@/components/TabAttention";
+import { AccessibilityWidget } from "@/components/AccessibilityWidget";
 import { MotionProvider } from "@/components/MotionProvider";
 import type { Viewport } from "next";
 
@@ -163,6 +164,7 @@ export default function RootLayout({
           </ClientShell>
           <MobileCTA />
           <BackToTop />
+          <AccessibilityWidget />
           <EasterEgg />
           <CookieBanner />
           <TabAttention />
