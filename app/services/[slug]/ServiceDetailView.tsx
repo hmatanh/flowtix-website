@@ -164,8 +164,8 @@ export function ServiceDetailView({ slug }: { slug: string }) {
           </FadeIn>
 
           <h1
-            className="font-black tracking-tighter leading-[1.05] text-white"
-            style={{ fontSize: "clamp(34px, 6vw, 72px)" }}
+            className="font-black tracking-tighter text-white leading-[1.02]"
+            style={{ fontSize: "clamp(36px, 6.5vw, 72px)" }}
           >
             <m.span
               initial="hidden"

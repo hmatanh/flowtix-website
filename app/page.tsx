@@ -249,8 +249,8 @@ export default function Home() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6, ease: EASE }}
-            className="section-heading font-black text-white tracking-tight leading-[0.95]"
-            style={{ fontSize: "clamp(38px, 6vw, 76px)" }}
+            className="font-black tracking-tighter text-white leading-[1.02]"
+            style={{ fontSize: "clamp(36px, 6.5vw, 72px)" }}
           >
             Custom systems, automations, and AI workflows{" "}
             <span className="gradient-text-blue">

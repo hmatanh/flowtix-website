@@ -155,11 +155,9 @@ export default function AboutPage() {
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: EASE, delay: 0.1 }}
-            className="font-semibold tracking-tight text-white mx-auto"
+            className="font-black tracking-tighter text-white leading-[1.02] mx-auto"
             style={{
-              fontSize: "clamp(32px, 6vw, 72px)",
-              lineHeight: 1.04,
-              letterSpacing: "-0.025em",
+              fontSize: "clamp(36px, 6.5vw, 72px)",
               maxWidth: "18ch",
             }}
           >

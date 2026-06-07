@@ -78,7 +78,10 @@ export default function ServicesPage() {
             </div>
           </FadeIn>
 
-          <h1 className="text-h1 text-white">
+          <h1
+            className="font-black tracking-tighter text-white leading-[1.02]"
+            style={{ fontSize: "clamp(36px, 6.5vw, 72px)" }}
+          >
             <m.span
               initial="hidden"
               animate="visible"

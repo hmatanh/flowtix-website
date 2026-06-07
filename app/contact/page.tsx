@@ -1010,8 +1010,8 @@ export default function ContactPage() {
             </div>
           </FadeIn>
           <h1
-            className="font-black tracking-tighter text-white leading-[1.02] sm:leading-[0.95]"
-            style={{ fontSize: "clamp(38px, 7vw, 80px)" }}
+            className="font-black tracking-tighter text-white leading-[1.02]"
+            style={{ fontSize: "clamp(36px, 6.5vw, 72px)" }}
           >
             <m.span
               initial="hidden"

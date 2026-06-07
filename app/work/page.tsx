@@ -253,8 +253,8 @@ export default function WorkPage() {
           </FadeIn>
 
           <h1
-            className="font-semibold tracking-tighter text-white leading-[1.02] sm:leading-[1.05]"
-            style={{ fontSize: "clamp(40px, 6.5vw, 84px)" }}
+            className="font-black tracking-tighter text-white leading-[1.02]"
+            style={{ fontSize: "clamp(36px, 6.5vw, 72px)" }}
           >
             <m.span
               initial="hidden"
