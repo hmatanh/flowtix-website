@@ -38,52 +38,52 @@ export function MetricStrip({ metrics, accentColor, accentRGB }: Props) {
           background: `radial-gradient(ellipse 50% 80% at 50% 50%, rgba(${accentRGB},0.04) 0%, transparent 70%)`,
         }}
       />
-      <div className="relative page-container py-14 sm:py-20 lg:py-24">
+      <div className="relative page-container py-12 sm:py-20 lg:py-24">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-y-10 sm:gap-x-6 lg:gap-x-10">
-          {metrics.map((metric, i) => (
-            <m.div
-              key={metric.label}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.4 }}
-              transition={{
-                delay: i * 0.08,
-                duration: 0.55,
-                ease: EASE,
-              }}
-              className={`relative text-center sm:text-left ${
-                i > 0 ? "sm:pl-8 lg:pl-12" : ""
-              }`}
-              style={
-                i > 0
-                  ? {
-                      borderLeft: `1px solid rgba(${accentRGB},0.10)`,
-                    }
-                  : undefined
-              }
-            >
-              <div
-                className="font-black tabular-nums leading-[0.95] tracking-tight"
+          {metrics.map((metric, i) => {
+            // Borders only between columns on sm+. Mobile uses subtle dividers
+            // between stacked rows instead so the rhythm reads.
+            return (
+              <m.div
+                key={metric.label}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.4 }}
+                transition={{
+                  delay: i * 0.08,
+                  duration: 0.55,
+                  ease: EASE,
+                }}
+                className={`relative text-center sm:text-left ${
+                  i > 0 ? "sm:pl-8 lg:pl-12 sm:border-l pt-8 sm:pt-0" : ""
+                } ${i > 0 ? "border-t sm:border-t-0" : ""}`}
                 style={{
-                  fontSize: "clamp(40px, 6vw, 72px)",
-                  color: accentColor,
+                  borderColor: `rgba(${accentRGB},0.10)`,
                 }}
               >
-                {metric.value}
-              </div>
-              <div className="text-[#aaa] text-sm sm:text-base mt-3 leading-tight">
-                {metric.label}
-              </div>
-              {metric.detail && (
                 <div
-                  className="text-[10px] sm:text-xs uppercase tracking-[0.18em] mt-3"
-                  style={{ color: `rgba(${accentRGB},0.65)` }}
+                  className="font-black tabular-nums leading-[0.92] tracking-tight"
+                  style={{
+                    fontSize: "clamp(38px, 6vw, 72px)",
+                    color: accentColor,
+                  }}
                 >
-                  {metric.detail}
+                  {metric.value}
                 </div>
-              )}
-            </m.div>
-          ))}
+                <div className="text-[#bdbdbd] text-sm sm:text-base mt-2 sm:mt-3 leading-tight">
+                  {metric.label}
+                </div>
+                {metric.detail && (
+                  <div
+                    className="text-[10px] sm:text-xs uppercase tracking-[0.18em] mt-2 sm:mt-3"
+                    style={{ color: `rgba(${accentRGB},0.75)` }}
+                  >
+                    {metric.detail}
+                  </div>
+                )}
+              </m.div>
+            );
+          })}
         </div>
       </div>
     </section>

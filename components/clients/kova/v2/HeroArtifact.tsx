@@ -180,11 +180,11 @@ export function HeroArtifact() {
           </m.div>
 
           {/* AI reasoning column */}
-          <div className="flex flex-col items-center gap-3 w-full lg:max-w-[240px]">
+          <div className="flex flex-col items-center gap-3 w-full max-w-sm mx-auto lg:max-w-[240px]">
             <div className="text-[10px] tracking-[0.22em] uppercase font-semibold text-sky-300">
               AI reasoning
             </div>
-            <div className="w-full space-y-1.5 max-w-xs lg:max-w-none">
+            <div className="w-full space-y-1.5">
               {[
                 { tag: "Budget", body: "1.85M within Sarah's range" },
                 { tag: "Hood", body: "3 saved in Chelsea" },
@@ -197,7 +197,7 @@ export function HeroArtifact() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, amount: 0.3 }}
                   transition={{ delay: 0.4 + i * 0.08, duration: 0.5 }}
-                  className="flex items-center gap-2 px-2.5 py-1.5 rounded"
+                  className="flex items-center gap-2 px-2.5 py-2 rounded"
                   style={{
                     background: "rgba(14,165,233,0.05)",
                     border: "1px solid rgba(14,165,233,0.15)",
@@ -208,24 +208,23 @@ export function HeroArtifact() {
                     stroke={2}
                     className="text-sky-300 shrink-0"
                   />
-                  <span className="text-[9px] uppercase tracking-[0.16em] text-sky-300/70 w-12 shrink-0">
+                  <span className="text-[9.5px] uppercase tracking-[0.14em] text-sky-300/70 w-11 shrink-0">
                     {r.tag}
                   </span>
-                  <span className="text-[11px] text-[#cfe8fd] flex-1">
+                  <span className="text-[11px] text-[#cfe8fd] flex-1 leading-tight">
                     {r.body}
                   </span>
                 </m.div>
               ))}
             </div>
             <m.span
-              className="inline-flex items-center justify-center w-10 h-10 rounded-full mt-1"
+              className="inline-flex items-center justify-center w-11 h-11 rounded-full mt-1"
               style={{
                 background: "linear-gradient(135deg,#0EA5E9 0%,#0369A1 100%)",
                 boxShadow: "0 6px 16px rgba(14,165,233,0.40)",
               }}
               animate={{
-                x: [0, 6, 0],
-                y: [0, 0, 0],
+                y: [0, 4, 0],
               }}
               transition={{
                 duration: 2.4,
@@ -233,12 +232,12 @@ export function HeroArtifact() {
                 ease: "easeInOut",
               }}
             >
-              {/* Right arrow on lg+, down arrow on mobile/tablet */}
+              {/* Right arrow on lg+, down arrow below */}
               <span className="hidden lg:inline-flex">
-                <IconArrowRight size={14} stroke={2.5} className="text-white" />
+                <IconArrowRight size={15} stroke={2.5} className="text-white" />
               </span>
               <span className="lg:hidden inline-flex">
-                <IconArrowDown size={14} stroke={2.5} className="text-white" />
+                <IconArrowDown size={15} stroke={2.5} className="text-white" />
               </span>
             </m.span>
           </div>

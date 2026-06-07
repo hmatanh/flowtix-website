@@ -66,9 +66,9 @@ export function ScreenMobile() {
         borderRadius: 16,
       }}
     >
-      <div className="relative px-6 sm:px-10 py-10 sm:py-14">
+      <div className="relative px-5 sm:px-10 py-8 sm:py-14">
         {/* Top label */}
-        <div className="flex items-center justify-between flex-wrap gap-3 mb-10">
+        <div className="flex items-center justify-between flex-wrap gap-2 sm:gap-3 mb-8 sm:mb-10">
           <div className="inline-flex items-center gap-2">
             <span
               className="inline-flex items-center justify-center w-7 h-7 rounded-md"
@@ -78,17 +78,17 @@ export function ScreenMobile() {
             >
               <span className="text-white text-[12px] font-serif italic">s</span>
             </span>
-            <span className="text-white text-[13px] font-medium tracking-tight">
+            <span className="text-white text-[12px] sm:text-[13px] font-medium tracking-tight">
               Patient intake · iOS / Android
             </span>
           </div>
-          <span className="text-[#5EAD8E] text-[10px] tracking-[0.22em] uppercase">
-            Adaptive flow · 4–7 minutes average
+          <span className="text-[#5EAD8E] text-[9px] sm:text-[10px] tracking-[0.22em] uppercase">
+            Adaptive · 4–7 min avg
           </span>
         </div>
 
         {/* 3 phones */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 sm:gap-12 items-stretch">
           {/* Phone 1 — Welcome */}
           <m.div
             initial={{ opacity: 0, y: 16 }}

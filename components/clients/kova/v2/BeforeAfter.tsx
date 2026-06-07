@@ -341,17 +341,25 @@ export function BeforeAfter() {
           </m.span>
         </m.span>
 
-        {/* Mobile/tablet horizontal divider arrow */}
-        <span
-          className="lg:hidden absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 inline-flex items-center justify-center w-10 h-10 rounded-full pointer-events-none"
+        {/*
+         * Mobile/tablet horizontal divider arrow. Positioned at vertical
+         * center of the grid container — which lands cleanly between the two
+         * stacked rows since both sides have similar content density.
+         */}
+        <m.span
+          className="lg:hidden absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 inline-flex items-center justify-center w-10 h-10 rounded-full pointer-events-none z-10"
           style={{
             background: "linear-gradient(135deg, #0EA5E9 0%, #0369A1 100%)",
             boxShadow: "0 8px 20px rgba(14,165,233,0.45)",
             border: "3px solid #02060B",
           }}
+          initial={{ scale: 0, opacity: 0 }}
+          whileInView={{ scale: 1, opacity: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.5, ease: EASE, delay: 0.3 }}
         >
           <IconArrowDown size={16} stroke={2.5} className="text-white" />
-        </span>
+        </m.span>
       </div>
     </div>
   );

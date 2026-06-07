@@ -31,7 +31,7 @@ export function StorySection({
 }: Props) {
   return (
     <section className="relative w-full overflow-hidden">
-      <div className="page-container py-20 sm:py-28 lg:py-36">
+      <div className="page-container py-16 sm:py-24 lg:py-36">
         <div
           className={`${centered ? "max-w-3xl mx-auto text-center" : "max-w-3xl"}`}
         >
@@ -41,7 +41,7 @@ export function StorySection({
               whileInView={{ opacity: 1 }}
               viewport={{ once: true, amount: 0.4 }}
               transition={{ duration: 0.5 }}
-              className="text-[10px] uppercase tracking-[0.22em] mb-6"
+              className="text-[10px] uppercase tracking-[0.22em] mb-5 sm:mb-6"
               style={{ color: `rgba(${accentRGB},0.7)` }}
             >
               {eyebrow}
@@ -52,8 +52,12 @@ export function StorySection({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6, ease: EASE }}
-            className="font-black text-white leading-[1.05] tracking-tight"
-            style={{ fontSize: "clamp(28px, 4.5vw, 52px)" }}
+            className="font-black text-white tracking-tight"
+            style={{
+              fontSize: "clamp(26px, 4.5vw, 52px)",
+              lineHeight: 1.08,
+              overflowWrap: "break-word",
+            }}
           >
             {heading}
           </m.h2>
@@ -62,8 +66,11 @@ export function StorySection({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6, delay: 0.1, ease: EASE }}
-            className="mt-8 sm:mt-10 space-y-5 text-[#cfcfcf] leading-[1.7]"
-            style={{ fontSize: "clamp(16px, 1.4vw, 19px)" }}
+            className="mt-6 sm:mt-10 space-y-4 sm:space-y-5 text-[#cfcfcf]"
+            style={{
+              fontSize: "clamp(15px, 1.4vw, 19px)",
+              lineHeight: 1.7,
+            }}
           >
             {children}
           </m.div>

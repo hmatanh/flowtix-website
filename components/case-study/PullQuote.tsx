@@ -54,7 +54,7 @@ export function PullQuote({
         }}
       />
 
-      <div className="relative page-container py-20 sm:py-28 lg:py-36">
+      <div className="relative page-container py-16 sm:py-24 lg:py-36">
         <div className="max-w-4xl">
           <m.span
             initial={{ opacity: 0 }}
@@ -64,10 +64,10 @@ export function PullQuote({
             aria-hidden="true"
             className="block font-black leading-[0.7] select-none pointer-events-none"
             style={{
-              fontSize: "clamp(80px, 12vw, 160px)",
+              fontSize: "clamp(64px, 12vw, 160px)",
               color: accentColor,
               opacity: 0.18,
-              marginBottom: -12,
+              marginBottom: -8,
             }}
           >
             “
@@ -78,8 +78,12 @@ export function PullQuote({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6, ease: EASE }}
-            className="text-white font-light leading-[1.35] tracking-tight"
-            style={{ fontSize: "clamp(22px, 3.4vw, 38px)" }}
+            className="text-white font-light tracking-tight"
+            style={{
+              fontSize: "clamp(20px, 3.4vw, 38px)",
+              lineHeight: 1.35,
+              overflowWrap: "break-word",
+            }}
           >
             {children}
           </m.blockquote>

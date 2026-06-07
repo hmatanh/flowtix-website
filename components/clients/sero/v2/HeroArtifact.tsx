@@ -175,20 +175,20 @@ function Calendar({ data, label }: { data: typeof BEFORE_WEEK; label: string }) 
         {data.map((day) => (
           <div
             key={day.day}
-            className="flex flex-col gap-1 p-1.5 sm:p-2"
+            className="flex flex-col gap-[3px] sm:gap-1 p-1 sm:p-2"
             style={{ background: "rgba(2,10,6,0.65)" }}
           >
-            <div className="text-[#5EAD8E] text-[9px] tracking-[0.22em] uppercase text-center mb-1">
+            <div className="text-[#5EAD8E] text-[8px] sm:text-[9px] tracking-[0.18em] uppercase text-center mb-0.5 sm:mb-1">
               {day.day}
             </div>
             {day.slots.map((slot, i) => (
               <div
                 key={i}
-                className="rounded-md px-1.5 py-1 text-[8.5px] sm:text-[9.5px] leading-tight"
+                className="rounded px-1 py-0.5 sm:px-1.5 sm:py-1 text-[7.5px] sm:text-[9.5px] leading-[1.1]"
                 style={SlotStyle(slot.kind)}
               >
                 <div className="font-medium tabular-nums">{slot.from}</div>
-                <div className="opacity-80">{SlotLabel(slot.kind)}</div>
+                <div className="opacity-80 hidden sm:block">{SlotLabel(slot.kind)}</div>
               </div>
             ))}
           </div>
@@ -278,7 +278,10 @@ export function HeroArtifact() {
         </div>
 
         {/* Bottom strip */}
-        <div className="mt-8 sm:mt-10 pt-6 border-t grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-6" style={{ borderColor: "rgba(16,185,129,0.10)" }}>
+        <div
+          className="mt-7 sm:mt-10 pt-5 sm:pt-6 border-t grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6"
+          style={{ borderColor: "rgba(16,185,129,0.10)" }}
+        >
           {[
             {
               icon: IconStethoscope,
@@ -301,7 +304,7 @@ export function HeroArtifact() {
           ].map((s) => {
             const Icon = s.icon;
             return (
-              <div key={s.label} className="flex items-center gap-4">
+              <div key={s.label} className="flex items-center gap-3 sm:gap-4">
                 <span
                   className="inline-flex items-center justify-center w-9 h-9 rounded-lg shrink-0"
                   style={{
@@ -316,11 +319,11 @@ export function HeroArtifact() {
                     {s.label}
                   </div>
                   <div className="flex items-baseline gap-2">
-                    <span className="text-[#94A3B8] line-through text-[14px]">
+                    <span className="text-[#94A3B8] line-through text-[13px] sm:text-[14px]">
                       {s.before}
                     </span>
                     <span className="text-[#5EAD8E]">→</span>
-                    <span className="text-white text-[20px] font-medium tabular-nums">
+                    <span className="text-white text-[18px] sm:text-[20px] font-medium tabular-nums">
                       {s.after}
                     </span>
                   </div>

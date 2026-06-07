@@ -28,7 +28,11 @@ type Props = {
    * Setting this enables horizontal pan with a hint chip.
    */
   enableMobileScroll?: boolean;
-  /** Minimum width of the screen in pixels on mobile (when scroll enabled). */
+  /**
+   * Minimum width of the screen in pixels on mobile (when scroll enabled).
+   * 840 keeps dense product UI legible without making the horizontal pan
+   * feel endless on small phones.
+   */
   mobileMinWidth?: number;
 };
 
@@ -51,7 +55,7 @@ export function AnnotatedScreen({
   caption,
   annotations,
   enableMobileScroll = true,
-  mobileMinWidth = 920,
+  mobileMinWidth = 840,
 }: Props) {
   return (
     <section
@@ -70,20 +74,30 @@ export function AnnotatedScreen({
           </div>
         )}
 
-        {/* Mobile scroll container with hint */}
+        {/* Mobile scroll container with hint pill above */}
         <div className="relative">
           {enableMobileScroll && (
             <div
-              className="lg:hidden absolute -top-3 right-0 z-10 text-[9px] uppercase tracking-[0.22em] pointer-events-none flex items-center gap-1.5"
-              style={{ color: `rgba(${accentRGB},0.65)` }}
+              className="lg:hidden flex justify-center mb-4 sm:mb-5"
               aria-hidden="true"
             >
-              <span>swipe</span>
               <m.span
-                animate={{ x: [0, 4, 0] }}
-                transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
+                className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.22em] px-3 py-1.5 rounded-full font-medium"
+                style={{
+                  color: `rgba(${accentRGB},0.95)`,
+                  background: `rgba(${accentRGB},0.08)`,
+                  border: `1px solid rgba(${accentRGB},0.22)`,
+                }}
+                animate={{ opacity: [0.6, 1, 0.6] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
               >
-                →
+                <span>Swipe to explore</span>
+                <m.span
+                  animate={{ x: [0, 5, 0] }}
+                  transition={{ duration: 1.4, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  →
+                </m.span>
               </m.span>
             </div>
           )}
@@ -96,6 +110,7 @@ export function AnnotatedScreen({
             }
             style={{
               WebkitOverflowScrolling: "touch",
+              scrollSnapType: enableMobileScroll ? "x mandatory" : undefined,
             }}
           >
             <m.div
@@ -110,6 +125,7 @@ export function AnnotatedScreen({
                 boxShadow:
                   "0 30px 80px rgba(0,0,0,0.55), 0 10px 24px rgba(0,0,0,0.35)",
                 border: "1px solid rgba(255,255,255,0.06)",
+                scrollSnapAlign: enableMobileScroll ? "start" : undefined,
               }}
             >
               {children}

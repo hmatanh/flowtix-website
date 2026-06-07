@@ -87,7 +87,7 @@ export function CaseFooter({ project, techStack, duration }: Props) {
           borderTop: `1px solid ${nb.border}`,
         }}
       >
-        <div className="page-container py-14 sm:py-20 flex flex-col sm:flex-row items-center sm:items-end justify-between gap-8">
+        <div className="page-container py-12 sm:py-20 flex flex-col sm:flex-row items-center sm:items-end justify-between gap-6 sm:gap-8">
           <div className="text-center sm:text-left">
             <div
               className="text-[10px] uppercase tracking-[0.22em] mb-3"
@@ -95,18 +95,24 @@ export function CaseFooter({ project, techStack, duration }: Props) {
             >
               Next case
             </div>
-            <div className="text-white font-black tracking-tight" style={{ fontSize: "clamp(28px, 4.5vw, 48px)" }}>
+            <div
+              className="text-white font-black tracking-tight"
+              style={{
+                fontSize: "clamp(26px, 4.5vw, 48px)",
+                lineHeight: 1.05,
+              }}
+            >
               {next.name}
             </div>
             <div
-              className="text-sm sm:text-base mt-2"
+              className="text-sm sm:text-base mt-2 max-w-sm mx-auto sm:mx-0"
               style={{ color: `rgba(${nb.accentRGB},0.7)` }}
             >
               {next.tagline}
             </div>
           </div>
-          <div className="flex items-center gap-5">
-            <ClientLogo slug={next.slug} height={42} />
+          <div className="flex items-center gap-4 sm:gap-5 flex-wrap justify-center">
+            <ClientLogo slug={next.slug} height={36} />
             <span
               className="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-medium transition-transform group-hover:translate-x-1"
               style={{

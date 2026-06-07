@@ -44,10 +44,14 @@ export function CaseHero({
   serviceTags,
 }: Props) {
   return (
-    <section className="relative flex flex-col overflow-hidden" style={{
-      background: "#020202",
-      minHeight: "min(100vh, 920px)",
-    }}>
+    <section
+      className="relative flex flex-col overflow-hidden"
+      style={{
+        background: "#020202",
+        minHeight: "min(100vh, 920px)",
+        paddingBottom: "env(safe-area-inset-bottom)",
+      }}
+    >
       {/* Layer 1 — bold brand wash */}
       <div
         aria-hidden="true"
@@ -83,16 +87,16 @@ export function CaseHero({
 
       <div className="relative z-10 page-container w-full flex-1 flex flex-col">
         {/* Top row */}
-        <div className="pt-28 sm:pt-32 lg:pt-40 flex items-center justify-between">
+        <div className="pt-24 sm:pt-32 lg:pt-40 flex items-center justify-between gap-3">
           <Link
             href="/work"
-            className="inline-flex items-center gap-1.5 text-[#888] hover:text-white text-xs sm:text-sm transition-colors"
+            className="inline-flex items-center gap-1.5 text-[#888] hover:text-white text-xs sm:text-sm transition-colors shrink-0"
           >
             <IconArrowLeft size={14} stroke={2} />
             <span>All Work</span>
           </Link>
           <span
-            className="text-[10px] sm:text-xs px-3 py-1 rounded-full border tracking-wider"
+            className="text-[9px] sm:text-xs px-2.5 sm:px-3 py-1 rounded-full border tracking-wider text-right shrink"
             style={{
               borderColor: `rgba(${accentRGB},0.20)`,
               color: `rgba(${accentRGB},0.85)`,
@@ -132,8 +136,13 @@ export function CaseHero({
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: EASE }}
-            className="font-black tracking-tight text-white leading-[0.95] max-w-5xl"
-            style={{ fontSize: "clamp(40px, 7vw, 96px)" }}
+            className="font-black tracking-tight text-white max-w-5xl"
+            style={{
+              fontSize: "clamp(34px, 7vw, 96px)",
+              lineHeight: 1.02,
+              overflowWrap: "break-word",
+              wordBreak: "normal",
+            }}
           >
             {headline}
           </m.h1>
@@ -142,11 +151,13 @@ export function CaseHero({
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2, ease: EASE }}
-            className="mt-10 sm:mt-14 font-bold leading-tight tracking-tight"
+            className="mt-8 sm:mt-12 lg:mt-14 font-bold tracking-tight"
             style={{
-              fontSize: "clamp(18px, 2.6vw, 30px)",
+              fontSize: "clamp(16px, 2.4vw, 30px)",
+              lineHeight: 1.25,
               color: accentColor,
               maxWidth: 720,
+              overflowWrap: "break-word",
             }}
           >
             {primaryMetric}
