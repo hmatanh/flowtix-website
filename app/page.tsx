@@ -1,87 +1,23 @@
 "use client";
 
 import Link from "next/link";
-import dynamic from "next/dynamic";
-import { useEffect } from "react";
-import { m, useMotionValue, useSpring } from "framer-motion";
+import { m } from "framer-motion";
 import {
   IconArrowRight,
   IconLockSquare,
   IconClock,
-  IconMail,
-  IconArrowBackUp,
-  IconVideo,
-  IconFileText,
+  IconRouteAltLeft,
+  IconRobot,
+  IconLayoutDashboard,
+  IconRocket,
   IconCode,
+  IconPalette,
+  IconCheck,
 } from "@tabler/icons-react";
 import { PerspectiveGrid } from "@/components/PerspectiveGrid";
 import { AnimatedCounter } from "@/components/AnimatedCounter";
-import { MagneticButton } from "@/components/MagneticButton";
-
-// Dynamic imports — heavy interactive components load after first paint.
-// Keeps initial JS small; users see hero structure immediately.
-const HeroAIDemo = dynamic(
-  () => import("@/components/HeroAIDemo").then((m) => ({ default: m.HeroAIDemo })),
-  {
-    ssr: false,
-    loading: () => (
-      <div className="w-full rounded-2xl bg-[#080808] border border-[#0f0f0f] h-[420px] animate-pulse" />
-    ),
-  }
-);
-const LiveActivityFeed = dynamic(
-  () => import("@/components/LiveActivityFeed").then((m) => ({ default: m.LiveActivityFeed })),
-  {
-    ssr: false,
-    loading: () => (
-      <div className="w-full rounded-2xl bg-[#080808] border border-[#0f0f0f] h-[120px] animate-pulse" />
-    ),
-  }
-);
-const MorphHeadline = dynamic(
-  () => import("@/components/MorphHeadline").then((m) => ({ default: m.MorphHeadline })),
-  {
-    ssr: false,
-    loading: () => (
-      <div className="h-[140px] sm:h-[180px] lg:h-[220px] w-full max-w-xl bg-transparent" />
-    ),
-  }
-);
-const IntelligenceStack = dynamic(
-  () => import("@/components/IntelligenceStack").then((m) => ({ default: m.IntelligenceStack })),
-  {
-    ssr: false,
-    loading: () => <div className="h-[600px] w-full" />,
-  }
-);
-const FAQ = dynamic(
-  () => import("@/components/FAQ").then((m) => ({ default: m.FAQ })),
-  {
-    ssr: false,
-    loading: () => <div className="h-[400px] w-full" />,
-  }
-);
-const Availability = dynamic(
-  () => import("@/components/Availability").then((m) => ({ default: m.Availability })),
-  {
-    ssr: false,
-    loading: () => <div className="h-[300px] w-full" />,
-  }
-);
-const ByTheNumbers = dynamic(
-  () => import("@/components/ByTheNumbers").then((m) => ({ default: m.ByTheNumbers })),
-  {
-    ssr: false,
-    loading: () => <div className="h-[400px] w-full" />,
-  }
-);
-const PricingCalculator = dynamic(
-  () => import("@/components/PricingCalculator").then((m) => ({ default: m.PricingCalculator })),
-  {
-    ssr: false,
-    loading: () => <div className="h-[500px] w-full" />,
-  }
-);
+import { FAQ } from "@/components/FAQ";
+import { Availability } from "@/components/Availability";
 import { FadeIn } from "@/components/animations/FadeIn";
 import {
   StaggerContainer,
@@ -94,296 +30,293 @@ import { ClientLogo } from "@/components/clients/logos/ClientLogo";
 
 const EASE = [0.21, 0.47, 0.32, 0.98] as const;
 
-// ===== Section data =====
+/* =========================================================================
+   Section data
+   ========================================================================= */
 
 const HERO_STATS = [
-  { value: "10+ Years", label: "Design Experience" },
-  { value: "50+", label: "Systems Shipped" },
-  { value: "48 Hours", label: "Avg. First Deploy" },
+  { value: "10+ yrs", label: "Design & product experience" },
+  { value: "50+", label: "Systems shipped" },
+  { value: "2–6 wks", label: "Typical project timeline" },
 ];
 
 const SOCIAL_STATS = [
-  { value: 10, suffix: "+", label: "Years of Design Mastery" },
-  { value: 50, suffix: "+", label: "Systems Shipped" },
-  { value: 3, suffix: "×", label: "Average Client ROI" },
-  { value: 12, label: "Industries Served" },
-  { value: 48, suffix: "h", label: "To First Deployment" },
+  { value: 10, suffix: "+", label: "Years of product & design experience" },
+  { value: 50, suffix: "+", label: "Systems shipped end-to-end" },
+  { value: 12, label: "Industries served" },
+  { value: 6, suffix: " wks", label: "Average idea to live" },
+  { value: 100, suffix: "%", label: "Code & systems you own day one" },
 ];
 
-const PAINS = [
-  "Teams don’t use the tools built for them because the UX is confusing.",
-  "AI projects cost $50K+ and deliver less value than a $100/mo SaaS tool.",
-  "Generic AI sounds nothing like your brand voice.",
-  "Integrations break every time a connected app updates.",
+const MARQUEE_1 = [
+  "Business Process Automation",
+  "Custom AI Agents",
+  "Internal Tools",
+  "Client Portals",
+  "Dashboards",
+  "MVP Development",
+  "Websites",
+  "Landing Pages",
+  "Brand Systems",
+  "UX/UI Design",
 ];
 
-const TIMELINE = [
+const MARQUEE_2 = [
+  "Practical",
+  "Custom",
+  "Outcome-focused",
+  "Next.js",
+  "Claude",
+  "n8n",
+  "Make",
+  "Supabase",
+  "Figma",
+  "TypeScript",
+  "Tailwind",
+  "React",
+];
+
+/* What We Build cards */
+const WHAT_WE_BUILD = [
+  {
+    icon: IconLayoutDashboard,
+    title: "Custom Business Systems",
+    body:
+      "Internal tools, dashboards, portals, and systems built around your exact workflow — not the workflow a generic SaaS expects you to have.",
+  },
+  {
+    icon: IconRouteAltLeft,
+    title: "AI-Powered Automations",
+    body:
+      "Automated workflows that handle repetitive tasks, follow-ups, data processing, content flows, and the operational work your team shouldn't be doing.",
+  },
+  {
+    icon: IconRobot,
+    title: "AI Agents & Assistants",
+    body:
+      "Custom AI assistants trained on your business — support, sales, onboarding, internal knowledge, client communication. Practical, not generic.",
+  },
+  {
+    icon: IconRocket,
+    title: "MVPs & Digital Products",
+    body:
+      "From idea to working product in weeks — strategy, UX, design, build, launch. One partner across every part of the product.",
+  },
+  {
+    icon: IconCode,
+    title: "Websites & Landing Pages",
+    body:
+      "Modern, fast, conversion-focused sites and product experiences — built on a stack that grows with you instead of forcing a rebuild.",
+  },
+  {
+    icon: IconPalette,
+    title: "Branding & Product Design",
+    body:
+      "Brand identity, UX, UI, and visual systems that make the product feel professional and trustworthy from the first second.",
+  },
+];
+
+const WHO_FOR = [
+  "Startups building MVPs and shipping their first product",
+  "Digital agencies that need automation, product, or AI capacity",
+  "Service businesses drowning in repetitive workflows",
+  "Companies running on too many manual processes",
+  "Teams that need real internal tools, not another SaaS subscription",
+  "Founders who want one partner for product, design, automation, and AI",
+];
+
+const USE_CASES = [
+  "AI customer support assistant",
+  "Lead qualification workflow",
+  "Automated client onboarding",
+  "Proposal & document generation",
+  "Internal knowledge assistant",
+  "CRM automation",
+  "WhatsApp & email automation",
+  "Custom operations dashboard",
+  "Client portal",
+  "SaaS MVP",
+  "Booking & follow-up automation",
+  "Data processing pipeline",
+  "Marketing site & full website",
+  "Brand identity & design system",
+];
+
+const PROCESS_STEPS = [
   {
     n: "01",
-    week: "Week 1",
-    title: "Discovery & Audit",
-    text: "We map your current operations, identify the exact pain points, and quantify the cost of each problem. You get a clear picture of what AI can solve before we write a line of code.",
+    title: "Understand your business",
+    text:
+      "We learn your workflow, goals, bottlenecks, tools, users, and the way the team actually works day to day.",
   },
   {
     n: "02",
-    week: "Week 1–2",
-    title: "System Architecture",
-    text: "We design the technical blueprint and the user experience simultaneously. Every screen, every flow, every edge case — designed before we build anything.",
+    title: "Map the opportunity",
+    text:
+      "We identify what should be automated, what should be redesigned, what should be built from scratch, and what to leave alone.",
   },
   {
     n: "03",
-    week: "Week 2–3",
-    title: "Build & Integrate",
-    text: "Development begins with daily check-ins. You see progress every 48 hours, not a big reveal at the end. We integrate with your existing tools without disrupting what’s working.",
+    title: "Design the solution",
+    text:
+      "We define the user experience, the system logic, the automation flows, the screens, and the data structure — before we build.",
   },
   {
     n: "04",
-    week: "Week 3–4",
-    title: "Test & Refine",
-    text: "Real users, real data, real feedback. We run structured testing sessions, capture every piece of feedback, and iterate fast until the system is ready.",
+    title: "Build & launch",
+    text:
+      "We build with the right tools for your scale and stack — AI workflows, integrations, custom code, automation platforms — and ship.",
   },
   {
     n: "05",
-    week: "Week 4+",
-    title: "Deploy & Optimize",
-    text: "We deploy with a full handoff: documentation, training, and a 30-day optimization window where we monitor performance and tune the system based on real usage data.",
+    title: "Improve over time",
+    text:
+      "We test, refine, and improve based on real usage. The system gets better every month — not worse.",
   },
 ];
 
-type CompareValue = { icon: "✓" | "✗" | "~" | "$"; text: string };
-const COMPARE_ROWS: {
-  label: string;
-  flowtix: CompareValue;
-  agency: CompareValue;
-  tool: CompareValue;
-}[] = [
-  { label: "Design quality", flowtix: { icon: "✓", text: "Premium" }, agency: { icon: "~", text: "Varies" }, tool: { icon: "✗", text: "Template" } },
-  { label: "Custom to your business", flowtix: { icon: "✓", text: "Always" }, agency: { icon: "~", text: "Sometimes" }, tool: { icon: "✗", text: "Never" } },
-  { label: "AI-native from the ground up", flowtix: { icon: "✓", text: "Always" }, agency: { icon: "✗", text: "Rarely" }, tool: { icon: "~", text: "Sometimes" } },
-  { label: "Deployment speed", flowtix: { icon: "✓", text: "2–4 weeks" }, agency: { icon: "✗", text: "3–6 months" }, tool: { icon: "✓", text: "Instant (limited)" } },
-  { label: "Ongoing optimization", flowtix: { icon: "✓", text: "Included" }, agency: { icon: "$", text: "Extra cost" }, tool: { icon: "✗", text: "None" } },
-  { label: "Single point of contact", flowtix: { icon: "✓", text: "Always" }, agency: { icon: "✗", text: "Account managers" }, tool: { icon: "✗", text: "Support tickets" } },
-  { label: "Scales with your business", flowtix: { icon: "✓", text: "Built for it" }, agency: { icon: "~", text: "Maybe" }, tool: { icon: "✗", text: "Rarely" } },
-  { label: "Transparent pricing", flowtix: { icon: "✓", text: "Always" }, agency: { icon: "✗", text: "Scope creep" }, tool: { icon: "✓", text: "Fixed" } },
+const PAINS = [
+  "Your team wastes hours on repetitive tasks every week.",
+  "Tools that don't talk to each other. Spreadsheets holding the business together.",
+  "Manual follow-ups, copy-paste work, and processes that should have been automated long ago.",
+  "Disconnected systems creating errors and slowing the team down.",
 ];
 
-function CompareCell({ v, highlight }: { v: CompareValue; highlight?: boolean }) {
-  const colorByIcon: Record<CompareValue["icon"], string> = {
-    "✓": "text-emerald-400",
-    "✗": "text-[#222]",
-    "~": "text-[#444]",
-    $: "text-amber-400",
-  };
-  return (
-    <div className={`py-4 px-3 text-center text-sm ${highlight ? "text-white" : "text-[#666]"}`}>
-      <span className={`mr-2 ${colorByIcon[v.icon]}`}>{v.icon}</span>
-      <span>{v.text}</span>
-    </div>
-  );
-}
+const FLOW_STEPS = [
+  { label: "Discover", text: "Where the time goes." },
+  { label: "Design", text: "How it should work." },
+  { label: "Build", text: "The real system." },
+  { label: "Automate", text: "Remove the manual." },
+  { label: "Improve", text: "Tune with real usage." },
+];
 
 const INDUSTRIES_12 = [
+  "Startups & Founders",
+  "Digital Agencies",
+  "Service Businesses",
   "E-commerce & DTC",
-  "SaaS & Technology",
-  "Marketing Agencies",
-  "Professional Services",
-  "Healthcare & Wellness",
+  "SaaS & Tech",
   "Real Estate",
+  "Healthcare & Wellness",
   "Finance & Fintech",
-  "Education & EdTech",
+  "Education",
   "Hospitality & F&B",
   "Logistics & Operations",
-  "Legal Services",
   "Media & Publishing",
 ];
 
-const FIRST_WEEK = [
-  {
-    day: "Day 1",
-    icon: IconMail,
-    title: "You send us a message.",
-    sub: "Tell us what you’re trying to build — even one paragraph is enough.",
-  },
-  {
-    day: "Day 2",
-    icon: IconArrowBackUp,
-    title: "We respond within 24 hours.",
-    sub: "A real human reads it. We reply with thoughts, not a templated form.",
-  },
-  {
-    day: "Day 3",
-    icon: IconVideo,
-    title: "Discovery call — 30 minutes.",
-    sub: "Free, low-pressure. We dig into the problem and your constraints.",
-  },
-  {
-    day: "Day 5",
-    icon: IconFileText,
-    title: "You receive a detailed proposal.",
-    sub: "Scope, timeline, and a fixed price. No hourly billing surprises.",
-  },
-  {
-    day: "Day 7",
-    icon: IconCode,
-    title: "We start building.",
-    sub: "First demo within 48 hours. Daily check-ins until launch.",
-  },
-];
-
-// ===== Component =====
+/* =========================================================================
+   Component
+   ========================================================================= */
 
 export default function Home() {
-  // Mouse-parallax for the hero blue orb (very subtle; desktop only).
-  const orbX = useMotionValue(0);
-  const orbY = useMotionValue(0);
-  const orbSpringX = useSpring(orbX, { stiffness: 60, damping: 25 });
-  const orbSpringY = useSpring(orbY, { stiffness: 60, damping: 25 });
-
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
-    function onMove(e: MouseEvent) {
-      // Range ±18px — "very slight" per the brief
-      const nx = (e.clientX / window.innerWidth - 0.5) * 36;
-      const ny = (e.clientY / window.innerHeight - 0.5) * 36;
-      orbX.set(nx);
-      orbY.set(ny);
-    }
-    window.addEventListener("mousemove", onMove, { passive: true });
-    return () => window.removeEventListener("mousemove", onMove);
-  }, [orbX, orbY]);
-
   return (
     <>
       {/* ===== 1. HERO ===== */}
-      <section className="relative min-h-screen flex items-center px-6 md:px-10 xl:px-12 pt-16 sm:pt-20 lg:pt-24 pb-20 sm:pb-24 overflow-hidden">
+      <section className="relative min-h-screen flex items-center px-4 sm:px-6 lg:px-8 pt-28 lg:pt-32 pb-24 overflow-hidden">
         <PerspectiveGrid />
-        <m.div
+        <div
+          aria-hidden="true"
           className="absolute top-[-200px] right-[-300px] w-[900px] h-[600px] rounded-full pointer-events-none animate-pulse-slow"
           style={{
             background:
-              "radial-gradient(circle, rgba(59,130,246,0.07) 0%, transparent 70%)",
-            x: orbSpringX,
-            y: orbSpringY,
+              "radial-gradient(circle, rgba(59,130,246,0.06) 0%, transparent 70%)",
           }}
         />
         <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-black to-transparent pointer-events-none" />
 
-        <div className="relative max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-12 items-center">
-          <div className="text-center lg:text-left">
-            <m.div
-              initial={{ opacity: 0, y: -8 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1, duration: 0.5 }}
-              className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-[#1a1a1a] bg-[#080808] mb-8"
-            >
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute h-full w-full rounded-full bg-blue-400 opacity-75" />
-                <span className="relative h-2 w-2 rounded-full bg-blue-500" />
-              </span>
-              <span className="text-[#cccccc] text-[11px] tracking-[0.12em] uppercase font-medium">
-                AI-Powered Systems
-              </span>
-              <span className="text-[#333] text-[11px]">·</span>
-              <span className="text-[#cccccc] text-[11px] tracking-[0.12em] uppercase font-medium">
-                Design-First Studio
-              </span>
-            </m.div>
-
-            <MorphHeadline />
-
-            <m.p
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.6, ease: EASE }}
-              className="text-[#666] text-lg md:text-xl mt-7 max-w-xl leading-relaxed mx-auto lg:mx-0"
-            >
-              We combine 10+ years of design mastery with frontier AI to build
-              systems that don&apos;t just work — they get used, loved, and
-              scaled.
-            </m.p>
-
-            <m.div
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.7, duration: 0.5 }}
-              className="mt-8 flex items-center gap-6 flex-wrap justify-center lg:justify-start"
-            >
-              {HERO_STATS.map((s, i) => (
-                <span key={s.value} className="inline-flex items-center gap-6">
-                  <span>
-                    <span className="block text-white text-sm font-semibold">
-                      {s.value}
-                    </span>
-                    <span className="block text-[#333] text-xs mt-0.5">
-                      {s.label}
-                    </span>
-                  </span>
-                  {i < HERO_STATS.length - 1 && (
-                    <span className="hidden sm:inline-block h-8 w-px bg-[#1a1a1a]" />
-                  )}
-                </span>
-              ))}
-            </m.div>
-
-            <m.div
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.9, duration: 0.5 }}
-              className="mt-10 flex flex-wrap gap-3 justify-center lg:justify-start"
-            >
-              <MagneticButton strength={0.25} className="btn-pulse-ring rounded-xl">
-                <Link
-                  href="/services"
-                  className="btn-shimmer relative z-[1] inline-flex items-center gap-2 bg-white text-black px-7 py-3.5 rounded-xl text-sm font-semibold hover:bg-[#eee] transition-colors min-h-[48px]"
-                >
-                  <span className="relative z-10">See What We Build</span>
-                  <IconArrowRight size={16} stroke={2} aria-hidden="true" className="relative z-10" />
-                </Link>
-              </MagneticButton>
-              <Link
-                href="/work"
-                className="inline-flex items-center border border-[#1a1a1a] text-[#555] px-7 py-3.5 rounded-xl text-sm hover:border-[#2a2a2a] hover:text-[#888] transition-all"
-              >
-                View Our Work →
-              </Link>
-            </m.div>
-          </div>
-
-          {/* Right: AI demo (top, ~60%) + Live feed (bottom, ~40%) */}
+        <div className="relative max-w-5xl mx-auto w-full text-center">
           <m.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.3, duration: 0.9, ease: EASE }}
-            className="flex flex-col gap-4 w-full max-w-xl mx-auto lg:mx-0 lg:ml-auto"
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1, duration: 0.5 }}
+            className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-[#1a1a1a] bg-[#080808] mb-8 section-label"
           >
-            <HeroAIDemo />
-            <LiveActivityFeed />
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute h-full w-full rounded-full bg-blue-400 opacity-75" />
+              <span className="relative h-2 w-2 rounded-full bg-blue-500" />
+            </span>
+            <span className="text-[#cccccc] text-[11px] tracking-[0.12em] uppercase font-medium">
+              Digital Solutions Studio
+            </span>
+            <span className="text-[#333] text-[11px]">·</span>
+            <span className="text-[#cccccc] text-[11px] tracking-[0.12em] uppercase font-medium">
+              Product · Automation · AI
+            </span>
+          </m.div>
+
+          <m.h1
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.6, ease: EASE }}
+            className="section-heading font-black text-white tracking-tight leading-[0.95]"
+            style={{ fontSize: "clamp(38px, 6vw, 76px)" }}
+          >
+            Build smarter <span className="gradient-text-blue">systems</span>,{" "}
+            <span className="gradient-text-blue">automations</span>, and digital
+            products for your business.
+          </m.h1>
+
+          <m.p
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.6, ease: EASE }}
+            className="section-subtext text-[#666] text-lg md:text-xl mt-8 max-w-3xl mx-auto leading-relaxed"
+          >
+            Flowtix helps startups, digital companies, and growing businesses
+            turn manual processes into scalable systems — from internal tools
+            and client portals to AI agents, websites, MVPs, and automated
+            workflows.
+          </m.p>
+
+          <m.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7, duration: 0.5 }}
+            className="mt-10 flex items-center justify-center gap-8 flex-wrap"
+          >
+            {HERO_STATS.map((s, i) => (
+              <span key={s.value} className="inline-flex items-center gap-8">
+                <span className="text-center">
+                  <span className="block text-white text-sm font-semibold">
+                    {s.value}
+                  </span>
+                  <span className="block text-[#333] text-xs mt-0.5">
+                    {s.label}
+                  </span>
+                </span>
+                {i < HERO_STATS.length - 1 && (
+                  <span className="hidden sm:inline-block h-8 w-px bg-[#1a1a1a]" />
+                )}
+              </span>
+            ))}
+          </m.div>
+
+          <m.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.9, duration: 0.5 }}
+            className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 flex-wrap"
+          >
+            <Link
+              href="/contact"
+              className="btn-shimmer inline-flex items-center justify-center gap-2 bg-white text-black px-7 py-3.5 rounded-xl text-sm font-semibold hover:bg-[#eee] transition-colors min-h-[48px] w-full sm:w-auto"
+            >
+              <span className="relative z-10">Book a Strategy Call</span>
+              <IconArrowRight size={16} stroke={2} className="relative z-10" />
+            </Link>
+            <Link
+              href="/services"
+              className="inline-flex items-center justify-center border border-[#1a1a1a] text-[#888] px-7 py-3.5 rounded-xl text-sm hover:border-[#2a2a2a] hover:text-white transition-all min-h-[48px] w-full sm:w-auto"
+            >
+              See What We Build →
+            </Link>
           </m.div>
         </div>
-
-        {/* Scroll indicator — bottom of hero, pulses gently */}
-        <m.div
-          aria-hidden="true"
-          className="hidden lg:flex absolute bottom-6 left-1/2 -translate-x-1/2 flex-col items-center gap-2 pointer-events-none"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.4, duration: 0.8 }}
-        >
-          <span className="text-[#333] text-[10px] tracking-[0.2em] uppercase">
-            Scroll
-          </span>
-          <m.span
-            className="block w-px bg-[#333]"
-            style={{ height: 28, transformOrigin: "top" }}
-            animate={{ scaleY: [0.3, 1, 0.3], opacity: [0.4, 1, 0.4] }}
-            transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
-          />
-        </m.div>
       </section>
 
-      {/* ===== 2. SOCIAL PROOF COUNTER STRIP ===== */}
-      <section className="section-contain py-20 border-y border-[#080808] bg-[#030303]">
+      {/* ===== 2. SOCIAL PROOF STRIP ===== */}
+      <section className="section-contain py-16 sm:py-20 border-y border-[#080808] bg-[#030303]">
         <div className="max-w-5xl mx-auto px-6 flex flex-wrap justify-center items-stretch gap-y-10">
           {SOCIAL_STATS.map((s, i) => (
             <div
@@ -391,119 +324,144 @@ export default function Home() {
               className="flex items-stretch flex-1 min-w-[40%] sm:min-w-[20%]"
             >
               <div className="flex-1 text-center px-3">
-                <div className="text-4xl font-black text-white tracking-tight">
-                  <AnimatedCounter
-                    value={s.value}
-                    suffix={s.suffix}
-                  />
+                <div className="text-3xl sm:text-4xl font-black text-white tracking-tight">
+                  <AnimatedCounter value={s.value} suffix={s.suffix} />
                 </div>
-                <div className="text-[#333] text-xs tracking-wider mt-2 uppercase">
+                <div className="text-[#333] text-[10px] sm:text-xs tracking-wider mt-2 uppercase">
                   {s.label}
                 </div>
               </div>
               {i < SOCIAL_STATS.length - 1 && (
-                <div className="bg-[#0f0f0f] w-px h-12 self-center" />
+                <div className="bg-[#0f0f0f] w-px h-12 self-center hidden sm:block" />
               )}
             </div>
           ))}
         </div>
       </section>
 
-      {/* ===== 3. INDUSTRIES — trust marquee ===== */}
-      <section className="section-contain py-20 lg:py-24 border-y border-[#080808] bg-black overflow-hidden">
-        <FadeIn>
-          <h2
-            className="text-white font-bold text-center tracking-tight px-4"
-            style={{ fontSize: "clamp(22px, 3vw, 32px)" }}
-          >
-            Trusted by businesses across{" "}
-            <span className="gradient-text-blue">12 industries</span>.
-          </h2>
-        </FadeIn>
-
-        <div className="mt-10 space-y-3">
-          {/* Row 1 — rightward */}
-          <div className="overflow-hidden relative">
-            <div className="marquee-track inline-flex whitespace-nowrap">
-              {[0, 1].map((dup) => (
-                <span key={dup} className="inline-flex shrink-0">
-                  {INDUSTRIES_12.slice(0, 6).map((t, i) => (
-                    <span
-                      key={`a-${dup}-${i}`}
-                      className="inline-flex items-center text-[#444] text-sm tracking-[0.18em] uppercase"
-                    >
-                      <span className="mx-8">{t}</span>
-                      <span className="text-[#1a1a1a]">·</span>
-                    </span>
-                  ))}
-                </span>
-              ))}
-            </div>
-          </div>
-          {/* Row 2 — leftward, slightly faster */}
-          <div className="overflow-hidden relative">
-            <div className="marquee-track-reverse inline-flex whitespace-nowrap">
-              {[0, 1].map((dup) => (
-                <span key={dup} className="inline-flex shrink-0">
-                  {INDUSTRIES_12.slice(6, 12).map((t, i) => (
-                    <span
-                      key={`b-${dup}-${i}`}
-                      className="inline-flex items-center text-[#444] text-sm tracking-[0.18em] uppercase"
-                    >
-                      <span className="mx-8">{t}</span>
-                      <span className="text-[#1a1a1a]">·</span>
-                    </span>
-                  ))}
-                </span>
-              ))}
-            </div>
+      {/* ===== 3. MARQUEE ===== */}
+      <section className="py-4 border-y border-[#080808] overflow-hidden bg-black">
+        <div className="overflow-hidden relative">
+          <div className="marquee-track inline-flex whitespace-nowrap">
+            {[0, 1].map((dup) => (
+              <span key={dup} className="inline-flex shrink-0">
+                {MARQUEE_1.map((t, i) => (
+                  <span
+                    key={`${dup}-${i}`}
+                    className="inline-flex items-center text-[#111] text-xs tracking-[0.2em] uppercase"
+                  >
+                    <span className="mx-8">{t}</span>
+                    <span>·</span>
+                  </span>
+                ))}
+              </span>
+            ))}
           </div>
         </div>
-
-        <p className="text-[#555] text-sm text-center mt-10 max-w-2xl mx-auto px-4 leading-relaxed">
-          From solo founders to scaling teams — we build AI systems for
-          businesses that refuse to settle.
-        </p>
+      </section>
+      <section className="py-4 overflow-hidden bg-black">
+        <div className="overflow-hidden relative">
+          <div
+            className="inline-flex whitespace-nowrap"
+            style={{ animation: "marqueeReverse 24s linear infinite" }}
+          >
+            {[0, 1].map((dup) => (
+              <span key={dup} className="inline-flex shrink-0">
+                {MARQUEE_2.map((t, i) => (
+                  <span
+                    key={`${dup}-${i}`}
+                    className="inline-flex items-center text-[#0d0d0d] text-xs tracking-[0.2em] uppercase"
+                  >
+                    <span className="mx-8">{t}</span>
+                    <span>·</span>
+                  </span>
+                ))}
+              </span>
+            ))}
+          </div>
+        </div>
       </section>
 
-      {/* ===== 4. THE PROBLEM WE SOLVE ===== */}
-      <section className="relative section-contain py-24 md:py-32 lg:py-40 px-6 md:px-10 xl:px-12">
+      {/* ===== 4. WHAT WE BUILD ===== */}
+      <section className="relative section-contain py-24 md:py-32 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <FadeIn>
+            <div className="text-center mb-14 sm:mb-16">
+              <div className="section-label text-[#333] text-[10px] tracking-widest uppercase mb-4">
+                What We Build
+              </div>
+              <h2
+                className="section-heading font-black tracking-tight text-white"
+                style={{ fontSize: "clamp(28px, 4.5vw, 48px)" }}
+              >
+                Custom systems for the way your business actually works.
+              </h2>
+              <p className="section-subtext text-[#666] text-base sm:text-lg mt-4 max-w-2xl mx-auto leading-relaxed">
+                Not templates. Not off-the-shelf SaaS. Real solutions designed
+                around the workflows, customers, and operations you already
+                have.
+              </p>
+            </div>
+          </FadeIn>
+
+          <StaggerContainer
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5"
+            stagger={0.06}
+          >
+            {WHAT_WE_BUILD.map((c) => {
+              const Icon = c.icon;
+              return (
+                <StaggerItem key={c.title}>
+                  <div className="group relative h-full bg-[#0D0D0D] border border-[#1a1a1a] rounded-2xl p-7 hover:border-[#2a2a2a] hover:-translate-y-1 transition-all duration-300">
+                    <Icon
+                      size={26}
+                      stroke={1.5}
+                      className="text-[#444] group-hover:text-blue-500 transition-colors"
+                    />
+                    <h3 className="text-white text-lg font-semibold tracking-tight mt-6">
+                      {c.title}
+                    </h3>
+                    <p className="text-[#555] text-sm leading-relaxed mt-3">
+                      {c.body}
+                    </p>
+                  </div>
+                </StaggerItem>
+              );
+            })}
+          </StaggerContainer>
+        </div>
+      </section>
+
+      {/* ===== 5. THE PROBLEM ===== */}
+      <section className="relative section-contain py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-[#030303] border-y border-[#080808]">
         <span className="section-number" aria-hidden="true">
           01
         </span>
         <div className="relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-12 lg:gap-16 items-start">
           <FadeIn direction="right">
-            <div className="text-[#222] text-[10px] tracking-widest uppercase section-label">
+            <div className="section-label text-[#222] text-[10px] tracking-widest uppercase">
               The Problem
             </div>
             <h2
-              className="font-black tracking-tight leading-[0.95] text-white mt-6"
-              style={{ fontSize: "clamp(40px, 5vw, 64px)" }}
+              className="section-heading font-black tracking-tight leading-[1] text-white mt-6"
+              style={{ fontSize: "clamp(32px, 5vw, 56px)" }}
             >
-              The AI revolution has a
-              <br />
-              <span className="gradient-text-blue">design problem.</span>
+              Most businesses are still running on{" "}
+              <span className="gradient-text-blue">manual work.</span>
             </h2>
-            <p className="text-[#666] text-lg leading-relaxed mt-8 max-w-lg">
-              72% of AI implementations fail to deliver expected ROI. Not
-              because the AI isn&apos;t capable — because nobody designed the
-              experience. Flowtix was built to fix that.
+            <p className="section-subtext text-[#666] text-base sm:text-lg leading-relaxed mt-8 max-w-2xl">
+              Your team wastes hours every week on repetitive tasks,
+              disconnected tools, manual follow-ups, copy-paste work,
+              spreadsheets, and processes that should have been automated long
+              ago.
             </p>
-            <div className="mt-8 space-y-2 max-w-lg">
-              {[
-                "72% of AI projects underdeliver — McKinsey, 2024",
-                "61% of employees resist new AI tools — Gartner, 2024",
-                "Design-led companies outperform by 211% — McKinsey",
-              ].map((c) => (
-                <div key={c} className="flex items-center gap-2.5 text-[#444] text-xs">
-                  <span className="w-1 h-1 rounded-full bg-blue-500/60 shrink-0" />
-                  <span>{c}</span>
-                </div>
-              ))}
-            </div>
+            <p className="text-[#888] text-base sm:text-lg leading-relaxed mt-4 max-w-2xl">
+              Flowtix turns those messy workflows into clean, automated,
+              measurable systems.
+            </p>
           </FadeIn>
           <FadeIn direction="left" delay={0.1}>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 gap-4">
               {PAINS.map((p, i) => (
                 <m.div
                   key={i}
@@ -516,7 +474,7 @@ export default function Home() {
                   <div className="flex items-center gap-2 mb-3">
                     <span className="w-1.5 h-1.5 rounded-full bg-rose-500" />
                     <span className="text-[#222] text-[10px] uppercase tracking-widest">
-                      Common Problem
+                      Common Reality
                     </span>
                   </div>
                   <p className="text-[#888] text-sm leading-relaxed">{p}</p>
@@ -525,33 +483,71 @@ export default function Home() {
             </div>
           </FadeIn>
         </div>
-        <div className="site-container">
-          <div className="hr-gradient mt-16 mb-6" />
-          <p className="text-[#444] text-sm text-center">
-            We built Flowtix because we experienced every one of these
-            problems firsthand.
-          </p>
+      </section>
+
+      {/* ===== 6. THE SOLUTION (process flow) ===== */}
+      <section className="section-contain py-24 md:py-32 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto text-center mb-14 sm:mb-16">
+          <FadeIn>
+            <div className="section-label text-[#333] text-[10px] tracking-widest uppercase mb-4">
+              The Solution
+            </div>
+            <h2
+              className="section-heading font-black tracking-tight text-white"
+              style={{ fontSize: "clamp(28px, 4.5vw, 56px)" }}
+            >
+              From messy workflows to{" "}
+              <span className="gradient-text-blue">scalable systems.</span>
+            </h2>
+            <p className="section-subtext text-[#666] text-base sm:text-lg mt-6 max-w-2xl mx-auto leading-relaxed">
+              We map your current workflow, identify where time and money are
+              being wasted, design the right solution, and build a system that
+              fits the way your business actually works.
+            </p>
+          </FadeIn>
+        </div>
+
+        {/* Flow chips */}
+        <div className="max-w-5xl mx-auto flex flex-wrap items-center justify-center gap-2 sm:gap-3 px-2">
+          {FLOW_STEPS.map((s, i) => (
+            <m.div
+              key={s.label}
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ delay: i * 0.08, duration: 0.4, ease: EASE }}
+              className="inline-flex items-center gap-2 sm:gap-3"
+            >
+              <span className="inline-flex flex-col items-center text-center bg-[#0D0D0D] border border-[#1a1a1a] rounded-xl px-4 sm:px-5 py-3 sm:py-4 min-w-[120px]">
+                <span className="text-white text-sm font-semibold">
+                  {s.label}
+                </span>
+                <span className="text-[#444] text-[11px] mt-1">{s.text}</span>
+              </span>
+              {i < FLOW_STEPS.length - 1 && (
+                <span className="text-[#222] hidden sm:inline" aria-hidden="true">
+                  →
+                </span>
+              )}
+            </m.div>
+          ))}
         </div>
       </section>
 
-      {/* ===== INTELLIGENCE STACK ===== */}
-      <IntelligenceStack />
-
-      {/* ===== 5. SERVICES HORIZONTAL SCROLL ===== */}
-      <section className="section-contain py-32">
-        <div className="site-container mb-12">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
+      {/* ===== 7. SERVICES (links into /services) ===== */}
+      <section className="section-contain py-24 md:py-32 bg-[#030303] border-y border-[#080808]">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 mb-12">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 text-center sm:text-left">
             <div>
-              <div className="text-[#333] text-[10px] tracking-widest uppercase section-label">
-                What We Build
+              <div className="section-label text-[#333] text-[10px] tracking-widest uppercase">
+                Services
               </div>
-              <h2 className="text-h2 gradient-text mt-3 max-w-xl section-heading">
-                Every service. One team.
+              <h2
+                className="section-heading font-black tracking-tight text-white mt-3 max-w-xl"
+                style={{ fontSize: "clamp(28px, 4.5vw, 44px)" }}
+              >
+                Six ways we help businesses ship.
               </h2>
-              <p className="text-[#666] text-[17px] mt-4 max-w-lg leading-relaxed">
-                We don&apos;t outsource. Everything is built in-house, by the
-                same people you talk to.
-              </p>
             </div>
             <Link
               href="/services"
@@ -562,15 +558,21 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="overflow-x-auto no-scrollbar" style={{ scrollSnapType: "x mandatory" }}>
-          <div className="inline-flex gap-4 px-6 lg:px-8" style={{ width: "max-content" }}>
+        <div
+          className="overflow-x-auto no-scrollbar"
+          style={{ scrollSnapType: "x mandatory" }}
+        >
+          <div
+            className="inline-flex gap-4 px-6 lg:px-8"
+            style={{ width: "max-content" }}
+          >
             {services.map((s, i) => {
               const Icon = s.icon;
               return (
                 <Link
                   key={s.slug}
                   href={`/services/${s.slug}/`}
-                  className="group relative w-72 h-72 shrink-0 bg-[#0D0D0D] border border-[#1a1a1a] rounded-2xl p-6 flex flex-col transition-all duration-300 hover:border-[#2a2a2a] hover:-translate-y-1.5 animate-border-pulse"
+                  className="group relative w-72 h-72 shrink-0 bg-[#0D0D0D] border border-[#1a1a1a] rounded-2xl p-6 flex flex-col transition-all duration-300 hover:border-[#2a2a2a] hover:-translate-y-1.5"
                   style={{
                     scrollSnapAlign: "start",
                     animationDelay: `${i * 0.4}s`,
@@ -596,7 +598,7 @@ export default function Home() {
                   </div>
                   <div className="mt-4 text-[#222] text-xs group-hover:text-[#666] transition-colors animated-link inline-flex items-center gap-1">
                     Explore
-                    <IconArrowRight size={12} stroke={2} aria-hidden="true" />
+                    <IconArrowRight size={12} stroke={2} />
                   </div>
                 </Link>
               );
@@ -609,74 +611,101 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== BY THE NUMBERS ===== */}
-      <ByTheNumbers />
-
-      {/* ===== 6. HOW WE WORK TIMELINE ===== */}
-      <section className="section-contain py-32 bg-[#030303] border-y border-[#080808] px-6 md:px-10 xl:px-12">
-        <div className="text-center mb-20">
-          <FadeIn>
-            <div className="text-[#333] text-[10px] tracking-widest uppercase mb-4 section-label">
-              The Process
-            </div>
-            <h2 className="text-h2 gradient-text section-heading">
-              From conversation to deployment.
-            </h2>
-            <p className="text-[#666] text-[17px] mt-4 max-w-xl mx-auto leading-relaxed">
-              A clear, repeatable process. No surprises. No scope creep.
-            </p>
-          </FadeIn>
-        </div>
-
-        <div className="relative max-w-2xl mx-auto">
-          <div className="absolute left-8 top-8 bottom-8 w-px bg-[#0f0f0f]" />
-          <m.div
-            initial={{ scaleY: 0 }}
-            whileInView={{ scaleY: 1 }}
-            viewport={{ once: true, amount: 0.05 }}
-            transition={{ duration: 1.6, ease: "easeOut" }}
-            className="absolute left-8 top-8 bottom-8 w-px origin-top bg-gradient-to-b from-blue-500/40 via-blue-500/20 to-transparent"
-          />
-          {TIMELINE.map((t, i) => (
-            <m.div
-              key={t.n}
-              initial={{ opacity: 0, x: -16 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ delay: i * 0.1, duration: 0.6, ease: EASE }}
-              className="relative flex gap-6 pb-14 last:pb-0"
-            >
-              <div className="relative shrink-0 z-10">
-                <div className="w-16 h-16 rounded-full border border-blue-500/30 bg-[#0D0D0D] flex items-center justify-center text-blue-400 text-sm font-mono">
-                  {t.n}
-                </div>
+      {/* ===== 8. WHO IT'S FOR ===== */}
+      <section className="section-contain py-24 md:py-32 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <FadeIn>
+              <div className="section-label text-[#333] text-[10px] tracking-widest uppercase mb-4">
+                Who We Work With
               </div>
-              <div className="pt-2">
-                <div className="text-[#222] text-[10px] tracking-widest uppercase section-label">
-                  {t.week}
+              <h2
+                className="section-heading font-black tracking-tight text-white"
+                style={{ fontSize: "clamp(28px, 4.5vw, 44px)" }}
+              >
+                Who Flowtix is for.
+              </h2>
+              <p className="section-subtext text-[#666] text-base sm:text-lg mt-4 max-w-2xl mx-auto leading-relaxed">
+                We work best with teams that know what they want to improve —
+                and want one partner who can carry it across product, design,
+                automation, and AI.
+              </p>
+            </FadeIn>
+          </div>
+
+          <StaggerContainer
+            className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4"
+            stagger={0.05}
+          >
+            {WHO_FOR.map((w) => (
+              <StaggerItem key={w}>
+                <div className="flex items-start gap-3 bg-[#0a0a0a] border border-[#0f0f0f] rounded-xl p-5">
+                  <IconCheck
+                    size={16}
+                    stroke={2.5}
+                    className="text-blue-500 mt-1 shrink-0"
+                  />
+                  <span className="text-[#888] text-sm leading-relaxed">
+                    {w}
+                  </span>
                 </div>
-                <h3 className="text-white text-xl font-semibold mt-1 tracking-tight">
-                  {t.title}
-                </h3>
-                <p className="text-[#666] text-sm leading-relaxed mt-3 max-w-lg">
-                  {t.text}
-                </p>
-              </div>
-            </m.div>
-          ))}
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
         </div>
       </section>
 
-      {/* ===== 7. FEATURED WORK ===== */}
-      <section className="section-contain py-32 px-6 md:px-10 xl:px-12">
+      {/* ===== 9. USE CASES ===== */}
+      <section className="section-contain py-24 md:py-32 bg-[#030303] border-y border-[#080808] px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <FadeIn>
+              <div className="section-label text-[#333] text-[10px] tracking-widest uppercase mb-4">
+                Examples
+              </div>
+              <h2
+                className="section-heading font-black tracking-tight text-white"
+                style={{ fontSize: "clamp(28px, 4.5vw, 44px)" }}
+              >
+                What we can build for you.
+              </h2>
+              <p className="section-subtext text-[#666] text-base sm:text-lg mt-4 max-w-2xl mx-auto leading-relaxed">
+                Real examples from real projects. Whatever you don&apos;t see
+                here, ask — most of what we build is bespoke.
+              </p>
+            </FadeIn>
+          </div>
+
+          <StaggerContainer
+            className="mt-10 flex flex-wrap justify-center gap-2.5"
+            stagger={0.03}
+          >
+            {USE_CASES.map((u) => (
+              <StaggerItem key={u}>
+                <span className="inline-block bg-[#0D0D0D] border border-[#1a1a1a] rounded-full px-5 py-2.5 text-sm text-[#888] hover:border-blue-500/30 hover:text-white transition-colors cursor-default">
+                  {u}
+                </span>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+        </div>
+      </section>
+
+      {/* ===== 10. FEATURED WORK ===== */}
+      <section className="section-contain py-24 md:py-32 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <FadeIn>
-            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12 text-center sm:text-left">
               <div>
-                <div className="text-[#333] text-[10px] tracking-widest uppercase mb-4 section-label">
+                <div className="section-label text-[#333] text-[10px] tracking-widest uppercase mb-4">
                   Selected Work
                 </div>
-                <h2 className="text-h2 gradient-text section-heading">Systems we&apos;ve built.</h2>
+                <h2
+                  className="section-heading font-black tracking-tight text-white"
+                  style={{ fontSize: "clamp(28px, 4.5vw, 44px)" }}
+                >
+                  Systems we&apos;ve built.
+                </h2>
               </div>
               <Link
                 href="/work"
@@ -708,48 +737,42 @@ export default function Home() {
                       "0 12px 40px rgba(0,0,0,0.35)";
                   }}
                 >
-                  {/* Brand glow overlay */}
                   <div
+                    aria-hidden="true"
                     className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                     style={{
                       background: `radial-gradient(ellipse 70% 40% at 50% 0%, rgba(${p.brand.accentRGB},0.12), transparent 70%)`,
                     }}
-                    aria-hidden="true"
                   />
 
-                  {/* Mockup area */}
                   <div
                     className="relative h-56 lg:h-60 overflow-hidden flex items-center justify-center p-5"
                     style={{
                       background: `linear-gradient(180deg, ${p.brand.dark} 0%, #000 100%)`,
                     }}
                   >
-                    {/* Soft accent halo behind mockup */}
                     <div
+                      aria-hidden="true"
                       className="absolute top-0 right-0 w-72 h-72 pointer-events-none"
                       style={{
                         background: `radial-gradient(circle, rgba(${p.brand.accentRGB},0.18), transparent 65%)`,
                         filter: "blur(40px)",
                       }}
-                      aria-hidden="true"
                     />
-                    {/* Actual mockup, scaled */}
                     <div className="relative w-full max-w-[90%] transition-transform duration-500 group-hover:scale-[1.04]">
                       <ListingMockup slug={p.slug} />
                     </div>
                   </div>
 
-                  {/* Divider gradient */}
                   <div
+                    aria-hidden="true"
                     className="h-px"
                     style={{
                       background: `linear-gradient(90deg, transparent, rgba(${p.brand.accentRGB},0.25), transparent)`,
                     }}
-                    aria-hidden="true"
                   />
 
                   <div className="relative p-6">
-                    {/* Client logo + year */}
                     <div className="flex items-center justify-between mb-3">
                       <div className="h-8 flex items-center">
                         <ClientLogo slug={p.slug} height={26} />
@@ -772,34 +795,6 @@ export default function Home() {
                       {p.description}
                     </p>
 
-                    {/* Stack pills */}
-                    <div className="mt-5 flex flex-wrap gap-1.5">
-                      {p.stack.slice(0, 3).map((s) => (
-                        <span
-                          key={s}
-                          className="text-[10px] px-2 py-0.5 rounded-full"
-                          style={{
-                            color: p.brand.textOnBrand,
-                            background: `rgba(${p.brand.accentRGB},0.06)`,
-                            border: `1px solid rgba(${p.brand.accentRGB},0.15)`,
-                          }}
-                        >
-                          {s}
-                        </span>
-                      ))}
-                      {p.stack.length > 3 && (
-                        <span
-                          className="text-[10px] px-2 py-0.5 rounded-full text-[#444]"
-                          style={{
-                            border: "1px solid rgba(255,255,255,0.05)",
-                          }}
-                        >
-                          +{p.stack.length - 3}
-                        </span>
-                      )}
-                    </div>
-
-                    {/* CTA row */}
                     <div
                       className="mt-6 pt-4 border-t flex items-center justify-between text-xs"
                       style={{ borderColor: "rgba(255,255,255,0.06)" }}
@@ -818,7 +813,6 @@ export default function Home() {
                         <IconArrowRight
                           size={13}
                           stroke={2}
-                          aria-hidden="true"
                           className="group-hover:translate-x-0.5 transition-transform"
                         />
                       </span>
@@ -831,65 +825,102 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== 8. COMPARISON TABLE ===== */}
-      <section className="section-contain py-32 bg-[#030303] border-y border-[#080808] px-6 md:px-10 xl:px-12">
-        <div className="text-center mb-12">
+      {/* ===== 11. DIFFERENTIATION ===== */}
+      <section className="section-contain py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-[#030303] border-y border-[#080808]">
+        <div className="max-w-4xl mx-auto text-center">
           <FadeIn>
-            <div className="text-[#333] text-[10px] tracking-widest uppercase mb-4 section-label">
-              The Difference
+            <div className="section-label text-[#333] text-[10px] tracking-widest uppercase mb-4">
+              Why Flowtix
             </div>
-            <h2 className="text-h2 gradient-text section-heading">
-              Why businesses choose Flowtix.
+            <h2
+              className="section-heading font-black tracking-tight text-white"
+              style={{ fontSize: "clamp(28px, 4.5vw, 56px)" }}
+            >
+              Not just design. Not just automation.{" "}
+              <span className="gradient-text-blue">A complete digital partner.</span>
             </h2>
-            <p className="text-[#666] text-[17px] mt-4 max-w-xl mx-auto leading-relaxed">
-              Over generic agencies, freelancers, and off-the-shelf tools.
+            <p className="section-subtext text-[#444] text-base sm:text-lg leading-relaxed mt-8 max-w-2xl mx-auto">
+              Most providers focus on one piece — design, development,
+              automation, or AI. Flowtix connects all of them into one practical
+              solution. We understand the business problem, design the
+              experience, build the system, and automate the workflow behind
+              it.
+            </p>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* ===== 12. HOW WE WORK (timeline) ===== */}
+      <section className="section-contain py-24 md:py-32 px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16 sm:mb-20">
+          <FadeIn>
+            <div className="section-label text-[#333] text-[10px] tracking-widest uppercase mb-4">
+              How We Work
+            </div>
+            <h2
+              className="section-heading font-black tracking-tight text-white"
+              style={{ fontSize: "clamp(28px, 4.5vw, 44px)" }}
+            >
+              From conversation to working system.
+            </h2>
+            <p className="section-subtext text-[#666] text-base sm:text-lg mt-4 max-w-xl mx-auto leading-relaxed">
+              A clear, repeatable process. No surprises. No scope creep.
             </p>
           </FadeIn>
         </div>
 
-        <div className="max-w-3xl mx-auto relative">
-          <div className="absolute top-0 bottom-0 left-1/4 w-1/4 bg-[#0D0D0D] border border-blue-500/20 rounded-xl pointer-events-none" />
-
-          <div className="relative grid grid-cols-4 border-b border-[#0a0a0a]">
-            <div />
-            <div className="py-4 text-center text-white text-sm font-semibold tracking-tight">
-              Flowtix
-            </div>
-            <div className="py-4 text-center text-[#666] text-sm">
-              Generic Agency
-            </div>
-            <div className="py-4 text-center text-[#666] text-sm">
-              Off-the-shelf
-            </div>
-          </div>
-
-          {COMPARE_ROWS.map((row, i) => (
+        <div className="relative max-w-2xl mx-auto">
+          <div
+            aria-hidden="true"
+            className="absolute left-8 top-8 bottom-8 w-px bg-[#0f0f0f]"
+          />
+          <m.div
+            initial={{ scaleY: 0 }}
+            whileInView={{ scaleY: 1 }}
+            viewport={{ once: true, amount: 0.05 }}
+            transition={{ duration: 1.6, ease: "easeOut" }}
+            aria-hidden="true"
+            className="absolute left-8 top-8 bottom-8 w-px origin-top bg-gradient-to-b from-blue-500/40 via-blue-500/20 to-transparent"
+          />
+          {PROCESS_STEPS.map((t, i) => (
             <m.div
-              key={row.label}
+              key={t.n}
               initial={{ opacity: 0, x: -16 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.05 }}
-              transition={{ delay: i * 0.06, duration: 0.5, ease: EASE }}
-              className="relative grid grid-cols-4 border-b border-[#0a0a0a] last:border-b-0"
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ delay: i * 0.1, duration: 0.6, ease: EASE }}
+              className="relative flex gap-6 pb-14 last:pb-0 text-left"
             >
-              <div className="py-4 px-3 text-[#aaa] text-sm">{row.label}</div>
-              <CompareCell v={row.flowtix} highlight />
-              <CompareCell v={row.agency} />
-              <CompareCell v={row.tool} />
+              <div className="relative shrink-0 z-10">
+                <div className="w-16 h-16 rounded-full border border-blue-500/30 bg-[#0D0D0D] flex items-center justify-center text-blue-400 text-sm font-mono">
+                  {t.n}
+                </div>
+              </div>
+              <div className="pt-2">
+                <h3 className="text-white text-lg sm:text-xl font-semibold tracking-tight">
+                  {t.title}
+                </h3>
+                <p className="text-[#666] text-sm sm:text-base leading-relaxed mt-3 max-w-lg">
+                  {t.text}
+                </p>
+              </div>
             </m.div>
           ))}
         </div>
       </section>
 
-      {/* ===== 9. INDUSTRIES ===== */}
-      <section className="section-contain py-24 px-6 md:px-10 xl:px-12">
+      {/* ===== 13. INDUSTRIES ===== */}
+      <section className="section-contain py-20 md:py-24 px-4 sm:px-6 lg:px-8 bg-[#030303] border-y border-[#080808]">
         <div className="max-w-7xl mx-auto text-center">
           <FadeIn>
-            <div className="text-[#333] text-[10px] tracking-widest uppercase mb-4 section-label">
+            <div className="section-label text-[#333] text-[10px] tracking-widest uppercase mb-4">
               Industries
             </div>
-            <h2 className="text-h2 gradient-text section-heading">
-              We work across every industry.
+            <h2
+              className="section-heading font-black tracking-tight text-white"
+              style={{ fontSize: "clamp(24px, 4vw, 36px)" }}
+            >
+              Where we&apos;ve worked.
             </h2>
           </FadeIn>
           <StaggerContainer
@@ -898,7 +929,7 @@ export default function Home() {
           >
             {INDUSTRIES_12.map((i) => (
               <StaggerItem key={i}>
-                <span className="inline-block bg-[#0D0D0D] border border-[#1a1a1a] rounded-full px-5 py-2.5 text-sm text-[#555] hover:border-blue-500/30 hover:text-[#666] transition-colors cursor-default">
+                <span className="inline-block bg-[#0D0D0D] border border-[#1a1a1a] rounded-full px-5 py-2.5 text-sm text-[#666] hover:border-blue-500/30 hover:text-white transition-colors cursor-default">
                   {i}
                 </span>
               </StaggerItem>
@@ -907,94 +938,17 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== FAQ ===== */}
+      {/* ===== 14. FAQ ===== */}
       <FAQ />
 
-      {/* ===== PRICING CALCULATOR ===== */}
-      <PricingCalculator />
-
-      {/* ===== FIRST 7 DAYS — onboarding preview ===== */}
-      <section className="section-contain relative py-24 lg:py-32 px-6 md:px-10 xl:px-12 overflow-hidden">
-        <span className="section-number" aria-hidden="true">
-          09
-        </span>
-        <div className="relative max-w-6xl mx-auto">
-          <FadeIn>
-            <div className="text-[#222] text-[10px] tracking-widest uppercase section-label text-center">
-              How it starts
-            </div>
-            <h2
-              className="font-black tracking-tight text-white text-center mt-5 leading-tight"
-              style={{ fontSize: "clamp(28px, 4.5vw, 48px)" }}
-            >
-              From first message to first build:{" "}
-              <span className="gradient-text-blue">7 days.</span>
-            </h2>
-            <p className="text-[#555] text-center mt-4 text-sm max-w-xl mx-auto leading-relaxed">
-              No back-and-forth, no chasing. Here&apos;s what the first week
-              looks like.
-            </p>
-          </FadeIn>
-
-          <div className="relative mt-16">
-            {/* Connecting line — desktop only, animated draw */}
-            <m.div
-              aria-hidden="true"
-              initial={{ scaleX: 0 }}
-              whileInView={{ scaleX: 1 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 1.6, ease: "easeOut" }}
-              className="hidden md:block absolute left-[8%] right-[8%] top-[28px] h-px origin-left bg-gradient-to-r from-transparent via-[#1a1a1a] to-transparent"
-            />
-
-            <ol className="relative grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-4">
-              {FIRST_WEEK.map((d, i) => {
-                const Icon = d.icon;
-                return (
-                  <m.li
-                    key={d.day}
-                    initial={{ opacity: 0, y: 16 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.2 }}
-                    transition={{
-                      delay: 0.15 + i * 0.08,
-                      duration: 0.5,
-                      ease: EASE,
-                    }}
-                    className="relative flex md:flex-col items-start md:items-center gap-4 md:gap-0 md:text-center"
-                  >
-                    <div className="relative shrink-0 z-10">
-                      <div className="w-14 h-14 rounded-full bg-[#0D0D0D] border border-[#1a1a1a] flex items-center justify-center text-[#666]">
-                        <Icon size={20} stroke={1.5} aria-hidden="true" />
-                      </div>
-                    </div>
-                    <div className="md:mt-5 flex-1">
-                      <div className="text-[#1a1a1a] text-[10px] uppercase tracking-[0.2em]">
-                        {d.day}
-                      </div>
-                      <div className="text-white text-sm font-semibold mt-1.5 tracking-tight">
-                        {d.title}
-                      </div>
-                      <div className="text-[#555] text-xs mt-1.5 leading-relaxed max-w-[180px] md:mx-auto">
-                        {d.sub}
-                      </div>
-                    </div>
-                  </m.li>
-                );
-              })}
-            </ol>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== AVAILABILITY ===== */}
+      {/* ===== 15. AVAILABILITY ===== */}
       <Availability />
 
-      {/* ===== 10. FINAL CTA ===== */}
-      <section className="section-contain relative py-40 text-center overflow-hidden px-6 md:px-10 xl:px-12">
+      {/* ===== 16. FINAL CTA ===== */}
+      <section className="section-contain relative py-32 md:py-40 text-center overflow-hidden px-4 sm:px-6 lg:px-8">
         <div
-          className="absolute inset-0 flex items-center justify-center pointer-events-none -z-0"
           aria-hidden="true"
+          className="absolute inset-0 flex items-center justify-center pointer-events-none -z-0"
         >
           <span
             className="font-black tracking-tighter whitespace-nowrap"
@@ -1008,6 +962,7 @@ export default function Home() {
           </span>
         </div>
         <div
+          aria-hidden="true"
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[400px] rounded-full opacity-[0.03] pointer-events-none"
           style={{
             background: "rgba(59,130,246,1)",
@@ -1016,58 +971,55 @@ export default function Home() {
         />
         <div className="relative z-10 max-w-3xl mx-auto">
           <FadeIn>
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#1a1a1a] bg-[#080808] mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#1a1a1a] bg-[#080808] mb-8 section-label">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute h-full w-full rounded-full bg-blue-400 opacity-75" />
                 <span className="relative h-2 w-2 rounded-full bg-blue-500" />
               </span>
               <span className="text-[#666] text-[11px] tracking-[0.12em] uppercase font-medium">
-                Available for new projects
+                Currently taking on new projects
               </span>
             </div>
           </FadeIn>
           <FadeIn delay={0.1}>
             <h2
-              className="font-black tracking-tighter text-white leading-[1.05]"
-              style={{ fontSize: "clamp(40px, 5vw, 72px)" }}
+              className="section-heading font-black tracking-tighter text-white leading-[1.05]"
+              style={{ fontSize: "clamp(36px, 5vw, 72px)" }}
             >
-              Let&apos;s build your unfair advantage.
+              Have a workflow, idea, or process you want to turn into a system?
             </h2>
           </FadeIn>
           <FadeIn delay={0.2}>
-            <p className="text-[#666] text-xl mt-6 max-w-xl mx-auto leading-relaxed">
-              First conversation is free. No commitment. Just a clear picture
-              of what AI can do for your business — in 30 minutes.
+            <p className="section-subtext text-[#666] text-lg sm:text-xl mt-8 max-w-2xl mx-auto leading-relaxed">
+              Tell us what you&apos;re trying to improve. We&apos;ll help you
+              understand what can be automated, what should be built, and what
+              will create the most business value. First conversation is free
+              and lasts 30 minutes.
             </p>
           </FadeIn>
           <FadeIn delay={0.3}>
-            <div className="mt-10 flex flex-wrap gap-3 justify-center">
-              <div className="relative inline-block">
+            <div className="mt-10 flex flex-col sm:flex-row flex-wrap gap-3 justify-center items-center">
+              <div className="relative inline-block w-full sm:w-auto">
                 <span
                   className="absolute inset-0 rounded-xl bg-white opacity-20 animate-ping pointer-events-none"
                   style={{ animationDuration: "2s" }}
                   aria-hidden="true"
                 />
-                <m.div
-                  whileHover={{
-                    scale: 1.02,
-                    boxShadow: "0 0 40px rgba(255,255,255,0.18)",
-                  }}
-                  whileTap={{ scale: 0.98 }}
-                  className="relative rounded-xl"
+                <Link
+                  href="/contact"
+                  className="btn-shimmer relative inline-flex items-center justify-center gap-2 bg-white text-black px-8 py-4 rounded-xl font-semibold hover:bg-[#eee] transition-colors w-full sm:w-auto min-h-[52px]"
                 >
-                  <Link
-                    href="/contact"
-                    className="btn-shimmer relative inline-flex items-center gap-2 bg-white text-black px-8 py-4 rounded-xl font-semibold hover:bg-[#eee] transition-colors"
-                  >
-                    <span className="relative z-10">Book a Discovery Call</span>
-                    <IconArrowRight size={16} stroke={2} aria-hidden="true" className="relative z-10" />
-                  </Link>
-                </m.div>
+                  <span className="relative z-10">Book a Strategy Call</span>
+                  <IconArrowRight
+                    size={16}
+                    stroke={2}
+                    className="relative z-10"
+                  />
+                </Link>
               </div>
               <Link
                 href="/work"
-                className="inline-flex items-center border border-[#1a1a1a] text-[#666] px-8 py-4 rounded-xl hover:border-[#2a2a2a] hover:text-white transition-colors"
+                className="inline-flex items-center justify-center border border-[#1a1a1a] text-[#666] px-8 py-4 rounded-xl hover:border-[#2a2a2a] hover:text-white transition-colors w-full sm:w-auto min-h-[52px]"
               >
                 See Our Work →
               </Link>
@@ -1076,12 +1028,12 @@ export default function Home() {
           <FadeIn delay={0.4}>
             <div className="mt-12 flex items-center justify-center gap-3 text-[#222] text-xs flex-wrap">
               <span className="inline-flex items-center gap-1.5">
-                <IconLockSquare size={14} stroke={1.5} aria-hidden="true" />
+                <IconLockSquare size={14} stroke={1.5} />
                 All conversations are confidential
               </span>
               <span>·</span>
               <span className="inline-flex items-center gap-1.5">
-                <IconClock size={14} stroke={1.5} aria-hidden="true" />
+                <IconClock size={14} stroke={1.5} />
                 Response within 24 hours
               </span>
             </div>

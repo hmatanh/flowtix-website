@@ -110,7 +110,7 @@ export function Nav() {
                 href="/contact"
                 className="inline-block bg-white text-black px-5 py-2 rounded-lg font-semibold text-sm hover:bg-[#eee] transition-colors"
               >
-                Book a Call
+                Book a Strategy Call
               </Link>
             </m.div>
           </div>
@@ -232,7 +232,7 @@ export function Nav() {
                   className="block w-full text-center font-semibold text-black bg-white rounded-xl"
                   style={{ padding: "16px", fontSize: "15px" }}
                 >
-                  Book a Call →
+                  Book a Strategy Call →
                 </Link>
 
                 <div className="flex justify-center gap-4 mt-5">

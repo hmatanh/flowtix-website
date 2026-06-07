@@ -184,17 +184,18 @@ export default function AboutPage() {
               className="font-black text-white tracking-tighter leading-[1.02] sm:leading-[0.95]"
               style={{ fontSize: "clamp(38px, 7vw, 88px)" }}
             >
-              We believe{" "}
-              <span className="gradient-text-blue">design</span>
-              <br className="hidden sm:inline" /> is the most underrated
-              <br className="hidden sm:inline" /> advantage in AI.
+              We replace{" "}
+              <span className="gradient-text-blue">manual work</span>
+              <br className="hidden sm:inline" /> with real digital
+              <br className="hidden sm:inline" /> systems.
             </h1>
           </FadeIn>
 
           <FadeIn delay={0.25}>
             <p className="text-[#888] text-base sm:text-lg lg:text-xl leading-[1.65] sm:leading-relaxed max-w-2xl mx-auto mt-7 sm:mt-8 px-2">
-              Most AI tools are built by engineers for engineers. We built
-              Flowtix for the humans who use them.
+              Flowtix is a digital solutions studio. We design and build the
+              custom systems, automations, AI agents, internal tools, and
+              digital products that move businesses forward.
             </p>
           </FadeIn>
 

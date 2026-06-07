@@ -31,19 +31,21 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://flowtix.ai"),
   title: {
-    default: "Flowtix AI — AI Systems",
-    template: "%s | Flowtix AI",
+    default:
+      "Flowtix — Custom Business Systems, Automations & Digital Products",
+    template: "%s | Flowtix",
   },
   description:
-    "Design-first AI systems, automations, and digital products for forward-thinking businesses.",
+    "Flowtix helps startups, agencies, and growing businesses replace manual work with custom systems, automated workflows, AI agents, internal tools, MVPs, and websites.",
   keywords: [
-    "AI systems",
-    "AI automation",
-    "business AI",
-    "AI agency",
-    "design studio",
-    "intelligent workflows",
-    "AI products",
+    "business process automation",
+    "custom internal tools",
+    "AI agents for business",
+    "MVP development",
+    "client portal development",
+    "workflow automation",
+    "digital solutions studio",
+    "product design",
   ],
   authors: [{ name: "Flowtix" }],
   creator: "Flowtix",
@@ -52,22 +54,24 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://flowtix.ai",
     siteName: "Flowtix",
-    title: "Flowtix — Design-First AI Systems",
+    title:
+      "Flowtix — Custom Business Systems, Automations & Digital Products",
     description:
-      "AI-powered systems, intelligent automations, and premium digital products.",
+      "We help businesses replace manual work with custom systems, automated workflows, AI agents, internal tools, and digital products.",
     images: [
       {
         url: "/flowtix-wordmark-white.svg",
         width: 1200,
         height: 630,
-        alt: "Flowtix — Design-First AI Systems",
+        alt: "Flowtix — Custom Business Systems & Automations",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Flowtix",
-    description: "Design-First AI Systems for Forward-Thinking Businesses",
+    description:
+      "Custom systems, automations, and digital products for businesses that want to work smarter.",
     images: ["/flowtix-wordmark-white.svg"],
   },
   alternates: {
