@@ -2255,7 +2255,7 @@ function ResonateCTA({ project }: { project: Project }) {
     },
     {
       icon: IconHeartHandshake,
-      title: "Free 30-minute discovery call",
+      title: "Free 30-minute strategy call",
       sub: "No commitment, no sales pressure",
     },
     {

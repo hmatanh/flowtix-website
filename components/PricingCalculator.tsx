@@ -225,7 +225,7 @@ export function PricingCalculator() {
                   <p className="text-[#6a6a6a] text-sm mt-5 max-w-md mx-auto leading-relaxed">
                     This is an estimate based on similar projects. Every project
                     gets a precise, fixed-price proposal after our 30-minute
-                    discovery call.
+                    strategy call.
                   </p>
 
                   <div className="flex flex-col sm:flex-row gap-2.5 justify-center mt-7">

@@ -661,7 +661,7 @@ export function ServiceDetailView({ slug }: { slug: string }) {
           </div>
         </div>
 
-        <div className="relative max-w-3xl mx-auto text-center">
+        <div className="relative page-container text-center">
           <FadeIn>
             <div
               className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-6 sm:mb-8"
@@ -693,7 +693,7 @@ export function ServiceDetailView({ slug }: { slug: string }) {
           </FadeIn>
           <FadeIn delay={0.1}>
             <p className="text-[#aaa] mt-5 sm:mt-6 max-w-xl mx-auto leading-[1.65] sm:leading-relaxed text-base sm:text-lg px-2">
-              Book a free 30-minute discovery call. We&apos;ll talk specifics —
+              Book a free 30-minute strategy call. We&apos;ll talk specifics —
               your problem, your stack, your timeline.
             </p>
           </FadeIn>

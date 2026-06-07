@@ -463,6 +463,7 @@ export function BlogClient({ posts }: { posts: PostMeta[] }) {
 
       {/* ============== NEWSLETTER ============== */}
       <section className="mt-16 sm:mt-20 mb-20 sm:mb-24">
+        <div className="page-container">
         <div
           className="relative max-w-3xl mx-auto rounded-2xl sm:rounded-3xl p-6 sm:p-10 lg:p-12 text-center overflow-hidden border"
           style={{
@@ -534,6 +535,7 @@ export function BlogClient({ posts }: { posts: PostMeta[] }) {
               Unsubscribe anytime. Read by 4,800+ operators.
             </p>
           </div>
+        </div>
         </div>
       </section>
     </>

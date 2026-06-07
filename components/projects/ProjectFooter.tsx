@@ -223,7 +223,7 @@ export function ProjectBottomCTA({ project }: { project: Project }) {
           Want something like this?
         </h2>
         <p className="text-[#666] mt-4 leading-relaxed">
-          Book a free 30-minute discovery call. We&apos;ll talk specifics —
+          Book a free 30-minute strategy call. We&apos;ll talk specifics —
           your problem, your stack, your timeline.
         </p>
         <div className="mt-8 flex flex-wrap gap-3 justify-center">

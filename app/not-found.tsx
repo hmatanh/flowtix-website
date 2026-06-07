@@ -49,7 +49,7 @@ export default function NotFound() {
         />
       </m.svg>
 
-      <div className="relative max-w-3xl mx-auto text-center">
+      <div className="relative page-container text-center">
         {/* Compass icon spinning slowly */}
         <m.div
           aria-hidden="true"

@@ -16,7 +16,7 @@ import { ServiceVisual, getServiceColor } from "@/components/services/ServiceVis
 const EASE = [0.21, 0.47, 0.32, 0.98] as const;
 
 const headlineWords = [
-  { word: "Ten" },
+  { word: "Six" },
   { word: "services." },
   { word: "One", lineBreakBefore: true },
   { word: "team." },
@@ -105,7 +105,7 @@ export default function ServicesPage() {
             </p>
           </FadeIn>
 
-          {/* Color bar — 10 service colors as a strip preview */}
+          {/* Color bar — 6 service colors as a strip preview */}
           <FadeIn delay={0.6}>
             <div className="mt-10 sm:mt-12 inline-flex items-center gap-1.5 sm:gap-2 max-w-full px-2">
               {services.map((s, i) => {
@@ -131,7 +131,7 @@ export default function ServicesPage() {
 
           <FadeIn delay={0.8}>
             <div className="text-[#555] text-xs sm:text-sm mt-5 sm:mt-6 inline-flex items-center gap-2">
-              <span>10 services · 5 industries · 1 team</span>
+              <span>6 services · every industry · 1 team</span>
             </div>
           </FadeIn>
         </div>
@@ -314,7 +314,7 @@ export default function ServicesPage() {
               <span className="gradient-text-blue">pick the right one.</span>
             </h2>
             <p className="text-[#aaa] mt-5 sm:mt-6 text-base sm:text-lg max-w-xl mx-auto leading-relaxed px-2">
-              Book a free 30-minute discovery call. We&apos;ll listen, ask
+              Book a free 30-minute strategy call. We&apos;ll listen, ask
               questions, and point you toward what will actually move your
               business — even if it isn&apos;t us.
             </p>

@@ -11,7 +11,7 @@ type Item = {
 };
 
 const TEMPLATES: { dot: string; text: string }[] = [
-  { dot: "#10b981", text: "New discovery call booked" },
+  { dot: "#10b981", text: "New strategy call booked" },
   { dot: "#3B82F6", text: "AI system deployed for client" },
   { dot: "#a855f7", text: "Automation workflow activated" },
   { dot: "#FB7185", text: "Brand identity delivered" },

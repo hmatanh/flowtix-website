@@ -68,7 +68,7 @@ const steps = [
   {
     n: "02",
     icon: IconCalendar,
-    title: "We schedule a discovery call",
+    title: "We schedule a strategy call",
     text: "Free 30-minute conversation.",
   },
   {
@@ -127,7 +127,7 @@ function CalendarBooking() {
       <div className="flex items-start justify-between gap-4 flex-wrap">
         <div>
           <h3 className="text-white text-xl font-semibold tracking-tight">
-            Book a Free Discovery Call
+            Book a Free Strategy Call
           </h3>
           <div className="text-[#888] text-sm mt-1.5 flex items-center gap-4 flex-wrap">
             <span className="inline-flex items-center gap-1.5">
@@ -526,7 +526,7 @@ export default function ContactPage() {
           <FadeIn delay={0.7}>
             <div className="mt-10 sm:mt-12 grid grid-cols-3 gap-3 max-w-md sm:max-w-lg mx-auto">
               {[
-                { value: "30 min", label: "Discovery call" },
+                { value: "30 min", label: "Strategy call" },
                 { value: "24h", label: "Response time" },
                 { value: "Free", label: "No commitment" },
               ].map((t) => (

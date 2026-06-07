@@ -199,7 +199,7 @@ export function PostView({
       </section>
 
       {/* Body + TOC */}
-      <section className="px-6 lg:px-8">
+      <section>
         <div className="page-container grid grid-cols-1 lg:grid-cols-[1fr_220px] gap-12">
           <article className="prose-flowtix max-w-2xl">{post.body}</article>
           <aside>
@@ -210,7 +210,8 @@ export function PostView({
 
       {/* Tags + share — refined */}
       <section className="mt-12 sm:mt-16">
-        <div className="max-w-3xl mx-auto pt-7 sm:pt-8 border-t border-[#0f0f0f]">
+        <div className="page-container">
+          <div className="max-w-3xl mx-auto pt-7 sm:pt-8 border-t border-[#0f0f0f]">
           <div className="flex flex-wrap items-center gap-2">
             <span className="text-[10px] uppercase tracking-widest text-[#555] mr-1">
               Tags:
@@ -255,11 +256,13 @@ export function PostView({
               </a>
             </div>
           </div>
+          </div>
         </div>
       </section>
 
       {/* Strong "Make this real" closing CTA — category-color themed */}
       <section className="mt-12 sm:mt-16">
+        <div className="page-container">
         <div
           className="relative max-w-3xl mx-auto rounded-2xl sm:rounded-3xl p-6 sm:p-10 overflow-hidden border"
           style={{
@@ -326,10 +329,12 @@ export function PostView({
             </div>
           </div>
         </div>
+        </div>
       </section>
 
       {/* About box */}
       <section className="mt-10 sm:mt-12">
+        <div className="page-container">
         <div className="max-w-3xl mx-auto bg-[#0D0D0D] border border-[#1a1a1a] rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-start gap-5 sm:gap-6">
           <div className="shrink-0">
             <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a] border border-[#222] inline-flex items-center justify-center text-white font-bold text-sm">
@@ -366,11 +371,12 @@ export function PostView({
             </div>
           </div>
         </div>
+        </div>
       </section>
 
       {/* Related */}
       {related.length > 0 && (
-        <section className="px-6 lg:px-8 mt-24 mb-24">
+        <section className="mt-24 mb-24">
           <div className="page-container">
             <FadeIn>
               <div className="text-label text-[#333] mb-3">
