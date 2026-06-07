@@ -56,7 +56,7 @@ export function ScreenContent() {
       className="relative w-full font-sans select-none"
       aria-hidden="true"
       style={{
-        background: "linear-gradient(180deg, #1A0F04 0%, #0A0701 100%)",
+        background: "linear-gradient(180deg, #1F0808 0%, #0A0701 100%)",
         color: "#F5EBD2",
         fontFamily: "var(--font-inter, Inter, sans-serif)",
         aspectRatio: "1600/1000",
@@ -68,10 +68,10 @@ export function ScreenContent() {
           className="border-r overflow-hidden flex flex-col"
           style={{
             background: "#0F0902",
-            borderColor: "rgba(249,115,22,0.10)",
+            borderColor: "rgba(220, 38, 38,0.10)",
           }}
         >
-          <div className="px-6 py-5 border-b" style={{ borderColor: "rgba(249,115,22,0.10)" }}>
+          <div className="px-6 py-5 border-b" style={{ borderColor: "rgba(220, 38, 38,0.10)" }}>
             <div className="text-[#A98046] text-[9.5px] tracking-[0.22em] uppercase mb-1">
               Brief
             </div>
@@ -92,8 +92,8 @@ export function ScreenContent() {
               <div
                 className="rounded px-3 py-2.5 text-white text-[12px]"
                 style={{
-                  background: "#1A0F04",
-                  border: "1px solid rgba(249,115,22,0.18)",
+                  background: "#1F0808",
+                  border: "1px solid rgba(220, 38, 38,0.18)",
                 }}
               >
                 Field Overcoat · Bracken
@@ -113,12 +113,12 @@ export function ScreenContent() {
                     style={
                       i === 0
                         ? {
-                            background: "#F97316",
-                            color: "#1A0F04",
+                            background: "#DC2626",
+                            color: "#1F0808",
                             fontWeight: 600,
                           }
                         : {
-                            border: "1px solid rgba(249,115,22,0.18)",
+                            border: "1px solid rgba(220, 38, 38,0.18)",
                             color: "#A98046",
                           }
                     }
@@ -135,7 +135,7 @@ export function ScreenContent() {
                 <div className="text-[#A98046] text-[9px] tracking-[0.18em] uppercase">
                   Voice
                 </div>
-                <div className="text-[#FED7AA] text-[10.5px]">
+                <div className="text-[#FECACA] text-[10.5px]">
                   Honest · 70%
                 </div>
               </div>
@@ -143,11 +143,11 @@ export function ScreenContent() {
                 <span>Honest</span>
                 <div
                   className="flex-1 relative h-1 rounded-full"
-                  style={{ background: "rgba(249,115,22,0.10)" }}
+                  style={{ background: "rgba(220, 38, 38,0.10)" }}
                 >
                   <m.div
                     className="absolute left-0 top-0 bottom-0 rounded-full"
-                    style={{ background: "#F97316" }}
+                    style={{ background: "#DC2626" }}
                     initial={{ width: 0 }}
                     whileInView={{ width: "70%" }}
                     viewport={{ once: true }}
@@ -160,9 +160,9 @@ export function ScreenContent() {
                     <span
                       className="block w-full h-full rounded-full"
                       style={{
-                        background: "#F97316",
-                        border: "2px solid #1A0F04",
-                        boxShadow: "0 0 0 2px rgba(249,115,22,0.30)",
+                        background: "#DC2626",
+                        border: "2px solid #1F0808",
+                        boxShadow: "0 0 0 2px rgba(220, 38, 38,0.30)",
                       }}
                     />
                   </span>
@@ -177,7 +177,7 @@ export function ScreenContent() {
                 <div className="text-[#A98046] text-[9px] tracking-[0.18em] uppercase">
                   Length
                 </div>
-                <div className="text-[#FED7AA] text-[10.5px]">3 sentences</div>
+                <div className="text-[#FECACA] text-[10.5px]">3 sentences</div>
               </div>
               <div className="flex items-center gap-1.5">
                 {["1", "2", "3", "4", "5", "6"].map((n, i) => (
@@ -187,12 +187,12 @@ export function ScreenContent() {
                     style={
                       i === 2
                         ? {
-                            background: "#F97316",
-                            color: "#1A0F04",
+                            background: "#DC2626",
+                            color: "#1F0808",
                             fontWeight: 600,
                           }
                         : {
-                            background: "rgba(249,115,22,0.06)",
+                            background: "rgba(220, 38, 38,0.06)",
                             color: "#A98046",
                           }
                     }
@@ -217,12 +217,12 @@ export function ScreenContent() {
                       style={
                         i < 3
                           ? {
-                              background: "rgba(249,115,22,0.10)",
-                              color: "#FED7AA",
-                              border: "1px solid rgba(249,115,22,0.25)",
+                              background: "rgba(220, 38, 38,0.10)",
+                              color: "#FECACA",
+                              border: "1px solid rgba(220, 38, 38,0.25)",
                             }
                           : {
-                              border: "1px dashed rgba(249,115,22,0.20)",
+                              border: "1px dashed rgba(220, 38, 38,0.20)",
                               color: "#A98046",
                             }
                       }
@@ -236,13 +236,13 @@ export function ScreenContent() {
           </div>
 
           {/* Generate */}
-          <div className="px-6 py-4 border-t" style={{ borderColor: "rgba(249,115,22,0.10)" }}>
+          <div className="px-6 py-4 border-t" style={{ borderColor: "rgba(220, 38, 38,0.10)" }}>
             <div
               className="rounded-md text-center py-3 text-[12px] font-black tracking-[0.06em] uppercase inline-flex items-center justify-center gap-2 w-full"
               style={{
-                background: "linear-gradient(135deg, #F97316, #C2410C)",
-                color: "#1A0F04",
-                boxShadow: "0 8px 20px rgba(249,115,22,0.30)",
+                background: "linear-gradient(135deg, #DC2626, #991B1B)",
+                color: "#1F0808",
+                boxShadow: "0 8px 20px rgba(220, 38, 38,0.30)",
               }}
             >
               <IconSparkles size={13} stroke={2.4} />
@@ -260,24 +260,24 @@ export function ScreenContent() {
           <div
             className="px-9 py-3 border-b flex items-center gap-2.5 text-[11px]"
             style={{
-              borderColor: "rgba(249,115,22,0.10)",
+              borderColor: "rgba(220, 38, 38,0.10)",
               background:
-                "linear-gradient(90deg, rgba(249,115,22,0.04) 0%, transparent 60%)",
+                "linear-gradient(90deg, rgba(220, 38, 38,0.04) 0%, transparent 60%)",
             }}
           >
             <m.span
               className="inline-flex items-center justify-center w-5 h-5 rounded"
-              style={{ background: "rgba(249,115,22,0.18)" }}
+              style={{ background: "rgba(220, 38, 38,0.18)" }}
               animate={{
                 boxShadow: [
-                  "0 0 0 rgba(249,115,22,0)",
-                  "0 0 12px rgba(249,115,22,0.45)",
-                  "0 0 0 rgba(249,115,22,0)",
+                  "0 0 0 rgba(220, 38, 38,0)",
+                  "0 0 12px rgba(220, 38, 38,0.45)",
+                  "0 0 0 rgba(220, 38, 38,0)",
                 ],
               }}
               transition={{ duration: 2.2, repeat: Infinity }}
             >
-              <IconSparkles size={10} stroke={1.8} style={{ color: "#FED7AA" }} />
+              <IconSparkles size={10} stroke={1.8} style={{ color: "#FECACA" }} />
             </m.span>
             <span className="text-white font-medium">
               Six descriptions generated · 11 seconds
@@ -309,14 +309,14 @@ export function ScreenContent() {
                     v.chosen
                       ? {
                           background:
-                            "linear-gradient(135deg, rgba(249,115,22,0.14) 0%, rgba(249,115,22,0.04) 60%, #1A0F04 100%)",
-                          border: "1.5px solid #F97316",
+                            "linear-gradient(135deg, rgba(220, 38, 38,0.14) 0%, rgba(220, 38, 38,0.04) 60%, #1F0808 100%)",
+                          border: "1.5px solid #DC2626",
                           boxShadow:
-                            "0 8px 20px rgba(249,115,22,0.18), inset 0 1px 0 rgba(249,115,22,0.20)",
+                            "0 8px 20px rgba(220, 38, 38,0.18), inset 0 1px 0 rgba(220, 38, 38,0.20)",
                         }
                       : {
-                          background: "#1A0F04",
-                          border: "1px solid rgba(249,115,22,0.10)",
+                          background: "#1F0808",
+                          border: "1px solid rgba(220, 38, 38,0.10)",
                         }
                   }
                 >
@@ -324,9 +324,9 @@ export function ScreenContent() {
                     <div
                       className="absolute -top-2 -right-2 inline-flex items-center gap-1 text-[9px] uppercase tracking-[0.18em] font-bold px-2 py-1 rounded"
                       style={{
-                        background: "#F97316",
-                        color: "#1A0F04",
-                        boxShadow: "0 4px 12px rgba(249,115,22,0.40)",
+                        background: "#DC2626",
+                        color: "#1F0808",
+                        boxShadow: "0 4px 12px rgba(220, 38, 38,0.40)",
                       }}
                     >
                       <IconCircleCheck size={9} stroke={2.5} />
@@ -334,7 +334,7 @@ export function ScreenContent() {
                     </div>
                   )}
                   <div className="text-[9.5px] uppercase tracking-[0.18em] font-semibold mb-2"
-                    style={{ color: v.chosen ? "#FED7AA" : "#A98046" }}
+                    style={{ color: v.chosen ? "#FECACA" : "#A98046" }}
                   >
                     {v.tag}
                   </div>
@@ -356,7 +356,7 @@ export function ScreenContent() {
           <div
             className="border-t px-9 py-3 flex items-center justify-between"
             style={{
-              borderColor: "rgba(249,115,22,0.10)",
+              borderColor: "rgba(220, 38, 38,0.10)",
               background: "#0F0902",
             }}
           >
@@ -364,7 +364,7 @@ export function ScreenContent() {
               Picked &ldquo;Quiet · long-form&rdquo; · pushed live to product
               page · 2 min ago
             </div>
-            <span className="inline-flex items-center gap-1.5 text-[#FED7AA] text-[11px]">
+            <span className="inline-flex items-center gap-1.5 text-[#FECACA] text-[11px]">
               View on shop
               <IconArrowRight size={11} stroke={2} />
             </span>

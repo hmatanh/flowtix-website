@@ -9,10 +9,10 @@ import { DrftEmailSystem } from "@/components/clients/drft/tour/DrftEmailSystem"
 import { DrftAnalytics } from "@/components/clients/drft/tour/DrftAnalytics";
 import { MobileTourNav, MobileTourArrows } from "@/components/clients/MobileTourNav";
 
-const ORANGE = "#F97316";
-const BORDER = "#1A0F04";
+const ORANGE = "#DC2626";
+const BORDER = "#1F0808";
 const BORDER_HARD = "#2A1505";
-const SURFACE = "#120A02";
+const SURFACE = "#1A0707";
 const SHELL = "#0A0602";
 
 type TabId = "store" | "studio" | "email" | "perf";
@@ -43,7 +43,7 @@ export function InteractiveTour() {
         className="absolute inset-0 pointer-events-none opacity-70"
         style={{
           background:
-            "radial-gradient(800px 420px at 50% -10%, rgba(249,115,22,0.10), transparent 60%)",
+            "radial-gradient(800px 420px at 50% -10%, rgba(220, 38, 38,0.10), transparent 60%)",
         }}
       />
       {/* corner accents */}
@@ -110,8 +110,8 @@ export function InteractiveTour() {
                   onClick={() => setActive(t.id)}
                   className="rounded-xl px-4 py-2.5 text-xs font-medium border transition-colors"
                   style={{
-                    background: isActive ? "rgba(249,115,22,0.12)" : "transparent",
-                    borderColor: isActive ? "rgba(249,115,22,0.4)" : BORDER_HARD,
+                    background: isActive ? "rgba(220, 38, 38,0.12)" : "transparent",
+                    borderColor: isActive ? "rgba(220, 38, 38,0.4)" : BORDER_HARD,
                     color: isActive ? ORANGE : "#8B5E2A",
                   }}
                   aria-pressed={isActive}
@@ -158,7 +158,7 @@ export function InteractiveTour() {
             <div className="flex items-center gap-2">
               <span
                 className="w-6 h-6 rounded-full flex items-center justify-center text-[9px] font-bold relative"
-                style={{ background: "rgba(249,115,22,0.18)", color: ORANGE }}
+                style={{ background: "rgba(220, 38, 38,0.18)", color: ORANGE }}
               >
                 DR
                 <span

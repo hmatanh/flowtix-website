@@ -33,7 +33,7 @@ export function DrftLogo({ height = 40, className = "" }: Props) {
         {/* Orange accent slash inside D */}
         <path
           d="M14 14 L26 24"
-          stroke="#F97316"
+          stroke="#DC2626"
           strokeWidth="3"
           strokeLinecap="round"
         />

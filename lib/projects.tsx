@@ -208,12 +208,12 @@ export const projects: Project[] = [
     description:
       "Brand identity from zero, custom Shopify store, AI brand-voice content engine, and full email automation — 0 to launch in 5 weeks.",
     brand: {
-      primary: "#F97316",
-      dark: "#120A02",
-      card: "#1A0F04",
-      border: "rgba(249,115,22,0.15)",
-      textOnBrand: "#FED7AA",
-      accentRGB: "249, 115, 22",
+      primary: "#DC2626",
+      dark: "#1A0707",
+      card: "#1F0808",
+      border: "rgba(220, 38, 38,0.15)",
+      textOnBrand: "#FECACA",
+      accentRGB: "220, 38, 38",
     },
     services: [
       "Brand Identity",

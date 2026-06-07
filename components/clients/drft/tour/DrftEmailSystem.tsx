@@ -68,7 +68,7 @@ export function DrftEmailSystem() {
               type="button"
               className="flex items-center gap-2.5 px-4 py-2.5 text-xs transition-colors text-left"
               style={{
-                background: active ? "rgba(249,115,22,0.10)" : "transparent",
+                background: active ? "rgba(220, 38, 38,0.10)" : "transparent",
                 color: active ? ORANGE : TEXT_FAINT,
                 borderRight: active ? `2px solid ${ORANGE}` : "2px solid transparent",
               }}
@@ -172,7 +172,7 @@ export function DrftEmailSystem() {
                 aria-label="Desktop preview"
                 className="rounded-md px-2 py-1"
                 style={{
-                  background: device === "desktop" ? "rgba(249,115,22,0.10)" : "transparent",
+                  background: device === "desktop" ? "rgba(220, 38, 38,0.10)" : "transparent",
                   color: device === "desktop" ? ORANGE : TEXT_DIM,
                 }}
               >
@@ -184,7 +184,7 @@ export function DrftEmailSystem() {
                 aria-label="Mobile preview"
                 className="rounded-md px-2 py-1"
                 style={{
-                  background: device === "mobile" ? "rgba(249,115,22,0.10)" : "transparent",
+                  background: device === "mobile" ? "rgba(220, 38, 38,0.10)" : "transparent",
                   color: device === "mobile" ? ORANGE : TEXT_DIM,
                 }}
               >

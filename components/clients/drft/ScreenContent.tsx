@@ -47,7 +47,7 @@ export function ScreenContent() {
       className="w-full h-full flex flex-col relative"
       style={{
         background:
-          "radial-gradient(ellipse 70% 50% at 30% -10%, rgba(249,115,22,0.10), transparent 60%), linear-gradient(180deg, #120A02 0%, #06030B 100%)",
+          "radial-gradient(ellipse 70% 50% at 30% -10%, rgba(220, 38, 38,0.10), transparent 60%), linear-gradient(180deg, #1A0707 0%, #06030B 100%)",
       }}
     >
       <div
@@ -58,7 +58,7 @@ export function ScreenContent() {
           right: -40,
           width: 240,
           height: 240,
-          background: "radial-gradient(circle, rgba(249,115,22,0.16), transparent 70%)",
+          background: "radial-gradient(circle, rgba(220, 38, 38,0.16), transparent 70%)",
           filter: "blur(40px)",
         }}
       />
@@ -67,7 +67,7 @@ export function ScreenContent() {
         className="relative flex items-center justify-between px-4 py-2.5 border-b backdrop-blur-sm"
         style={{
           background: "rgba(18,10,2,0.85)",
-          borderColor: "rgba(249,115,22,0.18)",
+          borderColor: "rgba(220, 38, 38,0.18)",
         }}
       >
         <div className="flex items-center gap-2">
@@ -83,9 +83,9 @@ export function ScreenContent() {
           <span
             className="text-[9px] uppercase tracking-wider px-1.5 py-0.5 rounded font-medium inline-flex items-center gap-1"
             style={{
-              background: "rgba(249,115,22,0.12)",
-              color: "#FED7AA",
-              border: "1px solid rgba(249,115,22,0.25)",
+              background: "rgba(220, 38, 38,0.12)",
+              color: "#FECACA",
+              border: "1px solid rgba(220, 38, 38,0.25)",
             }}
           >
             <IconRobot size={9} stroke={2} />
@@ -101,7 +101,7 @@ export function ScreenContent() {
           style={{
             background:
               "linear-gradient(180deg, rgba(18,10,2,0.92) 0%, rgba(12,8,2,0.6) 100%)",
-            borderColor: "rgba(249,115,22,0.15)",
+            borderColor: "rgba(220, 38, 38,0.15)",
             backdropFilter: "blur(8px)",
           }}
         >
@@ -122,9 +122,9 @@ export function ScreenContent() {
                     t.active
                       ? {
                           background:
-                            "linear-gradient(90deg, rgba(249,115,22,0.18), rgba(249,115,22,0.06))",
-                          color: "#F97316",
-                          border: "1px solid rgba(249,115,22,0.25)",
+                            "linear-gradient(90deg, rgba(220, 38, 38,0.18), rgba(220, 38, 38,0.06))",
+                          color: "#DC2626",
+                          border: "1px solid rgba(220, 38, 38,0.25)",
                         }
                       : { color: "#8B5E2A" }
                   }
@@ -135,9 +135,9 @@ export function ScreenContent() {
                     className="text-[8px] font-mono tabular-nums px-1 py-0 rounded"
                     style={{
                       background: t.active
-                        ? "rgba(249,115,22,0.18)"
+                        ? "rgba(220, 38, 38,0.18)"
                         : "rgba(139,94,42,0.10)",
-                      color: t.active ? "#F97316" : "#8B5E2A",
+                      color: t.active ? "#DC2626" : "#8B5E2A",
                     }}
                   >
                     {t.count}
@@ -149,7 +149,7 @@ export function ScreenContent() {
 
           <div
             className="mt-4 pt-3 border-t"
-            style={{ borderColor: "rgba(249,115,22,0.10)" }}
+            style={{ borderColor: "rgba(220, 38, 38,0.10)" }}
           >
             <div
               className="text-[8px] uppercase tracking-wider mb-2"
@@ -162,11 +162,11 @@ export function ScreenContent() {
                 <li
                   key={i}
                   className="text-[9px] flex items-start gap-1.5"
-                  style={{ color: "#FED7AA" }}
+                  style={{ color: "#FECACA" }}
                 >
                   <span
                     className="w-1 h-1 rounded-full shrink-0 mt-1.5"
-                    style={{ background: "#F97316" }}
+                    style={{ background: "#DC2626" }}
                   />
                   <span>{r}</span>
                 </li>
@@ -180,7 +180,7 @@ export function ScreenContent() {
           style={{
             background:
               "linear-gradient(180deg, rgba(18,10,2,0.92) 0%, rgba(12,8,2,0.6) 100%)",
-            borderColor: "rgba(249,115,22,0.15)",
+            borderColor: "rgba(220, 38, 38,0.15)",
             backdropFilter: "blur(8px)",
           }}
         >
@@ -189,13 +189,13 @@ export function ScreenContent() {
             className="rounded-md p-2 border flex items-center gap-2 text-[9px]"
             style={{
               background: "rgba(12,8,2,0.6)",
-              borderColor: "rgba(249,115,22,0.10)",
+              borderColor: "rgba(220, 38, 38,0.10)",
             }}
           >
-            <IconRobot size={11} stroke={1.5} style={{ color: "#F97316" }} />
-            <span style={{ color: "#FED7AA" }}>
+            <IconRobot size={11} stroke={1.5} style={{ color: "#DC2626" }} />
+            <span style={{ color: "#FECACA" }}>
               Generate launch caption for{" "}
-              <span style={{ color: "#F97316", fontWeight: 600 }}>
+              <span style={{ color: "#DC2626", fontWeight: 600 }}>
                 Trail Series Jacket
               </span>{" "}
               · IG feed · launch tone
@@ -214,22 +214,22 @@ export function ScreenContent() {
             className="mt-2.5 rounded-lg p-3 border flex-1 min-h-0"
             style={{
               background:
-                "linear-gradient(135deg, rgba(249,115,22,0.06) 0%, rgba(20,12,4,0.6) 100%)",
-              borderColor: "rgba(249,115,22,0.18)",
+                "linear-gradient(135deg, rgba(220, 38, 38,0.06) 0%, rgba(20,12,4,0.6) 100%)",
+              borderColor: "rgba(220, 38, 38,0.18)",
             }}
           >
             <div className="flex items-center justify-between mb-2">
               <span
                 className="text-[8px] uppercase tracking-wider font-medium"
-                style={{ color: "#F97316" }}
+                style={{ color: "#DC2626" }}
               >
                 Generated · IG feed
               </span>
               <button
                 className="inline-flex items-center gap-1 text-[9px] px-1.5 py-0.5 rounded"
                 style={{
-                  background: "rgba(249,115,22,0.10)",
-                  color: "#FED7AA",
+                  background: "rgba(220, 38, 38,0.10)",
+                  color: "#FECACA",
                 }}
               >
                 <IconRefresh size={9} stroke={1.5} />
@@ -243,11 +243,11 @@ export function ScreenContent() {
             </h3>
             <p
               className="text-[11px] leading-relaxed mt-2 whitespace-pre-line"
-              style={{ color: "#FED7AA" }}
+              style={{ color: "#FECACA" }}
             >
               {OUTPUT_BODY}
             </p>
-            <div className="mt-3 pt-2.5 border-t flex items-center gap-2 flex-wrap" style={{ borderColor: "rgba(249,115,22,0.10)" }}>
+            <div className="mt-3 pt-2.5 border-t flex items-center gap-2 flex-wrap" style={{ borderColor: "rgba(220, 38, 38,0.10)" }}>
               <span
                 className="text-[8px] uppercase tracking-wider"
                 style={{ color: "#8B5E2A" }}
@@ -259,8 +259,8 @@ export function ScreenContent() {
                   key={t}
                   className="text-[9px] px-1.5 py-0.5 rounded font-mono"
                   style={{
-                    background: "rgba(249,115,22,0.08)",
-                    color: "#FED7AA",
+                    background: "rgba(220, 38, 38,0.08)",
+                    color: "#FECACA",
                   }}
                 >
                   {t}
@@ -281,16 +281,16 @@ export function ScreenContent() {
                   className="rounded-md p-2 border"
                   style={{
                     background: "rgba(12,8,2,0.5)",
-                    borderColor: "rgba(249,115,22,0.10)",
+                    borderColor: "rgba(220, 38, 38,0.10)",
                   }}
                 >
                   <div
                     className="text-[8px] font-medium uppercase tracking-wider mb-1"
-                    style={{ color: "#F97316" }}
+                    style={{ color: "#DC2626" }}
                   >
                     {v.label}
                   </div>
-                  <p className="text-[9px] leading-snug" style={{ color: "#FED7AA" }}>
+                  <p className="text-[9px] leading-snug" style={{ color: "#FECACA" }}>
                     {v.text}
                   </p>
                 </div>

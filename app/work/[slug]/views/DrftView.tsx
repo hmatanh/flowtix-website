@@ -26,8 +26,8 @@ import { ScreenEmail } from "@/components/clients/drft/v2/ScreenEmail";
 import { HeroArtifact } from "@/components/clients/drft/v2/HeroArtifact";
 import { BrandTakeover } from "@/components/clients/drft/v2/BrandTakeover";
 
-const DRFT_RGB = "249, 115, 22";
-const DRFT_PRIMARY = "#F97316";
+const DRFT_RGB = "220, 38, 38";
+const DRFT_PRIMARY = "#DC2626";
 
 export function DrftView({ project }: { project: Project }) {
   return (

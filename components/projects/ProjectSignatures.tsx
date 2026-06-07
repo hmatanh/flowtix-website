@@ -240,7 +240,7 @@ export function DrftSignature({ className = "" }: Props) {
         <m.path
           key={i}
           d={d}
-          stroke="#F97316"
+          stroke="#DC2626"
           strokeWidth="0.8"
           strokeOpacity={0.04 + i * 0.04}
           fill="none"
@@ -255,13 +255,13 @@ export function DrftSignature({ className = "" }: Props) {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 1.0 }}
       >
-        <circle cx={320} cy={110} r="3" fill="#F97316" />
+        <circle cx={320} cy={110} r="3" fill="#DC2626" />
         <line
           x1={320}
           y1={105}
           x2={320}
           y2={90}
-          stroke="#F97316"
+          stroke="#DC2626"
           strokeWidth="0.6"
           strokeOpacity="0.5"
         />
@@ -270,7 +270,7 @@ export function DrftSignature({ className = "" }: Props) {
           y1={110}
           x2={340}
           y2={110}
-          stroke="#F97316"
+          stroke="#DC2626"
           strokeWidth="0.6"
           strokeOpacity="0.5"
         />

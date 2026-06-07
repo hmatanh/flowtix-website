@@ -23,7 +23,7 @@ export function ScreenEmail() {
       className="w-full h-full flex flex-col relative"
       style={{
         background:
-          "radial-gradient(ellipse 70% 50% at 30% -10%, rgba(249,115,22,0.10), transparent 60%), linear-gradient(180deg, #120A02 0%, #06030B 100%)",
+          "radial-gradient(ellipse 70% 50% at 30% -10%, rgba(220, 38, 38,0.10), transparent 60%), linear-gradient(180deg, #1A0707 0%, #06030B 100%)",
       }}
     >
       <div
@@ -34,7 +34,7 @@ export function ScreenEmail() {
           right: -40,
           width: 240,
           height: 240,
-          background: "radial-gradient(circle, rgba(249,115,22,0.16), transparent 70%)",
+          background: "radial-gradient(circle, rgba(220, 38, 38,0.16), transparent 70%)",
           filter: "blur(40px)",
         }}
       />
@@ -44,7 +44,7 @@ export function ScreenEmail() {
         className="relative flex items-center justify-between px-4 py-2 border-b backdrop-blur-sm"
         style={{
           background: "rgba(18,10,2,0.85)",
-          borderColor: "rgba(249,115,22,0.18)",
+          borderColor: "rgba(220, 38, 38,0.18)",
         }}
       >
         <div className="flex items-center gap-2">
@@ -66,7 +66,7 @@ export function ScreenEmail() {
           className="rounded-xl overflow-hidden border flex flex-col min-h-0"
           style={{
             background: "#1f1408",
-            borderColor: "rgba(249,115,22,0.20)",
+            borderColor: "rgba(220, 38, 38,0.20)",
           }}
         >
           {/* Header strip */}
@@ -74,8 +74,8 @@ export function ScreenEmail() {
             className="px-4 py-2.5 border-b flex items-center justify-between"
             style={{
               background:
-                "linear-gradient(90deg, rgba(249,115,22,0.10), rgba(20,12,4,0.4))",
-              borderColor: "rgba(249,115,22,0.10)",
+                "linear-gradient(90deg, rgba(220, 38, 38,0.10), rgba(20,12,4,0.4))",
+              borderColor: "rgba(220, 38, 38,0.10)",
             }}
           >
             <div className="flex items-center gap-2">
@@ -83,7 +83,7 @@ export function ScreenEmail() {
                 className="w-6 h-6 rounded-full inline-flex items-center justify-center text-[10px] font-bold"
                 style={{
                   background:
-                    "linear-gradient(135deg, #F97316 0%, #C2410C 100%)",
+                    "linear-gradient(135deg, #DC2626 0%, #991B1B 100%)",
                   color: "#1a0a02",
                 }}
               >
@@ -101,8 +101,8 @@ export function ScreenEmail() {
             <span
               className="text-[8px] font-mono px-1.5 py-0.5 rounded"
               style={{
-                background: "rgba(249,115,22,0.10)",
-                color: "#FED7AA",
+                background: "rgba(220, 38, 38,0.10)",
+                color: "#FECACA",
               }}
             >
               Day 0 · Welcome
@@ -139,7 +139,7 @@ export function ScreenEmail() {
             <div className="absolute bottom-2 left-3">
               <span
                 className="text-[9px] uppercase tracking-[0.3em] font-medium"
-                style={{ color: "#FED7AA" }}
+                style={{ color: "#FECACA" }}
               >
                 Vol. 03 · Spring
               </span>
@@ -160,33 +160,33 @@ export function ScreenEmail() {
           <div className="px-5 py-4 flex-1 min-h-0 overflow-hidden">
             <p
               className="text-[11px] leading-relaxed"
-              style={{ color: "#FED7AA" }}
+              style={{ color: "#FECACA" }}
             >
               Hey friend,
             </p>
             <p
               className="text-[11px] leading-relaxed mt-2"
-              style={{ color: "#FED7AA" }}
+              style={{ color: "#FECACA" }}
             >
               You found us. Welcome.
             </p>
             <p
               className="text-[11px] leading-relaxed mt-2"
-              style={{ color: "#FED7AA" }}
+              style={{ color: "#FECACA" }}
             >
               DRFT makes outdoor gear that doesn&apos;t look like outdoor gear. Built
               to move with you — trail, train, anywhere in between.
             </p>
             <p
               className="text-[11px] leading-relaxed mt-2"
-              style={{ color: "#FED7AA" }}
+              style={{ color: "#FECACA" }}
             >
               Here&apos;s a code to start with:{" "}
               <span
                 className="font-mono font-bold px-1.5 py-0.5 rounded"
                 style={{
-                  background: "rgba(249,115,22,0.18)",
-                  color: "#F97316",
+                  background: "rgba(220, 38, 38,0.18)",
+                  color: "#DC2626",
                 }}
               >
                 WELCOME10
@@ -198,9 +198,9 @@ export function ScreenEmail() {
             <button
               className="mt-3 inline-flex items-center gap-1.5 text-[10px] font-bold px-4 py-2 rounded-full"
               style={{
-                background: "#F97316",
+                background: "#DC2626",
                 color: "#1a0a02",
-                boxShadow: "0 0 20px rgba(249,115,22,0.4)",
+                boxShadow: "0 0 20px rgba(220, 38, 38,0.4)",
               }}
             >
               Shop the drop
@@ -223,7 +223,7 @@ export function ScreenEmail() {
           style={{
             background:
               "linear-gradient(180deg, rgba(18,10,2,0.92) 0%, rgba(12,8,2,0.6) 100%)",
-            borderColor: "rgba(249,115,22,0.15)",
+            borderColor: "rgba(220, 38, 38,0.15)",
             backdropFilter: "blur(8px)",
           }}
         >
@@ -240,7 +240,7 @@ export function ScreenEmail() {
               className="absolute top-2 bottom-2 left-[7px] w-px"
               style={{
                 background:
-                  "linear-gradient(180deg, rgba(249,115,22,0.30), rgba(249,115,22,0.05))",
+                  "linear-gradient(180deg, rgba(220, 38, 38,0.30), rgba(220, 38, 38,0.05))",
               }}
             />
             {TIMELINE.map((t, i) => (
@@ -253,7 +253,7 @@ export function ScreenEmail() {
                     border:
                       t.state === "delivered"
                         ? "none"
-                        : "1.5px solid rgba(249,115,22,0.5)",
+                        : "1.5px solid rgba(220, 38, 38,0.5)",
                     boxShadow:
                       t.state === "delivered"
                         ? "0 0 6px rgba(16,185,129,0.5)"
@@ -269,7 +269,7 @@ export function ScreenEmail() {
                   </div>
                   <div
                     className="text-[10px] font-medium mt-0.5 truncate"
-                    style={{ color: i === 0 ? "#F97316" : "#FED7AA" }}
+                    style={{ color: i === 0 ? "#DC2626" : "#FECACA" }}
                   >
                     {t.subject}
                   </div>
@@ -316,7 +316,7 @@ export function ScreenEmail() {
                 </div>
               </div>
             </div>
-            <div className="text-[8px] mt-1.5" style={{ color: "#F97316" }}>
+            <div className="text-[8px] mt-1.5" style={{ color: "#DC2626" }}>
               Both vs industry avg 19% · 2.3%
             </div>
           </div>

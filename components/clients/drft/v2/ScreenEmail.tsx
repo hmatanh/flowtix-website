@@ -42,13 +42,13 @@ function FlowNode({
       className="rounded-lg px-4 py-3 flex items-center gap-3 relative"
       style={{
         background: active
-          ? "linear-gradient(135deg, rgba(249,115,22,0.16) 0%, rgba(249,115,22,0.04) 100%)"
-          : "#1A0F04",
+          ? "linear-gradient(135deg, rgba(220, 38, 38,0.16) 0%, rgba(220, 38, 38,0.04) 100%)"
+          : "#1F0808",
         border: active
-          ? "1.5px solid #F97316"
-          : "1px solid rgba(249,115,22,0.12)",
+          ? "1.5px solid #DC2626"
+          : "1px solid rgba(220, 38, 38,0.12)",
         boxShadow: active
-          ? "0 8px 20px rgba(249,115,22,0.20)"
+          ? "0 8px 20px rgba(220, 38, 38,0.20)"
           : undefined,
       }}
     >
@@ -56,9 +56,9 @@ function FlowNode({
         className="inline-flex items-center justify-center w-9 h-9 rounded shrink-0"
         style={{
           background: active
-            ? "linear-gradient(135deg, #F97316, #C2410C)"
-            : "rgba(249,115,22,0.10)",
-          color: active ? "#1A0F04" : color,
+            ? "linear-gradient(135deg, #DC2626, #991B1B)"
+            : "rgba(220, 38, 38,0.10)",
+          color: active ? "#1F0808" : color,
         }}
       >
         {icon}
@@ -72,7 +72,7 @@ function FlowNode({
       {active && (
         <span
           className="inline-flex items-center gap-1 text-[9px] uppercase tracking-[0.18em] font-bold px-1.5 py-0.5 rounded"
-          style={{ background: "#F97316", color: "#1A0F04" }}
+          style={{ background: "#DC2626", color: "#1F0808" }}
         >
           Live
         </span>
@@ -87,7 +87,7 @@ export function ScreenEmail() {
       className="relative w-full font-sans select-none"
       aria-hidden="true"
       style={{
-        background: "linear-gradient(180deg, #1A0F04 0%, #0A0701 100%)",
+        background: "linear-gradient(180deg, #1F0808 0%, #0A0701 100%)",
         color: "#F5EBD2",
         fontFamily: "var(--font-inter, Inter, sans-serif)",
         aspectRatio: "1600/1000",
@@ -97,7 +97,7 @@ export function ScreenEmail() {
         {/* Top stats strip */}
         <div
           className="grid grid-cols-3 gap-px"
-          style={{ background: "rgba(249,115,22,0.10)" }}
+          style={{ background: "rgba(220, 38, 38,0.10)" }}
         >
           {STATS.map((s) => (
             <div
@@ -114,7 +114,7 @@ export function ScreenEmail() {
                 </span>
                 <span
                   className="text-[10.5px] tabular-nums"
-                  style={{ color: s.positive ? "#84CC16" : "#FED7AA" }}
+                  style={{ color: s.positive ? "#84CC16" : "#FECACA" }}
                 >
                   {s.positive ? "▲" : "▼"} {s.trend}
                 </span>
@@ -160,8 +160,8 @@ export function ScreenEmail() {
                   Running
                 </span>
                 <span
-                  className="text-[10.5px] px-2.5 py-1 rounded-full text-[#FED7AA]"
-                  style={{ border: "1px solid rgba(249,115,22,0.20)" }}
+                  className="text-[10.5px] px-2.5 py-1 rounded-full text-[#FECACA]"
+                  style={{ border: "1px solid rgba(220, 38, 38,0.20)" }}
                 >
                   Last 30 days
                 </span>
@@ -176,26 +176,26 @@ export function ScreenEmail() {
                 detail="Cart with > $120 of value, no checkout in 45 min"
               />
               {/* connector */}
-              <div className="ml-[28px] h-3 w-px" style={{ background: "rgba(249,115,22,0.25)" }} />
+              <div className="ml-[28px] h-3 w-px" style={{ background: "rgba(220, 38, 38,0.25)" }} />
               <FlowNode
                 icon={<IconMail size={14} stroke={1.8} />}
                 title="Email 1 — Soft reminder"
                 detail="Subject: It's still in your bag"
                 active
               />
-              <div className="ml-[28px] h-3 w-px" style={{ background: "rgba(249,115,22,0.25)" }} />
+              <div className="ml-[28px] h-3 w-px" style={{ background: "rgba(220, 38, 38,0.25)" }} />
               <FlowNode
                 icon={<IconClock size={14} stroke={1.8} />}
                 title="Wait · 48 hours"
                 detail="Skip if customer has placed any order in this period"
               />
-              <div className="ml-[28px] h-3 w-px" style={{ background: "rgba(249,115,22,0.25)" }} />
+              <div className="ml-[28px] h-3 w-px" style={{ background: "rgba(220, 38, 38,0.25)" }} />
               <FlowNode
                 icon={<IconGitFork size={14} stroke={1.8} />}
                 title="Branch — by value"
                 detail="≥ $180 → handwritten reply · &lt; $180 → standard"
               />
-              <div className="ml-[28px] h-3 w-px" style={{ background: "rgba(249,115,22,0.25)" }} />
+              <div className="ml-[28px] h-3 w-px" style={{ background: "rgba(220, 38, 38,0.25)" }} />
               <FlowNode
                 icon={<IconMail size={14} stroke={1.8} />}
                 title="Email 2 — Reply or save"
@@ -208,15 +208,15 @@ export function ScreenEmail() {
               className="mt-7 rounded-lg p-4 max-w-md inline-flex items-start gap-3"
               style={{
                 background:
-                  "linear-gradient(135deg, rgba(249,115,22,0.06) 0%, transparent 100%)",
-                border: "1px solid rgba(249,115,22,0.18)",
+                  "linear-gradient(135deg, rgba(220, 38, 38,0.06) 0%, transparent 100%)",
+                border: "1px solid rgba(220, 38, 38,0.18)",
               }}
             >
               <span
                 className="inline-flex items-center justify-center w-7 h-7 rounded shrink-0"
                 style={{
-                  background: "rgba(249,115,22,0.12)",
-                  border: "1px solid rgba(249,115,22,0.25)",
+                  background: "rgba(220, 38, 38,0.12)",
+                  border: "1px solid rgba(220, 38, 38,0.25)",
                 }}
               >
                 <IconSparkles size={12} stroke={1.8} className="text-amber-200" />
@@ -238,17 +238,17 @@ export function ScreenEmail() {
             className="border-l overflow-hidden flex flex-col"
             style={{
               background: "#0F0902",
-              borderColor: "rgba(249,115,22,0.10)",
+              borderColor: "rgba(220, 38, 38,0.10)",
             }}
           >
             <div
               className="px-5 py-3 border-b flex items-center justify-between"
-              style={{ borderColor: "rgba(249,115,22,0.10)" }}
+              style={{ borderColor: "rgba(220, 38, 38,0.10)" }}
             >
               <div className="text-[#A98046] text-[9.5px] tracking-[0.22em] uppercase">
                 Preview · Email 1
               </div>
-              <div className="text-[#FED7AA] text-[10.5px]">Mobile · iOS</div>
+              <div className="text-[#FECACA] text-[10.5px]">Mobile · iOS</div>
             </div>
 
             {/* Email body */}
@@ -266,7 +266,7 @@ export function ScreenEmail() {
                   <div className="text-[#7C5A2A] text-[8px] uppercase tracking-[0.22em]">
                     From DRFT
                   </div>
-                  <div className="text-[#1A0F04] text-[12px] font-semibold mt-1 tracking-tight">
+                  <div className="text-[#1F0808] text-[12px] font-semibold mt-1 tracking-tight">
                     It&apos;s still in your bag.
                   </div>
                 </div>
@@ -274,13 +274,13 @@ export function ScreenEmail() {
                 {/* Logo */}
                 <div className="px-4 py-4 text-center">
                   <div
-                    className="inline-block text-[#1A0F04] tracking-[0.16em]"
+                    className="inline-block text-[#1F0808] tracking-[0.16em]"
                     style={{
                       fontSize: 18,
                       fontWeight: 900,
                     }}
                   >
-                    DRFT<span style={{ color: "#F97316" }}>*</span>
+                    DRFT<span style={{ color: "#DC2626" }}>*</span>
                   </div>
                 </div>
 
@@ -290,21 +290,21 @@ export function ScreenEmail() {
                     className="rounded h-24 relative overflow-hidden mb-3 flex items-center justify-center"
                     style={{
                       background:
-                        "linear-gradient(135deg, #C2410C 0%, #7C2D12 100%)",
+                        "linear-gradient(135deg, #991B1B 0%, #7F1D1D 100%)",
                     }}
                   >
                     <svg viewBox="0 0 100 140" className="h-[88%]">
                       <path
                         d="M 30 30 L 40 15 L 60 15 L 70 30 L 84 38 L 84 110 L 78 130 L 22 130 L 16 110 L 16 38 Z"
                         fill="rgba(0,0,0,0.55)"
-                        stroke="#1A0F04"
+                        stroke="#1F0808"
                         strokeWidth="1.4"
                       />
-                      <line x1="50" y1="25" x2="50" y2="130" stroke="#1A0F04" strokeWidth="0.8" />
+                      <line x1="50" y1="25" x2="50" y2="130" stroke="#1F0808" strokeWidth="0.8" />
                     </svg>
                   </div>
 
-                  <div className="text-[#1A0F04] text-[11px] font-semibold">
+                  <div className="text-[#1F0808] text-[11px] font-semibold">
                     Field Overcoat · Bracken · M
                   </div>
                   <div className="text-[#7C5A2A] text-[10px] tabular-nums">
@@ -314,7 +314,7 @@ export function ScreenEmail() {
 
                 {/* Body */}
                 <div className="px-4 py-4">
-                  <p className="text-[#1A0F04] text-[11px] leading-relaxed">
+                  <p className="text-[#1F0808] text-[11px] leading-relaxed">
                     Hello there. The coat is still on hold for you. We&apos;ve
                     only got three left in your size in the Bracken colourway —
                     if it&apos;s the one, now is the moment.
@@ -326,8 +326,8 @@ export function ScreenEmail() {
                   <div
                     className="text-center py-2.5 rounded text-[11px] font-bold tracking-[0.12em] uppercase"
                     style={{
-                      background: "#1A0F04",
-                      color: "#F97316",
+                      background: "#1F0808",
+                      color: "#DC2626",
                     }}
                   >
                     Finish my order →

@@ -1,17 +1,17 @@
 /**
  * Shared theme + data for the DRFT interactive tour.
- * Bold consumer brand: orange #F97316 on near-black surfaces.
+ * Bold consumer brand: orange #DC2626 on near-black surfaces.
  */
 
-export const ORANGE = "#F97316";
+export const ORANGE = "#DC2626";
 export const ORANGE_DEEP = "#7c3a00";
 export const TEXT_BRAND = "#8B5E2A";
 export const TEXT_DIM = "#4a2808";
 export const TEXT_FAINT = "#2A1505";
-export const SURFACE = "#120A02";
-export const SURFACE_CARD = "#1A0F04";
+export const SURFACE = "#1A0707";
+export const SURFACE_CARD = "#1F0808";
 export const SHELL = "#0A0602";
-export const BORDER = "#1A0F04";
+export const BORDER = "#1F0808";
 export const BORDER_HARD = "#2A1505";
 
 export type ColorOption = { id: string; label: string; hex: string };
@@ -20,7 +20,7 @@ export const PRODUCT_COLORS: ColorOption[] = [
   { id: "navy", label: "Navy", hex: "#1E3A5F" },
   { id: "black", label: "Black", hex: "#111111" },
   { id: "olive", label: "Olive", hex: "#4A3728" },
-  { id: "orange", label: "Burnt Orange", hex: "#F97316" },
+  { id: "orange", label: "Burnt Orange", hex: "#DC2626" },
 ];
 
 export type ProductKind = "jacket" | "pack" | "shorts" | "base";

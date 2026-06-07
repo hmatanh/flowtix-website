@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, FormEvent } from "react";
+import { useState, useEffect, FormEvent } from "react";
 import { m, AnimatePresence } from "framer-motion";
 import {
   IconArrowRight,
@@ -96,10 +96,433 @@ const MONTH_NAMES = [
 ];
 const TIME_SLOTS = ["9:00 AM", "10:00 AM", "2:00 PM", "3:00 PM", "4:00 PM"];
 
+/* ───────────────────────────────────────────────────────────────
+   Booking-details modal
+   ─────────────────────────────────────────────────────────────
+   Opens after the user has chosen a date + time. Collects name,
+   email, phone, and the topic they want to discuss. Submits to
+   Web3Forms — which routes the inquiry to office@flowtix.ai and
+   auto-responds to the customer under the Flowtix brand.
+
+   ⚙ Setup (one-time, by the site owner):
+     1. Free account at https://web3forms.com
+     2. Confirm receiving email = office@flowtix.ai
+     3. Copy the access key
+     4. Add to Vercel project env vars:
+          NEXT_PUBLIC_WEB3FORMS_KEY=<your_access_key>
+     5. Redeploy.
+   Without a key the form falls back to a mailto: handoff so the
+   page never errors silently on the customer.
+*/
+
+const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY ?? "";
+
+type BookingDetails = {
+  name: string;
+  email: string;
+  phone: string;
+  topic: string;
+};
+
+function BookingDetailsModal({
+  open,
+  onClose,
+  selectedDay,
+  selectedTime,
+  monthLabel,
+  year,
+  onConfirmed,
+}: {
+  open: boolean;
+  onClose: () => void;
+  selectedDay: number | null;
+  selectedTime: string | null;
+  monthLabel: string;
+  year: number;
+  onConfirmed: () => void;
+}) {
+  const [details, setDetails] = useState<BookingDetails>({
+    name: "",
+    email: "",
+    phone: "",
+    topic: "",
+  });
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [done, setDone] = useState(false);
+
+  // Body scroll lock + ESC to close
+  useEffect(() => {
+    if (!open) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && !submitting) onClose();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = prev;
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [open, onClose, submitting]);
+
+  // Reset on open
+  useEffect(() => {
+    if (open) {
+      setError(null);
+      setDone(false);
+    }
+  }, [open]);
+
+  const whenLabel =
+    selectedDay && selectedTime
+      ? `${monthLabel.split(" ")[0]} ${selectedDay}, ${year} at ${selectedTime}`
+      : "";
+
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setError(null);
+
+    const name = sanitizeInput(details.name).trim();
+    const email = sanitizeEmail(details.email).trim();
+    const phone = details.phone.trim() ? sanitizePhone(details.phone) : "";
+    const topic = sanitizeInput(details.topic).trim();
+
+    if (!name || name.length < 2)
+      return setError("Please tell us your name.");
+    if (!/^\S+@\S+\.\S+$/.test(email))
+      return setError("Please use a valid email so we can send the invite.");
+    if (!topic || topic.length < 4)
+      return setError("A sentence about what you'd like to discuss helps us prepare.");
+
+    setSubmitting(true);
+
+    const message =
+      `New strategy-call booking from the Flowtix website.\n\n` +
+      `When:     ${whenLabel}\n` +
+      `Name:     ${name}\n` +
+      `Email:    ${email}\n` +
+      `Phone:    ${phone || "—"}\n\n` +
+      `What they want to discuss:\n${topic}\n`;
+
+    const autoResponse =
+      `Hi ${name.split(" ")[0]},\n\n` +
+      `Thanks for booking a call with Flowtix — we've received your request.\n\n` +
+      `📅  ${whenLabel}\n` +
+      `🎥  30-minute video call\n\n` +
+      `We'll review the details you sent and confirm with a calendar invite ` +
+      `within a few hours (usually faster on weekdays). If you need to ` +
+      `reach us in the meantime, reply to this email or write to ` +
+      `office@flowtix.ai — we read every message.\n\n` +
+      `Looking forward to talking,\n` +
+      `The Flowtix team\n` +
+      `flowtix.ai · office@flowtix.ai`;
+
+    // No access key configured → graceful mailto fallback
+    if (!WEB3FORMS_KEY) {
+      const subject = encodeURIComponent(
+        `[Flowtix] Call booking · ${name} · ${whenLabel}`
+      );
+      const body = encodeURIComponent(message);
+      window.location.href = `mailto:office@flowtix.ai?subject=${subject}&body=${body}`;
+      setDone(true);
+      setSubmitting(false);
+      setTimeout(() => {
+        onConfirmed();
+        onClose();
+      }, 1800);
+      return;
+    }
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          // Routing
+          subject: `[Flowtix] Call booking · ${name} · ${whenLabel}`,
+          from_name: "Flowtix Booking",
+          replyto: email,
+          // Body
+          name,
+          email,
+          phone: phone || "Not provided",
+          when: whenLabel,
+          topic,
+          message,
+          // Customer auto-reply (Flowtix branded)
+          _autoresponse: autoResponse,
+          _autoresponse_subject: `Your Flowtix call · ${whenLabel}`,
+          // UX
+          botcheck: "",
+        }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || data?.success === false) {
+        throw new Error(data?.message || "Could not send. Please try again.");
+      }
+      setDone(true);
+      setSubmitting(false);
+      setTimeout(() => {
+        onConfirmed();
+        onClose();
+      }, 1800);
+    } catch (err) {
+      setSubmitting(false);
+      setError(
+        err instanceof Error
+          ? `${err.message} If it persists, email office@flowtix.ai directly.`
+          : "Could not send. Please email office@flowtix.ai directly."
+      );
+    }
+  }
+
+  return (
+    <AnimatePresence>
+      {open && (
+        <m.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.22 }}
+          className="fixed inset-0 z-[140] flex items-end sm:items-center justify-center"
+          style={{ background: "rgba(0,0,0,0.78)", backdropFilter: "blur(10px)" }}
+          onClick={() => !submitting && onClose()}
+        >
+          <m.div
+            initial={{ y: 30, opacity: 0, scale: 0.98 }}
+            animate={{ y: 0, opacity: 1, scale: 1 }}
+            exit={{ y: 30, opacity: 0, scale: 0.98 }}
+            transition={{ duration: 0.32, ease: [0.21, 0.47, 0.32, 0.98] }}
+            className="relative w-full sm:max-w-md mx-0 sm:mx-4 rounded-t-3xl sm:rounded-2xl border bg-[#0A0A0A] max-h-[95vh] overflow-y-auto"
+            style={{
+              borderColor: "rgba(255,255,255,0.10)",
+              boxShadow: "0 30px 80px rgba(0,0,0,0.65)",
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Header */}
+            <div
+              className="sticky top-0 z-10 flex items-start justify-between gap-3 px-5 sm:px-7 pt-5 sm:pt-7 pb-4 border-b"
+              style={{
+                borderColor: "rgba(255,255,255,0.08)",
+                background:
+                  "linear-gradient(180deg, #0D0D0D 0%, rgba(13,13,13,0.92) 100%)",
+              }}
+            >
+              <div className="flex-1">
+                <div className="text-blue-400 text-[10px] tracking-[0.22em] uppercase font-semibold">
+                  Confirming your call
+                </div>
+                <h3 className="text-white text-[18px] sm:text-[20px] font-semibold tracking-tight mt-1.5 leading-tight">
+                  {whenLabel || "Strategy call"}
+                </h3>
+                <div className="text-[#888] text-[12px] mt-1">
+                  30-minute video call · free
+                </div>
+              </div>
+              <button
+                type="button"
+                onClick={onClose}
+                disabled={submitting}
+                aria-label="Close"
+                className="inline-flex items-center justify-center w-9 h-9 rounded-full border border-[#1a1a1a] text-[#aaa] hover:text-white hover:border-[#333] transition-colors disabled:opacity-40"
+              >
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <path
+                    d="M2 2L12 12M12 2L2 12"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            {/* Body */}
+            <AnimatePresence mode="wait">
+              {done ? (
+                <m.div
+                  key="success"
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="px-5 sm:px-7 py-12 sm:py-14 text-center"
+                >
+                  <div
+                    className="inline-flex items-center justify-center w-14 h-14 rounded-full mb-5"
+                    style={{
+                      background: "rgba(16,185,129,0.12)",
+                      border: "1px solid rgba(16,185,129,0.35)",
+                    }}
+                  >
+                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                      <path
+                        d="M5 11.5L9 15.5L17 7"
+                        stroke="#10B981"
+                        strokeWidth="2.2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </div>
+                  <h4 className="text-white text-[19px] font-semibold tracking-tight">
+                    You&apos;re booked in.
+                  </h4>
+                  <p className="text-[#aaa] text-[14px] mt-3 max-w-sm mx-auto leading-relaxed">
+                    A confirmation email is on its way. We&apos;ll send the
+                    calendar invite to{" "}
+                    <span className="text-white">{details.email}</span> within
+                    a few hours.
+                  </p>
+                </m.div>
+              ) : (
+                <m.form
+                  key="form"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  onSubmit={handleSubmit}
+                  className="px-5 sm:px-7 pt-5 pb-6 sm:pb-7"
+                >
+                  <div className="space-y-3.5">
+                    <div>
+                      <label className="block text-[#888] text-[11px] uppercase tracking-[0.18em] mb-1.5">
+                        Your name
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        autoComplete="name"
+                        value={details.name}
+                        onChange={(e) =>
+                          setDetails({ ...details, name: e.target.value })
+                        }
+                        disabled={submitting}
+                        className={fieldClass + " !mb-0"}
+                        placeholder="Daniel Cohen"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-[#888] text-[11px] uppercase tracking-[0.18em] mb-1.5">
+                        Email
+                      </label>
+                      <input
+                        type="email"
+                        required
+                        autoComplete="email"
+                        value={details.email}
+                        onChange={(e) =>
+                          setDetails({ ...details, email: e.target.value })
+                        }
+                        disabled={submitting}
+                        className={fieldClass + " !mb-0"}
+                        placeholder="you@company.com"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-[#888] text-[11px] uppercase tracking-[0.18em] mb-1.5">
+                        Phone <span className="text-[#444]">(optional)</span>
+                      </label>
+                      <input
+                        type="tel"
+                        autoComplete="tel"
+                        value={details.phone}
+                        onChange={(e) =>
+                          setDetails({ ...details, phone: e.target.value })
+                        }
+                        disabled={submitting}
+                        className={fieldClass + " !mb-0"}
+                        placeholder="+1 555 0100"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-[#888] text-[11px] uppercase tracking-[0.18em] mb-1.5">
+                        What do you want to talk about?
+                      </label>
+                      <textarea
+                        required
+                        rows={4}
+                        value={details.topic}
+                        onChange={(e) =>
+                          setDetails({ ...details, topic: e.target.value })
+                        }
+                        disabled={submitting}
+                        className={fieldClass + " !mb-0 resize-none"}
+                        placeholder="The system you're trying to ship, the bottleneck you'd like to fix, or the brand you want to launch."
+                      />
+                    </div>
+                  </div>
+
+                  {error && (
+                    <div
+                      role="alert"
+                      className="mt-4 text-rose-300/90 text-[12.5px] leading-relaxed bg-rose-950/30 border border-rose-900/40 rounded-lg px-3.5 py-2.5"
+                    >
+                      {error}
+                    </div>
+                  )}
+
+                  <button
+                    type="submit"
+                    disabled={submitting}
+                    className="mt-5 w-full inline-flex items-center justify-center gap-2 bg-white text-black py-3.5 rounded-xl text-[14px] font-semibold hover:bg-[#eee] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {submitting ? (
+                      <>
+                        <svg
+                          className="animate-spin"
+                          width="14"
+                          height="14"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <circle
+                            cx="12"
+                            cy="12"
+                            r="10"
+                            stroke="currentColor"
+                            strokeWidth="3"
+                            opacity="0.25"
+                          />
+                          <path
+                            d="M12 2a10 10 0 0 1 10 10"
+                            stroke="currentColor"
+                            strokeWidth="3"
+                            strokeLinecap="round"
+                          />
+                        </svg>
+                        Sending…
+                      </>
+                    ) : (
+                      <>
+                        Confirm booking
+                        <IconArrowRight size={14} stroke={2.4} />
+                      </>
+                    )}
+                  </button>
+
+                  <p className="text-[#444] text-[11px] mt-4 text-center leading-relaxed">
+                    By confirming you agree to receive a calendar invite
+                    and a follow-up email from Flowtix.
+                  </p>
+                </m.form>
+              )}
+            </AnimatePresence>
+          </m.div>
+        </m.div>
+      )}
+    </AnimatePresence>
+  );
+}
+
 function CalendarBooking() {
   const [selectedDay, setSelectedDay] = useState<number | null>(null);
   const [selectedTime, setSelectedTime] = useState<string | null>(null);
   const [confirmed, setConfirmed] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
 
   // Derive month/year on render — calendar uses the user's current month.
   const now = new Date();
@@ -119,7 +542,7 @@ function CalendarBooking() {
   }
 
   function handleContinue() {
-    if (selectedDay && selectedTime) setConfirmed(true);
+    if (selectedDay && selectedTime) setModalOpen(true);
   }
 
   return (
@@ -152,21 +575,39 @@ function CalendarBooking() {
             transition={{ duration: 0.4 }}
             className="mt-10 text-center"
           >
-            <div className="text-[#3B82F6] text-sm font-semibold">
-              ✓ Selection saved
+            <div
+              className="inline-flex items-center justify-center w-12 h-12 rounded-full mb-4"
+              style={{
+                background: "rgba(16,185,129,0.12)",
+                border: "1px solid rgba(16,185,129,0.35)",
+              }}
+            >
+              <svg width="18" height="18" viewBox="0 0 22 22" fill="none">
+                <path
+                  d="M5 11.5L9 15.5L17 7"
+                  stroke="#10B981"
+                  strokeWidth="2.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+            <div className="text-emerald-300 text-sm font-semibold tracking-tight">
+              Booking confirmed
             </div>
             <div className="text-white text-lg mt-3">
               {MONTH_NAMES[month]} {selectedDay}, {year} at {selectedTime}
             </div>
-            <div className="text-[#888] text-sm mt-3 max-w-md mx-auto">
-              Email{" "}
+            <div className="text-[#888] text-sm mt-3 max-w-md mx-auto leading-relaxed">
+              We&apos;ve sent a confirmation to your inbox and notified
+              the team. A calendar invite from{" "}
               <a
                 href="mailto:office@flowtix.ai"
                 className="text-blue-400 hover:text-blue-300"
               >
                 office@flowtix.ai
               </a>{" "}
-              to confirm. We’ll send a calendar invite within the hour.
+              follows within a few hours.
             </div>
             <button
               type="button"
@@ -299,14 +740,10 @@ function CalendarBooking() {
             </AnimatePresence>
 
             <div className="mt-8 flex items-center justify-between gap-4 flex-wrap">
-              <p className="text-[#333] text-xs">
-                Actual booking via{" "}
-                <a
-                  href="mailto:office@flowtix.ai"
-                  className="text-[#888] hover:text-white"
-                >
-                  office@flowtix.ai
-                </a>
+              <p className="text-[#444] text-xs leading-relaxed">
+                {selectedDay && selectedTime
+                  ? "One more step — share a few details about your call."
+                  : "Pick a day and time to continue."}
               </p>
               <m.button
                 type="button"
@@ -331,6 +768,16 @@ function CalendarBooking() {
           </m.div>
         )}
       </AnimatePresence>
+
+      <BookingDetailsModal
+        open={modalOpen}
+        onClose={() => setModalOpen(false)}
+        selectedDay={selectedDay}
+        selectedTime={selectedTime}
+        monthLabel={monthLabel}
+        year={year}
+        onConfirmed={() => setConfirmed(true)}
+      />
     </div>
   );
 }

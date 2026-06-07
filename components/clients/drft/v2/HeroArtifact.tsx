@@ -17,7 +17,7 @@ function CoatSilhouette({ tint }: { tint: string }) {
     <svg viewBox="0 0 100 140" className="w-full h-full">
       <defs>
         <linearGradient id={`coat-${tint}`} x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#1A0F04" stopOpacity="0.9" />
+          <stop offset="0%" stopColor="#1F0808" stopOpacity="0.9" />
           <stop offset="100%" stopColor="#0F0902" stopOpacity="0.95" />
         </linearGradient>
       </defs>
@@ -60,8 +60,8 @@ export function HeroArtifact() {
       aria-hidden="true"
       style={{
         background:
-          "linear-gradient(135deg, #F97316 0%, #C2410C 50%, #7C2D12 100%)",
-        color: "#1A0F04",
+          "linear-gradient(135deg, #DC2626 0%, #991B1B 50%, #7F1D1D 100%)",
+        color: "#1F0808",
         fontFamily: "var(--font-inter, Inter, sans-serif)",
         borderRadius: 16,
       }}
@@ -85,10 +85,10 @@ export function HeroArtifact() {
         className="absolute top-0 inset-x-0 h-12 sm:h-14 flex items-center justify-between px-6 sm:px-10"
         style={{ background: "#0A0701" }}
       >
-        <span className="text-orange-300 text-[9px] sm:text-[10px] tracking-[0.32em] uppercase font-bold">
+        <span className="text-red-300 text-[9px] sm:text-[10px] tracking-[0.32em] uppercase font-bold">
           SS25 · Fieldwork Drop
         </span>
-        <span className="text-orange-300 text-[9px] sm:text-[10px] tracking-[0.32em] uppercase font-bold">
+        <span className="text-red-300 text-[9px] sm:text-[10px] tracking-[0.32em] uppercase font-bold">
           Live · 04 May
         </span>
       </div>
@@ -110,7 +110,7 @@ export function HeroArtifact() {
             }}
           >
             DRFT
-            <span style={{ color: "#1A0F04" }}>*</span>
+            <span style={{ color: "#1F0808" }}>*</span>
           </h2>
           <div className="mt-3 sm:mt-4 text-[#0A0701]/80 text-[10px] sm:text-[12px] uppercase tracking-[0.32em] font-bold">
             Workwear · made in Porto · since 2024
@@ -120,10 +120,10 @@ export function HeroArtifact() {
         {/* Coat lookbook row — 5 on lg+, drops to 3 on small */}
         <div className="mt-8 sm:mt-14 grid grid-cols-3 sm:grid-cols-5 gap-2 sm:gap-4 lg:gap-6">
           {[
-            { name: "Field", tint: "#7C2D12", price: "$189" },
+            { name: "Field", tint: "#7F1D1D", price: "$189" },
             { name: "Derby", tint: "#1F2937", price: "$224" },
             { name: "Peacoat", tint: "#0F2027", price: "$198" },
-            { name: "Camel", tint: "#A8551F", price: "$262", hideOnMobile: true },
+            { name: "Camel", tint: "#B45353", price: "$262", hideOnMobile: true },
             { name: "Storm", tint: "#3F2810", price: "$278", hideOnMobile: true },
           ].map((c, i) => (
             <m.div

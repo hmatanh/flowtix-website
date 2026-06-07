@@ -22,7 +22,7 @@ export function BrandTakeover() {
       style={{
         background:
           "linear-gradient(180deg, #EFE7DA 0%, #E2D5BC 60%, #D2BF9C 100%)",
-        color: "#1A0F04",
+        color: "#1F0808",
         fontFamily: "var(--font-inter, Inter, sans-serif)",
         borderRadius: 16,
       }}
@@ -58,7 +58,7 @@ export function BrandTakeover() {
               className="block h-px w-8 sm:w-12"
               style={{ background: "rgba(124,45,18,0.4)" }}
             />
-            <span className="text-[#7C2D12] text-[10px] sm:text-[11px] tracking-[0.32em] uppercase font-bold">
+            <span className="text-[#7F1D1D] text-[10px] sm:text-[11px] tracking-[0.32em] uppercase font-bold">
               The DRFT voice — three modes
             </span>
           </div>
@@ -80,7 +80,7 @@ export function BrandTakeover() {
               01 · Manifesto
             </div>
             <p
-              className="text-[#1A0F04] tracking-tight"
+              className="text-[#1F0808] tracking-tight"
               style={{
                 fontSize: "clamp(28px, 5vw, 60px)",
                 fontWeight: 900,
@@ -116,7 +116,7 @@ export function BrandTakeover() {
                 02 · Product line
               </div>
               <p
-                className="text-[#1A0F04] tracking-tight italic"
+                className="text-[#1F0808] tracking-tight italic"
                 style={{
                   fontSize: "clamp(22px, 3.6vw, 40px)",
                   fontWeight: 400,
@@ -130,7 +130,7 @@ export function BrandTakeover() {
               </p>
             </div>
             <div className="text-left lg:text-right whitespace-nowrap">
-              <div className="text-[#7C2D12] text-[11px] sm:text-[13px] uppercase tracking-[0.22em] font-black">
+              <div className="text-[#7F1D1D] text-[11px] sm:text-[13px] uppercase tracking-[0.22em] font-black">
                 $189
               </div>
               <div className="text-[#7C5A2A] text-[10px] tracking-[0.15em]">
@@ -159,7 +159,7 @@ export function BrandTakeover() {
                 03 · Email
               </div>
               <div
-                className="text-[#1A0F04] tracking-tight"
+                className="text-[#1F0808] tracking-tight"
                 style={{
                   fontSize: "clamp(24px, 4.4vw, 48px)",
                   fontWeight: 900,
@@ -184,7 +184,7 @@ export function BrandTakeover() {
               </div>
               <div className="flex items-baseline gap-3">
                 <span
-                  className="text-[#7C2D12] tabular-nums font-black"
+                  className="text-[#7F1D1D] tabular-nums font-black"
                   style={{ fontSize: "clamp(24px, 3vw, 40px)" }}
                 >
                   47.3%
@@ -202,7 +202,7 @@ export function BrandTakeover() {
 
         {/* Bottom footer */}
         <div className="mt-10 sm:mt-14 pt-5 sm:pt-7 border-t flex items-center justify-between flex-wrap gap-2" style={{ borderColor: "rgba(124,45,18,0.25)" }}>
-          <span className="text-[#7C2D12] text-[10px] sm:text-[11px] tracking-[0.22em] uppercase font-bold">
+          <span className="text-[#7F1D1D] text-[10px] sm:text-[11px] tracking-[0.22em] uppercase font-bold">
             One brand, three voices, one engine
           </span>
           <span className="text-[#7C5A2A] text-[10px] sm:text-[11px] tracking-[0.22em] uppercase italic">

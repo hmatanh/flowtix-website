@@ -49,7 +49,7 @@ export function AurumMark({ size = 28, color = "#D97706" }: Props) {
   );
 }
 
-export function DrftMark({ color = "#F97316" }: Props) {
+export function DrftMark({ color = "#DC2626" }: Props) {
   return (
     <span
       className="font-black italic tracking-tighter"

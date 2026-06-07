@@ -190,8 +190,8 @@ export function DrftContentStudio() {
         <span
           className="inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[10px]"
           style={{
-            background: "rgba(249,115,22,0.10)",
-            border: `1px solid rgba(249,115,22,0.25)`,
+            background: "rgba(220, 38, 38,0.10)",
+            border: `1px solid rgba(220, 38, 38,0.25)`,
             color: ORANGE,
           }}
         >
@@ -212,7 +212,7 @@ export function DrftContentStudio() {
                 onClick={() => setType(t.id)}
                 className="px-3 py-2 text-xs whitespace-nowrap font-medium transition-colors"
                 style={{
-                  background: active ? "rgba(249,115,22,0.08)" : "transparent",
+                  background: active ? "rgba(220, 38, 38,0.08)" : "transparent",
                   borderBottom: active ? `2px solid ${ORANGE}` : "2px solid transparent",
                   color: active ? ORANGE : TEXT_DIM,
                 }}
@@ -235,7 +235,7 @@ export function DrftContentStudio() {
             value={brief}
             onChange={(e) => setBrief(e.target.value)}
             placeholder={PLACEHOLDERS[type]}
-            className="w-full rounded-xl p-3.5 text-white text-sm leading-relaxed resize-none outline-none focus:border-orange-500/30"
+            className="w-full rounded-xl p-3.5 text-white text-sm leading-relaxed resize-none outline-none focus:border-red-500/30"
             style={{
               background: SURFACE,
               border: `1px solid ${BORDER}`,
@@ -354,8 +354,8 @@ export function DrftContentStudio() {
                         onClick={() => setVariant(v)}
                         className="rounded-lg px-3 py-1.5 text-[11px] font-medium border"
                         style={{
-                          background: active ? "rgba(249,115,22,0.10)" : "transparent",
-                          borderColor: active ? "rgba(249,115,22,0.35)" : BORDER,
+                          background: active ? "rgba(220, 38, 38,0.10)" : "transparent",
+                          borderColor: active ? "rgba(220, 38, 38,0.35)" : BORDER,
                           color: active ? ORANGE : TEXT_DIM,
                         }}
                       >
@@ -486,8 +486,8 @@ function Pills({
             onClick={() => onChange(opt)}
             className="rounded-full px-3 py-1 text-[11px] border"
             style={{
-              background: active ? "rgba(249,115,22,0.10)" : "transparent",
-              borderColor: active ? "rgba(249,115,22,0.35)" : BORDER,
+              background: active ? "rgba(220, 38, 38,0.10)" : "transparent",
+              borderColor: active ? "rgba(220, 38, 38,0.35)" : BORDER,
               color: active ? ORANGE : TEXT_DIM,
             }}
           >
@@ -534,7 +534,7 @@ function ShimmerBlock({ delay, lines }: { delay: number; lines: number }) {
           <m.div
             className="absolute inset-0"
             style={{
-              background: "linear-gradient(90deg, transparent, rgba(249,115,22,0.18), transparent)",
+              background: "linear-gradient(90deg, transparent, rgba(220, 38, 38,0.18), transparent)",
             }}
             animate={{ x: ["-100%", "200%"] }}
             transition={{ duration: 1.5, repeat: Infinity, delay: i * 0.1 }}

@@ -385,7 +385,7 @@ export function DrftStore() {
                           onClick={() => setSelectedSize(sz)}
                           className="w-10 h-10 border rounded-lg text-xs flex items-center justify-center"
                           style={{
-                            background: active ? "rgba(249,115,22,0.10)" : "transparent",
+                            background: active ? "rgba(220, 38, 38,0.10)" : "transparent",
                             borderColor: active ? ORANGE : BORDER,
                             color: active ? "#fff" : TEXT_DIM,
                           }}
@@ -483,7 +483,7 @@ function Hero({ onShop }: { onShop: () => void }) {
         style={{
           width: 320,
           height: 400,
-          background: "radial-gradient(ellipse at 70% 30%, rgba(249,115,22,0.10) 0%, transparent 70%)",
+          background: "radial-gradient(ellipse at 70% 30%, rgba(220, 38, 38,0.10) 0%, transparent 70%)",
         }}
       />
       <div className="relative">
@@ -603,12 +603,12 @@ function ProductCard({ product, onClick }: { product: Product; onClick: () => vo
 
 function InstaStrip() {
   const patterns = [
-    "linear-gradient(135deg, rgba(249,115,22,0.20), transparent 70%)",
-    "radial-gradient(circle at 30% 30%, rgba(249,115,22,0.18), transparent 70%)",
-    "linear-gradient(45deg, rgba(249,115,22,0.05), rgba(249,115,22,0.18))",
-    "radial-gradient(circle at 70% 70%, rgba(249,115,22,0.16), transparent 70%)",
-    "linear-gradient(180deg, rgba(249,115,22,0.10), rgba(249,115,22,0.02))",
-    "linear-gradient(90deg, rgba(249,115,22,0.12), rgba(249,115,22,0.02) 80%)",
+    "linear-gradient(135deg, rgba(220, 38, 38,0.20), transparent 70%)",
+    "radial-gradient(circle at 30% 30%, rgba(220, 38, 38,0.18), transparent 70%)",
+    "linear-gradient(45deg, rgba(220, 38, 38,0.05), rgba(220, 38, 38,0.18))",
+    "radial-gradient(circle at 70% 70%, rgba(220, 38, 38,0.16), transparent 70%)",
+    "linear-gradient(180deg, rgba(220, 38, 38,0.10), rgba(220, 38, 38,0.02))",
+    "linear-gradient(90deg, rgba(220, 38, 38,0.12), rgba(220, 38, 38,0.02) 80%)",
   ];
   return (
     <section className="px-4 sm:px-6 pt-3 pb-7">

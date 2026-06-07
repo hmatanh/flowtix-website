@@ -96,8 +96,8 @@ export function DrftAnalytics() {
                 onClick={() => setPeriod(p)}
                 className="rounded-md px-2.5 py-1 text-[10px] font-medium font-mono"
                 style={{
-                  background: active ? "rgba(249,115,22,0.10)" : "transparent",
-                  border: active ? `1px solid rgba(249,115,22,0.25)` : "1px solid transparent",
+                  background: active ? "rgba(220, 38, 38,0.10)" : "transparent",
+                  border: active ? `1px solid rgba(220, 38, 38,0.25)` : "1px solid transparent",
                   color: active ? ORANGE : TEXT_DIM,
                 }}
               >
