@@ -734,7 +734,7 @@ export default function Home() {
             </div>
           </FadeIn>
           <StaggerContainer className="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-6 lg:gap-7">
-            {projects.slice(0, 3).map((p) => (
+            {projects.slice(0, 4).map((p) => (
               <StaggerItem key={p.slug}>
                 <Link
                   href={`/work/${p.slug}/`}
@@ -815,6 +815,21 @@ export default function Home() {
               </StaggerItem>
             ))}
           </StaggerContainer>
+
+          {/* CTA to full /work portfolio */}
+          <FadeIn delay={0.1}>
+            <div className="mt-12 sm:mt-14 lg:mt-16 flex justify-center">
+              <m.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                <Link
+                  href="/work/"
+                  className="inline-flex items-center gap-2 bg-white text-black px-7 py-3.5 rounded-2xl text-sm font-semibold hover:bg-[#eee] transition-colors"
+                >
+                  See all case studies
+                  <IconArrowRight size={16} stroke={2.5} aria-hidden="true" />
+                </Link>
+              </m.div>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
