@@ -141,7 +141,7 @@ export default function RootLayout({
               name: "Flowtix",
               url: "https://flowtix.ai",
               description:
-                "Design-First AI Systems for Forward-Thinking Businesses.",
+                "Custom business systems, automated workflows, AI agents, internal tools, and digital products for startups, agencies, and growing businesses.",
               publisher: {
                 "@type": "Organization",
                 name: "Flowtix",
