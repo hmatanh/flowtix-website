@@ -115,7 +115,7 @@ export default function RootLayout({
               url: "https://flowtix.ai",
               logo: "https://flowtix.ai/flowtix-wordmark-white.svg",
               description:
-                "Design-first AI systems, intelligent automations, and premium digital products for forward-thinking businesses.",
+                "Custom business systems, automated workflows, AI agents, internal tools, and digital products for startups, agencies, and growing businesses.",
               email: "office@flowtix.ai",
               sameAs: [],
               foundingDate: "2025",

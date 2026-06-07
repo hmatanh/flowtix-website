@@ -3,23 +3,26 @@ import type { Metadata } from "next";
 const url = "https://flowtix.ai/blog/";
 
 export const metadata: Metadata = {
-  title: { absolute: "Blog — Insights on AI, Design & the Future of Business | Flowtix" },
+  title: {
+    absolute: "Blog — Notes on Systems, Automation & Business | Flowtix",
+  },
   description:
-    "Practical thinking on AI systems, automation, design-first product, brand strategy and the future of business. Written by Flowtix builders for operators who ship.",
+    "Practical thinking on custom systems, automated workflows, internal tools, and the business decisions behind them. Written by Flowtix builders for operators who ship.",
   keywords:
-    "AI blog, AI systems, AI automation, AI strategy, design first AI, AI for business, AI case studies",
+    "business systems blog, workflow automation, internal tools, custom software, business operations, product strategy",
   alternates: { canonical: url },
   openGraph: {
     url,
-    title: "Flowtix Blog — Insights on AI, Design & Business",
+    title: "Flowtix Blog — Notes on Systems, Automation & Business",
     description:
-      "Practical thinking on AI, automation, design, and the future of business.",
+      "Practical thinking on custom systems, automated workflows, and the way real businesses ship.",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Flowtix Blog",
-    description: "Practical thinking on AI, automation, design, and business.",
+    description:
+      "Notes on custom systems, automation, and the way real businesses ship.",
   },
 };
 

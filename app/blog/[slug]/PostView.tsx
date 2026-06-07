@@ -312,7 +312,7 @@ export function PostView({
                     boxShadow: `0 20px 40px ${post.categoryColor}30`,
                   }}
                 >
-                  Book a Discovery Call
+                  Book a Strategy Call
                   <IconArrowRight size={14} stroke={2.5} aria-hidden="true" />
                 </Link>
               </m.div>
@@ -344,8 +344,9 @@ export function PostView({
               Flowtix Team
             </h4>
             <p className="text-[#aaa] text-sm mt-3 leading-relaxed">
-              Flowtix is a design-first studio building AI systems, automations,
-              and digital products for businesses that refuse to look average.
+              Flowtix is a digital systems, automation, and product studio.
+              We build custom systems, internal tools, and automated workflows
+              for businesses that want to work smarter.
             </p>
             <div className="mt-4 flex gap-3">
               <Link

@@ -29,16 +29,16 @@ const SKILLS = [
 ];
 
 const IS_LIST = [
-  "A design-first product studio that builds with AI",
+  "A digital systems, automation, and product studio",
   "A team that designs AND builds — no handoffs, no gaps",
-  "Specialists in making AI systems people actually want to use",
+  "Specialists in making systems people actually want to use",
   "A company that explains everything in plain language",
   "A long-term partner, not a one-time vendor",
   "Builders who obsess over the details others skip",
 ];
 
 const ISNT_LIST = [
-  "A generic AI agency offering commodity services",
+  "A generic agency selling commodity services",
   "A company that outsources to cheaper developers",
   "An enterprise-only firm with minimum $100K projects",
   "A team that disappears after delivery",
@@ -66,7 +66,7 @@ const VALUES = [
     icon: IconUsers,
     title: "Systems are for humans.",
     body:
-      "AI is only valuable when people use it. We design every system around the human who will interact with it daily — not the engineer who built it.",
+      "A system is only valuable when people actually use it. We design every product around the person who will work in it daily — not the engineer who built it.",
   },
   {
     n: "04",
@@ -290,32 +290,32 @@ export default function AboutPage() {
               </h2>
 
               <div className="space-y-4 mt-8">
-                <p className="text-[#888] text-base leading-relaxed">
+                <p className="text-[#aaa] text-base leading-relaxed">
                   After a decade designing digital products and brand identities
                   for companies across multiple industries, I kept seeing the
-                  same problem: businesses were investing in AI that nobody
-                  actually used. Not because the technology wasn&apos;t capable
-                  — because nobody had designed the experience.
+                  same problem: businesses were running on manual work, in
+                  systems nobody had actually designed for them. The cost
+                  wasn&apos;t the software — it was the hours their teams
+                  spent compensating for it.
                 </p>
-                <p className="text-[#888] text-base leading-relaxed">
-                  I started learning how to build with AI tools — not as a
-                  replacement for design, but as an extension of it. I
-                  discovered that the combination of deep product thinking,
-                  10 years of UX expertise, and the ability to build with
-                  frontier AI models created something that didn&apos;t exist
-                  in the market: AI systems that were genuinely beautiful to
-                  use.
+                <p className="text-[#aaa] text-base leading-relaxed">
+                  I started building the systems those teams should have had
+                  in the first place — internal tools, dashboards, automations,
+                  and AI workflows wired directly into the way the business
+                  actually worked. Deep product thinking, ten years of UX
+                  expertise, and modern build tools turned out to be the
+                  combination most agencies were missing.
                 </p>
-                <p className="text-[#888] text-base leading-relaxed">
-                  Flowtix was founded on a single conviction: the best AI
-                  systems aren&apos;t the most technically complex ones.
-                  They&apos;re the ones that feel like they were built for the
-                  specific person using them. That&apos;s what we build.
+                <p className="text-[#aaa] text-base leading-relaxed">
+                  Flowtix was founded on a single conviction: the best systems
+                  aren&apos;t the most technically complex ones. They&apos;re
+                  the ones that fit the specific business using them. That&apos;s
+                  what we build.
                 </p>
               </div>
 
               <div className="bg-[#0D0D0D] border-l-2 border-blue-500 pl-6 py-4 mt-8 rounded-r-lg">
-                <p className="text-[#aaa] text-lg italic leading-relaxed">
+                <p className="text-[#cccccc] text-lg italic leading-relaxed">
                   &ldquo;Every system we build starts with one question: would I
                   be proud to use this myself?&rdquo;
                 </p>
@@ -581,7 +581,7 @@ export default function AboutPage() {
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2 bg-white text-black px-8 py-4 rounded-xl font-semibold text-sm hover:bg-[#eee] transition-colors min-h-[48px] w-full sm:w-auto"
               >
-                Start a project
+                Book a Strategy Call
                 <IconArrowRight size={16} stroke={2} aria-hidden="true" />
               </Link>
               <Link

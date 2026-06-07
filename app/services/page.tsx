@@ -331,7 +331,7 @@ export default function ServicesPage() {
                   href="/contact"
                   className="btn-shimmer inline-flex w-full sm:w-auto items-center justify-center gap-2 bg-white text-black px-7 py-4 rounded-2xl font-semibold hover:bg-[#eee] transition-colors"
                 >
-                  <span className="relative z-10">Book a Discovery Call</span>
+                  <span className="relative z-10">Book a Strategy Call</span>
                   <IconArrowRight
                     size={16}
                     stroke={2.5}

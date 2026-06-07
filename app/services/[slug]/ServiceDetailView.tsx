@@ -722,7 +722,7 @@ export function ServiceDetailView({ slug }: { slug: string }) {
                     boxShadow: `0 30px 80px rgba(${c.rgb},0.35)`,
                   }}
                 >
-                  Book a Discovery Call
+                  Book a Strategy Call
                   <IconArrowRight size={18} stroke={2.5} aria-hidden="true" />
                 </Link>
               </m.div>

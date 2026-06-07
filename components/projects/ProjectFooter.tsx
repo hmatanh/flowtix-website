@@ -231,7 +231,7 @@ export function ProjectBottomCTA({ project }: { project: Project }) {
             href="/contact"
             className="inline-flex items-center gap-2 bg-white text-black px-7 py-3.5 rounded-xl font-semibold text-sm hover:bg-[#eee] transition-colors min-h-[44px]"
           >
-            Start a project
+            Book a Strategy Call
             <IconArrowRight size={14} stroke={2} />
           </Link>
           <Link

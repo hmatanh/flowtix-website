@@ -47,7 +47,7 @@ export function MobileCTA() {
               className="block w-full text-center font-semibold text-black bg-white rounded-xl"
               style={{ padding: "14px", fontSize: "15px" }}
             >
-              Book a Discovery Call →
+              Book a Strategy Call →
             </Link>
           </m.div>
         )}

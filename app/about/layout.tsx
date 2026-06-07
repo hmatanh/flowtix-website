@@ -3,22 +3,23 @@ import type { Metadata } from "next";
 const url = "https://flowtix.ai/about/";
 
 export const metadata: Metadata = {
-  title: "About Flowtix — Design-First AI Studio",
+  title: "About Flowtix — Digital Systems Studio",
   description:
-    "A design-first AI product studio. Built on the conviction that the best AI systems are the ones humans actually want to use. Meet the team and the values behind Flowtix.",
+    "Flowtix is a digital systems, automation, and product studio. We build the custom systems, internal tools, and automated workflows that move businesses forward.",
   keywords:
-    "Flowtix about, AI studio, design first AI, AI product studio, AI agency, founder Flowtix",
+    "Flowtix about, digital systems studio, custom systems, business automation, product studio, internal tools, founder Flowtix",
   alternates: { canonical: url },
   openGraph: {
     url,
     title: "About Flowtix",
-    description: "A design-first AI product studio building systems humans actually use.",
+    description:
+      "A digital systems, automation, and product studio. Built around the businesses that use what we ship.",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "About Flowtix",
-    description: "A design-first AI product studio.",
+    description: "A digital systems, automation, and product studio.",
   },
 };
 

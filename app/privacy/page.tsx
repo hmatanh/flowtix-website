@@ -101,9 +101,10 @@ export default function PrivacyPage() {
 
       <Section id="who-we-are" title="1. Who We Are">
         <p>
-          Flowtix is a design-first AI company that builds intelligent
-          systems, automations, and digital products for businesses. We are the
-          data controller for information collected through this website.
+          Flowtix is a digital systems, automation, and product studio. We
+          build custom systems, automated workflows, AI agents, internal tools,
+          and digital products for businesses. We are the data controller for
+          information collected through this website.
         </p>
         <p>
           <strong>Contact:</strong>{" "}

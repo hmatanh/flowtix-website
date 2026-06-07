@@ -2366,7 +2366,7 @@ function ResonateCTA({ project }: { project: Project }) {
                   boxShadow: `0 30px 80px rgba(${b.accentRGB},0.35), 0 0 0 1px rgba(255,255,255,0.1) inset`,
                 }}
               >
-                Book a Discovery Call
+                Book a Strategy Call
                 <IconArrowRight size={18} stroke={2.5} aria-hidden="true" />
               </Link>
             </m.div>
