@@ -212,7 +212,7 @@ export default function Home() {
   return (
     <>
       {/* ===== 1. HERO ===== */}
-      <section className="relative lg:min-h-screen lg:flex lg:items-center pt-6 sm:pt-12 lg:pt-32 pb-14 sm:pb-20 lg:pb-24 overflow-hidden">
+      <section className="relative lg:min-h-screen lg:flex lg:items-center pt-3 sm:pt-8 lg:pt-32 pb-14 sm:pb-20 lg:pb-24 overflow-hidden">
         <PerspectiveGrid />
         <div
           aria-hidden="true"

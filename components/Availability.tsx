@@ -26,7 +26,7 @@ export function Availability() {
               </p>
               <div className="mt-8 max-w-md mx-auto text-left">
                 <div className="text-[#333] text-[10px] tracking-widest uppercase mb-2">
-                  Q3 2025 capacity
+                  Q3 2026 capacity
                 </div>
                 <div className="bg-[#0a0a0a] border border-[#1a1a1a] rounded-full h-2 overflow-hidden">
                   <m.div

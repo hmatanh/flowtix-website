@@ -30,7 +30,7 @@ const upcoming = [
     name: "Flowtix Pulse",
     tag: "Sales Intelligence",
     desc: "Real-time lead scoring + outreach drafting for B2B teams.",
-    eta: "Q3 2025",
+    eta: "Q4 2026",
     color: "#10B981",
   },
   {
