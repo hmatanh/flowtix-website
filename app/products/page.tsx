@@ -37,7 +37,7 @@ const upcoming = [
     name: "Flowtix Studio",
     tag: "Creative AI",
     desc: "Brand-trained image, video, and copy generation in one canvas.",
-    eta: "Q4 2025",
+    eta: "Q4 2026",
     color: "#EC4899",
   },
   {
@@ -115,7 +115,7 @@ export default function ProductsPage() {
               Deployed fast.
             </p>
             <p className="text-[#6a6a6a] text-xs sm:text-sm mt-3">
-              More systems launching throughout 2025–2026
+              More systems launching throughout 2026 onwards
             </p>
           </FadeIn>
         </div>

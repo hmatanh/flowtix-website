@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState, FormEvent } from "react";
 import { m } from "framer-motion";
 import {
-  IconBrandX,
+  IconBrandFacebook,
   IconBrandLinkedin,
   IconMail,
 } from "@tabler/icons-react";
@@ -89,11 +89,12 @@ export function Footer() {
           <div>
             <h4 className="text-white text-sm font-semibold mb-4">Services</h4>
             <ul className="space-y-3 text-sm text-[#666]">
-              <li><Link href="/services/ai-systems" className="animated-link hover:text-white transition-colors">AI Systems</Link></li>
-              <li><Link href="/services/automation" className="animated-link hover:text-white transition-colors">Automation</Link></li>
-              <li><Link href="/services/design" className="animated-link hover:text-white transition-colors">Design</Link></li>
-              <li><Link href="/services/web-development" className="animated-link hover:text-white transition-colors">Web Dev</Link></li>
-              <li><Link href="/services/ai-chatbots" className="animated-link hover:text-white transition-colors">Chatbots</Link></li>
+              <li><Link href="/services/automation" className="animated-link hover:text-white transition-colors">Business Process Automation</Link></li>
+              <li><Link href="/services/ai-agents" className="animated-link hover:text-white transition-colors">Custom AI Agents</Link></li>
+              <li><Link href="/services/internal-tools" className="animated-link hover:text-white transition-colors">Internal Tools</Link></li>
+              <li><Link href="/services/mvp-product" className="animated-link hover:text-white transition-colors">MVP &amp; Product</Link></li>
+              <li><Link href="/services/web-development" className="animated-link hover:text-white transition-colors">Web Development</Link></li>
+              <li><Link href="/services/design" className="animated-link hover:text-white transition-colors">Design &amp; Brand</Link></li>
             </ul>
           </div>
 
@@ -117,18 +118,7 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="https://twitter.com/flowtix_ai"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 hover:text-white transition-colors"
-                >
-                  <IconBrandX size={14} stroke={1.5} aria-hidden="true" />
-                  Twitter
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.linkedin.com/company/flowtix-ai"
+                  href="https://www.linkedin.com/company/flowtixai/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 hover:text-white transition-colors"
@@ -137,12 +127,23 @@ export function Footer() {
                   LinkedIn
                 </a>
               </li>
+              <li>
+                <a
+                  href="https://www.facebook.com/profile.php?id=61590763886838"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 hover:text-white transition-colors"
+                >
+                  <IconBrandFacebook size={14} stroke={1.5} aria-hidden="true" />
+                  Facebook
+                </a>
+              </li>
             </ul>
           </div>
         </div>
 
         <div className="py-6 border-t border-[#0a0a0a] flex flex-col sm:flex-row justify-between gap-2 text-[#222] text-xs safe-area-bottom">
-          <div>© 2025 Flowtix. All rights reserved.</div>
+          <div>© 2026 Flowtix. All rights reserved.</div>
           <div className="flex flex-wrap gap-4">
             <Link href="/privacy" className="hover:text-[#555] transition-colors">
               Privacy Policy
