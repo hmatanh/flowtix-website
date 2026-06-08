@@ -1,13 +1,36 @@
 /**
  * Blog cover image lookup
  *
- * 40 curated Unsplash photos pooled by category (8 per category).
- * Each post deterministically gets one image based on a hash of its
- * slug, so the same post always shows the same cover while siblings
- * in the same category visibly rotate through different photos.
+ * Two layers:
  *
- * Licensing: Unsplash License — free for commercial + non-commercial,
- * no attribution required. https://unsplash.com/license
+ *   1. SLUG_OVERRIDE — an explicit per-post photo. This is the
+ *      authoritative source for any post that exists today. Each
+ *      published post is hand-mapped to a topic-relevant photo, so
+ *      every article in the listing carries a visibly different
+ *      cover. New posts inherit the pool fallback below until they
+ *      get their own override.
+ *
+ *   2. CATEGORY_POOL — a fallback pool of curated Unsplash photos
+ *      grouped by category. When a post slug isn't in SLUG_OVERRIDE,
+ *      we DJB2-hash the slug and pick from that category's pool, so
+ *      a future post always renders the same cover across reloads.
+ *
+ * ──────────────────────────────────────────────────────────────────
+ * LICENSING — every photo in this file is served from images.unsplash.com
+ * under the Unsplash License (https://unsplash.com/license):
+ *
+ *   • Free for commercial AND non-commercial use
+ *   • No permission needed from photographer or Unsplash
+ *   • No attribution required (though appreciated)
+ *   • Cannot be sold without significant modification, and cannot be
+ *     used to replicate a similar/competing service — both fine for
+ *     editorial blog use here.
+ *
+ * Each ID below has been verified to return 200 OK from
+ * images.unsplash.com. The previously-broken Design pool ID
+ * (1561070791-2526d30994b8 — 404) has been removed; the rest of the
+ * pool returns valid images.
+ * ──────────────────────────────────────────────────────────────────
  *
  * Image delivery params (chosen for blog-card use):
  *   w=800       — 2× retina at 400 px display width
@@ -21,6 +44,40 @@
  * paint, so initial image weight is ~200–400 KB total, falling well
  * under the 1 MB Lighthouse target.
  */
+
+/**
+ * Explicit per-post cover photo. One unique Unsplash ID per slug.
+ * Adding/renaming a post? Add a row here so it doesn't fall back to
+ * the category pool (which can collide as more posts pile up).
+ *
+ * Every ID here has been HEAD-checked against images.unsplash.com.
+ */
+const SLUG_OVERRIDE: Record<string, string> = {
+  // AI Systems — circuit board macro, evokes the hidden plumbing
+  // behind every AI implementation that nobody plans for upfront.
+  "why-most-ai-implementations-fail": "1518770660439-4636190af475",
+
+  // Design — hands sketching on paper, the craft side of building
+  // human-first AI surfaces before the engineering takes over.
+  "design-first-ai-systems": "1481487196290-c152efe083f5",
+
+  // Automation — analytics dashboard, the visible payoff of a
+  // workflow that used to be a human-driven Slack thread.
+  "5-workflows-to-automate-with-ai-in-2025": "1551288049-bebda4e38f71",
+
+  // AI Systems — abstract AI swirl, distinct enough from the
+  // "why most fail" circuit board so the two AI Systems posts
+  // read as obviously different at a glance in the listing grid.
+  "what-is-an-ai-agent": "1677442136019-21780ecad995",
+
+  // AI Content — vintage typewriter, the original "brand voice"
+  // tool, tying the post's topic to a tactile object.
+  "brand-voice-ai-complete-guide": "1455390582262-044cdead277a",
+
+  // Business — charts and printed reports, the language ROI gets
+  // spoken in when AI investment shows up on the P&L.
+  "ai-roi-how-to-measure": "1517048676732-d65bc937f952",
+};
 
 const CATEGORY_POOL: Record<string, readonly string[]> = {
   // ── AI Systems · abstract tech, neural, gradients, circuits ───────
@@ -72,15 +129,17 @@ const CATEGORY_POOL: Record<string, readonly string[]> = {
   ],
 
   // ── Design · color, sketches, tools, craft ────────────────────────
+  // Note: a previously-included photo ID (1561070791-2526d30994b8)
+  // 404'd from Unsplash and has been removed. All IDs below are
+  // verified 200 OK.
   "Design": [
-    "1561070791-2526d30994b8",    // color swatches
-    "1558655146-9f40138edfeb",    // design sketches
-    "1545235617-9465d2a55698",    // sketch on tablet
+    "1558655146-9f40138edfeb", // design sketches
+    "1545235617-9465d2a55698", // sketch on tablet
     "1503602642458-232111445657", // design tools flatlay
-    "1550745165-9bc0b252726f",    // abstract design gradient
-    "1542435503-956c469947f6",    // colorful brand palette
+    "1550745165-9bc0b252726f", // abstract design gradient
+    "1542435503-956c469947f6", // colorful brand palette
     "1481487196290-c152efe083f5", // hands sketching
-    "1547119957-637f8679db1e",    // brand swatches table
+    "1547119957-637f8679db1e", // brand swatches table
   ],
 };
 
@@ -113,8 +172,12 @@ export function getCoverImage(
   category: string,
   width: number = 800
 ): string {
+  // Explicit per-post mapping wins. Falls back to deterministic hash
+  // over the category pool for any future post that hasn't been
+  // mapped yet, so a new draft still ships with a sensible cover.
+  const overrideId = SLUG_OVERRIDE[slug];
   const pool = CATEGORY_POOL[category] ?? DEFAULT_POOL;
-  const photoId = pool[djb2(slug) % pool.length];
+  const photoId = overrideId ?? pool[djb2(slug) % pool.length];
   const height = Math.round(width * 0.625); // 16:10 aspect
 
   return (
