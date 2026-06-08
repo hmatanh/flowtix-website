@@ -32,8 +32,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://flowtix.ai"),
   title: {
-    default:
-      "Flowtix - Custom Business Systems, Automations & Digital Products",
+    default: "Flowtix - Systems Built Around Your Business",
     template: "%s | Flowtix",
   },
   description:
@@ -55,8 +54,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://flowtix.ai",
     siteName: "Flowtix",
-    title:
-      "Flowtix - Custom Business Systems, Automations & Digital Products",
+    title: "Flowtix - Systems Built Around Your Business",
     description:
       "We help businesses replace manual work with custom systems, automated workflows, AI agents, internal tools, and digital products.",
     images: [
