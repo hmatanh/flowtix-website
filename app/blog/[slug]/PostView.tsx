@@ -11,7 +11,7 @@ import {
 } from "@tabler/icons-react";
 import type { Post } from "@/lib/posts";
 import { FadeIn } from "@/components/animations/FadeIn";
-import { PostHero } from "@/components/PostHero";
+import { getCoverImage, getCoverAlt } from "@/lib/blog/covers";
 
 function ReadingProgress() {
   const { scrollYProgress } = useScroll();
@@ -186,15 +186,31 @@ export function PostView({
         </div>
       </section>
 
-      {/* Hero illustration — auto-generated SVG, no copyright concerns */}
+      {/* Hero cover — Unsplash photo (free for commercial use), lazy-decoded */}
       <section className="px-6 lg:px-8 mt-4 mb-6">
         <div className="page-container">
-          <PostHero
-            slug={post.slug}
-            category={post.category}
-            categoryColor={post.categoryColor}
-            title={post.title}
-          />
+          <div
+            className="relative rounded-2xl sm:rounded-3xl overflow-hidden border bg-[#0a0a0a] aspect-[16/9]"
+            style={{ borderColor: "rgba(255,255,255,0.06)" }}
+          >
+            <img
+              src={getCoverImage(post.slug, post.category, 1600)}
+              srcSet={`${getCoverImage(post.slug, post.category, 1200)} 1200w, ${getCoverImage(post.slug, post.category, 1600)} 1600w`}
+              sizes="(min-width: 1280px) 1200px, 100vw"
+              alt={getCoverAlt(post.title)}
+              width={1600}
+              height={900}
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            {/* Subtle dark vignette so any caption could overlay legibly */}
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"
+            />
+          </div>
         </div>
       </section>
 
