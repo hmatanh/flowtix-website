@@ -32,7 +32,7 @@
  */
 
 import { m, useReducedMotion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const ORBS = [
   // top-left area, biggest soft halo
@@ -97,17 +97,31 @@ export function HeroAmbient() {
 
   const reduce = osReduce || widgetReduce;
 
+  const [inView, setInView] = useState(true);
+  const containerRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el || typeof IntersectionObserver === "undefined") return;
+    const obs = new IntersectionObserver(
+      ([entry]) => setInView(entry.isIntersecting),
+      { threshold: 0 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
   return (
     <div
+      ref={containerRef}
       aria-hidden="true"
       className="absolute inset-0 pointer-events-none overflow-hidden"
     >
       {/* ── Layer 1: drifting orbs ──────────────────────────────── */}
-      <div className="absolute inset-0 origin-center scale-[0.65] sm:scale-[0.85] lg:scale-100">
+      <div className="hero-orbs absolute inset-0 origin-center scale-[0.65] sm:scale-[0.85] lg:scale-100">
         {ORBS.map((orb, i) => (
           <m.div
             key={"orb-" + i}
-            className="absolute rounded-full will-change-transform"
+            className={"absolute rounded-full" + (reduce ? "" : " will-change-transform")}
             style={{
               left: orb.cx,
               top: orb.cy,
@@ -116,7 +130,7 @@ export function HeroAmbient() {
               marginLeft: -orb.size / 2,
               marginTop: -orb.size / 2,
               background: `radial-gradient(circle, ${orb.color} 0%, transparent 65%)`,
-              filter: "blur(60px)",
+              filter: "blur(var(--orb-blur, 60px))",
               mixBlendMode: "screen",
             }}
             animate={

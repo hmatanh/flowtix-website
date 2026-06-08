@@ -8,19 +8,16 @@ import { IconX } from "@tabler/icons-react";
 const STORAGE_KEY = "flowtix-announcement-dismissed";
 
 export function AnnouncementBar() {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
 
   useEffect(() => {
     try {
       const dismissed = sessionStorage.getItem(STORAGE_KEY);
-      if (!dismissed) {
-        setOpen(true);
-        document.documentElement.style.setProperty("--announcement-h", "36px");
+      if (dismissed) {
+        document.documentElement.style.setProperty("--announcement-h", "0px");
+        setOpen(false);
       }
-    } catch {
-      setOpen(true);
-      document.documentElement.style.setProperty("--announcement-h", "36px");
-    }
+    } catch {}
   }, []);
 
   function dismiss() {
@@ -35,11 +32,11 @@ export function AnnouncementBar() {
     <AnimatePresence initial={false}>
       {open && (
         <m.div
-          initial={{ height: 0, opacity: 0 }}
-          animate={{ height: 36, opacity: 1 }}
-          exit={{ height: 0, opacity: 0 }}
-          transition={{ duration: 0.3, ease: [0.21, 0.47, 0.32, 0.98] }}
-          className="overflow-hidden sticky top-0 z-[60] bg-[#0a0a0a] border-b border-[#1a1a1a]"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.25, ease: [0.21, 0.47, 0.32, 0.98] }}
+          className="sticky top-0 z-[60] bg-[#0a0a0a] border-b border-[#1a1a1a] h-9"
         >
           <div className="h-9 flex items-center justify-center gap-3 px-4 pr-10 text-xs">
             <span className="relative flex h-2 w-2 shrink-0">

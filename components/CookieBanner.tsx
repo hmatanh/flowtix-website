@@ -56,7 +56,7 @@ export function CookieBanner() {
     // Effectively first-paint reveal — matters the moment any tracker is added.
     const t = setTimeout(() => {
       if (!readConsent()) setVisible(true);
-    }, 500);
+    }, 1800);
     // Allow Footer's "Cookie preferences" link to re-open this banner.
     const reopen = () => setVisible(true);
     window.addEventListener(REOPEN_EVENT, reopen);

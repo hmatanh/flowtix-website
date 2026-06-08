@@ -1,6 +1,6 @@
 "use client";
 
-import { m, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence, useReducedMotion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 /* ============================================================
@@ -22,14 +22,18 @@ const PATH_BOTTOM =
 
 export function Loader({ onComplete }: { onComplete: () => void }) {
   const [stage, setStage] = useState<Stage>("draw");
+  const prefersReduced = useReducedMotion();
 
   useEffect(() => {
-    // Draw the mark (0 → 1.1s), settled state (1.1s → 1.8s), then fade out.
+    if (prefersReduced) {
+      onComplete();
+      return;
+    }
     const t1 = setTimeout(() => setStage("settled"), 1100);
     const t2 = setTimeout(() => setStage("exit"), 1800);
     const t3 = setTimeout(() => onComplete(), 2400);
     return () => [t1, t2, t3].forEach(clearTimeout);
-  }, [onComplete]);
+  }, [onComplete, prefersReduced]);
 
   return (
     <AnimatePresence>
@@ -203,7 +207,7 @@ export function Loader({ onComplete }: { onComplete: () => void }) {
               transition={{
                 duration: 1.6,
                 ease: [0.4, 0, 0.2, 1],
-                repeat: Infinity,
+                repeat: 2,
                 repeatDelay: 0.2,
               }}
             />

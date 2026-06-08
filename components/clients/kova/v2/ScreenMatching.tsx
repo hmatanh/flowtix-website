@@ -381,11 +381,12 @@ export function ScreenMatching() {
                                 ? "linear-gradient(90deg,#0EA5E9,#7DD3FC)"
                                 : "linear-gradient(90deg,#7CA0C2,#9DB5CC)",
                             width: `${b.score}%`,
+                            transformOrigin: "left",
                           }}
-                          initial={{ width: 0 }}
-                          whileInView={{ width: `${b.score}%` }}
+                          initial={{ scaleX: 0 }}
+                          whileInView={{ scaleX: 1 }}
                           viewport={{ once: true }}
-                          transition={{ duration: 1.2, ease: "easeOut" }}
+                          transition={{ duration: 0.8, ease: "easeOut" }}
                         />
                       </div>
                       <button

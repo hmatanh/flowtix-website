@@ -25,6 +25,8 @@
   /* Background/foreground tokens */
   --background: var(--black);
   --foreground: var(--text-primary);
+
+  --announcement-h: 36px;
 }
 
 @theme inline {
@@ -120,8 +122,9 @@ body {
 
 
 /* ===== Mobile guards (no horizontal scroll, readable text, tap targets) ===== */
-*, *::before, *::after {
+img, video, iframe, svg, canvas {
   max-width: 100%;
+  height: auto;
 }
 @media (max-width: 768px) {
   /* Center section headings, subtexts and labels on mobile */

@@ -58,23 +58,26 @@ export function HeroArtifact() {
         {/* Top label */}
         <div className="flex items-center justify-between flex-wrap gap-3 mb-8 sm:mb-12">
           <div className="inline-flex items-center gap-2">
-            <m.span
-              className="inline-flex items-center justify-center w-7 h-7 rounded-md"
-              style={{
-                background: "rgba(14,165,233,0.18)",
-                border: "1px solid rgba(14,165,233,0.40)",
-              }}
-              animate={{
-                boxShadow: [
-                  "0 0 0 rgba(14,165,233,0)",
-                  "0 0 16px rgba(14,165,233,0.6)",
-                  "0 0 0 rgba(14,165,233,0)",
-                ],
-              }}
-              transition={{ duration: 2.4, repeat: Infinity }}
-            >
-              <IconSparkles size={13} stroke={1.8} className="text-sky-300" />
-            </m.span>
+            <span className="relative inline-flex">
+              <span
+                className="inline-flex items-center justify-center w-7 h-7 rounded-md"
+                style={{
+                  background: "rgba(14,165,233,0.18)",
+                  border: "1px solid rgba(14,165,233,0.40)",
+                }}
+              >
+                <IconSparkles size={13} stroke={1.8} className="text-sky-300" />
+              </span>
+              <m.span
+                aria-hidden="true"
+                className="absolute inset-0 rounded-md pointer-events-none"
+                style={{
+                  boxShadow: "0 0 16px rgba(14,165,233,0.6)",
+                }}
+                animate={{ opacity: [0, 1, 0] }}
+                transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
+              />
+            </span>
             <span className="text-white text-[13px] sm:text-[14px] font-semibold tracking-tight">
               Match scored in 2.1 seconds
             </span>

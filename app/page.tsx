@@ -973,11 +973,8 @@ export default function Home() {
         </div>
         <div
           aria-hidden="true"
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[400px] rounded-full opacity-[0.03] pointer-events-none"
-          style={{
-            background: "rgba(59,130,246,1)",
-            filter: "blur(200px)",
-          }}
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full"
+          style={{ background: 'radial-gradient(circle at center, rgba(59,130,246,0.04) 0%, transparent 60%)', width: 1000, height: 400, pointerEvents: 'none' }}
         />
         <div className="relative z-10 max-w-3xl mx-auto">
           <FadeIn>

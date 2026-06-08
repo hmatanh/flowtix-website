@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode, useCallback, useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 
 // Loader is dynamically imported so its JS doesn't sit in the main bundle.
@@ -12,6 +12,7 @@ const Loader = dynamic(
 );
 
 const SESSION_KEY = "flowtix-loaded";
+const SEEN_KEY = "flowtix-seen-v1";
 
 export function ClientShell({ children }: { children: ReactNode }) {
   const [loaded, setLoaded] = useState(false);
@@ -24,7 +25,9 @@ export function ClientShell({ children }: { children: ReactNode }) {
     // repeat visits and internal navigations.
     let alreadySeen = false;
     try {
-      alreadySeen = sessionStorage.getItem(SESSION_KEY) === "1";
+      alreadySeen =
+        sessionStorage.getItem(SESSION_KEY) === "1" ||
+        localStorage.getItem(SEEN_KEY) === "1";
     } catch {
       alreadySeen = false;
     }
@@ -35,14 +38,15 @@ export function ClientShell({ children }: { children: ReactNode }) {
     }
   }, []);
 
-  function handleComplete() {
+  const handleComplete = useCallback(() => {
     setLoaded(true);
     try {
       sessionStorage.setItem(SESSION_KEY, "1");
-    } catch {
-      // sessionStorage unavailable — fine
-    }
-  }
+    } catch {}
+    try {
+      localStorage.setItem(SEEN_KEY, "1");
+    } catch {}
+  }, []);
 
   return (
     <>

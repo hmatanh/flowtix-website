@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { useState, FormEvent } from "react";
-import { m } from "framer-motion";
 import {
   IconBrandFacebook,
   IconBrandLinkedin,

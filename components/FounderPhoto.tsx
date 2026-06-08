@@ -175,8 +175,10 @@ export function FounderPhoto({
         <img
           src={src}
           alt="Matan Hanasav, Founder of Flowtix"
-          loading="eager"
-          fetchPriority="high"
+          loading="lazy"
+          decoding="async"
+          width={300}
+          height={380}
           onError={(e) => {
             (e.currentTarget as HTMLImageElement).src = "/images/founder.svg";
           }}

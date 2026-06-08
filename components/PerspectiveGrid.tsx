@@ -11,14 +11,24 @@ export function PerspectiveGrid() {
     if (typeof window === "undefined") return;
     if (window.matchMedia("(pointer: coarse)").matches) return;
 
+    let raf = 0;
+    let pendingX = 50;
+    let pendingY = 50;
+    const flush = () => {
+      raf = 0;
+      el.style.setProperty("--mx", pendingX + "%");
+      el.style.setProperty("--my", pendingY + "%");
+    };
     const onMove = (e: MouseEvent) => {
-      const x = (e.clientX / window.innerWidth) * 100;
-      const y = (e.clientY / window.innerHeight) * 100;
-      el.style.setProperty("--mx", x + "%");
-      el.style.setProperty("--my", y + "%");
+      pendingX = (e.clientX / window.innerWidth) * 100;
+      pendingY = (e.clientY / window.innerHeight) * 100;
+      if (!raf) raf = requestAnimationFrame(flush);
     };
     window.addEventListener("mousemove", onMove, { passive: true });
-    return () => window.removeEventListener("mousemove", onMove);
+    return () => {
+      window.removeEventListener("mousemove", onMove);
+      if (raf) cancelAnimationFrame(raf);
+    };
   }, []);
 
   return (
