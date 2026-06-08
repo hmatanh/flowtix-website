@@ -57,14 +57,12 @@ export function Footer() {
                   aria-label="Email address for newsletter"
                   className="flex-1 bg-[#0a0a0a] border border-[#1a1a1a] text-white px-4 py-2.5 rounded-lg text-sm outline-none focus:border-blue-500/50 focus:shadow-[0_0_18px_rgba(59,130,246,0.1)] transition-all placeholder-[#444]"
                 />
-                <m.button
+                <button
                   type="submit"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="bg-white text-black px-4 py-2.5 rounded-lg text-sm font-semibold hover:bg-[#eee] transition-colors"
+                  className="bg-white text-black px-4 py-2.5 rounded-lg text-sm font-semibold hover:bg-[#eee] hover:scale-[1.02] active:scale-[0.98] transition-transform"
                 >
                   Notify me
-                </m.button>
+                </button>
               </form>
             )}
             {!subscribed && (

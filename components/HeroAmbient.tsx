@@ -170,7 +170,7 @@ export function HeroAmbient() {
             boxShadow: `0 0 ${d.size * 3}px rgba(59, 130, 246, 0.5)`,
           }}
           animate={
-            reduce
+            (reduce || !inView)
               ? { opacity: d.base }
               : {
                   opacity: [d.base * 0.4, d.base * 1.6, d.base * 0.4],

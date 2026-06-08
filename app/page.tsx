@@ -318,24 +318,29 @@ export default function Home() {
       </section>
 
       {/* ===== 2. SOCIAL PROOF STRIP ===== */}
+      {/*
+        Desktop: 5 stats in ONE row (grid-cols-5). Hairline dividers
+        between adjacent cells via left-border on items 2..5.
+        Mobile: 2 + 2, with the 5th stat (100%) centered alone on a
+        third row using col-span-2 so it never orphans visually.
+      */}
       <section className="section-contain py-16 sm:py-20 border-y border-[#080808] bg-[#030303]">
-        <div className="page-container flex flex-wrap justify-center items-stretch gap-y-10">
+        <div className="page-container grid grid-cols-2 sm:grid-cols-5 items-stretch gap-y-10">
           {SOCIAL_STATS.map((s, i) => (
             <div
               key={s.label}
-              className="flex items-stretch flex-1 basis-[45%] sm:basis-auto sm:min-w-[20%]"
+              className={
+                "text-center px-2 sm:px-3 flex flex-col justify-center" +
+                (i === SOCIAL_STATS.length - 1 ? " col-span-2 sm:col-span-1" : "") +
+                (i > 0 ? " sm:border-l sm:border-[#0f0f0f]" : "")
+              }
             >
-              <div className="flex-1 text-center px-3">
-                <div className="text-3xl sm:text-4xl font-black text-white tracking-tight">
-                  <AnimatedCounter value={s.value} suffix={s.suffix} />
-                </div>
-                <div className="text-[#777] text-[10px] sm:text-xs tracking-wider mt-2 uppercase">
-                  {s.label}
-                </div>
+              <div className="text-3xl sm:text-4xl font-black text-white tracking-tight">
+                <AnimatedCounter value={s.value} suffix={s.suffix} />
               </div>
-              {i < SOCIAL_STATS.length - 1 && (
-                <div className="bg-[#0f0f0f] w-px h-12 self-center hidden sm:block" />
-              )}
+              <div className="text-[#777] text-[10px] sm:text-xs tracking-wider mt-2 uppercase leading-snug">
+                {s.label}
+              </div>
             </div>
           ))}
         </div>

@@ -4,14 +4,13 @@ import "./globals.css";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { ClientShell } from "@/components/ClientShell";
-import dynamic from "next/dynamic";
-const AnnouncementBar = dynamic(() => import("@/components/AnnouncementBar").then(m => ({ default: m.AnnouncementBar })), { ssr: false });
-const MobileCTA = dynamic(() => import("@/components/MobileCTA").then(m => ({ default: m.MobileCTA })), { ssr: false });
-const BackToTop = dynamic(() => import("@/components/BackToTop").then(m => ({ default: m.BackToTop })), { ssr: false });
-const EasterEgg = dynamic(() => import("@/components/EasterEgg").then(m => ({ default: m.EasterEgg })), { ssr: false });
-const CookieBanner = dynamic(() => import("@/components/CookieBanner").then(m => ({ default: m.CookieBanner })), { ssr: false });
-const TabAttention = dynamic(() => import("@/components/TabAttention").then(m => ({ default: m.TabAttention })), { ssr: false });
-const AccessibilityWidget = dynamic(() => import("@/components/AccessibilityWidget").then(m => ({ default: m.AccessibilityWidget })), { ssr: false });
+import { AnnouncementBar } from "@/components/AnnouncementBar";
+import { MobileCTA } from "@/components/MobileCTA";
+import { BackToTop } from "@/components/BackToTop";
+import { EasterEgg } from "@/components/EasterEgg";
+import { CookieBanner } from "@/components/CookieBanner";
+import { TabAttention } from "@/components/TabAttention";
+import { AccessibilityWidget } from "@/components/AccessibilityWidget";
 import { MotionProvider } from "@/components/MotionProvider";
 import type { Viewport } from "next";
 
@@ -147,6 +146,11 @@ export default function RootLayout({
                 name: "Flowtix",
               },
             }).replace(/</g, "\\u003c"),
+          }}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var r=localStorage.getItem('flowtix-a11y-prefs');if(!r)return;var p=JSON.parse(r).prefs||{};var h=document.documentElement.classList;if(p.fontScale===1.1)h.add('a11y-text-large');else if(p.fontScale===1.25)h.add('a11y-text-xl');if(p.highContrast)h.add('a11y-high-contrast');if(p.reducedMotion)h.add('a11y-reduced-motion');}catch(e){}})();`
           }}
         />
       </head>
