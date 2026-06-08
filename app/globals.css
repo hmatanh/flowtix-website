@@ -267,41 +267,6 @@ img, video, iframe, svg, canvas {
   z-index: 100;
 }
 
-/* ===== iOS form input zoom prevention ===== */
-@media (max-width: 768px) {
-  input[type="text"],
-  input[type="email"],
-  input[type="tel"],
-  input[type="search"],
-  input[type="password"],
-  input[type="number"],
-  select,
-  textarea {
-    font-size: 16px !important;
-  }
-}
-
-/* ===== Custom cursor — styles live in components/Cursor.tsx (scoped <style>) ===== */
-
-/* Typography helpers */
-.text-display {
-  font-size: clamp(52px, 6vw, 80px);
-  font-weight: 800;
-  letter-spacing: -0.04em;
-  line-height: 1.05;
-}
-.text-h1 {
-  font-size: clamp(36px, 4vw, 56px);
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 1.1;
-}
-.text-h2 {
-  font-size: clamp(28px, 3vw, 40px);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1.15;
-}
 .text-label {
   font-size: 11px;
   font-weight: 500;
@@ -792,25 +757,6 @@ body::before {
   color: var(--text-primary);
   font-size: clamp(28px, 4.5vw, 44px);
 }
-.text-h3 {
-  font-weight: 700;
-  letter-spacing: -0.015em;
-  line-height: 1.15;
-  color: var(--text-primary);
-  font-size: clamp(20px, 2.4vw, 24px);
-}
-.text-eyebrow {
-  font-size: 11px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: #666;
-}
-.text-section-subtext {
-  font-size: clamp(16px, 1.5vw, 18px);
-  line-height: 1.6;
-  color: #999;
-}
-
 /* =====================================================================
    GLOBAL PAGE CONTAINER  —  the ONE outer width every section uses.
    Navbar, hero, cards, text blocks and CTAs all sit inside this container

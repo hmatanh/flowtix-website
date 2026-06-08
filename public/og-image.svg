@@ -20,7 +20,7 @@
   <rect width="1200" height="630" fill="url(#dots)"/>
 
   <!-- Soft blue halo -->
-  <ellipse cx="600" cy="230" rx="520" ry="180" fill="rgba(59,130,246,0.08)" filter="blur(40)"/>
+  <ellipse cx="600" cy="230" rx="520" ry="180" fill="rgba(59,130,246,0.08)"/>
 
   <!-- Eyebrow chip -->
   <g transform="translate(490 130)">

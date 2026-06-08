@@ -19,17 +19,17 @@
  * Flowtix design language exactly.
  */
 
-import { useCallback, useEffect, useState } from "react";
-import { m, AnimatePresence } from "framer-motion";
-import {
-  IconAccessible,
-  IconX,
-  IconPlus,
-  IconMinus,
-  IconContrast,
-  IconHandStop,
-  IconRefresh,
-} from "@tabler/icons-react";
+import { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
+import { IconAccessible } from "@tabler/icons-react";
+
+const AccessibilityPanel = dynamic(
+  () =>
+    import("./AccessibilityPanel").then((m) => ({
+      default: m.AccessibilityPanel,
+    })),
+  { ssr: false }
+);
 
 const STORAGE_KEY = "flowtix-a11y-prefs";
 const VERSION = 1;

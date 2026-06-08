@@ -41,14 +41,11 @@ export function Footer() {
               Stay updated on our product launches
             </div>
             {subscribed ? (
-              <m.div
-                initial={{ opacity: 0, scale: 0.97 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.3 }}
-                className="text-[#3B82F6] text-sm"
+              <div
+                className="text-[#3B82F6] text-sm animate-fade-in"
               >
                 ✓ You&apos;re on the list. Talk soon.
-              </m.div>
+              </div>
             ) : (
               <form onSubmit={handleNewsletter} className="flex gap-2">
                 <input

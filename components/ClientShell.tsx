@@ -53,15 +53,7 @@ export function ClientShell({ children }: { children: ReactNode }) {
       {mounted && shouldLoad && !loaded && (
         <Loader onComplete={handleComplete} />
       )}
-      <div
-        className="min-h-screen flex flex-col"
-        style={{
-          opacity: loaded || !mounted ? 1 : 0,
-          transition: "opacity 0.05s",
-        }}
-      >
-        {children}
-      </div>
+      <div className="min-h-screen flex flex-col">{children}</div>
     </>
   );
 }

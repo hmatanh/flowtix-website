@@ -134,7 +134,7 @@ export function HeroAmbient() {
               mixBlendMode: "screen",
             }}
             animate={
-              reduce
+              (reduce || !inView)
                 ? undefined
                 : {
                     x: orb.drift.x,
