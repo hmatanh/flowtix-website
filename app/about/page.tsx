@@ -1,15 +1,15 @@
 "use client";
 
 /**
- * /about — Founder-led systems studio
+ * /about - Founder-led systems studio
  *
  * Structure:
- *   1. Hero          — the client problem (not Matan)
- *   2. Founder       — Matan as builder / operator / systems thinker
- *   3. Beliefs       — six short principles, equal-weight cards
- *   4. How Flowtix Works — 5-step process (Understand → Improve)
- *   5. Why clients work with Flowtix — concise capability rail
- *   6. Final CTA     — founder photo + closing message
+ *   1. Hero          - the client problem (not Matan)
+ *   2. Founder       - Matan as builder / operator / systems thinker
+ *   3. Beliefs       - six short principles, equal-weight cards
+ *   4. How Flowtix Works - 5-step process (Understand → Improve)
+ *   5. Why clients work with Flowtix - concise capability rail
+ *   6. Final CTA     - founder photo + closing message
  *
  * Visual identity is the existing site grammar: dark #050505/#080808
  * backgrounds, blue-400 accent, system-serif italic for soft emphasis,
@@ -42,7 +42,7 @@ const EASE = [0.21, 0.47, 0.32, 0.98] as const;
 const BELIEFS = [
   {
     title: "Build around the business, not the software.",
-    body: "Software should bend to how the team works — not the other way around.",
+    body: "Software should bend to how the team works - not the other way around.",
   },
   {
     title: "Simple systems beat complex systems.",
@@ -70,12 +70,12 @@ const PROCESS = [
   {
     n: "01",
     title: "Understand",
-    body: "Two-week deep read of how the team actually works — tools, workflows, exceptions, frustrations.",
+    body: "Two-week deep read of how the team actually works - tools, workflows, exceptions, frustrations.",
   },
   {
     n: "02",
     title: "Design",
-    body: "Map the new flow end-to-end. Decision points, human checkpoints, failure modes — on paper before any code.",
+    body: "Map the new flow end-to-end. Decision points, human checkpoints, failure modes - on paper before any code.",
   },
   {
     n: "03",
@@ -95,11 +95,11 @@ const PROCESS = [
 ];
 
 const CAPABILITIES = [
-  { Icon: IconLayoutDashboard, title: "Custom internal tools", body: "Dashboards, admin panels, client portals — built around the workflow." },
+  { Icon: IconLayoutDashboard, title: "Custom internal tools", body: "Dashboards, admin panels, client portals - built around the workflow." },
   { Icon: IconRouteAltLeft,    title: "Business automation",   body: "n8n, Make, custom code. Repetitive work retired, end-to-end." },
-  { Icon: IconRobot,           title: "AI workflows",          body: "Practical agents and assistants — trained on the business, not the brand." },
+  { Icon: IconRobot,           title: "AI workflows",          body: "Practical agents and assistants - trained on the business, not the brand." },
   { Icon: IconCode,            title: "Product engineering",   body: "Next.js, TypeScript, modern stack. Built to grow, easy to hand off." },
-  { Icon: IconPalette,         title: "Design & brand",        body: "Identity, UX, UI — the layer that makes the system feel trustworthy." },
+  { Icon: IconPalette,         title: "Design & brand",        body: "Identity, UX, UI - the layer that makes the system feel trustworthy." },
   { Icon: IconChartLine,       title: "Operating rhythm",      body: "Weekly reviews, real metrics, calm cadence. No surprise invoices." },
 ];
 
@@ -111,10 +111,10 @@ export default function AboutPage() {
   return (
     <>
       {/* ============================================================
-           1. HERO — problem-led, not founder-led
+           1. HERO - problem-led, not founder-led
          ============================================================ */}
       <section className="relative overflow-hidden pt-20 sm:pt-28 lg:pt-36 pb-16 sm:pb-24 lg:pb-32">
-        {/* Calm radial backdrop — same grammar as homepage hero */}
+        {/* Calm radial backdrop - same grammar as homepage hero */}
         <div
           aria-hidden="true"
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[760px] h-[360px] pointer-events-none"
@@ -186,7 +186,7 @@ export default function AboutPage() {
                 maxWidth: "60ch",
               }}
             >
-              Flowtix designs and builds the system underneath —
+              Flowtix designs and builds the system underneath -
               <span className="text-white"> custom internal tools, automation, AI workflows, and the operational infrastructure</span>{" "}
               the business actually runs on.
             </p>
@@ -215,12 +215,12 @@ export default function AboutPage() {
       </section>
 
       {/* ============================================================
-           2. FOUNDER — concise, builder-positioned
+           2. FOUNDER - concise, builder-positioned
          ============================================================ */}
       <section className="section-contain py-20 sm:py-24 lg:py-32 bg-[#040404] border-y border-[#0a0a0a]">
         <div className="page-container">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
-            {/* Photo column — order-2 on mobile so the eyebrow leads */}
+            {/* Photo column - order-2 on mobile so the eyebrow leads */}
             <FadeIn className="order-2 lg:order-1">
               <div className="relative max-w-[320px] sm:max-w-[380px] lg:max-w-none mx-auto">
                 <FounderPhoto />
@@ -257,7 +257,7 @@ export default function AboutPage() {
                 </p>
                 <p>
                   The result is a way of working that doesn&apos;t hand off
-                  between design, engineering and operations — they&apos;re
+                  between design, engineering and operations - they&apos;re
                   one continuous thought. Flowtix exists to bring that to
                   businesses one founder couldn&apos;t serve alone.
                 </p>
@@ -272,7 +272,7 @@ export default function AboutPage() {
       </section>
 
       {/* ============================================================
-           3. WHAT I BELIEVE — six equal-weight principle cards
+           3. WHAT I BELIEVE - six equal-weight principle cards
          ============================================================ */}
       <section className="section-contain py-20 sm:py-24 lg:py-32">
         <div className="page-container">
@@ -329,7 +329,7 @@ export default function AboutPage() {
       </section>
 
       {/* ============================================================
-           4. HOW FLOWTIX WORKS — 5-step process
+           4. HOW FLOWTIX WORKS - 5-step process
          ============================================================ */}
       <section className="section-contain py-20 sm:py-24 lg:py-32 bg-[#040404] border-y border-[#0a0a0a]">
         <div className="page-container">
@@ -388,7 +388,7 @@ export default function AboutPage() {
       </section>
 
       {/* ============================================================
-           5. WHY CLIENTS WORK WITH FLOWTIX — capability rail
+           5. WHY CLIENTS WORK WITH FLOWTIX - capability rail
          ============================================================ */}
       <section className="section-contain py-20 sm:py-24 lg:py-32">
         <div className="page-container">
@@ -417,7 +417,7 @@ export default function AboutPage() {
                 }}
               >
                 Most agencies do design. Most studios do code. Most consultants
-                do strategy. Flowtix does the whole stack — so nothing gets
+                do strategy. Flowtix does the whole stack - so nothing gets
                 dropped between the handoffs that don&apos;t happen.
               </p>
             </div>
@@ -482,7 +482,7 @@ export default function AboutPage() {
       </section>
 
       {/* ============================================================
-           6. FINAL CTA — closing line + founder presence
+           6. FINAL CTA - closing line + founder presence
          ============================================================ */}
       <section className="section-contain relative py-20 sm:py-28 lg:py-36 overflow-hidden border-t border-[#0a0a0a]">
         <div

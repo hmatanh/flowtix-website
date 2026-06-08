@@ -38,7 +38,7 @@ import { getProjectTechnical } from "@/lib/project-technical";
 const EASE = [0.21, 0.47, 0.32, 0.98] as const;
 
 /* =========================================================================
-   Types — what each project supplies
+   Types - what each project supplies
    ========================================================================= */
 export type StatementStat = {
   value: number;
@@ -92,7 +92,7 @@ export type ProjectPageContent = {
 };
 
 /* =========================================================================
-   Frames — Browser + Phone — enhanced with reflection & brand-glow option
+   Frames - Browser + Phone - enhanced with reflection & brand-glow option
    ========================================================================= */
 function BrowserFrame({
   url,
@@ -245,7 +245,7 @@ function PhoneFrame({
 }
 
 /* =========================================================================
-   FLOATING ORBS — brand-colored animated background flourish
+   FLOATING ORBS - brand-colored animated background flourish
    ========================================================================= */
 function FloatingOrbs({
   accentRGB,
@@ -299,7 +299,7 @@ function FloatingOrbs({
 }
 
 /* =========================================================================
-   1) CINEMATIC HERO — animated orbs, parallax grid, massive logo
+   1) CINEMATIC HERO - animated orbs, parallax grid, massive logo
    ========================================================================= */
 function Hero({
   project,
@@ -340,7 +340,7 @@ function Hero({
       ref={heroRef}
       className="relative min-h-[88vh] overflow-hidden flex flex-col"
     >
-      {/* Layer 0 — solid dark brand wash */}
+      {/* Layer 0 - solid dark brand wash */}
       <div
         aria-hidden="true"
         className="absolute inset-0 pointer-events-none"
@@ -350,7 +350,7 @@ function Hero({
         }}
       />
 
-      {/* Layer 1 — brand gradient bleed */}
+      {/* Layer 1 - brand gradient bleed */}
       <m.div
         aria-hidden="true"
         className="absolute inset-0 pointer-events-none"
@@ -361,7 +361,7 @@ function Hero({
         }}
       />
 
-      {/* Layer 2 — secondary orb */}
+      {/* Layer 2 - secondary orb */}
       <m.div
         aria-hidden="true"
         className="absolute pointer-events-none"
@@ -381,7 +381,7 @@ function Hero({
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      {/* Layer 3 — animated grid (perspective, parallax) */}
+      {/* Layer 3 - animated grid (perspective, parallax) */}
       <m.div
         aria-hidden="true"
         className="absolute inset-0 pointer-events-none"
@@ -402,7 +402,7 @@ function Hero({
         />
       </m.div>
 
-      {/* Layer 4 — grain */}
+      {/* Layer 4 - grain */}
       <div
         aria-hidden="true"
         className="absolute inset-0 pointer-events-none opacity-[0.03]"
@@ -412,14 +412,14 @@ function Hero({
         }}
       />
 
-      {/* Layer 5 — bottom fade */}
+      {/* Layer 5 - bottom fade */}
       <div
         aria-hidden="true"
         className="absolute bottom-0 left-0 right-0 h-64 pointer-events-none"
         style={{ background: "linear-gradient(to top, #000, transparent)" }}
       />
 
-      {/* PROJECT SIGNATURE — per-project decorative SVG */}
+      {/* PROJECT SIGNATURE - per-project decorative SVG */}
       <ProjectSignature
         slug={project.slug}
         className="inset-0 w-full h-full opacity-60"
@@ -507,7 +507,7 @@ function Hero({
             ))}
           </m.div>
 
-          {/* CLIENT LOGO — responsive sizing, brand-glow halo */}
+          {/* CLIENT LOGO - responsive sizing, brand-glow halo */}
           <m.div
             initial={{ opacity: 0, scale: 0.94 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -539,7 +539,7 @@ function Hero({
             </div>
           </m.div>
 
-          {/* Story headline — bigger min on mobile, tighter leading */}
+          {/* Story headline - bigger min on mobile, tighter leading */}
           <m.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -550,7 +550,7 @@ function Hero({
             {heroHeadline}
           </m.h1>
 
-          {/* Key metric — boxed with brand glow */}
+          {/* Key metric - boxed with brand glow */}
           <m.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
@@ -579,7 +579,7 @@ function Hero({
             </span>
           </m.div>
 
-          {/* Quick facts strip — clean 2-col grid on mobile, inline on desktop */}
+          {/* Quick facts strip - clean 2-col grid on mobile, inline on desktop */}
           <m.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
@@ -646,7 +646,7 @@ function Hero({
 }
 
 /* =========================================================================
-   2) BRAND ATMOSPHERE — colors + typography + brand DNA at a glance
+   2) BRAND ATMOSPHERE - colors + typography + brand DNA at a glance
    ========================================================================= */
 function BrandAtmosphere({ project }: { project: Project }) {
   const b = project.brand;
@@ -667,7 +667,7 @@ function BrandAtmosphere({ project }: { project: Project }) {
 
       <div className="relative site-container">
         <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-16 items-start">
-          {/* LEFT — Atmosphere */}
+          {/* LEFT - Atmosphere */}
           <FadeIn>
             <div
               className="text-xs uppercase mb-4 tracking-[0.2em]"
@@ -714,7 +714,7 @@ function BrandAtmosphere({ project }: { project: Project }) {
             </div>
           </FadeIn>
 
-          {/* RIGHT — Color palette */}
+          {/* RIGHT - Color palette */}
           <FadeIn delay={0.1}>
             <div
               className="text-[10px] uppercase mb-4 tracking-[0.2em]"
@@ -770,7 +770,7 @@ function BrandAtmosphere({ project }: { project: Project }) {
 }
 
 /* =========================================================================
-   3) STATEMENT STATS — massive numbers, brand wash, glow
+   3) STATEMENT STATS - massive numbers, brand wash, glow
    ========================================================================= */
 function StatementStats({
   project,
@@ -847,7 +847,7 @@ function StatementStats({
 }
 
 /* =========================================================================
-   4) STORY — Challenge / Solution as brand-tinted cards
+   4) STORY - Challenge / Solution as brand-tinted cards
    ========================================================================= */
 function StorySection({
   project,
@@ -1076,7 +1076,7 @@ function StorySection({
 }
 
 /* =========================================================================
-   5) NUMBERS WALL — massive single-stat moment between sections
+   5) NUMBERS WALL - massive single-stat moment between sections
    ========================================================================= */
 function NumbersWall({
   project,
@@ -1143,7 +1143,7 @@ function NumbersWall({
 }
 
 /* =========================================================================
-   6) FULL-BLEED VISUAL — premium cinematic display
+   6) FULL-BLEED VISUAL - premium cinematic display
    ========================================================================= */
 function FullBleedMoment({
   project,
@@ -1232,7 +1232,7 @@ function FullBleedMoment({
 }
 
 /* =========================================================================
-   7) GALLERY — horizontal scroll with hover glow
+   7) GALLERY - horizontal scroll with hover glow
    ========================================================================= */
 function GalleryScroll({
   project,
@@ -1331,7 +1331,7 @@ function GalleryScroll({
 }
 
 /* =========================================================================
-   8) PROCESS — editorial 3-panel with connecting line
+   8) PROCESS - editorial 3-panel with connecting line
    ========================================================================= */
 function ProcessMoment({
   project,
@@ -1439,7 +1439,7 @@ function ProcessMoment({
 }
 
 /* =========================================================================
-   9) TESTIMONIAL — massive editorial pull quote
+   9) TESTIMONIAL - massive editorial pull quote
    ========================================================================= */
 function TestimonialMoment({
   project,
@@ -1468,7 +1468,7 @@ function TestimonialMoment({
       />
 
       <div className="relative page-container">
-        {/* Giant quote glyph — slightly smaller on mobile */}
+        {/* Giant quote glyph - slightly smaller on mobile */}
         <m.div
           aria-hidden="true"
           initial={{ opacity: 0, scale: 0.9 }}
@@ -1520,7 +1520,7 @@ function TestimonialMoment({
 }
 
 /* =========================================================================
-   10) TECH STACK GRID — visual tech showcase
+   10) TECH STACK GRID - visual tech showcase
    ========================================================================= */
 function TechStackGrid({ project }: { project: Project }) {
   const b = project.brand;
@@ -1634,7 +1634,7 @@ function TechStackGrid({ project }: { project: Project }) {
 }
 
 /* =========================================================================
-   11) NEXT PROJECT — cinematic full-bleed CTA
+   11) NEXT PROJECT - cinematic full-bleed CTA
    ========================================================================= */
 function NextProjectStrip({ project }: { project: Project }) {
   const next = getNextProject(project.slug);
@@ -1730,7 +1730,7 @@ function NextProjectStrip({ project }: { project: Project }) {
 }
 
 /* =========================================================================
-   READING PROGRESS — thin brand-colored bar at top, fills as user scrolls
+   READING PROGRESS - thin brand-colored bar at top, fills as user scrolls
    ========================================================================= */
 function ReadingProgress({ project }: { project: Project }) {
   const b = project.brand;
@@ -1755,7 +1755,7 @@ function ReadingProgress({ project }: { project: Project }) {
 }
 
 /* =========================================================================
-   FLOATING CTA — sticky button appears after scrolling past hero
+   FLOATING CTA - sticky button appears after scrolling past hero
    ========================================================================= */
 function FloatingCTA({ project }: { project: Project }) {
   const b = project.brand;
@@ -1872,7 +1872,7 @@ function FloatingCTA({ project }: { project: Project }) {
 }
 
 /* =========================================================================
-   SOUND FAMILIAR — bridge section connecting the story to the visitor
+   SOUND FAMILIAR - bridge section connecting the story to the visitor
    ========================================================================= */
 function SoundFamiliar({ project }: { project: Project }) {
   const b = project.brand;
@@ -1902,13 +1902,13 @@ function SoundFamiliar({ project }: { project: Project }) {
       "Estimates take 8 hours when they should take 2",
       "Field crews can't update without coming into the office",
       "Daily logs are spreadsheets nobody updates",
-      "You're paying twice — once for tools, once for the people working around them",
+      "You're paying twice - once for tools, once for the people working around them",
     ],
     linx: [
       "Your dispatch is a whiteboard and a prayer",
       "Customer comms slip through the cracks during peak hours",
       "You're hiring more ops staff to do less work",
-      "Your routing isn't optimized — you can feel the waste",
+      "Your routing isn't optimized - you can feel the waste",
     ],
   };
 
@@ -2003,7 +2003,7 @@ function SoundFamiliar({ project }: { project: Project }) {
               className="text-sm sm:text-base"
               style={{ color: b.textOnBrand, opacity: 0.65 }}
             >
-              If two or more land — that&apos;s exactly the kind of work we do.
+              If two or more land - that&apos;s exactly the kind of work we do.
             </p>
             <m.div
               whileHover={{ scale: 1.02 }}
@@ -2031,7 +2031,7 @@ function SoundFamiliar({ project }: { project: Project }) {
 }
 
 /* =========================================================================
-   ENGAGEMENT SPECS — what an engagement like this actually looks like
+   ENGAGEMENT SPECS - what an engagement like this actually looks like
    (Replaces the simple Tech Stack Grid with a much richer panel)
    ========================================================================= */
 function EngagementSpecs({ project }: { project: Project }) {
@@ -2044,36 +2044,36 @@ function EngagementSpecs({ project }: { project: Project }) {
     { investment: string; rounds: string; deliverables: string }
   > = {
     kova: {
-      investment: "$30k — $60k",
+      investment: "$30k - $60k",
       rounds: "Weekly reviews + 3 milestone gates",
       deliverables: "Brand identity + 4 production screens + AI matching engine + CRM automation",
     },
     sero: {
-      investment: "$25k — $50k",
+      investment: "$25k - $50k",
       rounds: "Weekly reviews + 3 milestone gates",
       deliverables: "Brand identity + mobile patient app + AI intake automation + practitioner portal",
     },
     aurum: {
-      investment: "$40k — $80k",
+      investment: "$40k - $80k",
       rounds: "Weekly reviews + 3 milestone gates",
       deliverables: "Brand identity + RM dashboard + reporting automation + portfolio insights AI",
     },
     drft: {
-      investment: "$25k — $50k",
+      investment: "$25k - $50k",
       rounds: "Weekly reviews + 3 milestone gates",
       deliverables: "Brand identity + estimator + field log app + daily summary automation",
     },
     linx: {
-      investment: "$30k — $60k",
+      investment: "$30k - $60k",
       rounds: "Weekly reviews + 3 milestone gates",
       deliverables: "Brand identity + dispatch dashboard + routing optimizer + comms automation",
     },
   };
 
   const specs = SPECS_BY_SLUG[project.slug] ?? {
-    investment: "$25k — $80k",
+    investment: "$25k - $80k",
     rounds: "Weekly reviews + milestone gates",
-    deliverables: "Custom to your scope — brand, AI systems, automation, web",
+    deliverables: "Custom to your scope - brand, AI systems, automation, web",
   };
 
   const ROWS = [
@@ -2111,7 +2111,7 @@ function EngagementSpecs({ project }: { project: Project }) {
       icon: IconLockSquare,
       label: "Ownership",
       value: "Yours, fully",
-      sub: "Source code, designs, prompts — handed off at end",
+      sub: "Source code, designs, prompts - handed off at end",
     },
   ];
 
@@ -2206,7 +2206,7 @@ function EngagementSpecs({ project }: { project: Project }) {
           })}
         </div>
 
-        {/* Tech stack — kept but as a subsection */}
+        {/* Tech stack - kept but as a subsection */}
         <FadeIn>
           <div className="mb-5 sm:mb-6">
             <div
@@ -2241,7 +2241,7 @@ function EngagementSpecs({ project }: { project: Project }) {
 }
 
 /* =========================================================================
-   RESONATE CTA — strong terminal CTA before Next Project
+   RESONATE CTA - strong terminal CTA before Next Project
    The conversion moment. Full-bleed, brand-color wash, dual CTA.
    ========================================================================= */
 function ResonateCTA({ project }: { project: Project }) {
@@ -2261,7 +2261,7 @@ function ResonateCTA({ project }: { project: Project }) {
     {
       icon: IconCalendar,
       title: "Clear proposal in days, not weeks",
-      sub: "Scope, timeline, pricing — all upfront",
+      sub: "Scope, timeline, pricing - all upfront",
     },
   ];
 
@@ -2335,12 +2335,12 @@ function ResonateCTA({ project }: { project: Project }) {
             style={{ color: b.textOnBrand, opacity: 0.78 }}
           >
             Tell us about your business in 30 minutes. We&apos;ll tell you in
-            plain language whether AI can move the needle &mdash; and if not,
+            plain language whether AI can move the needle - and if not,
             we&apos;ll say so.
           </p>
         </FadeIn>
 
-        {/* Dual CTA — full-width stack on mobile, side-by-side on desktop */}
+        {/* Dual CTA - full-width stack on mobile, side-by-side on desktop */}
         <FadeIn delay={0.3}>
           <div className="mt-10 sm:mt-12 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center max-w-md sm:max-w-none mx-auto">
             <m.div
@@ -2470,7 +2470,7 @@ export function ProjectPageLayout({
   /** Optional section rendered between the gallery and the process moment. */
   afterGallery?: ReactNode;
 }) {
-  // Pick the most impactful stat for the NumbersWall — first one with highest visual weight
+  // Pick the most impactful stat for the NumbersWall - first one with highest visual weight
   const featuredStat = content.statementStats[0];
   const technical = getProjectTechnical(project.slug);
 

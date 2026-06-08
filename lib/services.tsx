@@ -39,7 +39,7 @@ export const services: Service[] = [
     number: "01",
     title: "Business Process Automation",
     short:
-      "We automate the repetitive work that drains your team — across tools, forms, CRMs, emails, documents, and spreadsheets — so your people focus on what actually grows the business.",
+      "We automate the repetitive work that drains your team - across tools, forms, CRMs, emails, documents, and spreadsheets - so your people focus on what actually grows the business.",
     description:
       "We map your current operations, identify the workflows that waste the most time, and rebuild them as clean, reliable, end-to-end automations. The result is fewer hours spent on copy-paste work and more time spent on real business.",
     icon: IconRouteAltLeft,
@@ -60,7 +60,7 @@ export const services: Service[] = [
       { title: "Monitor", text: "Dashboards and alerts so you know within minutes if anything breaks." },
     ],
     pains: [
-      { title: "Your team spends days on work that should take minutes.", text: "Manual data entry, copy-paste, formatting — pure overhead." },
+      { title: "Your team spends days on work that should take minutes.", text: "Manual data entry, copy-paste, formatting - pure overhead." },
       { title: "Integrations break every time a connected tool updates.", text: "And nobody finds out until a customer complains." },
       { title: "Different teams reinvent the same workflow badly.", text: "Five spreadsheets doing the same thing in slightly different ways." },
     ],
@@ -78,7 +78,7 @@ export const services: Service[] = [
     number: "02",
     title: "Custom AI Agents & Assistants",
     short:
-      "AI assistants trained on your business — your tone, your products, your processes — for customer support, sales, onboarding, internal knowledge, and operational tasks.",
+      "AI assistants trained on your business - your tone, your products, your processes - for customer support, sales, onboarding, internal knowledge, and operational tasks.",
     description:
       "We design and build AI agents that handle real work: answering customer questions, qualifying leads, onboarding new clients, surfacing internal knowledge, drafting communications, and routing requests. Tailored to your context, integrated with the tools you already use.",
     icon: IconRobot,
@@ -104,7 +104,7 @@ export const services: Service[] = [
       { title: "AI that doesn't know your product or process.", text: "So it answers the wrong question and creates new tickets." },
     ],
     pullQuote:
-      "A good AI agent feels like talking to your best, most patient team member — at three in the morning.",
+      "A good AI agent feels like talking to your best, most patient team member - at three in the morning.",
     results: [
       { value: 70, suffix: "%", label: "Tier-1 questions resolved without a human" },
       { value: 4, suffix: "×", label: "Faster lead qualification" },
@@ -117,9 +117,9 @@ export const services: Service[] = [
     number: "03",
     title: "Internal Tools & Dashboards",
     short:
-      "Custom dashboards, admin panels, client portals, and workflow systems designed around the way your team actually works — not the way a generic SaaS expects you to.",
+      "Custom dashboards, admin panels, client portals, and workflow systems designed around the way your team actually works - not the way a generic SaaS expects you to.",
     description:
-      "If your team is jumping between five tabs to do one job, you don't need another tool — you need the right one. We design and build internal tools, dashboards, and client portals that consolidate the work into one calm, fast interface.",
+      "If your team is jumping between five tabs to do one job, you don't need another tool - you need the right one. We design and build internal tools, dashboards, and client portals that consolidate the work into one calm, fast interface.",
     icon: IconLayoutDashboard,
     features: [
       "Operations dashboards",
@@ -131,7 +131,7 @@ export const services: Service[] = [
     ],
     steps: [
       { title: "Shadow", text: "We spend time with the people who will use the tool every day." },
-      { title: "Map", text: "Every screen, every action, every data source — documented before design." },
+      { title: "Map", text: "Every screen, every action, every data source - documented before design." },
       { title: "Design", text: "Clean, fast UI that respects existing habits where it matters." },
       { title: "Build", text: "Production-ready code with the integrations your team actually needs." },
       { title: "Roll out", text: "Phased rollout with training so adoption is real, not theoretical." },
@@ -156,9 +156,9 @@ export const services: Service[] = [
     number: "04",
     title: "MVP & Product Development",
     short:
-      "From idea to working product — strategy, UX, design, build, and launch — in weeks, not quarters. For founders who need to ship and learn fast.",
+      "From idea to working product - strategy, UX, design, build, and launch - in weeks, not quarters. For founders who need to ship and learn fast.",
     description:
-      "We help founders and product teams turn early ideas into real, usable software. The goal is not a polished spec — it's a working product in front of real users, fast enough to learn from, solid enough to scale into.",
+      "We help founders and product teams turn early ideas into real, usable software. The goal is not a polished spec - it's a working product in front of real users, fast enough to learn from, solid enough to scale into.",
     icon: IconRocket,
     features: [
       "Product strategy & scoping",
@@ -182,7 +182,7 @@ export const services: Service[] = [
       { title: "A beautiful prototype with no working backend.", text: "Or a working backend with a UI nobody can use." },
     ],
     pullQuote:
-      "An MVP is not a small product — it's the smallest experiment that teaches you whether you have a business.",
+      "An MVP is not a small product - it's the smallest experiment that teaches you whether you have a business.",
     results: [
       { value: 6, suffix: " wks", label: "Typical idea-to-live timeline" },
       { value: 1, label: "Partner across product, design, automation, and AI" },
@@ -195,7 +195,7 @@ export const services: Service[] = [
     number: "05",
     title: "Web Design & Development",
     short:
-      "Modern websites, landing pages, and product experiences — fast, clear, conversion-focused, and built on a stack that grows with you.",
+      "Modern websites, landing pages, and product experiences - fast, clear, conversion-focused, and built on a stack that grows with you.",
     description:
       "Whether it's a marketing site, a launch landing page, or a fully integrated product experience, we design and build sites that feel premium, load fast, and convert. No template-shop output, no surprise rebuilds in six months.",
     icon: IconCode,
@@ -209,7 +209,7 @@ export const services: Service[] = [
     ],
     steps: [
       { title: "Strategy", text: "We agree on the audience, the message, and the one action the site has to drive." },
-      { title: "Design", text: "Every page designed against that message — no padding, no filler." },
+      { title: "Design", text: "Every page designed against that message - no padding, no filler." },
       { title: "Build", text: "Production code, fast loads, accessible by default." },
       { title: "Integrate", text: "Forms to CRM, payments, analytics, whatever the business needs." },
       { title: "Launch", text: "Domain, hosting, performance tuning, SEO basics handled." },
@@ -234,7 +234,7 @@ export const services: Service[] = [
     number: "06",
     title: "UX/UI & Brand Systems",
     short:
-      "Interface, product, and visual identity work — designed so the product feels trustworthy, professional, and effortless from the first second.",
+      "Interface, product, and visual identity work - designed so the product feels trustworthy, professional, and effortless from the first second.",
     description:
       "Strong design is what turns a working product into a serious one. We handle product UX, interface design, visual identity, design systems, and the hundred details that make customers trust what they're using.",
     icon: IconPalette,
@@ -247,10 +247,10 @@ export const services: Service[] = [
       "Design system documentation",
     ],
     steps: [
-      { title: "Understand", text: "The brand, the audience, the product, the competitors — read carefully before drawing." },
+      { title: "Understand", text: "The brand, the audience, the product, the competitors - read carefully before drawing." },
       { title: "Direction", text: "Two or three real options, not twenty mood boards." },
       { title: "Design", text: "Production-quality screens, real content, real edge cases." },
-      { title: "System", text: "Tokens, components, documentation — so the team can keep building consistently." },
+      { title: "System", text: "Tokens, components, documentation - so the team can keep building consistently." },
       { title: "Launch", text: "Hand-off in the form your team actually needs to build from." },
       { title: "Evolve", text: "We stay close while the design hits real users and refine accordingly." },
     ],

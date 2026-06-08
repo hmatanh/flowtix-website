@@ -30,7 +30,7 @@ export function SeroLogo({ height = 40, className = "" }: Props) {
         strokeWidth="1.5"
         fill="none"
       />
-      {/* Stylized S — two arcs */}
+      {/* Stylized S - two arcs */}
       <path
         d="M19 7 Q 27 12 19 17 Q 11 22 19 27"
         stroke="#10B981"

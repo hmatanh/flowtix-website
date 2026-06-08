@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * Kova V2 — AI Matching engine
+ * Kova V2 - AI Matching engine
  *
  * The "specimen" screen for the case study. Shows:
  *   - Left: incoming listing with property card (rendered as schematic), key
@@ -167,7 +167,7 @@ export function ScreenMatching() {
               </span>
             </div>
 
-            {/* Property "photo" — schematic gradient */}
+            {/* Property "photo" - schematic gradient */}
             <div
               className="relative rounded-xl overflow-hidden"
               style={{

@@ -1,6 +1,6 @@
 "use client";
 
-// PostHero — per-post hero illustration, generated programmatically.
+// PostHero - per-post hero illustration, generated programmatically.
 // All visuals are pure SVG with no external image dependencies, so we
 // avoid copyright/licensing concerns entirely while still giving every
 // article a unique, branded visual identity.
@@ -85,7 +85,7 @@ export function PostHero({ slug, category, categoryColor, title }: PostHeroProps
 
         <rect width="100" height="100" fill={`url(#grid-${seed})`} />
 
-        {/* Floating orbs (filter blur not in viewBox space — emulate with low opacity) */}
+        {/* Floating orbs (filter blur not in viewBox space - emulate with low opacity) */}
         {orbs.map((o, i) => (
           <circle
             key={i}

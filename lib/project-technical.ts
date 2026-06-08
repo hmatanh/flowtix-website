@@ -71,7 +71,7 @@ export const PROJECT_TECHNICAL: Record<string, ProjectTechnical> = {
       },
       {
         name: "Pipeline Summarizer",
-        role: "Generates the daily 'morning brief' for each agent — pipeline, hot matches, follow-ups due.",
+        role: "Generates the daily 'morning brief' for each agent - pipeline, hot matches, follow-ups due.",
         model: "Claude 3.5 Sonnet",
         capabilities: [
           "Reads 30-day activity history per agent",
@@ -108,7 +108,7 @@ export const PROJECT_TECHNICAL: Record<string, ProjectTechnical> = {
   sero: {
     architecture: {
       summary:
-        "A calm, HIPAA-aware pipeline. Patient submits intake from their phone; AI structures the answers; clinician sees a triage-ready chart. The clinician owns every decision — the AI never crosses that line.",
+        "A calm, HIPAA-aware pipeline. Patient submits intake from their phone; AI structures the answers; clinician sees a triage-ready chart. The clinician owns every decision - the AI never crosses that line.",
       nodes: [
         { label: "Mobile Intake Form", sub: "Patient-facing · HIPAA", kind: "input" },
         { label: "AI Intake Parser", sub: "Structured output · Claude", kind: "ai" },
@@ -120,7 +120,7 @@ export const PROJECT_TECHNICAL: Record<string, ProjectTechnical> = {
     agents: [
       {
         name: "Intake Parser",
-        role: "Takes the patient's free-text complaint and structures it into the clinic's standard intake schema — symptom, onset, duration, severity, history.",
+        role: "Takes the patient's free-text complaint and structures it into the clinic's standard intake schema - symptom, onset, duration, severity, history.",
         model: "Claude 3.5 Sonnet (structured output)",
         capabilities: [
           "Schema-validated JSON output, every time",
@@ -131,11 +131,11 @@ export const PROJECT_TECHNICAL: Record<string, ProjectTechnical> = {
       },
       {
         name: "Triage Classifier",
-        role: "Reads the parsed intake and recommends routine vs. priority vs. urgent — clinician makes the final call.",
+        role: "Reads the parsed intake and recommends routine vs. priority vs. urgent - clinician makes the final call.",
         model: "Claude 3.5 Sonnet + clinic protocol library",
         capabilities: [
           "Grounded in the clinic's own triage protocols",
-          "Refuses to recommend treatment — flags for clinician only",
+          "Refuses to recommend treatment - flags for clinician only",
           "Hard escalation triggers for urgent presentations",
         ],
         integrationPoints: ["Intake parser output", "Clinic protocol PDFs", "Slack alerts"],
@@ -191,7 +191,7 @@ export const PROJECT_TECHNICAL: Record<string, ProjectTechnical> = {
     agents: [
       {
         name: "Performance Narrator",
-        role: "Turns this quarter's portfolio numbers into a 4-paragraph review in the advisor's voice — what happened, why it happened, what's next.",
+        role: "Turns this quarter's portfolio numbers into a 4-paragraph review in the advisor's voice - what happened, why it happened, what's next.",
         model: "Claude 3.5 Sonnet + advisor voice profile",
         capabilities: [
           "Per-advisor voice match (94%+ on blind tests)",
@@ -202,7 +202,7 @@ export const PROJECT_TECHNICAL: Record<string, ProjectTechnical> = {
       },
       {
         name: "Compliance Auditor",
-        role: "Reads the draft report and inserts every required disclosure — fund prospectus references, performance disclaimers, conflict statements.",
+        role: "Reads the draft report and inserts every required disclosure - fund prospectus references, performance disclaimers, conflict statements.",
         model: "Claude 3.5 Sonnet + compliance rulebook",
         capabilities: [
           "Rules-based first, AI for ambiguous cases",
@@ -250,7 +250,7 @@ export const PROJECT_TECHNICAL: Record<string, ProjectTechnical> = {
   drft: {
     architecture: {
       summary:
-        "From product idea to launched brand in 5 weeks. Brand voice rulebook trains the AI. Shopify ships the store. n8n + Klaviyo orchestrate email. Every piece of content is on-brand by default — and a human signs off before it ships.",
+        "From product idea to launched brand in 5 weeks. Brand voice rulebook trains the AI. Shopify ships the store. n8n + Klaviyo orchestrate email. Every piece of content is on-brand by default - and a human signs off before it ships.",
       nodes: [
         { label: "Brand Voice Rulebook", sub: "12 rules · versioned", kind: "input" },
         { label: "Content AI", sub: "Voice-trained · Claude", kind: "ai" },
@@ -284,7 +284,7 @@ export const PROJECT_TECHNICAL: Record<string, ProjectTechnical> = {
       },
       {
         name: "Catalog Enricher",
-        role: "Watches for new products, generates SEO descriptions + alt text + structured data automatically — editor reviews.",
+        role: "Watches for new products, generates SEO descriptions + alt text + structured data automatically - editor reviews.",
         model: "Claude 3.5 Sonnet",
         capabilities: [
           "Per-product description in brand voice",
@@ -297,7 +297,7 @@ export const PROJECT_TECHNICAL: Record<string, ProjectTechnical> = {
     stack: [
       {
         label: "AI Layer",
-        description: "Voice-trained generation that sounds like the brand — not like AI.",
+        description: "Voice-trained generation that sounds like the brand - not like AI.",
         items: ["Claude 3.5 Sonnet", "Brand voice YAML (12 rules)", "Anthropic SDK"],
       },
       {
@@ -312,7 +312,7 @@ export const PROJECT_TECHNICAL: Record<string, ProjectTechnical> = {
       },
       {
         label: "Infrastructure",
-        description: "Lightweight, fast — the brand's site loads in under 1s globally.",
+        description: "Lightweight, fast - the brand's site loads in under 1s globally.",
         items: ["Shopify hosting", "Cloudflare CDN", "Klaviyo deliverability"],
       },
     ],
@@ -321,7 +321,7 @@ export const PROJECT_TECHNICAL: Record<string, ProjectTechnical> = {
   linx: {
     architecture: {
       summary:
-        "Every agency workflow that used to take hours of senior time now runs on an AI backbone. Briefs come in, proposals go out, reports auto-send, clients see everything in their portal. The team's time goes to creative — not coordination.",
+        "Every agency workflow that used to take hours of senior time now runs on an AI backbone. Briefs come in, proposals go out, reports auto-send, clients see everything in their portal. The team's time goes to creative - not coordination.",
       nodes: [
         { label: "Brief Intake Form", sub: "Client-facing", kind: "input" },
         { label: "Brief AI + Proposal AI", sub: "Trained on 40+ proposals", kind: "ai" },
@@ -333,7 +333,7 @@ export const PROJECT_TECHNICAL: Record<string, ProjectTechnical> = {
     agents: [
       {
         name: "Brief Generator",
-        role: "Takes a client's loose form input and produces a full creative brief in LINX's format — audience, goal, message, KPIs.",
+        role: "Takes a client's loose form input and produces a full creative brief in LINX's format - audience, goal, message, KPIs.",
         model: "Claude 3.5 Sonnet + LINX brief templates",
         capabilities: [
           "Pulls audience data from past campaigns",
@@ -344,7 +344,7 @@ export const PROJECT_TECHNICAL: Record<string, ProjectTechnical> = {
       },
       {
         name: "Proposal AI",
-        role: "Trained on 40+ past proposals — generates the next one tailored to the client in under 40 minutes (vs. 8 hours).",
+        role: "Trained on 40+ past proposals - generates the next one tailored to the client in under 40 minutes (vs. 8 hours).",
         model: "Claude 3.5 Sonnet + RAG over proposal corpus",
         capabilities: [
           "Matches scope to similar past accounts",
@@ -383,7 +383,7 @@ export const PROJECT_TECHNICAL: Record<string, ProjectTechnical> = {
       },
       {
         label: "Infrastructure",
-        description: "Standard modern web stack on Vercel — instant deploys, global edge.",
+        description: "Standard modern web stack on Vercel - instant deploys, global edge.",
         items: ["Vercel", "Edge Functions", "Sentry"],
       },
     ],

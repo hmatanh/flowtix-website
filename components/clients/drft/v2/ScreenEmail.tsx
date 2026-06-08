@@ -1,9 +1,9 @@
 "use client";
 
 /**
- * Drft V2 — Email Flow Builder
+ * Drft V2 - Email Flow Builder
  *
- * A visual flow on the left (5 connected nodes — trigger, two emails,
+ * A visual flow on the left (5 connected nodes - trigger, two emails,
  * wait, branch); a single email preview on the right, with three KPIs
  * pinned across the top of the canvas.
  */
@@ -126,9 +126,9 @@ export function ScreenEmail() {
           ))}
         </div>
 
-        {/* Body — split */}
+        {/* Body - split */}
         <div className="flex-1 grid grid-cols-[1fr_380px] overflow-hidden">
-          {/* LEFT — Flow */}
+          {/* LEFT - Flow */}
           <div className="overflow-hidden px-9 py-7">
             {/* Header */}
             <div className="flex items-end justify-between mb-6">
@@ -179,7 +179,7 @@ export function ScreenEmail() {
               <div className="ml-[28px] h-3 w-px" style={{ background: "rgba(220, 38, 38,0.25)" }} />
               <FlowNode
                 icon={<IconMail size={14} stroke={1.8} />}
-                title="Email 1 — Soft reminder"
+                title="Email 1 - Soft reminder"
                 detail="Subject: It's still in your bag"
                 active
               />
@@ -192,13 +192,13 @@ export function ScreenEmail() {
               <div className="ml-[28px] h-3 w-px" style={{ background: "rgba(220, 38, 38,0.25)" }} />
               <FlowNode
                 icon={<IconGitFork size={14} stroke={1.8} />}
-                title="Branch — by value"
+                title="Branch - by value"
                 detail="≥ $180 → handwritten reply · &lt; $180 → standard"
               />
               <div className="ml-[28px] h-3 w-px" style={{ background: "rgba(220, 38, 38,0.25)" }} />
               <FlowNode
                 icon={<IconMail size={14} stroke={1.8} />}
-                title="Email 2 — Reply or save"
+                title="Email 2 - Reply or save"
                 detail="Subject: Two ways to keep this one"
               />
             </div>
@@ -233,7 +233,7 @@ export function ScreenEmail() {
             </div>
           </div>
 
-          {/* RIGHT — Email preview */}
+          {/* RIGHT - Email preview */}
           <aside
             className="border-l overflow-hidden flex flex-col"
             style={{
@@ -316,7 +316,7 @@ export function ScreenEmail() {
                 <div className="px-4 py-4">
                   <p className="text-[#1F0808] text-[11px] leading-relaxed">
                     Hello there. The coat is still on hold for you. We&apos;ve
-                    only got three left in your size in the Bracken colourway —
+                    only got three left in your size in the Bracken colourway -
                     if it&apos;s the one, now is the moment.
                   </p>
                 </div>

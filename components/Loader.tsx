@@ -4,7 +4,7 @@ import { m, AnimatePresence, useReducedMotion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 /* ============================================================
-   FLOWTIX LOADER — v4
+   FLOWTIX LOADER - v4
    Clean. Minimal. Just the Flowtix mark (no wordmark).
    Black canvas. White mark. Subtle blue gradient accent.
    Animation: paths draw on → fill in → soft pulse → fade out.
@@ -13,7 +13,7 @@ import { useEffect, useState } from "react";
 
 type Stage = "draw" | "settled" | "exit";
 
-// Brand mark paths — from app/icon.svg (two flowing curves)
+// Brand mark paths - from app/icon.svg (two flowing curves)
 const PATH_TOP =
   "M102.79 53.92L49.83 105.03C37.74 116.7 17.16 121.25 0.33 119.93C-1.52 105.4 4.44 92.88 14.72 82.91L85.12 14.57C106.49 -6.18 139.47 -4.06 160.32 16.47L228.32 83.46C210.59 91.69 187.97 89.99 173.93 76.58L149.92 53.65C137.31 41.61 116.02 41.16 102.79 53.92Z";
 
@@ -164,7 +164,7 @@ export function Loader({ onComplete }: { onComplete: () => void }) {
               />
             </svg>
 
-            {/* === Soft pulse ring on settled — runs once, very subtle === */}
+            {/* === Soft pulse ring on settled - runs once, very subtle === */}
             {stage === "settled" && (
               <m.div
                 aria-hidden="true"

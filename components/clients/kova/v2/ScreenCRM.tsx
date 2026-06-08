@@ -1,11 +1,11 @@
 "use client";
 
 /**
- * Kova V2 — CRM / Inbox
+ * Kova V2 - CRM / Inbox
  *
  * Three-pane layout:
  *   - Left: inbox of conversations with status dots and previews
- *   - Center: thread with this lead — agent + AI messages, status timeline
+ *   - Center: thread with this lead - agent + AI messages, status timeline
  *   - Right: AI suggestion rail with drafted replies and lead profile
  */
 
@@ -27,7 +27,7 @@ const THREADS = [
     name: "Sarah Mitchell",
     initials: "SM",
     color: "#0EA5E9",
-    snippet: "Yes — Saturday at 11am works. Could we also see…",
+    snippet: "Yes - Saturday at 11am works. Could we also see…",
     when: "2m",
     unread: true,
     status: "hot",
@@ -61,7 +61,7 @@ const THREADS = [
     name: "Marcus Liu",
     initials: "ML",
     color: "#F59E0B",
-    snippet: "Offer submitted — counter at $1.62M I think we…",
+    snippet: "Offer submitted - counter at $1.62M I think we…",
     when: "Yesterday",
     status: "offer",
   },
@@ -99,19 +99,19 @@ const MESSAGES: {
 }[] = [
   {
     role: "client",
-    body: "Hi Sarah — saw the alert for 201 W 21st. Looks great. Could we schedule a viewing?",
+    body: "Hi Sarah - saw the alert for 201 W 21st. Looks great. Could we schedule a viewing?",
     when: "9:42 am",
   },
   {
     role: "ai",
     body:
-      "Hi Sarah — yes, the seller's broker is open Saturday morning. Would 11am or 12:30pm work? I can also send over a 1-pager with comps in Chelsea for context.",
+      "Hi Sarah - yes, the seller's broker is open Saturday morning. Would 11am or 12:30pm work? I can also send over a 1-pager with comps in Chelsea for context.",
     when: "9:43 am",
     attachment: "Chelsea_comps_Aug2025.pdf",
   },
   {
     role: "client",
-    body: "Yes — Saturday at 11am works. Could we also see one of the Tribeca options that day?",
+    body: "Yes - Saturday at 11am works. Could we also see one of the Tribeca options that day?",
     when: "9:46 am",
   },
 ];
@@ -146,7 +146,7 @@ export function ScreenCRM() {
       }}
     >
       <div className="absolute inset-0 grid" style={{ gridTemplateColumns: "300px 1fr 320px" }}>
-        {/* LEFT — Inbox */}
+        {/* LEFT - Inbox */}
         <aside className="border-r overflow-hidden flex flex-col" style={{ borderColor: "#0E2236", background: "#020608" }}>
           <div className="px-4 py-3.5 border-b" style={{ borderColor: "#0E2236" }}>
             <div className="flex items-center gap-2 mb-3">
@@ -243,7 +243,7 @@ export function ScreenCRM() {
           </div>
         </aside>
 
-        {/* CENTER — Thread */}
+        {/* CENTER - Thread */}
         <section className="overflow-hidden flex flex-col">
           {/* Thread header */}
           <header
@@ -433,7 +433,7 @@ export function ScreenCRM() {
           </div>
         </section>
 
-        {/* RIGHT — Lead profile + timeline */}
+        {/* RIGHT - Lead profile + timeline */}
         <aside
           className="border-l overflow-hidden flex flex-col"
           style={{ borderColor: "#0E2236", background: "#020608" }}

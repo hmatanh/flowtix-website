@@ -1,6 +1,6 @@
 /**
  * Minimal placeholder used while an interactive tour code-splits in.
- * Pure CSS — no framer-motion, no heavy deps.
+ * Pure CSS - no framer-motion, no heavy deps.
  */
 export function TourLoader() {
   return (

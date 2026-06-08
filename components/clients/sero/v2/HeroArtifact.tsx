@@ -1,12 +1,12 @@
 "use client";
 
 /**
- * Sero V2 — Hero Artifact
+ * Sero V2 - Hero Artifact
  *
  * The opening "specimen" image of the case. A clinician's calendar
  * comparing a before-week (all admin slots) to an after-week (the same
  * slots returned to patient sessions). Reads like a printed editorial
- * page — calm, slow, evidence-led.
+ * page - calm, slow, evidence-led.
  */
 
 import { m } from "framer-motion";

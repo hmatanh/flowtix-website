@@ -103,12 +103,12 @@ export default function ServicesPage() {
           </h1>
           <FadeIn delay={0.5}>
             <p className="text-[#aaa] mt-5 sm:mt-6 text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed px-2">
-              From first strategy to live deployment — design, intelligence,
+              From first strategy to live deployment - design, intelligence,
               and execution in one place.
             </p>
           </FadeIn>
 
-          {/* Color bar — 6 service colors as a strip preview */}
+          {/* Color bar - 6 service colors as a strip preview */}
           <FadeIn delay={0.6}>
             <div className="mt-10 sm:mt-12 inline-flex items-center gap-1.5 sm:gap-2 max-w-full px-2">
               {services.map((s, i) => {
@@ -319,7 +319,7 @@ export default function ServicesPage() {
             <p className="text-[#aaa] mt-5 sm:mt-6 text-base sm:text-lg max-w-xl mx-auto leading-relaxed px-2">
               Book a free 30-minute strategy call. We&apos;ll listen, ask
               questions, and point you toward what will actually move your
-              business — even if it isn&apos;t us.
+              business - even if it isn&apos;t us.
             </p>
           </FadeIn>
 

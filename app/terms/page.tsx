@@ -107,7 +107,7 @@ export default function TermsPage() {
       <Section id="website-use" title="2. Website Use">
         <p>
           <strong>Permitted use:</strong> You may use this website for lawful
-          purposes only — specifically to learn about our services, contact us,
+          purposes only - specifically to learn about our services, contact us,
           and read our content.
         </p>
         <p>
@@ -149,8 +149,8 @@ export default function TermsPage() {
 
       <Section id="ip" title="4. Intellectual Property">
         <p>
-          <strong>Our content:</strong> All content on this website — including
-          text, design, code, graphics, and branding — is owned by Flowtix
+          <strong>Our content:</strong> All content on this website - including
+          text, design, code, graphics, and branding - is owned by Flowtix
           and protected by copyright law. You may not reproduce it without
           written permission.
         </p>

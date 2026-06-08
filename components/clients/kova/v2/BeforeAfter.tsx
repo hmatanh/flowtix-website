@@ -1,11 +1,11 @@
 "use client";
 
 /**
- * Kova V2 — Before / After Architecture
+ * Kova V2 - Before / After Architecture
  *
  * Documentary architecture diagram. Two columns on lg+, vertical stack on
  * mobile with a horizontal divider arrow between them. Pure radial-gradient
- * backgrounds — no grid pattern, no noise.
+ * backgrounds - no grid pattern, no noise.
  */
 
 import { m } from "framer-motion";
@@ -343,7 +343,7 @@ export function BeforeAfter() {
 
         {/*
          * Mobile/tablet horizontal divider arrow. Positioned at vertical
-         * center of the grid container — which lands cleanly between the two
+         * center of the grid container - which lands cleanly between the two
          * stacked rows since both sides have similar content density.
          */}
         <m.span

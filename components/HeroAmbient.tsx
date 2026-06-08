@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * HeroAmbient — atmospheric layer for the homepage hero.
+ * HeroAmbient - atmospheric layer for the homepage hero.
  *
  * Two layered systems behind the text:
  *
@@ -20,7 +20,7 @@
  * AccessibilityWidget's "Reduce motion" toggle (which sets the
  * `a11y-reduced-motion` class on <html>). When reduced motion is on,
  * orbs render statically at their starting position and dots glow at
- * a fixed dim opacity — the page still gets ambient depth, just
+ * a fixed dim opacity - the page still gets ambient depth, just
  * without movement.
  *
  * Mobile-tuned: orbs render at ~65% size with `scale-[0.65]` and

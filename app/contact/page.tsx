@@ -95,12 +95,12 @@ const TIME_SLOTS = ["9:00 AM CET", "10:00 AM CET", "2:00 PM CET", "3:00 PM CET",
    ─────────────────────────────────────────────────────────────
    Opens after the user has chosen a date + time. Collects name,
    email, phone, and the topic they want to discuss. Submits to
-   Web3Forms — which routes the inquiry to office@flowtix.ai.
+   Web3Forms - which routes the inquiry to office@flowtix.ai.
 
-   ⚠ SECURITY — NEXT_PUBLIC_WEB3FORMS_KEY is PUBLIC. It is baked into
+   ⚠ SECURITY - NEXT_PUBLIC_WEB3FORMS_KEY is PUBLIC. It is baked into
    the JS bundle (any visitor or scraper can read it). The key alone
    provides ZERO spam protection. The following are MANDATORY in the
-   Web3Forms dashboard for this access key — do not consider this
+   Web3Forms dashboard for this access key - do not consider this
    form secure until they are confirmed:
 
      1. Allowed origins restricted to:
@@ -205,7 +205,7 @@ function BookingDetailsModal({
 
     // ── Bot trap #1: honeypot. Real users never see/touch the `website`
     //     field. If it was filled, silently pretend success without firing
-    //     the network call — bots don't get to learn they were caught.
+    //     the network call - bots don't get to learn they were caught.
     if (honeypot) {
       setDone(true);
       setTimeout(() => {
@@ -253,7 +253,7 @@ function BookingDetailsModal({
       `When:     ${whenLabel}\n` +
       `Name:     ${name}\n` +
       `Email:    ${email}\n` +
-      `Phone:    ${phone || "—"}\n\n` +
+      `Phone:    ${phone || "-"}\n\n` +
       `What they want to discuss:\n${topic}\n`;
 
     // No access key configured → graceful mailto fallback
@@ -425,7 +425,7 @@ function BookingDetailsModal({
                   onSubmit={handleSubmit}
                   className="px-5 sm:px-7 pt-5 pb-6 sm:pb-7"
                 >
-                  {/* Honeypot — hidden from humans, irresistible to bots */}
+                  {/* Honeypot - hidden from humans, irresistible to bots */}
                   <label
                     htmlFor="booking-website"
                     aria-hidden="true"
@@ -591,7 +591,7 @@ function CalendarBooking() {
   const [confirmed, setConfirmed] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
 
-  // Derive month/year on render — calendar uses the user's current month.
+  // Derive month/year on render - calendar uses the user's current month.
   const now = new Date();
   const year = now.getFullYear();
   const month = now.getMonth();
@@ -811,7 +811,7 @@ function CalendarBooking() {
             <div className="mt-8 flex items-center justify-between gap-4 flex-wrap">
               <p className="text-[#444] text-xs leading-relaxed">
                 {selectedDay && selectedTime
-                  ? "One more step — share a few details about your call."
+                  ? "One more step - share a few details about your call."
                   : "Pick a day and time to continue."}
               </p>
               <m.button
@@ -962,7 +962,7 @@ export default function ContactPage() {
     );
     const body = encodeURIComponent(
       `Name: ${cleanName}\n` +
-        `Company: ${cleanCompany || "—"}\n` +
+        `Company: ${cleanCompany || "-"}\n` +
         `Email: ${cleanEmail}\n` +
         `Phone: ${phone ? cleanPhone : "Not provided"}\n` +
         `Service: ${cleanService}\n\n` +
@@ -1037,7 +1037,7 @@ export default function ContactPage() {
           </h1>
           <FadeIn delay={0.5}>
             <p className="text-[#aaa] mt-6 sm:mt-7 max-w-2xl mx-auto text-base sm:text-lg leading-[1.65] sm:leading-relaxed px-2">
-              Not every project is right for us — and we&apos;d rather tell you
+              Not every project is right for us - and we&apos;d rather tell you
               that upfront than take your money and underdeliver. Book 30
               minutes and let&apos;s be honest.
             </p>
@@ -1095,7 +1095,7 @@ export default function ContactPage() {
                   exit={{ opacity: 0 }}
                   noValidate
                 >
-                  {/* Honeypot — bots fill this, humans don't */}
+                  {/* Honeypot - bots fill this, humans don't */}
                   <div
                     aria-hidden="true"
                     style={{

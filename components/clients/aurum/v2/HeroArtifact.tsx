@@ -1,12 +1,12 @@
 "use client";
 
 /**
- * Aurum V2 — Hero Artifact
+ * Aurum V2 - Hero Artifact
  *
  * A photographic-feel render of the Q4 quarterly report sitting on the
  * advisor's desk. Cream paper page, serif typography, subtle paper grain
  * and a faint shadow under the page edge. The artifact reads as evidence
- * of the kind of quiet, premium product Aurum is — not a demo.
+ * of the kind of quiet, premium product Aurum is - not a demo.
  */
 
 import { m } from "framer-motion";
@@ -54,7 +54,7 @@ export function HeroArtifact() {
           />
         </div>
 
-        {/* The artifact — a heavy cream-paper page */}
+        {/* The artifact - a heavy cream-paper page */}
         <m.div
           initial={{ y: 30, opacity: 0, rotate: -2 }}
           whileInView={{ y: 0, opacity: 1, rotate: -1 }}
@@ -188,7 +188,7 @@ export function HeroArtifact() {
                   className="font-serif-editorial italic text-[#A87B3A]"
                   style={{ fontSize: "clamp(9px, 1vw, 11px)" }}
                 >
-                  — page 1 of 14 —
+                  - page 1 of 14 -
                 </div>
                 <div
                   className="font-serif-editorial italic text-[#A87B3A] text-right"
@@ -207,7 +207,7 @@ export function HeroArtifact() {
             className="font-serif-editorial italic text-[#A98046]"
             style={{ fontSize: "clamp(13px, 1.4vw, 16px)", lineHeight: 1.55 }}
           >
-            One of 1,200 client reports the system now produces a quarter — and
+            One of 1,200 client reports the system now produces a quarter - and
             indistinguishable from the ones the partners used to write by hand.
           </p>
         </div>

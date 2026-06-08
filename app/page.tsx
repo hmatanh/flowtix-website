@@ -82,7 +82,7 @@ const WHAT_WE_BUILD = [
     icon: IconLayoutDashboard,
     title: "Custom Business Systems",
     body:
-      "Internal tools, dashboards, portals, and systems built around your exact workflow — not the workflow a generic SaaS expects you to have.",
+      "Internal tools, dashboards, portals, and systems built around your exact workflow - not the workflow a generic SaaS expects you to have.",
   },
   {
     icon: IconRouteAltLeft,
@@ -94,19 +94,19 @@ const WHAT_WE_BUILD = [
     icon: IconRobot,
     title: "AI Agents & Assistants",
     body:
-      "Custom AI assistants trained on your business — support, sales, onboarding, internal knowledge, client communication. Practical, not generic.",
+      "Custom AI assistants trained on your business - support, sales, onboarding, internal knowledge, client communication. Practical, not generic.",
   },
   {
     icon: IconRocket,
     title: "MVPs & Digital Products",
     body:
-      "From idea to working product in weeks — strategy, UX, design, build, launch. One partner across every part of the product.",
+      "From idea to working product in weeks - strategy, UX, design, build, launch. One partner across every part of the product.",
   },
   {
     icon: IconCode,
     title: "Websites & Landing Pages",
     body:
-      "Modern, fast, conversion-focused sites and product experiences — built on a stack that grows with you instead of forcing a rebuild.",
+      "Modern, fast, conversion-focused sites and product experiences - built on a stack that grows with you instead of forcing a rebuild.",
   },
   {
     icon: IconPalette,
@@ -159,19 +159,19 @@ const PROCESS_STEPS = [
     n: "03",
     title: "Design the solution",
     text:
-      "We define the user experience, the system logic, the automation flows, the screens, and the data structure — before we build.",
+      "We define the user experience, the system logic, the automation flows, the screens, and the data structure - before we build.",
   },
   {
     n: "04",
     title: "Build & launch",
     text:
-      "We build with the right tools for your scale and stack — AI workflows, integrations, custom code, automation platforms — and ship.",
+      "We build with the right tools for your scale and stack - AI workflows, integrations, custom code, automation platforms - and ship.",
   },
   {
     n: "05",
     title: "Improve over time",
     text:
-      "We test, refine, and improve based on real usage. The system gets better every month — not worse.",
+      "We test, refine, and improve based on real usage. The system gets better every month - not worse.",
   },
 ];
 
@@ -233,7 +233,7 @@ export default function Home() {
             transition={{ delay: 0.1, duration: 0.5 }}
             className="mx-auto inline-flex items-center gap-2 sm:gap-2.5 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-[#1a1a1a] bg-[#080808] mb-5 sm:mb-7"
           >
-            {/* Pulsing dot — vertically centered with text via items-center */}
+            {/* Pulsing dot - vertically centered with text via items-center */}
             <span className="relative flex h-2 w-2 shrink-0">
               <span className="animate-ping absolute h-full w-full rounded-full bg-blue-400 opacity-75" />
               <span className="relative h-2 w-2 rounded-full bg-blue-500" />
@@ -267,7 +267,7 @@ export default function Home() {
             className="section-subtext text-[#999] text-base sm:text-lg md:text-xl mt-5 sm:mt-7 max-w-3xl mx-auto leading-relaxed px-2 sm:px-0"
           >
             We build the internal tools, client portals, AI agents, and
-            automated workflows that save your team hours every week — and
+            automated workflows that save your team hours every week - and
             scale with the way your business actually works.
           </m.p>
 
@@ -653,7 +653,7 @@ export default function Home() {
                 Who Flowtix is for.
               </h2>
               <p className="section-subtext text-[#888] text-base sm:text-lg mt-4 max-w-2xl mx-auto leading-relaxed">
-                We work best with teams that know what they want to improve —
+                We work best with teams that know what they want to improve -
                 and want one partner who can carry it across product, design,
                 automation, and AI.
               </p>
@@ -698,7 +698,7 @@ export default function Home() {
               </h2>
               <p className="section-subtext text-[#888] text-base sm:text-lg mt-4 max-w-2xl mx-auto leading-relaxed">
                 Real examples from real projects. Whatever you don&apos;t see
-                here, ask — most of what we build is bespoke.
+                here, ask - most of what we build is bespoke.
               </p>
             </FadeIn>
           </div>
@@ -718,7 +718,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== 10. FEATURED WORK — matches /work page template ===== */}
+      {/* ===== 10. FEATURED WORK - matches /work page template ===== */}
       <section className="section-contain py-24 md:py-32">
         <div className="page-container">
           <FadeIn>
@@ -748,7 +748,7 @@ export default function Home() {
                   aria-label={`Open ${p.name} case study`}
                   className="group relative block rounded-2xl sm:rounded-[20px] overflow-hidden border border-white/[0.06] bg-[#080808] transition-all duration-500 hover:-translate-y-1 hover:bg-[#0B0B0B] hover:border-white/[0.16] hover:shadow-[0_40px_90px_rgba(0,0,0,0.45),0_0_0_1px_rgba(255,255,255,0.04)] h-full"
                 >
-                  {/* Visual artifact — 16:10 ratio */}
+                  {/* Visual artifact - 16:10 ratio */}
                   <div className="relative w-full aspect-[16/10] overflow-hidden border-b border-white/[0.04]">
                     <div className="absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-[1.025]">
                       <ListingMockup slug={p.slug} />
@@ -855,7 +855,7 @@ export default function Home() {
               <span className="gradient-text-blue">A complete digital partner.</span>
             </h2>
             <p className="section-subtext text-[#555] text-base sm:text-lg leading-relaxed mt-8 max-w-2xl mx-auto">
-              Most providers focus on one piece — design, development,
+              Most providers focus on one piece - design, development,
               automation, or AI. Flowtix connects all of them into one practical
               solution. We understand the business problem, design the
               experience, build the system, and automate the workflow behind
@@ -885,7 +885,7 @@ export default function Home() {
             </FadeIn>
           </div>
 
-          {/* Cards grid — uses the full container width on desktop, stays
+          {/* Cards grid - uses the full container width on desktop, stays
               a single column on small viewports. Each card carries its own
               step number and accent so the section reads as a process even
               without a connecting timeline rail. */}

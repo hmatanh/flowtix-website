@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 const url = "https://flowtix.ai/work/";
 
 export const metadata: Metadata = {
-  title: { absolute: "Work — Case Studies Across 5 Industries | Flowtix" },
+  title: { absolute: "Work - Case Studies Across 5 Industries | Flowtix" },
   description:
     "Selected work from Flowtix. AI systems, automation, brand identity and digital products across real estate, digital health, wealth management, DTC outdoor, and creative agency.",
   keywords:
@@ -11,14 +11,14 @@ export const metadata: Metadata = {
   alternates: { canonical: url },
   openGraph: {
     url,
-    title: "Work — Flowtix Case Studies",
+    title: "Work - Flowtix Case Studies",
     description:
-      "Five projects across five industries — AI systems and digital products built by Flowtix.",
+      "Five projects across five industries - AI systems and digital products built by Flowtix.",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Work — Flowtix",
+    title: "Work - Flowtix",
     description: "Selected AI systems and digital products built by Flowtix.",
   },
 };

@@ -8,11 +8,11 @@ import Link from "next/link";
 /* ============================================================
    SERVICE VISUAL CARD
    Per-service unique visual card. Color-themed per service number.
-   Richer than a flat icon-in-a-box — adds depth, brand glow,
+   Richer than a flat icon-in-a-box - adds depth, brand glow,
    floating accents, animated background pattern.
    ============================================================ */
 
-// Color palette per service number — gives each service a subtle visual
+// Color palette per service number - gives each service a subtle visual
 // signature beyond the global Flowtix blue.
 const SERVICE_COLORS: Record<string, { primary: string; rgb: string; deco: "grid" | "rings" | "dots" | "lines" | "waves" }> = {
   "01": { primary: "#3B82F6", rgb: "59,130,246", deco: "rings" }, // AI Systems
@@ -203,7 +203,7 @@ export function ServiceVisual({ number, title, short, href, icon: Icon }: Props)
         / {number}
       </div>
 
-      {/* Service icon — centered, large, in brand-tinted frame */}
+      {/* Service icon - centered, large, in brand-tinted frame */}
       <div className="absolute inset-0 flex flex-col items-center justify-center p-8 sm:p-10">
         <m.div
           className="relative inline-flex items-center justify-center rounded-2xl border transition-all duration-500 group-hover:scale-105"

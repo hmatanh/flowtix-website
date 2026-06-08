@@ -127,7 +127,7 @@ export default function NotFound() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="text-[#aaa] mt-4 max-w-md mx-auto leading-[1.65] sm:leading-relaxed text-[15px] sm:text-base px-2"
         >
-          The page you&apos;re looking for doesn&apos;t exist — but we can
+          The page you&apos;re looking for doesn&apos;t exist - but we can
           help you find what you need.
         </m.p>
 

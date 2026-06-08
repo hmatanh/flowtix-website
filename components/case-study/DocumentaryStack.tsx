@@ -6,7 +6,7 @@ import { m } from "framer-motion";
 const EASE = [0.21, 0.47, 0.32, 0.98] as const;
 
 export type StackItem = {
-  /** The visual — usually a screen component. */
+  /** The visual - usually a screen component. */
   visual: ReactNode;
   /** Brief one-line caption rendered below the visual. */
   caption?: string;
@@ -23,7 +23,7 @@ type Props = {
 };
 
 /**
- * DocumentaryStack — vertical stack of large images with generous breathing
+ * DocumentaryStack - vertical stack of large images with generous breathing
  * room. Heydays / Pentagram pattern: each image is the moment. Never grid.
  */
 export function DocumentaryStack({

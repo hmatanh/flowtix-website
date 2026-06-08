@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * Sero V2 — Mobile patient intake
+ * Sero V2 - Mobile patient intake
  *
  * Three iPhone-style frames laid out side-by-side at desktop; stacked
  * vertically on mobile. Each shows a different moment of the patient
@@ -89,7 +89,7 @@ export function ScreenMobile() {
 
         {/* 3 phones */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 sm:gap-12 items-stretch">
-          {/* Phone 1 — Welcome */}
+          {/* Phone 1 - Welcome */}
           <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -168,11 +168,11 @@ export function ScreenMobile() {
               </div>
             </PhoneFrame>
             <p className="text-[#9FCEB9] text-[11px] text-center mt-4 tracking-tight">
-              Step 1 — invitation by SMS
+              Step 1 - invitation by SMS
             </p>
           </m.div>
 
-          {/* Phone 2 — Adaptive question */}
+          {/* Phone 2 - Adaptive question */}
           <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -274,11 +274,11 @@ export function ScreenMobile() {
               </div>
             </PhoneFrame>
             <p className="text-[#9FCEB9] text-[11px] text-center mt-4 tracking-tight">
-              Step 2 — questions adapt to answers
+              Step 2 - questions adapt to answers
             </p>
           </m.div>
 
-          {/* Phone 3 — Submitted */}
+          {/* Phone 3 - Submitted */}
           <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -332,7 +332,7 @@ export function ScreenMobile() {
                     style={{ fontSize: 11.5 }}
                   >
                     Your intake is with Dr. Bar-On. You&apos;ll get a confirmation
-                    by SMS once she&apos;s reviewed it — usually within a few hours.
+                    by SMS once she&apos;s reviewed it - usually within a few hours.
                   </p>
 
                   <div
@@ -356,7 +356,7 @@ export function ScreenMobile() {
               </div>
             </PhoneFrame>
             <p className="text-[#9FCEB9] text-[11px] text-center mt-4 tracking-tight">
-              Step 3 — handed to the clinician
+              Step 3 - handed to the clinician
             </p>
           </m.div>
         </div>

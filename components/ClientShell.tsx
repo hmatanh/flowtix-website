@@ -21,7 +21,7 @@ export function ClientShell({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     setMounted(true);
-    // Skip the loader if already shown this session — instant content on
+    // Skip the loader if already shown this session - instant content on
     // repeat visits and internal navigations.
     let alreadySeen = false;
     try {

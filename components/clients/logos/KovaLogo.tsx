@@ -11,7 +11,7 @@ export function KovaLogo({ height = 40, className = "" }: Props) {
       xmlns="http://www.w3.org/2000/svg"
       aria-label="KOVA"
     >
-      {/* Icon — geometric diamond */}
+      {/* Icon - geometric diamond */}
       <polygon
         points="18,2 34,18 18,34 2,18"
         stroke="#0EA5E9"

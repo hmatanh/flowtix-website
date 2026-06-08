@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * GeometricAvatar — gradient circle with stylized initials.
+ * GeometricAvatar - gradient circle with stylized initials.
  * Reads as professional / quietly designed instead of a stock headshot.
  */
 type Props = {

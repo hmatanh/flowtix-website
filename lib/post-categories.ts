@@ -1,4 +1,4 @@
-// Categories module — kept separate from lib/posts.tsx so importing
+// Categories module - kept separate from lib/posts.tsx so importing
 // just categories doesn't transitively pull in all post bodies.
 // Importing this file ships ~500 bytes vs. importing posts.tsx which
 // transitively loads 106 post bodies (~500KB+).
@@ -27,7 +27,7 @@ export const CATEGORIES: ("All" | PostCategory)[] = [
   "Business",
 ];
 
-// Lightweight metadata type — the shape passed from server to client
+// Lightweight metadata type - the shape passed from server to client
 // for the blog listing. No JSX, no toc. Fully serializable.
 export type PostMeta = {
   slug: string;

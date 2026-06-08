@@ -191,7 +191,7 @@ export default function ProductsPage() {
                 </div>
                 <p className="text-[#999] mt-5 sm:mt-6 leading-[1.65] sm:leading-relaxed text-[15px] sm:text-[15px]">
                   Flowtix Brain learns your brand voice, studies your audience,
-                  and generates all your marketing content — social posts,
+                  and generates all your marketing content - social posts,
                   email campaigns, ad copy, and more. On-brand, every time,
                   without a full marketing team. Built for growing e-commerce
                   and service businesses that need consistent, high-quality

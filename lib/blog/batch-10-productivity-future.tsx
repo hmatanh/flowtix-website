@@ -88,7 +88,7 @@ export const batch10: Post[] = [
         </p>
 
         <blockquote className={QUOTE}>
-          The AI-augmented operator doesn&apos;t feel busier than before AI &mdash;
+          The AI-augmented operator doesn&apos;t feel busier than before AI -
           they feel calmer. The boring work is offloaded; the meaningful work has
           space.
         </blockquote>
@@ -110,7 +110,7 @@ export const batch10: Post[] = [
     readTime: "8 min read",
     date: "May 30, 2026",
     excerpt:
-      "AI gives operators a real chance to fix meetings — not by replacing them but by removing the reasons most meetings exist. Here is the practical playbook.",
+      "AI gives operators a real chance to fix meetings - not by replacing them but by removing the reasons most meetings exist. Here is the practical playbook.",
     author: "Flowtix Team",
     tags: ["Meetings", "Productivity", "Operations"],
     toc: [
@@ -128,17 +128,17 @@ export const batch10: Post[] = [
         <h2 id="why-broken">Why Meetings Stayed Broken</h2>
         <p>
           For two decades, knowledge work added meetings without removing them.
-          Standup, retro, sync, 1:1, all-hands, planning, kickoff &mdash; calendars
+          Standup, retro, sync, 1:1, all-hands, planning, kickoff - calendars
           full. Most of the content was: sharing status, gathering input, making
           decisions. AI now handles much of the first two without a meeting.
         </p>
 
         <h2 id="what-ai-fixes">What AI Fixes</h2>
         <ul>
-          <li>Status sharing &mdash; daily AI digest beats standup.</li>
-          <li>Information gathering &mdash; structured async + AI synthesis.</li>
-          <li>Pre-reading &mdash; AI summary of context before any synchronous decision.</li>
-          <li>Notes and follow-ups &mdash; auto-generated, auto-distributed.</li>
+          <li>Status sharing - daily AI digest beats standup.</li>
+          <li>Information gathering - structured async + AI synthesis.</li>
+          <li>Pre-reading - AI summary of context before any synchronous decision.</li>
+          <li>Notes and follow-ups - auto-generated, auto-distributed.</li>
         </ul>
 
         <h2 id="fewer">Fewer Meetings</h2>
@@ -185,7 +185,7 @@ export const batch10: Post[] = [
           <li>Brainstorming (early-stage, generative).</li>
           <li>Relationship-building.</li>
           <li>Major decisions with multiple stakeholders.</li>
-          <li>Customer calls &mdash; obviously.</li>
+          <li>Customer calls - obviously.</li>
         </ul>
 
         <blockquote className={QUOTE}>
@@ -198,7 +198,7 @@ export const batch10: Post[] = [
 
         <h2 id="faq">FAQ</h2>
         <p><strong>What about culture?</strong> Culture doesn&apos;t require 27 hours of meetings/week. It requires intentional moments.</p>
-        <p><strong>Resistance to async?</strong> Real. Manager-led modeling fixes it &mdash; if leaders go async, the team follows.</p>
+        <p><strong>Resistance to async?</strong> Real. Manager-led modeling fixes it - if leaders go async, the team follows.</p>
         <p><strong>What about hybrid teams?</strong> Async-first beats hybrid meetings every time.</p>
       </>
     ),
@@ -211,7 +211,7 @@ export const batch10: Post[] = [
     readTime: "8 min read",
     date: "May 31, 2026",
     excerpt:
-      "A founder's personal AI stack is different from a company's. Here is the practical 2026 setup — tools, habits, and workflows for the founder herself.",
+      "A founder's personal AI stack is different from a company's. Here is the practical 2026 setup - tools, habits, and workflows for the founder herself.",
     author: "Flowtix Team",
     tags: ["Founder", "Personal Productivity", "AI Stack"],
     toc: [
@@ -248,9 +248,9 @@ export const batch10: Post[] = [
           Three writing flows the AI-augmented founder runs:
         </p>
         <ol>
-          <li>Long emails &mdash; AI drafts from a 3-bullet brief.</li>
-          <li>Strategic memos &mdash; founder outlines, AI fleshes out, founder edits.</li>
-          <li>Public writing (blog, social) &mdash; founder writes, AI critiques.</li>
+          <li>Long emails - AI drafts from a 3-bullet brief.</li>
+          <li>Strategic memos - founder outlines, AI fleshes out, founder edits.</li>
+          <li>Public writing (blog, social) - founder writes, AI critiques.</li>
         </ol>
 
         <h2 id="thinking">Thinking Out Loud With AI</h2>
@@ -265,8 +265,8 @@ export const batch10: Post[] = [
           <ul className="space-y-2 text-[#ccc] text-sm">
             <li>&bull; Asking AI for definitive answers on people decisions.</li>
             <li>&bull; Letting AI replace your judgment on strategic calls.</li>
-            <li>&bull; Outsourcing all writing &mdash; voice disappears.</li>
-            <li>&bull; Subscription bloat &mdash; 12 tools, 3 used.</li>
+            <li>&bull; Outsourcing all writing - voice disappears.</li>
+            <li>&bull; Subscription bloat - 12 tools, 3 used.</li>
           </ul>
         </div>
 
@@ -368,7 +368,7 @@ export const batch10: Post[] = [
             <li>&bull; AI quality is a function of these roles.</li>
             <li>&bull; They sit at the boundaries traditional roles miss.</li>
             <li>&bull; Hiring them early is a competitive advantage.</li>
-            <li>&bull; The market hasn&apos;t standardized titles yet &mdash; you can attract underpriced talent.</li>
+            <li>&bull; The market hasn&apos;t standardized titles yet - you can attract underpriced talent.</li>
           </ul>
         </div>
 
@@ -404,7 +404,7 @@ export const batch10: Post[] = [
         <h2 id="faq">FAQ</h2>
         <p><strong>What about &ldquo;Head of AI&rdquo;?</strong> Often a vanity title. The work is done at the role level above.</p>
         <p><strong>Where to source?</strong> Internal first, then specialized communities, then mainstream channels.</p>
-        <p><strong>Compensation?</strong> Premium &mdash; these are scarce skills. 20&ndash;30% above traditional equivalent.</p>
+        <p><strong>Compensation?</strong> Premium - these are scarce skills. 20&ndash;30% above traditional equivalent.</p>
       </>
     ),
   },
@@ -518,7 +518,7 @@ export const batch10: Post[] = [
     readTime: "8 min read",
     date: "June 3, 2026",
     excerpt:
-      "Privacy in AI is no longer theoretical — laws are in place and enforcement is happening. Here is the practical founder's checklist for staying clean.",
+      "Privacy in AI is no longer theoretical - laws are in place and enforcement is happening. Here is the practical founder's checklist for staying clean.",
     author: "Flowtix Team",
     tags: ["Privacy", "AI Governance", "Compliance"],
     toc: [
@@ -624,7 +624,7 @@ export const batch10: Post[] = [
     readTime: "8 min read",
     date: "June 4, 2026",
     excerpt:
-      "AI security isn't only an engineering concern. Here is the practical guide for non-engineers — what to worry about, what to skip, and what to enforce.",
+      "AI security isn't only an engineering concern. Here is the practical guide for non-engineers - what to worry about, what to skip, and what to enforce.",
     author: "Flowtix Team",
     tags: ["AI Security", "Risk", "Governance"],
     toc: [
@@ -701,9 +701,9 @@ export const batch10: Post[] = [
           Three policies every company needs:
         </p>
         <ol>
-          <li>AI Acceptable Use Policy &mdash; what data can/can&apos;t go into AI tools.</li>
-          <li>AI Vendor Approval Process &mdash; new AI tools need security review.</li>
-          <li>AI Incident Response &mdash; who handles AI-related security incidents.</li>
+          <li>AI Acceptable Use Policy - what data can/can&apos;t go into AI tools.</li>
+          <li>AI Vendor Approval Process - new AI tools need security review.</li>
+          <li>AI Incident Response - who handles AI-related security incidents.</li>
         </ol>
 
         <h2 id="training">Training</h2>
@@ -736,7 +736,7 @@ export const batch10: Post[] = [
     readTime: "8 min read",
     date: "June 5, 2026",
     excerpt:
-      "Not every workflow benefits from AI. Here is the practical map of where to keep humans front and center — and why these boundary cases matter.",
+      "Not every workflow benefits from AI. Here is the practical map of where to keep humans front and center - and why these boundary cases matter.",
     author: "Flowtix Team",
     tags: ["AI Limits", "Boundaries", "Ethics"],
     toc: [
@@ -754,7 +754,7 @@ export const batch10: Post[] = [
         <h2 id="frame">The Frame</h2>
         <p>
           Knowing where not to use AI is as important as knowing where to use it. The
-          boundary cases below are not absolutes &mdash; they&apos;re defaults that
+          boundary cases below are not absolutes - they&apos;re defaults that
           can be revisited as AI matures. But in 2026, keeping humans front and center
           in these places protects trust and outcomes.
         </p>
@@ -819,7 +819,7 @@ export const batch10: Post[] = [
 
         <h2 id="faq">FAQ</h2>
         <p><strong>Will the boundaries move?</strong> Yes. Plan to revisit annually.</p>
-        <p><strong>What about AI-assisted hiring?</strong> AI for sorting, scheduling, interview notes &mdash; fine. AI for decisions &mdash; no.</p>
+        <p><strong>What about AI-assisted hiring?</strong> AI for sorting, scheduling, interview notes - fine. AI for decisions - no.</p>
         <p><strong>Customer-facing AI everywhere?</strong> No. Reserve some human moments deliberately.</p>
       </>
     ),
@@ -938,7 +938,7 @@ export const batch10: Post[] = [
     readTime: "10 min read",
     date: "June 7, 2026",
     excerpt:
-      "Most AI roadmaps are 18-month tactics dressed as strategy. Here is what a real five-year AI roadmap looks like — phased, opinionated, and built to last.",
+      "Most AI roadmaps are 18-month tactics dressed as strategy. Here is what a real five-year AI roadmap looks like - phased, opinionated, and built to last.",
     author: "Flowtix Team",
     tags: ["AI Strategy", "Roadmap", "Long-Term Planning"],
     toc: [
@@ -996,17 +996,17 @@ export const batch10: Post[] = [
         <div className={CALLOUT}>
           <div className="text-label text-amber-400 mb-3">The Five-Year Arc</div>
           <ul className="space-y-2 text-[#ccc] text-sm">
-            <li>&bull; Y1 Foundation &mdash; ship something.</li>
-            <li>&bull; Y2 Production &mdash; scale to many.</li>
-            <li>&bull; Y3 Scale &mdash; embed in every workflow.</li>
-            <li>&bull; Y4 Differentiation &mdash; build moats.</li>
-            <li>&bull; Y5 Strategic position &mdash; own the category.</li>
+            <li>&bull; Y1 Foundation - ship something.</li>
+            <li>&bull; Y2 Production - scale to many.</li>
+            <li>&bull; Y3 Scale - embed in every workflow.</li>
+            <li>&bull; Y4 Differentiation - build moats.</li>
+            <li>&bull; Y5 Strategic position - own the category.</li>
           </ul>
         </div>
 
         <h2 id="year-4">Year 4: Differentiation</h2>
         <p>
-          Goals: AI moats specific to your business &mdash; proprietary data,
+          Goals: AI moats specific to your business - proprietary data,
           fine-tuned models, unique workflows. The off-the-shelf capability is a
           commodity by year 4; your differentiation is what you&apos;ve built on top.
         </p>
@@ -1040,7 +1040,7 @@ export const batch10: Post[] = [
 
         <h2 id="faq">FAQ</h2>
         <p><strong>What if AI capabilities outpace the plan?</strong> Update the plan. The arc holds; the specifics flex.</p>
-        <p><strong>What if AI capabilities stall?</strong> The foundational investments still pay off &mdash; data, voice systems, governance.</p>
+        <p><strong>What if AI capabilities stall?</strong> The foundational investments still pay off - data, voice systems, governance.</p>
         <p><strong>When to review?</strong> Annually for the long view, quarterly for the next year&apos;s details.</p>
       </>
     ),

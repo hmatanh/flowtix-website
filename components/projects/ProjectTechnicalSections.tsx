@@ -3,9 +3,9 @@
 /**
  * Three deeply-crafted editorial sections for each project page:
  *
- *   1) ProjectArchitecture — the actual system flow: inputs → AI → orchestration → output
- *   2) ProjectAIAgents     — the specific AI agents we built, with role, model, capabilities, integrations
- *   3) ProjectTechStack    — the categorized stack: AI / Web / Data / Infra
+ *   1) ProjectArchitecture - the actual system flow: inputs → AI → orchestration → output
+ *   2) ProjectAIAgents     - the specific AI agents we built, with role, model, capabilities, integrations
+ *   3) ProjectTechStack    - the categorized stack: AI / Web / Data / Infra
  *
  * These sit between "What we built" visuals and the impact numbers, so clients
  * can see the depth of the engineering before they see the outcomes.
@@ -78,7 +78,7 @@ function nodeKindLabel(kind: ArchNode["kind"]) {
 }
 
 /* =========================================================================
-   1) ProjectArchitecture — the system flow
+   1) ProjectArchitecture - the system flow
    ========================================================================= */
 
 export function ProjectArchitecture({
@@ -296,7 +296,7 @@ function ArchNodeCard({
 }
 
 /* =========================================================================
-   2) ProjectAIAgents — the agents we deployed
+   2) ProjectAIAgents - the agents we deployed
    ========================================================================= */
 
 export function ProjectAIAgents({
@@ -355,7 +355,7 @@ export function ProjectAIAgents({
               className="text-base sm:text-lg leading-relaxed"
               style={{ color: b.textOnBrand, opacity: 0.75 }}
             >
-              Each one purpose-built — narrow role, clear refusal contract, audit
+              Each one purpose-built - narrow role, clear refusal contract, audit
               log on every output. Humans approve the irreversible moves.
             </p>
           </div>
@@ -502,7 +502,7 @@ export function ProjectAIAgents({
 }
 
 /* =========================================================================
-   3) ProjectTechStack — categorized stack
+   3) ProjectTechStack - categorized stack
    ========================================================================= */
 
 export function ProjectTechStack({

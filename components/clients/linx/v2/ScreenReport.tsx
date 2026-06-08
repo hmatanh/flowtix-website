@@ -1,10 +1,10 @@
 "use client";
 
 /**
- * Linx V2 — Client Report (delivered)
+ * Linx V2 - Client Report (delivered)
  *
  * The artifact the client actually receives. A composed monthly performance
- * report — cover, top-line, narrative summary, a single big chart, a
+ * report - cover, top-line, narrative summary, a single big chart, a
  * commentary block written by an AI-assisted editor, and a sign-off.
  * Reads like a partner deck, not a dashboard export.
  */
@@ -56,7 +56,7 @@ export function ScreenReport() {
       }}
     >
       <div className="absolute inset-0 grid" style={{ gridTemplateColumns: "60% 40%" }}>
-        {/* LEFT — actual document on cream paper */}
+        {/* LEFT - actual document on cream paper */}
         <div
           className="relative px-10 py-10 overflow-hidden"
           style={{
@@ -126,7 +126,7 @@ export function ScreenReport() {
               className="mt-3 text-[12px] tracking-tight italic"
               style={{ color: "#5A4D7A" }}
             >
-              Returns from the nine-month engagement, March 2024 — March 2025.
+              Returns from the nine-month engagement, March 2024 - March 2025.
             </div>
           </div>
 
@@ -182,7 +182,7 @@ export function ScreenReport() {
                 className="text-[9px] font-sans tabular-nums"
                 style={{ color: "#7A6BA0" }}
               >
-                Jul 24 — Mar 25
+                Jul 24 - Mar 25
               </span>
             </div>
             <svg viewBox={`0 0 ${W} ${H}`} className="w-full h-auto block">
@@ -305,7 +305,7 @@ export function ScreenReport() {
               he story of the quarter is not one big win but ten small,
               compounding ones. Paid efficiency rose 31% as the new audience
               model matured. The site refresh pushed organic share by 22%.
-              Email is now the second-largest revenue line — overtaking
+              Email is now the second-largest revenue line - overtaking
               affiliate, which we&apos;ll wind down in Q2. The chart on this
               page is the result of those threads pulling in the same
               direction for nine consecutive months.
@@ -313,7 +313,7 @@ export function ScreenReport() {
           </div>
         </div>
 
-        {/* RIGHT — operations rail */}
+        {/* RIGHT - operations rail */}
         <div className="relative flex flex-col">
           {/* Top: cover preview + meta */}
           <div

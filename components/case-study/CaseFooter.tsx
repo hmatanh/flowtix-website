@@ -12,7 +12,7 @@ type Props = {
 };
 
 /**
- * CaseFooter — tech / timeline strip + next-project handoff.
+ * CaseFooter - tech / timeline strip + next-project handoff.
  * Calm, minimal. Pentagram / Heydays pacing.
  */
 export function CaseFooter({ project, techStack, duration }: Props) {

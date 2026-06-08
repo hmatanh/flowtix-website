@@ -6,7 +6,7 @@ import { m } from "framer-motion";
 export type Annotation = {
   /** Short label / number, e.g. "01" or "AI" */
   number?: string;
-  /** Eyebrow header — short uppercase title. */
+  /** Eyebrow header - short uppercase title. */
   eyebrow: string;
   /** One-sentence body. */
   body: string;
@@ -26,7 +26,7 @@ type Props = {
   /**
    * When true (default), mobile renders the mockup as a CSS-scaled preview
    * tile that fits the viewport with no horizontal scroll. When false, the
-   * mockup renders as-is on both mobile and desktop — use for hero
+   * mockup renders as-is on both mobile and desktop - use for hero
    * artifacts and brand boards that are already designed to fit mobile
    * (HeroArtifact, BrandTakeover, BrandBoard).
    */
@@ -35,14 +35,14 @@ type Props = {
   designWidth?: number;
   /** The mockup's native aspect ratio (W/H), e.g. "1600/1000". */
   designAspect?: string;
-  /** Deprecated — kept for backward-compat. */
+  /** Deprecated - kept for backward-compat. */
   mobileMinWidth?: number;
 };
 
 const EASE = [0.21, 0.47, 0.32, 0.98] as const;
 
 /**
- * AnnotatedScreen — wraps a product-UI mockup with a brand-wash backdrop,
+ * AnnotatedScreen - wraps a product-UI mockup with a brand-wash backdrop,
  * caption, and a numbered annotation grid.
  *
  * Mobile pattern (when enableMobileScroll = true, the default):
@@ -83,7 +83,7 @@ export function AnnotatedScreen({
   );
 
   // Mobile scale-to-fit tile. The mockup renders at its native design
-  // width inside a CSS-scaled wrapper — the whole UI fits the viewport
+  // width inside a CSS-scaled wrapper - the whole UI fits the viewport
   // proportionally, no scroll, no overlap.
   const MobileTile = (
     <m.div

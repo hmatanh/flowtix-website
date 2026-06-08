@@ -33,14 +33,14 @@ export const batch1: Post[] = [
         <p>
           An <strong>AI implementation roadmap</strong> is not a Gantt chart. It is a
           sequence of forced decisions that prevents you from skipping the boring
-          high-leverage work — problem framing, scoping, adoption planning — in favor of
+          high-leverage work - problem framing, scoping, adoption planning - in favor of
           the fun work, which is shipping prompts.
         </p>
         <div className="my-8 p-6 border border-blue-500/30 bg-blue-500/5 rounded-2xl">
           <div className="text-label text-blue-400 mb-3">Key Takeaways</div>
           <ul className="space-y-2 text-[#ccc] text-sm">
             <li>• A real AI roadmap is five phases, not five tools.</li>
-            <li>• Discovery and scoping take 30% of your timeline — and 80% of your outcome.</li>
+            <li>• Discovery and scoping take 30% of your timeline - and 80% of your outcome.</li>
             <li>• Adoption planning starts before you write a single line of code.</li>
             <li>• Measurement requires a baseline; gather it before launch, not after.</li>
           </ul>
@@ -53,7 +53,7 @@ export const batch1: Post[] = [
           dollars and hours?"
         </p>
         <p>
-          Spend two weeks shadowing the operators. Quote, support, sales, ops — wherever
+          Spend two weeks shadowing the operators. Quote, support, sales, ops - wherever
           your team is bleeding time. Document the top five candidate workflows. For each
           one, attach a real number: <em>this costs us X hours/week at Y$/hour</em>.
         </p>
@@ -86,12 +86,12 @@ export const batch1: Post[] = [
 
         <h2 id="phase-build">Phase 3: Build (Weeks 4–7)</h2>
         <p>
-          With a tight scope, build is the easy part. Modern AI infrastructure —{" "}
+          With a tight scope, build is the easy part. Modern AI infrastructure -{" "}
           <a href="https://www.anthropic.com" target="_blank" rel="noopener noreferrer">
             Claude
           </a>
           , <a href="https://platform.openai.com" target="_blank" rel="noopener noreferrer">OpenAI</a>,
-          <a href="https://vercel.com" target="_blank" rel="noopener noreferrer"> Vercel</a> — has
+          <a href="https://vercel.com" target="_blank" rel="noopener noreferrer"> Vercel</a> - has
           collapsed what used to be a six-month ML project into a four-week build.
         </p>
         <p>
@@ -103,7 +103,7 @@ export const batch1: Post[] = [
         </p>
         <blockquote className="border-l-2 border-blue-500 pl-6 my-8 text-[#bbb] italic">
           The build phase is the shortest phase in a well-scoped AI project. If yours is
-          the longest, the problem is upstream — you under-scoped, or you under-discovered.
+          the longest, the problem is upstream - you under-scoped, or you under-discovered.
         </blockquote>
 
         <h2 id="phase-adopt">Phase 4: Adoption (Weeks 7–10)</h2>
@@ -115,7 +115,7 @@ export const batch1: Post[] = [
         <ul>
           <li>One named owner accountable for usage rates</li>
           <li>Onboarding sessions, recorded, with screen-by-screen walkthroughs</li>
-          <li>A weekly review of "Where did the AI get it wrong?" — celebrated, not hidden</li>
+          <li>A weekly review of "Where did the AI get it wrong?" - celebrated, not hidden</li>
           <li>A clear escalation path when the system surprises someone</li>
         </ul>
         <p>
@@ -127,13 +127,13 @@ export const batch1: Post[] = [
         <h2 id="phase-measure">Phase 5: Measurement (Ongoing)</h2>
         <p>
           Measurement only works if you measured the baseline before launch. If you did
-          not, you cannot prove ROI — only assert it. Capture the four numbers in your
+          not, you cannot prove ROI - only assert it. Capture the four numbers in your
           Phase 1 quantification, then measure them again at week 6, week 12, and week 26.
         </p>
         <p>
           Anything &gt;3x return on the system cost in the first 12 months is a strong
           outcome for an SMB AI project. Anything &lt;1.5x means the system is technically
-          working but operationally failing — usually an adoption issue. Talk to us about
+          working but operationally failing - usually an adoption issue. Talk to us about
           your <a href="/services/">AI systems engagement</a> if you need an outside read.
         </p>
 
@@ -221,7 +221,7 @@ export const batch1: Post[] = [
         <p>
           The problem the pilot solves costs the business $X per month, today. Not
           "feels expensive." A specific number. If you cannot produce one, you are not
-          ready — see our{" "}
+          ready - see our{" "}
           <a href="/blog/ai-roi-how-to-measure">ROI measurement guide</a> for the formulas.
         </p>
 
@@ -234,7 +234,7 @@ export const batch1: Post[] = [
 
         <h3>5. Data access confirmed in writing</h3>
         <p>
-          The data the AI needs — CRM exports, ticket logs, transcripts — is approved by
+          The data the AI needs - CRM exports, ticket logs, transcripts - is approved by
           IT, legal, and the data owner. In writing. Before kickoff. Two months of vendor
           time has been wasted on "we are waiting on access" more times than we can count.
         </p>
@@ -300,7 +300,7 @@ export const batch1: Post[] = [
           <li>The vendor wants to skip discovery because they "know your industry"</li>
           <li>The proposal has no rollback or error-handling section</li>
           <li>References will not get on a live call</li>
-          <li>The contract has no acceptance criteria — only deliverables</li>
+          <li>The contract has no acceptance criteria - only deliverables</li>
         </ul>
         <p>
           For a fuller treatment of vendor evaluation see our companion piece on{" "}
@@ -321,7 +321,7 @@ export const batch1: Post[] = [
         </p>
         <p>
           <strong>Should the pilot run in production?</strong> Yes, on real data, with
-          real users — gated behind a human-in-the-loop where the failure cost is high.
+          real users - gated behind a human-in-the-loop where the failure cost is high.
           Lab-only pilots tell you almost nothing about reality.
         </p>
       </>
@@ -335,7 +335,7 @@ export const batch1: Post[] = [
     readTime: "9 min read",
     date: "May 22, 2026",
     excerpt:
-      "Build vs buy AI is the most expensive decision in your roadmap. This framework gives you a clear answer in under an hour — with the numbers.",
+      "Build vs buy AI is the most expensive decision in your roadmap. This framework gives you a clear answer in under an hour - with the numbers.",
     author: "Flowtix Team",
     tags: ["AI Strategy", "Build vs Buy", "Architecture"],
     toc: [
@@ -364,7 +364,7 @@ export const batch1: Post[] = [
           <ul className="space-y-2 text-[#ccc] text-sm">
             <li>• Buy is the right default for non-differentiating workflows.</li>
             <li>• Build wins when the workflow is your core competitive edge.</li>
-            <li>• The hybrid path — buy the model, build the surface — is right more often than not.</li>
+            <li>• The hybrid path - buy the model, build the surface - is right more often than not.</li>
             <li>• Total cost of ownership is 2–4x the sticker price either way.</li>
           </ul>
         </div>
@@ -374,7 +374,7 @@ export const batch1: Post[] = [
           For most workflows in most businesses, off-the-shelf AI tools are good enough,
           ship faster, and have a maintained roadmap you don't have to fund. Customer
           support agents, marketing copy generators, meeting note-takers, sales follow-up
-          tools — these categories have mature products with thousands of customers
+          tools - these categories have mature products with thousands of customers
           hardening them every day.
         </p>
         <p>
@@ -424,13 +424,13 @@ export const batch1: Post[] = [
           of operating overhead per year).
         </p>
         <blockquote className="border-l-2 border-blue-500 pl-6 my-8 text-[#bbb] italic">
-          The buy-side math wins on speed. The build-side math wins on long-term margin —
+          The buy-side math wins on speed. The build-side math wins on long-term margin -
           but only if the workflow is genuinely differentiating. For everything else,
           custom is a tax you pay forever.
         </blockquote>
         <p>
           Use our <a href="/blog/ai-roi-how-to-measure">ROI formulas</a> to compare both
-          paths over a 36-month window. The answer rarely comes out close — one option
+          paths over a 36-month window. The answer rarely comes out close - one option
           is usually 2x better than the other.
         </p>
 
@@ -458,7 +458,7 @@ export const batch1: Post[] = [
         <h2 id="faq">FAQ</h2>
         <p>
           <strong>Should we build to "own the IP"?</strong> Usually not. The IP that
-          matters is the data, the workflow, and the customer relationship — not the
+          matters is the data, the workflow, and the customer relationship - not the
           inference layer.
         </p>
         <p>
@@ -529,7 +529,7 @@ export const batch1: Post[] = [
         <h2 id="four-layers">The Four Layers</h2>
         <p>
           Think of an AI system the way you would think of a restaurant. The model is the
-          stove — powerful, expensive, replaceable. The data layer is the pantry. The
+          stove - powerful, expensive, replaceable. The data layer is the pantry. The
           orchestration is the kitchen workflow. The interface is the dining room. A
           great restaurant invests in all four. A bad one buys the most expensive stove
           and forgets to train the waiters.
@@ -538,7 +538,7 @@ export const batch1: Post[] = [
         <h2 id="data-layer">Layer 1: The Data Layer</h2>
         <p>
           This is where the AI's context lives. Customer records, support tickets,
-          historical proposals, product docs — any information the AI needs to make a
+          historical proposals, product docs - any information the AI needs to make a
           good decision. For most AI systems, the data layer is where 60% of the value
           gets created and 80% of the bugs come from.
         </p>
@@ -556,7 +556,7 @@ export const batch1: Post[] = [
 
         <h2 id="model-layer">Layer 2: The Model</h2>
         <p>
-          The model is the LLM — Claude, GPT-4, Gemini, etc. This is the part most
+          The model is the LLM - Claude, GPT-4, Gemini, etc. This is the part most
           conversations focus on, and it is increasingly the least differentiating part
           of the stack. The model is largely a commodity. Treat it that way.
         </p>
@@ -573,7 +573,7 @@ export const batch1: Post[] = [
           ask the AI to reason? Should a human review this output before it ships?
         </p>
         <p>
-          Modern orchestration uses <em>agent</em> patterns — small AI workers that hand
+          Modern orchestration uses <em>agent</em> patterns - small AI workers that hand
           off tasks to each other. See our explainer on{" "}
           <a href="/blog/what-is-an-ai-agent">what an AI agent actually is</a> for the
           full breakdown. This layer is where most differentiation actually happens, and
@@ -643,7 +643,7 @@ export const batch1: Post[] = [
         <p>
           When a vendor quotes an AI implementation at $40,000, the actual three-year
           cost to your business is typically $90,000–$120,000. This is not because
-          vendors are dishonest — it is because the costs they cannot see are larger
+          vendors are dishonest - it is because the costs they cannot see are larger
           than the costs they can.
         </p>
         <p>
@@ -656,7 +656,7 @@ export const batch1: Post[] = [
           <ul className="space-y-2 text-[#ccc] text-sm">
             <li>• Total 3-year cost is typically 2–3x the initial quote.</li>
             <li>• Adoption coaching and change management dominate the hidden line items.</li>
-            <li>• Model and inference costs scale with usage — model them at 3x year-one usage.</li>
+            <li>• Model and inference costs scale with usage - model them at 3x year-one usage.</li>
             <li>• Build a 20% reserve into every AI budget from day one.</li>
           </ul>
         </div>
@@ -665,7 +665,7 @@ export const batch1: Post[] = [
 
         <h3>1. Internal hours during build</h3>
         <p>
-          Your team will spend 80–120 hours during the build window — answering vendor
+          Your team will spend 80–120 hours during the build window - answering vendor
           questions, reviewing outputs, validating data. At a $75 blended rate, that's
           $6,000–$9,000 nobody quoted.
         </p>
@@ -692,7 +692,7 @@ export const batch1: Post[] = [
 
         <h3>5. The "second project" tax</h3>
         <p>
-          The first AI project surfaces three more. This is good — but it also means
+          The first AI project surfaces three more. This is good - but it also means
           your year-two budget is rarely 1.0x year-one. It's 1.5–2x as you scale wins.
         </p>
 
@@ -764,7 +764,7 @@ export const batch1: Post[] = [
     readTime: "6 min read",
     date: "May 22, 2026",
     excerpt:
-      "AI build timelines have collapsed in 2026 — but most teams still over- or under-estimate. Here's how long each phase actually takes.",
+      "AI build timelines have collapsed in 2026 - but most teams still over- or under-estimate. Here's how long each phase actually takes.",
     author: "Flowtix Team",
     tags: ["Timeline", "Planning", "Project Management"],
     toc: [
@@ -794,7 +794,7 @@ export const batch1: Post[] = [
           <ul className="space-y-2 text-[#ccc] text-sm">
             <li>• First project: 10–12 weeks end-to-end is the realistic SMB number.</li>
             <li>• Subsequent projects on the same infrastructure: 3–6 weeks.</li>
-            <li>• Discovery and adoption are the under-estimated phases — not build.</li>
+            <li>• Discovery and adoption are the under-estimated phases - not build.</li>
             <li>• Anyone quoting "live in two weeks" is selling a demo, not a system.</li>
           </ul>
         </div>
@@ -803,23 +803,23 @@ export const batch1: Post[] = [
         <p>For a first-project SMB AI system:</p>
         <ol>
           <li>
-            <strong>Discovery (1–2 weeks)</strong> — Map the workflow, quantify the
+            <strong>Discovery (1–2 weeks)</strong> - Map the workflow, quantify the
             problem, identify data sources, align stakeholders.
           </li>
           <li>
-            <strong>Scope (3–5 days)</strong> — Lock the inputs, outputs, KPIs,
+            <strong>Scope (3–5 days)</strong> - Lock the inputs, outputs, KPIs,
             human-in-the-loop, and rollback plan.
           </li>
           <li>
-            <strong>Build (3–5 weeks)</strong> — Stand up the data layer, agent layer,
+            <strong>Build (3–5 weeks)</strong> - Stand up the data layer, agent layer,
             and interface. Iterate with the operator user.
           </li>
           <li>
-            <strong>Adoption (2–4 weeks)</strong> — Train users, refine the interface,
+            <strong>Adoption (2–4 weeks)</strong> - Train users, refine the interface,
             handle edge cases as they emerge.
           </li>
           <li>
-            <strong>Stabilization (2 weeks)</strong> — Monitor, fix the inevitable
+            <strong>Stabilization (2 weeks)</strong> - Monitor, fix the inevitable
             surprises, hand off to ongoing ops.
           </li>
         </ol>
@@ -831,10 +831,10 @@ export const batch1: Post[] = [
         <h2 id="scope-impact">How Scope Changes the Number</h2>
         <p>The variables that move the timeline most:</p>
         <ul>
-          <li><strong>Number of integrations</strong> — each external system adds 1–2 weeks</li>
-          <li><strong>Compliance scope</strong> — HIPAA, SOC 2, GDPR add 4–8 weeks of work</li>
-          <li><strong>Number of user roles</strong> — each distinct user persona adds 1–2 weeks of design</li>
-          <li><strong>Output review complexity</strong> — heavy human-in-the-loop workflows add 2–3 weeks</li>
+          <li><strong>Number of integrations</strong> - each external system adds 1–2 weeks</li>
+          <li><strong>Compliance scope</strong> - HIPAA, SOC 2, GDPR add 4–8 weeks of work</li>
+          <li><strong>Number of user roles</strong> - each distinct user persona adds 1–2 weeks of design</li>
+          <li><strong>Output review complexity</strong> - heavy human-in-the-loop workflows add 2–3 weeks</li>
         </ul>
         <p>
           The variables that don't actually move the timeline much:
@@ -913,20 +913,20 @@ export const batch1: Post[] = [
         <h2 id="intro">Why These 9 AI Vendor Questions, Specifically</h2>
         <p>
           Every AI vendor pitch sounds great. The differentiation is in how the team
-          handles the awkward questions — the ones that make a polished sales engineer
+          handles the awkward questions - the ones that make a polished sales engineer
           go quiet and look at the slide deck. These nine are the ones we wish every
           buyer asked before signing.
         </p>
         <p>
           Each question is here because it caught a real failure mode in a real
           engagement. If your AI vendor cannot give you a confident, specific answer to
-          all nine, the bad fit is not subjective — it is structural.
+          all nine, the bad fit is not subjective - it is structural.
         </p>
         <div className="my-8 p-6 border border-blue-500/30 bg-blue-500/5 rounded-2xl">
           <div className="text-label text-blue-400 mb-3">Key Takeaways</div>
           <ul className="space-y-2 text-[#ccc] text-sm">
             <li>• Vendors filter on capability. You should filter on candor.</li>
-            <li>• Ask each question with no follow-ups — see how they fill the silence.</li>
+            <li>• Ask each question with no follow-ups - see how they fill the silence.</li>
             <li>• The right answer is often "here's how we've gotten that wrong before."</li>
             <li>• A vendor without a rollback story is a vendor without scars.</li>
           </ul>
@@ -944,7 +944,7 @@ export const batch1: Post[] = [
         <h3>2. Walk me through your data layer for a customer like us.</h3>
         <p>
           Most vendors can show their model layer. Half can show their interface. The
-          best ones can show you their data layer — how context is retrieved, how
+          best ones can show you their data layer - how context is retrieved, how
           permissions work, how data stays fresh. If they handwave this, the data layer
           is held together with cron jobs.
         </p>
@@ -952,7 +952,7 @@ export const batch1: Post[] = [
         <h3>3. What happens when the AI is uncertain?</h3>
         <p>
           The correct answer involves human-in-the-loop, confidence scores, and
-          rollback. If the answer is "the AI is very accurate" — wrong answer.
+          rollback. If the answer is "the AI is very accurate" - wrong answer.
           Production systems have to handle uncertainty as a first-class case.
         </p>
 
@@ -1040,7 +1040,7 @@ export const batch1: Post[] = [
     readTime: "7 min read",
     date: "May 22, 2026",
     excerpt:
-      "The POC-to-production gap is where 80% of AI projects die. Here's exactly what changes between a demo and a real system — and how to bridge it.",
+      "The POC-to-production gap is where 80% of AI projects die. Here's exactly what changes between a demo and a real system - and how to bridge it.",
     author: "Flowtix Team",
     tags: ["POC", "Production", "Implementation"],
     toc: [
@@ -1077,13 +1077,13 @@ export const batch1: Post[] = [
         <h2 id="differences">What Actually Changes From POC to Production</h2>
         <p>Here's what gets added when a POC graduates:</p>
         <ul>
-          <li><strong>Authentication</strong> — POCs use shared logins; production needs SSO, role-based access, audit logs</li>
-          <li><strong>Error handling</strong> — POCs assume happy paths; production needs every error class handled</li>
-          <li><strong>Monitoring</strong> — POCs are watched manually; production needs dashboards and alerts</li>
-          <li><strong>Data sync</strong> — POCs use exports; production needs live integrations</li>
-          <li><strong>Performance</strong> — POCs run on one user; production runs on hundreds</li>
-          <li><strong>Compliance</strong> — POCs sit outside policy; production needs review</li>
-          <li><strong>Support</strong> — POCs get vendor attention; production needs runbooks and on-call</li>
+          <li><strong>Authentication</strong> - POCs use shared logins; production needs SSO, role-based access, audit logs</li>
+          <li><strong>Error handling</strong> - POCs assume happy paths; production needs every error class handled</li>
+          <li><strong>Monitoring</strong> - POCs are watched manually; production needs dashboards and alerts</li>
+          <li><strong>Data sync</strong> - POCs use exports; production needs live integrations</li>
+          <li><strong>Performance</strong> - POCs run on one user; production runs on hundreds</li>
+          <li><strong>Compliance</strong> - POCs sit outside policy; production needs review</li>
+          <li><strong>Support</strong> - POCs get vendor attention; production needs runbooks and on-call</li>
         </ul>
         <p>
           Each of these is a real engineering line item. Multiply them by a few weeks
@@ -1125,10 +1125,10 @@ export const batch1: Post[] = [
 
         <h2 id="antipatterns">Anti-patterns to Avoid</h2>
         <ul>
-          <li>"We'll add auth later" — auth is a foundational design decision, not a feature</li>
-          <li>"We'll re-platform when we go to production" — re-platforms cost 2–3x what doing it right cost</li>
-          <li>"The POC team will hand off to engineering" — handoff projects fail at a 60% rate</li>
-          <li>"We'll figure out monitoring after launch" — without monitoring, you cannot prove value</li>
+          <li>"We'll add auth later" - auth is a foundational design decision, not a feature</li>
+          <li>"We'll re-platform when we go to production" - re-platforms cost 2–3x what doing it right cost</li>
+          <li>"The POC team will hand off to engineering" - handoff projects fail at a 60% rate</li>
+          <li>"We'll figure out monitoring after launch" - without monitoring, you cannot prove value</li>
         </ul>
         <p>
           See also our <a href="/blog/ai-pilot-project-checklist">pilot checklist</a> and
@@ -1145,7 +1145,7 @@ export const batch1: Post[] = [
           typical. Anything &lt;2x usually means you skipped real production hardening.
         </p>
         <p>
-          <strong>Can a vendor do both POC and production?</strong> Yes — and arguably
+          <strong>Can a vendor do both POC and production?</strong> Yes - and arguably
           should. Vendor handoffs between POC and production are a major source of
           failure.
         </p>
@@ -1180,7 +1180,7 @@ export const batch1: Post[] = [
         </p>
         <p>
           What SMBs actually need is a lightweight <strong>AI governance framework</strong>{" "}
-          — five principles, two reviews, one named owner. The version below has been
+          - five principles, two reviews, one named owner. The version below has been
           deployed in real businesses, holds up under audit, and ships in a week.
         </p>
         <div className="my-8 p-6 border border-orange-500/30 bg-orange-500/5 rounded-2xl">
@@ -1224,7 +1224,7 @@ export const batch1: Post[] = [
         <h3>5. Documented Rollback</h3>
         <p>
           Every production AI system has a written rollback procedure. The procedure is
-          tested at least once. Without this, you do not have a system — you have a
+          tested at least once. Without this, you do not have a system - you have a
           liability.
         </p>
 
@@ -1250,7 +1250,7 @@ export const batch1: Post[] = [
         </ol>
         <p>
           For sensitive industries (healthcare, finance, legal), this lightweight
-          framework is the floor — not the ceiling. Layer industry-specific controls on
+          framework is the floor - not the ceiling. Layer industry-specific controls on
           top. See our <a href="/blog/ai-healthcare-patient-comms">healthcare guide</a> and{" "}
           <a href="/blog/ai-law-firms-contract-intake">law firm guide</a> for vertical
           specifics.
@@ -1273,7 +1273,7 @@ export const batch1: Post[] = [
         </p>
         <blockquote className="border-l-2 border-orange-500 pl-6 my-8 text-[#bbb] italic">
           Lightweight governance that ships beats heavyweight governance that doesn't.
-          Five principles, one owner, two reviews a year — and you are ahead of 80% of
+          Five principles, one owner, two reviews a year - and you are ahead of 80% of
           your peers.
         </blockquote>
 
@@ -1289,7 +1289,7 @@ export const batch1: Post[] = [
         </p>
         <p>
           <strong>Who should be the AI owner?</strong> The person who already owns risk
-          for the business — COO, head of ops, or CFO. Not the most technical person.
+          for the business - COO, head of ops, or CFO. Not the most technical person.
           Governance is an ownership problem, not a technical one.
         </p>
       </>
@@ -1303,7 +1303,7 @@ export const batch1: Post[] = [
     readTime: "7 min read",
     date: "May 22, 2026",
     excerpt:
-      "The first AI project's scope decides everything that follows. Use this 6-question framework to scope it tightly — and ship something real.",
+      "The first AI project's scope decides everything that follows. Use this 6-question framework to scope it tightly - and ship something real.",
     author: "Flowtix Team",
     tags: ["Scoping", "Planning", "First Project"],
     toc: [
@@ -1318,7 +1318,7 @@ export const batch1: Post[] = [
         <h2 id="intro">Why Scoping Is the Real Skill</h2>
         <p>
           Anyone can build an AI demo. The skill that decides whether a project ships is
-          scoping — the ability to draw a tight box around the workflow, agree on what
+          scoping - the ability to draw a tight box around the workflow, agree on what
           is in and what is out, and resist the urge to expand mid-flight.
         </p>
         <p>
@@ -1340,7 +1340,7 @@ export const batch1: Post[] = [
 
         <h3>1. What is the input?</h3>
         <p>
-          Be exact. "An email" is not exact — is it an inbound inquiry, an internal
+          Be exact. "An email" is not exact - is it an inbound inquiry, an internal
           forward, a thread? Pin the input format and source.
         </p>
 
@@ -1379,13 +1379,13 @@ export const batch1: Post[] = [
         <h2 id="narrow-better">Why Narrow Beats Broad, Every Time</h2>
         <p>
           A narrow project ships. A broad one doesn't. We have run this experiment
-          dozens of times — the narrow team gets a win in 10 weeks and uses it to fund
+          dozens of times - the narrow team gets a win in 10 weeks and uses it to fund
           and motivate the next three projects. The broad team is still planning at
           week 14.
         </p>
         <blockquote className="border-l-2 border-blue-500 pl-6 my-8 text-[#bbb] italic">
           You don't win the war by scoping the whole campaign. You win by taking the
-          first hill — and using it to fund the second.
+          first hill - and using it to fund the second.
         </blockquote>
         <p>
           For the broader project structure see the{" "}
@@ -1396,7 +1396,7 @@ export const batch1: Post[] = [
         <h2 id="expansion">How to Expand After Win #1</h2>
         <ol>
           <li>Ship and measure the first project. Hit the KPI.</li>
-          <li>Use the same six-question framework for project two — narrow again.</li>
+          <li>Use the same six-question framework for project two - narrow again.</li>
           <li>Reuse the data, model, and orchestration infrastructure from project one.</li>
           <li>Project two ships in 4–6 weeks instead of 10–12 because of compound infrastructure.</li>
           <li>By project four you have a flywheel and a real AI capability.</li>

@@ -72,7 +72,7 @@ export const projects: Project[] = [
     duration: "6 weeks",
     teamLine: "12 agents",
     what: [
-      "Complete brand identity — logo, colors, typography, design system",
+      "Complete brand identity - logo, colors, typography, design system",
       "AI property matching engine that learns buyer preferences and scores listings automatically",
       "CRM automation with AI-written follow-up emails based on viewed properties",
       "Agent dashboard with unified view of leads, properties, and AI recommendations",
@@ -85,7 +85,7 @@ export const projects: Project[] = [
     ],
     testimonial: {
       quote:
-        "Flowtix didn’t just build us a tool — they understood the chaos of a real estate office and designed something that actually fits how agents think and work.",
+        "Flowtix didn’t just build us a tool - they understood the chaos of a real estate office and designed something that actually fits how agents think and work.",
       attribution: "Sarah Moran, Founder",
     },
   },
@@ -126,8 +126,8 @@ export const projects: Project[] = [
     teamLine: "6 practitioners · 400+ patients/month",
     what: [
       "Soft, approachable medical brand identity",
-      "AI intake automation — processes forms, extracts key info, flags urgent cases, routes by practitioner",
-      "Appointment intelligence — predicts no-shows, sends smart reminders, auto-fills gaps",
+      "AI intake automation - processes forms, extracts key info, flags urgent cases, routes by practitioner",
+      "Appointment intelligence - predicts no-shows, sends smart reminders, auto-fills gaps",
       "Practitioner mobile UI with AI-prepared patient summaries",
       "Admin web portal for practice management",
     ],
@@ -180,10 +180,10 @@ export const projects: Project[] = [
     teamLine: "4 advisors · 85 clients",
     what: [
       "Elevated, luxury wealth brand identity (replaced generic accounting-firm look)",
-      "AI reporting engine — generates personalized 12-page branded quarterly PDFs from advisor data",
+      "AI reporting engine - generates personalized 12-page branded quarterly PDFs from advisor data",
       "Secure client portal for portfolio, AI insights, reports, and meeting scheduling",
       "AI morning market briefs personalized per advisor",
-      "Advisor dashboard — clients, reviews, AI alerts, and performance in one view",
+      "Advisor dashboard - clients, reviews, AI alerts, and performance in one view",
     ],
     results: [
       { value: "<5 min", label: "Report creation (from 3h per client)" },
@@ -206,7 +206,7 @@ export const projects: Project[] = [
     category: "Brand + Shopify + AI Content",
     tags: ["Brand & Design", "Web Development", "AI Systems", "Automation"],
     description:
-      "Brand identity from zero, custom Shopify store, AI brand-voice content engine, and full email automation — 0 to launch in 5 weeks.",
+      "Brand identity from zero, custom Shopify store, AI brand-voice content engine, and full email automation - 0 to launch in 5 weeks.",
     brand: {
       primary: "#DC2626",
       dark: "#1A0707",
@@ -226,10 +226,10 @@ export const projects: Project[] = [
     duration: "5 weeks · 0 to launch",
     teamLine: "Founder + 2 part-time",
     what: [
-      "Complete brand identity from scratch — logo, colorway, type, photography direction, packaging, guidelines",
+      "Complete brand identity from scratch - logo, colorway, type, photography direction, packaging, guidelines",
       "Custom-built Shopify storefront with full product pages, cart, collections",
-      "AI content system trained on brand voice — generates product descriptions, captions, emails, ad copy",
-      "Email automation — welcome, abandoned cart, post-purchase, reorder",
+      "AI content system trained on brand voice - generates product descriptions, captions, emails, ad copy",
+      "Email automation - welcome, abandoned cart, post-purchase, reorder",
       "Social media design system with templates for stories, feed, launches",
     ],
     results: [
@@ -281,10 +281,10 @@ export const projects: Project[] = [
     duration: "7 weeks",
     teamLine: "14 team · 23 active clients",
     what: [
-      "Brand refresh — modernized identity without a full rebrand",
-      "Brief intake AI — client fills simple form, AI generates full creative brief in Linx’s format",
-      "Proposal AI trained on 40+ past proposals — tailored proposals in 45 minutes instead of 8 hours",
-      "Reporting AI — pulls from Meta/Google/GA, generates branded monthly PDF automatically",
+      "Brand refresh - modernized identity without a full rebrand",
+      "Brief intake AI - client fills simple form, AI generates full creative brief in Linx’s format",
+      "Proposal AI trained on 40+ past proposals - tailored proposals in 45 minutes instead of 8 hours",
+      "Reporting AI - pulls from Meta/Google/GA, generates branded monthly PDF automatically",
       "Client portal with campaign performance, report downloads, creative approvals",
       "Team dashboard with project status, deliverables, AI-flagged anomalies",
     ],
@@ -295,7 +295,7 @@ export const projects: Project[] = [
     ],
     testimonial: {
       quote:
-        "I was skeptical about AI in a creative agency — worried it would make everything feel generic. Flowtix proved the opposite. The systems they built made us faster without making us less creative.",
+        "I was skeptical about AI in a creative agency - worried it would make everything feel generic. Flowtix proved the opposite. The systems they built made us faster without making us less creative.",
       attribution: "Priya Nair, CEO",
     },
   },

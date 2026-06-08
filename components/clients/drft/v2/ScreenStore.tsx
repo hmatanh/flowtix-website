@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * Drft V2 — Storefront
+ * Drft V2 - Storefront
  *
  * DTC workwear product page. Bold "DRFT" wordmark in navigation, deep
  * orange wash, schematic jacket silhouettes (no real photography), prod
@@ -67,7 +67,7 @@ export function ScreenStore() {
 
         {/* ====== HERO PRODUCT ====== */}
         <div className="flex-1 grid grid-cols-[1fr_360px] overflow-hidden">
-          {/* Left — schematic product on orange */}
+          {/* Left - schematic product on orange */}
           <div
             className="relative overflow-hidden"
             style={{
@@ -87,7 +87,7 @@ export function ScreenStore() {
               </span>
             </div>
 
-            {/* Coat schematic — silhouette */}
+            {/* Coat schematic - silhouette */}
             <m.svg
               className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[52%]"
               viewBox="0 0 200 320"
@@ -186,7 +186,7 @@ export function ScreenStore() {
             </div>
           </div>
 
-          {/* Right — Product details panel */}
+          {/* Right - Product details panel */}
           <aside
             className="px-7 py-8 border-l overflow-hidden flex flex-col gap-5"
             style={{

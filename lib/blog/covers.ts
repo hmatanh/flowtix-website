@@ -5,12 +5,12 @@
  * TOPIC-RELEVANT cover image and that no two posts in the same
  * category ever share one:
  *
- *   1. SLUG_OVERRIDE — the 6 flagship posts (the 6 hand-written ones
+ *   1. SLUG_OVERRIDE - the 6 flagship posts (the 6 hand-written ones
  *      in lib/posts.tsx, not the long-tail batch posts). Each is
  *      mapped to a specifically-chosen Unsplash photo that matches
  *      its topic exactly.
  *
- *   2. CATEGORY_POOL + index-within-category — every other post gets
+ *   2. CATEGORY_POOL + index-within-category - every other post gets
  *      a topic-relevant photo from its category's pool, selected by
  *      its ORDINAL POSITION among posts of the same category. Since
  *      every pool is sized to be larger than the number of posts in
@@ -24,10 +24,10 @@
  * produce ~18 expected collisions inside Business alone (birthday
  * paradox). Position-based assignment is a perfect mapping for any
  * pool whose size meets or exceeds its category size. Plain
- * pigeonhole — no probabilistic collisions.
+ * pigeonhole - no probabilistic collisions.
  *
  * ──────────────────────────────────────────────────────────────────
- * LICENSING — every single photo URL produced by this module is
+ * LICENSING - every single photo URL produced by this module is
  * served from images.unsplash.com under the Unsplash License:
  *
  *   • Free for commercial AND non-commercial use
@@ -44,10 +44,10 @@
  * ──────────────────────────────────────────────────────────────────
  *
  * Image delivery params (chosen for blog-card use):
- *   w=800       — 2× retina at 400 px display width
- *   q=75        — sweet spot for quality / file size (~30–50 KB)
- *   auto=format — Unsplash serves WebP/AVIF when supported
- *   fit=crop    — smart-crop to the requested aspect ratio
+ *   w=800       - 2× retina at 400 px display width
+ *   q=75        - sweet spot for quality / file size (~30–50 KB)
+ *   auto=format - Unsplash serves WebP/AVIF when supported
+ *   fit=crop    - smart-crop to the requested aspect ratio
  *
  * Card-level <img> tags use loading="lazy" + explicit width/height
  * to prevent CLS. Initial-paint image weight stays under ~400 KB.
@@ -73,7 +73,7 @@ const SLUG_OVERRIDE: Record<string, string> = {
 
 /**
  * Per-category Unsplash photo pools. Each pool's size is greater
- * than the number of posts in that category — see file-header doc
+ * than the number of posts in that category - see file-header doc
  * for the breakdown.
  */
 const CATEGORY_POOL: Record<string, readonly string[]> = {
@@ -81,7 +81,7 @@ const CATEGORY_POOL: Record<string, readonly string[]> = {
   // Theme: neural nets, gradients, circuits, abstract digital, data,
   // dark futuristic, AI-as-concept.
   // Note: 1518770660439 and 1677442136019 are intentionally NOT here
-  // — they're used by SLUG_OVERRIDE and excluding them from the pool
+  // - they're used by SLUG_OVERRIDE and excluding them from the pool
   // keeps every photo unique across the full blog listing.
   "AI Systems": [
     "1610563166150-b34df4f3bcd6",
@@ -264,12 +264,12 @@ const SLUG_TO_CAT_INDEX: Record<string, number> = (() => {
  * Resolution order:
  *   1. SLUG_OVERRIDE wins if present.
  *   2. Otherwise: pool[positionInCategory % pool.length]
- *      — which never collides while pool ≥ category size.
+ *      - which never collides while pool ≥ category size.
  *
- * @param slug     — the post slug
- * @param category — the post category (one of CATEGORIES)
- * @param width    — desired output width (800 for cards, 1200 for retina hero)
- * @returns        — a ready-to-use Unsplash CDN URL
+ * @param slug     - the post slug
+ * @param category - the post category (one of CATEGORIES)
+ * @param width    - desired output width (800 for cards, 1200 for retina hero)
+ * @returns        - a ready-to-use Unsplash CDN URL
  */
 export function getCoverImage(
   slug: string,
@@ -298,7 +298,7 @@ export function getCoverImage(
 
 /**
  * Generic alt text for a post cover. Photos are decorative-
- * supportive — they don't carry meaning the title doesn't already
+ * supportive - they don't carry meaning the title doesn't already
  * convey, so a generic "Cover image for: <title>" satisfies
  * screen-reader needs without claiming the image depicts content
  * it doesn't actually depict.

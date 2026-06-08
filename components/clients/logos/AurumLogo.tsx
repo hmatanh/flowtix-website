@@ -23,7 +23,7 @@ export function AurumLogo({ height = 44, className = "" }: Props) {
         fill="none"
       />
 
-      {/* Serif "A" — left leg, right leg, crossbar */}
+      {/* Serif "A" - left leg, right leg, crossbar */}
       <path
         d="M8 34 L20 8"
         stroke="white"

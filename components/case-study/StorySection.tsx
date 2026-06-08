@@ -6,7 +6,7 @@ import { m } from "framer-motion";
 const EASE = [0.21, 0.47, 0.32, 0.98] as const;
 
 type Props = {
-  /** Argument-as-heading. Not "Results" — "The system disappeared into the workflow." */
+  /** Argument-as-heading. Not "Results" - "The system disappeared into the workflow." */
   heading: ReactNode;
   /** Optional tiny eyebrow above the heading. */
   eyebrow?: string;
@@ -19,7 +19,7 @@ type Props = {
 };
 
 /**
- * StorySection — opinion-as-heading section pattern from Linear.
+ * StorySection - opinion-as-heading section pattern from Linear.
  * Heading is the argument. Body is the evidence. Generous whitespace.
  */
 export function StorySection({

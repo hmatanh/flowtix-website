@@ -1,9 +1,9 @@
 "use client";
 
 /**
- * Linx V2 — Studio Dashboard
+ * Linx V2 - Studio Dashboard
  *
- * Every client, every channel, every report — one screen. The partners
+ * Every client, every channel, every report - one screen. The partners
  * open it once at 8am. The system has already done the morning.
  */
 
@@ -312,7 +312,7 @@ export function ScreenDashboard() {
                 </div>
                 <p className="text-[#E6E0F4] text-[11.5px] leading-relaxed">
                   <span className="text-white font-medium">Otterhaus</span> dipped
-                  -2.1% on a paid spend pause — Pia&apos;s call at 10am.{" "}
+                  -2.1% on a paid spend pause - Pia&apos;s call at 10am.{" "}
                   <span className="text-white font-medium">Marlow</span>{" "}
                   report ready for your sign-off. Two proposals due Friday.
                 </p>
@@ -329,7 +329,7 @@ export function ScreenDashboard() {
                     { t: "10:00", title: "Otterhaus · Pia", who: "Iris", flag: true },
                     { t: "11:30", title: "Marlow report walk-through", who: "Iris + Lior" },
                     { t: "14:00", title: "Heyworth proposal v3", who: "Sarah", ai: true },
-                    { t: "16:00", title: "New business — Nascent II", who: "Iris" },
+                    { t: "16:00", title: "New business - Nascent II", who: "Iris" },
                   ].map((e, i) => (
                     <div
                       key={i}

@@ -16,7 +16,7 @@ export const batch8: Post[] = [
     readTime: "10 min read",
     date: "July 11, 2026",
     excerpt:
-      "A practical, builder-focused tour of the Claude API in 2026 — what to use it for, what to skip, and the patterns that produce production-grade systems.",
+      "A practical, builder-focused tour of the Claude API in 2026 - what to use it for, what to skip, and the patterns that produce production-grade systems.",
     author: "Flowtix Team",
     tags: ["Claude", "API", "AI Development"],
     toc: [
@@ -67,7 +67,7 @@ export const batch8: Post[] = [
         <div className={C_BLUE}>
           <div className="text-label text-blue-400 mb-3">Prompt Discipline</div>
           <ul className="space-y-2 text-[#ccc] text-sm">
-            <li>&bull; One system prompt per use case &mdash; don&apos;t share across features.</li>
+            <li>&bull; One system prompt per use case - don&apos;t share across features.</li>
             <li>&bull; Version-control system prompts. They are code.</li>
             <li>&bull; Eval changes before deploying.</li>
           </ul>
@@ -200,7 +200,7 @@ export const batch8: Post[] = [
         <h2 id="migration">Migration Between Them</h2>
         <p>
           If you&apos;ve built on Assistants and need to migrate, plan 4&ndash;8 weeks per
-          agent. The state model is the hardest part &mdash; Assistants stores threads
+          agent. The state model is the hardest part - Assistants stores threads
           on their side, your custom version has to recreate them. Plan a parallel
           run period.
         </p>
@@ -222,7 +222,7 @@ export const batch8: Post[] = [
 
         <h2 id="faq">FAQ</h2>
         <p><strong>What about Anthropic&apos;s equivalent?</strong> Less managed, more SDK-driven. Custom-leaning by default.</p>
-        <p><strong>Can we mix?</strong> Yes &mdash; some agents on Assistants, others custom. Common at mid-size companies.</p>
+        <p><strong>Can we mix?</strong> Yes - some agents on Assistants, others custom. Common at mid-size companies.</p>
         <p><strong>Open-source frameworks?</strong> Many. Production maturity varies. Test before committing.</p>
       </>
     ),
@@ -235,7 +235,7 @@ export const batch8: Post[] = [
     readTime: "9 min read",
     date: "July 13, 2026",
     excerpt:
-      "Most prompt engineering content is about chatbots. Here is the prompt engineering that produces production business workflows — reliable, auditable, on-brand.",
+      "Most prompt engineering content is about chatbots. Here is the prompt engineering that produces production business workflows - reliable, auditable, on-brand.",
     author: "Flowtix Team",
     tags: ["Prompt Engineering", "AI Workflows", "Production"],
     toc: [
@@ -325,9 +325,9 @@ export const batch8: Post[] = [
         <p>See <a href="/services/ai-systems/">our AI systems service</a>.</p>
 
         <h2 id="faq">FAQ</h2>
-        <p><strong>Should we use a prompt management tool?</strong> For teams of 3+, yes &mdash; LangSmith, Helicone, PromptLayer all useful.</p>
+        <p><strong>Should we use a prompt management tool?</strong> For teams of 3+, yes - LangSmith, Helicone, PromptLayer all useful.</p>
         <p><strong>How often to iterate?</strong> Weekly during development, then quarterly with monitoring.</p>
-        <p><strong>Model-specific prompts?</strong> Yes &mdash; tune per model. Don&apos;t share prompts across providers without re-testing.</p>
+        <p><strong>Model-specific prompts?</strong> Yes - tune per model. Don&apos;t share prompts across providers without re-testing.</p>
       </>
     ),
   },
@@ -357,7 +357,7 @@ export const batch8: Post[] = [
       <>
         <h2 id="what-rag-is">What RAG Actually Is</h2>
         <p>
-          RAG &mdash; retrieval-augmented generation &mdash; is the pattern where the
+          RAG - retrieval-augmented generation - is the pattern where the
           model answers questions using passages retrieved from your data, not its
           training. Done right: factual, grounded, citation-backed answers. Done wrong:
           a chatbot that hallucinates with extra steps.
@@ -425,13 +425,13 @@ export const batch8: Post[] = [
           <li>No re-ranking layer.</li>
           <li>Generation prompt that doesn&apos;t enforce citations.</li>
           <li>No eval suite to catch regressions.</li>
-          <li>Stale data &mdash; no freshness pipeline.</li>
+          <li>Stale data - no freshness pipeline.</li>
         </ol>
 
         <blockquote className={Q_BLUE}>
           A well-built RAG system is boring. It answers questions accurately, cites
           sources, refuses when uncertain, and stays up-to-date. The fancy version most
-          builders try first is the opposite of boring &mdash; and the opposite of
+          builders try first is the opposite of boring - and the opposite of
           working.
         </blockquote>
 
@@ -440,7 +440,7 @@ export const batch8: Post[] = [
         <h2 id="faq">FAQ</h2>
         <p><strong>Vector DB choice?</strong> pgvector if you&apos;re on Postgres. Pinecone or Weaviate at scale.</p>
         <p><strong>How big a corpus before RAG is worth it?</strong> Above ~50 documents. Below that, just include them in context.</p>
-        <p><strong>Cost?</strong> Embedding is cheap. Storage is cheap. The expensive part is the generation call &mdash; same as without RAG.</p>
+        <p><strong>Cost?</strong> Embedding is cheap. Storage is cheap. The expensive part is the generation call - same as without RAG.</p>
       </>
     ),
   },
@@ -540,12 +540,12 @@ export const batch8: Post[] = [
 
         <h2 id="criteria">Decision Criteria</h2>
         <ul>
-          <li><strong>Scale</strong> &mdash; how many vectors, how many queries/sec?</li>
-          <li><strong>Latency budget</strong> &mdash; p99 target?</li>
-          <li><strong>Hybrid search</strong> &mdash; need keyword + semantic?</li>
-          <li><strong>Existing stack</strong> &mdash; already on Postgres?</li>
-          <li><strong>Cost sensitivity</strong> &mdash; what&apos;s the budget at year 2?</li>
-          <li><strong>Ops capacity</strong> &mdash; can you run infrastructure?</li>
+          <li><strong>Scale</strong> - how many vectors, how many queries/sec?</li>
+          <li><strong>Latency budget</strong> - p99 target?</li>
+          <li><strong>Hybrid search</strong> - need keyword + semantic?</li>
+          <li><strong>Existing stack</strong> - already on Postgres?</li>
+          <li><strong>Cost sensitivity</strong> - what&apos;s the budget at year 2?</li>
+          <li><strong>Ops capacity</strong> - can you run infrastructure?</li>
         </ul>
 
         <h2 id="cost">Cost At Scale</h2>
@@ -565,7 +565,7 @@ export const batch8: Post[] = [
 
         <blockquote className={Q_BLUE}>
           For 80% of teams shipping RAG today, pgvector is the right answer. The other
-          20% know exactly why they need Pinecone or Weaviate &mdash; usually scale or
+          20% know exactly why they need Pinecone or Weaviate - usually scale or
           a specific feature.
         </blockquote>
 
@@ -660,8 +660,8 @@ export const batch8: Post[] = [
         <h2 id="gotchas">Gotchas</h2>
         <ul>
           <li>Self-hosted needs a running database and reverse proxy.</li>
-          <li>Workflow versioning is manual &mdash; build a backup discipline.</li>
-          <li>Errors can be silent &mdash; set up alerting.</li>
+          <li>Workflow versioning is manual - build a backup discipline.</li>
+          <li>Errors can be silent - set up alerting.</li>
           <li>Long-running workflows hit timeouts; design for chunking.</li>
         </ul>
 
@@ -674,7 +674,7 @@ export const batch8: Post[] = [
 
         <blockquote className={Q_GREEN}>
           n8n in 2026 is the founder&apos;s automation Swiss Army knife. Cheap, fast,
-          and powerful &mdash; for teams comfortable with a small ops surface.
+          and powerful - for teams comfortable with a small ops surface.
         </blockquote>
 
         <p>See <a href="/blog/zapier-vs-make-vs-n8n">our automation platform comparison</a>.</p>
@@ -719,11 +719,11 @@ export const batch8: Post[] = [
 
         <h2 id="framework">The Framework</h2>
         <ol>
-          <li>Voice first &mdash; codify the brand voice in writing before any AI touches a draft.</li>
-          <li>Ideas stay human &mdash; AI doesn&apos;t decide what to write about.</li>
-          <li>Production with AI &mdash; structured drafting against voice rules.</li>
-          <li>Human review &mdash; every published piece gets human editor pass.</li>
-          <li>Measure differently &mdash; not just output volume, but reader engagement.</li>
+          <li>Voice first - codify the brand voice in writing before any AI touches a draft.</li>
+          <li>Ideas stay human - AI doesn&apos;t decide what to write about.</li>
+          <li>Production with AI - structured drafting against voice rules.</li>
+          <li>Human review - every published piece gets human editor pass.</li>
+          <li>Measure differently - not just output volume, but reader engagement.</li>
         </ol>
 
         <h2 id="voice">Voice First</h2>
@@ -752,7 +752,7 @@ export const batch8: Post[] = [
         <h2 id="ideas">Ideas Stay Human</h2>
         <p>
           AI is excellent at executing on an editorial direction. AI is mediocre at
-          deciding what direction to take. Topic selection, angle, point of view &mdash;
+          deciding what direction to take. Topic selection, angle, point of view -
           human decisions. AI helps research them; AI doesn&apos;t pick them.
         </p>
 
@@ -773,10 +773,10 @@ export const batch8: Post[] = [
 
         <h2 id="metrics">Metrics That Matter</h2>
         <ul>
-          <li>Time on page &mdash; flat or up vs pre-AI content.</li>
-          <li>Scroll depth &mdash; flat or up.</li>
+          <li>Time on page - flat or up vs pre-AI content.</li>
+          <li>Scroll depth - flat or up.</li>
           <li>Newsletter subscribes per published piece.</li>
-          <li>Backlinks earned &mdash; the real signal of quality.</li>
+          <li>Backlinks earned - the real signal of quality.</li>
         </ul>
         <p>
           What not to track: word count, posts per week. Both incentivize the wrong
@@ -785,7 +785,7 @@ export const batch8: Post[] = [
 
         <blockquote className={Q_PURPLE}>
           The brands winning at AI content in 2026 ship less than the early enthusiasts
-          did in 2023 &mdash; and earn more attention with what they ship. Quality
+          did in 2023 - and earn more attention with what they ship. Quality
           compounds; quantity decays.
         </blockquote>
 
@@ -826,8 +826,8 @@ export const batch8: Post[] = [
           Five places AI has clear value in editorial work:
         </p>
         <ul>
-          <li>Research synthesis &mdash; turning 20 sources into a brief.</li>
-          <li>Outline structuring &mdash; from rough notes to organized.</li>
+          <li>Research synthesis - turning 20 sources into a brief.</li>
+          <li>Outline structuring - from rough notes to organized.</li>
           <li>First-draft text on routine sections (definitions, summaries).</li>
           <li>Editing for clarity and brevity.</li>
           <li>Generating headline and excerpt variants for A/B testing.</li>
@@ -835,17 +835,17 @@ export const batch8: Post[] = [
 
         <h2 id="avoid-it">Where AI Hurts</h2>
         <ul>
-          <li>Idea generation &mdash; AI generates safe, generic ideas.</li>
-          <li>Voice work &mdash; brand voice flattens fast.</li>
-          <li>Quotes and anecdotes &mdash; AI invents them. Don&apos;t let it.</li>
-          <li>Final fact-checking &mdash; AI confidently confirms wrong facts.</li>
-          <li>Sensitive topics &mdash; AI defaults to milquetoast.</li>
+          <li>Idea generation - AI generates safe, generic ideas.</li>
+          <li>Voice work - brand voice flattens fast.</li>
+          <li>Quotes and anecdotes - AI invents them. Don&apos;t let it.</li>
+          <li>Final fact-checking - AI confidently confirms wrong facts.</li>
+          <li>Sensitive topics - AI defaults to milquetoast.</li>
         </ul>
 
         <h2 id="research">Research Augmentation</h2>
         <p>
           The right pattern: human chooses sources, AI extracts and summarizes. Never
-          let AI alone search &mdash; it includes whatever pops up first and treats it
+          let AI alone search - it includes whatever pops up first and treats it
           as authoritative.
         </p>
 
@@ -870,7 +870,7 @@ export const batch8: Post[] = [
         <p>
           Use AI for first drafts on standard sections (definitions, &ldquo;how to&rdquo;
           steps, summaries). Don&apos;t use AI for the parts where the writer&apos;s
-          perspective matters &mdash; opinion, narrative, conclusions.
+          perspective matters - opinion, narrative, conclusions.
         </p>
 
         <h2 id="editing">Editing With AI</h2>
@@ -896,7 +896,7 @@ export const batch8: Post[] = [
 
         <h2 id="faq">FAQ</h2>
         <p><strong>What about AI editors at scale?</strong> Useful for the first pass. Human always finishes.</p>
-        <p><strong>Can AI rewrite for SEO?</strong> Yes &mdash; for metadata and standard schema, fine. For body text, careful.</p>
+        <p><strong>Can AI rewrite for SEO?</strong> Yes - for metadata and standard schema, fine. For body text, careful.</p>
         <p><strong>Editor time savings?</strong> Typically 30&ndash;50%. The savings go to more pieces, not fewer editors.</p>
       </>
     ),
@@ -927,8 +927,8 @@ export const batch8: Post[] = [
         <h2 id="the-shift">The 2024-2026 Shift</h2>
         <p>
           Google&apos;s helpful content updates and the rise of AI search (Perplexity,
-          ChatGPT search, Google AI Overviews) reshaped SEO. The 2022 playbook &mdash;
-          mass produce keyword-targeted content &mdash; is mostly dead. The new
+          ChatGPT search, Google AI Overviews) reshaped SEO. The 2022 playbook -
+          mass produce keyword-targeted content - is mostly dead. The new
           playbook prizes original research, specific expertise, and trust signals.
         </p>
 
@@ -960,7 +960,7 @@ export const batch8: Post[] = [
         <ol>
           <li>Make claims that are clearly supported.</li>
           <li>Use structured data so machines can parse confidently.</li>
-          <li>Be quotable &mdash; short, definitive statements that AI can pick up.</li>
+          <li>Be quotable - short, definitive statements that AI can pick up.</li>
           <li>Have visible authors with credentials.</li>
         </ol>
 
@@ -994,13 +994,13 @@ export const batch8: Post[] = [
 
         <h2 id="long-tail">Long-Tail Lives</h2>
         <p>
-          Long-tail SEO still works in 2026 &mdash; especially for specific, expertise-led
+          Long-tail SEO still works in 2026 - especially for specific, expertise-led
           queries that AI overviews can&apos;t comprehensively answer. The shift: long-tail
           requires real depth, not surface-level coverage.
         </p>
 
         <blockquote className={Q_PURPLE}>
-          SEO in 2026 isn&apos;t harder &mdash; it&apos;s more honest. The sites that
+          SEO in 2026 isn&apos;t harder - it&apos;s more honest. The sites that
           win are the ones with real expertise, not the ones that gamed the system best.
           AI made the cheats unprofitable.
         </blockquote>
@@ -1008,7 +1008,7 @@ export const batch8: Post[] = [
         <p>See <a href="/blog/useful-ai-blog-posts">making AI blog posts useful</a>.</p>
 
         <h2 id="faq">FAQ</h2>
-        <p><strong>Should we stop publishing AI-assisted content?</strong> No &mdash; quality AI-assisted content with human editorial still works. Generic AI content doesn&apos;t.</p>
+        <p><strong>Should we stop publishing AI-assisted content?</strong> No - quality AI-assisted content with human editorial still works. Generic AI content doesn&apos;t.</p>
         <p><strong>What about EEAT?</strong> Experience matters most. Show, don&apos;t claim.</p>
         <p><strong>How long to see results?</strong> Quality SEO in 2026 takes 4&ndash;9 months. Faster than 2020; slower than 2022 prompts promised.</p>
       </>
@@ -1120,7 +1120,7 @@ export const batch8: Post[] = [
         <h2 id="faq">FAQ</h2>
         <p><strong>Word count target?</strong> Whatever the topic deserves. 1200&ndash;2500 is the typical range for substantive posts.</p>
         <p><strong>How much editor time?</strong> 30&ndash;60 minutes per 1500-word post in steady-state.</p>
-        <p><strong>Can we trust AI on facts?</strong> No &mdash; always verify. Cite primary sources.</p>
+        <p><strong>Can we trust AI on facts?</strong> No - always verify. Cite primary sources.</p>
       </>
     ),
   },

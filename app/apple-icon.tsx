@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-// Required for Next.js static export — generates the icon at build time.
+// Required for Next.js static export - generates the icon at build time.
 export const dynamic = "force-static";
 
 export const size = { width: 180, height: 180 };

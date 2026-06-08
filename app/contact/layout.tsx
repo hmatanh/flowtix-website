@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 const url = "https://flowtix.ai/contact/";
 
 export const metadata: Metadata = {
-  title: "Contact Flowtix — Book a Strategy Call",
+  title: "Contact Flowtix - Book a Strategy Call",
   description:
     "Book a 30-minute strategy call with Flowtix. We respond within 24 hours and send a clear proposal with scope, timeline and pricing.",
   keywords:

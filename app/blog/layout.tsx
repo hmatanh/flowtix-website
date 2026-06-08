@@ -4,7 +4,7 @@ const url = "https://flowtix.ai/blog/";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Blog — Notes on Systems, Automation & Business | Flowtix",
+    absolute: "Blog - Notes on Systems, Automation & Business | Flowtix",
   },
   description:
     "Practical thinking on custom systems, automated workflows, internal tools, and the business decisions behind them. Written by Flowtix builders for operators who ship.",
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   alternates: { canonical: url },
   openGraph: {
     url,
-    title: "Flowtix Blog — Notes on Systems, Automation & Business",
+    title: "Flowtix Blog - Notes on Systems, Automation & Business",
     description:
       "Practical thinking on custom systems, automated workflows, and the way real businesses ship.",
     type: "website",

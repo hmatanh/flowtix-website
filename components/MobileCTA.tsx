@@ -13,7 +13,7 @@ export function MobileCTA() {
   // generic one to avoid a stacked-button mobile UI.
   const isProjectPage =
     pathname?.startsWith("/work/") && pathname !== "/work/" && pathname !== "/work";
-  // Contact page already IS the conversion — don't compete with itself.
+  // Contact page already IS the conversion - don't compete with itself.
   const isContactPage = pathname === "/contact" || pathname === "/contact/";
 
   useEffect(() => {

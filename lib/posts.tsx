@@ -43,13 +43,13 @@ export const posts: Post[] = [
   {
     slug: "why-most-ai-implementations-fail",
     title:
-      "Why 87% of AI Implementations Fail — And What the 13% Do Differently",
+      "Why 87% of AI Implementations Fail - And What the 13% Do Differently",
     category: "AI Systems",
     categoryColor: "#3B82F6",
     readTime: "8 min read",
     date: "May 14, 2025",
     excerpt:
-      "Most businesses invest in AI and see minimal returns. The problem isn’t the technology — it’s the approach.",
+      "Most businesses invest in AI and see minimal returns. The problem isn’t the technology - it’s the approach.",
     author: "Flowtix Team",
     tags: ["AI Strategy", "Implementation", "ROI"],
     toc: [
@@ -68,7 +68,7 @@ export const posts: Post[] = [
           adopted AI in at least one business function, the majority report
           that AI initiatives fail to deliver expected ROI. After working with
           dozens of businesses on AI systems, we’ve identified the exact
-          reasons why — and they’re not what most people think.
+          reasons why - and they’re not what most people think.
         </p>
         <p>
           The failure isn’t technical. Modern AI models are extraordinarily
@@ -86,7 +86,7 @@ export const posts: Post[] = [
         </p>
         <p>
           The businesses that succeed with AI start by mapping their most
-          expensive operational problems — in time, money, or error rate. They
+          expensive operational problems - in time, money, or error rate. They
           then ask: <em>“Is AI actually the right tool for this?”</em> Often,
           the answer is simpler automation. When the answer truly is AI, they
           have a clear ROI target before writing a single line of code.
@@ -117,14 +117,14 @@ export const posts: Post[] = [
 
         <h2 id="mistake-3">Mistake 3: Ignoring the Human Layer</h2>
         <p>
-          AI doesn’t replace humans — it changes what humans do. The companies
+          AI doesn’t replace humans - it changes what humans do. The companies
           that fail treat AI deployment as a technical project. The ones that
           succeed treat it as a change management project with a technical
           component.
         </p>
         <p>
           Your team needs to understand what the AI does, trust its outputs,
-          know when to override it, and feel like it makes their job better —
+          know when to override it, and feel like it makes their job better -
           not like it’s replacing them.
         </p>
         <p>
@@ -151,7 +151,7 @@ export const posts: Post[] = [
             automated and proven, before expanding to the next.
           </li>
           <li>
-            <strong>They measure obsessively.</strong> Not vanity metrics —
+            <strong>They measure obsessively.</strong> Not vanity metrics -
             actual time saved, error reduction, revenue impact.
           </li>
         </ol>
@@ -194,18 +194,18 @@ export const posts: Post[] = [
         <h2 id="why-design-wins">Why Design Wins in the Age of AI</h2>
         <p>
           Here’s an uncomfortable truth for the AI industry: the underlying
-          models are commoditizing fast. GPT-4, Claude, Gemini — the capability
+          models are commoditizing fast. GPT-4, Claude, Gemini - the capability
           gap between them is narrowing every quarter. In 12 months, the AI
           powering your competitor’s product will be virtually identical to the
           AI powering yours.
         </p>
         <p>
-          This means the moat isn’t the AI. The moat is everything around it —
+          This means the moat isn’t the AI. The moat is everything around it -
           the workflow, the interface, the experience, the trust the system
           builds with its users.
         </p>
         <p>
-          Cursor beat GitHub Copilot not because it had better AI — it had the
+          Cursor beat GitHub Copilot not because it had better AI - it had the
           same AI. It won because it reimagined the entire coding workflow
           around AI from the ground up. Granola became a $1.5B company by
           making meeting notes beautiful and frictionless. Neither breakthrough
@@ -226,7 +226,7 @@ export const posts: Post[] = [
           embarrassing to explain to their boss?
         </p>
 
-        <h3>Step 2: Design the ideal experience — ignoring technical constraints.</h3>
+        <h3>Step 2: Design the ideal experience - ignoring technical constraints.</h3>
         <p>
           If this system were magic, what would it feel like to use? How many
           clicks should it take? What should the user never have to think
@@ -258,7 +258,7 @@ export const posts: Post[] = [
           <strong>Principle 3: Trust is designed, not assumed.</strong> AI
           makes mistakes. Users need to know what the AI is confident about and
           what it isn’t. Showing citations, confidence levels, and easy
-          overrides isn’t a weakness — it’s what makes users trust the system
+          overrides isn’t a weakness - it’s what makes users trust the system
           enough to actually use it.
         </p>
 
@@ -266,7 +266,7 @@ export const posts: Post[] = [
         <p>Here’s the ROI math on design quality:</p>
         <blockquote>
           A system with 90% adoption generates 9x the value of a system with
-          10% adoption — regardless of which one is technically superior.
+          10% adoption - regardless of which one is technically superior.
         </blockquote>
         <p>
           The fastest path to AI ROI isn’t building better AI. It’s getting
@@ -285,7 +285,7 @@ export const posts: Post[] = [
     readTime: "7 min read",
     date: "April 29, 2025",
     excerpt:
-      "Not all automation is equal. These five workflows deliver the highest ROI for most businesses — with real numbers.",
+      "Not all automation is equal. These five workflows deliver the highest ROI for most businesses - with real numbers.",
     author: "Flowtix Team",
     tags: ["Automation", "ROI", "Operations"],
     toc: [
@@ -341,7 +341,7 @@ export const posts: Post[] = [
           <strong>Average time wasted manually: 20–40 hours per week for a 10-person team</strong>
         </p>
         <p>
-          Most customer support tickets — often 60–70% — are answering the
+          Most customer support tickets - often 60–70% - are answering the
           same 20 questions repeatedly. An AI trained on your knowledge base
           handles these instantly, freeing your team for complex issues.
         </p>
@@ -371,13 +371,13 @@ export const posts: Post[] = [
           for AI.
         </p>
         <p>
-          AI content systems don’t replace marketing strategy — they execute it
+          AI content systems don’t replace marketing strategy - they execute it
           faster. Your team sets the direction; AI produces the volume.
         </p>
         <p>
           <strong>Realistic ROI:</strong> 60–80% reduction in content
           production time. A marketing manager spending 20 hours/week on
-          content production gets back 12–16 hours — effectively doubling
+          content production gets back 12–16 hours - effectively doubling
           their strategic capacity.
         </p>
 
@@ -388,7 +388,7 @@ export const posts: Post[] = [
         <p>
           The average knowledge worker attends 10–15 meetings per week. Taking
           notes, writing summaries, extracting action items, and distributing
-          them consumes enormous time — and still gets done inconsistently.
+          them consumes enormous time - and still gets done inconsistently.
         </p>
         <p>
           AI meeting intelligence: transcribes automatically, extracts action
@@ -408,13 +408,13 @@ export const posts: Post[] = [
         <p>
           Custom proposals, contracts, onboarding documents, and client reports
           all follow templates with customized content. AI generates the first
-          draft in minutes from a structured brief — leaving humans to review,
+          draft in minutes from a structured brief - leaving humans to review,
           adjust, and add relationship context.
         </p>
         <p>
           <strong>Realistic ROI:</strong> From 6 hours to 45 minutes per
           proposal. For a sales team producing 8 proposals per week, that’s 40+
-          hours saved weekly — capacity that goes directly back into selling.
+          hours saved weekly - capacity that goes directly back into selling.
         </p>
 
         <h2 id="right-order">The Right Order to Automate</h2>
@@ -469,7 +469,7 @@ export const posts: Post[] = [
           best-selling product?”, it tells you. When you ask an AI agent the
           same question, it queries your sales database, analyzes the data,
           generates a formatted report, emails it to your team, and adds a
-          follow-up task to your CRM — without you asking for any of those
+          follow-up task to your CRM - without you asking for any of those
           steps.
         </p>
 
@@ -479,7 +479,7 @@ export const posts: Post[] = [
           An AI agent can use software. It can browse the web, query
           databases, send emails, update CRM records, post to social media,
           generate documents, and interact with any software that has an API.
-          It’s not just answering — it’s doing.
+          It’s not just answering - it’s doing.
         </p>
         <h3>2. Memory</h3>
         <p>
@@ -491,7 +491,7 @@ export const posts: Post[] = [
         <h3>3. Multi-Step Reasoning</h3>
         <p>
           An AI agent can break a complex task into steps, execute each step,
-          check its own work, and adjust if something goes wrong — without
+          check its own work, and adjust if something goes wrong - without
           human intervention at each step.
         </p>
 
@@ -500,7 +500,7 @@ export const posts: Post[] = [
           <strong>Sales Agent:</strong> Monitors your inbox for new leads,
           enriches contact data from LinkedIn, scores lead quality, drafts a
           personalized outreach email for your review, and schedules a
-          follow-up reminder — all automatically.
+          follow-up reminder - all automatically.
         </p>
         <p>
           <strong>Operations Agent:</strong> Reviews daily order volume,
@@ -576,12 +576,12 @@ export const posts: Post[] = [
         </p>
         <p>
           The problem isn’t AI. The problem is that most people are using AI
-          without any brand context — which means the AI defaults to the
+          without any brand context - which means the AI defaults to the
           average of everything it was trained on. Your brand becomes
           invisible.
         </p>
         <p>
-          The solution is training. Not model training — <em>context</em>{" "}
+          The solution is training. Not model training - <em>context</em>{" "}
           training. Teaching the AI about your brand before it writes a single
           word.
         </p>
@@ -630,7 +630,7 @@ export const posts: Post[] = [
 
         <h3>Layer 5: Reference Content</h3>
         <p>
-          Your 10 best pieces of existing content — posts, emails, ads — that
+          Your 10 best pieces of existing content - posts, emails, ads - that
           best represent how you sound at your best.
         </p>
 
@@ -694,7 +694,7 @@ export const posts: Post[] = [
         <p>
           It won’t be perfect. You’ll still spend 10–15 minutes per piece on
           review and refinement. But that’s a 70–80% time reduction from
-          writing from scratch — while maintaining your actual brand voice.
+          writing from scratch - while maintaining your actual brand voice.
         </p>
       </>
     ),
@@ -759,7 +759,7 @@ export const posts: Post[] = [
         <h3>Category 3: Error Reduction</h3>
         <p>
           Frequently ignored. Manual processes have error rates. Errors cost
-          money — in rework time, in customer churn, in compliance issues. AI
+          money - in rework time, in customer churn, in compliance issues. AI
           with lower error rates than humans generates return proportional to
           the cost of those errors.
         </p>

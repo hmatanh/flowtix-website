@@ -25,7 +25,7 @@ function DiamondMark({ size }: { size: number }) {
 export function ProductMockup() {
   return (
     <div className="relative w-full max-w-sm mx-auto h-[340px]">
-      {/* Card 1 — back */}
+      {/* Card 1 - back */}
       <m.div
         initial={{ opacity: 0, y: 20, rotate: -8 }}
         whileInView={{ opacity: 1, y: 0, rotate: -6 }}
@@ -47,7 +47,7 @@ export function ProductMockup() {
         </div>
       </m.div>
 
-      {/* Card 2 — middle */}
+      {/* Card 2 - middle */}
       <m.div
         initial={{ opacity: 0, y: 20, rotate: 4 }}
         whileInView={{ opacity: 1, y: 0, rotate: 2 }}
@@ -70,7 +70,7 @@ export function ProductMockup() {
         </div>
       </m.div>
 
-      {/* Card 3 — front */}
+      {/* Card 3 - front */}
       <m.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}

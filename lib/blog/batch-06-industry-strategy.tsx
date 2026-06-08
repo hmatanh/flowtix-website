@@ -67,7 +67,7 @@ export const batch6: Post[] = [
 
         <h2 id="admin">Admin and Operations</h2>
         <p>
-          Enrollment, scheduling, financial aid paperwork, transcripts &mdash; all the
+          Enrollment, scheduling, financial aid paperwork, transcripts - all the
           back-office work where AI saves time without touching pedagogy. Highest-ROI
           place to start.
         </p>
@@ -82,7 +82,7 @@ export const batch6: Post[] = [
         <h2 id="academic-integrity">Academic Integrity</h2>
         <p>
           The cheating problem is real but the solution isn&apos;t detection arms races
-          &mdash; detectors are unreliable and false-positive. The better fix:
+          - detectors are unreliable and false-positive. The better fix:
           assignment redesign. More in-class work. Process artifacts (drafts, outlines)
           weighted higher. Oral defenses for major work. Teach <em>with</em> AI rather
           than policing it.
@@ -153,7 +153,7 @@ export const batch6: Post[] = [
         <h2 id="fraud">Fraud Detection</h2>
         <p>
           Real-time transaction scoring with explainable models. Critical:
-          interpretability matters more than raw accuracy in fintech &mdash; you must
+          interpretability matters more than raw accuracy in fintech - you must
           explain to regulators and customers why a transaction was flagged.
         </p>
 
@@ -185,7 +185,7 @@ export const batch6: Post[] = [
         <h2 id="insights">Customer Insights</h2>
         <p>
           AI clusters customer behavior, identifies churn risk, surfaces opportunities
-          for personalized offers. Privacy-preserving by default &mdash; aggregate
+          for personalized offers. Privacy-preserving by default - aggregate
           patterns, not individual surveillance.
         </p>
 
@@ -197,7 +197,7 @@ export const batch6: Post[] = [
         </p>
 
         <blockquote className={QUOTE}>
-          Fintech AI done right is invisible to the regulator &mdash; the controls and
+          Fintech AI done right is invisible to the regulator - the controls and
           documentation are so thorough that the AI is just another well-governed
           model. Fintech AI done wrong is a consent decree waiting to happen.
         </blockquote>
@@ -300,7 +300,7 @@ export const batch6: Post[] = [
 
         <h2 id="talent">Talent Implications</h2>
         <p>
-          The most affected role is the junior &mdash; some of the historical
+          The most affected role is the junior - some of the historical
           junior tasks are now AI tasks. The opportunity is to elevate junior work: more
           strategic thinking, more client interaction, less production. Agencies that
           handle this transition well retain talent and quality.
@@ -308,7 +308,7 @@ export const batch6: Post[] = [
 
         <blockquote className={QUOTE}>
           The marketing agency of 2026 is leaner, faster, and more strategic per head
-          than the agency of 2022. AI is the lever &mdash; voice rules, brand systems,
+          than the agency of 2022. AI is the lever - voice rules, brand systems,
           and review discipline are the disciplines that make it work.
         </blockquote>
 
@@ -329,7 +329,7 @@ export const batch6: Post[] = [
     readTime: "8 min read",
     date: "June 24, 2026",
     excerpt:
-      "Manufacturing SMBs face huge AI promise — predictive maintenance, quality control, supply optimization — but enterprise tools don't fit. Here is the SMB-scaled playbook.",
+      "Manufacturing SMBs face huge AI promise - predictive maintenance, quality control, supply optimization - but enterprise tools don't fit. Here is the SMB-scaled playbook.",
     author: "Flowtix Team",
     tags: ["Manufacturing", "SMB", "Predictive Maintenance"],
     toc: [
@@ -346,8 +346,8 @@ export const batch6: Post[] = [
       <>
         <h2 id="smb-frame">The Manufacturing SMB Frame</h2>
         <p>
-          Enterprise manufacturing AI &mdash; six-figure ML platforms, dedicated data
-          scientists &mdash; doesn&apos;t fit a 50-person manufacturer. The right SMB
+          Enterprise manufacturing AI - six-figure ML platforms, dedicated data
+          scientists - doesn&apos;t fit a 50-person manufacturer. The right SMB
           deployment is narrower, cheaper, and built on the operational data you
           already have (ERP, MES, MRP, shop-floor systems).
         </p>
@@ -406,7 +406,7 @@ export const batch6: Post[] = [
         <blockquote className={QUOTE}>
           The SMB manufacturer that adopts AI in 2026 doesn&apos;t look like a small
           factory anymore. They&apos;re running with the operational sophistication
-          previously reserved for enterprise &mdash; on a fraction of the IT budget.
+          previously reserved for enterprise - on a fraction of the IT budget.
         </blockquote>
 
         <p>See also <a href="/services/automation/">our automation service</a>.</p>
@@ -451,7 +451,7 @@ export const batch6: Post[] = [
 
         <h2 id="bookkeeping">AI in Bookkeeping</h2>
         <p>
-          Transaction categorization, reconciliation, anomaly detection &mdash; all now
+          Transaction categorization, reconciliation, anomaly detection - all now
           90%+ AI-automatable. Bookkeeper time per client drops 60&ndash;75%. Pricing power
           on bookkeeping drops with it. The defensive move: do bookkeeping cheaply but
           excellently as the entry point to advisory.
@@ -650,7 +650,7 @@ export const batch6: Post[] = [
           <li>What does the AI do that a generic GPT call wouldn&apos;t do? (If the answer is fluffy, this is a wrapper.)</li>
           <li>How do you handle hallucination? Show me a real example.</li>
           <li>How do customers measure ROI? What number do they report?</li>
-          <li>What happens to my data &mdash; training, storage, deletion?</li>
+          <li>What happens to my data - training, storage, deletion?</li>
           <li>Show me your three most recent customer churn cases and why.</li>
           <li>What&apos;s the time to first value, in days?</li>
           <li>What integrations are in production, not on the roadmap?</li>
@@ -681,7 +681,7 @@ export const batch6: Post[] = [
           Three pricing patterns and what they really mean: <strong>per-seat</strong>{" "}
           (predictable, scales with team), <strong>usage-based</strong> (scales with
           success but unpredictable), <strong>annual contract</strong> (lock-in plus
-          discount &mdash; valuable if you&apos;ll really use it).
+          discount - valuable if you&apos;ll really use it).
         </p>
 
         <h2 id="data">Data Handling Questions</h2>
@@ -709,7 +709,7 @@ export const batch6: Post[] = [
         </ul>
 
         <blockquote className={QUOTE}>
-          The best CEO move on an AI vendor pitch isn&apos;t skepticism &mdash; it&apos;s
+          The best CEO move on an AI vendor pitch isn&apos;t skepticism - it&apos;s
           specificity. Generic skepticism reads as &ldquo;not a buyer.&rdquo; Specific
           questions read as &ldquo;serious buyer.&rdquo;
         </blockquote>
@@ -731,7 +731,7 @@ export const batch6: Post[] = [
     readTime: "9 min read",
     date: "June 28, 2026",
     excerpt:
-      "The hardest part of AI deployment isn't the model — it's the team. Here is the practical change management playbook for getting AI adopted across an organization.",
+      "The hardest part of AI deployment isn't the model - it's the team. Here is the practical change management playbook for getting AI adopted across an organization.",
     author: "Flowtix Team",
     tags: ["Change Management", "AI Adoption", "Leadership"],
     toc: [
@@ -770,7 +770,7 @@ export const batch6: Post[] = [
         <h2 id="framing">The Right Framing</h2>
         <p>
           The framing that consistently works: <strong>AI handles the boring, you do
-          the meaningful</strong>. Specific examples per role &mdash; not abstractions.
+          the meaningful</strong>. Specific examples per role - not abstractions.
           What part of the support agent&apos;s job goes away? Which part stays? Where
           does their judgment matter more, not less?
         </p>
@@ -778,11 +778,11 @@ export const batch6: Post[] = [
         <div className={CALLOUT}>
           <div className="text-label text-amber-400 mb-3">The Adoption Curve</div>
           <ul className="space-y-2 text-[#ccc] text-sm">
-            <li>&bull; Innovators (5%) &mdash; will adopt anything new.</li>
-            <li>&bull; Early adopters (15%) &mdash; will if there&apos;s a clear win.</li>
-            <li>&bull; Pragmatists (35%) &mdash; need proof from early adopters.</li>
-            <li>&bull; Skeptics (35%) &mdash; need overwhelming evidence.</li>
-            <li>&bull; Resistors (10%) &mdash; may never adopt; that&apos;s okay.</li>
+            <li>&bull; Innovators (5%) - will adopt anything new.</li>
+            <li>&bull; Early adopters (15%) - will if there&apos;s a clear win.</li>
+            <li>&bull; Pragmatists (35%) - need proof from early adopters.</li>
+            <li>&bull; Skeptics (35%) - need overwhelming evidence.</li>
+            <li>&bull; Resistors (10%) - may never adopt; that&apos;s okay.</li>
           </ul>
         </div>
 
@@ -815,7 +815,7 @@ export const batch6: Post[] = [
         <h2 id="feedback">Closing the Loop</h2>
         <p>
           Monthly all-hands or written updates: what AI is producing, where it&apos;s
-          failing, what&apos;s shipping next. Surface the failures honestly &mdash; it
+          failing, what&apos;s shipping next. Surface the failures honestly - it
           builds trust and surfaces real problems.
         </p>
 
@@ -842,7 +842,7 @@ export const batch6: Post[] = [
     readTime: "8 min read",
     date: "June 29, 2026",
     excerpt:
-      "Most AI goals are vanity. Here is how to set AI goals that map to revenue, margin, or strategic capability — and that the CFO will respect.",
+      "Most AI goals are vanity. Here is how to set AI goals that map to revenue, margin, or strategic capability - and that the CFO will respect.",
     author: "Flowtix Team",
     tags: ["AI Goals", "Metrics", "Business Outcomes"],
     toc: [
@@ -948,7 +948,7 @@ export const batch6: Post[] = [
         <p>See <a href="/blog/ai-strategy-first-time-operators">5 AI strategy decisions</a>.</p>
 
         <h2 id="faq">FAQ</h2>
-        <p><strong>What about exploratory AI projects?</strong> Different framing &mdash; learning goals, not outcome goals. Don&apos;t mix.</p>
+        <p><strong>What about exploratory AI projects?</strong> Different framing - learning goals, not outcome goals. Don&apos;t mix.</p>
         <p><strong>Quarterly vs annual targets?</strong> Quarterly for tactical, annual for strategic. Both, not either-or.</p>
         <p><strong>Should AI be a separate budget line?</strong> Yes, for visibility. But the outcomes should sit inside business function goals.</p>
       </>

@@ -1,14 +1,14 @@
 "use client";
 
 /**
- * /work — Selected work
+ * /work - Selected work
  *
  * Editorial portfolio page. One unified card template for all five
- * case studies — no per-brand-color flooding on the page; the brand
+ * case studies - no per-brand-color flooding on the page; the brand
  * lives inside the artifact. Grid is calm, typography is the hero,
  * and the visual artifact at the top of each card carries the case.
  *
- * Mobile is the default — single-column stack, full-width artifacts,
+ * Mobile is the default - single-column stack, full-width artifacts,
  * tap-target sizes preserved.
  */
 
@@ -63,7 +63,7 @@ function ProjectCard({
           e.currentTarget.style.boxShadow = "none";
         }}
       >
-        {/* Visual artifact — 16:10 ratio, fills card width */}
+        {/* Visual artifact - 16:10 ratio, fills card width */}
         <div className="relative w-full aspect-[16/10] overflow-hidden border-b border-white/[0.04]">
           <div className="absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-[1.025]">
             <ListingMockup slug={project.slug} />
@@ -100,7 +100,7 @@ function ProjectCard({
             className="my-5 sm:my-6 h-px w-full bg-white/[0.06]"
           />
 
-          {/* Three metric pills — neutral palette, no brand color */}
+          {/* Three metric pills - neutral palette, no brand color */}
           <div className="grid grid-cols-3 gap-2.5 sm:gap-3">
             {project.results.slice(0, 3).map((r) => (
               <div
@@ -140,7 +140,7 @@ function ProjectCard({
 }
 
 /* ──────────────────────────────────────────────────────────────────
-   Bottom CTA "card" — sits in the grid as the 6th tile
+   Bottom CTA "card" - sits in the grid as the 6th tile
    ─────────────────────────────────────────────────────────────── */
 
 function NewWorkCard() {
@@ -185,7 +185,7 @@ function NewWorkCard() {
             </h2>
             <p className="text-[#bfbfbf] mt-5 sm:mt-6 text-[15px] sm:text-[16px] leading-[1.65] max-w-md">
               Tell us what you&apos;re building. We&apos;ll tell you whether
-              and how we can help. Selective by choice — always open to one
+              and how we can help. Selective by choice - always open to one
               good conversation.
             </p>
 
@@ -277,7 +277,7 @@ export default function WorkPage() {
           <FadeIn delay={0.55}>
             <p className="text-[#a8a8a8] mt-6 text-[15px] sm:text-lg max-w-2xl mx-auto leading-[1.65] sm:leading-relaxed px-2">
               Five projects, five industries, one standard. Brand systems,
-              AI workflows, and the operating rhythm behind them — built
+              AI workflows, and the operating rhythm behind them - built
               like the businesses we hand them to.
             </p>
           </FadeIn>
@@ -307,7 +307,7 @@ export default function WorkPage() {
             {projects.map((p, i) => (
               <ProjectCard key={p.slug} project={p} index={i} />
             ))}
-            {/* 6th cell — call-to-conversation */}
+            {/* 6th cell - call-to-conversation */}
             <NewWorkCard />
           </div>
         </div>
@@ -325,14 +325,14 @@ export default function WorkPage() {
                 className="text-white font-semibold tracking-tight mt-3 sm:mt-4 leading-[1.15]"
                 style={{ fontSize: "clamp(24px, 2.6vw, 34px)" }}
               >
-                Each project is one system end-to-end —
+                Each project is one system end-to-end -
                 <br className="hidden sm:block" />
                 brand, product surface and the workflow it replaces.
               </h3>
             </div>
             <div className="text-[#aaa] text-[14px] sm:text-[15px] leading-[1.7]">
               We don&apos;t hand off a Figma file and a Notion doc. The
-              deliverable is the running system — installed, signed off,
+              deliverable is the running system - installed, signed off,
               and quiet by the time we leave.
               <Link
                 href="/services/"

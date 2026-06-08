@@ -19,7 +19,7 @@ export async function generateMetadata({
   if (!post) return { title: "Article not found" };
 
   const url = `https://flowtix.ai/blog/${post.slug}/`;
-  const title = `${post.title} — Flowtix`;
+  const title = `${post.title} - Flowtix`;
   const description = post.excerpt;
 
   return {

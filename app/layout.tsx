@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://flowtix.ai"),
   title: {
     default:
-      "Flowtix — Custom Business Systems, Automations & Digital Products",
+      "Flowtix - Custom Business Systems, Automations & Digital Products",
     template: "%s | Flowtix",
   },
   description:
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     url: "https://flowtix.ai",
     siteName: "Flowtix",
     title:
-      "Flowtix — Custom Business Systems, Automations & Digital Products",
+      "Flowtix - Custom Business Systems, Automations & Digital Products",
     description:
       "We help businesses replace manual work with custom systems, automated workflows, AI agents, internal tools, and digital products.",
     images: [
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
         url: "/og-image.svg",
         width: 1200,
         height: 630,
-        alt: "Flowtix — Custom systems, automations & AI workflows",
+        alt: "Flowtix - Custom systems, automations & AI workflows",
         type: "image/svg+xml",
       },
     ],
@@ -100,7 +100,7 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} h-full`}>
       <head>
         <meta name="theme-color" content="#000000" />
-        {/* Organization JSON-LD — global, applies to every page */}
+        {/* Organization JSON-LD - global, applies to every page */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

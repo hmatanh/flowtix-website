@@ -93,5 +93,5 @@ export function MetricStrip({ metrics, accentColor, accentRGB }: Props) {
 // Re-export for the type-only namespace
 export type { Props as MetricStripProps };
 
-/* Keep the m. reference live across SSR — silences unused-import lint. */
+/* Keep the m. reference live across SSR - silences unused-import lint. */
 void m;

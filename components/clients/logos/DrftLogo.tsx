@@ -39,7 +39,7 @@ export function DrftLogo({ height = 40, className = "" }: Props) {
         />
       </g>
 
-      {/* Wordmark "DRFT" — italic skewed */}
+      {/* Wordmark "DRFT" - italic skewed */}
       <text
         x="52"
         y="28"

@@ -9,7 +9,7 @@ export const batch2: Post[] = [
     readTime: "8 min read",
     date: "May 22, 2026",
     excerpt:
-      "A side-by-side comparison of Zapier, Make, and n8n in 2026. Pricing, power, learning curve — and which one matches your business stage.",
+      "A side-by-side comparison of Zapier, Make, and n8n in 2026. Pricing, power, learning curve - and which one matches your business stage.",
     author: "Flowtix Team",
     tags: ["Automation Platforms", "Tooling", "Comparison"],
     toc: [
@@ -27,7 +27,7 @@ export const batch2: Post[] = [
         <p>
           The <strong>Zapier vs Make vs n8n</strong> conversation has shifted in 2026.
           All three are now mature, AI-augmented, and excellent at what they're designed
-          for. The question is no longer "which is best" — it's "which is best for your
+          for. The question is no longer "which is best" - it's "which is best for your
           stage and team."
         </p>
         <p>
@@ -73,7 +73,7 @@ export const batch2: Post[] = [
         <h2 id="when-zapier">When Zapier Wins</h2>
         <p>
           Zapier is the right answer when the team running the automations is
-          non-technical and the automations themselves are simple — single-trigger,
+          non-technical and the automations themselves are simple - single-trigger,
           single-action, no complex branching. The {" "}
           <a href="https://zapier.com" target="_blank" rel="noopener noreferrer">platform</a> is
           purpose-built for that user.
@@ -116,7 +116,7 @@ export const batch2: Post[] = [
         <h2 id="switching">How to Switch Between Them</h2>
         <ol>
           <li>Inventory the existing automations. Group them by criticality.</li>
-          <li>Migrate the highest-volume automations first — biggest cost savings.</li>
+          <li>Migrate the highest-volume automations first - biggest cost savings.</li>
           <li>Keep both platforms running in parallel for 30 days. Compare logs.</li>
           <li>Decommission the old platform only after 30 days of clean runs on the new one.</li>
         </ol>
@@ -165,7 +165,7 @@ export const batch2: Post[] = [
       <>
         <h2 id="intro">Why These 20 Service Business Automations</h2>
         <p>
-          We've audited hundreds of service businesses — agencies, consultancies, law
+          We've audited hundreds of service businesses - agencies, consultancies, law
           firms, accountants, freelancers. The same 20 <strong>service business
           automations</strong> show up at the top of every payoff list. Most teams have
           implemented two or three. The high performers run 12–15.
@@ -179,7 +179,7 @@ export const batch2: Post[] = [
           <ul className="space-y-2 text-[#ccc] text-sm">
             <li>• A 10-person agency typically saves 30–50 hours/week running these 20.</li>
             <li>• Setup time per automation averages 2–4 hours.</li>
-            <li>• ROI compounds — automating onboarding makes every subsequent client cheaper.</li>
+            <li>• ROI compounds - automating onboarding makes every subsequent client cheaper.</li>
             <li>• Pick your starting five by weekly hours saved, not by what sounds cool.</li>
           </ul>
         </div>
@@ -198,11 +198,11 @@ export const batch2: Post[] = [
         <h2 id="sales-mkt">Sales and Marketing (8–13)</h2>
         <ol start={8}>
           <li><strong>Inbound lead routing by territory + ICP fit</strong></li>
-          <li><strong>Cold outreach sequencing with personalization</strong> — see our{" "}
+          <li><strong>Cold outreach sequencing with personalization</strong> - see our{" "}
             <a href="/blog/ai-cold-outreach-personalization">cold outreach guide</a></li>
           <li><strong>LinkedIn engagement tracker → CRM</strong></li>
           <li><strong>Webinar/event attendee follow-up sequences</strong></li>
-          <li><strong>Content repurposing: long-form → social posts</strong> — our{" "}
+          <li><strong>Content repurposing: long-form → social posts</strong> - our{" "}
             <a href="/blog/repurpose-talk-month-content">repurposing guide</a></li>
           <li><strong>Newsletter assembly from week's content</strong></li>
         </ol>
@@ -219,7 +219,7 @@ export const batch2: Post[] = [
         </ol>
         <blockquote className="border-l-2 border-green-500 pl-6 my-8 text-[#bbb] italic">
           The compounding effect is the real prize. Automating onboarding doesn't just
-          save 2 hours this time — it saves 2 hours per client forever.
+          save 2 hours this time - it saves 2 hours per client forever.
         </blockquote>
 
         <h2 id="where-to-start">Where to Start</h2>
@@ -244,7 +244,7 @@ export const batch2: Post[] = [
         </p>
         <p>
           <strong>Do all 20 use AI?</strong> About half do. The other half are
-          deterministic — and that's correct. Use AI where judgment is needed, plain
+          deterministic - and that's correct. Use AI where judgment is needed, plain
           automation where it isn't.
         </p>
         <p>
@@ -262,7 +262,7 @@ export const batch2: Post[] = [
     readTime: "8 min read",
     date: "May 22, 2026",
     excerpt:
-      "The 90-day operations audit framework we use with clients to find — and eliminate — the manual workflows costing them 20+ hours per week.",
+      "The 90-day operations audit framework we use with clients to find - and eliminate - the manual workflows costing them 20+ hours per week.",
     author: "Flowtix Team",
     tags: ["Operations", "Audit", "Automation"],
     toc: [
@@ -288,7 +288,7 @@ export const batch2: Post[] = [
             <li>• 30 days to map, 30 to quantify, 30 to automate.</li>
             <li>• Baselines must be measured before you change anything.</li>
             <li>• Most SMBs find 20–40 hours/week of automatable work in this audit.</li>
-            <li>• The audit is repeatable annually — patterns shift as the business grows.</li>
+            <li>• The audit is repeatable annually - patterns shift as the business grows.</li>
           </ul>
         </div>
 
@@ -298,7 +298,7 @@ export const batch2: Post[] = [
           For each repeating task, capture: trigger, steps, tools used, output, frequency.
         </p>
         <p>
-          The deliverable is a workflow inventory — typically 40–80 rows for a 20-person
+          The deliverable is a workflow inventory - typically 40–80 rows for a 20-person
           business. Don't filter yet. Capture everything.
         </p>
 
@@ -407,14 +407,14 @@ export const batch2: Post[] = [
             <li>• RPA is for deterministic, rule-based, repetitive tasks.</li>
             <li>• AI automation is for tasks requiring judgment, interpretation, or generation.</li>
             <li>• Many workflows need both, in sequence.</li>
-            <li>• Don't pay AI prices for RPA work — or vice versa.</li>
+            <li>• Don't pay AI prices for RPA work - or vice versa.</li>
           </ul>
         </div>
 
         <h2 id="definitions">Real Definitions (Not Marketing Ones)</h2>
         <p>
           <strong>RPA</strong> is a software robot that mimics a human clicking through
-          screens. It handles deterministic workflows — same input, same steps, same
+          screens. It handles deterministic workflows - same input, same steps, same
           output. Examples: copying data between systems, filling forms, downloading
           reports on a schedule.
         </p>
@@ -437,7 +437,7 @@ export const batch2: Post[] = [
           </li>
           <li>
             <strong>Does it require interpretation?</strong> If the input is unstructured
-            text, images, voice, or messy data — AI automation.
+            text, images, voice, or messy data - AI automation.
           </li>
           <li>
             <strong>Does the rate of failure change as systems change?</strong> RPA
@@ -459,7 +459,7 @@ export const batch2: Post[] = [
           or the other costs you twice.
         </p>
         <blockquote className="border-l-2 border-green-500 pl-6 my-8 text-[#bbb] italic">
-          Hybrid workflows — AI for judgment, RPA for execution — are the dominant
+          Hybrid workflows - AI for judgment, RPA for execution - are the dominant
           pattern in 2026. Choose tools that can do both, or compose two that integrate
           cleanly.
         </blockquote>
@@ -472,8 +472,8 @@ export const batch2: Post[] = [
 
         <h2 id="faq">FAQ</h2>
         <p>
-          <strong>Is RPA dying?</strong> No. Some categories of work — especially
-          legacy-system integration without APIs — still need it. RPA is being absorbed
+          <strong>Is RPA dying?</strong> No. Some categories of work - especially
+          legacy-system integration without APIs - still need it. RPA is being absorbed
           as a step inside AI-orchestrated flows.
         </p>
         <p>
@@ -482,7 +482,7 @@ export const batch2: Post[] = [
           updates as workflows shift; expect 5–10% per year.
         </p>
         <p>
-          <strong>Can we start with one and add the other?</strong> Yes — most teams
+          <strong>Can we start with one and add the other?</strong> Yes - most teams
           start with AI automation for the wins, add RPA selectively for the deterministic
           bottlenecks.
         </p>
@@ -497,7 +497,7 @@ export const batch2: Post[] = [
     readTime: "8 min read",
     date: "May 22, 2026",
     excerpt:
-      "Use this 5-level automation maturity model to honestly assess your business — and find the next high-leverage step you should take.",
+      "Use this 5-level automation maturity model to honestly assess your business - and find the next high-leverage step you should take.",
     author: "Flowtix Team",
     tags: ["Maturity Model", "Strategy", "Operations"],
     toc: [
@@ -511,7 +511,7 @@ export const batch2: Post[] = [
       <>
         <h2 id="intro">Why an Automation Maturity Model</h2>
         <p>
-          Most businesses tackle automation tactically — a Zap here, a script there,
+          Most businesses tackle automation tactically - a Zap here, a script there,
           a workflow that someone built in a hackathon. The <strong>automation maturity
           model</strong> exists to give you a strategic frame: where you are, what's
           next, and what good looks like at each level.
@@ -520,7 +520,7 @@ export const batch2: Post[] = [
           <div className="text-label text-green-400 mb-3">Key Takeaways</div>
           <ul className="space-y-2 text-[#ccc] text-sm">
             <li>• 5 levels: Manual → Tactical → Systematic → Intelligent → Adaptive.</li>
-            <li>• Most SMBs sit at Level 2 — and the jump to Level 3 is the highest-ROI move.</li>
+            <li>• Most SMBs sit at Level 2 - and the jump to Level 3 is the highest-ROI move.</li>
             <li>• Each level requires different skills, not just more tools.</li>
             <li>• Skipping levels rarely works. Sequencing matters.</li>
           </ul>
@@ -534,7 +534,7 @@ export const batch2: Post[] = [
         </p>
         <h3>Level 2: Tactical Automation</h3>
         <p>
-          Point automations exist — a Zap that creates a CRM contact when a form is
+          Point automations exist - a Zap that creates a CRM contact when a form is
           submitted, an email sequence on signup. Built ad-hoc, owned by whoever built
           them. No documentation. Where most SMBs sit.
         </p>
@@ -579,7 +579,7 @@ export const batch2: Post[] = [
           <li><strong>L4 → L5:</strong> Add observability. Use AI to surface new patterns.</li>
         </ul>
         <blockquote className="border-l-2 border-green-500 pl-6 my-8 text-[#bbb] italic">
-          The hardest jump is L2 to L3 — because it requires organizational change, not
+          The hardest jump is L2 to L3 - because it requires organizational change, not
           just more tools. Most businesses stay at L2 forever.
         </blockquote>
         <p>
@@ -611,7 +611,7 @@ export const batch2: Post[] = [
     readTime: "7 min read",
     date: "May 22, 2026",
     excerpt:
-      "Most email triage automation is brittle. This guide shows how to build email triage that actually works in 2026 — without ending up in spam.",
+      "Most email triage automation is brittle. This guide shows how to build email triage that actually works in 2026 - without ending up in spam.",
     author: "Flowtix Team",
     tags: ["Email", "Triage", "AI Automation"],
     toc: [
@@ -651,7 +651,7 @@ export const batch2: Post[] = [
             predefined categories with a confidence score.
           </li>
           <li>
-            <strong>Route:</strong> Each category has a deterministic destination —
+            <strong>Route:</strong> Each category has a deterministic destination -
             label, folder, downstream tool.
           </li>
           <li>
@@ -666,11 +666,11 @@ export const batch2: Post[] = [
         <h2 id="categories">The Categories That Matter</h2>
         <p>For most service businesses, these five categories cover 90% of inbound:</p>
         <ul>
-          <li><strong>Sales inquiry</strong> — route to CRM, draft personalized reply</li>
-          <li><strong>Customer support</strong> — route to support tool, draft acknowledgment</li>
-          <li><strong>Vendor / admin</strong> — route to ops folder, no draft</li>
-          <li><strong>Internal team</strong> — leave in inbox, no automation</li>
-          <li><strong>Marketing / cold outreach</strong> — auto-archive or unsubscribe</li>
+          <li><strong>Sales inquiry</strong> - route to CRM, draft personalized reply</li>
+          <li><strong>Customer support</strong> - route to support tool, draft acknowledgment</li>
+          <li><strong>Vendor / admin</strong> - route to ops folder, no draft</li>
+          <li><strong>Internal team</strong> - leave in inbox, no automation</li>
+          <li><strong>Marketing / cold outreach</strong> - auto-archive or unsubscribe</li>
         </ul>
         <p>
           Resist the urge to make 20 categories. The accuracy on edge cases tanks and
@@ -694,8 +694,8 @@ export const batch2: Post[] = [
         </p>
         <blockquote className="border-l-2 border-green-500 pl-6 my-8 text-[#bbb] italic">
           Email triage automation that works in week one fails in month three because
-          the input distribution shifts. Build for the shift — with monitoring and a
-          fast feedback loop — or don't build at all.
+          the input distribution shifts. Build for the shift - with monitoring and a
+          fast feedback loop - or don't build at all.
         </blockquote>
         <p>
           For broader context see the <a href="/blog/automations-service-business-2026">20
@@ -729,7 +729,7 @@ export const batch2: Post[] = [
     readTime: "7 min read",
     date: "May 22, 2026",
     excerpt:
-      "In 2026, AI-based document processing has overtaken traditional OCR for most use cases. Here's the practical comparison — and when OCR still wins.",
+      "In 2026, AI-based document processing has overtaken traditional OCR for most use cases. Here's the practical comparison - and when OCR still wins.",
     author: "Flowtix Team",
     tags: ["Document Processing", "OCR", "AI"],
     toc: [
@@ -755,7 +755,7 @@ export const batch2: Post[] = [
         <div className="my-8 p-6 border border-green-500/30 bg-green-500/5 rounded-2xl">
           <div className="text-label text-green-400 mb-3">Key Takeaways</div>
           <ul className="space-y-2 text-[#ccc] text-sm">
-            <li>• AI wins for varied, semi-structured documents — invoices, contracts, forms.</li>
+            <li>• AI wins for varied, semi-structured documents - invoices, contracts, forms.</li>
             <li>• OCR wins for high-volume, narrow, identical-format documents.</li>
             <li>• Modern stacks use both: OCR for extraction, AI for interpretation.</li>
             <li>• Cost per document on AI: $0.005–$0.05 in 2026.</li>
@@ -812,7 +812,7 @@ export const batch2: Post[] = [
         <h2 id="faq">FAQ</h2>
         <p>
           <strong>Does Anthropic or OpenAI handle doc processing better?</strong> Both
-          are excellent. Test on your specific documents — small differences can matter
+          are excellent. Test on your specific documents - small differences can matter
           for your use case.
         </p>
         <p>
@@ -912,7 +912,7 @@ export const batch2: Post[] = [
         </ul>
         <blockquote className="border-l-2 border-green-500 pl-6 my-8 text-[#bbb] italic">
           A clean CRM is a competitive advantage. A dirty CRM is a constant tax on
-          everyone who touches it. Automation makes both worse, faster — pick which.
+          everyone who touches it. Automation makes both worse, faster - pick which.
         </blockquote>
         <p>
           For the broader sales ops picture see our piece on{" "}
@@ -922,7 +922,7 @@ export const batch2: Post[] = [
 
         <h2 id="faq">FAQ</h2>
         <p>
-          <strong>Should sales reps see automation activity?</strong> Yes — visible
+          <strong>Should sales reps see automation activity?</strong> Yes - visible
           tags and last-updated-by fields. Hidden automation breeds mistrust.
         </p>
         <p>
@@ -1010,7 +1010,7 @@ export const batch2: Post[] = [
         <ul>
           <li>Invoice extraction (replacing brittle OCR + parsing)</li>
           <li>GL code suggestion based on vendor + description</li>
-          <li>Anomaly detection (this vendor never bills more than $5K — why is this one $50K?)</li>
+          <li>Anomaly detection (this vendor never bills more than $5K - why is this one $50K?)</li>
           <li>Duplicate detection (matches even when invoice numbers differ slightly)</li>
         </ul>
         <p>AI does NOT handle:</p>
@@ -1068,7 +1068,7 @@ export const batch2: Post[] = [
     readTime: "8 min read",
     date: "May 22, 2026",
     excerpt:
-      "Internal tools used to take months. In 2026, AI-augmented builders ship them in days. Here's the modern approach — and the trade-offs.",
+      "Internal tools used to take months. In 2026, AI-augmented builders ship them in days. Here's the modern approach - and the trade-offs.",
     author: "Flowtix Team",
     tags: ["Internal Tools", "AI Builders", "Productivity"],
     toc: [
@@ -1095,7 +1095,7 @@ export const batch2: Post[] = [
           <div className="text-label text-green-400 mb-3">Key Takeaways</div>
           <ul className="space-y-2 text-[#ccc] text-sm">
             <li>• AI-generated internal tools are 5–10x faster to build than custom code.</li>
-            <li>• Three categories: throwaway, departmental, mission-critical — built differently.</li>
+            <li>• Three categories: throwaway, departmental, mission-critical - built differently.</li>
             <li>• Governance is the new bottleneck, not engineering capacity.</li>
             <li>• Centralize on a small set of tools and patterns or end up with chaos.</li>
           </ul>
@@ -1164,7 +1164,7 @@ export const batch2: Post[] = [
           </li>
         </ol>
         <blockquote className="border-l-2 border-green-500 pl-6 my-8 text-[#bbb] italic">
-          The biggest 2026 internal-tools risk isn't bad code — it's tool sprawl. The
+          The biggest 2026 internal-tools risk isn't bad code - it's tool sprawl. The
           orgs that win invest in governance the same week they invest in the AI
           builders.
         </blockquote>

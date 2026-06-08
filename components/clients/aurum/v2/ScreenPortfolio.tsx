@@ -1,13 +1,13 @@
 "use client";
 
 /**
- * Aurum V2 — Portfolio Intelligence Engine
+ * Aurum V2 - Portfolio Intelligence Engine
  *
  * Private-bank style portfolio view. Deep amber-black backdrop with cream
  * type and gold accents. Sidebar with portfolio nav, header with client
  * + AUM, returns chart, holdings table, side panel with risk metrics.
  *
- * Density is calmer than Kova — fewer rows, more whitespace, serif title.
+ * Density is calmer than Kova - fewer rows, more whitespace, serif title.
  */
 
 import { m } from "framer-motion";

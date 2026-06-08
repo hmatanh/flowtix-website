@@ -11,7 +11,7 @@ type Props = {
   animated?: boolean;
   href?: string | null;
   className?: string;
-  /** Deprecated — kept for compatibility, ignored. */
+  /** Deprecated - kept for compatibility, ignored. */
   showSuffix?: boolean;
   variant?: "white" | "black";
 };

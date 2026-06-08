@@ -1,13 +1,13 @@
 "use client";
 
 /**
- * Kova case study — Archetype A · Narrative Product Dossier
+ * Kova case study - Archetype A · Narrative Product Dossier
  *
  * Inspired by Linear's customer pages and Vercel's editorial case studies.
  * No more shared ProjectPageLayout. Brand sky-blue washes the entire
  * viewport. Product UI shots run full-bleed at native density (mobile
  * pans horizontally). Annotations sit BELOW each screen as a numbered
- * card grid — never floating over the artwork.
+ * card grid - never floating over the artwork.
  */
 
 import { type Project } from "@/lib/projects";
@@ -32,7 +32,7 @@ const KOVA_PRIMARY = "#0EA5E9";
 export function KovaView({ project }: { project: Project }) {
   return (
     <main>
-      {/* 1 — HERO */}
+      {/* 1 - HERO */}
       <CaseHero
         eyebrow="Real estate · CRM"
         year={project.year}
@@ -48,7 +48,7 @@ export function KovaView({ project }: { project: Project }) {
         accentRGB={KOVA_RGB}
       />
 
-      {/* 2 — METRIC STRIP */}
+      {/* 2 - METRIC STRIP */}
       <MetricStrip
         accentColor={KOVA_PRIMARY}
         accentRGB={KOVA_RGB}
@@ -59,7 +59,7 @@ export function KovaView({ project }: { project: Project }) {
         ]}
       />
 
-      {/* 3 — HERO ARTIFACT (already mobile-responsive — no scroll needed) */}
+      {/* 3 - HERO ARTIFACT (already mobile-responsive - no scroll needed) */}
       <AnnotatedScreen
         accentRGB={KOVA_RGB}
         eyebrow="The matching moment"
@@ -69,7 +69,7 @@ export function KovaView({ project }: { project: Project }) {
         <HeroArtifact />
       </AnnotatedScreen>
 
-      {/* 4 — CHALLENGE — opinion-as-heading */}
+      {/* 4 - CHALLENGE - opinion-as-heading */}
       <StorySection
         accentRGB={KOVA_RGB}
         eyebrow="The challenge"
@@ -94,7 +94,7 @@ export function KovaView({ project }: { project: Project }) {
         </p>
       </StorySection>
 
-      {/* 5 — BEFORE / AFTER (already responsive — disable scroll) */}
+      {/* 5 - BEFORE / AFTER (already responsive - disable scroll) */}
       <AnnotatedScreen
         accentRGB={KOVA_RGB}
         eyebrow="System architecture"
@@ -111,7 +111,7 @@ export function KovaView({ project }: { project: Project }) {
         <BeforeAfter />
       </AnnotatedScreen>
 
-      {/* 6 — SOLUTION — opinion-as-heading */}
+      {/* 6 - SOLUTION - opinion-as-heading */}
       <StorySection
         accentRGB={KOVA_RGB}
         eyebrow="The solution"
@@ -127,7 +127,7 @@ export function KovaView({ project }: { project: Project }) {
           Every new lead now lands in one calm inbox. Claude scores it against
           the entire active book of buyers, ranks the top matches by likelihood
           to close, and drafts a follow-up in the responsible agent&apos;s
-          tone of voice — pulled from their last eighty conversations.
+          tone of voice - pulled from their last eighty conversations.
         </p>
         <p>
           The agent reviews the draft, edits one line if it needs editing,
@@ -136,7 +136,7 @@ export function KovaView({ project }: { project: Project }) {
         </p>
       </StorySection>
 
-      {/* 7 — DASHBOARD SHOT */}
+      {/* 7 - DASHBOARD SHOT */}
       <AnnotatedScreen
         accentRGB={KOVA_RGB}
         eyebrow="What every agent opens at 9am"
@@ -162,7 +162,7 @@ export function KovaView({ project }: { project: Project }) {
         <ScreenDashboard />
       </AnnotatedScreen>
 
-      {/* 8 — A QUIET QUOTE */}
+      {/* 8 - A QUIET QUOTE */}
       <PullQuote
         accentColor={KOVA_PRIMARY}
         accentRGB={KOVA_RGB}
@@ -175,11 +175,11 @@ export function KovaView({ project }: { project: Project }) {
         faster, and we feel calmer, at the same time.
       </PullQuote>
 
-      {/* 9 — MATCHING SHOT */}
+      {/* 9 - MATCHING SHOT */}
       <AnnotatedScreen
         accentRGB={KOVA_RGB}
         eyebrow="The engine, opened up"
-        caption="Each match is scored against the listing on four criteria — budget alignment, neighbourhood preference, property attributes, and buyer activity recency."
+        caption="Each match is scored against the listing on four criteria - budget alignment, neighbourhood preference, property attributes, and buyer activity recency."
         annotations={[
           {
             number: "01",
@@ -189,7 +189,7 @@ export function KovaView({ project }: { project: Project }) {
           {
             number: "02",
             eyebrow: "Top match",
-            body: "Always surfaces the buyer most likely to close — never just the most recently active in the database.",
+            body: "Always surfaces the buyer most likely to close - never just the most recently active in the database.",
           },
           {
             number: "03",
@@ -201,7 +201,7 @@ export function KovaView({ project }: { project: Project }) {
         <ScreenMatching />
       </AnnotatedScreen>
 
-      {/* 10 — CRM shot */}
+      {/* 10 - CRM shot */}
       <AnnotatedScreen
         accentRGB={KOVA_RGB}
         eyebrow="The conversation, after the match"
@@ -210,7 +210,7 @@ export function KovaView({ project }: { project: Project }) {
           {
             number: "01",
             eyebrow: "One inbox",
-            body: "Email, WhatsApp, Instagram and form replies all consolidate here — no more switching tabs.",
+            body: "Email, WhatsApp, Instagram and form replies all consolidate here - no more switching tabs.",
           },
           {
             number: "02",
@@ -227,7 +227,7 @@ export function KovaView({ project }: { project: Project }) {
         <ScreenCRM />
       </AnnotatedScreen>
 
-      {/* 11 — A SECOND QUOTE */}
+      {/* 11 - A SECOND QUOTE */}
       <PullQuote
         accentColor={KOVA_PRIMARY}
         accentRGB={KOVA_RGB}
@@ -240,7 +240,7 @@ export function KovaView({ project }: { project: Project }) {
         That&apos;s when I knew it had become part of how I work.
       </PullQuote>
 
-      {/* 11.5 — DELIVERABLES */}
+      {/* 11.5 - DELIVERABLES */}
       <DeliverablesList
         accentRGB={KOVA_RGB}
         eyebrow="What we built"
@@ -274,14 +274,14 @@ export function KovaView({ project }: { project: Project }) {
         ]}
       />
 
-      {/* 12 — Closing argument */}
+      {/* 12 - Closing argument */}
       <StorySection
         accentRGB={KOVA_RGB}
         eyebrow="What changed"
         heading={
           <>
             A twelve-person office that{" "}
-            <span style={{ color: KOVA_PRIMARY }}>responds like fifty</span> —
+            <span style={{ color: KOVA_PRIMARY }}>responds like fifty</span> -
             without hiring a single new agent.
           </>
         }
@@ -298,7 +298,7 @@ export function KovaView({ project }: { project: Project }) {
         </p>
       </StorySection>
 
-      {/* 13 — FOOTER strip */}
+      {/* 13 - FOOTER strip */}
       <CaseFooter project={project} />
     </main>
   );

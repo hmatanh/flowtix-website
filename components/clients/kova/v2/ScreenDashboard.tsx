@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * Kova V2 — Dashboard
+ * Kova V2 - Dashboard
  *
  * High-density real-estate operations dashboard. Reads as an actual product
  * screenshot, not an SVG sketch:
@@ -99,7 +99,7 @@ const PIPELINE = [
 const AI_SUGGESTIONS = [
   {
     title: "Sarah Mitchell · 94% match",
-    body: "201 W 21st (Chelsea) hit the MLS at 9:42am. Draft personal email queued — needs your tone-check.",
+    body: "201 W 21st (Chelsea) hit the MLS at 9:42am. Draft personal email queued - needs your tone-check.",
     action: "Review draft",
   },
   {

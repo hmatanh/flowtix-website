@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 
-const AWAY_TITLE = "👋 Welcome back — Flowtix AI";
+const AWAY_TITLE = "👋 Welcome back - Flowtix AI";
 
 export function TabAttention() {
   useEffect(() => {

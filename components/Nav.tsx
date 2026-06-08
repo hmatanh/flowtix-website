@@ -115,7 +115,7 @@ export function Nav() {
             </m.div>
           </div>
 
-          {/* Hamburger — animated 3-line → X */}
+          {/* Hamburger - animated 3-line → X */}
           <button
             type="button"
             onClick={() => setOpen((o) => !o)}
@@ -152,7 +152,7 @@ export function Nav() {
         </nav>
       </header>
 
-      {/* MOBILE MENU OVERLAY — full-screen, solid black, above everything */}
+      {/* MOBILE MENU OVERLAY - full-screen, solid black, above everything */}
       <AnimatePresence>
         {open && (
           <m.div
@@ -196,7 +196,7 @@ export function Nav() {
                 style={{ height: "1px", backgroundColor: "#111" }}
               />
 
-              {/* NAV LINKS — stacked */}
+              {/* NAV LINKS - stacked */}
               <nav className="flex flex-col px-6 pt-8 gap-1">
                 {MOBILE_LINKS.map((link, i) => (
                   <m.div

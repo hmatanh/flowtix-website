@@ -5,7 +5,7 @@
  * the form ever swaps Web3Forms for a self-hosted SMTP layer.
  *
  * ⚠ Safe for HTML text-content interpolation ONLY.
- *    NOT safe for href / src / url() — use a URL validator for those.
+ *    NOT safe for href / src / url() - use a URL validator for those.
  *    NOT ideal for plain-text email bodies (apostrophes become
  *    `&#x27;`); use `sanitizeForEmail` for plain-text contexts.
  */
@@ -24,7 +24,7 @@ export function sanitizeInput(value: string): string {
 
 /**
  * Strip control chars + trim + length-cap for plain-text email bodies.
- * Does NOT HTML-escape — so `O'Reilly` stays `O'Reilly`, not `O&#x27;Reilly`.
+ * Does NOT HTML-escape - so `O'Reilly` stays `O'Reilly`, not `O&#x27;Reilly`.
  * Use this for any user-supplied value that flows into Web3Forms email
  * subjects/bodies or other plain-text channels.
  */

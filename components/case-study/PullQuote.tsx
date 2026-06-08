@@ -31,7 +31,7 @@ type Props = {
 const EASE = [0.21, 0.47, 0.32, 0.98] as const;
 
 /**
- * PullQuote — the multi-stakeholder quote pattern.
+ * PullQuote - the multi-stakeholder quote pattern.
  * Used 2-3 times per case study at the moments where a human voice carries
  * more weight than a metric. Headshot + name + role pinned underneath the
  * quote. Avoids the "agency-written" feel of unattributed quotes.

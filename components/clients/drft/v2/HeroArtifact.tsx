@@ -1,10 +1,10 @@
 "use client";
 
 /**
- * Drft V2 — Hero Artifact
+ * Drft V2 - Hero Artifact
  *
  * Drop-campaign poster. Full-bleed orange wash, oversized DRFT wordmark,
- * "SS25 — Fieldwork Drop" eyebrow, vertical row of schematic jacket
+ * "SS25 - Fieldwork Drop" eyebrow, vertical row of schematic jacket
  * silhouettes acting as a lookbook strip, and a single editorial line
  * underneath. Reads as the kind of poster that would show up in a
  * physical store window.
@@ -117,7 +117,7 @@ export function HeroArtifact() {
           </div>
         </m.div>
 
-        {/* Coat lookbook row — 5 on lg+, drops to 3 on small */}
+        {/* Coat lookbook row - 5 on lg+, drops to 3 on small */}
         <div className="mt-8 sm:mt-14 grid grid-cols-3 sm:grid-cols-5 gap-2 sm:gap-4 lg:gap-6">
           {[
             { name: "Field", tint: "#7F1D1D", price: "$189" },

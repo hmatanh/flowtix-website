@@ -58,7 +58,7 @@ export const batch7: Post[] = [
         <p>
           For each of the five candidates, attach numbers: hours per week, dollar cost
           per year, ROI if AI handles 60%, ROI at 80%, what could go wrong, who
-          champions internally, who resists. The numbers are estimates &mdash; that&apos;s
+          champions internally, who resists. The numbers are estimates - that&apos;s
           fine. The discipline is the point.
         </p>
 
@@ -77,7 +77,7 @@ export const batch7: Post[] = [
         <p>
           Pick the riskiest of the top three. Build the smallest version that proves
           (or disproves) the AI approach can handle it. This is not the final product
-          &mdash; it&apos;s a probe. Time-box it strictly.
+          - it&apos;s a probe. Time-box it strictly.
         </p>
         <p>
           The test usually answers one question: does the AI quality meet the bar your
@@ -182,10 +182,10 @@ export const batch7: Post[] = [
         <div className={CALLOUT}>
           <div className="text-label text-amber-400 mb-3">Year-One Allocation Heuristic</div>
           <ul className="space-y-2 text-[#ccc] text-sm">
-            <li>&bull; 40% &mdash; talent (internal and external).</li>
-            <li>&bull; 30% &mdash; tooling and infrastructure.</li>
-            <li>&bull; 20% &mdash; AI provider costs.</li>
-            <li>&bull; 10% &mdash; training, governance, miscellany.</li>
+            <li>&bull; 40% - talent (internal and external).</li>
+            <li>&bull; 30% - tooling and infrastructure.</li>
+            <li>&bull; 20% - AI provider costs.</li>
+            <li>&bull; 10% - training, governance, miscellany.</li>
           </ul>
         </div>
 
@@ -241,7 +241,7 @@ export const batch7: Post[] = [
     readTime: "8 min read",
     date: "July 3, 2026",
     excerpt:
-      "Operators struggle to separate AI hype from AI leverage. Here is the practical filter — what to ignore, what to invest in, and how to tell the difference quickly.",
+      "Operators struggle to separate AI hype from AI leverage. Here is the practical filter - what to ignore, what to invest in, and how to tell the difference quickly.",
     author: "Flowtix Team",
     tags: ["AI Strategy", "Hype", "Leverage"],
     toc: [
@@ -318,7 +318,7 @@ export const batch7: Post[] = [
         <p>
           Spend 20% of your AI attention on what&apos;s new and 80% on what&apos;s
           shipping. Most operators reverse the ratio and never ship. The leverage is in
-          the boring, well-deployed AI &mdash; not in the cutting edge.
+          the boring, well-deployed AI - not in the cutting edge.
         </p>
 
         <blockquote className={QUOTE}>
@@ -372,10 +372,10 @@ export const batch7: Post[] = [
           The right champion combines four traits:
         </p>
         <ul>
-          <li>Operational seniority &mdash; respected across functions.</li>
-          <li>Strong product instincts &mdash; knows good UX from bad.</li>
-          <li>Technical literacy &mdash; doesn&apos;t need to code but can read it.</li>
-          <li>Comfort with ambiguity &mdash; AI deployments are messy.</li>
+          <li>Operational seniority - respected across functions.</li>
+          <li>Strong product instincts - knows good UX from bad.</li>
+          <li>Technical literacy - doesn&apos;t need to code but can read it.</li>
+          <li>Comfort with ambiguity - AI deployments are messy.</li>
         </ul>
         <p>
           Common profiles: senior PM, head of ops, COO-track operator, occasionally a
@@ -384,10 +384,10 @@ export const batch7: Post[] = [
 
         <h2 id="who-doesnt">Who Doesn&apos;t Fit</h2>
         <ul>
-          <li>The CTO &mdash; usually too busy and too focused on the product itself.</li>
-          <li>The CEO &mdash; can sponsor but shouldn&apos;t own.</li>
-          <li>An external consultant &mdash; no authority to push internally.</li>
-          <li>A junior data scientist &mdash; lacks operational seniority.</li>
+          <li>The CTO - usually too busy and too focused on the product itself.</li>
+          <li>The CEO - can sponsor but shouldn&apos;t own.</li>
+          <li>An external consultant - no authority to push internally.</li>
+          <li>A junior data scientist - lacks operational seniority.</li>
         </ul>
 
         <h2 id="responsibilities">Core Responsibilities</h2>
@@ -457,7 +457,7 @@ export const batch7: Post[] = [
     readTime: "9 min read",
     date: "July 5, 2026",
     excerpt:
-      "AI projects have unusual risk profiles. Here is the practical risk management framework — what to plan for, what to live with, and what to refuse.",
+      "AI projects have unusual risk profiles. Here is the practical risk management framework - what to plan for, what to live with, and what to refuse.",
     author: "Flowtix Team",
     tags: ["AI Risk", "Risk Management", "Governance"],
     toc: [
@@ -480,11 +480,11 @@ export const batch7: Post[] = [
           incident we&apos;ve seen:
         </p>
         <ol>
-          <li>Model risk &mdash; the AI is wrong in ways that matter.</li>
-          <li>Data risk &mdash; the data going in is bad, missing, or leaks out.</li>
-          <li>Operational risk &mdash; the system breaks or is misused.</li>
-          <li>Regulatory risk &mdash; you&apos;ve violated a law or guidance.</li>
-          <li>Reputational risk &mdash; the AI does something that ends up in the press.</li>
+          <li>Model risk - the AI is wrong in ways that matter.</li>
+          <li>Data risk - the data going in is bad, missing, or leaks out.</li>
+          <li>Operational risk - the system breaks or is misused.</li>
+          <li>Regulatory risk - you&apos;ve violated a law or guidance.</li>
+          <li>Reputational risk - the AI does something that ends up in the press.</li>
         </ol>
 
         <h2 id="model">Model Risk</h2>
@@ -565,7 +565,7 @@ export const batch7: Post[] = [
     readTime: "8 min read",
     date: "July 6, 2026",
     excerpt:
-      "A representative case study of a small marketing agency that doubled deliverable output without hiring — what they changed, what broke, and what stuck.",
+      "A representative case study of a small marketing agency that doubled deliverable output without hiring - what they changed, what broke, and what stuck.",
     author: "Flowtix Team",
     tags: ["Case Study", "Marketing Agency", "Productivity"],
     toc: [
@@ -595,7 +595,7 @@ export const batch7: Post[] = [
         <p>
           A 2-week audit revealed where time actually went: 38% content production,
           22% reporting, 18% client communication, 14% strategy, 8% admin. Strategy
-          &mdash; the high-margin work &mdash; was the smallest slice.
+          - the high-margin work - was the smallest slice.
         </p>
 
         <h2 id="build">The Build</h2>
@@ -621,7 +621,7 @@ export const batch7: Post[] = [
           <div className="text-label text-amber-400 mb-3">The Single Biggest Win</div>
           <ul className="space-y-2 text-[#ccc] text-sm">
             <li>&bull; Production time fell 65%. Editor time stayed flat. Quality stayed up.</li>
-            <li>&bull; The savings went to strategy work &mdash; higher margin, more interesting.</li>
+            <li>&bull; The savings went to strategy work - higher margin, more interesting.</li>
             <li>&bull; Producers became editors-plus-strategists, not displaced.</li>
           </ul>
         </div>
@@ -630,12 +630,12 @@ export const batch7: Post[] = [
         <ul>
           <li>First-pass voice rules were too loose; output sounded generic. Iterated 3x.</li>
           <li>Two producers struggled with the transition to editor role. One left voluntarily.</li>
-          <li>Client billing model strained &mdash; hourly billing on AI-augmented work shorts the agency. Moved to fixed scope.</li>
+          <li>Client billing model strained - hourly billing on AI-augmented work shorts the agency. Moved to fixed scope.</li>
         </ul>
 
         <h2 id="lessons">Lessons</h2>
         <ol>
-          <li>Voice rules are the biggest quality lever &mdash; spend disproportionately on them.</li>
+          <li>Voice rules are the biggest quality lever - spend disproportionately on them.</li>
           <li>Editor skill is the new bottleneck. Train deliberately.</li>
           <li>Billing model must follow workflow change.</li>
           <li>Two of twelve people will leave; that&apos;s the cost of the transition.</li>
@@ -651,7 +651,7 @@ export const batch7: Post[] = [
 
         <blockquote className={QUOTE}>
           The agency didn&apos;t become an AI agency. It became a strategy agency that
-          uses AI for production. The framing matters &mdash; for clients, for talent,
+          uses AI for production. The framing matters - for clients, for talent,
           and for the founders themselves.
         </blockquote>
 
@@ -660,7 +660,7 @@ export const batch7: Post[] = [
         <h2 id="faq">FAQ</h2>
         <p><strong>Total investment?</strong> ~$60k over 6 months in tools and consulting. Paid back in month 4.</p>
         <p><strong>Could a smaller agency do this?</strong> Yes, with proportional scope. Even a 3-person agency benefits.</p>
-        <p><strong>Did clients notice?</strong> Yes &mdash; faster turnaround and richer strategy. Mostly positive.</p>
+        <p><strong>Did clients notice?</strong> Yes - faster turnaround and richer strategy. Mostly positive.</p>
       </>
     ),
   },
@@ -743,7 +743,7 @@ export const batch7: Post[] = [
         <h2 id="frictions">Frictions</h2>
         <ul>
           <li>Two senior agents resisted AI replies &ldquo;sounding like them.&rdquo; Solved by training the AI per agent.</li>
-          <li>One lead complained about AI &mdash; the office added a clear disclosure on the first auto-message.</li>
+          <li>One lead complained about AI - the office added a clear disclosure on the first auto-message.</li>
           <li>MLS integration took longer than expected (3 weeks vs planned 1).</li>
         </ul>
 
@@ -752,7 +752,7 @@ export const batch7: Post[] = [
           <li>Disclosure is non-negotiable. Trust beats stealth.</li>
           <li>Per-agent voice tuning is worth the effort.</li>
           <li>The 5-minute response window is more important than perfect responses.</li>
-          <li>Senior agents become coaches in the new system &mdash; design for that.</li>
+          <li>Senior agents become coaches in the new system - design for that.</li>
         </ol>
 
         <blockquote className={QUOTE}>
@@ -805,11 +805,11 @@ export const batch7: Post[] = [
           Where the 8 staff actually spent their week:
         </p>
         <ul>
-          <li>Insurance verification &mdash; 28 hours/week across staff.</li>
-          <li>Appointment scheduling and reminders &mdash; 22 hours.</li>
-          <li>Billing communication &mdash; 18 hours.</li>
-          <li>Routine patient questions &mdash; 14 hours.</li>
-          <li>Forms and intake &mdash; 12 hours.</li>
+          <li>Insurance verification - 28 hours/week across staff.</li>
+          <li>Appointment scheduling and reminders - 22 hours.</li>
+          <li>Billing communication - 18 hours.</li>
+          <li>Routine patient questions - 14 hours.</li>
+          <li>Forms and intake - 12 hours.</li>
         </ul>
 
         <h2 id="build">The Build</h2>
@@ -907,10 +907,10 @@ export const batch7: Post[] = [
           500-ticket classification revealed:
         </p>
         <ul>
-          <li>42% &mdash; simple status / how-to (could be auto-resolved).</li>
-          <li>31% &mdash; needs human but AI could draft the reply.</li>
-          <li>18% &mdash; complex, needed senior agent.</li>
-          <li>9% &mdash; not actually support tickets (sales, partnerships, billing edge cases).</li>
+          <li>42% - simple status / how-to (could be auto-resolved).</li>
+          <li>31% - needs human but AI could draft the reply.</li>
+          <li>18% - complex, needed senior agent.</li>
+          <li>9% - not actually support tickets (sales, partnerships, billing edge cases).</li>
         </ul>
 
         <h2 id="build">The Build</h2>

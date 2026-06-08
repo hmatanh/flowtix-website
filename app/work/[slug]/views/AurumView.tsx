@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * Aurum case study — Archetype B · Editorial Gallery (luxury restraint)
+ * Aurum case study - Archetype B · Editorial Gallery (luxury restraint)
  *
  * Pentagram Billie + Heydays Alotta pacing. Stays dark to match the rest
  * of the site, but trades Kova's tech density and Sero's clinical calm
@@ -31,7 +31,7 @@ const AURUM_PRIMARY = "#D97706";
 export function AurumView({ project }: { project: Project }) {
   return (
     <main>
-      {/* 1 — HERO. One sentence. Single accent. */}
+      {/* 1 - HERO. One sentence. Single accent. */}
       <CaseHero
         eyebrow="Private wealth · Boutique"
         year={project.year}
@@ -47,7 +47,7 @@ export function AurumView({ project }: { project: Project }) {
         accentRGB={AURUM_RGB}
       />
 
-      {/* 2 — THE ARTIFACT. Single image, single thesis. */}
+      {/* 2 - THE ARTIFACT. Single image, single thesis. */}
       <AnnotatedScreen
         accentRGB={AURUM_RGB}
         eyebrow="The Q4 review"
@@ -56,13 +56,13 @@ export function AurumView({ project }: { project: Project }) {
         <HeroArtifact />
       </AnnotatedScreen>
 
-      {/* 3 — Two-paragraph thesis. Serif. */}
+      {/* 3 - Two-paragraph thesis. Serif. */}
       <StorySection
         accentRGB={AURUM_RGB}
         eyebrow="The brief"
         heading={
           <>
-            A boutique firm punching above its weight — at the cost of every
+            A boutique firm punching above its weight - at the cost of every
             advisor working past{" "}
             <span style={{ color: AURUM_PRIMARY }}>midnight</span>.
           </>
@@ -70,8 +70,8 @@ export function AurumView({ project }: { project: Project }) {
       >
         <p>
           Aurum&apos;s three senior advisors managed almost $400M in client
-          capital with a service experience that felt — to anyone receiving
-          it — bespoke and personal. Behind the curtain, that experience was
+          capital with a service experience that felt - to anyone receiving
+          it - bespoke and personal. Behind the curtain, that experience was
           held together by 80 hours of manual report writing per quarter,
           copy-pasted from twelve different data sources into a Word template
           that nobody had time to redesign.
@@ -83,11 +83,11 @@ export function AurumView({ project }: { project: Project }) {
         </p>
       </StorySection>
 
-      {/* 4 — Editorial gallery #1 — Portfolio intelligence */}
+      {/* 4 - Editorial gallery #1 - Portfolio intelligence */}
       <AnnotatedScreen
         accentRGB={AURUM_RGB}
         eyebrow="The intelligence engine"
-        caption="Returns, attribution, exposure and mandate compliance calculated continuously — so the morning conversation can be about the client, not the spreadsheet."
+        caption="Returns, attribution, exposure and mandate compliance calculated continuously - so the morning conversation can be about the client, not the spreadsheet."
         annotations={[
           {
             number: "01",
@@ -102,14 +102,14 @@ export function AurumView({ project }: { project: Project }) {
           {
             number: "03",
             eyebrow: "Auditable trail",
-            body: "Every change to a portfolio, every approval, every dissent — logged for governance.",
+            body: "Every change to a portfolio, every approval, every dissent - logged for governance.",
           },
         ]}
       >
         <ScreenPortfolio />
       </AnnotatedScreen>
 
-      {/* 5 — Editorial gallery #2 — Report editor (the headline product) */}
+      {/* 5 - Editorial gallery #2 - Report editor (the headline product) */}
       <AnnotatedScreen
         accentRGB={AURUM_RGB}
         eyebrow="How a quarterly report is now written"
@@ -135,7 +135,7 @@ export function AurumView({ project }: { project: Project }) {
         <ScreenReport />
       </AnnotatedScreen>
 
-      {/* 6 — Quote. Serif. No headshot — Aurum doesn't show its principals. */}
+      {/* 6 - Quote. Serif. No headshot - Aurum doesn't show its principals. */}
       <PullQuote
         accentColor={AURUM_PRIMARY}
         accentRGB={AURUM_RGB}
@@ -150,7 +150,7 @@ export function AurumView({ project }: { project: Project }) {
         leave the office on time again.
       </PullQuote>
 
-      {/* 7 — Editorial gallery #3 — Client portal */}
+      {/* 7 - Editorial gallery #3 - Client portal */}
       <AnnotatedScreen
         accentRGB={AURUM_RGB}
         eyebrow="What the client sees"
@@ -176,7 +176,7 @@ export function AurumView({ project }: { project: Project }) {
         <ScreenPortal />
       </AnnotatedScreen>
 
-      {/* 8 — Editorial gallery #4 — The brand identity itself */}
+      {/* 8 - Editorial gallery #4 - The brand identity itself */}
       <AnnotatedScreen
         accentRGB={AURUM_RGB}
         eyebrow="The brand, in one page"
@@ -186,7 +186,7 @@ export function AurumView({ project }: { project: Project }) {
         <BrandBoard />
       </AnnotatedScreen>
 
-      {/* 9 — Deliverables — Heydays minimal list */}
+      {/* 9 - Deliverables - Heydays minimal list */}
       <DeliverablesList
         eyebrow="What we delivered"
         heading="Five quiet systems and one identity."
@@ -225,7 +225,7 @@ export function AurumView({ project }: { project: Project }) {
         ]}
       />
 
-      {/* 10 — Closing */}
+      {/* 10 - Closing */}
       <StorySection
         accentRGB={AURUM_RGB}
         eyebrow="What changed"
@@ -239,7 +239,7 @@ export function AurumView({ project }: { project: Project }) {
       >
         <p>
           Twelve months after launch, every Aurum client receives a 14-page
-          report on the first business day of the new quarter — drafted by
+          report on the first business day of the new quarter - drafted by
           the system, edited by the partner who manages the relationship,
           and signed by Monday morning.
         </p>
@@ -250,7 +250,7 @@ export function AurumView({ project }: { project: Project }) {
         </p>
       </StorySection>
 
-      {/* 11 — Footer */}
+      {/* 11 - Footer */}
       <CaseFooter project={project} />
     </main>
   );

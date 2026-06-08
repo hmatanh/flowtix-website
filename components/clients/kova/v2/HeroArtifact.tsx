@@ -1,14 +1,14 @@
 "use client";
 
 /**
- * Kova V2 — Hero Artifact
+ * Kova V2 - Hero Artifact
  *
  * The close-up "specimen page" view of the AI matching engine. On desktop:
  * three columns side by side (listing → reasoning → matched buyer). On
  * tablet and mobile: a vertical stack with the reasoning arrow rotated to
  * point downward between the two cards.
  *
- * Backgrounds are smooth gradients only — no grid patterns, no noise.
+ * Backgrounds are smooth gradients only - no grid patterns, no noise.
  */
 
 import { m } from "framer-motion";
@@ -34,7 +34,7 @@ export function HeroArtifact() {
         borderRadius: 16,
       }}
     >
-      {/* Smooth ambient glow — no grid pattern */}
+      {/* Smooth ambient glow - no grid pattern */}
       <div
         aria-hidden="true"
         className="absolute -top-16 left-1/2 -translate-x-1/2 w-[80%] h-[60%] pointer-events-none rounded-full"
@@ -91,7 +91,7 @@ export function HeroArtifact() {
           </span>
         </div>
 
-        {/* Center stage — three columns on lg+, stacked below */}
+        {/* Center stage - three columns on lg+, stacked below */}
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-6 sm:gap-8 items-stretch lg:items-center">
           {/* Listing card */}
           <m.div

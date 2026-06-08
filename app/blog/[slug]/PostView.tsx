@@ -186,7 +186,7 @@ export function PostView({
         </div>
       </section>
 
-      {/* Hero cover — Unsplash photo (free for commercial use), lazy-decoded */}
+      {/* Hero cover - Unsplash photo (free for commercial use), lazy-decoded */}
       <section className="px-6 lg:px-8 mt-4 mb-6">
         <div className="page-container">
           <div
@@ -224,7 +224,7 @@ export function PostView({
         </div>
       </section>
 
-      {/* Tags + share — refined */}
+      {/* Tags + share - refined */}
       <section className="mt-12 sm:mt-16">
         <div className="page-container">
           <div className="max-w-3xl mx-auto pt-7 sm:pt-8 border-t border-[#0f0f0f]">
@@ -276,7 +276,7 @@ export function PostView({
         </div>
       </section>
 
-      {/* Strong "Make this real" closing CTA — category-color themed */}
+      {/* Strong "Make this real" closing CTA - category-color themed */}
       <section className="mt-12 sm:mt-16">
         <div className="page-container">
         <div
@@ -314,7 +314,7 @@ export function PostView({
             </h3>
             <p className="text-[#999] text-sm sm:text-base mt-4 leading-[1.65] max-w-xl">
               We help operators ship what they read about. Book a free
-              30-minute call — we&apos;ll listen to your situation and tell
+              30-minute call - we&apos;ll listen to your situation and tell
               you, in plain language, whether AI moves the needle for you.
             </p>
             <div className="mt-6 sm:mt-7 flex flex-col sm:flex-row gap-3 max-w-sm sm:max-w-none">

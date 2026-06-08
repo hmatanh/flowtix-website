@@ -8,7 +8,7 @@ import { FadeIn } from "./animations/FadeIn";
 const FAQS: { q: string; a: string }[] = [
   {
     q: "How long does a typical project take?",
-    a: "2–4 weeks for focused systems. 6–8 weeks for complex multi-integration builds. We’ve shipped 50+ projects and never missed a deadline — because we scope conservatively and execute aggressively.",
+    a: "2–4 weeks for focused systems. 6–8 weeks for complex multi-integration builds. We’ve shipped 50+ projects and never missed a deadline - because we scope conservatively and execute aggressively.",
   },
   {
     q: "Do I need to be technical to work with you?",
@@ -16,7 +16,7 @@ const FAQS: { q: string; a: string }[] = [
   },
   {
     q: "How much does a typical project cost?",
-    a: "Projects typically start from $3,000 for focused single-system builds and scale based on complexity and scope. Every project gets a clear, fixed-price proposal before work begins — no hourly billing, no scope creep surprises.",
+    a: "Projects typically start from $3,000 for focused single-system builds and scale based on complexity and scope. Every project gets a clear, fixed-price proposal before work begins - no hourly billing, no scope creep surprises.",
   },
   {
     q: "What happens after the system is built?",
@@ -24,7 +24,7 @@ const FAQS: { q: string; a: string }[] = [
   },
   {
     q: "Can you integrate with the tools we already use?",
-    a: "Yes. We integrate with virtually any tool that has an API — HubSpot, Salesforce, Notion, Slack, Gmail, Shopify, and hundreds more. We map your existing tech stack before building anything.",
+    a: "Yes. We integrate with virtually any tool that has an API - HubSpot, Salesforce, Notion, Slack, Gmail, Shopify, and hundreds more. We map your existing tech stack before building anything.",
   },
   {
     q: "Do you work with businesses outside of Israel?",
@@ -32,15 +32,15 @@ const FAQS: { q: string; a: string }[] = [
   },
   {
     q: "What AI models do you build with?",
-    a: "Primarily Claude (Anthropic) and GPT-4 (OpenAI), depending on the use case. We’re model-agnostic — we choose the best tool for each specific problem, not the one we’re familiar with.",
+    a: "Primarily Claude (Anthropic) and GPT-4 (OpenAI), depending on the use case. We’re model-agnostic - we choose the best tool for each specific problem, not the one we’re familiar with.",
   },
   {
     q: "What makes you different from other studios?",
-    a: "Most studios focus on one piece — design, development, automation, or AI. We connect all of them into one practical solution. Same partner for the system, the interface, the automation behind it, and the brand around it.",
+    a: "Most studios focus on one piece - design, development, automation, or AI. We connect all of them into one practical solution. Same partner for the system, the interface, the automation behind it, and the brand around it.",
   },
   {
     q: "Can I see examples of your work?",
-    a: "Yes — visit our Work page for 5 detailed case studies including interactive mockups, tech stack breakdowns, and results data.",
+    a: "Yes - visit our Work page for 5 detailed case studies including interactive mockups, tech stack breakdowns, and results data.",
   },
   {
     q: "What if the system doesn’t work as expected after launch?",
@@ -147,7 +147,7 @@ export function FAQ() {
             >
               Book a Strategy Call
             </a>{" "}
-            — first conversation is free.
+            - first conversation is free.
           </p>
         </div>
       </div>

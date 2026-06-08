@@ -25,7 +25,7 @@ type Props = {
 };
 
 /**
- * CaseHero — the Archetype-A hero treatment.
+ * CaseHero - the Archetype-A hero treatment.
  *
  * Linear / Vercel customers pattern:
  *   Headline = the outcome, not the brand name.
@@ -52,7 +52,7 @@ export function CaseHero({
         paddingBottom: "env(safe-area-inset-bottom)",
       }}
     >
-      {/* Layer 1 — bold brand wash */}
+      {/* Layer 1 - bold brand wash */}
       <div
         aria-hidden="true"
         className="absolute inset-0 pointer-events-none"
@@ -60,7 +60,7 @@ export function CaseHero({
           background: `radial-gradient(ellipse 90% 60% at 70% 40%, rgba(${accentRGB},0.12) 0%, transparent 70%)`,
         }}
       />
-      {/* Layer 2 — second softer wash */}
+      {/* Layer 2 - second softer wash */}
       <div
         aria-hidden="true"
         className="absolute inset-0 pointer-events-none"
@@ -68,7 +68,7 @@ export function CaseHero({
           background: `radial-gradient(ellipse 60% 50% at 20% 80%, rgba(${accentRGB},0.06) 0%, transparent 70%)`,
         }}
       />
-      {/* Layer 3 — third soft wash for depth (replaces noise) */}
+      {/* Layer 3 - third soft wash for depth (replaces noise) */}
       <div
         aria-hidden="true"
         className="absolute inset-0 pointer-events-none"
@@ -76,7 +76,7 @@ export function CaseHero({
           background: `radial-gradient(ellipse 40% 30% at 90% 20%, rgba(${accentRGB},0.04) 0%, transparent 60%)`,
         }}
       />
-      {/* Layer 4 — bottom fade to body */}
+      {/* Layer 4 - bottom fade to body */}
       <div
         aria-hidden="true"
         className="absolute bottom-0 left-0 right-0 h-48 pointer-events-none"
@@ -164,7 +164,7 @@ export function CaseHero({
           </m.p>
         </div>
 
-        {/* Bottom — scroll indicator */}
+        {/* Bottom - scroll indicator */}
         <div className="pb-12 sm:pb-16 lg:pb-20 flex items-center gap-3">
           <m.span
             animate={{ y: [0, 6, 0] }}

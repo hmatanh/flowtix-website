@@ -1,15 +1,15 @@
 "use client";
 
 /**
- * Blog listing — editorial card grid with real photo covers.
+ * Blog listing - editorial card grid with real photo covers.
  *
  * Covers come from getCoverImage() (lib/blog/covers.ts), which maps
  * each post deterministically to one of 40 curated Unsplash photos
  * pooled by category. Free for commercial use under the Unsplash
- * License — no attribution required. ~30-50 KB per image at the
+ * License - no attribution required. ~30-50 KB per image at the
  * URL params we use.
  *
- * Card grammar matches the /work listing — visual artifact (here, a
+ * Card grammar matches the /work listing - visual artifact (here, a
  * photo) at the top, then category eyebrow / title / excerpt / footer.
  * Same dark #0a0a0a card, 6% white border, hover lift + brand-tinted
  * border + soft shadow.
@@ -42,7 +42,7 @@ import { getCoverImage, getCoverAlt } from "@/lib/blog/covers";
 const EASE = [0.21, 0.47, 0.32, 0.98] as const;
 
 /* ──────────────────────────────────────────────────────────────────
-   Cover image — shared by featured + grid cards
+   Cover image - shared by featured + grid cards
    ─────────────────────────────────────────────────────────────── */
 
 function PostCover({
@@ -263,7 +263,7 @@ export function BlogClient({ posts }: { posts: PostMeta[] }) {
                 }}
               >
                 <div className="relative grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-0 items-stretch">
-                  {/* Photo — fills its half, no padding */}
+                  {/* Photo - fills its half, no padding */}
                   <div className="relative aspect-[16/10] lg:aspect-auto lg:min-h-[420px] overflow-hidden lg:order-2">
                     <PostCover post={featured} priority />
                     {/* Soft dark gradient at the bottom for legibility if any caption ever sits on it */}
@@ -381,7 +381,7 @@ export function BlogClient({ posts }: { posts: PostMeta[] }) {
                           e.currentTarget.style.boxShadow = "none";
                         }}
                       >
-                        {/* Photo cover — 16:10 */}
+                        {/* Photo cover - 16:10 */}
                         <div className="relative w-full aspect-[16/10] overflow-hidden border-b border-white/[0.04] bg-[#0a0a0a]">
                           <PostCover post={p} priority={i < 3} />
                           {/* Subtle dark wash at the bottom so a category chip would always be legible */}
@@ -523,7 +523,7 @@ export function BlogClient({ posts }: { posts: PostMeta[] }) {
                   animate={{ opacity: 1, scale: 1 }}
                   className="mt-6 text-blue-400 text-sm font-medium"
                 >
-                  ✓ Newsletter launching soon — we&apos;ll email you at launch.
+                  ✓ Newsletter launching soon - we&apos;ll email you at launch.
                 </m.div>
               ) : (
                 <form

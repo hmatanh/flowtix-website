@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * Sero V2 — AI Intake Processor
+ * Sero V2 - AI Intake Processor
  *
  * Clinician's view of the AI processing the incoming patient intakes.
  * Calm two-pane: queue on the left, one expanded intake summary on the

@@ -1,11 +1,11 @@
 "use client";
 
 /**
- * Drft case study — Archetype C · Immersive Brand-Led
+ * Drft case study - Archetype C · Immersive Brand-Led
  *
  * Hello Monday × Locomotive pacing. Stays inside the site's dark frame
  * around section boundaries but the case-study sections themselves let
- * the brand take over — orange flood here, cream paper there, all-caps
+ * the brand take over - orange flood here, cream paper there, all-caps
  * display typography, motion as story not decoration. The case reads
  * less like an agency deck and more like an SS25 lookbook.
  */
@@ -32,14 +32,14 @@ const DRFT_PRIMARY = "#DC2626";
 export function DrftView({ project }: { project: Project }) {
   return (
     <main>
-      {/* 1 — HERO */}
+      {/* 1 - HERO */}
       <CaseHero
         eyebrow="DTC fashion · Workwear"
         year={project.year}
         serviceTags={["Brand", "Shopify", "Content Engine", "Email Flows"]}
         headline={
           <>
-            A brand, a store, and a content engine —{" "}
+            A brand, a store, and a content engine -{" "}
             <span style={{ color: DRFT_PRIMARY }}>shipped in five weeks.</span>
           </>
         }
@@ -48,7 +48,7 @@ export function DrftView({ project }: { project: Project }) {
         accentRGB={DRFT_RGB}
       />
 
-      {/* 2 — METRIC STRIP. Bold display numbers, brand-flooded backdrop. */}
+      {/* 2 - METRIC STRIP. Bold display numbers, brand-flooded backdrop. */}
       <MetricStrip
         accentColor={DRFT_PRIMARY}
         accentRGB={DRFT_RGB}
@@ -59,31 +59,31 @@ export function DrftView({ project }: { project: Project }) {
         ]}
       />
 
-      {/* 3 — DROP-CAMPAIGN POSTER */}
+      {/* 3 - DROP-CAMPAIGN POSTER */}
       <AnnotatedScreen
         accentRGB={DRFT_RGB}
         eyebrow="The first drop"
-        caption="A poster pulled straight from the launch — the wordmark, the lookbook strip, and the three workwear silhouettes that defined the first season."
+        caption="A poster pulled straight from the launch - the wordmark, the lookbook strip, and the three workwear silhouettes that defined the first season."
         enableMobileScroll={false}
       >
         <HeroArtifact />
       </AnnotatedScreen>
 
-      {/* 4 — CHALLENGE */}
+      {/* 4 - CHALLENGE */}
       <StorySection
         accentRGB={DRFT_RGB}
         eyebrow="The challenge"
         heading={
           <>
             A founder with a great product, a typewriter, and enough budget
-            for either a brand or a launch — but{" "}
+            for either a brand or a launch - but{" "}
             <span style={{ color: DRFT_PRIMARY }}>not both</span>.
           </>
         }
       >
         <p>
           DRFT was a single founder with a single conviction: workwear-inspired
-          men&apos;s outerwear made the way it used to be — heavy fabrics,
+          men&apos;s outerwear made the way it used to be - heavy fabrics,
           real fit, honest pricing. The garments were ready. The brand
           wasn&apos;t. The store wasn&apos;t. The content engine to keep a
           DTC brand alive after launch definitely wasn&apos;t.
@@ -95,7 +95,7 @@ export function DrftView({ project }: { project: Project }) {
         </p>
       </StorySection>
 
-      {/* 5 — STOREFRONT */}
+      {/* 5 - STOREFRONT */}
       <AnnotatedScreen
         accentRGB={DRFT_RGB}
         eyebrow="The storefront"
@@ -109,7 +109,7 @@ export function DrftView({ project }: { project: Project }) {
           {
             number: "02",
             eyebrow: "Words that earn the price",
-            body: "Every product line is rewritten in the workwear voice — heavy, honest, no marketing fat.",
+            body: "Every product line is rewritten in the workwear voice - heavy, honest, no marketing fat.",
           },
           {
             number: "03",
@@ -121,7 +121,7 @@ export function DrftView({ project }: { project: Project }) {
         <ScreenStore />
       </AnnotatedScreen>
 
-      {/* 6 — A bold quote on the orange wash */}
+      {/* 6 - A bold quote on the orange wash */}
       <PullQuote
         accentColor={DRFT_PRIMARY}
         accentRGB={DRFT_RGB}
@@ -129,12 +129,12 @@ export function DrftView({ project }: { project: Project }) {
         role="Founder · DRFT"
         variant="deep"
       >
-        I had the garments and a typewriter — no brand, no store, no time.
+        I had the garments and a typewriter - no brand, no store, no time.
         Flowtix shipped all three in five weeks without sanding the workwear
         edge off. The clothes feel handmade; the system around them runs itself.
       </PullQuote>
 
-      {/* 7 — BRAND TAKEOVER — the cream-page section restyle */}
+      {/* 7 - BRAND TAKEOVER - the cream-page section restyle */}
       <AnnotatedScreen
         accentRGB={DRFT_RGB}
         eyebrow="The voice, in three modes"
@@ -143,11 +143,11 @@ export function DrftView({ project }: { project: Project }) {
         <BrandTakeover />
       </AnnotatedScreen>
 
-      {/* 8 — CONTENT ENGINE */}
+      {/* 8 - CONTENT ENGINE */}
       <AnnotatedScreen
         accentRGB={DRFT_RGB}
         eyebrow="The content engine"
-        caption="One brief in. Six on-brand variations out, each tagged with its tone. The founder picks one in fifteen minutes — used to take a whole afternoon."
+        caption="One brief in. Six on-brand variations out, each tagged with its tone. The founder picks one in fifteen minutes - used to take a whole afternoon."
         annotations={[
           {
             number: "01",
@@ -157,7 +157,7 @@ export function DrftView({ project }: { project: Project }) {
           {
             number: "02",
             eyebrow: "Six takes on the right",
-            body: "Each card is a different tone — quiet long-form, punchy short, founder-warm, urgent sale, plain spec. Founder picks one.",
+            body: "Each card is a different tone - quiet long-form, punchy short, founder-warm, urgent sale, plain spec. Founder picks one.",
           },
           {
             number: "03",
@@ -169,7 +169,7 @@ export function DrftView({ project }: { project: Project }) {
         <ScreenContent />
       </AnnotatedScreen>
 
-      {/* 9 — EMAIL FLOWS */}
+      {/* 9 - EMAIL FLOWS */}
       <AnnotatedScreen
         accentRGB={DRFT_RGB}
         eyebrow="The email flows"
@@ -195,7 +195,7 @@ export function DrftView({ project }: { project: Project }) {
         <ScreenEmail />
       </AnnotatedScreen>
 
-      {/* 10 — Quote 2 — different stakeholder */}
+      {/* 10 - Quote 2 - different stakeholder */}
       <PullQuote
         accentColor={DRFT_PRIMARY}
         accentRGB={DRFT_RGB}
@@ -208,7 +208,7 @@ export function DrftView({ project }: { project: Project }) {
         of three people I haven&apos;t had to hire.
       </PullQuote>
 
-      {/* 11 — Deliverables */}
+      {/* 11 - Deliverables */}
       <DeliverablesList
         eyebrow="What we delivered"
         heading="One brand. Built to run on its own."
@@ -242,12 +242,12 @@ export function DrftView({ project }: { project: Project }) {
           {
             number: "06",
             title: "Tone-of-voice playbook",
-            body: "Three modes — manifesto, product, email — with examples.",
+            body: "Three modes - manifesto, product, email - with examples.",
           },
         ]}
       />
 
-      {/* 12 — Closing */}
+      {/* 12 - Closing */}
       <StorySection
         accentRGB={DRFT_RGB}
         eyebrow="What changed"
@@ -255,7 +255,7 @@ export function DrftView({ project }: { project: Project }) {
           <>
             A one-person studio that{" "}
             <span style={{ color: DRFT_PRIMARY }}>ships like a team of ten</span>{" "}
-            — and a season that sold out before the next drop.
+            - and a season that sold out before the next drop.
           </>
         }
       >
@@ -272,7 +272,7 @@ export function DrftView({ project }: { project: Project }) {
         </p>
       </StorySection>
 
-      {/* 13 — Footer */}
+      {/* 13 - Footer */}
       <CaseFooter project={project} />
     </main>
   );

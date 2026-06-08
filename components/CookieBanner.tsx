@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 
 const STORAGE_KEY = "flowtix-cookie-consent";
-/** Bump this when consent terms change — old consents become "not decided". */
+/** Bump this when consent terms change - old consents become "not decided". */
 const CONSENT_VERSION = 1;
 /** Re-ask after this many days even if user already chose. */
 const CONSENT_TTL_DAYS = 365;
@@ -53,7 +53,7 @@ export function CookieBanner() {
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-    // Effectively first-paint reveal — matters the moment any tracker is added.
+    // Effectively first-paint reveal - matters the moment any tracker is added.
     const t = setTimeout(() => {
       if (!readConsent()) setVisible(true);
     }, 1800);
@@ -66,7 +66,7 @@ export function CookieBanner() {
     };
   }, []);
 
-  // No Escape-to-dismiss — EDPB guidance: a dismiss-without-choice is not
+  // No Escape-to-dismiss - EDPB guidance: a dismiss-without-choice is not
   // a valid consent decision. The user must Accept or Decline explicitly.
 
   function accept() {
@@ -102,7 +102,7 @@ export function CookieBanner() {
               </span>
             </div>
             <p className="text-[#888] text-xs leading-relaxed mb-4">
-              We use essential cookies only — no tracking, no advertising. See
+              We use essential cookies only - no tracking, no advertising. See
               our{" "}
               <Link
                 href="/privacy"
@@ -112,7 +112,7 @@ export function CookieBanner() {
               </Link>{" "}
               for details.
             </p>
-            {/* Equal-weight buttons — no dark-pattern primary, per EDPB Guidelines 03/2022. */}
+            {/* Equal-weight buttons - no dark-pattern primary, per EDPB Guidelines 03/2022. */}
             <div className="flex gap-2">
               <button
                 type="button"

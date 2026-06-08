@@ -18,7 +18,7 @@ type Props = {
 const EASE = [0.21, 0.47, 0.32, 0.98] as const;
 
 /**
- * DeliverablesList — Heydays / Pentagram editorial pattern.
+ * DeliverablesList - Heydays / Pentagram editorial pattern.
  *
  * A numbered vertical list of deliverables shown as a quiet table, not as
  * decorated cards. Each row reveals on scroll. Used when you want the

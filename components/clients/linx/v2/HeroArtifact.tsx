@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * Linx V2 — Hero Artifact
+ * Linx V2 - Hero Artifact
  *
  * Pentagram-style identity moment: a printed Linx Studio proposal cover
  * sits tilted on a violet wash next to the system thesis written like a
@@ -65,7 +65,7 @@ export function HeroArtifact() {
 
       <div className="relative pt-14 sm:pt-16 pb-8 sm:pb-12 px-6 sm:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] gap-8 lg:gap-12 items-center">
-          {/* LEFT — printed proposal cover artifact */}
+          {/* LEFT - printed proposal cover artifact */}
           <m.div
             initial={{ opacity: 0, y: 18, rotate: -6 }}
             whileInView={{ opacity: 1, y: 0, rotate: -4 }}
@@ -187,7 +187,7 @@ export function HeroArtifact() {
             </div>
           </m.div>
 
-          {/* RIGHT — manifesto */}
+          {/* RIGHT - manifesto */}
           <m.div
             initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -218,7 +218,7 @@ export function HeroArtifact() {
               }}
             >
               Linx wanted the rigour of a five-person studio and the throughput
-              of fifty. We didn&apos;t hand them a tool — we re-architected
+              of fifty. We didn&apos;t hand them a tool - we re-architected
               the studio. Proposals, monthly reports, client briefings and
               the morning brief all flow through one system, drafted by AI
               and signed off by a partner. Nothing leaves the studio without
@@ -258,7 +258,7 @@ export function HeroArtifact() {
             One studio · One system · Three partners
           </span>
           <span className="text-violet-200/60 text-[10px] sm:text-[11px] tracking-[0.22em] uppercase italic">
-            — A case study, in three movements
+            - A case study, in three movements
           </span>
         </div>
       </div>

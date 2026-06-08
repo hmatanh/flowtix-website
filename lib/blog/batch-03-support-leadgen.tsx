@@ -26,8 +26,8 @@ export const batch3: Post[] = [
       <>
         <h2 id="wrong-frame">The Bot vs. Human Frame Is Already Wrong</h2>
         <p>
-          The question every operator asks &mdash; <em>&ldquo;should I replace my support team
-          with AI?&rdquo;</em> &mdash; is framed in a way that guarantees a bad answer. The real
+          The question every operator asks - <em>&ldquo;should I replace my support team
+          with AI?&rdquo;</em> - is framed in a way that guarantees a bad answer. The real
           question is which <strong>tier of support</strong> each conversation belongs in,
           and what role AI should play inside that tier. Get that right and you spend less
           on support while your CSAT goes up. Get it wrong and you ship a bot that
@@ -50,19 +50,19 @@ export const batch3: Post[] = [
 
         <h2 id="decision-tree">The Decision Tree</h2>
         <p>
-          Every incoming ticket gets classified on three axes &mdash; <strong>stakes</strong>,
+          Every incoming ticket gets classified on three axes - <strong>stakes</strong>,
           <strong> ambiguity</strong>, and <strong>emotional load</strong>. A &ldquo;where is my
           tracking number?&rdquo; ticket scores low on all three. A &ldquo;you charged my card
           twice and now my account is locked&rdquo; ticket scores high on all three. The
           decision tree maps the score to a tier:
         </p>
         <ol>
-          <li>If <em>stakes</em> are low AND <em>ambiguity</em> is low AND <em>emotion</em> is neutral &mdash; Tier 0.</li>
-          <li>If any one of those is elevated &mdash; Tier 1.</li>
-          <li>If two or more are elevated, or the customer is at risk of churn &mdash; Tier 2.</li>
+          <li>If <em>stakes</em> are low AND <em>ambiguity</em> is low AND <em>emotion</em> is neutral - Tier 0.</li>
+          <li>If any one of those is elevated - Tier 1.</li>
+          <li>If two or more are elevated, or the customer is at risk of churn - Tier 2.</li>
         </ol>
         <p>
-          The classifier itself can be an AI call &mdash; one of the few places where letting
+          The classifier itself can be an AI call - one of the few places where letting
           an LLM make the routing decision actually saves time. We give it a five-sentence
           rubric and have it return a tier plus a one-line justification. Auditable.
         </p>
@@ -71,7 +71,7 @@ export const batch3: Post[] = [
         <p>
           Tier 0 is where most teams fail because they deploy a generic chatbot trained on
           marketing copy. A real Tier 0 system is grounded in your <strong>actual operational
-          knowledge</strong> &mdash; refund policy, shipping cutoffs, integration docs &mdash; not
+          knowledge</strong> - refund policy, shipping cutoffs, integration docs - not
           in your website. The architecture is simple: a retrieval-augmented system pulling
           from one canonical knowledge base, with hallucination guards (the model is
           forbidden to invent facts not present in the retrieved chunks).
@@ -107,7 +107,7 @@ export const batch3: Post[] = [
 
         <h2 id="tier-two">Tier 2: Human-First With AI Tools</h2>
         <p>
-          Tier 2 is for high-stakes conversations &mdash; renewals at risk, escalations, VIP
+          Tier 2 is for high-stakes conversations - renewals at risk, escalations, VIP
           accounts. The human leads but has AI <strong>side-tools</strong>: a summarizer of
           the full account history, a draft-the-difficult-paragraph button, a tone-checker
           before sending. The human is always the author.
@@ -121,14 +121,14 @@ export const batch3: Post[] = [
         <h2 id="metrics">Metrics That Actually Matter</h2>
         <p>
           Stop tracking &ldquo;tickets handled by bot.&rdquo; That metric optimizes for the
-          wrong thing &mdash; bots get rewarded for handling tickets they should have
+          wrong thing - bots get rewarded for handling tickets they should have
           escalated. Track instead:
         </p>
         <ul>
-          <li><strong>Resolution rate per tier</strong> &mdash; was the question actually resolved, or did it bounce back?</li>
-          <li><strong>CSAT per tier</strong> &mdash; does Tier 0 satisfaction match or beat Tier 2?</li>
-          <li><strong>Mis-routed rate</strong> &mdash; tickets escalated from Tier 0 that should have been Tier 2 from the start.</li>
-          <li><strong>Agent time per Tier 1 ticket</strong> &mdash; if AI drafting isn&apos;t saving 60%+ of the time, the draft quality is wrong.</li>
+          <li><strong>Resolution rate per tier</strong> - was the question actually resolved, or did it bounce back?</li>
+          <li><strong>CSAT per tier</strong> - does Tier 0 satisfaction match or beat Tier 2?</li>
+          <li><strong>Mis-routed rate</strong> - tickets escalated from Tier 0 that should have been Tier 2 from the start.</li>
+          <li><strong>Agent time per Tier 1 ticket</strong> - if AI drafting isn&apos;t saving 60%+ of the time, the draft quality is wrong.</li>
         </ul>
 
         <h2 id="rollout">A 60-Day Rollout Plan</h2>
@@ -192,7 +192,7 @@ export const batch3: Post[] = [
         <p>
           A language model that hallucinates is doing exactly what it was trained to do:
           predict the next plausible token. It has no concept of &ldquo;true&rdquo; or
-          &ldquo;false&rdquo; &mdash; only of <em>likely</em>. When the model is asked
+          &ldquo;false&rdquo; - only of <em>likely</em>. When the model is asked
           something its training does not strongly cover, it interpolates. The
           interpolation sounds right. It is often wrong.
         </p>
@@ -219,7 +219,7 @@ export const batch3: Post[] = [
           The most common failure mode: teams point a RAG system at a sprawling Confluence,
           half a Notion, a Drive folder, and some Slack history. The retrieval gets
           duplicates, contradictions, and stale pages. The model picks whichever passage
-          looks most relevant &mdash; often the wrong one.
+          looks most relevant - often the wrong one.
         </p>
         <p>
           Treat your knowledge base as a product with an owner, a change log, and a
@@ -244,7 +244,7 @@ export const batch3: Post[] = [
         </p>
         <h3>Citations or It Didn&apos;t Happen</h3>
         <p>
-          Retrieval should return passages with <em>citations</em> &mdash; document ID,
+          Retrieval should return passages with <em>citations</em> - document ID,
           section, and version. The model is then required to attach citations to every
           claim it makes. If the user clicks the citation and it doesn&apos;t support the
           claim, that is a measurable, fixable bug.
@@ -264,7 +264,7 @@ export const batch3: Post[] = [
         <p>
           Clause 3 is the most important. Refusal is the feature that distinguishes a
           trustworthy AI knowledge base from a confident liar. Train your team to celebrate
-          refusals &mdash; they are the system protecting your customers.
+          refusals - they are the system protecting your customers.
         </p>
 
         <h2 id="uncertainty">Engineering for Uncertainty</h2>
@@ -283,14 +283,14 @@ export const batch3: Post[] = [
 
         <h2 id="freshness">Keeping the Knowledge Base Fresh</h2>
         <p>
-          A stale knowledge base hallucinates by definition &mdash; the &ldquo;facts&rdquo;
+          A stale knowledge base hallucinates by definition - the &ldquo;facts&rdquo;
           it returns are no longer true. Build a freshness pipeline:
         </p>
         <ul>
           <li>Each document carries a <em>last reviewed</em> date.</li>
           <li>Documents older than 90 days trigger a review reminder.</li>
           <li>Documents older than 180 days are auto-flagged as &ldquo;stale&rdquo; in retrieval.</li>
-          <li>Customer questions where the AI refused get analyzed weekly &mdash; missing knowledge becomes a doc creation ticket.</li>
+          <li>Customer questions where the AI refused get analyzed weekly - missing knowledge becomes a doc creation ticket.</li>
         </ul>
 
         <h2 id="evals">Evaluating Honesty, Not Just Accuracy</h2>
@@ -347,12 +347,12 @@ export const batch3: Post[] = [
     ],
     body: (
       <>
-        <h2 id="real-problem">The Real Problem Is Not Volume &mdash; It Is Mix</h2>
+        <h2 id="real-problem">The Real Problem Is Not Volume - It Is Mix</h2>
         <p>
           When operators say &ldquo;our support volume is killing us,&rdquo; the underlying
           problem is usually not the total number of tickets. It is the <strong>mix</strong>.
           A small percentage of high-stakes tickets consume the senior team. A long tail of
-          repetitive tickets &mdash; password resets, status questions, doc lookups &mdash;
+          repetitive tickets - password resets, status questions, doc lookups -
           drowns the junior team. Senior time gets eaten by interruptions; junior time gets
           eaten by repetition.
         </p>
@@ -367,7 +367,7 @@ export const batch3: Post[] = [
           Triage is not a chatbot. It is a layer that sits between the customer and your
           existing support tools and does three things for every incoming message: it{" "}
           <strong>classifies</strong> the intent, it <strong>enriches</strong> with
-          context, and it <strong>routes</strong> to the right destination &mdash;
+          context, and it <strong>routes</strong> to the right destination -
           self-service, an AI draft, a senior agent, or an escalation channel.
         </p>
 
@@ -400,7 +400,7 @@ export const batch3: Post[] = [
           <li><strong>AI-drafted, human-reviewed:</strong> Mid-complexity tickets where AI writes the response and a human edits/sends.</li>
           <li><strong>Human-assisted:</strong> Routed to a tier-1 agent with full context summary attached.</li>
           <li><strong>Senior escalation:</strong> High-stakes or repeat customers go straight to senior team.</li>
-          <li><strong>Other team:</strong> Sales upgrade hints, partnership requests, press &mdash; routed out of support entirely.</li>
+          <li><strong>Other team:</strong> Sales upgrade hints, partnership requests, press - routed out of support entirely.</li>
         </ol>
         <p>
           That last route is shockingly high-impact. Most support inboxes contain 10&ndash;15%
@@ -417,24 +417,24 @@ export const batch3: Post[] = [
         </p>
         <blockquote className="border-l-2 border-green-500 pl-6 my-8 text-[#bbb] italic">
           The point of AI deflection is not to keep customers away from humans. It is to
-          give customers a faster path when AI can solve it &mdash; and an instant escape
+          give customers a faster path when AI can solve it - and an instant escape
           when it can&apos;t.
         </blockquote>
 
         <h2 id="kpis">KPIs That Show Real Reduction</h2>
         <ul>
-          <li><strong>Tickets per route per week</strong> &mdash; the distribution should stabilize after 30 days.</li>
-          <li><strong>Auto-resolve CSAT</strong> &mdash; should match or beat human CSAT on equivalent ticket types.</li>
-          <li><strong>Reopen rate</strong> &mdash; AI-closed tickets that come back. Above 8% means the classifier is over-confident.</li>
-          <li><strong>Time-to-first-meaningful-response</strong> &mdash; not first reply (those are often acknowledgements). Time to actual answer.</li>
-          <li><strong>Senior agent context-load minutes</strong> &mdash; how long agents spend gathering context per ticket. Should drop 70%.</li>
+          <li><strong>Tickets per route per week</strong> - the distribution should stabilize after 30 days.</li>
+          <li><strong>Auto-resolve CSAT</strong> - should match or beat human CSAT on equivalent ticket types.</li>
+          <li><strong>Reopen rate</strong> - AI-closed tickets that come back. Above 8% means the classifier is over-confident.</li>
+          <li><strong>Time-to-first-meaningful-response</strong> - not first reply (those are often acknowledgements). Time to actual answer.</li>
+          <li><strong>Senior agent context-load minutes</strong> - how long agents spend gathering context per ticket. Should drop 70%.</li>
         </ul>
 
         <h2 id="plan-30">A 30-Day Implementation Plan</h2>
         <ol>
           <li><strong>Days 1&ndash;5:</strong> Audit 500 recent tickets. Tag them with the 5 routes. Get baseline metrics.</li>
           <li><strong>Days 6&ndash;10:</strong> Build the classifier. Tune until route accuracy &gt;92% on a held-out set.</li>
-          <li><strong>Days 11&ndash;20:</strong> Deploy in &ldquo;shadow mode&rdquo; &mdash; classify everything, route nothing. Compare to human routing.</li>
+          <li><strong>Days 11&ndash;20:</strong> Deploy in &ldquo;shadow mode&rdquo; - classify everything, route nothing. Compare to human routing.</li>
           <li><strong>Days 21&ndash;25:</strong> Turn on routing for the &ldquo;other team&rdquo; route (lowest risk). Monitor.</li>
           <li><strong>Days 26&ndash;30:</strong> Turn on auto-resolve for top 5 ticket types. Aggressive thresholds, human override always.</li>
         </ol>
@@ -447,7 +447,7 @@ export const batch3: Post[] = [
 
         <h2 id="faq">FAQ</h2>
         <p>
-          <strong>Will customers know they&apos;re talking to AI?</strong> Yes &mdash; tell
+          <strong>Will customers know they&apos;re talking to AI?</strong> Yes - tell
           them. Disclosure increases satisfaction. Hiding it tanks trust the moment they
           figure it out.
         </p>
@@ -457,7 +457,7 @@ export const batch3: Post[] = [
           inference bill.
         </p>
         <p>
-          <strong>Can we keep our existing helpdesk?</strong> Yes &mdash; triage is a layer
+          <strong>Can we keep our existing helpdesk?</strong> Yes - triage is a layer
           in front of your helpdesk, not a replacement.
         </p>
       </>
@@ -471,7 +471,7 @@ export const batch3: Post[] = [
     readTime: "9 min read",
     date: "May 25, 2026",
     excerpt:
-      "A practical reference architecture for the modern AI-first support stack — what each layer does, where to invest, and what to skip.",
+      "A practical reference architecture for the modern AI-first support stack - what each layer does, where to invest, and what to skip.",
     author: "Flowtix Team",
     tags: ["Support Stack", "Architecture", "AI Tools"],
     toc: [
@@ -491,24 +491,24 @@ export const batch3: Post[] = [
           The customer support stack of 2023 had one job: route tickets to humans. The
           stack of 2026 has four: triage with AI, resolve what AI can, equip humans for
           everything else, and learn from every conversation. The companies that get this
-          right run support at 30&ndash;50% lower headcount per active customer &mdash; not
+          right run support at 30&ndash;50% lower headcount per active customer - not
           by replacing humans, but by giving them the right tools.
         </p>
         <p>
           What follows is the reference architecture we recommend to every operator running
           support at scale. It is platform-agnostic. You can build it on Zendesk, Intercom,
-          HubSpot, or open-source &mdash; the layers and their responsibilities are the
+          HubSpot, or open-source - the layers and their responsibilities are the
           same.
         </p>
 
         <div className="my-8 p-6 border border-blue-500/30 bg-blue-500/5 rounded-2xl">
           <div className="text-label text-blue-400 mb-3">The 5 Layers</div>
           <ul className="space-y-2 text-[#ccc] text-sm">
-            <li>&bull; Intake &mdash; how tickets arrive and get normalized.</li>
-            <li>&bull; Intelligence &mdash; classify, enrich, draft, retrieve.</li>
-            <li>&bull; Agent Tools &mdash; what humans use to resolve.</li>
-            <li>&bull; Analytics &mdash; what the data tells you.</li>
-            <li>&bull; Governance &mdash; rules, audits, escalations.</li>
+            <li>&bull; Intake - how tickets arrive and get normalized.</li>
+            <li>&bull; Intelligence - classify, enrich, draft, retrieve.</li>
+            <li>&bull; Agent Tools - what humans use to resolve.</li>
+            <li>&bull; Analytics - what the data tells you.</li>
+            <li>&bull; Governance - rules, audits, escalations.</li>
           </ul>
         </div>
 
@@ -516,21 +516,21 @@ export const batch3: Post[] = [
         <p>
           The layers are stacked top-to-bottom in the order a ticket flows through them.
           Most teams under-invest in the bottom two (analytics and governance) because
-          they don&apos;t produce immediate ROI. That is a mistake &mdash; they are what
+          they don&apos;t produce immediate ROI. That is a mistake - they are what
           keep the top three honest.
         </p>
 
         <h2 id="intake">Layer 1: Intake</h2>
         <p>
-          Intake is the boring but critical layer. Every channel &mdash; email, chat, web
-          form, in-app, social DMs &mdash; lands here, gets normalized into a canonical
+          Intake is the boring but critical layer. Every channel - email, chat, web
+          form, in-app, social DMs - lands here, gets normalized into a canonical
           ticket shape, and gets enriched with the basic metadata that downstream layers
           need.
         </p>
         <h3>Investment Priority: Medium</h3>
         <p>
           Don&apos;t build this yourself unless you have unusual constraints. Use the
-          helpdesk you already pay for. The trap here is integration breadth &mdash; teams
+          helpdesk you already pay for. The trap here is integration breadth - teams
           spend months connecting 12 channels nobody uses. Connect the 3 channels that
           produce 90% of tickets and ignore the rest until you actually need them.
         </p>
@@ -545,7 +545,7 @@ export const batch3: Post[] = [
         <h3>Investment Priority: High</h3>
         <p>
           This is where the differentiation is. Build it as your own service even if you
-          glue together off-the-shelf models &mdash; you need the freedom to swap models,
+          glue together off-the-shelf models - you need the freedom to swap models,
           tune prompts, and own the eval suite. Vendor lock-in here will cost you 12&ndash;18
           months later.
         </p>
@@ -553,7 +553,7 @@ export const batch3: Post[] = [
         <h2 id="agent">Layer 3: Agent Tools</h2>
         <p>
           What your human agents see and use. The single highest-ROI tool here is a{" "}
-          <strong>conversation summarizer</strong> &mdash; one button that turns a 14-email
+          <strong>conversation summarizer</strong> - one button that turns a 14-email
           thread into three bullets. The second highest is an <strong>AI co-writer</strong>{" "}
           that drafts the next reply in your house voice with citations to your docs.
         </p>
@@ -587,15 +587,15 @@ export const batch3: Post[] = [
         <h3>Investment Priority: Medium</h3>
         <p>
           Document the rules clearly. Audit quarterly. Don&apos;t over-engineer the tooling
-          &mdash; a simple log of who-did-what plus written policies is enough for most
+          - a simple log of who-did-what plus written policies is enough for most
           SMBs.
         </p>
 
         <blockquote className="border-l-2 border-blue-500 pl-6 my-8 text-[#bbb] italic">
           The right way to think about the support stack: if you removed any one layer,
-          which failure mode does that produce? Intake gone &mdash; tickets get lost.
-          Intelligence gone &mdash; agents work harder. Agent tools gone &mdash; CSAT
-          drops. Analytics gone &mdash; you don&apos;t learn. Governance gone &mdash; one
+          which failure mode does that produce? Intake gone - tickets get lost.
+          Intelligence gone - agents work harder. Agent tools gone - CSAT
+          drops. Analytics gone - you don&apos;t learn. Governance gone - one
           incident becomes a crisis. Each layer earns its place.
         </blockquote>
 
@@ -615,7 +615,7 @@ export const batch3: Post[] = [
           MVP, 6&ndash;9 months for a polished version.
         </p>
         <p>
-          <strong>Should we hire support engineers?</strong> Yes &mdash; one part-time
+          <strong>Should we hire support engineers?</strong> Yes - one part-time
           engineer who owns Layers 1, 2, and 3 is worth more than five agents.
         </p>
       </>
@@ -646,7 +646,7 @@ export const batch3: Post[] = [
       <>
         <h2 id="why-static-fails">Why Spreadsheet-Style Lead Scoring Fails</h2>
         <p>
-          The 2010s playbook: a spreadsheet of weights &mdash; <em>+10 for VP title, +5 for
+          The 2010s playbook: a spreadsheet of weights - <em>+10 for VP title, +5 for
           enterprise, &minus;10 for free email domain</em>. The sales team gets a list of
           scores Monday morning. By Thursday, the data is stale and the list is wrong.
         </p>
@@ -659,7 +659,7 @@ export const batch3: Post[] = [
 
         <h2 id="what-changed">What &ldquo;Real-Time&rdquo; Means Operationally</h2>
         <p>
-          Real-time doesn&apos;t mean millisecond latency &mdash; that&apos;s overkill for
+          Real-time doesn&apos;t mean millisecond latency - that&apos;s overkill for
           most B2B. It means &ldquo;the score in front of your AE is from a model that
           has seen every signal up to and including 10 minutes ago.&rdquo; That latency
           window is what unlocks the playbook: the second a high-intent signal lands, the
@@ -671,7 +671,7 @@ export const batch3: Post[] = [
           <ul className="space-y-2 text-[#ccc] text-sm">
             <li>&bull; <strong>Score updates</strong> within minutes of new signals.</li>
             <li>&bull; <strong>Tier transitions</strong> trigger automatic notifications.</li>
-            <li>&bull; <strong>Context</strong> arrives with every alert &mdash; nobody hunts data.</li>
+            <li>&bull; <strong>Context</strong> arrives with every alert - nobody hunts data.</li>
           </ul>
         </div>
 
@@ -682,12 +682,12 @@ export const batch3: Post[] = [
           has 30&ndash;50 useful signals across:
         </p>
         <ul>
-          <li><strong>Firmographic</strong> &mdash; company size, industry, geography, growth rate.</li>
-          <li><strong>Person</strong> &mdash; title, seniority, function, tenure.</li>
-          <li><strong>Behavioral</strong> &mdash; page views, demo requests, content downloads, email engagement.</li>
-          <li><strong>Product</strong> &mdash; activation events, feature usage, days active, last seen.</li>
-          <li><strong>Conversational</strong> &mdash; sentiment in calls, mentions of competitors, mentions of timelines.</li>
-          <li><strong>Account</strong> &mdash; existing customer status, billing health, ticket volume.</li>
+          <li><strong>Firmographic</strong> - company size, industry, geography, growth rate.</li>
+          <li><strong>Person</strong> - title, seniority, function, tenure.</li>
+          <li><strong>Behavioral</strong> - page views, demo requests, content downloads, email engagement.</li>
+          <li><strong>Product</strong> - activation events, feature usage, days active, last seen.</li>
+          <li><strong>Conversational</strong> - sentiment in calls, mentions of competitors, mentions of timelines.</li>
+          <li><strong>Account</strong> - existing customer status, billing health, ticket volume.</li>
         </ul>
         <p>
           Each signal gets a freshness window. A demo request from yesterday is hot; a
@@ -698,7 +698,7 @@ export const batch3: Post[] = [
         <p>
           The model itself is less important than people think. A gradient boosted tree
           (XGBoost) with the signal inventory above will outperform a generic AI score
-          90% of the time. Save the LLMs for the conversational signals &mdash; they
+          90% of the time. Save the LLMs for the conversational signals - they
           extract intent from call transcripts and emails far better than rules ever did.
         </p>
         <p>
@@ -779,7 +779,7 @@ export const batch3: Post[] = [
     readTime: "8 min read",
     date: "May 27, 2026",
     excerpt:
-      "AI cold outreach is failing because it pretends to be human. Here is how to use AI for personalization the right way — visible, useful, and converting.",
+      "AI cold outreach is failing because it pretends to be human. Here is how to use AI for personalization the right way - visible, useful, and converting.",
     author: "Flowtix Team",
     tags: ["Cold Outreach", "AI Sales", "Personalization"],
     toc: [
@@ -803,7 +803,7 @@ export const batch3: Post[] = [
           80% from their 2022 peak.
         </p>
         <p>
-          The diagnosis is not that buyers hate AI &mdash; it&apos;s that they hate AI{" "}
+          The diagnosis is not that buyers hate AI - it&apos;s that they hate AI{" "}
           <em>pretending to be human</em>. The cold outreach that works in 2026 is openly
           AI-assisted: the buyer can tell, and the AI is doing genuinely useful work
           (research, summarization, relevance filtering) rather than impersonating a
@@ -815,7 +815,7 @@ export const batch3: Post[] = [
           <ul className="space-y-2 text-[#ccc] text-sm">
             <li>&bull; <strong>Old pattern:</strong> AI pretends to be a person.</li>
             <li>&bull; <strong>New pattern:</strong> AI does the research; a person makes the choice.</li>
-            <li>&bull; <strong>The buyer can tell either way</strong> — only one earns trust.</li>
+            <li>&bull; <strong>The buyer can tell either way</strong> - only one earns trust.</li>
           </ul>
         </div>
 
@@ -826,15 +826,15 @@ export const batch3: Post[] = [
           send. It worked briefly. It works no longer. Two reasons:
         </p>
         <ol>
-          <li>Buyers have learned the tells &mdash; the over-specific compliment, the &ldquo;noticed your post about X&rdquo; opener, the pivot-to-pitch in paragraph 2.</li>
-          <li>The personalization is shallow &mdash; it references a post but says nothing about whether the prospect actually has the problem you solve.</li>
+          <li>Buyers have learned the tells - the over-specific compliment, the &ldquo;noticed your post about X&rdquo; opener, the pivot-to-pitch in paragraph 2.</li>
+          <li>The personalization is shallow - it references a post but says nothing about whether the prospect actually has the problem you solve.</li>
         </ol>
 
         <h2 id="right-pattern">The Right Pattern: Visible AI, Honest Outreach</h2>
         <p>
           The outreach that converts in 2026 looks like this: the seller researches a
           short list with AI help, writes the email themselves with AI-drafted research
-          paragraphs, and sends openly &mdash; sometimes literally saying &ldquo;I used
+          paragraphs, and sends openly - sometimes literally saying &ldquo;I used
           AI to research your team&apos;s public engineering posts before writing this.&rdquo;
         </p>
         <p>
@@ -851,11 +851,11 @@ export const batch3: Post[] = [
           <li>Does this company actually have the problem you solve?</li>
           <li>Who is the right person to contact?</li>
           <li>What did the company say in its last earnings call / announcement / product launch?</li>
-          <li>What is the recent hiring signal &mdash; are they scaling the team that would use you?</li>
+          <li>What is the recent hiring signal - are they scaling the team that would use you?</li>
         </ul>
         <p>
           That research gets summarized in 3&ndash;5 bullets and handed to the seller. The
-          seller then decides if it&apos;s a real fit. Most aren&apos;t &mdash; and the AI
+          seller then decides if it&apos;s a real fit. Most aren&apos;t - and the AI
           should be tuned to <em>disqualify</em> aggressively. The win is not more
           outreach. The win is sending 80% less outreach to 5x more relevant targets.
         </p>
@@ -869,7 +869,7 @@ export const batch3: Post[] = [
         </p>
         <p>
           Banned phrases are the highest-impact rule. &ldquo;Hope this finds you well,&rdquo;
-          &ldquo;circle back,&rdquo; &ldquo;quick question&rdquo; &mdash; all flagged. The
+          &ldquo;circle back,&rdquo; &ldquo;quick question&rdquo; - all flagged. The
           tool refuses to send if any banned phrase is present. Three weeks in, your
           outreach is recognizably yours, not a template.
         </p>
@@ -879,10 +879,10 @@ export const batch3: Post[] = [
           Reply rate is a vanity metric for cold outreach. Track instead:
         </p>
         <ul>
-          <li><strong>Positive reply rate</strong> &mdash; replies that don&apos;t say &ldquo;unsubscribe.&rdquo;</li>
-          <li><strong>Booked meeting rate</strong> &mdash; the only number that maps to revenue.</li>
-          <li><strong>Show rate</strong> &mdash; meetings booked that actually happen. AI outreach often books no-shows.</li>
-          <li><strong>Disqualification rate</strong> &mdash; how often your research layer correctly says &ldquo;not a fit.&rdquo; Higher is better.</li>
+          <li><strong>Positive reply rate</strong> - replies that don&apos;t say &ldquo;unsubscribe.&rdquo;</li>
+          <li><strong>Booked meeting rate</strong> - the only number that maps to revenue.</li>
+          <li><strong>Show rate</strong> - meetings booked that actually happen. AI outreach often books no-shows.</li>
+          <li><strong>Disqualification rate</strong> - how often your research layer correctly says &ldquo;not a fit.&rdquo; Higher is better.</li>
         </ul>
 
         <blockquote className="border-l-2 border-green-500 pl-6 my-8 text-[#bbb] italic">
@@ -893,11 +893,11 @@ export const batch3: Post[] = [
 
         <h2 id="ethics">The Ethics of Mass Outreach</h2>
         <p>
-          Legal compliance is the floor, not the ceiling. CAN-SPAM, GDPR, CASL &mdash;
+          Legal compliance is the floor, not the ceiling. CAN-SPAM, GDPR, CASL -
           comply. But also adopt these norms:
         </p>
         <ul>
-          <li>Honor unsubscribes immediately and permanently &mdash; across all your sending tools.</li>
+          <li>Honor unsubscribes immediately and permanently - across all your sending tools.</li>
           <li>Never spoof a domain. Send from your real address.</li>
           <li>If asked, disclose how you got the prospect&apos;s contact information.</li>
           <li>Don&apos;t send to personal email addresses unless explicitly opted in.</li>
@@ -912,7 +912,7 @@ export const batch3: Post[] = [
         <h2 id="faq">FAQ</h2>
         <p>
           <strong>Should I tell the prospect I used AI?</strong> Once it&apos;s tooling
-          rather than impersonation, yes &mdash; transparency works. Don&apos;t hide it,
+          rather than impersonation, yes - transparency works. Don&apos;t hide it,
           don&apos;t over-advertise it.
         </p>
         <p>
@@ -934,7 +934,7 @@ export const batch3: Post[] = [
     readTime: "10 min read",
     date: "May 28, 2026",
     excerpt:
-      "A practical, founder-focused playbook for automating the B2B sales pipeline from first touch to closed-won — what to automate, what to keep human, and when.",
+      "A practical, founder-focused playbook for automating the B2B sales pipeline from first touch to closed-won - what to automate, what to keep human, and when.",
     author: "Flowtix Team",
     tags: ["B2B Sales", "Pipeline", "Automation"],
     toc: [
@@ -957,28 +957,28 @@ export const batch3: Post[] = [
           to onboard, and produces results 6 months later. The automation math: a
           functioning pipeline stack costs $1&ndash;3k/month, takes 30 days to build, and
           produces results in week 3. For founders pre-Series A, automation is not a
-          luxury &mdash; it&apos;s the only sustainable shape of go-to-market until you
+          luxury - it&apos;s the only sustainable shape of go-to-market until you
           have product-market fit.
         </p>
         <p>
           The trap is over-automating. The right model is: <strong>automate the
           mechanical work, never the relationship work</strong>. A buyer should always
-          feel like a human is on the other end of meaningful decisions &mdash; pricing,
+          feel like a human is on the other end of meaningful decisions - pricing,
           objections, customer references. Automation handles the plumbing in between.
         </p>
 
         <div className="my-8 p-6 border border-green-500/30 bg-green-500/5 rounded-2xl">
           <div className="text-label text-emerald-400 mb-3">The Founder Pipeline Stack</div>
           <ul className="space-y-2 text-[#ccc] text-sm">
-            <li>&bull; CRM &mdash; the single source of truth.</li>
-            <li>&bull; Targeting layer &mdash; AI research, intent signals, list builder.</li>
-            <li>&bull; Outreach engine &mdash; sequences, scheduling, reply parsing.</li>
-            <li>&bull; Call layer &mdash; recording, transcript, summary, follow-up draft.</li>
-            <li>&bull; Proposal &amp; close &mdash; templates, e-sign, payment.</li>
+            <li>&bull; CRM - the single source of truth.</li>
+            <li>&bull; Targeting layer - AI research, intent signals, list builder.</li>
+            <li>&bull; Outreach engine - sequences, scheduling, reply parsing.</li>
+            <li>&bull; Call layer - recording, transcript, summary, follow-up draft.</li>
+            <li>&bull; Proposal &amp; close - templates, e-sign, payment.</li>
           </ul>
         </div>
 
-        <h2 id="stages">The Six Pipeline Stages &mdash; And Where Automation Earns Its Keep</h2>
+        <h2 id="stages">The Six Pipeline Stages - And Where Automation Earns Its Keep</h2>
         <p>
           Every B2B pipeline has six stages whether you label them that way or not.
           Below: what each stage is, what to automate, what to keep human, and which
@@ -1044,7 +1044,7 @@ export const batch3: Post[] = [
         </p>
         <p>
           <strong>Keep human:</strong> Everything inside the call. The follow-up message
-          should be reviewed by the AE before sending &mdash; AI gets summaries right 90%
+          should be reviewed by the AE before sending - AI gets summaries right 90%
           of the time; the 10% it misses includes the most important details.
         </p>
 
@@ -1059,7 +1059,7 @@ export const batch3: Post[] = [
         </p>
         <p>
           <strong>Keep human:</strong> Pricing decisions, scope cuts, anything strategic.
-          The proposal is where your company signals seriousness &mdash; treat it as a
+          The proposal is where your company signals seriousness - treat it as a
           design document, not a Word merge.
         </p>
 
@@ -1141,8 +1141,8 @@ export const batch3: Post[] = [
           B2B deals are won or lost in discovery. The 30&ndash;60 minute conversation where
           a prospect tells you their problem in their own words is the only chance you
           have to genuinely understand whether you&apos;re a fit and to position your
-          offering against how they think. Everything downstream &mdash; proposal,
-          negotiation, close &mdash; is downstream of what you heard on the discovery call.
+          offering against how they think. Everything downstream - proposal,
+          negotiation, close - is downstream of what you heard on the discovery call.
         </p>
         <p>
           The painful reality: most discovery calls are mediocre because the seller is
@@ -1160,11 +1160,11 @@ export const batch3: Post[] = [
           The right prep, with AI assistance, is structured:
         </p>
         <ol>
-          <li><strong>5 minutes</strong> &mdash; AI-generated company brief: what they do, recent news, hiring signals, public mentions of your problem space.</li>
-          <li><strong>5 minutes</strong> &mdash; AI-generated person brief: role, tenure, what they&apos;ve published, what their team values.</li>
-          <li><strong>5 minutes</strong> &mdash; CRM read: prior touches, last conversation, current pipeline state.</li>
-          <li><strong>10 minutes</strong> &mdash; Human work: form three hypotheses for why-now. Draft three pointed questions you couldn&apos;t ask from a template.</li>
-          <li><strong>5 minutes</strong> &mdash; Mental: rehearse the opening 60 seconds. Set the call objective.</li>
+          <li><strong>5 minutes</strong> - AI-generated company brief: what they do, recent news, hiring signals, public mentions of your problem space.</li>
+          <li><strong>5 minutes</strong> - AI-generated person brief: role, tenure, what they&apos;ve published, what their team values.</li>
+          <li><strong>5 minutes</strong> - CRM read: prior touches, last conversation, current pipeline state.</li>
+          <li><strong>10 minutes</strong> - Human work: form three hypotheses for why-now. Draft three pointed questions you couldn&apos;t ask from a template.</li>
+          <li><strong>5 minutes</strong> - Mental: rehearse the opening 60 seconds. Set the call objective.</li>
         </ol>
         <p>
           The AI briefs are not the call. They are the floor under the call. Your job is
@@ -1208,7 +1208,7 @@ export const batch3: Post[] = [
         </p>
         <p>
           Train the model on your specific qualification framework (BANT, MEDDIC, your
-          own). The summary should map to your CRM fields exactly &mdash; one click to
+          own). The summary should map to your CRM fields exactly - one click to
           import, no manual re-typing.
         </p>
 
@@ -1221,7 +1221,7 @@ export const batch3: Post[] = [
         </p>
         <p>
           AI drafts this; the rep reviews and sends. The whole loop is under 10 minutes.
-          The buyer notices &mdash; the kind of seriousness that &ldquo;recap within an
+          The buyer notices - the kind of seriousness that &ldquo;recap within an
           hour&rdquo; signals is hard to fake and almost no competitor will match.
         </p>
 
@@ -1243,10 +1243,10 @@ export const batch3: Post[] = [
 
         <h2 id="metrics">Metrics That Show It&apos;s Working</h2>
         <ul>
-          <li><strong>Time to follow-up</strong> &mdash; median should drop below 60 minutes.</li>
-          <li><strong>Post-call admin time per rep</strong> &mdash; should drop 60%+.</li>
-          <li><strong>Stage 2 to Stage 3 conversion</strong> &mdash; discovery to next call. Should rise within 8 weeks.</li>
-          <li><strong>Deal probability accuracy</strong> &mdash; AI-updated probabilities vs. actual outcomes 90 days later.</li>
+          <li><strong>Time to follow-up</strong> - median should drop below 60 minutes.</li>
+          <li><strong>Post-call admin time per rep</strong> - should drop 60%+.</li>
+          <li><strong>Stage 2 to Stage 3 conversion</strong> - discovery to next call. Should rise within 8 weeks.</li>
+          <li><strong>Deal probability accuracy</strong> - AI-updated probabilities vs. actual outcomes 90 days later.</li>
         </ul>
 
         <p>
@@ -1280,7 +1280,7 @@ export const batch3: Post[] = [
     readTime: "8 min read",
     date: "May 30, 2026",
     excerpt:
-      "Inbound is your highest-intent traffic — and most teams route it like it's 2015. Here is the modern AI-driven routing architecture and how to roll it out.",
+      "Inbound is your highest-intent traffic - and most teams route it like it's 2015. Here is the modern AI-driven routing architecture and how to roll it out.",
     author: "Flowtix Team",
     tags: ["Lead Routing", "Inbound", "Sales Architecture"],
     toc: [
@@ -1299,8 +1299,8 @@ export const batch3: Post[] = [
         <p>
           An inbound lead is the highest-quality lead you will ever get. They came to
           you. They have intent. They are willing to fill in a form. They are 5&ndash;15x more
-          likely to close than an outbound lead. And the way most companies route them &mdash;
-          round-robin to the next available SDR &mdash; treats them like a stranger.
+          likely to close than an outbound lead. And the way most companies route them -
+          round-robin to the next available SDR - treats them like a stranger.
         </p>
         <p>
           Modern AI routing recognizes that not all inbound leads are equal: a senior
@@ -1337,10 +1337,10 @@ export const batch3: Post[] = [
         <div className="my-8 p-6 border border-green-500/30 bg-green-500/5 rounded-2xl">
           <div className="text-label text-emerald-400 mb-3">The 4 Routing Tiers</div>
           <ul className="space-y-2 text-[#ccc] text-sm">
-            <li>&bull; <strong>VIP</strong> &mdash; senior buyer at fit account. Senior AE in &lt;5 minutes.</li>
-            <li>&bull; <strong>Standard</strong> &mdash; qualified fit. Tier-1 AE within 30 minutes.</li>
-            <li>&bull; <strong>Nurture</strong> &mdash; not ready / not fit yet. Automated sequence; revisit in 30 days.</li>
-            <li>&bull; <strong>Other</strong> &mdash; not sales. Routed out of pipeline (partnerships, press, jobs, support).</li>
+            <li>&bull; <strong>VIP</strong> - senior buyer at fit account. Senior AE in &lt;5 minutes.</li>
+            <li>&bull; <strong>Standard</strong> - qualified fit. Tier-1 AE within 30 minutes.</li>
+            <li>&bull; <strong>Nurture</strong> - not ready / not fit yet. Automated sequence; revisit in 30 days.</li>
+            <li>&bull; <strong>Other</strong> - not sales. Routed out of pipeline (partnerships, press, jobs, support).</li>
           </ul>
         </div>
 
@@ -1371,7 +1371,7 @@ export const batch3: Post[] = [
         <ul>
           <li>VIP SLA: 5 minutes. Fallback: re-route to the next available senior AE; notify the VP of Sales.</li>
           <li>Standard SLA: 30 minutes. Fallback: re-route to a pooled AE on rotation.</li>
-          <li>Nurture: no SLA &mdash; this lead is in an automated sequence and a human will see them when the lead score climbs.</li>
+          <li>Nurture: no SLA - this lead is in an automated sequence and a human will see them when the lead score climbs.</li>
         </ul>
 
         <h2 id="measurement">Measurement and Iteration</h2>
@@ -1402,7 +1402,7 @@ export const batch3: Post[] = [
 
         <h2 id="faq">FAQ</h2>
         <p>
-          <strong>Will reps complain that routing isn&apos;t fair?</strong> Yes &mdash; if
+          <strong>Will reps complain that routing isn&apos;t fair?</strong> Yes - if
           you don&apos;t share the data showing VIP leads close at 4x the rate. Make the
           model legible.
         </p>
@@ -1450,19 +1450,19 @@ export const batch3: Post[] = [
         </p>
         <p>
           The ceiling is different. Voice AI in 2026 can <strong>handle structured
-          conversations</strong> &mdash; appointment booking, qualification, follow-up
-          confirmation &mdash; very well. It can <strong>not</strong> handle the
+          conversations</strong> - appointment booking, qualification, follow-up
+          confirmation - very well. It can <strong>not</strong> handle the
           unstructured dance of a real B2B sales conversation: reading a buyer&apos;s
           mood, knowing when to slow down, negotiating against a counter-offer.
         </p>
 
         <h2 id="what-it-does">What Voice AI Can Actually Do Today</h2>
         <ul>
-          <li><strong>Inbound appointment booking</strong> &mdash; the highest-volume, lowest-stakes use case.</li>
-          <li><strong>Outbound list calling</strong> &mdash; not cold outreach (a different beast) but verification: &ldquo;Is this still your role? Are you still buying X?&rdquo;</li>
-          <li><strong>Lead qualification</strong> &mdash; a 5-minute conversation that confirms BANT before a human AE gets involved.</li>
-          <li><strong>Reminder &amp; follow-up calls</strong> &mdash; rebook missed meetings, confirm attendance, gather a one-line update.</li>
-          <li><strong>Renewal check-ins</strong> &mdash; for SMB customers where a human CSM is overkill but a check-in matters.</li>
+          <li><strong>Inbound appointment booking</strong> - the highest-volume, lowest-stakes use case.</li>
+          <li><strong>Outbound list calling</strong> - not cold outreach (a different beast) but verification: &ldquo;Is this still your role? Are you still buying X?&rdquo;</li>
+          <li><strong>Lead qualification</strong> - a 5-minute conversation that confirms BANT before a human AE gets involved.</li>
+          <li><strong>Reminder &amp; follow-up calls</strong> - rebook missed meetings, confirm attendance, gather a one-line update.</li>
+          <li><strong>Renewal check-ins</strong> - for SMB customers where a human CSM is overkill but a check-in matters.</li>
         </ul>
 
         <h2 id="what-it-cant">What Voice AI Still Can&apos;t Do</h2>
@@ -1496,7 +1496,7 @@ export const batch3: Post[] = [
         <h3>Use Case 1: Inbound Booking Bot</h3>
         <p>
           A prospect calls your toll-free number. AI picks up, asks 3 qualifying
-          questions, and books a meeting on the right AE&apos;s calendar &mdash; or
+          questions, and books a meeting on the right AE&apos;s calendar - or
           escalates to a live AE if the prospect is high-value. Replaces an SDR shift.
         </p>
         <h3>Use Case 2: Lead Verification</h3>
@@ -1525,7 +1525,7 @@ export const batch3: Post[] = [
         </ol>
 
         <blockquote className="border-l-2 border-blue-500 pl-6 my-8 text-[#bbb] italic">
-          The customers who tolerate &mdash; and often appreciate &mdash; voice AI are the
+          The customers who tolerate - and often appreciate - voice AI are the
           ones who experience it as faster service, not as deception. The single biggest
           determinant of which they experience is whether you disclose.
         </blockquote>
@@ -1542,7 +1542,7 @@ export const batch3: Post[] = [
         <p>
           By 2027, expect voice AI to credibly handle low-to-mid complexity discovery
           calls for SMB segments. The boundary will move. But the disclosure principle
-          will hold &mdash; or rather, will become a regulatory floor in most major
+          will hold - or rather, will become a regulatory floor in most major
           markets. Build the disclosure habit now.
         </p>
         <p>
@@ -1599,8 +1599,8 @@ export const batch3: Post[] = [
           They never come back. This is the AI onboarding problem.
         </p>
         <p>
-          The traditional SaaS onboarding playbook &mdash; product tour, tooltip cascade,
-          checklist of setup tasks &mdash; doesn&apos;t work for AI products. The reason is
+          The traditional SaaS onboarding playbook - product tour, tooltip cascade,
+          checklist of setup tasks - doesn&apos;t work for AI products. The reason is
           structural: AI products don&apos;t have a known &ldquo;first thing to do.&rdquo;
           The whole product is the input box. A tour of the input box is
           condescending. No tour leaves the user staring at a void.
@@ -1660,7 +1660,7 @@ export const batch3: Post[] = [
         <h2 id="ai-specific">AI-Specific UX Moves That Matter</h2>
         <h3>Show the AI Thinking</h3>
         <p>
-          When the AI is generating, show progress &mdash; not a generic spinner. A
+          When the AI is generating, show progress - not a generic spinner. A
           status line that says what stage the model is at (&ldquo;researching&hellip;
           drafting&hellip; reviewing&hellip;&rdquo;) keeps users engaged in the 4&ndash;15
           seconds before output.
@@ -1673,7 +1673,7 @@ export const batch3: Post[] = [
         </p>
         <h3>The Second Interaction Is The Key</h3>
         <p>
-          Activation isn&apos;t the first prompt &mdash; it&apos;s the second. If a user
+          Activation isn&apos;t the first prompt - it&apos;s the second. If a user
           submits a second prompt within 5 minutes, they&apos;re activated and they&apos;ll
           stick. Design the post-first-output experience to make the second prompt
           obvious.
@@ -1681,10 +1681,10 @@ export const batch3: Post[] = [
 
         <h2 id="metrics">Metrics That Spot the Drop</h2>
         <ul>
-          <li><strong>Signup to first prompt</strong> &mdash; the 60-second drop happens here.</li>
-          <li><strong>First prompt to second prompt</strong> &mdash; the key activation moment.</li>
-          <li><strong>Time-to-first-meaningful-output</strong> &mdash; not response time, but time until output rated &ldquo;good&rdquo; by the user (thumbs-up).</li>
-          <li><strong>D1, D7, D30 return</strong> &mdash; standard SaaS metrics but worth tracking by activation status.</li>
+          <li><strong>Signup to first prompt</strong> - the 60-second drop happens here.</li>
+          <li><strong>First prompt to second prompt</strong> - the key activation moment.</li>
+          <li><strong>Time-to-first-meaningful-output</strong> - not response time, but time until output rated &ldquo;good&rdquo; by the user (thumbs-up).</li>
+          <li><strong>D1, D7, D30 return</strong> - standard SaaS metrics but worth tracking by activation status.</li>
         </ul>
 
         <h2 id="examples">Two Patterns Compared</h2>
@@ -1702,7 +1702,7 @@ export const batch3: Post[] = [
 
         <blockquote className="border-l-2 border-pink-500 pl-6 my-8 text-[#bbb] italic">
           The most important moment in an AI product is not the first output. It&apos;s
-          the moment immediately before the first prompt &mdash; when the user is
+          the moment immediately before the first prompt - when the user is
           deciding what to ask. Onboarding should reduce that moment from
           paralysis-inducing to obvious.
         </blockquote>
@@ -1721,7 +1721,7 @@ export const batch3: Post[] = [
         </p>
         <p>
           <strong>Does the three-question pattern work for technical AI tools?</strong>{" "}
-          Yes &mdash; the questions become technical (&ldquo;what stack? what scale? what
+          Yes - the questions become technical (&ldquo;what stack? what scale? what
           problem?&rdquo;). The pattern is identical.
         </p>
         <p>
@@ -1739,7 +1739,7 @@ export const batch3: Post[] = [
     readTime: "9 min read",
     date: "June 2, 2026",
     excerpt:
-      "Users don't trust AI by default — they trust the interface around it. Here are the design patterns that build durable trust in AI products, with concrete examples.",
+      "Users don't trust AI by default - they trust the interface around it. Here are the design patterns that build durable trust in AI products, with concrete examples.",
     author: "Flowtix Team",
     tags: ["AI UX", "Trust Design", "Interface Design"],
     toc: [
@@ -1764,35 +1764,35 @@ export const batch3: Post[] = [
         </p>
         <p>
           The good news: trust is designable. The patterns that consistently produce
-          trusted AI products are not subtle &mdash; they are a small set of moves applied
+          trusted AI products are not subtle - they are a small set of moves applied
           rigorously across every touchpoint.
         </p>
 
         <h2 id="five-dimensions">The Five Trust Dimensions in AI UX</h2>
         <ol>
-          <li><strong>Visibility</strong> &mdash; can the user see what the AI is doing?</li>
-          <li><strong>Provenance</strong> &mdash; can the user see where the AI&apos;s claims come from?</li>
-          <li><strong>Calibration</strong> &mdash; does the AI express uncertainty when it has any?</li>
-          <li><strong>Control</strong> &mdash; can the user override, correct, or constrain the AI?</li>
-          <li><strong>Recovery</strong> &mdash; when the AI fails, can the user gracefully fix the situation?</li>
+          <li><strong>Visibility</strong> - can the user see what the AI is doing?</li>
+          <li><strong>Provenance</strong> - can the user see where the AI&apos;s claims come from?</li>
+          <li><strong>Calibration</strong> - does the AI express uncertainty when it has any?</li>
+          <li><strong>Control</strong> - can the user override, correct, or constrain the AI?</li>
+          <li><strong>Recovery</strong> - when the AI fails, can the user gracefully fix the situation?</li>
         </ol>
 
         <div className="my-8 p-6 border border-pink-500/30 bg-pink-500/5 rounded-2xl">
           <div className="text-label text-pink-400 mb-3">The 5 Trust Patterns</div>
           <ul className="space-y-2 text-[#ccc] text-sm">
-            <li>&bull; Visible reasoning &mdash; show the AI&apos;s steps.</li>
-            <li>&bull; Citations &mdash; link claims to sources.</li>
-            <li>&bull; Uncertainty &mdash; flag low confidence visually.</li>
-            <li>&bull; Control surfaces &mdash; let users constrain, override, correct.</li>
-            <li>&bull; Graceful recovery &mdash; make failures fixable, not fatal.</li>
+            <li>&bull; Visible reasoning - show the AI&apos;s steps.</li>
+            <li>&bull; Citations - link claims to sources.</li>
+            <li>&bull; Uncertainty - flag low confidence visually.</li>
+            <li>&bull; Control surfaces - let users constrain, override, correct.</li>
+            <li>&bull; Graceful recovery - make failures fixable, not fatal.</li>
           </ul>
         </div>
 
         <h2 id="transparency">Pattern 1: Visible Reasoning</h2>
         <p>
           AI products that hide the reasoning behind a black box lose users at the first
-          surprising output. AI products that show even a hint of the reasoning &mdash;
-          steps the AI took, sources it consulted, options it considered &mdash; build
+          surprising output. AI products that show even a hint of the reasoning -
+          steps the AI took, sources it consulted, options it considered - build
           trust on every interaction.
         </p>
         <p>
@@ -1806,7 +1806,7 @@ export const batch3: Post[] = [
         <h2 id="citation">Pattern 2: Citations and Sources</h2>
         <p>
           Every factual claim should be clickable. The link should go to the actual
-          source &mdash; the document, the data row, the URL. The fastest way to lose
+          source - the document, the data row, the URL. The fastest way to lose
           trust: make a claim with no citation. The second-fastest: link to something
           that doesn&apos;t support the claim.
         </p>
@@ -1818,7 +1818,7 @@ export const batch3: Post[] = [
         <h2 id="uncertainty">Pattern 3: Expressing Uncertainty Visually</h2>
         <p>
           When the AI is confident, the output looks clean. When it&apos;s uncertain, the
-          UI should signal it visibly &mdash; without making the user dig for the
+          UI should signal it visibly - without making the user dig for the
           uncertainty. Some patterns that work:
         </p>
         <ul>
@@ -1838,9 +1838,9 @@ export const batch3: Post[] = [
           control surfaces:
         </p>
         <ol>
-          <li><strong>Scope.</strong> &ldquo;Only use data from the last 30 days&rdquo; / &ldquo;Only search these folders&rdquo; &mdash; a visible, editable scope.</li>
-          <li><strong>Voice/tone.</strong> &ldquo;Make this more formal/casual/concise&rdquo; &mdash; one-tap modifiers.</li>
-          <li><strong>Hard constraints.</strong> &ldquo;Never recommend a product I don&apos;t sell&rdquo; / &ldquo;Always cite a source&rdquo; &mdash; persistent rules.</li>
+          <li><strong>Scope.</strong> &ldquo;Only use data from the last 30 days&rdquo; / &ldquo;Only search these folders&rdquo; - a visible, editable scope.</li>
+          <li><strong>Voice/tone.</strong> &ldquo;Make this more formal/casual/concise&rdquo; - one-tap modifiers.</li>
+          <li><strong>Hard constraints.</strong> &ldquo;Never recommend a product I don&apos;t sell&rdquo; / &ldquo;Always cite a source&rdquo; - persistent rules.</li>
         </ol>
 
         <h2 id="recovery">Pattern 5: Graceful Error Recovery</h2>
@@ -1884,7 +1884,7 @@ export const batch3: Post[] = [
           downstream of these patterns. Without the patterns, no voice saves trust.
         </p>
         <p>
-          <strong>Does this apply to consumer AI too?</strong> Yes. Even more so &mdash;
+          <strong>Does this apply to consumer AI too?</strong> Yes. Even more so -
           consumer users are quicker to abandon and slower to forgive.
         </p>
       </>

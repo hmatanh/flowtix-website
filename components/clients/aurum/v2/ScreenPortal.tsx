@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * Aurum V2 — Confidential Client Portal
+ * Aurum V2 - Confidential Client Portal
  *
  * The single screen a Henderson opens to see where things stand. Calm,
  * editorial, members-club. No noise. One performance number, one note
@@ -97,7 +97,7 @@ export function ScreenPortal() {
               style={{ fontSize: 16, lineHeight: 1.55 }}
             >
               Ahead of the blended benchmark by 1.8 percentage points. Quiet
-              year on the strategy. Your Q4 report is below — Eitan walked
+              year on the strategy. Your Q4 report is below - Eitan walked
               through it on Tuesday.
             </p>
 
@@ -152,14 +152,14 @@ export function ScreenPortal() {
                   style={{ fontSize: 16 }}
                 >
                   &ldquo;The portfolio did what it&apos;s meant to do this year
-                  — participate in equity strength while the bond floor held.
+                  - participate in equity strength while the bond floor held.
                   We didn&apos;t change the mandate and we don&apos;t plan to.
                   The new year&apos;s commentary covers our forward read in
                   more depth.&rdquo;
                 </p>
                 <div className="flex items-center justify-between mt-5">
                   <div className="text-[#A98046] text-[12px] italic">
-                    — Eitan Shaked, Managing Partner
+                    - Eitan Shaked, Managing Partner
                   </div>
                   <span
                     className="text-[11px] inline-flex items-center gap-1.5"
@@ -227,7 +227,7 @@ export function ScreenPortal() {
                   style={{ background: "rgba(217,119,6,0.40)" }}
                 />
                 <div className="mt-3 text-[#A87B3A] text-[8.5px] italic">
-                  — 14 pages —
+                  - 14 pages -
                 </div>
               </div>
             </m.div>

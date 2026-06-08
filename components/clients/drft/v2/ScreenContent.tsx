@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * Drft V2 — AI Content Engine
+ * Drft V2 - AI Content Engine
  *
  * The founder's writing-room. A brief on the left (product name, voice
  * sliders, style tags); ten generated description variations on the right
@@ -46,7 +46,7 @@ const VARIATIONS = [
   {
     tag: "Sales · urgency",
     body:
-      "Field Overcoat is back in stock at $189 — down from $260. Bracken sold through three times. This is the last drop until autumn.",
+      "Field Overcoat is back in stock at $189 - down from $260. Bracken sold through three times. This is the last drop until autumn.",
   },
 ];
 
@@ -63,7 +63,7 @@ export function ScreenContent() {
       }}
     >
       <div className="absolute inset-0 grid" style={{ gridTemplateColumns: "320px 1fr" }}>
-        {/* LEFT — Brief */}
+        {/* LEFT - Brief */}
         <aside
           className="border-r overflow-hidden flex flex-col"
           style={{
@@ -254,7 +254,7 @@ export function ScreenContent() {
           </div>
         </aside>
 
-        {/* RIGHT — Output */}
+        {/* RIGHT - Output */}
         <main className="overflow-hidden flex flex-col">
           {/* AI status */}
           <div

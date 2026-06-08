@@ -1,12 +1,12 @@
 "use client";
 
 /**
- * Sero case study — Archetype A+B · Clinical Editorial
+ * Sero case study - Archetype A+B · Clinical Editorial
  *
  * Pentagram MedExpress + Heydays Plateful pacing. The same dark site
  * palette, but with sage/emerald instead of sky blue, much wider
  * breathing room, larger type, fewer metric flexes. The hero artifact is
- * a calendar — not a dashboard — because the case is about returned time,
+ * a calendar - not a dashboard - because the case is about returned time,
  * not feature ambition.
  */
 
@@ -30,7 +30,7 @@ const SERO_PRIMARY = "#10B981";
 export function SeroView({ project }: { project: Project }) {
   return (
     <main>
-      {/* 1 — HERO — quieter than Kova */}
+      {/* 1 - HERO - quieter than Kova */}
       <CaseHero
         eyebrow="Digital health · Clinical operations"
         year={project.year}
@@ -45,22 +45,22 @@ export function SeroView({ project }: { project: Project }) {
             Returned to six practitioners who needed them.
           </>
         }
-        primaryMetric="Intake processing: 25 minutes → 3 minutes — with no compromise on clinical judgement."
+        primaryMetric="Intake processing: 25 minutes → 3 minutes - with no compromise on clinical judgement."
         accentColor={SERO_PRIMARY}
         accentRGB={SERO_RGB}
       />
 
-      {/* 2 — HERO ARTIFACT — the calendar */}
+      {/* 2 - HERO ARTIFACT - the calendar */}
       <AnnotatedScreen
         accentRGB={SERO_RGB}
         eyebrow="The calendar, before and after"
-        caption="A single clinician's working week. Same hours, same building, same patients waiting — but the time once spent on intake admin is now spent in session."
+        caption="A single clinician's working week. Same hours, same building, same patients waiting - but the time once spent on intake admin is now spent in session."
         enableMobileScroll={false}
       >
         <HeroArtifact />
       </AnnotatedScreen>
 
-      {/* 3 — THE CHALLENGE */}
+      {/* 3 - THE CHALLENGE */}
       <StorySection
         accentRGB={SERO_RGB}
         eyebrow="The challenge"
@@ -85,23 +85,23 @@ export function SeroView({ project }: { project: Project }) {
         </p>
       </StorySection>
 
-      {/* 4 — MOBILE PATIENT FLOW — the editorial 3-phone moment */}
+      {/* 4 - MOBILE PATIENT FLOW - the editorial 3-phone moment */}
       <AnnotatedScreen
         accentRGB={SERO_RGB}
         eyebrow="The patient never sees the AI"
-        caption="A short, adaptive intake on the patient's phone. Calm typography. Their answers shape the next question. They never know — or need to know — that there's a model on the other side."
+        caption="A short, adaptive intake on the patient's phone. Calm typography. Their answers shape the next question. They never know - or need to know - that there's a model on the other side."
         enableMobileScroll={false}
       >
         <ScreenMobile />
       </AnnotatedScreen>
 
-      {/* 5 — THE SOLUTION */}
+      {/* 5 - THE SOLUTION */}
       <StorySection
         accentRGB={SERO_RGB}
         eyebrow="The solution"
         heading={
           <>
-            The system that listens, structures, and prepares — so the human
+            The system that listens, structures, and prepares - so the human
             shows up for the human part.
           </>
         }
@@ -109,18 +109,18 @@ export function SeroView({ project }: { project: Project }) {
         <p>
           Every intake is parsed against the clinic&apos;s protocols the
           moment it&apos;s submitted. The AI extracts the structured fields a
-          clinician needs to plan a session — sleep average, presenting
-          concerns, risk markers, treatment history — and surfaces the
+          clinician needs to plan a session - sleep average, presenting
+          concerns, risk markers, treatment history - and surfaces the
           clinical questions that should be asked next.
         </p>
         <p>
           The clinician opens the chart, reads a one-page brief, approves or
           edits, and starts the session. The first ten minutes of every visit
-          are now about the patient — not the paperwork.
+          are now about the patient - not the paperwork.
         </p>
       </StorySection>
 
-      {/* 6 — INTAKE PROCESSOR — full-bleed */}
+      {/* 6 - INTAKE PROCESSOR - full-bleed */}
       <AnnotatedScreen
         accentRGB={SERO_RGB}
         eyebrow="The clinician opens the intake"
@@ -146,7 +146,7 @@ export function SeroView({ project }: { project: Project }) {
         <ScreenIntake />
       </AnnotatedScreen>
 
-      {/* 7 — A QUIET QUOTE */}
+      {/* 7 - A QUIET QUOTE */}
       <PullQuote
         accentColor={SERO_PRIMARY}
         accentRGB={SERO_RGB}
@@ -156,11 +156,11 @@ export function SeroView({ project }: { project: Project }) {
       >
         I went into healthcare to be present with patients. For years, admin
         work was slowly making that impossible. The system gave us back the
-        part of the job we actually love — and it did it without making
+        part of the job we actually love - and it did it without making
         anyone feel they were talking to a machine.
       </PullQuote>
 
-      {/* 8 — PATIENT VIEW */}
+      {/* 8 - PATIENT VIEW */}
       <AnnotatedScreen
         accentRGB={SERO_RGB}
         eyebrow="What every clinician opens before a session"
@@ -186,7 +186,7 @@ export function SeroView({ project }: { project: Project }) {
         <ScreenPatient />
       </AnnotatedScreen>
 
-      {/* 9 — A SECOND QUOTE */}
+      {/* 9 - A SECOND QUOTE */}
       <PullQuote
         accentColor={SERO_PRIMARY}
         accentRGB={SERO_RGB}
@@ -195,11 +195,11 @@ export function SeroView({ project }: { project: Project }) {
         variant="subtle"
       >
         For the first time in a decade, I&apos;m writing my notes the day
-        of the session — not on Sunday afternoon. That alone has changed
+        of the session - not on Sunday afternoon. That alone has changed
         what kind of clinician I am during the week.
       </PullQuote>
 
-      {/* 10 — DELIVERABLES — Heydays editorial list */}
+      {/* 10 - DELIVERABLES - Heydays editorial list */}
       <DeliverablesList
         eyebrow="What we built"
         heading="Five quiet systems, working as one."
@@ -233,14 +233,14 @@ export function SeroView({ project }: { project: Project }) {
         ]}
       />
 
-      {/* 11 — Closing */}
+      {/* 11 - Closing */}
       <StorySection
         accentRGB={SERO_RGB}
         eyebrow="What changed"
         heading={
           <>
             Twenty-two hours a week, returned to{" "}
-            <span style={{ color: SERO_PRIMARY }}>six clinicians</span> —
+            <span style={{ color: SERO_PRIMARY }}>six clinicians</span> -
             and to every patient they now have time to be present with.
           </>
         }
@@ -256,7 +256,7 @@ export function SeroView({ project }: { project: Project }) {
         </p>
       </StorySection>
 
-      {/* 12 — Footer */}
+      {/* 12 - Footer */}
       <CaseFooter project={project} />
     </main>
   );

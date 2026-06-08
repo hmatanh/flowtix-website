@@ -1,11 +1,11 @@
 "use client";
 
 /**
- * Sero V2 — Practitioner Patient View
+ * Sero V2 - Practitioner Patient View
  *
  * Calm, breathing layout. Two-column: clinical summary + AI-triaged
  * highlights on the left, session timeline + notes on the right. Cream-tinted
- * typography against deep sage backdrops. Slow rhythm — the opposite of
+ * typography against deep sage backdrops. Slow rhythm - the opposite of
  * Kova's dashboard density.
  */
 
@@ -38,10 +38,10 @@ const VITALS = [
 ];
 
 const HISTORY = [
-  { date: "Aug 27", note: "Session 4 — discussed work boundaries", who: "Dr. Eliahu" },
-  { date: "Aug 20", note: "Session 3 — sleep diary review", who: "Dr. Eliahu" },
-  { date: "Aug 13", note: "Session 2 — CBT introduction", who: "Dr. Eliahu" },
-  { date: "Aug 6", note: "Session 1 — intake + assessment", who: "Dr. Eliahu" },
+  { date: "Aug 27", note: "Session 4 - discussed work boundaries", who: "Dr. Eliahu" },
+  { date: "Aug 20", note: "Session 3 - sleep diary review", who: "Dr. Eliahu" },
+  { date: "Aug 13", note: "Session 2 - CBT introduction", who: "Dr. Eliahu" },
+  { date: "Aug 6", note: "Session 1 - intake + assessment", who: "Dr. Eliahu" },
 ];
 
 export function ScreenPatient() {
@@ -57,7 +57,7 @@ export function ScreenPatient() {
       }}
     >
       <div className="absolute inset-0 grid" style={{ gridTemplateColumns: "200px 1fr" }}>
-        {/* Sidebar — quieter than Kova's */}
+        {/* Sidebar - quieter than Kova's */}
         <aside
           className="flex flex-col border-r"
           style={{ background: "#020A06", borderColor: "rgba(16,185,129,0.10)" }}
@@ -125,7 +125,7 @@ export function ScreenPatient() {
 
         {/* Main */}
         <main className="overflow-hidden flex flex-col">
-          {/* Patient header — generous */}
+          {/* Patient header - generous */}
           <div className="px-9 pt-8 pb-6 border-b" style={{ borderColor: "rgba(16,185,129,0.10)" }}>
             <div className="text-[#5EAD8E] text-[10px] tracking-[0.22em] uppercase mb-3">
               Patient session · 2:00 PM
@@ -226,7 +226,7 @@ export function ScreenPatient() {
                 </div>
               </div>
 
-              {/* AI Brief — the focal point */}
+              {/* AI Brief - the focal point */}
               <div
                 className="rounded-2xl p-6 relative overflow-hidden"
                 style={{
@@ -269,7 +269,7 @@ export function ScreenPatient() {
                   <span style={{ color: "#A7F3D0" }}>5–6 hours / night this week</span>,
                   up from a self-reported 4 hours last month. The sleep diary
                   she completed Tuesday flags two consecutive nights of
-                  ruminative thinking before bed — both followed a difficult
+                  ruminative thinking before bed - both followed a difficult
                   team meeting on Monday.
                 </p>
                 <p
@@ -278,7 +278,7 @@ export function ScreenPatient() {
                 >
                   Her GAD-7 score is{" "}
                   <span style={{ color: "#A7F3D0" }}>down 2 from baseline</span>{" "}
-                  but still in moderate range. Suggested focus areas — work
+                  but still in moderate range. Suggested focus areas - work
                   boundary scripting, evening wind-down routine, and a
                   follow-up check on caffeine intake (last raised in session 2).
                 </p>

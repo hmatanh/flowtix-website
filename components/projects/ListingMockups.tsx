@@ -1,14 +1,14 @@
 "use client";
 
 /**
- * /work — Listing artifacts
+ * /work - Listing artifacts
  *
  * One refined "specimen" per case study. Each occupies the top of its
  * card on the /work page at a fixed 16:10 aspect ratio. Brand color
- * lives INSIDE the artifact — never bleeds onto the card chrome — so
+ * lives INSIDE the artifact - never bleeds onto the card chrome - so
  * the listing grid reads as one consistent editorial set.
  *
- * Calmer than the V2 hero artifacts on the case-study pages — these
+ * Calmer than the V2 hero artifacts on the case-study pages - these
  * are previews, not headliners.
  */
 
@@ -17,7 +17,7 @@ import { m } from "framer-motion";
 const EASE = [0.21, 0.47, 0.32, 0.98] as const;
 
 /* ──────────────────────────────────────────────────────────────────
-   KOVA — Tilted "Listing Brochure" on near-black architectural board
+   KOVA - Tilted "Listing Brochure" on near-black architectural board
    Premium real-estate magazine spread feel: a stylized building
    silhouette, an editorial address title, a tabular fact strip, a big
    tabular price, a small "94% MATCH" stamp at the corner.
@@ -80,7 +80,7 @@ export function KovaListingMockup() {
               </span>
             </div>
 
-            {/* Hero image — stylized skyline */}
+            {/* Hero image - stylized skyline */}
             <div
               className="relative aspect-[4/3] w-full overflow-hidden"
               style={{
@@ -143,7 +143,7 @@ export function KovaListingMockup() {
                   ))}
                 </g>
               </svg>
-              {/* Match stamp — corner */}
+              {/* Match stamp - corner */}
               <div
                 className="absolute top-2 left-2 rounded-sm flex flex-col items-center justify-center px-2 py-1.5"
                 style={{
@@ -236,7 +236,7 @@ export function KovaListingMockup() {
 }
 
 /* ──────────────────────────────────────────────────────────────────
-   SERŌ — Tilted "Daily Brief" card on warm sage paper
+   SERŌ - Tilted "Daily Brief" card on warm sage paper
    Editorial clinical artifact: a single quiet card the practitioner
    gets each morning. Serif wordmark, calm hierarchy, an EKG-style
    pulse line as the brand signature.
@@ -338,7 +338,7 @@ export function SeroListingMockup() {
               </div>
             </div>
 
-            {/* EKG pulse line — the brand signature */}
+            {/* EKG pulse line - the brand signature */}
             <div className="mt-3">
               <svg
                 viewBox="0 0 200 28"
@@ -428,7 +428,7 @@ export function SeroListingMockup() {
 }
 
 /* ──────────────────────────────────────────────────────────────────
-   AURUM — Tilted quarterly report cover, on cream paper
+   AURUM - Tilted quarterly report cover, on cream paper
    ─────────────────────────────────────────────────────────────── */
 
 export function AurumListingMockup() {
@@ -554,7 +554,7 @@ export function AurumListingMockup() {
 }
 
 /* ──────────────────────────────────────────────────────────────────
-   DRFT — Drop campaign poster on crimson wash
+   DRFT - Drop campaign poster on crimson wash
    ─────────────────────────────────────────────────────────────── */
 
 export function DrftListingMockup() {
@@ -660,7 +660,7 @@ export function DrftListingMockup() {
 }
 
 /* ──────────────────────────────────────────────────────────────────
-   LINX — Studio proposal cover, on cream paper
+   LINX - Studio proposal cover, on cream paper
    ─────────────────────────────────────────────────────────────── */
 
 export function LinxListingMockup() {

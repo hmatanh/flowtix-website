@@ -134,7 +134,7 @@ export function ProjectTestimonial({ project }: { project: Project }) {
             className="mt-6 text-sm tracking-wide"
             style={{ color: b.textOnBrand, opacity: 0.7 }}
           >
-            — {project.testimonial.attribution}
+            - {project.testimonial.attribution}
           </div>
         </div>
         <div className="text-[#1a1a1a] text-[10px] text-center mt-4">
@@ -223,7 +223,7 @@ export function ProjectBottomCTA({ project }: { project: Project }) {
           Want something like this?
         </h2>
         <p className="text-[#666] mt-4 leading-relaxed">
-          Book a free 30-minute strategy call. We&apos;ll talk specifics —
+          Book a free 30-minute strategy call. We&apos;ll talk specifics -
           your problem, your stack, your timeline.
         </p>
         <div className="mt-8 flex flex-wrap gap-3 justify-center">

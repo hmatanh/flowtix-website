@@ -162,7 +162,7 @@ export function AccessibilityPanel({
         </button>
 
         <p className="text-[#555] text-[10px] mt-4 leading-relaxed">
-          Optional preferences — the site is built to meet WCAG 2.1
+          Optional preferences - the site is built to meet WCAG 2.1
           AA by default. See our{" "}
           <a
             href="/accessibility"

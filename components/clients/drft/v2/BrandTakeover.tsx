@@ -1,11 +1,11 @@
 "use client";
 
 /**
- * Drft V2 — Brand Takeover
+ * Drft V2 - Brand Takeover
  *
  * Section-restyle moment per the immersive-brand-led archetype.
  * Background floods with the brand's deep amber-cream. Big editorial type
- * spread shows the brand voice in three modes — a manifesto line, a
+ * spread shows the brand voice in three modes - a manifesto line, a
  * product tagline, an email subject. All three composed in the same DRFT
  * voice. Reads like the inside cover of a lookbook.
  */
@@ -59,7 +59,7 @@ export function BrandTakeover() {
               style={{ background: "rgba(124,45,18,0.4)" }}
             />
             <span className="text-[#7F1D1D] text-[10px] sm:text-[11px] tracking-[0.32em] uppercase font-bold">
-              The DRFT voice — three modes
+              The DRFT voice - three modes
             </span>
           </div>
           <span className="text-[#7C5A2A] text-[9.5px] sm:text-[10px] tracking-[0.28em] uppercase">
@@ -69,7 +69,7 @@ export function BrandTakeover() {
 
         {/* Three voice modes */}
         <div className="space-y-10 sm:space-y-14 lg:space-y-16">
-          {/* Mode 1 — Manifesto */}
+          {/* Mode 1 - Manifesto */}
           <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -103,7 +103,7 @@ export function BrandTakeover() {
             style={{ background: "rgba(124,45,18,0.20)" }}
           />
 
-          {/* Mode 2 — Product tagline */}
+          {/* Mode 2 - Product tagline */}
           <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -146,7 +146,7 @@ export function BrandTakeover() {
             style={{ background: "rgba(124,45,18,0.20)" }}
           />
 
-          {/* Mode 3 — Email subject */}
+          {/* Mode 3 - Email subject */}
           <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -206,7 +206,7 @@ export function BrandTakeover() {
             One brand, three voices, one engine
           </span>
           <span className="text-[#7C5A2A] text-[10px] sm:text-[11px] tracking-[0.22em] uppercase italic">
-            — pages 12—14 of the SS25 lookbook
+            - pages 12-14 of the SS25 lookbook
           </span>
         </div>
       </div>

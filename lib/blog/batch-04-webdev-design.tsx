@@ -34,7 +34,7 @@ export const batch4: Post[] = [
         </p>
         <p>
           The patterns that make AI features stick are not about model quality. They are
-          about <strong>fitting AI into how people already work</strong> &mdash; with
+          about <strong>fitting AI into how people already work</strong> - with
           minimum disruption, maximum reversibility, and a graceful exit when the user
           doesn&apos;t need AI in this moment.
         </p>
@@ -65,8 +65,8 @@ export const batch4: Post[] = [
         <h2 id="pattern-1">Pattern 1: The One-Tap Entry</h2>
         <p>
           AI features that live in their own tab or section get used once and forgotten.
-          AI features that appear inline in the workflow &mdash; right where the user
-          already is &mdash; get used daily. The rule: every AI feature should be
+          AI features that appear inline in the workflow - right where the user
+          already is - get used daily. The rule: every AI feature should be
           reachable from the user&apos;s current context in one tap, not via navigation.
         </p>
         <p>
@@ -83,7 +83,7 @@ export const batch4: Post[] = [
         </p>
         <p>
           Every AI output should be editable inline. The user can tweak a word, change a
-          paragraph, delete a section &mdash; without going back to the prompt. The AI
+          paragraph, delete a section - without going back to the prompt. The AI
           should treat user edits as feedback: future outputs in the same session should
           respect the edits.
         </p>
@@ -96,13 +96,13 @@ export const batch4: Post[] = [
         <h2 id="pattern-3">Pattern 3: Saved Starting Points</h2>
         <p>
           Every time a user opens an AI feature, they should not have to explain who they
-          are and what they&apos;re working on. The AI should remember &mdash; either
+          are and what they&apos;re working on. The AI should remember - either
           explicitly (saved &ldquo;profiles&rdquo; the user can pick from) or implicitly
           (it knows the user&apos;s recent context).
         </p>
         <p>
           The simplest version of this: a &ldquo;Recent prompts&rdquo; section above the
-          input box. The user re-runs yesterday&apos;s prompt with a small tweak &mdash;
+          input box. The user re-runs yesterday&apos;s prompt with a small tweak -
           the second-most-common AI workflow after the initial generation.
         </p>
 
@@ -133,13 +133,13 @@ export const batch4: Post[] = [
           task.
         </p>
         <p>
-          AI features that aggressively offer themselves &mdash; with toasts, banners,
-          and pop-ups &mdash; train the user to dismiss them on muscle memory. The user
+          AI features that aggressively offer themselves - with toasts, banners,
+          and pop-ups - train the user to dismiss them on muscle memory. The user
           stops noticing. Features that wait quietly until invoked get invoked more often.
         </p>
 
         <blockquote className="border-l-2 border-pink-500 pl-6 my-8 text-[#bbb] italic">
-          The AI features that stick are the ones the user invites in &mdash; not the
+          The AI features that stick are the ones the user invites in - not the
           ones that constantly invite themselves.
         </blockquote>
 
@@ -198,7 +198,7 @@ export const batch4: Post[] = [
           colors in the same six positions.
         </p>
         <p>
-          The convergence isn&apos;t lazy &mdash; it&apos;s the result of every founder
+          The convergence isn&apos;t lazy - it&apos;s the result of every founder
           looking at the last 18 months of successful AI brands and copying the surface.
           The problem: surface convergence doesn&apos;t produce differentiation. Once
           everyone has the same brand, nobody has a brand.
@@ -220,10 +220,10 @@ export const batch4: Post[] = [
           palette. They differentiated on four less obvious axes:
         </p>
         <ul>
-          <li><strong>Personality</strong> &mdash; warm vs cold, playful vs serious, expert vs friendly.</li>
-          <li><strong>Voice</strong> &mdash; the way they write, especially in product copy and error states.</li>
-          <li><strong>Texture</strong> &mdash; the small details: how a button feels, what loading looks like, how the product sounds (literally, in voice products).</li>
-          <li><strong>Point of view</strong> &mdash; what does this brand believe about AI? What is it willing to refuse?</li>
+          <li><strong>Personality</strong> - warm vs cold, playful vs serious, expert vs friendly.</li>
+          <li><strong>Voice</strong> - the way they write, especially in product copy and error states.</li>
+          <li><strong>Texture</strong> - the small details: how a button feels, what loading looks like, how the product sounds (literally, in voice products).</li>
+          <li><strong>Point of view</strong> - what does this brand believe about AI? What is it willing to refuse?</li>
         </ul>
         <p>
           These four are harder to copy than a color palette. They show up in every
@@ -242,7 +242,7 @@ export const batch4: Post[] = [
 
         <h2 id="voice">Voice Is The New Logo</h2>
         <p>
-          The most powerful brand asset in an AI product is not the logo &mdash; it&apos;s
+          The most powerful brand asset in an AI product is not the logo - it&apos;s
           how the product talks. AI products generate text all day. Every output is a
           brand touchpoint. A consistent, distinctive voice across hundreds of generations
           is hard to build and impossible to fake.
@@ -258,7 +258,7 @@ export const batch4: Post[] = [
         <h2 id="interface">The Product Is The Brand</h2>
         <p>
           Marketing brand and product brand have to match. The number of AI startups
-          with cinematic marketing and a generic-looking product is huge &mdash; and the
+          with cinematic marketing and a generic-looking product is huge - and the
           gap is fatal. Visitors who try the product after seeing the marketing feel
           conned.
         </p>
@@ -298,7 +298,7 @@ export const batch4: Post[] = [
         </ul>
 
         <blockquote className="border-l-2 border-pink-500 pl-6 my-8 text-[#bbb] italic">
-          Brand equity in AI is built in the small moments &mdash; error messages, loading
+          Brand equity in AI is built in the small moments - error messages, loading
           states, the way your product apologizes. The visual identity is the first
           impression. The voice is the relationship.
         </blockquote>
@@ -334,7 +334,7 @@ export const batch4: Post[] = [
     readTime: "8 min read",
     date: "June 5, 2026",
     excerpt:
-      "AI product names tend to age badly. Here are the naming patterns that stayed evergreen — and the ones that became cringe within a year.",
+      "AI product names tend to age badly. Here are the naming patterns that stayed evergreen - and the ones that became cringe within a year.",
     author: "Flowtix Team",
     tags: ["Naming", "Brand", "Product"],
     toc: [
@@ -435,7 +435,7 @@ export const batch4: Post[] = [
         <ol>
           <li>Feature names should describe the action (&ldquo;Compose&rdquo;), not the technology (&ldquo;GPT-4 Writer&rdquo;).</li>
           <li>Don&apos;t give every internal model a public name. Users do not need to know about your three model versions.</li>
-          <li>Avoid the &ldquo;Smart [thing]&rdquo; prefix. &ldquo;Smart Search&rdquo;, &ldquo;Smart Reply&rdquo; &mdash; signals &ldquo;the unmarked one is dumb.&rdquo;</li>
+          <li>Avoid the &ldquo;Smart [thing]&rdquo; prefix. &ldquo;Smart Search&rdquo;, &ldquo;Smart Reply&rdquo; - signals &ldquo;the unmarked one is dumb.&rdquo;</li>
         </ol>
 
         <h2 id="rename">When to Rename, When to Hold</h2>
@@ -451,7 +451,7 @@ export const batch4: Post[] = [
 
         <blockquote className="border-l-2 border-pink-500 pl-6 my-8 text-[#bbb] italic">
           The best AI product names are ones that stop being notable. After two years,
-          the name is invisible &mdash; the product is what users see. That&apos;s the
+          the name is invisible - the product is what users see. That&apos;s the
           goal.
         </blockquote>
 
@@ -464,7 +464,7 @@ export const batch4: Post[] = [
         <h2 id="faq">FAQ</h2>
         <p>
           <strong>Should we use AI to name our AI startup?</strong> As an idea
-          generator, fine. As the final decision, no &mdash; AI converges on the same
+          generator, fine. As the final decision, no - AI converges on the same
           patterns.
         </p>
         <p>
@@ -486,7 +486,7 @@ export const batch4: Post[] = [
     readTime: "9 min read",
     date: "June 6, 2026",
     excerpt:
-      "Static export is fast, cheap, and SEO-friendly — but it complicates AI. Here is the practical guide to using Next.js static export for AI sites and where to break the rule.",
+      "Static export is fast, cheap, and SEO-friendly - but it complicates AI. Here is the practical guide to using Next.js static export for AI sites and where to break the rule.",
     author: "Flowtix Team",
     tags: ["Next.js", "Static Export", "AI Architecture"],
     toc: [
@@ -507,14 +507,14 @@ export const batch4: Post[] = [
           a flat HTML file at build time. No server runs at request time. The site is
           served as a folder of files from a CDN. The wins: free hosting at scale,
           excellent performance, predictable SEO, no server failure modes. The trade-off:
-          no server runs at request time &mdash; which is exactly what AI features
+          no server runs at request time - which is exactly what AI features
           typically need.
         </p>
         <p>
           For pure marketing sites, static export is the obvious choice. For pure AI
-          apps, it&apos;s the wrong choice. For marketing-plus-AI sites &mdash; the
+          apps, it&apos;s the wrong choice. For marketing-plus-AI sites - the
           shape most agencies, SaaS marketing sites, and content-driven AI products take
-          &mdash; the answer is a hybrid pattern.
+          - the answer is a hybrid pattern.
         </p>
 
         <h2 id="ai-tension">The AI Tension</h2>
@@ -529,11 +529,11 @@ export const batch4: Post[] = [
 
         <h2 id="what-works">What Works Well in Static Export</h2>
         <ul>
-          <li><strong>Marketing pages</strong> &mdash; landing, services, pricing, about, contact.</li>
-          <li><strong>Blog and content</strong> &mdash; massive SEO wins from prerendered pages.</li>
-          <li><strong>Documentation</strong> &mdash; fast, navigable, searchable client-side.</li>
-          <li><strong>Read-only product views</strong> &mdash; case studies, portfolios.</li>
-          <li><strong>Interactive client-side features</strong> &mdash; anything that runs in the browser without a server.</li>
+          <li><strong>Marketing pages</strong> - landing, services, pricing, about, contact.</li>
+          <li><strong>Blog and content</strong> - massive SEO wins from prerendered pages.</li>
+          <li><strong>Documentation</strong> - fast, navigable, searchable client-side.</li>
+          <li><strong>Read-only product views</strong> - case studies, portfolios.</li>
+          <li><strong>Interactive client-side features</strong> - anything that runs in the browser without a server.</li>
         </ul>
 
         <div className="my-8 p-6 border border-blue-500/30 bg-blue-500/5 rounded-2xl">
@@ -541,7 +541,7 @@ export const batch4: Post[] = [
           <ul className="space-y-2 text-[#ccc] text-sm">
             <li>&bull; Sub-100ms time-to-first-byte from any CDN edge.</li>
             <li>&bull; $0 to $10/month hosting at small-medium scale.</li>
-            <li>&bull; Predictable SEO &mdash; every URL is a real HTML file.</li>
+            <li>&bull; Predictable SEO - every URL is a real HTML file.</li>
             <li>&bull; No cold starts, no server outages.</li>
           </ul>
         </div>
@@ -575,11 +575,11 @@ export const batch4: Post[] = [
           A few specific patterns we use:
         </p>
         <ul>
-          <li><strong>Security headers</strong> &mdash; since <code>headers()</code> is ignored in static export, put them in <code>vercel.json</code> or <code>_headers</code> at the platform level.</li>
-          <li><strong>Sitemap and robots</strong> &mdash; use <code>app/sitemap.ts</code> and <code>app/robots.ts</code> with <code>export const dynamic = &apos;force-static&apos;</code>.</li>
-          <li><strong>Image strategy</strong> &mdash; pre-optimize images at build time. Skip dynamic optimization.</li>
-          <li><strong>OG images</strong> &mdash; generate per-page at build time or pre-render in a build step.</li>
-          <li><strong>Form submissions</strong> &mdash; post to an edge function or a third-party endpoint, not the static site.</li>
+          <li><strong>Security headers</strong> - since <code>headers()</code> is ignored in static export, put them in <code>vercel.json</code> or <code>_headers</code> at the platform level.</li>
+          <li><strong>Sitemap and robots</strong> - use <code>app/sitemap.ts</code> and <code>app/robots.ts</code> with <code>export const dynamic = &apos;force-static&apos;</code>.</li>
+          <li><strong>Image strategy</strong> - pre-optimize images at build time. Skip dynamic optimization.</li>
+          <li><strong>OG images</strong> - generate per-page at build time or pre-render in a build step.</li>
+          <li><strong>Form submissions</strong> - post to an edge function or a third-party endpoint, not the static site.</li>
         </ul>
 
         <h2 id="decision-tree">Decision Tree: Should You Use Static Export?</h2>
@@ -594,7 +594,7 @@ export const batch4: Post[] = [
         <blockquote className="border-l-2 border-blue-500 pl-6 my-8 text-[#bbb] italic">
           The static-export-plus-edge-functions architecture is the modern shape of
           marketing-driven SaaS in 2026. You get SEO wins on the public surface and AI
-          power where the product actually needs it &mdash; without paying for a
+          power where the product actually needs it - without paying for a
           server that&apos;s 99% idle.
         </blockquote>
 
@@ -611,7 +611,7 @@ export const batch4: Post[] = [
         </p>
         <p>
           <strong>Can we run AI in the browser?</strong> For small models, yes. For
-          frontier-quality output, no &mdash; latency and download size kill it.
+          frontier-quality output, no - latency and download size kill it.
         </p>
         <p>
           <strong>How do we handle user accounts?</strong> Use a third-party auth
@@ -645,7 +645,7 @@ export const batch4: Post[] = [
       <>
         <h2 id="why-edge">Why Edge Functions for AI Features</h2>
         <p>
-          The classic backend pattern &mdash; a long-running Node/Python server &mdash;
+          The classic backend pattern - a long-running Node/Python server -
           is wrong for most AI workloads. AI calls are bursty, often long, and
           per-request. A server idles 90% of the time and gets crushed during traffic
           spikes. Edge functions are the right shape: spin up per request, scale
@@ -653,7 +653,7 @@ export const batch4: Post[] = [
         </p>
         <p>
           For the AI surface of a static-export site, edge functions are the canonical
-          choice. Vercel, Cloudflare Workers, AWS Lambda@Edge &mdash; the platforms
+          choice. Vercel, Cloudflare Workers, AWS Lambda@Edge - the platforms
           differ on tooling but the architecture is the same.
         </p>
 
@@ -666,12 +666,12 @@ export const batch4: Post[] = [
           <li><strong>Input validation.</strong> Reject malformed payloads early.</li>
           <li><strong>Rate limit.</strong> Per-user, per-IP, per-route.</li>
           <li><strong>Provider call.</strong> The actual AI request to OpenAI / Anthropic / your own model.</li>
-          <li><strong>Stream back.</strong> Don&apos;t wait for the whole response &mdash; stream it.</li>
+          <li><strong>Stream back.</strong> Don&apos;t wait for the whole response - stream it.</li>
           <li><strong>Log.</strong> Anonymized request/response pairs for evals and abuse detection.</li>
         </ol>
         <p>
           Each concern is 5&ndash;15 lines. The whole function is usually under 150 lines.
-          Resist the urge to add business logic here &mdash; this is a thin proxy with
+          Resist the urge to add business logic here - this is a thin proxy with
           guardrails.
         </p>
 
@@ -686,7 +686,7 @@ export const batch4: Post[] = [
           Three things to get right:
         </p>
         <ul>
-          <li>Use the Server-Sent Events format or raw text chunks &mdash; not WebSockets.</li>
+          <li>Use the Server-Sent Events format or raw text chunks - not WebSockets.</li>
           <li>Set the <code>Content-Type</code> to <code>text/event-stream</code>.</li>
           <li>Disable buffering on the response (no <code>Content-Length</code>, no proxy buffering).</li>
         </ul>
@@ -713,7 +713,7 @@ export const batch4: Post[] = [
 
         <h2 id="rate-limit">Rate Limiting and Abuse</h2>
         <p>
-          Within hours of going public, an AI endpoint will get hammered &mdash; by curious
+          Within hours of going public, an AI endpoint will get hammered - by curious
           users, by bad actors trying to use your key to bootstrap their own product, by
           bots. Three layers of defense:
         </p>
@@ -732,9 +732,9 @@ export const batch4: Post[] = [
           Three logs you must keep:
         </p>
         <ul>
-          <li><strong>Request log</strong> &mdash; timestamp, user ID hash, route, status. For abuse detection.</li>
-          <li><strong>Eval log</strong> &mdash; input prompt, output text. Sampled (10%) for quality monitoring. PII-scrubbed.</li>
-          <li><strong>Cost log</strong> &mdash; per-request tokens in and out. For budget control.</li>
+          <li><strong>Request log</strong> - timestamp, user ID hash, route, status. For abuse detection.</li>
+          <li><strong>Eval log</strong> - input prompt, output text. Sampled (10%) for quality monitoring. PII-scrubbed.</li>
+          <li><strong>Cost log</strong> - per-request tokens in and out. For budget control.</li>
         </ul>
         <p>
           Don&apos;t log raw user input or AI output without scrubbing. PII shows up
@@ -755,7 +755,7 @@ export const batch4: Post[] = [
         <blockquote className="border-l-2 border-blue-500 pl-6 my-8 text-[#bbb] italic">
           The cheapest AI features run a small model 80% of the time and a frontier
           model 20% of the time. The expensive ones run frontier on every request.
-          The choice is yours &mdash; design for it.
+          The choice is yours - design for it.
         </blockquote>
 
         <p>
@@ -821,13 +821,13 @@ export const batch4: Post[] = [
         <div className="my-8 p-6 border border-blue-500/30 bg-blue-500/5 rounded-2xl">
           <div className="text-label text-blue-400 mb-3">The 7 Layers</div>
           <ul className="space-y-2 text-[#ccc] text-sm">
-            <li>&bull; Frontend &mdash; React/Next.js with static export where possible.</li>
-            <li>&bull; Edge &mdash; Vercel or Cloudflare Workers for AI proxying.</li>
-            <li>&bull; Data &mdash; Postgres for structured, vector DB for semantic.</li>
-            <li>&bull; AI &mdash; Anthropic or OpenAI for frontier; smaller open for specific tasks.</li>
-            <li>&bull; Auth &mdash; Managed (Clerk, Auth0, or platform-native).</li>
-            <li>&bull; Observability &mdash; structured logs + product analytics.</li>
-            <li>&bull; CI/CD &mdash; Git-driven with platform auto-deploy.</li>
+            <li>&bull; Frontend - React/Next.js with static export where possible.</li>
+            <li>&bull; Edge - Vercel or Cloudflare Workers for AI proxying.</li>
+            <li>&bull; Data - Postgres for structured, vector DB for semantic.</li>
+            <li>&bull; AI - Anthropic or OpenAI for frontier; smaller open for specific tasks.</li>
+            <li>&bull; Auth - Managed (Clerk, Auth0, or platform-native).</li>
+            <li>&bull; Observability - structured logs + product analytics.</li>
+            <li>&bull; CI/CD - Git-driven with platform auto-deploy.</li>
           </ul>
         </div>
 
@@ -912,7 +912,7 @@ export const batch4: Post[] = [
         </p>
         <p>
           <strong>What not to do:</strong> Custom Docker pipelines on day one. Migrate
-          to that if and when you outgrow managed platforms &mdash; not before.
+          to that if and when you outgrow managed platforms - not before.
         </p>
 
         <blockquote className="border-l-2 border-blue-500 pl-6 my-8 text-[#bbb] italic">
@@ -931,7 +931,7 @@ export const batch4: Post[] = [
         <h2 id="faq">FAQ</h2>
         <p>
           <strong>Do we need a backend engineer?</strong> Eventually. Not for V1 with
-          this stack &mdash; a strong full-stack TypeScript engineer covers it.
+          this stack - a strong full-stack TypeScript engineer covers it.
         </p>
         <p>
           <strong>What about Python?</strong> Useful for data pipelines and model
@@ -973,7 +973,7 @@ export const batch4: Post[] = [
           streaming, the user stares at a spinner the whole time. With streaming, the
           first words arrive in 200&ndash;800ms and the response unfolds smoothly. The
           subjective &ldquo;feel&rdquo; difference is enormous. Same model, same total
-          time &mdash; entirely different product.
+          time - entirely different product.
         </p>
         <p>
           Streaming is not optional in 2026. Any AI feature longer than 1.5 seconds
@@ -982,9 +982,9 @@ export const batch4: Post[] = [
 
         <h2 id="options">The Three Streaming Options On The Web</h2>
         <ol>
-          <li><strong>Server-Sent Events (SSE)</strong> &mdash; one-way server-to-client over HTTP. The default.</li>
-          <li><strong>WebSocket</strong> &mdash; bi-directional, persistent connection.</li>
-          <li><strong>Raw fetch with chunked transfer</strong> &mdash; the simplest, plain HTTP streaming.</li>
+          <li><strong>Server-Sent Events (SSE)</strong> - one-way server-to-client over HTTP. The default.</li>
+          <li><strong>WebSocket</strong> - bi-directional, persistent connection.</li>
+          <li><strong>Raw fetch with chunked transfer</strong> - the simplest, plain HTTP streaming.</li>
         </ol>
         <p>
           Most AI use cases need exactly the first or third. WebSockets are over-engineered
@@ -1050,7 +1050,7 @@ export const batch4: Post[] = [
         </p>
         <ul>
           <li><strong>Cursor.</strong> A visible cursor showing &ldquo;still generating&rdquo; matters. Even a blinking pipe character beats no signal.</li>
-          <li><strong>Smooth typing speed.</strong> Don&apos;t let tokens arrive in bursts. Buffer briefly and release smoothly &mdash; reads more natural than jittery batches.</li>
+          <li><strong>Smooth typing speed.</strong> Don&apos;t let tokens arrive in bursts. Buffer briefly and release smoothly - reads more natural than jittery batches.</li>
           <li><strong>Stop button.</strong> Always offer a way to interrupt mid-stream. Required for trust.</li>
           <li><strong>Status text.</strong> If the AI is doing multi-step work (retrieval, then generation), show what phase it&apos;s in.</li>
         </ul>
@@ -1101,15 +1101,15 @@ export const batch4: Post[] = [
     readTime: "9 min read",
     date: "June 10, 2026",
     excerpt:
-      "Core Web Vitals are mostly built for static sites. Here is how to think about them for AI apps — what actually matters, what to ignore, and what Google has quietly added.",
+      "Core Web Vitals are mostly built for static sites. Here is how to think about them for AI apps - what actually matters, what to ignore, and what Google has quietly added.",
     author: "Flowtix Team",
     tags: ["Core Web Vitals", "Performance", "AI Apps"],
     toc: [
       { id: "cwv-now", label: "Core Web Vitals in 2026" },
       { id: "ai-tension", label: "The Tension With AI Apps" },
-      { id: "lcp", label: "LCP — Largest Contentful Paint" },
-      { id: "inp", label: "INP — Interaction to Next Paint" },
-      { id: "cls", label: "CLS — Cumulative Layout Shift" },
+      { id: "lcp", label: "LCP - Largest Contentful Paint" },
+      { id: "inp", label: "INP - Interaction to Next Paint" },
+      { id: "cls", label: "CLS - Cumulative Layout Shift" },
       { id: "ai-specific", label: "AI-Specific Performance Metrics" },
       { id: "improvements", label: "High-Impact Improvements" },
       { id: "faq", label: "FAQ" },
@@ -1136,28 +1136,28 @@ export const batch4: Post[] = [
           A pure AI product surface has three uncomfortable interactions with CWV:
         </p>
         <ul>
-          <li>The &ldquo;largest content&rdquo; arrives after a network round-trip and 4&ndash;15 seconds of model generation &mdash; not within 2.5s.</li>
-          <li>The page may be interactive long before the AI output finishes &mdash; INP can be great while &ldquo;perceived speed&rdquo; is bad.</li>
-          <li>AI-generated content frequently shifts layout as new tokens arrive &mdash; CLS can spike artificially.</li>
+          <li>The &ldquo;largest content&rdquo; arrives after a network round-trip and 4&ndash;15 seconds of model generation - not within 2.5s.</li>
+          <li>The page may be interactive long before the AI output finishes - INP can be great while &ldquo;perceived speed&rdquo; is bad.</li>
+          <li>AI-generated content frequently shifts layout as new tokens arrive - CLS can spike artificially.</li>
         </ul>
         <p>
           The fix is not to game the metrics. It&apos;s to optimize for the actual user
           experience and let the metrics catch up.
         </p>
 
-        <h2 id="lcp">LCP &mdash; Largest Contentful Paint</h2>
+        <h2 id="lcp">LCP - Largest Contentful Paint</h2>
         <p>
           Target: under 2.5 seconds. Means the largest meaningful element of the page
           loads quickly.
         </p>
         <p>
           For AI apps, the largest element is usually the chat shell or the input box
-          &mdash; not the AI output. Optimize for the shell: preload the font, inline
+          - not the AI output. Optimize for the shell: preload the font, inline
           critical CSS, defer non-critical JS, use a CDN. Hit the LCP target with the
           shell alone. The AI output arrives later; that&apos;s fine.
         </p>
 
-        <h2 id="inp">INP &mdash; Interaction to Next Paint</h2>
+        <h2 id="inp">INP - Interaction to Next Paint</h2>
         <p>
           Target: under 200ms. Means the page responds quickly to user input.
         </p>
@@ -1183,13 +1183,13 @@ export const batch4: Post[] = [
           </ul>
         </div>
 
-        <h2 id="cls">CLS &mdash; Cumulative Layout Shift</h2>
+        <h2 id="cls">CLS - Cumulative Layout Shift</h2>
         <p>
           Target: under 0.1. Means the page doesn&apos;t shift unexpectedly as it loads.
         </p>
         <p>
           For AI apps, the streaming response inherently shifts layout as new tokens
-          arrive. The fix is not to stop the shift &mdash; it&apos;s to make the layout
+          arrive. The fix is not to stop the shift - it&apos;s to make the layout
           shift <em>predictable</em>. Reserve space for AI output before it arrives. Pin
           the input box. Use <code>min-height</code> on streaming containers so they
           don&apos;t collapse and re-expand.
@@ -1200,10 +1200,10 @@ export const batch4: Post[] = [
           Beyond CWV, track these for AI apps:
         </p>
         <ul>
-          <li><strong>Time to first token (TTFT)</strong> &mdash; how long until the AI starts streaming. Target: under 800ms.</li>
-          <li><strong>Tokens per second</strong> &mdash; streaming speed once it starts. Target: above 30 tps.</li>
-          <li><strong>End-to-end latency</strong> &mdash; click to final output. Target depends on use case; for chat, under 10s.</li>
-          <li><strong>Bounce on first prompt</strong> &mdash; users who type one prompt and leave.</li>
+          <li><strong>Time to first token (TTFT)</strong> - how long until the AI starts streaming. Target: under 800ms.</li>
+          <li><strong>Tokens per second</strong> - streaming speed once it starts. Target: above 30 tps.</li>
+          <li><strong>End-to-end latency</strong> - click to final output. Target depends on use case; for chat, under 10s.</li>
+          <li><strong>Bounce on first prompt</strong> - users who type one prompt and leave.</li>
         </ul>
 
         <h2 id="improvements">High-Impact Improvements</h2>
@@ -1238,7 +1238,7 @@ export const batch4: Post[] = [
           Insights, or any RUM platform. The key is real-user data, not lab-only.
         </p>
         <p>
-          <strong>Should we lazy-load the AI shell itself?</strong> No &mdash; the user
+          <strong>Should we lazy-load the AI shell itself?</strong> No - the user
           came to use AI. Lazy-load the heavy bits inside it.
         </p>
       </>

@@ -5,7 +5,7 @@ import { m } from "framer-motion";
 import type { Project } from "@/lib/projects";
 
 /**
- * Compact horizontal brand strip — replaces the full-section brand identity
+ * Compact horizontal brand strip - replaces the full-section brand identity
  * with a single tight row: logo & tagline · colors · typography · one brand word.
  *
  * Stacks vertically on mobile.

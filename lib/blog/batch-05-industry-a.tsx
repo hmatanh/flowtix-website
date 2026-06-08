@@ -1,6 +1,6 @@
 import type { Post } from "@/lib/posts";
 
-// Industry-specific batch — shorter intros, denser practical content.
+// Industry-specific batch - shorter intros, denser practical content.
 // Each post: ~1500 words, real use cases, ROI math, vendor-neutral.
 
 const COMMON_CALLOUT_BLUE = "my-8 p-6 border border-amber-500/30 bg-amber-500/5 rounded-2xl";
@@ -67,7 +67,7 @@ export const batch5: Post[] = [
         </p>
         <p>
           The infrastructure cost is the only barrier and it&apos;s falling. AI writing
-          per email is now under $0.005 in marginal cost &mdash; cheaper than the
+          per email is now under $0.005 in marginal cost - cheaper than the
           deliverability fee on most ESPs.
         </p>
 
@@ -93,13 +93,13 @@ export const batch5: Post[] = [
         <h2 id="uc-5">5. Pricing and Promotion Optimization</h2>
         <p>
           Not dynamic pricing in the predatory sense. AI-assisted analysis of which
-          promotions worked, on which segments, with what ROI &mdash; so the next
+          promotions worked, on which segments, with what ROI - so the next
           promotion is better targeted. Pre-launch lift modeling on planned campaigns.
         </p>
 
         <h2 id="uc-6">6. AI Content for Product Pages</h2>
         <p>
-          Generating SKU descriptions, A/B copy, alt text, and structured data &mdash;
+          Generating SKU descriptions, A/B copy, alt text, and structured data -
           at scale and on-brand. The wins compound: better content drives better SEO,
           higher conversion, and easier merchandising.
         </p>
@@ -137,10 +137,10 @@ export const batch5: Post[] = [
           A practical decision tree for SMB e-com:
         </p>
         <ol>
-          <li><strong>If support is overwhelming</strong> &mdash; start with #3 (support automation) and #4 (returns triage).</li>
-          <li><strong>If conversion is the bottleneck</strong> &mdash; start with #1 (product discovery) and #2 (email).</li>
-          <li><strong>If inventory is bleeding cash</strong> &mdash; start with #7 (forecasting) and #5 (promotion optimization).</li>
-          <li><strong>If fraud is real</strong> &mdash; start with #8 (fraud detection) regardless of other priorities.</li>
+          <li><strong>If support is overwhelming</strong> - start with #3 (support automation) and #4 (returns triage).</li>
+          <li><strong>If conversion is the bottleneck</strong> - start with #1 (product discovery) and #2 (email).</li>
+          <li><strong>If inventory is bleeding cash</strong> - start with #7 (forecasting) and #5 (promotion optimization).</li>
+          <li><strong>If fraud is real</strong> - start with #8 (fraud detection) regardless of other priorities.</li>
         </ol>
 
         <blockquote className="border-l-2 border-amber-500 pl-6 my-8 text-[#bbb] italic">
@@ -166,7 +166,7 @@ export const batch5: Post[] = [
           ROI typically 3&ndash;10x within the first year.
         </p>
         <p>
-          <strong>What about AI image generation?</strong> Useful but downstream &mdash;
+          <strong>What about AI image generation?</strong> Useful but downstream -
           ship the 8 above first. AI imagery is a polish layer, not a foundation.
         </p>
       </>
@@ -206,7 +206,7 @@ export const batch5: Post[] = [
         </p>
         <p>
           What follows is the workflow we deployed across multiple brokerages in
-          2024&ndash;2026 &mdash; including the project documented in{" "}
+          2024&ndash;2026 - including the project documented in{" "}
           <a href="/work/kova/">our Kova case study</a>.
         </p>
 
@@ -251,7 +251,7 @@ export const batch5: Post[] = [
           The buyer fills out a preference profile that&apos;s 20 questions deep, but
           most agents don&apos;t use it because the data is hard to search. AI changes
           that. Every new listing gets scored against every active buyer&apos;s
-          preferences. The agent only sees matches above a threshold &mdash; with a
+          preferences. The agent only sees matches above a threshold - with a
           one-line explanation of why this is a fit.
         </p>
         <p>
@@ -265,7 +265,7 @@ export const batch5: Post[] = [
             <li>&bull; Forms route to a unified inbox (no scattered inboxes).</li>
             <li>&bull; AI replies in the agent&apos;s voice within 5 minutes, 24/7.</li>
             <li>&bull; Each AI conversation has a clear escalation trigger.</li>
-            <li>&bull; CRM auto-updates &mdash; no manual logging.</li>
+            <li>&bull; CRM auto-updates - no manual logging.</li>
           </ul>
         </div>
 
@@ -273,7 +273,7 @@ export const batch5: Post[] = [
         <p>
           AI pre-call brief: who&apos;s coming, what they&apos;ve looked at, what they
           said in prior conversations, what neighborhoods compete. Open house signups
-          get nurtured automatically afterward &mdash; the lead doesn&apos;t go cold
+          get nurtured automatically afterward - the lead doesn&apos;t go cold
           because the agent had three more showings that day.
         </p>
 
@@ -286,7 +286,7 @@ export const batch5: Post[] = [
         </p>
         <p>
           What not to automate: the bad news. Price reductions, failed inspections,
-          deal-killing surprises &mdash; these need the agent&apos;s voice. AI handles
+          deal-killing surprises - these need the agent&apos;s voice. AI handles
           the routine; humans handle the consequential.
         </p>
 
@@ -301,7 +301,7 @@ export const batch5: Post[] = [
 
         <h2 id="compliance">Compliance Without Friction</h2>
         <p>
-          Real estate has heavy compliance obligations &mdash; disclosures, fair housing,
+          Real estate has heavy compliance obligations - disclosures, fair housing,
           state-specific forms. AI checks every outbound communication and document
           against compliance rules. Flags potential issues for the agent before they
           send. Saves the agent from costly fair-housing violations.
@@ -310,7 +310,7 @@ export const batch5: Post[] = [
         <blockquote className="border-l-2 border-amber-500 pl-6 my-8 text-[#bbb] italic">
           The AI-augmented real estate agent isn&apos;t replacing the relationship with
           a bot. They&apos;re replacing the paperwork, the chasing, and the after-hours
-          response gap &mdash; so they have more time for the relationship.
+          response gap - so they have more time for the relationship.
         </blockquote>
 
         <p>
@@ -321,7 +321,7 @@ export const batch5: Post[] = [
 
         <h2 id="faq">FAQ</h2>
         <p>
-          <strong>Will MLS providers integrate?</strong> Yes &mdash; most major MLS
+          <strong>Will MLS providers integrate?</strong> Yes - most major MLS
           systems now support API access. The integration friction has dropped massively
           since 2024.
         </p>
@@ -345,7 +345,7 @@ export const batch5: Post[] = [
     readTime: "9 min read",
     date: "June 13, 2026",
     excerpt:
-      "Law firms have unusual AI opportunities — and unusual risk constraints. Here is the practical guide to AI deployment in legal practice in 2026.",
+      "Law firms have unusual AI opportunities - and unusual risk constraints. Here is the practical guide to AI deployment in legal practice in 2026.",
     author: "Flowtix Team",
     tags: ["Legal AI", "Law Firms", "Contract Review"],
     toc: [
@@ -423,7 +423,7 @@ export const batch5: Post[] = [
         <p>
           The bad products hallucinate cases. The infamous &ldquo;fake citation&rdquo;
           incidents of 2023 should be a permanent warning. Use only research products
-          that ground every cite in a verifiable source &mdash; and verify before
+          that ground every cite in a verifiable source - and verify before
           filing.
         </p>
 
@@ -443,7 +443,7 @@ export const batch5: Post[] = [
         <p>
           AI converts daily activity logs (calendar entries, emails, document opens)
           into time-tracking suggestions. The attorney reviews and confirms. Massively
-          reduces under-billing &mdash; most attorneys leave 10&ndash;25% of their billable
+          reduces under-billing - most attorneys leave 10&ndash;25% of their billable
           time on the table because they didn&apos;t log it.
         </p>
         <p>
@@ -464,12 +464,12 @@ export const batch5: Post[] = [
           Three vendor categories now exist: legal-specific AI products (Harvey, Spellbook,
           others), general-purpose AI with enterprise terms (OpenAI, Anthropic), and
           internal builds. For most firms under 50 attorneys, a legal-specific product
-          is the right starting point &mdash; you get the privilege-preserving terms and
+          is the right starting point - you get the privilege-preserving terms and
           a tuned model without building the infrastructure.
         </p>
 
         <blockquote className="border-l-2 border-amber-500 pl-6 my-8 text-[#bbb] italic">
-          AI in law firms isn&apos;t a question of whether to adopt &mdash; it&apos;s a
+          AI in law firms isn&apos;t a question of whether to adopt - it&apos;s a
           question of whether your firm adopts before clients start asking why their
           fees haven&apos;t come down.
         </blockquote>
@@ -589,7 +589,7 @@ export const batch5: Post[] = [
           AI handles eligibility verification, prior authorization paperwork, claims
           coding suggestions, denial analysis, and patient billing communications.
           Front-office time on billing typically drops 40&ndash;60%. Denial rate often
-          improves too &mdash; the AI catches missing documentation before submission.
+          improves too - the AI catches missing documentation before submission.
         </p>
 
         <h2 id="documentation">Clinical Documentation Assist</h2>
@@ -619,8 +619,8 @@ export const batch5: Post[] = [
         <blockquote className="border-l-2 border-amber-500 pl-6 my-8 text-[#bbb] italic">
           Healthcare AI done right makes the front office less stressed, the clinician
           less exhausted, and the patient better informed. Done wrong, it&apos;s a
-          breach waiting to happen. The difference is in the boring details &mdash; BAAs,
-          consent, audit logs &mdash; not in the model.
+          breach waiting to happen. The difference is in the boring details - BAAs,
+          consent, audit logs - not in the model.
         </blockquote>
 
         <p>
@@ -672,7 +672,7 @@ export const batch5: Post[] = [
         <h2 id="stakes">Why Hospitality AI Now</h2>
         <p>
           Hospitality is a service industry where the smallest details accumulate into
-          ratings and word-of-mouth. Guests don&apos;t remember a 4-star meal &mdash;
+          ratings and word-of-mouth. Guests don&apos;t remember a 4-star meal -
           they remember whether the front desk responded quickly when their key card
           stopped working at 11pm. AI lets a 20-room boutique hotel respond like a
           250-room chain, at a fraction of the cost.
@@ -682,7 +682,7 @@ export const batch5: Post[] = [
         <p>
           The AI concierge handles guest requests in chat (WhatsApp, in-app, web) at
           any hour: restaurant recommendations, transportation, local activities,
-          property questions. It knows your specific property and neighborhood &mdash;
+          property questions. It knows your specific property and neighborhood -
           not generic city info. It escalates to a human within 30 seconds for anything
           it can&apos;t handle.
         </p>
@@ -695,12 +695,12 @@ export const batch5: Post[] = [
         <p>
           AI in the booking flow: answer pre-booking questions, recommend room types
           based on stated needs, present add-ons at the right moments. AI doesn&apos;t
-          replace the booking engine &mdash; it sits alongside it and handles the
+          replace the booking engine - it sits alongside it and handles the
           questions that historically dropped before checkout.
         </p>
         <p>
           Direct-booking conversion typically lifts 15&ndash;30% when AI is available in
-          the booking flow. Each direct booking saves the OTA commission &mdash; the ROI
+          the booking flow. Each direct booking saves the OTA commission - the ROI
           is fast.
         </p>
 
@@ -877,7 +877,7 @@ export const batch5: Post[] = [
         <p>
           AI forecasts demand by day, weather, and event calendar. Recommends prep
           quantities. Tracks waste vs. forecast. The waste-reduction win for an
-          independent restaurant is typically 8&ndash;15% of food cost &mdash; meaningful at
+          independent restaurant is typically 8&ndash;15% of food cost - meaningful at
           restaurant margins.
         </p>
 
@@ -897,7 +897,7 @@ export const batch5: Post[] = [
 
         <blockquote className="border-l-2 border-amber-500 pl-6 my-8 text-[#bbb] italic">
           The independent restaurant of 2026 has the operational sophistication of a
-          chain restaurant of 2018 &mdash; without the corporate overhead. AI is what
+          chain restaurant of 2018 - without the corporate overhead. AI is what
           made that possible. The chains can&apos;t move as fast.
         </blockquote>
 
@@ -915,7 +915,7 @@ export const batch5: Post[] = [
           this well for restaurants. Disclosure required in some jurisdictions.
         </p>
         <p>
-          <strong>Should small restaurants bother?</strong> Yes &mdash; the smallest
+          <strong>Should small restaurants bother?</strong> Yes - the smallest
           margins benefit the most. Start with no-show reduction. Pays back in week 2.
         </p>
       </>
@@ -947,8 +947,8 @@ export const batch5: Post[] = [
         <h2 id="broker-reality">The Broker Workflow Reality</h2>
         <p>
           Insurance brokers spend 60&ndash;75% of their time on documentation, quoting,
-          and follow-up. The actual advisory work &mdash; the part where the broker adds
-          unique value &mdash; gets squeezed. AI lets the broker reverse the ratio.
+          and follow-up. The actual advisory work - the part where the broker adds
+          unique value - gets squeezed. AI lets the broker reverse the ratio.
         </p>
 
         <h2 id="quotes">Quote Generation</h2>
@@ -975,7 +975,7 @@ export const batch5: Post[] = [
 
         <h2 id="client-comms">Client Communication</h2>
         <p>
-          Routine policy questions, certificate requests, billing questions &mdash; all
+          Routine policy questions, certificate requests, billing questions - all
           handled by AI with broker oversight. The complex coverage questions still
           flow to the broker because that&apos;s where the value is.
         </p>
@@ -1009,7 +1009,7 @@ export const batch5: Post[] = [
 
         <blockquote className="border-l-2 border-amber-500 pl-6 my-8 text-[#bbb] italic">
           The brokerages that lead in 2026 are the ones where every broker handles 3x the
-          book without 3x the stress &mdash; because the documentation, follow-up, and
+          book without 3x the stress - because the documentation, follow-up, and
           intake work is done by AI before they touch it.
         </blockquote>
 
@@ -1126,7 +1126,7 @@ export const batch5: Post[] = [
 
         <blockquote className="border-l-2 border-amber-500 pl-6 my-8 text-[#bbb] italic">
           The contractor that wins in 2026 isn&apos;t the one with the biggest crew.
-          It&apos;s the one whose PMs aren&apos;t buried in paperwork &mdash; because
+          It&apos;s the one whose PMs aren&apos;t buried in paperwork - because
           their AI handled it.
         </blockquote>
 
@@ -1187,7 +1187,7 @@ export const batch5: Post[] = [
         <p>
           AI handles initial inquiries (24/7 chat), screens applicants against
           objective criteria, schedules showings, drafts standardized lease packets.
-          The PM still reviews final approvals &mdash; never AI-only on tenant
+          The PM still reviews final approvals - never AI-only on tenant
           selection because of fair-housing exposure.
         </p>
 
@@ -1255,7 +1255,7 @@ export const batch5: Post[] = [
         </p>
         <p>
           <strong>What about Section 8 / vouchers?</strong> AI cannot make decisions
-          about voucher acceptance &mdash; legal minefield. Keep humans on these
+          about voucher acceptance - legal minefield. Keep humans on these
           conversations entirely.
         </p>
         <p>
@@ -1308,7 +1308,7 @@ export const batch5: Post[] = [
         <p>
           Patient hasn&apos;t been in for their 6-month cleaning? Annual physical
           overdue? AI runs personalized recall campaigns. Conversion to a booked
-          appointment is typically 15&ndash;25% &mdash; much higher than static email
+          appointment is typically 15&ndash;25% - much higher than static email
           recall.
         </p>
 

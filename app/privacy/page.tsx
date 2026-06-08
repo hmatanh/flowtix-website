@@ -182,7 +182,7 @@ export default function PrivacyPage() {
           are transmitted over HTTPS to Web3Forms (operated by Statichunt
           Ltd), which forwards the message to office@flowtix.ai. When
           JavaScript is disabled, the form falls back to a mailto: handoff
-          that opens your email client locally — in that case no data is
+          that opens your email client locally - in that case no data is
           transmitted to any third party. We do not operate a database
           that stores your form submissions; once received, messages live
           in our inbox.

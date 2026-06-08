@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * Aurum V2 — AI-Written Quarterly Report Editor
+ * Aurum V2 - AI-Written Quarterly Report Editor
  *
  * Editorial composing surface. Sidebar shows the report's section outline
  * with progress indicators. Main canvas is a two-column editorial layout
@@ -109,7 +109,7 @@ export function ScreenReport() {
           >
             <div className="flex items-center gap-2 text-[#A98046]">
               <IconFileText size={11} stroke={1.5} />
-              <span>Section 3 — Portfolio Review</span>
+              <span>Section 3 - Portfolio Review</span>
             </div>
             <div className="flex items-center gap-3 text-[10.5px]">
               <span className="text-[#8C6B3A]">Saved · 12 sec ago</span>
@@ -161,7 +161,7 @@ export function ScreenReport() {
                 className="text-right font-serif-editorial"
                 style={{ color: "#8C6B3A", fontSize: 11 }}
               >
-                — page 3 of 14 —
+                - page 3 of 14 -
               </div>
             </div>
 
@@ -215,14 +215,14 @@ export function ScreenReport() {
                     Top contributors
                   </div>
                   <ul className="space-y-1 text-[#F5EBD2]" style={{ fontSize: 12 }}>
-                    <li>· VTI — US Total Market (+2.7%)</li>
-                    <li>· GLD — Gold (+1.9%)</li>
-                    <li>· VYM — Dividend Equity (+1.4%)</li>
+                    <li>· VTI - US Total Market (+2.7%)</li>
+                    <li>· GLD - Gold (+1.9%)</li>
+                    <li>· VYM - Dividend Equity (+1.4%)</li>
                   </ul>
                 </div>
               </div>
 
-              {/* Column 2 — chart + commentary */}
+              {/* Column 2 - chart + commentary */}
               <div>
                 <div
                   className="rounded-sm p-4 mb-5"

@@ -5,13 +5,13 @@ import { m } from "framer-motion";
 /* ============================================================
    PROJECT SIGNATURES
    Per-project decorative SVG patterns that give each case study
-   page its own visual character — beyond just brand color.
+   page its own visual character - beyond just brand color.
    Each pattern is placed as a subtle background flourish in the hero.
    ============================================================ */
 
 type Props = { className?: string };
 
-// KOVA — property map grid with pins
+// KOVA - property map grid with pins
 export function KovaSignature({ className = "" }: Props) {
   return (
     <svg
@@ -90,7 +90,7 @@ export function KovaSignature({ className = "" }: Props) {
   );
 }
 
-// SERŌ — calm concentric breathing circles
+// SERŌ - calm concentric breathing circles
 export function SeroSignature({ className = "" }: Props) {
   return (
     <svg
@@ -135,7 +135,7 @@ export function SeroSignature({ className = "" }: Props) {
   );
 }
 
-// AURUM — editorial gold lines (article rule + corner brackets)
+// AURUM - editorial gold lines (article rule + corner brackets)
 export function AurumSignature({ className = "" }: Props) {
   return (
     <svg
@@ -221,7 +221,7 @@ export function AurumSignature({ className = "" }: Props) {
   );
 }
 
-// DRFT — bold topography contour lines
+// DRFT - bold topography contour lines
 export function DrftSignature({ className = "" }: Props) {
   return (
     <svg
@@ -279,7 +279,7 @@ export function DrftSignature({ className = "" }: Props) {
   );
 }
 
-// LINX — constellation of nodes connected by thin lines
+// LINX - constellation of nodes connected by thin lines
 export function LinxSignature({ className = "" }: Props) {
   const nodes = [
     { x: 60, y: 60 },

@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * Linx V2 — AI Proposal Engine
+ * Linx V2 - AI Proposal Engine
  *
  * The studio's writing room. Brief input on the left, a 12-page proposal
  * being assembled on the right, with an AI sidekick on the far right
@@ -43,7 +43,7 @@ export function ScreenProposal() {
       }}
     >
       <div className="absolute inset-0 grid" style={{ gridTemplateColumns: "240px 1fr 300px" }}>
-        {/* LEFT — Outline */}
+        {/* LEFT - Outline */}
         <aside
           className="border-r overflow-hidden flex flex-col"
           style={{ borderColor: "rgba(139,92,246,0.10)", background: "#0F0B1F" }}
@@ -97,7 +97,7 @@ export function ScreenProposal() {
                 </span>
                 <span className="truncate">{s.name}</span>
                 <span className="text-[#5A4D7A] text-[9.5px] tabular-nums">
-                  {s.words || "—"}
+                  {s.words || "-"}
                 </span>
               </div>
             ))}
@@ -125,7 +125,7 @@ export function ScreenProposal() {
           </div>
         </aside>
 
-        {/* CENTER — Editor */}
+        {/* CENTER - Editor */}
         <main className="overflow-hidden flex flex-col">
           {/* Top bar */}
           <div
@@ -134,7 +134,7 @@ export function ScreenProposal() {
           >
             <div className="flex items-center gap-2 text-[#9180B5]">
               <IconFileText size={11} stroke={1.5} />
-              <span>Section 3 — Strategic thesis</span>
+              <span>Section 3 - Strategic thesis</span>
               <span className="text-[#5A4D7A]">·</span>
               <span>page 3 of 12</span>
             </div>
@@ -192,7 +192,7 @@ export function ScreenProposal() {
                 className="text-right text-[#7A6BA0] italic"
                 style={{ fontSize: 11 }}
               >
-                — page 3 of 12 —
+                - page 3 of 12 -
               </div>
             </div>
 
@@ -215,7 +215,7 @@ export function ScreenProposal() {
                   </span>
                   arlow stopped looking like a young firm three years ago. The
                   brand it walks around in still does. The work this proposal
-                  outlines closes that gap — not by softening the message, but
+                  outlines closes that gap - not by softening the message, but
                   by giving it the surface it deserves.
                 </p>
 
@@ -225,7 +225,7 @@ export function ScreenProposal() {
                 >
                   We treat the proposal as the deliverable, not the deck. Each
                   section of this document corresponds to a workstream you can
-                  choose to commission separately or run together — the brand,
+                  choose to commission separately or run together - the brand,
                   the site, and the editorial system that keeps both alive.
                 </p>
 
@@ -285,7 +285,7 @@ export function ScreenProposal() {
                       </span>
                       <span>
                         The version where Marlow speaks to the next-generation
-                        client — younger founders, family offices in transition.
+                        client - younger founders, family offices in transition.
                       </span>
                     </li>
                   </ol>
@@ -315,7 +315,7 @@ export function ScreenProposal() {
           </div>
         </main>
 
-        {/* RIGHT — AI nudges */}
+        {/* RIGHT - AI nudges */}
         <aside
           className="border-l overflow-hidden flex flex-col"
           style={{ borderColor: "rgba(139,92,246,0.10)", background: "#0F0B1F" }}

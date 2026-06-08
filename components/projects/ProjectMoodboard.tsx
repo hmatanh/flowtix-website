@@ -7,7 +7,7 @@ import type { Project } from "@/lib/projects";
    PROJECT MOODBOARD
    A per-project visual moments grid. Each project gets a unique
    composition of "imagery" suggested through gradients and
-   geometric overlays — no external photos, no copyright issues,
+   geometric overlays - no external photos, no copyright issues,
    no brand-flat sameness.
    ============================================================ */
 
@@ -369,7 +369,7 @@ export function ProjectMoodboard({ project }: { project: Project }) {
           />
         </div>
 
-        {/* Tile grid — 2 wide + 2 regular = balanced mosaic */}
+        {/* Tile grid - 2 wide + 2 regular = balanced mosaic */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
           {tiles.map((t, i) => {
             const isWide = t.span === "wide";

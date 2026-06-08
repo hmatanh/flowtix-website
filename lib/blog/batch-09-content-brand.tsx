@@ -98,7 +98,7 @@ export const batch9: Post[] = [
 
         <h2 id="ai-prompts">AI Prompts Derived From the Voice Doc</h2>
         <p>
-          The voice doc isn&apos;t just for humans &mdash; it becomes a prompt the AI
+          The voice doc isn&apos;t just for humans - it becomes a prompt the AI
           reads on every generation. Pull the rules, the banned list, and one or two
           examples into a system prompt. The AI consults them while drafting. Voice
           consistency rises dramatically.
@@ -147,23 +147,23 @@ export const batch9: Post[] = [
           AI video matured fast: text-to-video for short clips, AI avatars for
           explainer videos, auto-editing for raw footage, AI-generated b-roll. Some of
           it is genuinely production-ready. Some is still demo-only. The lines have
-          moved quickly &mdash; what was unusable in 2024 may be standard now, and vice
+          moved quickly - what was unusable in 2024 may be standard now, and vice
           versa.
         </p>
 
         <h2 id="categories">Five Categories of AI Video</h2>
         <ol>
-          <li><strong>Text-to-video generation</strong> &mdash; short clips from prompts.</li>
-          <li><strong>AI avatars</strong> &mdash; talking-head video from script.</li>
-          <li><strong>AI editing</strong> &mdash; auto-cut, transcribe-to-edit, captioning.</li>
-          <li><strong>AI b-roll and stock</strong> &mdash; generated visuals to support narration.</li>
-          <li><strong>AI translation/dubbing</strong> &mdash; localize one video to many languages.</li>
+          <li><strong>Text-to-video generation</strong> - short clips from prompts.</li>
+          <li><strong>AI avatars</strong> - talking-head video from script.</li>
+          <li><strong>AI editing</strong> - auto-cut, transcribe-to-edit, captioning.</li>
+          <li><strong>AI b-roll and stock</strong> - generated visuals to support narration.</li>
+          <li><strong>AI translation/dubbing</strong> - localize one video to many languages.</li>
         </ol>
 
         <h2 id="what-works">What Works For Small Teams</h2>
         <ul>
-          <li>AI captioning and transcription &mdash; near-perfect, saves hours.</li>
-          <li>Transcribe-to-edit interfaces &mdash; edit video like text.</li>
+          <li>AI captioning and transcription - near-perfect, saves hours.</li>
+          <li>Transcribe-to-edit interfaces - edit video like text.</li>
           <li>AI avatars for explainers (when disclosed as AI).</li>
           <li>AI translation/dubbing for content localization.</li>
           <li>Auto-cropping for vertical/horizontal repurposing.</li>
@@ -171,10 +171,10 @@ export const batch9: Post[] = [
 
         <h2 id="what-fails">What Still Fails for Production Use</h2>
         <ul>
-          <li>Long-form text-to-video &mdash; uncanny, hard to control.</li>
-          <li>AI lip-sync on real speakers &mdash; still detectable.</li>
-          <li>Complex scene generation &mdash; physics and continuity break.</li>
-          <li>Voice cloning of specific people without consent &mdash; legal and ethical minefield.</li>
+          <li>Long-form text-to-video - uncanny, hard to control.</li>
+          <li>AI lip-sync on real speakers - still detectable.</li>
+          <li>Complex scene generation - physics and continuity break.</li>
+          <li>Voice cloning of specific people without consent - legal and ethical minefield.</li>
         </ul>
 
         <div className={C_PURPLE}>
@@ -192,7 +192,7 @@ export const batch9: Post[] = [
         <ol>
           <li>Record raw narration on a phone or basic mic.</li>
           <li>Run through AI transcription (1 minute per 10 minutes of audio).</li>
-          <li>Edit by deleting text in the transcript &mdash; corresponding audio cuts.</li>
+          <li>Edit by deleting text in the transcript - corresponding audio cuts.</li>
           <li>Drop in AI-generated b-roll where appropriate.</li>
           <li>Add captions (auto-generated, human-review).</li>
           <li>Human pass for music, pacing, intro/outro.</li>
@@ -213,7 +213,7 @@ export const batch9: Post[] = [
         <ol>
           <li>Disclose AI use when not obvious.</li>
           <li>Never clone a voice or likeness without explicit consent.</li>
-          <li>Check the AI vendor&apos;s training data terms &mdash; some have legal exposure.</li>
+          <li>Check the AI vendor&apos;s training data terms - some have legal exposure.</li>
         </ol>
 
         <blockquote className={Q_PURPLE}>
@@ -226,7 +226,7 @@ export const batch9: Post[] = [
 
         <h2 id="faq">FAQ</h2>
         <p><strong>Best transcript editor?</strong> Multiple capable products. Test on your specific footage.</p>
-        <p><strong>Avatar quality &mdash; can viewers tell?</strong> Mostly yes within 30 seconds. Disclose.</p>
+        <p><strong>Avatar quality - can viewers tell?</strong> Mostly yes within 30 seconds. Disclose.</p>
         <p><strong>What about TikTok-style content?</strong> AI cropping + caption tools shine here. Hand editing still better for storytelling.</p>
       </>
     ),
@@ -239,7 +239,7 @@ export const batch9: Post[] = [
     readTime: "8 min read",
     date: "July 23, 2026",
     excerpt:
-      "AI image generation went from toy to tool. Here is the practical 2026 workflow for marketing use — what works, what gets you sued, and what looks generic.",
+      "AI image generation went from toy to tool. Here is the practical 2026 workflow for marketing use - what works, what gets you sued, and what looks generic.",
     author: "Flowtix Team",
     tags: ["AI Images", "Marketing", "Visual Content"],
     toc: [
@@ -428,7 +428,7 @@ export const batch9: Post[] = [
         <p>
           AI doesn&apos;t magically grow your audience. Distribution still requires
           human strategy: guesting, cross-promotion, building an email list. AI helps
-          with the production hygiene that lets you stay consistent &mdash; which is
+          with the production hygiene that lets you stay consistent - which is
           90% of audience growth.
         </p>
 
@@ -455,7 +455,7 @@ export const batch9: Post[] = [
     readTime: "8 min read",
     date: "July 25, 2026",
     excerpt:
-      "Newsletters are getting harder to grow as AI floods inboxes. Here is the strategy that still works — and the metrics that show whether it&apos;s working.",
+      "Newsletters are getting harder to grow as AI floods inboxes. Here is the strategy that still works - and the metrics that show whether it&apos;s working.",
     author: "Flowtix Team",
     tags: ["Newsletter", "Email", "Content Strategy"],
     toc: [
@@ -482,7 +482,7 @@ export const batch9: Post[] = [
           <li>A distinctive voice that readers recognize.</li>
           <li>A specific point of view, not balanced summaries.</li>
           <li>First-hand observation, not regurgitated industry news.</li>
-          <li>Useful brevity &mdash; under 800 words usually.</li>
+          <li>Useful brevity - under 800 words usually.</li>
           <li>One idea per issue, not a curated bundle.</li>
         </ul>
 
@@ -567,7 +567,7 @@ export const batch9: Post[] = [
     readTime: "8 min read",
     date: "July 26, 2026",
     excerpt:
-      "Social automation went too far and audiences learned to spot it. Here is how to use automation thoughtfully — keeping the human visibility that earns reach.",
+      "Social automation went too far and audiences learned to spot it. Here is how to use automation thoughtfully - keeping the human visibility that earns reach.",
     author: "Flowtix Team",
     tags: ["Social Media", "Automation", "AI Content"],
     toc: [
@@ -601,9 +601,9 @@ export const batch9: Post[] = [
 
         <h2 id="what-not">What Not To Automate</h2>
         <ul>
-          <li>The actual content of posts &mdash; should be human-authored or AI-drafted with strong editing.</li>
+          <li>The actual content of posts - should be human-authored or AI-drafted with strong editing.</li>
           <li>Replies to real comments.</li>
-          <li>DMs &mdash; auto-DMs are universally hated.</li>
+          <li>DMs - auto-DMs are universally hated.</li>
           <li>Engagement on others&apos; content (the auto-like, auto-follow tactics).</li>
         </ul>
 
@@ -627,7 +627,7 @@ export const batch9: Post[] = [
           <li>Batch creation, scheduled posting.</li>
           <li>Mix evergreen content with timely takes.</li>
           <li>Leave room for spontaneous posts (the highest performers).</li>
-          <li>Don&apos;t over-schedule &mdash; quality beats quantity.</li>
+          <li>Don&apos;t over-schedule - quality beats quantity.</li>
         </ul>
 
         <h2 id="engagement">Engagement Is The Hardest To Automate</h2>
@@ -653,7 +653,7 @@ export const batch9: Post[] = [
         <p>See <a href="/blog/brand-voice-guidelines-ai-era">brand voice guidelines</a>.</p>
 
         <h2 id="faq">FAQ</h2>
-        <p><strong>Should we have a community manager?</strong> Yes &mdash; engagement is unautomatable.</p>
+        <p><strong>Should we have a community manager?</strong> Yes - engagement is unautomatable.</p>
         <p><strong>How many posts per week?</strong> Depends on platform. Quality matters more than count.</p>
         <p><strong>Tools?</strong> Many capable. Pick by ease, not features.</p>
       </>
@@ -727,7 +727,7 @@ export const batch9: Post[] = [
         <p>
           Every repurposed piece needs human editing. Generic AI-cropped clips with
           generic captions perform worse than nothing. The repurposing succeeds because
-          the original talk had substance &mdash; not despite a lack of editing.
+          the original talk had substance - not despite a lack of editing.
         </p>
 
         <h2 id="cadence">Distribution Cadence</h2>
@@ -744,7 +744,7 @@ export const batch9: Post[] = [
         </p>
 
         <blockquote className={Q_PURPLE}>
-          The hardest part of content marketing isn&apos;t producing &mdash; it&apos;s
+          The hardest part of content marketing isn&apos;t producing - it&apos;s
           producing something worth saying. One great talk repurposed thoughtfully
           beats 30 average posts every time.
         </blockquote>
@@ -766,7 +766,7 @@ export const batch9: Post[] = [
     readTime: "8 min read",
     date: "July 28, 2026",
     excerpt:
-      "AI doesn't replace customer research — it makes it 5x faster. Here is the practical workflow for interviews, transcripts, and synthesis in 2026.",
+      "AI doesn't replace customer research - it makes it 5x faster. Here is the practical workflow for interviews, transcripts, and synthesis in 2026.",
     author: "Flowtix Team",
     tags: ["Customer Research", "AI Synthesis", "Product"],
     toc: [
@@ -841,7 +841,7 @@ export const batch9: Post[] = [
 
         <blockquote className={Q_PURPLE}>
           The researchers who use AI well still spend the same time on interviews.
-          They spend less time on transcription and synthesis &mdash; and more time
+          They spend less time on transcription and synthesis - and more time
           interpreting what the findings actually mean for the product.
         </blockquote>
 
@@ -862,7 +862,7 @@ export const batch9: Post[] = [
     readTime: "9 min read",
     date: "July 29, 2026",
     excerpt:
-      "Brand systems built for humans break when AI tries to use them. Here is how to build a brand system AI can actually enforce — design tokens + structured voice.",
+      "Brand systems built for humans break when AI tries to use them. Here is how to build a brand system AI can actually enforce - design tokens + structured voice.",
     author: "Flowtix Team",
     tags: ["Brand System", "Design Tokens", "AI Brand"],
     toc: [
@@ -916,10 +916,10 @@ export const batch9: Post[] = [
         <div className={C_PINK}>
           <div className="text-label text-pink-400 mb-3">Brand System Files</div>
           <ul className="space-y-2 text-[#ccc] text-sm">
-            <li>&bull; <code>tokens.json</code> &mdash; design values.</li>
-            <li>&bull; <code>voice.yaml</code> &mdash; voice rules and examples.</li>
-            <li>&bull; <code>imagery.md</code> &mdash; style prompts and constraints.</li>
-            <li>&bull; <code>components/*.json</code> &mdash; allowed component variations.</li>
+            <li>&bull; <code>tokens.json</code> - design values.</li>
+            <li>&bull; <code>voice.yaml</code> - voice rules and examples.</li>
+            <li>&bull; <code>imagery.md</code> - style prompts and constraints.</li>
+            <li>&bull; <code>components/*.json</code> - allowed component variations.</li>
             <li>&bull; All versioned in git.</li>
           </ul>
         </div>
@@ -955,7 +955,7 @@ export const batch9: Post[] = [
         <h2 id="faq">FAQ</h2>
         <p><strong>Cost to build?</strong> $20k&ndash;$80k depending on existing maturity. Years of payback.</p>
         <p><strong>Figma plugin or custom?</strong> Both. Figma for designers; tokens for code; AI prompts for content.</p>
-        <p><strong>Do we still need a creative director?</strong> Yes &mdash; the system enforces the brand the CD designs.</p>
+        <p><strong>Do we still need a creative director?</strong> Yes - the system enforces the brand the CD designs.</p>
       </>
     ),
   },
@@ -985,7 +985,7 @@ export const batch9: Post[] = [
         <h2 id="compressed">The New Compressed Cycle</h2>
         <p>
           Brief to final asset in 30 minutes for a social post; 3 hours for a complex
-          piece. The compression doesn&apos;t come from cutting corners &mdash; it
+          piece. The compression doesn&apos;t come from cutting corners - it
           comes from AI handling the parts that were slow without being creative.
         </p>
 
@@ -1056,7 +1056,7 @@ export const batch9: Post[] = [
         <p>See <a href="/blog/brand-system-ai-can-use">brand systems AI can use</a>.</p>
 
         <h2 id="faq">FAQ</h2>
-        <p><strong>Does this replace junior designers?</strong> No &mdash; elevates them. Junior work shifts from production to direction.</p>
+        <p><strong>Does this replace junior designers?</strong> No - elevates them. Junior work shifts from production to direction.</p>
         <p><strong>Tools?</strong> Multiple capable. Test on your specific work.</p>
         <p><strong>What about agency billing?</strong> Move toward outcome-based pricing as production time drops.</p>
       </>

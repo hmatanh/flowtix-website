@@ -4,7 +4,7 @@ import { m, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 /**
- * FounderPhoto — cinematic founder portrait with orbiting motion,
+ * FounderPhoto - cinematic founder portrait with orbiting motion,
  * brand-glow aura, parallax tilt on desktop, and effects that still
  * feel alive on mobile.
  *
@@ -72,7 +72,7 @@ export function FounderPhoto({
       }}
     >
       {/* =================================================================
-          Brand-glow aura — soft blue radial pulse behind everything
+          Brand-glow aura - soft blue radial pulse behind everything
           ================================================================= */}
       <m.span
         className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full pointer-events-none"
@@ -135,7 +135,7 @@ export function FounderPhoto({
       />
 
       {/* =================================================================
-          Orbit particles — small dots traveling along each ring
+          Orbit particles - small dots traveling along each ring
           ================================================================= */}
       <OrbitParticle size={460} delay={0} color={`rgba(${BLUE_RGB}, 0.95)`} dur={18} />
       <OrbitParticle size={460} delay={6} color={`rgba(${BLUE_RGB}, 0.7)`} dur={18} />
@@ -146,7 +146,7 @@ export function FounderPhoto({
       <OrbitParticle size={260} delay={4.5} color={`rgba(255,255,255,0.6)`} dur={9} />
 
       {/* =================================================================
-          Photo container — tilted on cursor parallax, scan line inside
+          Photo container - tilted on cursor parallax, scan line inside
           ================================================================= */}
       <m.div
         className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-3xl overflow-hidden"
@@ -237,7 +237,7 @@ export function FounderPhoto({
       </m.div>
 
       {/* =================================================================
-          Floating tech chips — parallax-shifted, premium glass look
+          Floating tech chips - parallax-shifted, premium glass look
           ================================================================= */}
       <m.div
         className="absolute pointer-events-none"
@@ -321,7 +321,7 @@ export function FounderPhoto({
       </m.div>
 
       {/* =================================================================
-          Neural node cluster — connected nodes with traveling pulse
+          Neural node cluster - connected nodes with traveling pulse
           ================================================================= */}
       <m.svg
         className="absolute pointer-events-none"
@@ -479,7 +479,7 @@ export function FounderPhoto({
       </div>
 
       {/* =================================================================
-          Sparkle dots — twinkling stars
+          Sparkle dots - twinkling stars
           ================================================================= */}
       {[
         { top: 52, left: 92, delay: 0, dur: 3 },
@@ -512,7 +512,7 @@ export function FounderPhoto({
       ))}
 
       {/* =================================================================
-          Code brackets — slowly rotating decorative glyphs
+          Code brackets - slowly rotating decorative glyphs
           ================================================================= */}
       <m.span
         aria-hidden="true"
@@ -560,7 +560,7 @@ export function FounderPhoto({
       {/* =================================================================
           Keyframes
           ================================================================= */}
-      {/* Global keyframes — needed because OrbitParticle references them via inline style */}
+      {/* Global keyframes - needed because OrbitParticle references them via inline style */}
       <style jsx global>{`
         @keyframes founderRingSpin {
           from { transform: translate(-50%, -50%) rotate(0deg); }
@@ -605,7 +605,7 @@ export function FounderPhoto({
 }
 
 /* =====================================================================
-   OrbitParticle — a small dot orbiting at a given radius
+   OrbitParticle - a small dot orbiting at a given radius
    ===================================================================== */
 
 function OrbitParticle({

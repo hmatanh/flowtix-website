@@ -43,7 +43,7 @@ export function ServiceDetailView({ slug }: { slug: string }) {
 
   return (
     <>
-      {/* ============== HERO — per-service color theming ============== */}
+      {/* ============== HERO - per-service color theming ============== */}
       <section className="relative pt-20 sm:pt-24 lg:pt-32 pb-20 sm:pb-24 lg:pb-32 overflow-hidden">
         {/* Service-color radial backdrop */}
         <div
@@ -237,7 +237,7 @@ export function ServiceDetailView({ slug }: { slug: string }) {
             </div>
           </FadeIn>
 
-          {/* Quick facts strip — mobile-optimized */}
+          {/* Quick facts strip - mobile-optimized */}
           <FadeIn delay={0.8}>
             <div className="mt-10 sm:mt-14 grid grid-cols-3 gap-3 max-w-md sm:max-w-2xl">
               {[
@@ -278,7 +278,7 @@ export function ServiceDetailView({ slug }: { slug: string }) {
         </div>
       </section>
 
-      {/* ============== THE CHALLENGE — brand-tinted ============== */}
+      {/* ============== THE CHALLENGE - brand-tinted ============== */}
       <section
         className="relative border-y border-[#0a0a0a] py-20 sm:py-24 lg:py-28 px-6 md:px-10 xl:px-12 overflow-hidden"
         style={{ background: "#040404" }}
@@ -402,7 +402,7 @@ export function ServiceDetailView({ slug }: { slug: string }) {
                     transition={{ duration: 0.5, ease: EASE }}
                     className="relative pl-14 sm:pl-24 lg:pl-32 border-t border-[#0f0f0f] pt-7 sm:pt-8"
                   >
-                    {/* Step number — circular badge */}
+                    {/* Step number - circular badge */}
                     <div
                       className="absolute left-0 -top-4 sm:left-0 sm:-top-3 z-10 w-10 h-10 sm:w-14 sm:h-14 rounded-full inline-flex items-center justify-center font-bold text-sm sm:text-base"
                       style={{
@@ -498,7 +498,7 @@ export function ServiceDetailView({ slug }: { slug: string }) {
                 color: "#ffffff",
               }}
             >
-              Real outcomes —{" "}
+              Real outcomes -{" "}
               <span style={{ color: c.primary }}>not vanity metrics.</span>
             </h2>
           </FadeIn>
@@ -540,7 +540,7 @@ export function ServiceDetailView({ slug }: { slug: string }) {
         </div>
       </section>
 
-      {/* ============== ROI CALCULATOR — only on the 3 most popular ============== */}
+      {/* ============== ROI CALCULATOR - only on the 3 most popular ============== */}
       {ROI_SLUGS.has(slug) && <ROICalculator slug={slug} />}
 
       {/* ============== RELATED ============== */}
@@ -634,7 +634,7 @@ export function ServiceDetailView({ slug }: { slug: string }) {
         </section>
       )}
 
-      {/* ============== BOTTOM CTA — service-color wash ============== */}
+      {/* ============== BOTTOM CTA - service-color wash ============== */}
       <section className="relative py-20 sm:py-28 lg:py-32 overflow-hidden">
         <div
           aria-hidden="true"
@@ -689,7 +689,7 @@ export function ServiceDetailView({ slug }: { slug: string }) {
           </FadeIn>
           <FadeIn delay={0.1}>
             <p className="text-[#aaa] mt-5 sm:mt-6 max-w-xl mx-auto leading-[1.65] sm:leading-relaxed text-base sm:text-lg px-2">
-              Book a free 30-minute strategy call. We&apos;ll talk specifics —
+              Book a free 30-minute strategy call. We&apos;ll talk specifics -
               your problem, your stack, your timeline.
             </p>
           </FadeIn>

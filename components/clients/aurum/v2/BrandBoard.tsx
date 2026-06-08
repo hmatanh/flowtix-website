@@ -1,9 +1,9 @@
 "use client";
 
 /**
- * Aurum V2 — Brand Identity Board
+ * Aurum V2 - Brand Identity Board
  *
- * The "specimen sheet" for the firm's identity — wordmark variants, the
+ * The "specimen sheet" for the firm's identity - wordmark variants, the
  * serif/sans pairing, and the palette swatches. Reads like a one-page
  * brand book, not a slide deck.
  */
@@ -174,7 +174,7 @@ export function BrandBoard() {
                     lineHeight: 1.6,
                   }}
                 >
-                  Body copy is set in Inter — a quiet, modern sans that
+                  Body copy is set in Inter - a quiet, modern sans that
                   carries clinical detail without competing with the serif
                   display titling used across portfolio reports and client
                   communications.
@@ -185,7 +185,7 @@ export function BrandBoard() {
               </div>
             </div>
 
-            {/* Palette — full row on lg+, 2-row 5-col-with-wrap on mobile */}
+            {/* Palette - full row on lg+, 2-row 5-col-with-wrap on mobile */}
             <div>
               <div className="text-[#8C6B3A] text-[9.5px] tracking-[0.22em] uppercase mb-5">
                 Palette

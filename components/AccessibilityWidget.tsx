@@ -1,13 +1,13 @@
 "use client";
 
 /**
- * AccessibilityWidget — a small "Display preferences" panel.
+ * AccessibilityWidget - a small "Display preferences" panel.
  *
  * NOT an accessibility overlay. The real accessibility of this site
  * lives in the code: semantic HTML, heading hierarchy, ARIA labels,
  * focus states, color contrast, keyboard navigation, scaled-to-fit
  * mockups, etc. This widget gives visitors OPTIONAL UI controls on
- * top of that — text size, high contrast, reduced motion. Saved per
+ * top of that - text size, high contrast, reduced motion. Saved per
  * device in localStorage.
  *
  * Why we built it rather than installing an overlay vendor
@@ -109,7 +109,7 @@ export function AccessibilityWidget() {
 
   return (
     <>
-      {/* Floating trigger — bottom-left to avoid BackToTop (bottom-right) */}
+      {/* Floating trigger - bottom-left to avoid BackToTop (bottom-right) */}
       <button
         type="button"
         onClick={() => setOpen((o) => !o)}
