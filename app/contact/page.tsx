@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useEffect, useRef, FormEvent } from "react";
+import { useState, useEffect, useRef, FormEvent, Fragment } from "react";
 import { m, AnimatePresence } from "framer-motion";
 import {
   IconArrowRight,
@@ -1024,14 +1024,22 @@ export default function ContactPage() {
               transition={{ staggerChildren: 0.08, delayChildren: 0.1 }}
             >
               {headlineWords.map((w, i) => (
-                <m.span
-                  key={i}
-                  variants={wordVariants}
-                  transition={{ duration: 0.6, ease: EASE }}
-                  className="inline-block mr-[0.25em]"
-                >
-                  {w}
-                </m.span>
+                <Fragment key={i}>
+                  {/* Force a hard line break before "we're" (index 4) so
+                      the headline always reads as two clean lines:
+                        "Let's figure out if"
+                        "we're the right fit."
+                      Otherwise the natural wrap depends on viewport width
+                      and on desktop it ran on one long line. */}
+                  {i === 4 && <br />}
+                  <m.span
+                    variants={wordVariants}
+                    transition={{ duration: 0.6, ease: EASE }}
+                    className="inline-block mr-[0.25em]"
+                  >
+                    {w}
+                  </m.span>
+                </Fragment>
               ))}
             </m.span>
           </h1>
