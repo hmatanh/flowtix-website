@@ -162,28 +162,58 @@ function djb2(str: string): number {
 /**
  * Get the cover image URL for a post.
  *
- * @param slug     — the post slug (used to deterministically pick within the pool)
- * @param category — the post category (selects the pool)
+ * Resolution order:
+ *
+ *   1. SLUG_OVERRIDE  — hand-curated Unsplash photo for the 6
+ *      flagship posts. Topic-relevant, fast Unsplash CDN.
+ *
+ *   2. picsum.photos  — every other post gets a unique image keyed
+ *      by its slug. picsum is a deterministic photo CDN: the same
+ *      seed always returns the same image, and different seeds
+ *      return different images. License: CC0 / public domain —
+ *      free for any use including commercial, no attribution
+ *      required (https://picsum.photos/).
+ *
+ * Why the split: there are ~100 long-tail batch posts. Curating
+ * unique Unsplash covers for every single one isn't realistic, and
+ * the previous "hash into a category pool of 8" scheme caused
+ * obvious duplicates because the pool was much smaller than the
+ * post count in some categories (Business has 42 posts). picsum's
+ * seed-keyed delivery guarantees every post in the listing gets a
+ * visibly different cover with zero curation overhead. The 6
+ * featured posts the user most cares about keep their curated
+ * Unsplash photos via SLUG_OVERRIDE above.
+ *
+ * @param slug     — the post slug (used as picsum seed when no override)
+ * @param category — kept for future use (currently unused at runtime,
+ *                   but the function signature stays stable so callers
+ *                   don't need to change)
  * @param width    — desired output width (default 800; pass 1200 for retina hero)
- * @returns        — a ready-to-use Unsplash CDN URL
+ * @returns        — a ready-to-use image CDN URL
  */
 export function getCoverImage(
   slug: string,
+  // Kept in the signature for forward-compat: a future implementation
+  // could swap picsum for a category-specific photo pool without
+  // touching every call site. Currently unused at runtime.
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   category: string,
   width: number = 800
 ): string {
-  // Explicit per-post mapping wins. Falls back to deterministic hash
-  // over the category pool for any future post that hasn't been
-  // mapped yet, so a new draft still ships with a sensible cover.
-  const overrideId = SLUG_OVERRIDE[slug];
-  const pool = CATEGORY_POOL[category] ?? DEFAULT_POOL;
-  const photoId = overrideId ?? pool[djb2(slug) % pool.length];
   const height = Math.round(width * 0.625); // 16:10 aspect
 
-  return (
-    `https://images.unsplash.com/photo-${photoId}` +
-    `?w=${width}&h=${height}&fit=crop&q=75&auto=format`
-  );
+  const overrideId = SLUG_OVERRIDE[slug];
+  if (overrideId) {
+    return (
+      `https://images.unsplash.com/photo-${overrideId}` +
+      `?w=${width}&h=${height}&fit=crop&q=75&auto=format`
+    );
+  }
+
+  // Long-tail posts: picsum gives a unique CC0 photo per slug.
+  // encodeURIComponent guards against any future slug containing
+  // characters that would break the URL.
+  return `https://picsum.photos/seed/${encodeURIComponent(slug)}/${width}/${height}`;
 }
 
 /**
