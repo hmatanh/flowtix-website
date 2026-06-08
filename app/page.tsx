@@ -15,6 +15,7 @@ import {
   IconCheck,
 } from "@tabler/icons-react";
 import { PerspectiveGrid } from "@/components/PerspectiveGrid";
+import { HeroAmbient } from "@/components/HeroAmbient";
 import { AnimatedCounter } from "@/components/AnimatedCounter";
 import { FAQ } from "@/components/FAQ";
 import { Availability } from "@/components/Availability";
@@ -213,6 +214,7 @@ export default function Home() {
     <>
       {/* ===== 1. HERO ===== */}
       <section className="relative lg:min-h-screen lg:flex lg:items-center pt-3 sm:pt-8 lg:pt-32 pb-14 sm:pb-20 lg:pb-24 overflow-hidden">
+        <HeroAmbient />
         <PerspectiveGrid />
         <div
           aria-hidden="true"
