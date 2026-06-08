@@ -542,13 +542,23 @@ export default function Home() {
       </section>
 
       {/* ===== 7. SERVICES (links into /services) ===== */}
+      {/*
+        Layout history: this used to be a horizontal-scroll rail with
+        asymmetric padding pinned to a 1280-px grid, which on wider
+        viewports left the cards visually flush-left instead of
+        centered. Switched to a responsive grid (1 / 2 / 3 cols) inside
+        .page-container so the 6 cards always sit centered on the screen
+        and wrap into 2 rows of 3 on desktop instead of overflowing.
+        Headline max-width widened so "Six ways we help businesses ship."
+        stays on a single line at the desktop clamp size.
+      */}
       <section className="section-contain py-24 md:py-32 bg-[#030303] border-y border-[#080808]">
         <div className="page-container mb-12 text-center">
           <div className="section-label text-[#333] text-[10px] tracking-widest uppercase">
             Services
           </div>
           <h2
-            className="section-heading font-black tracking-tight text-white mt-3 mx-auto max-w-2xl"
+            className="section-heading font-black tracking-tight text-white mt-3 mx-auto max-w-4xl"
             style={{ fontSize: "clamp(28px, 4.5vw, 44px)" }}
           >
             Six ways we help businesses ship.
@@ -561,29 +571,16 @@ export default function Home() {
           </Link>
         </div>
 
-        <div
-          className="overflow-x-auto no-scrollbar"
-          style={{ scrollSnapType: "x mandatory" }}
-        >
-          <div
-            className="inline-flex gap-4"
-            style={{
-              width: "max-content",
-              // Align first card with .page-container left edge,
-              // matching navbar's content grid even on ultrawide.
-              paddingLeft: "max(20px, calc((100vw - 1280px) / 2 + 48px))",
-              paddingRight: "max(20px, calc((100vw - 1280px) / 2 + 48px))",
-            }}
-          >
+        <div className="page-container">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
             {services.map((s, i) => {
               const Icon = s.icon;
               return (
                 <Link
                   key={s.slug}
                   href={`/services/${s.slug}/`}
-                  className="group relative w-80 sm:w-[22rem] h-[22rem] shrink-0 rounded-2xl p-7 flex flex-col transition-all duration-300 hover:-translate-y-1.5 overflow-hidden"
+                  className="group relative h-[22rem] rounded-2xl p-7 flex flex-col transition-all duration-300 hover:-translate-y-1.5 overflow-hidden"
                   style={{
-                    scrollSnapAlign: "start",
                     animationDelay: `${i * 0.4}s`,
                     background:
                       "linear-gradient(180deg, #0F0F0F 0%, #0A0A0A 100%)",
